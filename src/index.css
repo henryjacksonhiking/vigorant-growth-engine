@@ -4,50 +4,55 @@
 
 @layer base {
   :root {
+    /* Violet-only palette
+       #1b1338 Primary Dark · #221a45 Charcoal Violet · #644ff9 Main Brand
+       #8f7dff Bright Violet · #c8c1ff Soft Lavender · #f6f4ff Soft Background */
     --background: 0 0% 100%;
-    --foreground: 240 33% 8%;
+    --foreground: 248 49% 15%;
 
-    --brand-deep: 254 91% 23%;        /* #1e0570 */
-    --brand-purple: 248 93% 71%;      /* #8170fa */
-    --accent-cyan: 188 100% 62%;      /* #3EE6FF */
-    --charcoal: 250 41% 12%;          /* #13112a */
-    --charcoal-2: 247 30% 14%;        /* #1a1830 */
+    --brand-deep: 248 49% 15%;        /* #1b1338 Primary Dark */
+    --brand-purple: 247 93% 64%;      /* #644ff9 Main Brand */
+    --accent-cyan: 248 100% 75%;      /* #8f7dff Bright Violet (legacy alias) */
+    --brand-bright: 248 100% 75%;     /* #8f7dff Bright Violet */
+    --brand-lavender: 247 100% 88%;   /* #c8c1ff Soft Lavender */
+    --charcoal: 248 49% 15%;          /* #1b1338 */
+    --charcoal-2: 250 45% 19%;        /* #221a45 */
 
-    --surface-secondary: 252 100% 98%;
-    --surface-tertiary: 250 100% 97%;
+    --surface-secondary: 250 100% 98%;   /* #f6f4ff */
+    --surface-tertiary: 247 100% 96%;
 
-    --text-primary: 240 33% 8%;
-    --text-secondary: 240 16% 42%;
-    --text-muted: 240 25% 66%;
+    --text-primary: 248 49% 15%;        /* #1b1338 */
+    --text-secondary: 252 44% 33%;      /* #3d2f7a */
+    --text-muted: 249 24% 56%;          /* #7a72a8 */
 
     --card: 0 0% 100%;
-    --card-foreground: 240 33% 8%;
+    --card-foreground: 248 49% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 33% 8%;
+    --popover-foreground: 248 49% 15%;
 
-    --primary: 254 91% 23%;
+    --primary: 247 93% 64%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 252 100% 98%;
-    --secondary-foreground: 254 91% 23%;
-    --muted: 252 100% 98%;
-    --muted-foreground: 240 16% 42%;
-    --accent: 248 93% 71%;
+    --secondary: 250 100% 98%;
+    --secondary-foreground: 248 49% 15%;
+    --muted: 250 100% 98%;
+    --muted-foreground: 252 44% 33%;
+    --accent: 248 100% 75%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 73% 59%;
+    --destructive: 0 60% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 248 93% 71%;
-    --input: 248 93% 71%;
-    --ring: 248 93% 71%;
+    --border: 247 93% 64%;
+    --input: 247 93% 64%;
+    --ring: 247 93% 64%;
     --radius: 0.875rem;
 
-    --gradient-brand: linear-gradient(135deg, hsl(248 93% 71%) 0%, hsl(254 91% 23%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(248 93% 71%) 0%, hsl(188 100% 62%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(254 91% 23%) 0%, hsl(252 70% 32%) 50%, hsl(254 80% 22%) 100%);
+    --gradient-brand: linear-gradient(135deg, hsl(247 93% 64%) 0%, hsl(248 49% 15%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(248 100% 75%) 0%, hsl(247 93% 64%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(250 45% 19%) 50%, hsl(248 49% 12%) 100%);
 
-    --shadow-glass: 0 24px 80px hsl(254 91% 23% / 0.09), 0 0 0 1px hsl(0 0% 100% / 0.9) inset;
-    --shadow-card: 0 8px 32px hsl(254 91% 23% / 0.06);
-    --shadow-glow-cyan: 0 0 24px hsl(188 100% 62% / 0.4);
+    --shadow-glass: 0 24px 80px hsl(248 49% 15% / 0.12), 0 0 0 1px hsl(0 0% 100% / 0.9) inset;
+    --shadow-card: 0 8px 32px hsl(248 49% 15% / 0.08);
+    --shadow-glow: 0 0 24px hsl(248 100% 75% / 0.45);
 
     --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -112,39 +117,40 @@
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: hsl(248 93% 71% / 0.85);
-    background: hsl(248 93% 71% / 0.12);
-    border: 1px solid hsl(248 93% 71% / 0.25);
+    color: hsl(247 100% 88% / 0.95);
+    background: hsl(248 100% 75% / 0.12);
+    border: 1px solid hsl(248 100% 75% / 0.28);
     padding: 4px 12px;
     border-radius: 999px;
     display: inline-block;
   }
   .grid-overlay {
     background-image:
-      linear-gradient(hsl(248 93% 71% / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(248 93% 71% / 0.05) 1px, transparent 1px);
+      linear-gradient(hsl(247 93% 64% / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(247 93% 64% / 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
     mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 80%);
   }
   .btn-primary-grad {
-    background: linear-gradient(135deg, hsl(248 93% 71%) 0%, hsl(254 91% 23%) 100%);
+    background: linear-gradient(135deg, hsl(247 93% 64%) 0%, hsl(248 49% 15%) 100%);
     color: white;
     transition: all 280ms var(--ease-expo);
-    box-shadow: 0 4px 24px hsl(248 93% 71% / 0.35);
+    box-shadow: 0 4px 24px hsl(143 125 255 / 0.35);
+    box-shadow: 0 4px 24px hsl(248 100% 75% / 0.35);
   }
   .btn-primary-grad:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 10px 36px hsl(248 93% 71% / 0.55), 0 0 24px hsl(188 100% 62% / 0.3);
+    box-shadow: 0 10px 36px hsl(247 93% 64% / 0.5), 0 0 24px hsl(248 100% 75% / 0.4);
   }
   .btn-secondary-outline {
-    border: 1.5px solid hsl(0 0% 0% / 0.12);
+    border: 1.5px solid hsl(247 93% 64% / 0.22);
     color: hsl(var(--text-primary));
     transition: all 220ms var(--ease-expo);
   }
   .btn-secondary-outline:hover {
     border-color: hsl(var(--brand-purple));
-    background: hsl(248 93% 71% / 0.04);
+    background: hsl(247 93% 64% / 0.06);
     transform: translateY(-1px);
   }
   .tilt-spotlight {
@@ -156,7 +162,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), hsl(248 93% 71% / 0.08), transparent 60%);
+    background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), hsl(248 100% 75% / 0.10), transparent 60%);
     opacity: 0;
     transition: opacity 300ms var(--ease-expo);
     pointer-events: none;
@@ -168,8 +174,8 @@
 
 /* Animations */
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 hsl(248 93% 71% / 0.6); }
-  50% { opacity: 0.7; transform: scale(1.25); box-shadow: 0 0 0 6px hsl(248 93% 71% / 0); }
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 hsl(247 93% 64% / 0.6); }
+  50% { opacity: 0.7; transform: scale(1.25); box-shadow: 0 0 0 6px hsl(247 93% 64% / 0); }
 }
 .pulse-dot { animation: pulse-dot 2.2s ease-in-out infinite; }
 
