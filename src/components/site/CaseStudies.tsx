@@ -41,8 +41,8 @@ function CaseCard({ type, metric, label, chip, quote, author, delay }: any) {
         style={{
           background: "hsl(0 0% 100% / 0.85)",
           backdropFilter: "blur(20px)",
-          border: "1px solid hsl(248 93% 71% / 0.12)",
-          boxShadow: "0 8px 32px hsl(254 91% 23% / 0.06)",
+          border: "1px solid hsl(247 93% 64% / 0.12)",
+          boxShadow: "0 8px 32px hsl(248 49% 15% / 0.06)",
         }}>
         <div className="font-mono-ui text-[11px] uppercase tracking-[0.1em] text-ink-muted">{type}</div>
         <div className="mt-4 font-display font-bold text-brand-deep" style={{ fontSize: "64px", lineHeight: 1 }}>{metric}</div>

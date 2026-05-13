@@ -65,7 +65,7 @@ export default function GlobalFx() {
         className="fixed top-0 left-0 h-[2.5px] z-[9999] pointer-events-none"
         style={{
           width: `${progress}%`,
-          background: "linear-gradient(90deg, hsl(248 93% 71%), hsl(188 100% 62%), hsl(254 91% 23%))",
+          background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%), hsl(248 49% 15%))",
           transition: "width 80ms linear",
         }}
       />
@@ -76,7 +76,7 @@ export default function GlobalFx() {
             aria-hidden
             className="fixed top-0 left-0 w-[560px] h-[560px] pointer-events-none z-0 hidden md:block"
             style={{
-              background: "radial-gradient(circle, hsl(248 93% 71% / 0.08), transparent 70%)",
+              background: "radial-gradient(circle, hsl(247 93% 64% / 0.08), transparent 70%)",
               willChange: "transform",
             }}
           />
@@ -84,13 +84,13 @@ export default function GlobalFx() {
             ref={ringRef}
             aria-hidden
             className="fixed top-0 left-0 w-9 h-9 rounded-full pointer-events-none z-[9998] transition-[width,height,opacity,border-color] duration-200 ease-out data-[hover='1']:w-[52px] data-[hover='1']:h-[52px] data-[hover='1']:opacity-50"
-            style={{ border: "1.5px solid hsl(248 93% 71% / 0.45)", willChange: "transform" }}
+            style={{ border: "1.5px solid hsl(247 93% 64% / 0.45)", willChange: "transform" }}
           />
           <div
             ref={dotRef}
             aria-hidden
             className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full pointer-events-none z-[9998] transition-[width,height,opacity] duration-200 ease-out data-[hover='1']:w-[18px] data-[hover='1']:h-[18px] data-[hover='1']:opacity-60"
-            style={{ background: "hsl(248 93% 71%)", mixBlendMode: "multiply", willChange: "transform" }}
+            style={{ background: "hsl(247 93% 64%)", mixBlendMode: "multiply", willChange: "transform" }}
           />
         </>
       )}

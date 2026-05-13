@@ -11,7 +11,7 @@ const practices = ["Sunrise Family Dental", "Mountain Spine Chiro", "Ridgeline F
 
 export default function SocialProof() {
   return (
-    <section className="relative py-24 overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(254 91% 23%) 0%, hsl(252 70% 32%) 50%, hsl(254 80% 22%) 100%)" }}>
+    <section className="relative py-24 overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(252 44% 33%) 50%, hsl(248 49% 12%) 100%)" }}>
       <div className="container relative">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
           {stats.map((s, i) => (

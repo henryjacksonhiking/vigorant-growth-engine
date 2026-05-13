@@ -8,11 +8,11 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
       <div aria-hidden className="absolute inset-0 z-0 grid-overlay" />
       <div aria-hidden className="absolute -top-20 -right-16 w-[520px] h-[520px] rounded-full pointer-events-none orb-a"
-        style={{ background: "radial-gradient(circle, hsl(248 93% 71% / 0.22), transparent 70%)", filter: "blur(80px)" }} />
+        style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.22), transparent 70%)", filter: "blur(80px)" }} />
       <div aria-hidden className="absolute bottom-16 right-48 w-[380px] h-[380px] rounded-full pointer-events-none orb-b"
-        style={{ background: "radial-gradient(circle, hsl(188 100% 62% / 0.14), transparent 70%)", filter: "blur(60px)" }} />
+        style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.14), transparent 70%)", filter: "blur(60px)" }} />
       <div aria-hidden className="absolute top-48 -left-20 w-[320px] h-[320px] rounded-full pointer-events-none orb-c"
-        style={{ background: "radial-gradient(circle, hsl(254 91% 23% / 0.10), transparent 70%)", filter: "blur(100px)" }} />
+        style={{ background: "radial-gradient(circle, hsl(248 49% 15% / 0.10), transparent 70%)", filter: "blur(100px)" }} />
 
       <div className="container relative z-10 grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-7">
@@ -90,11 +90,11 @@ function DashboardCard() {
     <div className="float-card">
       <div ref={tiltRef}
         className="bg-white border border-black/[0.08] rounded-[22px] p-7 transition-transform duration-300"
-        style={{ boxShadow: "0 24px 80px hsl(254 91% 23% / 0.09), 0 0 0 1px hsl(0 0% 100% / 0.9) inset" }}>
+        style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09), 0 0 0 1px hsl(0 0% 100% / 0.9) inset" }}>
         <div className="flex items-start justify-between mb-5">
           <div className="flex items-start gap-3">
             <div className="w-[38px] h-[38px] rounded-[10px] flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))" }}>
+              style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
               <TrendingUp size={18} className="text-white" />
             </div>
             <div>
@@ -148,7 +148,7 @@ function ProgressBar() {
   return (
     <div className="h-1.5 rounded-full bg-brand-purple/10 overflow-hidden">
       <div className="h-full rounded-full transition-[width] duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-        style={{ width: `${w}%`, background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))" }} />
+        style={{ width: `${w}%`, background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }} />
     </div>
   );
 }

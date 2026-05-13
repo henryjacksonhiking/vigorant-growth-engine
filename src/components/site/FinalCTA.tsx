@@ -10,11 +10,11 @@ const offers = [
 export default function FinalCTA() {
   return (
     <section id="audit" className="relative overflow-hidden flex items-center justify-center"
-      style={{ minHeight: 520, background: "linear-gradient(160deg, hsl(254 91% 23%) 0%, hsl(252 70% 39%) 45%, hsl(252 80% 19%) 100%)" }}>
+      style={{ minHeight: 520, background: "linear-gradient(160deg, hsl(248 49% 15%) 0%, hsl(252 44% 33%) 45%, hsl(248 49% 12%) 100%)" }}>
       <div aria-hidden className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(188 100% 62% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
+        style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
       <div aria-hidden className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(248 93% 71% / 0.20), transparent 70%)", filter: "blur(60px)" }} />
+        style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.20), transparent 70%)", filter: "blur(60px)" }} />
 
       <div className="container relative py-24 text-center">
         <motion.h2

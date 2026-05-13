@@ -6,7 +6,7 @@ export default function Problem() {
   return (
     <section className="relative py-32 overflow-hidden" style={{ background: "hsl(var(--charcoal))" }}>
       <div aria-hidden className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(248 93% 71% / 0.10), transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 70%)" }} />
       <div className="container relative grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <span className="section-label-light">The Problem</span>
