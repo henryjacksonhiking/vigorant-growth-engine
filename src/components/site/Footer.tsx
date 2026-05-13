@@ -1,4 +1,6 @@
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
+
+const cols = [
   { title: "Solutions", links: ["Dental Marketing", "Chiropractic Marketing", "Medical Practice Marketing", "Free Audit"] },
   { title: "Services", links: ["SEO & AI Search", "Paid Advertising", "Website Design", "Reputation Management"] },
   { title: "Company", links: ["About", "Results", "Resources", "Contact"] },
@@ -11,7 +13,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center bg-white/95 rounded-lg px-3 py-2 w-fit">
-              <img src={(await import("@/assets/vigorant-logo-horizontal.png")).default} alt="Vigorant" className="h-8 w-auto" />
+              <img src={logoHorizontal} alt="Vigorant" className="h-8 w-auto" />
             </div>
             <p className="mt-4 text-white/45 text-sm leading-relaxed">
               The patient acquisition system built specifically for modern healthcare practices.
