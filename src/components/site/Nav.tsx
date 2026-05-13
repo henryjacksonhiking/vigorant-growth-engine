@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
 const links = [
   { label: "Solutions", href: "#specialties" },
@@ -30,11 +31,8 @@ export default function Nav() {
       }`}
     >
       <div className="container flex items-center justify-between h-[66px]">
-        <a href="#" className="flex items-center gap-2.5">
-          <span className="relative flex items-center">
-            <span className="absolute -left-3 w-2 h-2 rounded-full bg-brand-cyan pulse-dot" />
-            <span className="text-2xl font-extrabold tracking-tight gradient-text-deep">Vigorant</span>
-          </span>
+        <a href="#" className="flex items-center" aria-label="Vigorant home">
+          <img src={logoHorizontal} alt="Vigorant" className="h-8 md:h-9 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1">
