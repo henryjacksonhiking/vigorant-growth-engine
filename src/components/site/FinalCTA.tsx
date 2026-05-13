@@ -40,7 +40,7 @@ export default function FinalCTA() {
           We accept 8 new audit requests per month. 3 spots remaining.
         </div>
 
-        <a href="#" className="mt-8 inline-flex items-center bg-white text-brand-deep font-bold text-[17px] px-10 py-[18px] rounded-full transition-all duration-300 hover:bg-brand-cyan hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(188_100%_62%/0.45)]">
+        <a href="#" className="mt-8 inline-flex items-center bg-white text-brand-deep font-bold text-[17px] px-10 py-[18px] rounded-full transition-all duration-300 hover:bg-[hsl(248_100%_75%)] hover:text-white hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(248_100%_75%/0.45)]">
           Claim My Free Practice Audit →
         </a>
 
