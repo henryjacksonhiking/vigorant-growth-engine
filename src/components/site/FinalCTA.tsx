@@ -1,5 +1,4 @@
-import { Reveal } from "./Section";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const offers = [
   "Full review of your current online visibility",
@@ -10,45 +9,50 @@ const offers = [
 
 export default function FinalCTA() {
   return (
-    <section
-      id="audit"
-      className="py-32 relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, hsl(254 91% 23%) 0%, hsl(252 70% 39%) 50%, hsl(254 80% 28%) 100%)" }}
-    >
-      <div
-        aria-hidden
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(188 100% 62% / 0.15) 0%, transparent 70%)", filter: "blur(80px)" }}
-      />
-      <div className="container relative">
-        <Reveal className="max-w-2xl mx-auto text-center">
-          <h2 className="font-display font-bold text-white leading-[1.1]" style={{ fontSize: "clamp(36px, 5vw, 56px)" }}>
-            Find Out Exactly How Many Patients Your Practice Is Missing Each Month
-          </h2>
+    <section id="audit" className="relative overflow-hidden flex items-center justify-center"
+      style={{ minHeight: 520, background: "linear-gradient(160deg, hsl(254 91% 23%) 0%, hsl(252 70% 39%) 45%, hsl(252 80% 19%) 100%)" }}>
+      <div aria-hidden className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(188 100% 62% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
+      <div aria-hidden className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(248 93% 71% / 0.20), transparent 70%)", filter: "blur(60px)" }} />
 
-          <ul className="mt-10 space-y-2.5 text-white text-base inline-block text-left">
-            {offers.map((o) => (
-              <li key={o} className="flex gap-3">
-                <span className="text-brand-cyan">✦</span>{o}
-              </li>
-            ))}
-          </ul>
+      <div className="container relative py-24 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="font-display font-bold text-white max-w-[600px] mx-auto leading-[1.15]"
+          style={{ fontSize: "clamp(32px, 5vw, 56px)" }}>
+          Find Out Exactly How Many Patients Your Practice Is Missing Each Month
+        </motion.h2>
 
-          <p className="mt-8 font-mono-ui text-xs text-brand-cyan/80">
-            We accept 8 new audit requests per month to ensure quality. 3 spots remaining.
-          </p>
+        <ul className="mt-9 inline-block text-left">
+          {offers.map((o, i) => (
+            <motion.li key={o}
+              initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
+              className="text-white/85 text-base flex items-center gap-3" style={{ lineHeight: 2.2 }}>
+              <span className="text-brand-cyan">✦</span> {o}
+            </motion.li>
+          ))}
+        </ul>
 
-          <a
-            href="#"
-            className="mt-8 inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-base px-10 py-4 rounded-[10px] transition-all duration-200 hover:bg-brand-cyan hover:shadow-[0_8px_32px_rgba(62,230,255,0.4)]"
-          >
-            Claim My Free Practice Audit <ArrowRight size={18} />
-          </a>
+        <div className="mt-6 font-mono-ui text-xs text-brand-cyan/85">
+          We accept 8 new audit requests per month. 3 spots remaining.
+        </div>
 
-          <p className="mt-5 text-sm text-white/50">
-            No commitment. No hard sell. Just clarity on what's possible for your practice.
-          </p>
-        </Reveal>
+        <a href="#" className="mt-8 inline-flex items-center bg-white text-brand-deep font-bold text-[17px] px-10 py-[18px] rounded-full transition-all duration-300 hover:bg-brand-cyan hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(188_100%_62%/0.45)]">
+          Claim My Free Practice Audit →
+        </a>
+
+        <div className="mt-4 text-white/45 text-sm">
+          No commitment. No hard sell. Just clarity on what's possible for your practice.
+        </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {["HIPAA Compliant", "Live in 48 Hours", "No Long-Term Contracts"].map((t) => (
+            <span key={t} className="font-mono-ui text-[11px] text-white/70 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">{t}</span>
+          ))}
+        </div>
       </div>
     </section>
   );

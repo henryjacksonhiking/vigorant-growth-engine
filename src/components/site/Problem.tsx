@@ -1,51 +1,61 @@
-import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { TrendingDown, FileX, FileQuestion } from "lucide-react";
-
-const cards = [
-  {
-    icon: TrendingDown,
-    title: "SEO That Ranks But Never Rings",
-    body: "You're on page one for something. But the phone isn't ringing. Rankings without patient calls aren't marketing — they're decoration.",
-  },
-  {
-    icon: FileX,
-    title: "Ad Spend With Nothing to Show",
-    body: "Every month your budget burns. Every month the report looks busy. But you still can't tell us your actual cost per new patient.",
-  },
-  {
-    icon: FileQuestion,
-    title: "Reports, Not Results",
-    body: "Your agency sends dashboards full of impressions and sessions. But when you ask 'how many new patients did this bring?' — silence.",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Counter } from "./GlobalFx";
 
 export default function Problem() {
   return (
-    <Section bg="secondary">
-      <Reveal className="text-center max-w-2xl mx-auto">
-        <SectionLabel>The Problem</SectionLabel>
-        <H2>If Your Marketing Agency Isn't Delivering Patients, It's Delivering Excuses</H2>
-      </Reveal>
+    <section className="relative py-32 overflow-hidden" style={{ background: "hsl(var(--charcoal))" }}>
+      <div aria-hidden className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(248 93% 71% / 0.10), transparent 70%)" }} />
+      <div className="container relative grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span className="section-label-light">The Problem</span>
+          <h2 className="text-white font-extrabold mt-5 leading-[1.1]"
+            style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "-0.04em" }}>
+            <Reveal>Most practices leave</Reveal>
+            <Reveal delay={0.1}><span className="gradient-text">60–70% of revenue</span></Reveal>
+            <Reveal delay={0.2}>on the table.</Reveal>
+          </h2>
+          <p className="mt-7 text-white/60 max-w-[440px] leading-[1.75]">
+            Missed follow-ups, unfilled cancellations, and zero AI search visibility quietly drain your schedule every month. You're too busy treating patients to notice — until growth flatlines.
+          </p>
+          <a href="#why" className="mt-7 inline-flex items-center gap-2 text-brand-purple font-bold group">
+            See how Vigorant fixes this
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
 
-      <div className="grid md:grid-cols-3 gap-6 mt-16">
-        {cards.map((c, i) => (
-          <Reveal key={c.title} delay={i * 0.08}>
-            <article className="bg-white border border-brand-purple/10 rounded-2xl p-8 h-full transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-[0_12px_40px_rgba(30,5,112,0.08)]">
-              <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-red-500 mb-5">
-                <c.icon size={22} />
-              </div>
-              <h3 className="text-xl font-bold text-brand-deep mb-3">{c.title}</h3>
-              <p className="text-ink-secondary leading-relaxed">{c.body}</p>
-            </article>
-          </Reveal>
-        ))}
+        <div className="space-y-4">
+          <Stat n={67} suffix="%" label="of cancelled appointments never rebooked" note="Average across dental & chiropractic" />
+          <Stat n={4.2} decimals={1} suffix="×" label="more expensive to acquire vs. reactivate a patient" note="Industry benchmark, 2024" />
+          <Stat n={180} prefix="$" suffix="k" label="avg annual revenue left unrealized per practice" note="Based on client audits" />
+        </div>
       </div>
+    </section>
+  );
+}
 
-      <Reveal delay={0.2} className="text-center max-w-xl mx-auto mt-14">
-        <p className="text-lg text-ink-secondary">
-          We built Vigorant because healthcare practices deserve better than this. Not promises — a system.
-        </p>
-      </Reveal>
-    </Section>
+function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  return (
+    <motion.span className="block"
+      initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}>{children}</motion.span>
+  );
+}
+
+function Stat({ n, suffix = "", prefix = "", decimals = 0, label, note }: any) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="rounded-2xl p-7 transition-all duration-300 hover:translate-x-2"
+      style={{ background: "hsl(var(--charcoal-2))", border: "1px solid hsl(0 0% 100% / 0.06)" }}
+    >
+      <div className="font-extrabold text-[2.8rem] leading-none gradient-text" style={{ letterSpacing: "-0.06em" }}>
+        <Counter to={n} prefix={prefix} suffix={suffix} decimals={decimals} />
+      </div>
+      <div className="mt-3 text-white/85 font-medium">{label}</div>
+      <div className="mt-1 text-white/40 text-sm font-mono-ui">{note}</div>
+    </motion.div>
   );
 }
