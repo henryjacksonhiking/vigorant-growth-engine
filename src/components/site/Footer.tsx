@@ -1,4 +1,4 @@
-const cols = [
+import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
   { title: "Solutions", links: ["Dental Marketing", "Chiropractic Marketing", "Medical Practice Marketing", "Free Audit"] },
   { title: "Services", links: ["SEO & AI Search", "Paid Advertising", "Website Design", "Reputation Management"] },
   { title: "Company", links: ["About", "Results", "Resources", "Contact"] },
