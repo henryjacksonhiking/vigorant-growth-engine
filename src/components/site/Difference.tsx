@@ -52,7 +52,7 @@ export default function Difference() {
             <ul className="space-y-3">
               {traditional.map((t) => (
                 <li key={t} className="flex items-start gap-3 text-ink-secondary">
-                  <X size={18} className="text-[#e24b4a] flex-shrink-0 mt-0.5" />
+                  <X size={18} className="text-ink-muted/70 flex-shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
               ))}
