@@ -54,12 +54,12 @@ function Card({ tag, icon: Icon, title, body, chips, cta, delay }: any) {
           background: "hsl(0 0% 100% / 0.85)",
           backdropFilter: "blur(20px) saturate(150%)",
           border: "1px solid hsl(0 0% 100% / 0.8)",
-          boxShadow: "0 8px 32px hsl(254 91% 23% / 0.06)",
+          boxShadow: "0 8px 32px hsl(248 49% 15% / 0.06)",
         }}>
         <div className="flex items-center justify-between mb-5">
           <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 rounded-full px-3 py-1">{tag}</span>
           <div className="w-12 h-12 rounded-full flex items-center justify-center"
-            style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))" }}>
+            style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
             <Icon size={22} className="text-white" />
           </div>
         </div>

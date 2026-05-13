@@ -50,7 +50,7 @@ function Cell({ className = "", icon: Icon, tag, title, body, children }: any) {
     <div ref={ref}
       className={`tilt-spotlight rounded-[20px] bg-surface-secondary border border-brand-purple/10 p-8 transition-all duration-300 hover:border-brand-purple/25 hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)] ${className}`}>
       <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))" }}>
+        style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
         <Icon size={20} className="text-white" />
       </div>
       <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 rounded-full px-2.5 py-1">{tag}</span>

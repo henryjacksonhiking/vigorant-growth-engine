@@ -41,13 +41,13 @@ function CaseCard({ type, metric, label, chip, quote, author, delay }: any) {
         style={{
           background: "hsl(0 0% 100% / 0.85)",
           backdropFilter: "blur(20px)",
-          border: "1px solid hsl(248 93% 71% / 0.12)",
-          boxShadow: "0 8px 32px hsl(254 91% 23% / 0.06)",
+          border: "1px solid hsl(247 93% 64% / 0.12)",
+          boxShadow: "0 8px 32px hsl(248 49% 15% / 0.06)",
         }}>
         <div className="font-mono-ui text-[11px] uppercase tracking-[0.1em] text-ink-muted">{type}</div>
         <div className="mt-4 font-display font-bold text-brand-deep" style={{ fontSize: "64px", lineHeight: 1 }}>{metric}</div>
         <div className="font-mono-ui text-[13px] text-ink-muted mt-1">{label}</div>
-        <span className="inline-block mt-4 text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-full px-3 py-1 text-xs font-semibold">{chip}</span>
+        <span className="inline-block mt-4 text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3 py-1 text-xs font-semibold">{chip}</span>
         <blockquote className="mt-5 italic text-[14px] text-ink-secondary border-l-2 border-brand-purple/25 pl-3">"{quote}"</blockquote>
         <div className="mt-2 text-xs text-ink-muted">— {author}</div>
         <a href="#" className="mt-5 inline-flex items-center gap-1.5 text-brand-purple text-sm font-semibold">

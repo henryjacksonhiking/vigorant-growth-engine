@@ -37,7 +37,7 @@ export default function Difference() {
 
       <Reveal delay={0.1} className="max-w-[680px] mx-auto mt-12">
         <div className="rounded-r-xl px-7 py-6"
-          style={{ background: "linear-gradient(135deg, hsl(254 91% 23% / 0.03), hsl(248 93% 71% / 0.06))", borderLeft: "3px solid hsl(248 93% 71%)" }}>
+          style={{ background: "linear-gradient(135deg, hsl(248 49% 15% / 0.03), hsl(247 93% 64% / 0.06))", borderLeft: "3px solid hsl(247 93% 64%)" }}>
           <div className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple mb-2">Definition</div>
           <p className="text-[16px] text-ink leading-[1.8]">
             A patient acquisition system is a structured, repeatable marketing framework that combines AI-driven search optimization, paid advertising, and data attribution to generate a predictable flow of new patients for healthcare practices — as opposed to disconnected marketing services managed separately.
@@ -52,7 +52,7 @@ export default function Difference() {
             <ul className="space-y-3">
               {traditional.map((t) => (
                 <li key={t} className="flex items-start gap-3 text-ink-secondary">
-                  <X size={18} className="text-[#e24b4a] flex-shrink-0 mt-0.5" />
+                  <X size={18} className="text-ink-muted/70 flex-shrink-0 mt-0.5" />
                   <span>{t}</span>
                 </li>
               ))}
@@ -61,7 +61,7 @@ export default function Difference() {
         </Reveal>
         <Reveal delay={0.1}>
           <div className="rounded-2xl p-7 text-white"
-            style={{ background: "linear-gradient(135deg, hsl(254 91% 23%), hsl(252 70% 32%))", boxShadow: "0 20px 60px hsl(254 91% 23% / 0.25)" }}>
+            style={{ background: "linear-gradient(135deg, hsl(248 49% 15%), hsl(252 44% 33%))", boxShadow: "0 20px 60px hsl(248 49% 15% / 0.25)" }}>
             <div className="font-bold mb-4">Vigorant System</div>
             <ul className="space-y-3">
               {vigorant.map((t) => (
@@ -89,7 +89,7 @@ function Pillar({ icon: Icon, title, body, delay }: any) {
       <div ref={ref} className="tilt-spotlight bg-white rounded-2xl p-7 border border-brand-purple/12 transition-transform duration-300"
         style={{ boxShadow: "var(--shadow-card)" }}>
         <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-          style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))" }}>
+          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
           <Icon size={20} className="text-white" />
         </div>
         <h3 className="font-extrabold text-brand-deep text-lg">{title}</h3>

@@ -23,7 +23,7 @@ export default function HowItWorks() {
           initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px origin-left"
-          style={{ background: "linear-gradient(90deg, hsl(248 93% 71%), hsl(188 100% 62%))" }} />
+          style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
 
         <div className="grid lg:grid-cols-4 gap-10 lg:gap-6 relative">
           {steps.map((s, i) => (
@@ -31,7 +31,7 @@ export default function HowItWorks() {
               <div className="relative w-14 h-14 mx-auto">
                 <div className="absolute inset-[-6px] rounded-full border-[1.5px] border-dashed border-brand-purple/30 spin-slow" />
                 <div className="w-14 h-14 rounded-full flex items-center justify-center text-white font-mono-ui font-bold text-lg relative z-10"
-                  style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))", boxShadow: "0 6px 20px hsl(248 93% 71% / 0.35)" }}>
+                  style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))", boxShadow: "0 6px 20px hsl(247 93% 64% / 0.35)" }}>
                   {s.n}
                 </div>
               </div>
