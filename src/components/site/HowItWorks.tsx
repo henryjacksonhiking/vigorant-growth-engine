@@ -1,44 +1,51 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const steps = [
-  { n: "01", title: "Practice Audit & Market Analysis", body: "We audit your digital presence, analyze local market competition, and identify the patient acquisition gaps costing you revenue.", t: "Week 1" },
-  { n: "02", title: "System Build & Launch", body: "We build or optimize your website for conversion, set up AI-optimized SEO, launch targeted ads, and configure call tracking.", t: "Days 7–30" },
-  { n: "03", title: "AI-Powered Optimization", body: "Our AI monitors search rankings, ad performance, and patient call data weekly — automatically surfacing what to improve and where to reallocate budget.", t: "Ongoing" },
-  { n: "04", title: "Transparent Reporting & Growth", body: "You see every metric that matters — patient volume, cost per acquisition, revenue attribution — in a live dashboard. No vanity metrics.", t: "Monthly" },
+  { n: "01", badge: "Week 1", title: "Practice Audit & Market Analysis", body: "We audit your digital presence, analyze local competition, and identify the patient acquisition gaps costing you revenue." },
+  { n: "02", badge: "Days 7–30", title: "System Build & Launch", body: "We build or optimize your website, set up AI-optimized SEO, launch targeted ads, and configure call tracking and attribution." },
+  { n: "03", badge: "Ongoing", title: "AI-Powered Optimization", body: "Our AI monitors rankings, ad performance, and patient calls weekly — surfacing improvements and reallocating budget automatically." },
+  { n: "04", badge: "Monthly", title: "Transparent Reporting & Growth", body: "You see every metric that matters — patient volume, cost per acquisition, revenue attribution — in a live dashboard." },
 ];
 
 export default function HowItWorks() {
   return (
     <Section id="how-it-works" bg="secondary">
-      <Reveal className="text-center max-w-2xl mx-auto">
+      <Reveal className="text-center max-w-3xl mx-auto">
         <SectionLabel>The Process</SectionLabel>
-        <H2>How Vigorant Builds Your Patient Acquisition System</H2>
+        <H2>From audit to growth engine<br /><span className="gradient-text">in 4 steps.</span></H2>
       </Reveal>
 
-      <div className="grid md:grid-cols-4 gap-8 mt-16 relative">
-        {steps.map((s, i) => (
-          <Reveal key={s.n} delay={i * 0.08}>
-            <div className="relative">
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-px border-t border-dashed border-brand-purple/30 -translate-y-1/2" />
-              )}
-              <div className="font-mono-ui font-medium text-brand-purple/30 text-5xl leading-none">{s.n}</div>
-              <h3 className="text-lg font-bold text-brand-deep mt-5">{s.title}</h3>
-              <p className="text-ink-secondary text-[15px] mt-2.5 leading-relaxed">{s.body}</p>
-              <span className="inline-block mt-4 font-mono-ui text-[11px] uppercase tracking-wider text-brand-purple bg-brand-purple/10 px-2 py-1 rounded">
-                {s.t}
-              </span>
-            </div>
-          </Reveal>
-        ))}
+      <div className="relative mt-20 max-w-6xl mx-auto">
+        <div aria-hidden className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px bg-brand-purple/20" />
+        <motion.div aria-hidden
+          initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px origin-left"
+          style={{ background: "linear-gradient(90deg, hsl(248 93% 71%), hsl(188 100% 62%))" }} />
+
+        <div className="grid lg:grid-cols-4 gap-10 lg:gap-6 relative">
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 0.1} className="text-center">
+              <div className="relative w-14 h-14 mx-auto">
+                <div className="absolute inset-[-6px] rounded-full border-[1.5px] border-dashed border-brand-purple/30 spin-slow" />
+                <div className="w-14 h-14 rounded-full flex items-center justify-center text-white font-mono-ui font-bold text-lg relative z-10"
+                  style={{ background: "linear-gradient(135deg, hsl(248 93% 71%), hsl(254 91% 23%))", boxShadow: "0 6px 20px hsl(248 93% 71% / 0.35)" }}>
+                  {s.n}
+                </div>
+              </div>
+              <span className="inline-block mt-5 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 rounded-full px-3 py-1">{s.badge}</span>
+              <h3 className="mt-3 font-extrabold text-brand-deep text-lg leading-tight">{s.title}</h3>
+              <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed">{s.body}</p>
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       <Reveal delay={0.3} className="text-center mt-16">
-        <p className="text-ink-secondary mb-6 max-w-xl mx-auto">
-          Start with a free audit — we walk you through exactly what this looks like for your practice.
-        </p>
-        <a href="#audit" className="btn-primary-grad inline-flex items-center gap-2 px-8 py-4 rounded-[10px] font-semibold">
+        <p className="text-ink-secondary mb-5">Start with a free audit — we walk you through exactly what this looks like for your practice.</p>
+        <a href="#audit" className="btn-primary-grad inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold">
           Get My Free Audit <ArrowRight size={18} />
         </a>
       </Reveal>

@@ -11,7 +11,7 @@ interface Props {
 export default function Section({ id, bg = "white", className = "", children }: Props) {
   const bgClass = bg === "secondary" ? "bg-surface-secondary" : bg === "tertiary" ? "bg-surface-tertiary" : "bg-background";
   return (
-    <section id={id} className={`${bgClass} py-24 md:py-32 ${className}`}>
+    <section id={id} className={`${bgClass} py-28 md:py-36 ${className}`}>
       <div className="container">{children}</div>
     </section>
   );
@@ -20,10 +20,9 @@ export default function Section({ id, bg = "white", className = "", children }: 
 export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      transition={{ duration: 0.85, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}
@@ -37,10 +36,8 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 
 export function H2({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <h2
-      className={`font-bold text-brand-deep leading-[1.1] tracking-tight mt-3 ${className}`}
-      style={{ fontSize: "clamp(32px, 4vw, 48px)" }}
-    >
+    <h2 className={`font-extrabold text-brand-deep leading-[1.1] tracking-tight mt-3 ${className}`}
+      style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}>
       {children}
     </h2>
   );
