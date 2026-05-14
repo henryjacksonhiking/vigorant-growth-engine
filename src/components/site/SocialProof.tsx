@@ -11,26 +11,31 @@ const practices = ["Sunrise Family Dental", "Mountain Spine Chiro", "Ridgeline F
 
 export default function SocialProof() {
   return (
-    <section className="relative py-24 overflow-hidden" style={{ background: "linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(252 44% 33%) 50%, hsl(248 49% 12%) 100%)" }}>
+    <section
+      aria-label="Social proof and key metrics"
+      className="relative py-16 sm:py-20 lg:py-24 overflow-hidden"
+      style={{ background: "linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(252 44% 33%) 50%, hsl(248 49% 12%) 100%)" }}
+    >
       <div className="container relative">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
+        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
           {stats.map((s, i) => (
-            <div key={s.label} className={`text-center ${i > 0 ? "lg:border-l border-white/10" : ""} px-6`}>
-              <div className="font-extrabold text-white" style={{ fontSize: "clamp(40px, 5vw, 64px)", letterSpacing: "-0.03em" }}>
+            <div key={s.label} className={`text-center ${i > 0 ? "lg:border-l border-white/15" : ""} px-3 sm:px-6`}>
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="font-extrabold text-white" style={{ fontSize: "clamp(32px, 6vw, 64px)", letterSpacing: "-0.03em" }}>
                 <Counter to={s.n} prefix={s.prefix} suffix={s.suffix} decimals={s.decimals ?? 0} />
-              </div>
-              <div className="mt-2 text-white/60 text-sm">{s.label}</div>
+              </dd>
+              <dd aria-hidden className="mt-2 text-white/85 text-sm">{s.label}</dd>
             </div>
           ))}
-        </div>
+        </dl>
 
-        <div className="mt-14 pt-8 border-t border-white/10 text-center">
-          <div className="font-mono-ui text-[12px] text-white/40 uppercase tracking-[0.12em]">Trusted by practices across the United States</div>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
+        <div className="mt-12 sm:mt-14 pt-8 border-t border-white/15 text-center">
+          <h2 className="font-mono-ui text-[12px] text-white/75 uppercase tracking-[0.12em]">Trusted by practices across the United States</h2>
+          <ul className="mt-5 flex flex-wrap justify-center gap-2.5 sm:gap-3 list-none p-0">
             {practices.map((p) => (
-              <span key={p} className="text-white/50 text-sm px-3.5 py-1.5 rounded-full border border-white/10 bg-white/5">{p}</span>
+              <li key={p} className="text-white/90 text-sm px-3.5 py-1.5 rounded-full border border-white/20 bg-white/10">{p}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>
