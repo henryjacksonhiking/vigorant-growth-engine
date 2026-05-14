@@ -27,49 +27,64 @@ export default function Nav() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass border-b border-brand-purple/10 shadow-[0_1px_0_rgba(0,0,0,0.04)]" : "bg-transparent"
+        scrolled ? "glass border-b border-brand-purple/15 shadow-[0_1px_0_rgba(0,0,0,0.04)]" : "bg-transparent"
       }`}
+      role="banner"
     >
-      <div className="container flex items-center justify-between h-[66px]">
+      <div className="container flex items-center justify-between h-[64px] sm:h-[66px]">
         <a href="#" className="flex items-center" aria-label="Vigorant home">
-          <img src={logoHorizontal} alt="Vigorant" className="h-8 md:h-9 w-auto" />
+          <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
           {links.map((l) => (
             <a key={l.label} href={l.href}
-              className="text-sm font-medium text-ink-secondary hover:text-brand-deep px-3 py-1.5 rounded-lg hover:bg-brand-purple/5 transition-colors">
+              className="text-sm font-medium text-ink-secondary hover:text-brand-deep px-3 py-2 rounded-lg hover:bg-brand-purple/8 transition-colors">
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <a href="#login" className="hidden md:inline text-sm text-ink-muted hover:text-brand-deep transition-colors">Sign in</a>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a href="#login" className="hidden md:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1">Sign in</a>
           <a href="#audit"
-            className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full">
-            Get Free Audit →
+            className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px]">
+            Get Free Audit <span aria-hidden className="ml-1">→</span>
           </a>
-          <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-brand-deep" aria-label="Menu">
-            {open ? <X size={22} /> : <Menu size={22} />}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 text-brand-deep min-w-[44px] min-h-[44px] flex items-center justify-center"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+          >
+            {open ? <X aria-hidden size={22} /> : <Menu aria-hidden size={22} />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden glass border-t border-brand-purple/10">
-          <div className="container py-6 flex flex-col gap-4">
-            {links.map((l) => (
-              <a key={l.label} href={l.href} onClick={() => setOpen(false)}
-                className="text-base font-medium text-ink-secondary py-2">{l.label}</a>
-            ))}
-            <a href="#audit" onClick={() => setOpen(false)}
-              className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center">
-              Get Free Audit →
+      <div
+        id="mobile-nav"
+        hidden={!open}
+        className="lg:hidden glass border-t border-brand-purple/15"
+      >
+        <nav aria-label="Primary mobile" className="container py-6 flex flex-col gap-1">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-base font-medium text-ink-secondary py-3 px-2 rounded-lg hover:bg-brand-purple/8 min-h-[44px] flex items-center"
+            >
+              {l.label}
             </a>
-          </div>
-        </div>
-      )}
+          ))}
+          <a href="#audit" onClick={() => setOpen(false)}
+            className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
+            Get Free Audit <span aria-hidden className="ml-1">→</span>
+          </a>
+        </nav>
+      </div>
     </motion.header>
   );
 }
