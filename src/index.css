@@ -23,7 +23,7 @@
 
     --text-primary: 248 49% 15%;        /* #1b1338 */
     --text-secondary: 252 44% 33%;      /* #3d2f7a */
-    --text-muted: 249 24% 56%;          /* #7a72a8 */
+    --text-muted: 249 24% 42%;          /* WCAG AA on white (4.5:1) */
 
     --card: 0 0% 100%;
     --card-foreground: 248 49% 15%;
