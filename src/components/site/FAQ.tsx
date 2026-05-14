@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Plus } from "lucide-react";
 
@@ -31,6 +31,7 @@ export const FAQS = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
+  const baseId = useId();
   return (
     <Section id="faq" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
@@ -38,24 +39,39 @@ export default function FAQ() {
         <H2>Questions Practice Owners Ask Before Booking an Audit</H2>
       </Reveal>
 
-      <div className="max-w-3xl mx-auto mt-14 space-y-3">
+      <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3" role="list">
         {FAQS.map((f, i) => {
           const isOpen = open === i;
+          const btnId = `${baseId}-q-${i}`;
+          const panelId = `${baseId}-p-${i}`;
           return (
             <Reveal key={f.q} delay={i * 0.04}>
-              <div className="bg-white rounded-xl border border-brand-purple/10 overflow-hidden">
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-start justify-between gap-6 text-left px-6 py-5"
-                  aria-expanded={isOpen}
+              <div className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden" role="listitem">
+                <h3 className="m-0">
+                  <button
+                    id={btnId}
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    className="w-full flex items-start justify-between gap-4 sm:gap-6 text-left px-5 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                  >
+                    <span className="text-[16px] sm:text-[17px] font-semibold text-brand-deep">{f.q}</span>
+                    <Plus
+                      aria-hidden
+                      size={20}
+                      className="text-brand-purple flex-shrink-0 mt-1 transition-transform duration-300"
+                      style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }}
+                    />
+                  </button>
+                </h3>
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={btnId}
+                  hidden={!isOpen}
+                  className="overflow-hidden"
                 >
-                  <span className="text-[17px] font-semibold text-brand-deep">{f.q}</span>
-                  <Plus size={20} className="text-brand-purple flex-shrink-0 mt-1 transition-transform duration-300"
-                    style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }} />
-                </button>
-                <div className="overflow-hidden transition-[max-height] duration-300 ease-out"
-                  style={{ maxHeight: isOpen ? "500px" : "0" }}>
-                  <p className="px-6 pb-6 text-ink-secondary leading-[1.8]">{f.a}</p>
+                  <p className="px-5 sm:px-6 pb-6 text-ink-secondary leading-[1.8]">{f.a}</p>
                 </div>
               </div>
             </Reveal>
