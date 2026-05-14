@@ -65,16 +65,48 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  @media (min-width: 768px) {
+    body { font-size: 17px; line-height: 1.7; }
   }
   h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
   .font-display { font-family: 'Playfair Display', serif; }
   .font-mono-ui { font-family: 'DM Mono', monospace; }
 
-  /* Hide native cursor on devices with fine pointer when custom cursor is active */
+  /* WCAG 2.1 AA: visible focus for keyboard users */
+  :focus-visible {
+    outline: 2px solid hsl(var(--brand-purple));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 10000;
+    background: hsl(var(--brand-deep));
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: top 200ms var(--ease-expo);
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* Min 44x44 tap targets on mobile (WCAG 2.5.5) */
+  @media (pointer: coarse) {
+    a, button, [role="button"] { min-height: 44px; }
+  }
+
+  /* Hide native cursor on devices with fine pointer when custom cursor is active.
+     Re-enable for keyboard focus so users still see where they are. */
   @media (pointer: fine) {
-    body.has-custom-cursor, body.has-custom-cursor * { cursor: none !important; }
+    body.has-custom-cursor, body.has-custom-cursor * { cursor: none; }
+    body.has-custom-cursor *:focus-visible { cursor: auto !important; }
   }
 }
 

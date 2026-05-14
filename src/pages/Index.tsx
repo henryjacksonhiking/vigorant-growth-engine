@@ -18,9 +18,10 @@ import Footer from "@/components/site/Footer";
 const Index = () => (
   <>
     <Seo />
+    <a href="#main" className="skip-link">Skip to main content</a>
     <GlobalFx />
     <Nav />
-    <main>
+    <main id="main">
       <Hero />
       <Marquee />
       <Problem />

@@ -11,7 +11,7 @@ interface Props {
 export default function Section({ id, bg = "white", className = "", children }: Props) {
   const bgClass = bg === "secondary" ? "bg-surface-secondary" : bg === "tertiary" ? "bg-surface-tertiary" : "bg-background";
   return (
-    <section id={id} className={`${bgClass} py-28 md:py-36 ${className}`}>
+    <section id={id} className={`${bgClass} py-16 sm:py-20 md:py-28 lg:py-32 ${className}`}>
       <div className="container">{children}</div>
     </section>
   );
@@ -37,7 +37,7 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 export function H2({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <h2 className={`font-extrabold text-brand-deep leading-[1.1] tracking-tight mt-3 ${className}`}
-      style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}>
+      style={{ fontSize: "clamp(28px, 5.5vw, 52px)", letterSpacing: "-0.03em" }}>
       {children}
     </h2>
   );
