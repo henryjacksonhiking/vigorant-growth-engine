@@ -50,7 +50,7 @@ export default function Nav() {
           <a href="#login" className="hidden md:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1">Sign in</a>
           <a href="#audit"
             className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px]">
-            Get Free Audit <span aria-hidden className="ml-1">→</span>
+            Free Growth Audit <span aria-hidden className="ml-1">→</span>
           </a>
           <button
             onClick={() => setOpen(!open)}
@@ -82,7 +82,7 @@ export default function Nav() {
           ))}
           <a href="#audit" onClick={() => setOpen(false)}
             className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
-            Get Free Audit <span aria-hidden className="ml-1">→</span>
+            Free Growth Audit <span aria-hidden className="ml-1">→</span>
           </a>
         </nav>
       </div>
