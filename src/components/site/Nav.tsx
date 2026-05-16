@@ -6,9 +6,9 @@ import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 const links = [
   { label: "Solutions", href: "#specialties" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Results", href: "#results" },
-  { label: "Resources", href: "#faq" },
-  { label: "About", href: "#why" },
+  { label: "Results", href: "#testimonials" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Nav() {
