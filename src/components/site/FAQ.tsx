@@ -21,7 +21,7 @@ export default function FAQ() {
     <Section id="faq" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
         <SectionLabel>Common Questions</SectionLabel>
-        <H2>Questions Practice Owners Ask Before Booking an Audit</H2>
+        <H2>Frequently Asked Questions</H2>
       </Reveal>
 
       <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3" role="list">
