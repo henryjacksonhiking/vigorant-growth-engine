@@ -81,10 +81,10 @@ export default function VideoTestimonials() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {VIDEOS.map((v, i) => (
           <Reveal key={v.practice} delay={i * 0.08}>
-            <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15"
+            <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15 h-full flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <button
                 onClick={() => setOpen(i)}
@@ -106,8 +106,11 @@ export default function VideoTestimonials() {
                 </span>
               </button>
 
-              <div className="p-5 sm:p-6">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col">
                 <p className="text-ink-secondary text-[14px] leading-relaxed">{v.summary}</p>
+                <p className="mt-2 font-mono-ui text-[11px] text-ink-secondary/80">
+                  <span aria-hidden>▶</span> {v.watchTime}
+                </p>
                 <ul className="mt-4 space-y-2">
                   {v.metrics.map((m) => (
                     <li key={m} className="flex items-start gap-2 text-[13px] text-brand-deep">
