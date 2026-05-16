@@ -45,6 +45,18 @@ export default function Difference() {
         </div>
       </Reveal>
 
+      <Reveal delay={0.12} className="max-w-[680px] mx-auto mt-6">
+        <div className="rounded-r-xl px-7 py-6"
+          style={{ background: "linear-gradient(135deg, hsl(247 93% 64% / 0.05), hsl(248 100% 75% / 0.10))", borderLeft: "3px solid hsl(248 100% 75%)" }}>
+          <h2 className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple mb-2 m-0">
+            How Does AI Optimization Help Healthcare Practices?
+          </h2>
+          <p className="text-[16px] text-ink leading-[1.8] italic">
+            AI optimization helps healthcare practices appear more prominently in AI-driven search experiences — including ChatGPT, Gemini, Perplexity, and Google AI Overviews — by improving structured content, semantic relevance, authority signals, and answer-focused website architecture. As patients increasingly use AI tools to find providers, practices optimized for AI visibility gain a measurable edge over competitors who rely solely on traditional SEO.
+          </p>
+        </div>
+      </Reveal>
+
       <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16">
         <Reveal>
           <div className="rounded-2xl bg-white border border-black/5 p-7">

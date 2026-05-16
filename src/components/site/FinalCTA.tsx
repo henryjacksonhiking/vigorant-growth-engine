@@ -9,8 +9,9 @@ const offers = [
 
 export default function FinalCTA() {
   return (
-    <section id="audit" className="relative overflow-hidden flex items-center justify-center"
+    <section id="contact" className="relative overflow-hidden flex items-center justify-center"
       style={{ minHeight: 520, background: "linear-gradient(160deg, hsl(248 49% 15%) 0%, hsl(252 44% 33%) 45%, hsl(248 49% 12%) 100%)" }}>
+      <a id="audit" aria-hidden className="absolute" />
       <div aria-hidden className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
       <div aria-hidden className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full pointer-events-none"
