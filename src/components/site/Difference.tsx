@@ -57,6 +57,7 @@ export default function Difference() {
         </div>
       </Reveal>
 
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16">
         <Reveal>
           <div className="rounded-2xl bg-white border border-black/5 p-7">
             <div className="font-bold text-ink-secondary mb-4">Traditional Agency</div>
