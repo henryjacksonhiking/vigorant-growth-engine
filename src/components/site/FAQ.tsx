@@ -3,30 +3,15 @@ import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Plus } from "lucide-react";
 
 export const FAQS = [
-  {
-    q: "What is a patient acquisition system and how is it different from a marketing agency?",
-    a: "A patient acquisition system is a structured, repeatable marketing framework that combines AI-driven search optimization, paid advertising, and data attribution to generate a predictable flow of new patients for healthcare practices — as opposed to disconnected marketing services managed separately.",
-  },
-  {
-    q: "How long does it take to see new patients from digital marketing?",
-    a: "Most practices see measurable new patient growth within 30–60 days from paid advertising campaigns and 90–180 days from SEO. The exact timeline depends on your market competitiveness, current website performance, and specialty. Vigorant provides a free practice audit to estimate your specific timeline.",
-  },
-  {
-    q: "Does Vigorant work with dental, chiropractic, and medical practices?",
-    a: "Yes. Vigorant specializes exclusively in healthcare practices across three verticals: dental (general, cosmetic, orthodontic, pediatric), chiropractic (PI, wellness, sports), and medical (independent physicians and specialty clinics).",
-  },
-  {
-    q: "How does AI improve healthcare marketing results?",
-    a: "Our AI monitors search rankings and patient call data daily, automatically identifying which keywords, ads, and content are driving booked appointments — and reallocating budget in real time rather than waiting for monthly reviews.",
-  },
-  {
-    q: "How much does healthcare digital marketing cost?",
-    a: "Most practices invest between $2,000 and $8,000 per month depending on specialty, practice size, competitive market, and services required. Our free growth audit gives you an exact recommendation based on your specific goals — no generic packages.",
-  },
-  {
-    q: "What makes Vigorant different from other healthcare marketing agencies?",
-    a: "Three things: we serve only healthcare practices, we use AI-driven optimization that adjusts daily rather than monthly, and we measure success exclusively by patient acquisition outcomes — not vanity metrics like impressions or clicks.",
-  },
+  { q: "What makes healthcare SEO different from regular SEO?", a: "Healthcare SEO requires compliance awareness, local search dominance, and content strategies built around patient intent — not just keyword rankings. Vigorant specializes exclusively in healthcare, so our strategies are designed for the specific way patients search for providers." },
+  { q: "How does AI optimization help dental and medical practices?", a: "AI optimization — also called AIO or GEO — helps your practice appear in AI-generated search results from tools like ChatGPT, Gemini, Perplexity, and Google AI Overviews. As more patients use these tools to find providers, being visible in AI answers is becoming as important as traditional Google rankings." },
+  { q: "What is GEO and why does it matter for my practice?", a: "Generative Engine Optimization (GEO) is the practice of structuring your website content so that AI models can extract, understand, and cite it in their answers. Practices that invest in GEO now are building a significant long-term visibility advantage." },
+  { q: "How long does dental SEO typically take to show results?", a: "Most practices see meaningful ranking improvements within 60–90 days, with significant lead generation improvements by month 4–6. Paid ads can deliver results within the first 30 days while organic SEO builds." },
+  { q: "What marketing channels work best for dentists?", a: "The highest-ROI channels for dental practices are typically Google Local Services Ads, Google Maps optimization, organic SEO for high-intent procedures, and retargeting. The right mix depends on your specialty, market size, and growth goals." },
+  { q: "Do you work with multi-location practices?", a: "Yes. We manage marketing for practices with 3 to 50+ locations. Our centralized dashboard gives you full visibility across all locations while allowing location-specific campaign optimization." },
+  { q: "How does Vigorant improve website conversion rates?", a: "We analyze your existing patient journey and identify where visitors are dropping off. We then apply conversion rate optimization (CRO) including landing page restructuring, CTA testing, form optimization, and trust-signal improvements to increase the percentage of visitors who book appointments." },
+  { q: "What platforms do you optimize for beyond Google?", a: "We optimize for Google Search, Google Maps, Bing, ChatGPT, Perplexity, Gemini, Google AI Overviews, Yelp, Healthgrades, and Zocdoc — covering the full spectrum of where patients discover providers today." },
+  { q: "What does a typical engagement with Vigorant look like?", a: "We start with a free Practice Growth Audit to identify your biggest opportunities. From there, we build a custom strategy, onboard your accounts, and begin execution within 2 weeks. You receive monthly reporting through our live analytics dashboard." },
 ];
 
 export default function FAQ() {
