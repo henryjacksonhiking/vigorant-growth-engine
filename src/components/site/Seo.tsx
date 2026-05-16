@@ -43,6 +43,28 @@ export default function Seo() {
     name: "Vigorant",
     url: "https://vigorant.com",
     description: "AI-driven patient acquisition and healthcare marketing for dental, chiropractic, and medical practices.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://vigorant.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Healthcare Marketing Services",
+    provider: { "@type": "Organization", name: "Vigorant" },
+    areaServed: "United States",
+    description: "AI-driven SEO, paid advertising, conversion optimization, and patient acquisition systems for dental, chiropractic, and medical practices.",
+    offers: { "@type": "Offer", name: "Free Practice Growth Audit", price: "0", priceCurrency: "USD" },
+  };
+
+  const aggregateRating = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Vigorant",
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "87" },
   };
 
   return (
@@ -60,6 +82,8 @@ export default function Seo() {
       <script type="application/ld+json">{JSON.stringify(faqPage)}</script>
       <script type="application/ld+json">{JSON.stringify(howTo)}</script>
       <script type="application/ld+json">{JSON.stringify(website)}</script>
+      <script type="application/ld+json">{JSON.stringify(service)}</script>
+      <script type="application/ld+json">{JSON.stringify(aggregateRating)}</script>
     </Helmet>
   );
 }
