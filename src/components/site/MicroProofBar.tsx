@@ -2,11 +2,11 @@ import { Counter } from "./GlobalFx";
 import { Reveal } from "./Section";
 
 const metrics = [
-  { value: 100, suffix: "+", label: "Healthcare Practices Served" },
-  { value: 250, suffix: "+", label: "Locations Managed" },
-  { value: 3.8, suffix: " Yrs", label: "Avg. Client Retention", decimals: 1 },
-  { value: 250, suffix: "k+", prefix: "$", label: "Monthly Ad Spend Managed" },
-  { value: 500, suffix: "+", label: "AI Visibility Optimizations" },
+  { value: 100, suffix: "+", label: "Healthcare Practices Served", sub: "Dental, Medical & Chiro" },
+  { value: 250, suffix: "+", label: "Locations Managed", sub: "Across the U.S." },
+  { value: 3.8, suffix: " Yrs", label: "Avg. Client Retention", decimals: 1, sub: "Industry avg: 1.2 years" },
+  { value: 250, suffix: "k+", prefix: "$", label: "Monthly Ad Spend Managed", sub: "Google, Meta & More" },
+  { value: 500, suffix: "+", label: "AI Visibility Wins", sub: "AI Overview Citations" },
 ];
 
 export default function MicroProofBar() {
@@ -38,13 +38,17 @@ export default function MicroProofBar() {
                     duration={1600}
                   />
                 </div>
-                <div className="mt-2 font-mono-ui text-[11px] sm:text-[12px] uppercase tracking-[0.12em] text-white/70 px-2">
+                <div className="mt-2 font-mono-ui text-[11px] sm:text-[12px] uppercase tracking-[0.12em] text-white/80 px-2">
                   {m.label}
                 </div>
+                <div className="mt-1 text-[11px] text-white/55 px-2">{m.sub}</div>
               </dd>
             </Reveal>
           ))}
         </dl>
+        <p className="mt-10 text-center text-white/70 text-[13px] sm:text-[14px]">
+          Trusted by independent practices and multi-location groups across the United States
+        </p>
       </div>
     </section>
   );

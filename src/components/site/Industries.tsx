@@ -1,5 +1,5 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { Stethoscope, HeartPulse, Activity, Building2, ArrowRight } from "lucide-react";
+import { Stethoscope, HeartPulse, Activity, Building2, Scissors, ArrowRight } from "lucide-react";
 
 const industries = [
   {
@@ -21,6 +21,12 @@ const industries = [
     body: "Local visibility and lead generation tailored to chiropractic practices.",
   },
   {
+    icon: Scissors,
+    title: "Oral Surgery & Specialists",
+    href: "/oral-surgery-marketing",
+    body: "Targeted marketing for oral surgeons, periodontists, endodontists, and specialty dental practices.",
+  },
+  {
     icon: Building2,
     title: "Multi-Location Healthcare",
     href: "/multi-location",
@@ -33,13 +39,13 @@ export default function Industries() {
     <Section id="industries" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
         <SectionLabel>Industries</SectionLabel>
-        <H2>Industries We Serve</H2>
+        <H2>Local SEO for Dentists, Chiropractors, and Medical Practices</H2>
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px]">
           Specialized marketing for every corner of healthcare.
         </p>
       </Reveal>
 
-      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
         {industries.map((it, i) => (
           <Reveal key={it.title} delay={i * 0.06}>
             <a
@@ -63,6 +69,16 @@ export default function Industries() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-12 max-w-3xl mx-auto text-center">
+        <p className="text-ink-secondary text-[15px] sm:text-[16px] leading-[1.8]">
+          Vigorant is a specialized healthcare marketing agency serving dental practices, medical clinics,
+          chiropractic offices, and multi-location healthcare groups across the United States. Whether you
+          are an independent dentist looking for dental SEO, a medical practice investing in local search
+          visibility, or a growing DSO managing paid ads across multiple locations, our team builds custom
+          growth strategies rooted in data, AI optimization, and deep healthcare expertise.
+        </p>
+      </Reveal>
     </Section>
   );
 }

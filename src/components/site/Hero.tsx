@@ -32,15 +32,15 @@ export default function Hero() {
             style={{ fontSize: "clamp(36px, 8vw, 82px)", letterSpacing: "-0.03em" }}
           >
             <Line delay={0.4}>More Patients.</Line>
-            <Line delay={0.55}>Predictable Growth.</Line>
-            <Line delay={0.7}><span className="gradient-text">Powered by AI.</span></Line>
+            <Line delay={0.55}>More Revenue.</Line>
+            <Line delay={0.7}><span className="gradient-text">Less Guesswork.</span></Line>
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.05 }}
-            className="mt-6 sm:mt-7 text-base sm:text-[18px] text-ink-secondary max-w-[490px] leading-[1.7]"
+            className="mt-6 sm:mt-7 text-base sm:text-[18px] text-ink-secondary max-w-[560px] leading-[1.7]"
           >
-            We help dental, chiropractic, and medical practices attract more patients through AI-driven SEO, paid advertising, and conversion-focused websites. No guesswork. No long-term contracts.
+            Vigorant helps dental, medical, and chiropractic practices dominate local search, run profitable paid ads, and convert more website visitors into booked appointments — powered by AI and built specifically for healthcare.
           </motion.p>
 
           <motion.div
@@ -51,15 +51,35 @@ export default function Hero() {
               href="#audit"
               className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]"
             >
-              Get Your Free Practice Audit <ArrowRight aria-hidden size={18} />
+              Request Your Free Growth Audit <ArrowRight aria-hidden size={18} />
             </a>
             <a
-              href="#how-it-works"
-              className="btn-secondary-outline inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-medium min-h-[48px]"
+              href="#testimonials"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 font-semibold text-brand-purple hover:text-brand-deep transition-colors min-h-[44px]"
             >
-              See How It Works <span aria-hidden>→</span>
+              See Client Results <span aria-hidden>→</span>
             </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.3 }}
+            className="mt-3 text-[13px] text-ink-secondary"
+          >
+            No long-term contracts. No setup fees. Results-first approach.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.35 }}
+            className="mt-5 text-[12px] sm:text-[13px] text-ink-secondary font-mono-ui"
+            aria-label="Vigorant services"
+          >
+            SEO <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
+            AI Visibility <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
+            Paid Ads <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
+            Website Design <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
+            Automation <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
+            Analytics
+          </motion.p>
 
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}

@@ -41,6 +41,15 @@ export default function Testimonials() {
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px]">
           Real results from real healthcare practices across the country.
         </p>
+        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 text-[14px]" aria-label="Aggregate rating 4.9 out of 5 based on 87 reviews">
+          <span aria-hidden className="flex items-center gap-0.5">
+            {Array.from({ length: 5 }).map((_, k) => (
+              <Star key={k} size={16} className="text-brand-purple fill-brand-purple" />
+            ))}
+          </span>
+          <span className="font-bold text-brand-deep">4.9 out of 5</span>
+          <span className="text-ink-secondary">· Based on 87 client reviews</span>
+        </div>
       </Reveal>
 
       <div role="tablist" aria-label="Filter testimonials by specialty" className="mt-10 flex flex-wrap justify-center gap-2">
@@ -68,7 +77,7 @@ export default function Testimonials() {
         {filtered.map((t, i) => (
           <Reveal key={t.practice} delay={i * 0.05}>
             <article
-              className="h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col"
+              className="relative h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <header className="flex items-center gap-3">
@@ -106,13 +115,37 @@ export default function Testimonials() {
                 “{t.emotion}”
               </p>
 
-              <span className="mt-5 inline-flex self-start font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
-                {t.category}
-              </span>
+              <div className="mt-5 flex items-center justify-between gap-2 flex-wrap">
+                <span className="inline-flex font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
+                  {t.category}
+                </span>
+                <span className="inline-flex items-center gap-1 font-mono-ui text-[10px] uppercase tracking-[0.08em] text-brand-purple bg-brand-purple/12 border border-brand-purple/25 px-2 py-1 rounded-full">
+                  <span aria-hidden>✓</span> Verified Client
+                </span>
+              </div>
             </article>
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-16">
+        <h3 className="text-center font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple">
+          Practices That Trust Vigorant
+        </h3>
+        <div className="mt-5 overflow-x-auto -mx-4 px-4">
+          <ul className="flex items-center gap-4 justify-start md:justify-center min-w-max list-none p-0">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <li
+                key={i}
+                aria-label={`Client logo placeholder ${i + 1}`}
+                className="w-[120px] h-[40px] rounded-md bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center font-mono-ui text-[10px] uppercase tracking-[0.12em] text-ink-secondary/70"
+              >
+                Client Logo
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
     </Section>
   );
 }

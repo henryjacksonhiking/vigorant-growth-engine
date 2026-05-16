@@ -7,6 +7,7 @@ interface VideoCard {
   practice: string;
   overlay: string;
   summary: string;
+  watchTime: string;
   metrics: string[];
   embed: string;
 }
@@ -17,6 +18,7 @@ const VIDEOS: VideoCard[] = [
     practice: "Noble Dental Care",
     overlay: "More Implant Cases",
     summary: "How Noble Dental Care improved local visibility and patient acquisition with Vigorant.",
+    watchTime: "2:14 min",
     metrics: ["+58% organic traffic", "+41% appointment calls", "Lower Google Ads CPL"],
     embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
@@ -25,6 +27,7 @@ const VIDEOS: VideoCard[] = [
     practice: "Peak Performance Chiropractic",
     overlay: "Best SEO Results We've Had",
     summary: "How Peak Performance Chiropractic went from invisible to top 3 in local search.",
+    watchTime: "1:58 min",
     metrics: ["+72% organic visibility", "+38% conversion rate", "51 new monthly leads"],
     embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
@@ -33,7 +36,17 @@ const VIDEOS: VideoCard[] = [
     practice: "Harmony Wellness Center",
     overlay: "Finally Understand Our Marketing",
     summary: "How Harmony Wellness Center rebuilt their patient acquisition from the ground up.",
+    watchTime: "2:42 min",
     metrics: ["3x website conversions", "2.8x ROAS", "Reduced CPL by 62%"],
+    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
+  {
+    doctor: "Dr. Bennett",
+    practice: "Bright Smile Dentistry",
+    overlay: "Consistent New Patients",
+    summary: "How Bright Smile Dentistry scaled patient volume by combining SEO with conversion rate optimization.",
+    watchTime: "2:34 min",
+    metrics: ["+51% new patient calls", "3x website conversions", "Top 3 local rankings"],
     embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 ];
@@ -68,10 +81,10 @@ export default function VideoTestimonials() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {VIDEOS.map((v, i) => (
           <Reveal key={v.practice} delay={i * 0.08}>
-            <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15"
+            <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15 h-full flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <button
                 onClick={() => setOpen(i)}
@@ -93,8 +106,11 @@ export default function VideoTestimonials() {
                 </span>
               </button>
 
-              <div className="p-5 sm:p-6">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col">
                 <p className="text-ink-secondary text-[14px] leading-relaxed">{v.summary}</p>
+                <p className="mt-2 font-mono-ui text-[11px] text-ink-secondary/80">
+                  <span aria-hidden>▶</span> {v.watchTime}
+                </p>
                 <ul className="mt-4 space-y-2">
                   {v.metrics.map((m) => (
                     <li key={m} className="flex items-start gap-2 text-[13px] text-brand-deep">

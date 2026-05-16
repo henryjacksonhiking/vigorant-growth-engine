@@ -12,6 +12,9 @@ export const FAQS = [
   { q: "How does Vigorant improve website conversion rates?", a: "We analyze your existing patient journey and identify where visitors are dropping off. We then apply conversion rate optimization (CRO) including landing page restructuring, CTA testing, form optimization, and trust-signal improvements to increase the percentage of visitors who book appointments." },
   { q: "What platforms do you optimize for beyond Google?", a: "We optimize for Google Search, Google Maps, Bing, ChatGPT, Perplexity, Gemini, Google AI Overviews, Yelp, Healthgrades, and Zocdoc — covering the full spectrum of where patients discover providers today." },
   { q: "What does a typical engagement with Vigorant look like?", a: "We start with a free Practice Growth Audit to identify your biggest opportunities. From there, we build a custom strategy, onboard your accounts, and begin execution within 2 weeks. You receive monthly reporting through our live analytics dashboard." },
+  { q: "What does a typical Vigorant onboarding look like?", a: "After your free Growth Audit, we build a custom 90-day strategy. Onboarding takes 5–7 business days: we connect your ad accounts, set up analytics tracking, audit your existing content, and assign you a dedicated strategist. You'll have live dashboard access before we launch a single campaign." },
+  { q: "How is Vigorant different from other healthcare marketing agencies?", a: "Most agencies serve every industry and apply generic strategies. Vigorant is healthcare-exclusive — our team understands HIPAA considerations, patient decision psychology, healthcare-specific keyword intent, and the compliance nuances that general agencies miss. We also combine traditional SEO with AI visibility optimization, which most agencies don't yet offer." },
+  { q: "Do you offer month-to-month contracts?", a: "Yes. We offer month-to-month engagements for most services. We believe in earning your business through results, not locking you into a long-term contract. Most clients stay with us for 3+ years — not because they have to, but because the results speak for themselves." },
 ];
 
 export default function FAQ() {
@@ -20,8 +23,11 @@ export default function FAQ() {
   return (
     <Section id="faq" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
-        <SectionLabel>Common Questions</SectionLabel>
-        <H2>Frequently Asked Questions</H2>
+        <SectionLabel>FAQ</SectionLabel>
+        <H2>Everything You Want to Know Before Working With Us</H2>
+        <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] italic">
+          Honest answers to the questions we hear most often.
+        </p>
       </Reveal>
 
       <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3" role="list">
