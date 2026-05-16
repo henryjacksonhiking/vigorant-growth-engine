@@ -4,10 +4,11 @@ import { Menu, X } from "lucide-react";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
 const links = [
-  { label: "Solutions", href: "#specialties" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Solutions", href: "#what-we-do" },
+  { label: "How It Works", href: "#process" },
   { label: "Results", href: "#testimonials" },
   { label: "Case Studies", href: "#case-studies" },
+  { label: "Resources", href: "#" },
   { label: "FAQ", href: "#faq" },
 ];
 
