@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
-const links = [
-  { label: "Solutions", href: "#what-we-do" },
-  { label: "How It Works", href: "#process" },
-  { label: "Results", href: "#testimonials" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Resources", href: "#" },
-  { label: "FAQ", href: "#faq" },
+type NavLink = { label: string; href: string; route?: boolean };
+
+const links: NavLink[] = [
+  { label: "Solutions", href: "/#what-we-do" },
+  { label: "For Practices", href: "/for-practices", route: true },
+  { label: "How It Works", href: "/#process" },
+  { label: "Results", href: "/#testimonials" },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Nav() {
