@@ -34,14 +34,6 @@ function ChipLabel({ children, dark = false }: { children: React.ReactNode; dark
   );
 }
 
-function H2({ children, white = false, className = "" }: { children: React.ReactNode; white?: boolean; className?: string }) {
-  return (
-    <h2 className={`font-extrabold leading-[1.1] tracking-tight mt-4 ${white ? "text-white" : "text-brand-deep"} ${className}`}
-      style={{ fontSize: "clamp(28px, 5.2vw, 50px)", letterSpacing: "-0.03em" }}>
-      {children}
-    </h2>
-  );
-}
 
 /* ---------- SEO ---------- */
 function ForPracticesSeo() {
