@@ -1,20 +1,33 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
-const links = [
-  { label: "Solutions", href: "#what-we-do" },
-  { label: "How It Works", href: "#process" },
-  { label: "Results", href: "#testimonials" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Resources", href: "#" },
-  { label: "FAQ", href: "#faq" },
+type NavLink = { label: string; href: string; route?: boolean };
+
+const links: NavLink[] = [
+  { label: "Solutions", href: "/#what-we-do" },
+  { label: "For Practices", href: "/for-practices", route: true },
+  { label: "How It Works", href: "/#process" },
+  { label: "Results", href: "/#testimonials" },
+  { label: "Case Studies", href: "/#case-studies" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isActive = (l: NavLink) => l.route && pathname === l.href;
+  const renderLink = (l: NavLink, cls: string, onClick?: () => void) =>
+    l.route ? (
+      <Link key={l.label} to={l.href} onClick={onClick} className={cls} aria-current={isActive(l) ? "page" : undefined}>
+        {l.label}
+      </Link>
+    ) : (
+      <a key={l.label} href={l.href} onClick={onClick} className={cls}>{l.label}</a>
+    );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -33,17 +46,21 @@ export default function Nav() {
       role="banner"
     >
       <div className="container flex items-center justify-between h-[64px] sm:h-[66px]">
-        <a href="#" className="flex items-center" aria-label="Vigorant home">
+        <a href="/" className="flex items-center" aria-label="Vigorant home">
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
-          {links.map((l) => (
-            <a key={l.label} href={l.href}
-              className="text-sm font-medium text-ink-secondary hover:text-brand-deep px-3 py-2 rounded-lg hover:bg-brand-purple/8 transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            renderLink(
+              l,
+              `text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                isActive(l)
+                  ? "text-brand-purple bg-brand-purple/10"
+                  : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+              }`
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -70,16 +87,17 @@ export default function Nav() {
         className="lg:hidden glass border-t border-brand-purple/15"
       >
         <nav aria-label="Primary mobile" className="container py-6 flex flex-col gap-1">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-base font-medium text-ink-secondary py-3 px-2 rounded-lg hover:bg-brand-purple/8 min-h-[44px] flex items-center"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            renderLink(
+              l,
+              `text-base font-medium py-3 px-2 rounded-lg min-h-[44px] flex items-center ${
+                isActive(l)
+                  ? "text-brand-purple bg-brand-purple/10"
+                  : "text-ink-secondary hover:bg-brand-purple/8"
+              }`,
+              () => setOpen(false)
+            )
+          )}
           <a href="#audit" onClick={() => setOpen(false)}
             className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
             Free Growth Audit <span aria-hidden className="ml-1">→</span>
