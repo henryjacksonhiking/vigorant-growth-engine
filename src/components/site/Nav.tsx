@@ -87,16 +87,17 @@ export default function Nav() {
         className="lg:hidden glass border-t border-brand-purple/15"
       >
         <nav aria-label="Primary mobile" className="container py-6 flex flex-col gap-1">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-base font-medium text-ink-secondary py-3 px-2 rounded-lg hover:bg-brand-purple/8 min-h-[44px] flex items-center"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            renderLink(
+              l,
+              `text-base font-medium py-3 px-2 rounded-lg min-h-[44px] flex items-center ${
+                isActive(l)
+                  ? "text-brand-purple bg-brand-purple/10"
+                  : "text-ink-secondary hover:bg-brand-purple/8"
+              }`,
+              () => setOpen(false)
+            )
+          )}
           <a href="#audit" onClick={() => setOpen(false)}
             className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
             Free Growth Audit <span aria-hidden className="ml-1">→</span>
