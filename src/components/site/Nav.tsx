@@ -18,6 +18,16 @@ const links: NavLink[] = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isActive = (l: NavLink) => l.route && pathname === l.href;
+  const renderLink = (l: NavLink, cls: string, onClick?: () => void) =>
+    l.route ? (
+      <Link key={l.label} to={l.href} onClick={onClick} className={cls} aria-current={isActive(l) ? "page" : undefined}>
+        {l.label}
+      </Link>
+    ) : (
+      <a key={l.label} href={l.href} onClick={onClick} className={cls}>{l.label}</a>
+    );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
