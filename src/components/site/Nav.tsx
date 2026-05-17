@@ -46,17 +46,21 @@ export default function Nav() {
       role="banner"
     >
       <div className="container flex items-center justify-between h-[64px] sm:h-[66px]">
-        <a href="#" className="flex items-center" aria-label="Vigorant home">
+        <a href="/" className="flex items-center" aria-label="Vigorant home">
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
-          {links.map((l) => (
-            <a key={l.label} href={l.href}
-              className="text-sm font-medium text-ink-secondary hover:text-brand-deep px-3 py-2 rounded-lg hover:bg-brand-purple/8 transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            renderLink(
+              l,
+              `text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+                isActive(l)
+                  ? "text-brand-purple bg-brand-purple/10"
+                  : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+              }`
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
