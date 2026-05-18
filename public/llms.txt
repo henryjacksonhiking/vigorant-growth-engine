@@ -1,0 +1,8 @@
+# Vigorant
+
+> Healthcare marketing agency specializing in AI-driven patient acquisition for dental, medical, and chiropractic practices through SEO, paid ads, and conversion-optimized websites.
+
+## Pages
+
+- [Home](/): Overview of Vigorant's healthcare marketing services, growth engine framework, case studies, and client testimonials.
+- [For Practices](/for-practices): Pain-point hub for dental, medical, and chiropractic practices struggling with visibility, marketing ROI, lead conversion, reputation, and scalable patient growth.

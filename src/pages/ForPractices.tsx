@@ -82,7 +82,7 @@ function ForPracticesSeo() {
   };
   return (
     <Helmet>
-      <title>Healthcare Practice Growth Problems? Get More Patients | Vigorant</title>
+      <title>Get More Patients for Your Practice | Vigorant</title>
       <meta name="description" content="Struggling to get more patients? Vigorant helps dental, medical, and chiropractic practices improve visibility, ROI, and lead conversion with AI-driven marketing." />
       <link rel="canonical" href="https://vigorant.com/for-practices" />
       <meta property="og:title" content="For Practices That Need More Predictable Growth | Vigorant" />
