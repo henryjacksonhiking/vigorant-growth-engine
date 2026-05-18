@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import ForPractices from "./pages/ForPractices.tsx";
+import Solutions from "./pages/Solutions.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/for-practices" element={<ForPractices />} />
+            <Route path="/solutions" element={<Solutions />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
