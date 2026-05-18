@@ -7,7 +7,7 @@ import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 type NavLink = { label: string; href: string; route?: boolean };
 
 const links: NavLink[] = [
-  { label: "Solutions", href: "/#what-we-do" },
+  { label: "Solutions", href: "/solutions", route: true },
   { label: "For Practices", href: "/for-practices", route: true },
   { label: "How It Works", href: "/#process" },
   { label: "Results", href: "/#testimonials" },
