@@ -25,14 +25,8 @@ export default function Seo() {
     name: "Vigorant",
     image: "https://vigorant.com/logo.png",
     url: "https://vigorant.com",
-    telephone: "+18000000000",
     email: "hello@vigorant.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "City",
-      addressRegion: "State",
-      addressCountry: "US",
-    },
+    areaServed: "United States",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
@@ -90,10 +84,10 @@ export default function Seo() {
 
   return (
     <Helmet>
-      <title>Healthcare Marketing Agency | Dental, Medical & Chiropractic SEO | Vigorant</title>
-      <meta name="description" content="Vigorant is a healthcare marketing agency specializing in dental SEO, AI visibility, paid ads, and patient acquisition for dental, medical, and chiropractic practices. Get your free growth audit today." />
+      <title>Healthcare Marketing Agency for Practices | Vigorant</title>
+      <meta name="description" content="AI-driven SEO, paid ads, and conversion websites for dental, medical, and chiropractic practices. Get your free practice growth audit." />
       <link rel="canonical" href="https://vigorant.com/" />
-      <meta property="og:title" content="Healthcare Marketing Agency | Dental, Medical & Chiropractic SEO | Vigorant" />
+      <meta property="og:title" content="Healthcare Marketing Agency for Practices | Vigorant" />
       <meta property="og:description" content="More patients. More revenue. Less guesswork. Predictable patient growth systems for healthcare practices — free growth audit included." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://vigorant.com/" />
