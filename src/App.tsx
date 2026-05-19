@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import ForPractices from "./pages/ForPractices.tsx";
+import MoreNewPatients from "./pages/MoreNewPatients.tsx";
 import Solutions from "./pages/Solutions.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
