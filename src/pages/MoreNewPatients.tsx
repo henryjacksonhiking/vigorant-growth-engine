@@ -12,7 +12,7 @@ import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
-const CANONICAL = "https://vigorant-growth-engine.lovable.app/for-practices/more-new-patients";
+const CANONICAL = "https://vigorant.com/for-practices/more-new-patients";
 
 /* ---------- atoms ---------- */
 function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
