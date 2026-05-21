@@ -8,6 +8,11 @@ import Index from "./pages/Index.tsx";
 import ForPractices from "./pages/ForPractices.tsx";
 import MoreNewPatients from "./pages/MoreNewPatients.tsx";
 import Solutions from "./pages/Solutions.tsx";
+import Services from "./pages/Services.tsx";
+import HowItWorks from "./pages/HowItWorks.tsx";
+import Results from "./pages/Results.tsx";
+import Resources from "./pages/Resources.tsx";
+import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -24,6 +29,11 @@ const App = () => (
             <Route path="/for-practices" element={<ForPractices />} />
             <Route path="/for-practices/more-new-patients" element={<MoreNewPatients />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/results" element={<Results />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
