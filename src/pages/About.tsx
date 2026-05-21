@@ -90,7 +90,7 @@ function AboutSeo() {
   return (
     <Helmet>
       <title>About Vigorant | Healthcare Growth System for Practices</title>
-      <meta name="description" content="Vigorant is a healthcare-only marketing agency building integrated patient acquisition systems for dental, medical, and chiropractic practices. Meet the founder, mission, and team." />
+      <meta name="description" content="Healthcare-only marketing agency building patient acquisition systems for dental, medical, and chiropractic practices." />
       <link rel="canonical" href="/about" />
       <meta property="og:title" content="About Vigorant — Healthcare Growth System" />
       <meta property="og:description" content="The team, mission, and growth engine behind Vigorant." />
