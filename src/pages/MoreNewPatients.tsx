@@ -129,8 +129,8 @@ function MnpSeo() {
   };
   return (
     <Helmet>
-      <title>Get More New Patients Online | Healthcare Patient Acquisition | Vigorant</title>
-      <meta name="description" content="Great care should not go unseen. Vigorant helps dental, medical, and chiropractic practices turn online visibility, ads, SEO, and websites into more booked new patients. Get a free growth audit." />
+      <title>Get More New Patients Online | Vigorant</title>
+      <meta name="description" content="Turn online visibility, SEO, and ads into booked new patients for dental, medical, and chiropractic practices. Free growth audit." />
       <link rel="canonical" href={CANONICAL} />
       <meta property="og:title" content="Getting More New Patients Online for Healthcare Practices" />
       <meta property="og:description" content="If your practice provides excellent care but online marketing is not producing enough new patients, Vigorant identifies where visibility, ads, SEO, website conversion, and follow-up are breaking down." />
