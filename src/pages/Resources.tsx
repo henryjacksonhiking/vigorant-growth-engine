@@ -18,7 +18,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useTilt();
+  const ref = useTilt() as React.RefObject<HTMLDivElement>;
   return <div ref={ref} className={className}>{children}</div>;
 }
 

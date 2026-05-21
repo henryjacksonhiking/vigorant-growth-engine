@@ -18,7 +18,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useTilt();
+  const ref = useTilt() as React.RefObject<HTMLDivElement>;
   return <div ref={ref} className={className}>{children}</div>;
 }
 
@@ -162,7 +162,7 @@ export default function Results() {
                 ].map(m => (
                   <div key={m.h} className="rounded-2xl bg-white/5 border border-white/15 p-5 backdrop-blur">
                     <div className="text-3xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
-                      <Counter end={m.n} decimals={m.d ?? 0} suffix={m.suf} />
+                      <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
                     </div>
                     <p className="mt-1 text-white/70 text-sm">{m.h}</p>
                   </div>
@@ -243,7 +243,7 @@ export default function Results() {
                   <div className="rounded-2xl bg-white/5 border border-white/15 p-6 backdrop-blur text-center">
                     <c.icon aria-hidden size={26} className="mx-auto text-brand-lavender" />
                     <div className="mt-4 text-4xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
-                      <Counter end={c.n} decimals={c.d ?? 0} suffix={c.suf} />
+                      <Counter to={c.n} decimals={c.d ?? 0} suffix={c.suf} />
                     </div>
                     <p className="mt-2 font-bold">{c.h}</p>
                     <p className="text-sm text-white/70">{c.b}</p>

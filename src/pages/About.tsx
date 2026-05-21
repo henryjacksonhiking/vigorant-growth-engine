@@ -106,7 +106,7 @@ function AboutSeo() {
 }
 
 function TiltCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const ref = useTilt();
+  const ref = useTilt() as React.RefObject<HTMLDivElement>;
   return <div ref={ref} className={className}>{children}</div>;
 }
 
@@ -346,7 +346,7 @@ export default function About() {
                 <Reveal key={m.h} delay={i * 0.05}>
                   <div className="rounded-2xl bg-white border border-brand-purple/12 p-6 text-center">
                     <div className="text-4xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
-                      <Counter end={m.n} decimals={m.d ?? 0} suffix={m.suf} />
+                      <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
                     </div>
                     <p className="mt-2 text-text-secondary text-sm">{m.h}</p>
                   </div>
