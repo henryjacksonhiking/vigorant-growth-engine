@@ -130,26 +130,26 @@ export default function Results() {
       <GlobalFx />
       <Nav />
       <main id="main" className="overflow-x-hidden">
-        {/* HERO (dark — reversed) */}
-        <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 text-white" style={{ background: "var(--gradient-dark)" }}>
-          <div className="absolute inset-0 -z-0 opacity-50" aria-hidden>
-            <div className="absolute top-20 -right-20 w-96 h-96 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-bright) / 0.25)" }} />
-            <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-purple) / 0.22)" }} />
+        {/* HERO */}
+        <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 bg-background">
+          <div className="absolute inset-0 -z-10 opacity-60" aria-hidden>
+            <div className="absolute top-20 -right-20 w-96 h-96 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-purple) / 0.14)" }} />
+            <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-bright) / 0.12)" }} />
           </div>
           <div className="container relative z-10">
-            <nav aria-label="Breadcrumb" className="text-sm text-white/60 mb-6">
-              <Link to="/" className="hover:text-brand-lavender">Home</Link>
+            <nav aria-label="Breadcrumb" className="text-sm text-text-muted mb-6">
+              <Link to="/" className="hover:text-brand-purple">Home</Link>
               <span className="mx-2" aria-hidden>/</span>
-              <span aria-current="page" className="text-white/80">Results</span>
+              <span aria-current="page" className="text-text-secondary">Results</span>
             </nav>
             <Reveal>
-              <span className="section-label-light">Proof, not promises</span>
-              <h1 className="font-display font-bold leading-[1.05] mt-4"
+              <span className="section-label inline-block px-3 py-1 rounded-full bg-brand-purple/8 border border-brand-purple/20">Proof, not promises</span>
+              <h1 className="font-display font-bold text-brand-deep leading-[1.05] mt-4"
                 style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.03em" }}>
                 Real practices.{" "}
                 <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>Real numbers.</span>
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-white/80">
+              <p className="mt-6 max-w-2xl text-lg text-text-secondary">
                 Booked patients, ROAS lift, conversion gains, AI search visibility — the measurable outcomes behind
                 every Vigorant engagement.
               </p>
@@ -160,11 +160,11 @@ export default function Results() {
                   { n: 68, suf: "%", h: "Avg CRO lift" },
                   { n: 92, suf: "%", h: "Client retention" },
                 ].map(m => (
-                  <div key={m.h} className="rounded-2xl bg-white/5 border border-white/15 p-5 backdrop-blur">
+                  <div key={m.h} className="rounded-2xl bg-white border border-black/[0.08] p-5" style={{ boxShadow: "var(--shadow-card)" }}>
                     <div className="text-3xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
                       <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
                     </div>
-                    <p className="mt-1 text-white/70 text-sm">{m.h}</p>
+                    <p className="mt-1 text-text-secondary text-sm">{m.h}</p>
                   </div>
                 ))}
               </div>
