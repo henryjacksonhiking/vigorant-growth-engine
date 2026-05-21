@@ -88,8 +88,8 @@ function ServicesSeo() {
   };
   return (
     <Helmet>
-      <title>Healthcare Marketing Services | SEO, Ads, Web & Reputation | Vigorant</title>
-      <meta name="description" content="An integrated growth engine for healthcare practices: SEO and AI search, paid advertising, website design and CRO, reputation, social, and analytics." />
+      <title>Healthcare Marketing Services | Vigorant</title>
+      <meta name="description" content="Integrated growth for healthcare practices: SEO, AI search, paid ads, website CRO, reputation, and analytics." />
       <link rel="canonical" href="/services" />
       <meta property="og:title" content="Healthcare Marketing Services | Vigorant" />
       <meta property="og:description" content="Integrated growth services for dental, chiropractic, and medical practices." />

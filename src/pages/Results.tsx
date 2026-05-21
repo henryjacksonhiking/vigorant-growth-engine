@@ -105,8 +105,8 @@ function ResultsSeo() {
   };
   return (
     <Helmet>
-      <title>Results & Case Studies | Healthcare Marketing Proof | Vigorant</title>
-      <meta name="description" content="Real outcomes from dental, chiropractic, and medical practices: booked patients, ROAS, conversions, and AI search visibility. The proof behind the Vigorant growth engine." />
+      <title>Results & Case Studies | Vigorant</title>
+      <meta name="description" content="Real outcomes from dental, chiropractic, and medical practices: booked patients, ROAS, conversions, and AI search wins." />
       <link rel="canonical" href="/results" />
       <meta property="og:title" content="Results & Case Studies | Vigorant" />
       <meta property="og:description" content="Real numbers from real practices." />

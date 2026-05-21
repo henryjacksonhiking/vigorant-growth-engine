@@ -98,7 +98,7 @@ function SolutionsSeo() {
   return (
     <Helmet>
       <title>Healthcare Marketing Solutions by Specialty | Vigorant</title>
-      <meta name="description" content="Specialty-specific marketing for dental, medical, and chiropractic practices. SEO, AI visibility, paid ads, and conversion websites built for patient acquisition." />
+      <meta name="description" content="Specialty marketing for dental, medical, and chiropractic practices: SEO, AI visibility, paid ads, and conversion websites." />
       <link rel="canonical" href={`${BASE}/solutions`} />
       <meta property="og:title" content="Healthcare Marketing Solutions for Dental, Medical & Chiropractic | Vigorant" />
       <meta property="og:description" content="Specialty-specific marketing solutions for dental, chiropractic, and medical practices." />
