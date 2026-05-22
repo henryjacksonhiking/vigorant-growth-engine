@@ -170,10 +170,18 @@
     transition: all 280ms var(--ease-expo);
     box-shadow: 0 4px 24px hsl(143 125 255 / 0.35);
     box-shadow: 0 4px 24px hsl(248 100% 75% / 0.35);
+    white-space: nowrap;
   }
   .btn-primary-grad:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 10px 36px hsl(247 93% 64% / 0.5), 0 0 24px hsl(248 100% 75% / 0.4);
+  }
+  @media (max-width: 640px) {
+    .btn-primary-grad {
+      font-size: 14px;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
   }
   .btn-secondary-outline {
     border: 1.5px solid hsl(247 93% 64% / 0.22);
@@ -202,6 +210,67 @@
   }
   .tilt-spotlight:hover::before { opacity: 1; }
   .tilt-spotlight > * { position: relative; z-index: 1; }
+
+  /* Equal-height cards: make Reveal/motion grid wrappers fill the grid cell so child .h-full works */
+  .grid > div:has(> article),
+  .grid > div:has(> .h-full),
+  .grid > div:has(> .rounded-2xl),
+  .grid > div:has(> .rounded-xl) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .grid > div:has(> article) > article,
+  .grid > div:has(> .h-full) > *,
+  .grid > div:has(> .rounded-2xl) > .rounded-2xl,
+  .grid > div:has(> .rounded-xl) > .rounded-xl {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+
+  /* Mobile: center-align hero/section content for visual consistency */
+  @media (max-width: 640px) {
+    main section .container > div,
+    main section .container > .max-w-2xl,
+    main section .container > .max-w-3xl {
+      text-align: center;
+    }
+    main section .container nav[aria-label="Breadcrumb"] {
+      text-align: center;
+    }
+    main section .container h1,
+    main section .container h2,
+    main section .container > div > h1,
+    main section .container > div > h2,
+    main section .container > div > p,
+    main section .container > div > .section-label {
+      text-align: center;
+    }
+    /* Center flex button rows and inline groups on mobile */
+    main section .container .flex:not(.items-stretch):not(.justify-between):not(.justify-start):not(.justify-end) {
+      justify-content: center;
+    }
+    main section .container .inline-flex {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Keep dashboard/card internals left-aligned */
+    main section .container .float-card,
+    main section .container .float-card *,
+    main section .container article,
+    main section .container article *,
+    main section .container dl,
+    main section .container dl *,
+    main section .container details,
+    main section .container details *,
+    main section .container blockquote {
+      text-align: left;
+    }
+    main section .container article .flex,
+    main section .container .float-card .flex {
+      justify-content: flex-start;
+    }
+  }
 }
 
 /* Animations */
