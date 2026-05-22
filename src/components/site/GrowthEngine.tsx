@@ -36,7 +36,10 @@ export default function GrowthEngine() {
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] italic">
           A proven 6-stage system for predictable, sustainable patient acquisition.
         </p>
+        <GrowthArc className="mt-8 mx-auto w-full max-w-xl h-auto" />
       </Reveal>
+
+      <ConnectorPath aria-hidden className="hidden lg:block max-w-6xl mx-auto mt-6 h-10 opacity-60" />
 
       <ol className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto list-none p-0">
         {steps.map((s, i) => (
