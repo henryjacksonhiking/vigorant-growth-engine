@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Stethoscope, HeartPulse, Activity, Building2, Scissors, ArrowRight } from "lucide-react";
+import { SpecialtyGlyph } from "./Illustrations";
 
 const industries = [
   {
