@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { PulseGrid, TrustShieldPlus } from "./Illustrations";
 
 const bullets = [
   "Free — no cost, no obligation",
