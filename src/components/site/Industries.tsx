@@ -5,30 +5,35 @@ import { SpecialtyGlyph } from "./Illustrations";
 const industries = [
   {
     icon: Stethoscope,
+    glyph: "dental" as const,
     title: "Dental Marketing",
     href: "/dental-marketing",
     body: "From general dentistry to implant specialists — SEO, ads, and conversion built for dental growth.",
   },
   {
     icon: HeartPulse,
+    glyph: "medical" as const,
     title: "Medical Practice Marketing",
     href: "/medical-marketing",
     body: "Patient acquisition strategies for primary care, specialists, and wellness centers.",
   },
   {
     icon: Activity,
+    glyph: "chiro" as const,
     title: "Chiropractic Marketing",
     href: "/chiropractic-marketing",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
   },
   {
     icon: Scissors,
+    glyph: "dental" as const,
     title: "Oral Surgery & Specialists",
     href: "/oral-surgery-marketing",
     body: "Targeted marketing for oral surgeons, periodontists, endodontists, and specialty dental practices.",
   },
   {
     icon: Building2,
+    glyph: "medical" as const,
     title: "Multi-Location Healthcare",
     href: "/multi-location",
     body: "Centralized marketing intelligence for practices with 3 or more locations.",
