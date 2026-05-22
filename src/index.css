@@ -259,6 +259,12 @@
     main section .container .float-card *,
     main section .container article,
     main section .container article *,
+    main section .container ul,
+    main section .container ul *,
+    main section .container ol,
+    main section .container ol *,
+    main section .container li,
+    main section .container li *,
     main section .container dl,
     main section .container dl *,
     main section .container details,
@@ -267,7 +273,10 @@
       text-align: left;
     }
     main section .container article .flex,
-    main section .container .float-card .flex {
+    main section .container .float-card .flex,
+    main section .container li .flex,
+    main section .container ul .flex,
+    main section .container ol .flex {
       justify-content: flex-start;
     }
   }
