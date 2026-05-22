@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { PulseGrid, TrustShieldPlus } from "./Illustrations";
 
 const bullets = [
   "Free — no cost, no obligation",
@@ -18,6 +19,9 @@ export default function FinalCTA() {
         style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.12), transparent 70%)", filter: "blur(80px)" }} />
       <div aria-hidden className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.20), transparent 70%)", filter: "blur(60px)" }} />
+      <PulseGrid className="absolute inset-0 w-full h-full pointer-events-none opacity-70" />
+      <TrustShieldPlus className="hidden md:block absolute right-10 bottom-10 w-28 h-auto opacity-30 pointer-events-none" />
+      <TrustShieldPlus className="hidden md:block absolute left-10 top-10 w-20 h-auto opacity-20 pointer-events-none" />
 
       <div className="container relative py-20 sm:py-24 text-center">
         <motion.h2

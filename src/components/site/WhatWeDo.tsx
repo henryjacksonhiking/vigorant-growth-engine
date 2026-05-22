@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Search, Sparkles, MousePointerClick, Layout, Workflow, BarChart3, Star, Building2, ArrowRight } from "lucide-react";
+import { SpecialtyGlyph } from "./Illustrations";
 
 const tiles = [
   { icon: Search, title: "SEO & Local SEO", body: "We get your practice ranked on Google for the exact procedures your ideal patients are searching for." },
@@ -21,6 +22,9 @@ export default function WhatWeDo() {
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] italic">
           No vague promises. Here's exactly what we handle.
         </p>
+        <div className="mt-6 flex items-center justify-center gap-2 opacity-70">
+          <SpecialtyGlyph kind="medical" className="w-24 h-auto" />
+        </div>
       </Reveal>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">

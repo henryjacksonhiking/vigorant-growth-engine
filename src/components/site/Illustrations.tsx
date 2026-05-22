@@ -353,3 +353,101 @@ export function SpecialtyGlyph({ kind, className = "" }: { kind: "dental" | "chi
     </svg>
   );
 }
+
+/** Trust shield with medical cross + soft pulse ring. Conveys HIPAA / safety. */
+export function TrustShieldPlus({ className = "" }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 160 180" className={className}>
+      <defs>
+        <linearGradient id="ts-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={BRIGHT} stopOpacity="0.18" />
+          <stop offset="100%" stopColor={PURPLE} stopOpacity="0.06" />
+        </linearGradient>
+        <linearGradient id="ts-stroke" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={BRIGHT} />
+          <stop offset="100%" stopColor={PURPLE} />
+        </linearGradient>
+      </defs>
+      <motion.circle
+        cx="80" cy="90" r="74" fill="none" stroke={PURPLE} strokeOpacity="0.18" strokeDasharray="3 6"
+        initial={{ rotate: 0 }} animate={{ rotate: 360 }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        style={{ transformOrigin: "80px 90px" }}
+      />
+      <path
+        d="M80 14 L 140 36 V 96 C 140 132, 112 158, 80 168 C 48 158, 20 132, 20 96 V 36 Z"
+        fill="url(#ts-fill)" stroke="url(#ts-stroke)" strokeWidth="1.6"
+      />
+      <g stroke="url(#ts-stroke)" strokeWidth="6" strokeLinecap="round">
+        <line x1="80" y1="58" x2="80" y2="118" />
+        <line x1="50" y1="88" x2="110" y2="88" />
+      </g>
+    </svg>
+  );
+}
+
+/** Upward growth arc over a clinical grid. Trustworthy, conversion-focused. */
+export function GrowthArc({ className = "" }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 320 160" className={className}>
+      <defs>
+        <linearGradient id="ga-line" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stopColor={PURPLE} />
+          <stop offset="100%" stopColor={BRIGHT} />
+        </linearGradient>
+        <linearGradient id="ga-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={BRIGHT} stopOpacity="0.22" />
+          <stop offset="100%" stopColor={PURPLE} stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      {[0, 1, 2, 3].map((i) => (
+        <line key={i} x1="10" y1={30 + i * 32} x2="310" y2={30 + i * 32}
+          stroke={LAVENDER} strokeOpacity="0.35" strokeDasharray="2 6" />
+      ))}
+      <motion.path
+        d="M 10 130 C 80 120, 120 100, 170 80 S 260 30, 310 18 L 310 150 L 10 150 Z"
+        fill="url(#ga-fill)"
+        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+      />
+      <motion.path
+        d="M 10 130 C 80 120, 120 100, 170 80 S 260 30, 310 18"
+        fill="none" stroke="url(#ga-line)" strokeWidth="2.4" strokeLinecap="round"
+        initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+      />
+      {[[60, 122], [130, 96], [210, 62], [280, 30]].map(([x, y], i) => (
+        <motion.circle key={i} cx={x} cy={y} r="3.5" fill={BRIGHT}
+          initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.4 + i * 0.15 }}
+        />
+      ))}
+      <circle cx="310" cy="18" r="6" fill="url(#ga-line)" />
+    </svg>
+  );
+}
+
+/** Subtle ambient pulse-grid backdrop. Used behind dark CTA sections. */
+export function PulseGrid({ className = "" }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" className={className}>
+      <defs>
+        <linearGradient id="pg-line" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor={BRIGHT} stopOpacity="0" />
+          <stop offset="50%" stopColor={BRIGHT} stopOpacity="0.5" />
+          <stop offset="100%" stopColor={BRIGHT} stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      {Array.from({ length: 7 }).map((_, i) => (
+        <line key={i} x1="0" y1={40 + i * 36} x2="600" y2={40 + i * 36}
+          stroke="white" strokeOpacity="0.05" />
+      ))}
+      <motion.path
+        d="M 0 150 H 220 L 240 110 L 260 190 L 280 130 L 300 170 L 320 150 H 600"
+        fill="none" stroke="url(#pg-line)" strokeWidth="1.5"
+        initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true }}
+        transition={{ duration: 2.2, ease: "easeOut" }}
+      />
+    </svg>
+  );
+}
