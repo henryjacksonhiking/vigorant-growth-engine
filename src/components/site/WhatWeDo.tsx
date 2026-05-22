@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Search, Sparkles, MousePointerClick, Layout, Workflow, BarChart3, Star, Building2, ArrowRight } from "lucide-react";
+import { SpecialtyGlyph } from "./Illustrations";
 
 const tiles = [
   { icon: Search, title: "SEO & Local SEO", body: "We get your practice ranked on Google for the exact procedures your ideal patients are searching for." },
