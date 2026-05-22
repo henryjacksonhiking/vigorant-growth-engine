@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Eye, Target, MousePointerClick, Workflow, BarChart3, Repeat, ChevronRight, Check, X } from "lucide-react";
+import { GrowthArc, ConnectorPath } from "./Illustrations";
 
 const steps = [
   { icon: Eye, title: "Visibility", body: "We make your practice discoverable on Google, Maps, and AI search engines." },
