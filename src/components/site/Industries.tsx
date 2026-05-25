@@ -1,39 +1,33 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Stethoscope, HeartPulse, Activity, Building2, Scissors, ArrowRight } from "lucide-react";
-import { SpecialtyGlyph } from "./Illustrations";
 
 const industries = [
   {
     icon: Stethoscope,
-    glyph: "dental" as const,
     title: "Dental Marketing",
     href: "/dental-marketing",
     body: "From general dentistry to implant specialists — SEO, ads, and conversion built for dental growth.",
   },
   {
     icon: HeartPulse,
-    glyph: "medical" as const,
     title: "Medical Practice Marketing",
     href: "/medical-marketing",
     body: "Patient acquisition strategies for primary care, specialists, and wellness centers.",
   },
   {
     icon: Activity,
-    glyph: "chiro" as const,
     title: "Chiropractic Marketing",
     href: "/chiropractic-marketing",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
   },
   {
     icon: Scissors,
-    glyph: "dental" as const,
     title: "Oral Surgery & Specialists",
     href: "/oral-surgery-marketing",
     body: "Targeted marketing for oral surgeons, periodontists, endodontists, and specialty dental practices.",
   },
   {
     icon: Building2,
-    glyph: "medical" as const,
     title: "Multi-Location Healthcare",
     href: "/multi-location",
     body: "Centralized marketing intelligence for practices with 3 or more locations.",
@@ -56,23 +50,19 @@ export default function Industries() {
           <Reveal key={it.title} delay={i * 0.06}>
             <a
               href={it.href}
-              className="group relative overflow-hidden h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
+              className="group h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <SpecialtyGlyph
-                kind={it.glyph}
-                className="absolute -right-4 -bottom-3 w-28 h-auto opacity-25 group-hover:opacity-40 transition-opacity pointer-events-none"
-              />
               <div
                 aria-hidden
-                className="relative w-12 h-12 rounded-xl flex items-center justify-center"
+                className="w-12 h-12 rounded-xl flex items-center justify-center"
                 style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
               >
                 <it.icon size={20} className="text-white" />
               </div>
-              <h3 className="relative mt-5 font-extrabold text-brand-deep text-[17px] leading-tight">{it.title}</h3>
-              <p className="relative mt-2 text-ink-secondary text-[14px] leading-relaxed flex-1">{it.body}</p>
-              <span className="relative mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
+              <h3 className="mt-5 font-extrabold text-brand-deep text-[17px] leading-tight">{it.title}</h3>
+              <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed flex-1">{it.body}</p>
+              <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
                 Learn More <ArrowRight aria-hidden size={16} />
               </span>
             </a>
