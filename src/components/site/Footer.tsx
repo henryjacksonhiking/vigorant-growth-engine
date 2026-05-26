@@ -1,4 +1,4 @@
-import logoWhite from "@/assets/vigorant-logo-white.png";
+import logoWhite from "@/assets/vigorant-logo-horizontal.png";
 import { Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
 
 const cols = [
