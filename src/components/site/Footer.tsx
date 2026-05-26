@@ -62,8 +62,8 @@ export default function Footer() {
       <h2 id="footer-heading" className="sr-only">Site footer</h2>
       <div className="container">
         <div className="grid grid-cols-2 md:[grid-template-columns:1.6fr_1fr_1fr_1fr] gap-8 sm:gap-10">
-          <div className="col-span-2 md:col-span-1">
-            <img src={logoWhite} alt="Vigorant" className="h-9 sm:h-10 w-auto object-contain block" />
+          <div className="col-span-2 md:col-span-1 text-left">
+            <img src={logoWhite} alt="Vigorant" className="h-9 sm:h-10 w-auto object-contain block !mx-0 !ml-0 self-start justify-self-start" />
             <p className="mt-4 text-white/80 text-sm leading-relaxed max-w-xs">
               The patient acquisition system built specifically for modern healthcare practices.
             </p>
