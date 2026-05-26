@@ -84,7 +84,7 @@ export default function Footer() {
         </p>
 
         <div className="border-t border-white/15 mt-8 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-white/70 text-[13px]">
-          <div>© 2025 Vigorant Inc. All rights reserved.</div>
+          <div>© 2026 Vigorant Inc. All rights reserved.</div>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white py-1">Privacy Policy</a>
             <a href="#" className="hover:text-white py-1">Terms of Service</a>
