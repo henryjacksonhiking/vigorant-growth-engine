@@ -288,15 +288,26 @@
     }
   }
 
-  /* Equal-size cards across desktop & mobile: enforce uniform card heights
-     and consistent inner text alignment for any grid of cards. */
+  /* Equal-size cards across desktop & mobile: enforce uniform card
+     heights AND widths across every row of any card grid. */
+  .grid:has(> article),
+  .grid:has(> .rounded-2xl),
+  .grid:has(> .rounded-xl),
+  .grid:has(> div > article),
+  .grid:has(> div > .rounded-2xl),
+  .grid:has(> div > .rounded-xl) {
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
   .grid > article,
   .grid > .rounded-2xl,
   .grid > .rounded-xl,
+  .grid > div,
   .grid > div > article,
   .grid > div > .rounded-2xl,
   .grid > div > .rounded-xl {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
