@@ -58,7 +58,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="text-white pt-16 sm:pt-20 pb-10" style={{ background: "#1b1338" }} aria-labelledby="footer-heading">
+    <footer className="text-white pt-16 sm:pt-20 pb-10 text-left" style={{ background: "#1b1338" }} aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Site footer</h2>
       <div className="container">
         <div className="grid grid-cols-2 md:[grid-template-columns:1.6fr_1fr_1fr_1fr] gap-8 sm:gap-10">
