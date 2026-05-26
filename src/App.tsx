@@ -7,6 +7,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import ForPractices from "./pages/ForPractices.tsx";
 import MoreNewPatients from "./pages/MoreNewPatients.tsx";
+import OnlineVisibility from "./pages/OnlineVisibility.tsx";
+import MarketingRoi from "./pages/MarketingRoi.tsx";
+import LeadConversion from "./pages/LeadConversion.tsx";
+import OnlineReputation from "./pages/OnlineReputation.tsx";
+import PredictablePatientFlow from "./pages/PredictablePatientFlow.tsx";
 import Solutions from "./pages/Solutions.tsx";
 import Services from "./pages/Services.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
@@ -28,6 +33,11 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/for-practices" element={<ForPractices />} />
             <Route path="/for-practices/more-new-patients" element={<MoreNewPatients />} />
+            <Route path="/for-practices/online-visibility" element={<OnlineVisibility />} />
+            <Route path="/for-practices/marketing-roi" element={<MarketingRoi />} />
+            <Route path="/for-practices/lead-conversion" element={<LeadConversion />} />
+            <Route path="/for-practices/online-reputation" element={<OnlineReputation />} />
+            <Route path="/for-practices/predictable-patient-flow" element={<PredictablePatientFlow />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/services" element={<Services />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
