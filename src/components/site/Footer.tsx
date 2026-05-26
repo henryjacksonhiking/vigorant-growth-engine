@@ -67,9 +67,9 @@ export default function Footer() {
             <p className="mt-4 text-white/80 text-sm leading-relaxed max-w-xs">
               The patient acquisition system built specifically for modern healthcare practices.
             </p>
-            <ul className="mt-5 flex items-center gap-3 list-none p-0">
+            <ul className="mt-5 grid grid-cols-3 gap-3 list-none p-0 max-w-[10rem]">
               {socials.map(({ Icon, label, href }) => (
-                <li key={label}>
+                <li key={label} className="flex justify-center">
                   <a
                     href={href}
                     aria-label={label}
