@@ -8,6 +8,7 @@ interface VideoCard {
   overlay: string;
   summary: string;
   watchTime: string;
+  thumb: string;
   metrics: string[];
   src: string;
 }
