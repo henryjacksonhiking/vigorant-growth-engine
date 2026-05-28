@@ -26,6 +26,7 @@ const VIDEOS: VideoCard[] = [
       "Stronger online visibility",
       "Dental-focused marketing support",
     ],
+    thumb: "/videos/thumb-hosseini-six-years.jpg",
     src: "/videos/hosseini-six-years.mp4",
   },
   {
@@ -40,6 +41,7 @@ const VIDEOS: VideoCard[] = [
       "Collaborative project execution",
       "Trusted digital growth partner",
     ],
+    thumb: "/videos/thumb-enlighten-ai-trust.jpg",
     src: "/videos/enlighten-ai-trust.mp4",
   },
   {
@@ -54,6 +56,7 @@ const VIDEOS: VideoCard[] = [
       "Responsive team communication",
       "Built for dental practice growth",
     ],
+    thumb: "/videos/thumb-why-practices-choose.jpg",
     src: "/videos/why-practices-choose.mp4",
   },
 ];
