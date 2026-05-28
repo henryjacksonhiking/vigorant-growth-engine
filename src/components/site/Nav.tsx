@@ -13,19 +13,28 @@ type NavItem = {
 
 const links: NavItem[] = [
   { label: "Services", href: "/services", route: true },
-  { label: "Solutions", href: "/solutions", route: true },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    route: true,
+    children: [
+      { label: "Dental", href: "/solutions/dental" },
+      { label: "Chiropractic", href: "/solutions/chiropractic" },
+    ],
+  },
   {
     label: "For Practices",
     href: "/for-practices",
     route: true,
     children: [
-      { label: "Overview", href: "/for-practices" },
       { label: "More New Patients", href: "/for-practices/more-new-patients" },
       { label: "Online Visibility", href: "/for-practices/online-visibility" },
       { label: "Marketing ROI", href: "/for-practices/marketing-roi" },
       { label: "Lead Conversion", href: "/for-practices/lead-conversion" },
       { label: "Online Reputation", href: "/for-practices/online-reputation" },
       { label: "Predictable Patient Flow", href: "/for-practices/predictable-patient-flow" },
+      { label: "Scale Your Practice", href: "/for-practices/scale-your-practice" },
+      { label: "High-Value Patients", href: "/for-practices/high-value-patients" },
     ],
   },
   { label: "How It Works", href: "/how-it-works", route: true },
