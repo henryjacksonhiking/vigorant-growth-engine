@@ -9,45 +9,51 @@ interface VideoCard {
   summary: string;
   watchTime: string;
   metrics: string[];
-  embed: string;
+  src: string;
 }
 
 const VIDEOS: VideoCard[] = [
   {
-    doctor: "Dr. Sayeedi",
-    practice: "Noble Dental Care",
-    overlay: "More Implant Cases",
-    summary: "How Noble Dental Care improved local visibility and patient acquisition with Vigorant.",
-    watchTime: "2:14 min",
-    metrics: ["+58% organic traffic", "+41% appointment calls", "Lower Google Ads CPL"],
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    doctor: "Dr. Azadeh Hosseini",
+    practice: "Top Pinole Dental",
+    overlay: "Six Years With Vigorant",
+    summary:
+      "Dr. Hosseini shares her experience working with Vigorant over the years and how consistent digital marketing support helped strengthen her dental practice's online presence.",
+    watchTime: "1:30 min",
+    metrics: [
+      "6-year client partnership",
+      "Stronger online visibility",
+      "Dental-focused marketing support",
+    ],
+    src: "/videos/hosseini-six-years.mp4",
   },
   {
-    doctor: "Dr. Rivera",
-    practice: "Peak Performance Chiropractic",
-    overlay: "Best SEO Results We've Had",
-    summary: "How Peak Performance Chiropractic went from invisible to top 3 in local search.",
-    watchTime: "1:58 min",
-    metrics: ["+72% organic visibility", "+38% conversion rate", "51 new monthly leads"],
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    doctor: "Himanshu Mishra",
+    practice: "Enlighten AI",
+    overlay: "Built On Trust",
+    summary:
+      "The CEO of Enlighten AI shares how Vigorant brought a collaborative, dependable, and strategic approach to supporting a growing healthcare technology brand.",
+    watchTime: "0:53 min",
+    metrics: [
+      "Healthcare-tech marketing insight",
+      "Collaborative project execution",
+      "Trusted digital growth partner",
+    ],
+    src: "/videos/enlighten-ai-trust.mp4",
   },
   {
-    doctor: "Dr. Torres",
-    practice: "Harmony Wellness Center",
-    overlay: "Finally Understand Our Marketing",
-    summary: "How Harmony Wellness Center rebuilt their patient acquisition from the ground up.",
-    watchTime: "2:42 min",
-    metrics: ["3x website conversions", "2.8x ROAS", "Reduced CPL by 62%"],
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-  },
-  {
-    doctor: "Dr. Bennett",
-    practice: "Bright Smile Dentistry",
-    overlay: "Consistent New Patients",
-    summary: "How Bright Smile Dentistry scaled patient volume by combining SEO with conversion rate optimization.",
-    watchTime: "2:34 min",
-    metrics: ["+51% new patient calls", "3x website conversions", "Top 3 local rankings"],
-    embed: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    doctor: "Dental Practice",
+    practice: "Testimonial",
+    overlay: "Why Practices Choose Vigorant",
+    summary:
+      "A dental practice team member explains why Vigorant stands out through responsive support, clear strategy, and a better understanding of what dental practices need to grow.",
+    watchTime: "1:05 min",
+    metrics: [
+      "Clear marketing direction",
+      "Responsive team communication",
+      "Built for dental practice growth",
+    ],
+    src: "/videos/why-practices-choose.mp4",
   },
 ];
 
@@ -75,15 +81,15 @@ export default function VideoTestimonials() {
     <Section id="video-testimonials" bg="secondary">
       <Reveal className="text-center max-w-3xl mx-auto">
         <SectionLabel>Watch Their Stories</SectionLabel>
-        <H2>Hear It Directly From Our Clients</H2>
+        <H2>Hear It Directly From Healthcare Leaders</H2>
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px]">
-          Watch how Vigorant helped these practices transform their patient acquisition.
+          See how dental, healthcare, and health-tech professionals describe their experience working with Vigorant as a trusted digital marketing partner.
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {VIDEOS.map((v, i) => (
-          <Reveal key={v.practice} delay={i * 0.08} className="h-full">
+          <Reveal key={v.overlay} delay={i * 0.08} className="h-full">
             <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15 h-full flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <button
@@ -143,12 +149,13 @@ export default function VideoTestimonials() {
               <X size={20} /> Close
             </button>
             <div className="aspect-video rounded-2xl overflow-hidden bg-black">
-              <iframe
-                title={`Vigorant client video: ${VIDEOS[open].practice}`}
-                src={VIDEOS[open].embed}
+              <video
+                key={VIDEOS[open].src}
+                src={VIDEOS[open].src}
                 className="w-full h-full"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                controls
+                autoPlay
+                playsInline
               />
             </div>
           </div>
