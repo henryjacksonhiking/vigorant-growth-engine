@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { X, Phone } from "lucide-react";
 
 const STORAGE_KEY = "vg-sticky-cta-dismissed";
-const PHONE = "+18000000000";
+const PHONE = "+18336412200";
 
 export default function StickyCTA() {
   const [show, setShow] = useState(false);

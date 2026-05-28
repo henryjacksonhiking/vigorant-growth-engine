@@ -25,7 +25,7 @@ export default function Seo() {
     name: "Vigorant",
     image: "https://vigorant.com/logo.png",
     url: "https://vigorant.com",
-    email: "hello@vigorant.com",
+    email: "info@vigorant.com",
     areaServed: "United States",
     aggregateRating: {
       "@type": "AggregateRating",

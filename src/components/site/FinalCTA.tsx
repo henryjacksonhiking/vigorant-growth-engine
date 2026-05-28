@@ -59,9 +59,9 @@ export default function FinalCTA() {
 
         <p className="mt-5 text-white/80 text-[14px]">
           Prefer to talk first? Call us at{" "}
-          <a href="tel:+18000000000" className="font-semibold text-white underline-offset-2 hover:underline">(800) 000-0000</a>{" "}
+          <a href="tel:+18336412200" className="font-semibold text-white underline-offset-2 hover:underline">(833) 641-2200</a>{" "}
           or email{" "}
-          <a href="mailto:hello@vigorant.com" className="font-semibold text-white underline-offset-2 hover:underline">hello@vigorant.com</a>
+          <a href="mailto:info@vigorant.com" className="font-semibold text-white underline-offset-2 hover:underline">info@vigorant.com</a>
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
