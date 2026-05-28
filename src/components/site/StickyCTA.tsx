@@ -36,7 +36,7 @@ export default function StickyCTA() {
       {/* Mobile: two-button bar */}
       <div className="sm:hidden flex items-stretch gap-2 p-3 bg-white border-t border-brand-purple/15 shadow-[0_-8px_24px_hsl(248_49%_15%/0.10)]">
         <a
-          href="#audit"
+          href="/free-audit"
           className="flex-1 inline-flex items-center justify-center font-bold text-[14px] text-white rounded-full px-4 min-h-[48px]"
           style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
         >
@@ -63,7 +63,7 @@ export default function StickyCTA() {
         style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
       >
         <a
-          href="#audit"
+          href="/free-audit"
           className="inline-flex flex-col items-start font-bold text-[14px] bg-white text-brand-deep px-5 py-2 rounded-full min-h-[44px] justify-center leading-tight"
         >
           <span>Get Your Free Growth Audit — No Commitment</span>

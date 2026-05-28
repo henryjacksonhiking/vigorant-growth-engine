@@ -48,7 +48,7 @@ export default function Hero() {
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4"
           >
             <a
-              href="#audit"
+              href="/free-audit"
               className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]"
             >
               Request Your Free Growth Audit <ArrowRight aria-hidden size={18} />

@@ -49,7 +49,7 @@ export default function HowItWorks() {
 
       <Reveal delay={0.3} className="text-center mt-14 sm:mt-16">
         <p className="text-ink-secondary mb-5 px-4">Start with a free audit — we walk you through exactly what this looks like for your practice.</p>
-        <a href="#audit" className="btn-primary-grad inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]">
+        <a href="/free-audit" className="btn-primary-grad inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]">
           Get My Free Audit <ArrowRight aria-hidden size={18} />
         </a>
       </Reveal>

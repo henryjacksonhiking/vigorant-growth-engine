@@ -23,6 +23,7 @@ import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
 import About from "./pages/About.tsx";
+import FreeAudit from "./pages/FreeAudit.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/results" element={<Results />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/about" element={<About />} />
+            <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
