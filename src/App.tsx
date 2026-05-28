@@ -15,6 +15,7 @@ import PredictablePatientFlow from "./pages/PredictablePatientFlow.tsx";
 import Solutions from "./pages/Solutions.tsx";
 import SolutionsDental from "./pages/SolutionsDental.tsx";
 import SolutionsChiropractic from "./pages/SolutionsChiropractic.tsx";
+import SolutionsMedical from "./pages/SolutionsMedical.tsx";
 import ScaleYourPractice from "./pages/ScaleYourPractice.tsx";
 import HighValuePatients from "./pages/HighValuePatients.tsx";
 import Services from "./pages/Services.tsx";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/solutions/dental" element={<SolutionsDental />} />
             <Route path="/solutions/chiropractic" element={<SolutionsChiropractic />} />
+            <Route path="/solutions/medical" element={<SolutionsMedical />} />
             <Route path="/for-practices/scale-your-practice" element={<ScaleYourPractice />} />
             <Route path="/for-practices/high-value-patients" element={<HighValuePatients />} />
             <Route path="/services" element={<Services />} />
