@@ -80,7 +80,7 @@ export default function Nav() {
   };
 
   const baseDesktopLink = (active: boolean, parentActive: boolean) =>
-    `text-sm font-medium px-2.5 py-2 rounded-lg transition-colors whitespace-nowrap ${
+    `text-sm font-medium px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
       active || parentActive
         ? "text-brand-purple bg-brand-purple/10"
         : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
@@ -108,7 +108,7 @@ export default function Nav() {
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-0.5 flex-nowrap" aria-label="Primary">
+        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-1 flex-nowrap" aria-label="Primary">
           {links.map((item) => {
             if (!item.children?.length) {
               const active = isActive(item.href);
@@ -130,7 +130,7 @@ export default function Nav() {
             return (
               <div key={item.label} className="relative shrink-0">
                 <div
-                  className={`flex items-center rounded-lg transition-colors text-sm font-medium whitespace-nowrap ${
+                  className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors text-sm font-medium whitespace-nowrap ${
                     pActive
                       ? "text-brand-purple bg-brand-purple/10"
                       : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
@@ -138,14 +138,14 @@ export default function Nav() {
                 >
                   <Link
                     to={item.href}
-                    className="px-2.5 py-2 flex-1 whitespace-nowrap"
+                    className="whitespace-nowrap"
                     aria-current={isActive(item.href) ? "page" : undefined}
                   >
                     {item.label}
                   </Link>
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="px-1.5 py-2 pr-2.5 text-current hover:text-brand-deep transition-colors"
+                    className="text-current hover:text-brand-deep transition-colors -mr-1 flex items-center"
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                     aria-label={`Toggle ${item.label} submenu`}
@@ -164,7 +164,7 @@ export default function Nav() {
                         <Link
                           key={child.href}
                           to={child.href}
-                          className={`block text-sm px-3 py-2 rounded-lg transition-colors ${
+                          className={`block text-sm px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
                             cActive
                               ? "text-brand-purple bg-brand-purple/10 font-medium"
                               : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
