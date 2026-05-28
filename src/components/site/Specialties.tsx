@@ -48,9 +48,9 @@ export default function Specialties() {
 function Card({ tag, kind, title, body, chips, cta, delay }: any) {
   const ref = useTilt<HTMLDivElement>(6);
   return (
-    <Reveal delay={delay}>
+    <Reveal delay={delay} className="h-full">
       <li ref={ref as any}
-        className="tilt-spotlight rounded-[20px] p-7 sm:p-10 transition-all duration-300 hover:-translate-y-2 group list-none"
+        className="tilt-spotlight rounded-[20px] p-7 sm:p-10 transition-all duration-300 hover:-translate-y-2 group list-none h-full flex flex-col"
         style={{
           background: "hsl(0 0% 100% / 0.85)",
           backdropFilter: "blur(20px) saturate(150%)",
@@ -70,7 +70,7 @@ function Card({ tag, kind, title, body, chips, cta, delay }: any) {
         </ul>
         <a
           href="#audit"
-          className="mt-6 inline-flex items-center gap-1.5 text-brand-purple font-semibold group/cta min-h-[44px]"
+          className="mt-auto pt-6 inline-flex items-center gap-1.5 text-brand-purple font-semibold group/cta min-h-[44px]"
           aria-label={`${cta} — request audit`}
         >
           {cta}

@@ -35,9 +35,9 @@ export default function CaseStudies() {
 function CaseCard({ type, metric, label, chip, quote, author, delay }: any) {
   const ref = useTilt<HTMLDivElement>(5);
   return (
-    <Reveal delay={delay}>
+    <Reveal delay={delay} className="h-full">
       <div ref={ref}
-        className="tilt-spotlight rounded-[20px] p-8 transition-all duration-300 hover:-translate-y-1"
+        className="tilt-spotlight rounded-[20px] p-8 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
         style={{
           background: "hsl(0 0% 100% / 0.85)",
           backdropFilter: "blur(20px)",
@@ -47,10 +47,10 @@ function CaseCard({ type, metric, label, chip, quote, author, delay }: any) {
         <div className="font-mono-ui text-[11px] uppercase tracking-[0.1em] text-ink-muted">{type}</div>
         <div className="mt-4 font-display font-bold text-brand-deep" style={{ fontSize: "64px", lineHeight: 1 }}>{metric}</div>
         <div className="font-mono-ui text-[13px] text-ink-muted mt-1">{label}</div>
-        <span className="inline-block mt-4 text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3 py-1 text-xs font-semibold">{chip}</span>
+        <span className="inline-block self-start mt-4 text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3 py-1 text-xs font-semibold">{chip}</span>
         <blockquote className="mt-5 italic text-[14px] text-ink-secondary border-l-2 border-brand-purple/25 pl-3">"{quote}"</blockquote>
         <div className="mt-2 text-xs text-ink-muted">— {author}</div>
-        <a href="#" className="mt-5 inline-flex items-center gap-1.5 text-brand-purple text-sm font-semibold">
+        <a href="#" className="mt-auto pt-5 inline-flex items-center gap-1.5 text-brand-purple text-sm font-semibold">
           Read full case study <ArrowRight size={14} />
         </a>
       </div>

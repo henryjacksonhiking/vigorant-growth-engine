@@ -47,7 +47,7 @@ export default function Industries() {
 
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
         {industries.map((it, i) => (
-          <Reveal key={it.title} delay={i * 0.06}>
+          <Reveal key={it.title} delay={i * 0.06} className="h-full">
             <a
               href={it.href}
               className="group h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
