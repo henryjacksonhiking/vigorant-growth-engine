@@ -199,7 +199,7 @@ export default function Results() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {CASES.map((c, i) => (
-                <Reveal key={c.client} delay={i * 0.05}>
+                <Reveal key={c.client} delay={i * 0.05} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full flex flex-col">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
@@ -239,7 +239,7 @@ export default function Results() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
               {BY_CHANNEL.map((c, i) => (
-                <Reveal key={c.h} delay={i * 0.05}>
+                <Reveal key={c.h} delay={i * 0.05} className="h-full">
                   <div className="rounded-2xl bg-white/5 border border-white/15 p-6 backdrop-blur text-center">
                     <c.icon aria-hidden size={26} className="mx-auto text-brand-lavender" />
                     <div className="mt-4 text-4xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
@@ -265,7 +265,7 @@ export default function Results() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {TESTIMONIALS.map((t, i) => (
-                <Reveal key={t.name} delay={i * 0.05}>
+                <Reveal key={t.name} delay={i * 0.05} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full">
                     <Quote aria-hidden size={28} className="text-brand-purple/40" />
                     <p className="mt-3 text-text-primary font-medium">"{t.quote}"</p>
@@ -306,7 +306,7 @@ export default function Results() {
             </Reveal>
             <dl className="mt-10 space-y-3">
               {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03}>
+                <Reveal key={f.q} delay={i * 0.03} className="h-full">
                   <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
                     <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
                       <span>{f.q}</span>

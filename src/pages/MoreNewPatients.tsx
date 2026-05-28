@@ -272,7 +272,7 @@ function Empathy() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-[860px] mx-auto">
           {cards.map((c, i) => (
-            <Reveal key={i} delay={0.1 + i * 0.06}>
+            <Reveal key={i} delay={0.1 + i * 0.06} className="h-full">
               <article className="text-left rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
                 <div aria-hidden className="w-10 h-10 rounded-[10px] flex items-center justify-center"
@@ -737,7 +737,7 @@ function Proof() {
 
         <div className="mt-11 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[960px] mx-auto">
           {PROOF.map((p, i) => (
-            <Reveal key={p.key} delay={i * 0.06}>
+            <Reveal key={p.key} delay={i * 0.06} className="h-full">
               <article data-analytics-event="proof_card_click" data-specialty={p.key}
                 className="h-full rounded-[18px] p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
@@ -865,7 +865,7 @@ function FAQSection() {
             const btnId = `mnp-faq-btn-${i}`;
             const panelId = `mnp-faq-panel-${i}`;
             return (
-              <Reveal key={f.q} delay={i * 0.03}>
+              <Reveal key={f.q} delay={i * 0.03} className="h-full">
                 <div className="rounded-2xl bg-white" style={{ border: "1px solid hsl(247 93% 64% / 0.12)" }}>
                   <h3 className="m-0">
                     <button id={btnId} type="button" aria-expanded={isOpen} aria-controls={panelId}

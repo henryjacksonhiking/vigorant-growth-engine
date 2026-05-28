@@ -106,7 +106,7 @@ export default function OnlineVisibility() {
             { v: <Counter to={47} suffix="%" />, l: "AI citation lift" },
             { v: <Counter to={62} />, l: "Google reviews / qtr avg" },
           ].map((m, i) => (
-            <Reveal key={i} delay={i * 0.05}>
+            <Reveal key={i} delay={i * 0.05} className="h-full">
               <div className="bg-white border border-brand-purple/12 rounded-2xl p-5 sm:p-6 text-center h-full">
                 <div className="font-display text-[28px] sm:text-[34px] font-bold gradient-text">{m.v}</div>
                 <div className="mt-2 font-mono-ui text-[11px] uppercase tracking-wider text-text-muted">{m.l}</div>

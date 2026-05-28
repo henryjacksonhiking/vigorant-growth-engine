@@ -155,7 +155,7 @@ export default function SolutionsChiropractic() {
                 { i: AlertCircle, h: "Pain and Condition Specific Intent", p: "Patients search for back pain chiropractor, sports chiropractor, personal injury chiropractor, and neck pain relief — not generic healthcare. Campaigns must match this intent." },
                 { i: RefreshCw, h: "Recurring Care and Retention", p: "Unlike episodic healthcare, chiropractic patients can become recurring, wellness, or care-plan patients. Systems that support retention and reactivation are as important as new patient acquisition." },
               ].map((c, i) => (
-                <Reveal key={i} delay={i * 0.06}>
+                <Reveal key={i} delay={i * 0.06} className="h-full">
                   <div className="bg-white/5 border border-white/10 rounded-[14px] p-5 h-full">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center"><c.i size={18} className="text-brand-bright" /></div>
                     <h3 className="font-bold text-white text-[14px] mt-3">{c.h}</h3>
@@ -204,7 +204,7 @@ export default function SolutionsChiropractic() {
             </Reveal>
             <ul className="list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {SEGMENTS.map((s, i) => (
-                <Reveal key={s.tag} delay={i * 0.06}>
+                <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li>
                     <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
@@ -235,7 +235,7 @@ export default function SolutionsChiropractic() {
             </Reveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {ENGINE.map((s, i) => (
-                <Reveal key={s.n} delay={i * 0.05}>
+                <Reveal key={s.n} delay={i * 0.05} className="h-full">
                   <div className="bg-white/6 border border-white/10 rounded-[16px] p-6 text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all h-full">
                     <div className="font-mono-ui font-bold text-[28px]"><GradientTextLight>{s.n}</GradientTextLight></div>
                     <div className="w-11 h-11 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={20} className="text-white" /></div>
@@ -258,7 +258,7 @@ export default function SolutionsChiropractic() {
             </Reveal>
             <ul className="list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
               {SERVICES.map((s, i) => (
-                <Reveal key={s.name} delay={i * 0.04}>
+                <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
                     <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={18} className="text-white" /></div>
@@ -287,7 +287,7 @@ export default function SolutionsChiropractic() {
                 { who: "Sports Chiropractic · Denver, CO", n: "+18", l: "sports care inquiries / month", problem: "No service-specific pages or campaigns for sports chiropractic.", chips: ["Sports Landing Pages", "Paid Ads", "Video"], when: "within 60 days", quote: "Finally showing up for athlete searches. The video content drove real trust before they called." },
                 { who: "Family Chiropractic · Phoenix, AZ", n: "↓38%", l: "cost per new patient", problem: "Generic ads sending traffic to homepage — poor conversion.", chips: ["Dedicated Landing Pages", "Call Tracking", "GBP"], when: "within 45 days", quote: "Service-specific landing pages cut our cost per patient by nearly half." },
               ].map((p, i) => (
-                <Reveal key={p.who} delay={i * 0.08}>
+                <Reveal key={p.who} delay={i * 0.08} className="h-full">
                   <article className="bg-white/95 border border-brand-purple/10 rounded-[18px] p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
                     <div className="font-mono-ui text-[11px] text-ink-muted">{p.who}</div>
                     <div className="font-extrabold text-[38px] mt-2 leading-none"><GradientText>{p.n}</GradientText></div>

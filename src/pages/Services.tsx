@@ -173,7 +173,7 @@ export default function Services() {
             </Reveal>
             <div className="grid md:grid-cols-2 gap-5 mt-12">
               {PRIMARY.map((s, i) => (
-                <Reveal key={s.h} delay={i * 0.05}>
+                <Reveal key={s.h} delay={i * 0.05} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full hover:border-brand-purple/30 transition-colors">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
                       <s.icon aria-hidden size={22} className="text-white" />
@@ -234,7 +234,7 @@ export default function Services() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
               {SUPPORTING.map((s, i) => (
-                <Reveal key={s.h} delay={i * 0.03}>
+                <Reveal key={s.h} delay={i * 0.03} className="h-full">
                   <a href={s.href} className="rounded-xl bg-white border border-brand-purple/12 p-5 flex items-center gap-4 hover:border-brand-purple/30 hover:-translate-y-0.5 transition-all">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/10 flex items-center justify-center flex-shrink-0">
                       <s.icon aria-hidden size={18} className="text-brand-purple" />
@@ -285,7 +285,7 @@ export default function Services() {
                 { n: 4.2, suf: "x", h: "Avg paid ROAS lift", d: 1 },
                 { n: 68, suf: "%", h: "Avg website conversion lift" },
               ].map((m, i) => (
-                <Reveal key={m.h} delay={i * 0.05}>
+                <Reveal key={m.h} delay={i * 0.05} className="h-full">
                   <div className="rounded-2xl bg-white/5 border border-white/15 p-7 text-center backdrop-blur">
                     <div className="text-5xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
                       <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
@@ -309,7 +309,7 @@ export default function Services() {
             </Reveal>
             <dl className="mt-10 space-y-3">
               {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03}>
+                <Reveal key={f.q} delay={i * 0.03} className="h-full">
                   <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
                     <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
                       <span>{f.q}</span>
