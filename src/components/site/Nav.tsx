@@ -80,14 +80,14 @@ export default function Nav() {
   };
 
   const baseDesktopLink = (active: boolean, parentActive: boolean) =>
-    `text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
+    `text-sm font-medium px-2.5 py-2 rounded-lg transition-colors whitespace-nowrap ${
       active || parentActive
         ? "text-brand-purple bg-brand-purple/10"
         : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
     }`;
 
   const baseMobileLink = (active: boolean, parentActive: boolean) =>
-    `text-base font-medium py-3 px-2 rounded-lg min-h-[44px] flex items-center ${
+    `text-base font-medium py-3 px-2 rounded-lg min-h-[44px] flex items-center whitespace-nowrap ${
       active || parentActive
         ? "text-brand-purple bg-brand-purple/10"
         : "text-ink-secondary hover:bg-brand-purple/8"
@@ -103,12 +103,12 @@ export default function Nav() {
       }`}
       role="banner"
     >
-      <div className="container flex items-center justify-between h-[64px] sm:h-[66px]">
-        <a href="/" className="flex items-center" aria-label="Vigorant home">
+      <div className="container flex items-center justify-between gap-3 h-[64px] sm:h-[66px] flex-nowrap">
+        <a href="/" className="flex items-center shrink-0" aria-label="Vigorant home">
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav ref={desktopNavRef} className="hidden lg:flex items-center gap-1" aria-label="Primary">
+        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-0.5 flex-nowrap" aria-label="Primary">
           {links.map((item) => {
             if (!item.children?.length) {
               const active = isActive(item.href);
@@ -128,9 +128,9 @@ export default function Nav() {
             const isOpen = activeDropdown === item.label;
 
             return (
-              <div key={item.label} className="relative">
+              <div key={item.label} className="relative shrink-0">
                 <div
-                  className={`flex items-center rounded-lg transition-colors text-sm font-medium ${
+                  className={`flex items-center rounded-lg transition-colors text-sm font-medium whitespace-nowrap ${
                     pActive
                       ? "text-brand-purple bg-brand-purple/10"
                       : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
@@ -138,14 +138,14 @@ export default function Nav() {
                 >
                   <Link
                     to={item.href}
-                    className="px-3 py-2 flex-1"
+                    className="px-2.5 py-2 flex-1 whitespace-nowrap"
                     aria-current={isActive(item.href) ? "page" : undefined}
                   >
                     {item.label}
                   </Link>
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="px-2 py-2 pr-3 text-current hover:text-brand-deep transition-colors"
+                    className="px-1.5 py-2 pr-2.5 text-current hover:text-brand-deep transition-colors"
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                     aria-label={`Toggle ${item.label} submenu`}
@@ -182,15 +182,15 @@ export default function Nav() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a href="#login" className="hidden md:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1">Sign in</a>
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a href="#login" className="hidden xl:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1 whitespace-nowrap">Sign in</a>
           <a href="#audit"
-            className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px]">
+            className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px] whitespace-nowrap">
             Free Growth Audit <span aria-hidden className="ml-1">→</span>
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 text-brand-deep min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="xl:hidden p-2 text-brand-deep min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -203,7 +203,7 @@ export default function Nav() {
       <div
         id="mobile-nav"
         hidden={!open}
-        className="lg:hidden glass border-t border-brand-purple/15"
+        className="xl:hidden glass border-t border-brand-purple/15"
       >
         <nav aria-label="Primary mobile" className="container py-6 flex flex-col gap-1">
           {links.map((item) => {
