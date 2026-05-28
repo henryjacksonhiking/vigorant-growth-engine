@@ -129,18 +129,33 @@ export default function Nav() {
 
             return (
               <div key={item.label} className="relative">
-                <button
-                  onClick={() => toggleDropdown(item.label)}
-                  className={`${baseDesktopLink(false, pActive)} flex items-center gap-1`}
-                  aria-expanded={isOpen}
-                  aria-haspopup="true"
+                <div
+                  className={`flex items-center rounded-lg transition-colors text-sm font-medium ${
+                    pActive
+                      ? "text-brand-purple bg-brand-purple/10"
+                      : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+                  }`}
                 >
-                  {item.label}
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
+                  <Link
+                    to={item.href}
+                    className="px-3 py-2 flex-1"
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                  <button
+                    onClick={() => toggleDropdown(item.label)}
+                    className="px-2 py-2 pr-3 text-current hover:text-brand-deep transition-colors"
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                    aria-label={`Toggle ${item.label} submenu`}
+                  >
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
                 {isOpen && (
                   <div className="absolute top-full left-0 mt-2 w-60 glass-strong rounded-xl shadow-lg border border-brand-purple/10 p-1.5 z-50">
                     {item.children.map((child) => {
@@ -212,17 +227,36 @@ export default function Nav() {
 
             return (
               <div key={item.label}>
-                <button
-                  onClick={() => toggleDropdown(item.label)}
-                  className={`w-full ${baseMobileLink(false, pActive)} justify-between`}
-                  aria-expanded={isOpen}
+                <div
+                  className={`flex items-center rounded-lg text-base font-medium min-h-[44px] transition-colors ${
+                    pActive
+                      ? "text-brand-purple bg-brand-purple/10"
+                      : "text-ink-secondary hover:bg-brand-purple/8"
+                  }`}
                 >
-                  {item.label}
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
+                  <Link
+                    to={item.href}
+                    className="flex-1 py-3 px-2 flex items-center"
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      setOpen(false);
+                    }}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                  <button
+                    onClick={() => toggleDropdown(item.label)}
+                    className="px-2 py-3 pr-2 text-current transition-colors"
+                    aria-expanded={isOpen}
+                    aria-label={`Toggle ${item.label} submenu`}
+                  >
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                </div>
                 {isOpen && (
                   <div className="pl-4 flex flex-col gap-0.5 mt-0.5">
                     {item.children.map((child) => {
