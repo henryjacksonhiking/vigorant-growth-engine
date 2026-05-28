@@ -13,6 +13,10 @@ import LeadConversion from "./pages/LeadConversion.tsx";
 import OnlineReputation from "./pages/OnlineReputation.tsx";
 import PredictablePatientFlow from "./pages/PredictablePatientFlow.tsx";
 import Solutions from "./pages/Solutions.tsx";
+import SolutionsDental from "./pages/SolutionsDental.tsx";
+import SolutionsChiropractic from "./pages/SolutionsChiropractic.tsx";
+import ScaleYourPractice from "./pages/ScaleYourPractice.tsx";
+import HighValuePatients from "./pages/HighValuePatients.tsx";
 import Services from "./pages/Services.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
@@ -39,6 +43,10 @@ const App = () => (
             <Route path="/for-practices/online-reputation" element={<OnlineReputation />} />
             <Route path="/for-practices/predictable-patient-flow" element={<PredictablePatientFlow />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/dental" element={<SolutionsDental />} />
+            <Route path="/solutions/chiropractic" element={<SolutionsChiropractic />} />
+            <Route path="/for-practices/scale-your-practice" element={<ScaleYourPractice />} />
+            <Route path="/for-practices/high-value-patients" element={<HighValuePatients />} />
             <Route path="/services" element={<Services />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/results" element={<Results />} />
