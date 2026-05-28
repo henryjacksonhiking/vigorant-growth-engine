@@ -25,7 +25,7 @@ const cols = [
     links: [
       { label: "Case Studies", href: "#case-studies" },
       { label: "Blog", href: "#" },
-      { label: "Free Growth Audit", href: "#audit" },
+      { label: "Free Growth Audit", href: "/free-audit" },
       { label: "Contact", href: "#contact" },
     ],
   },

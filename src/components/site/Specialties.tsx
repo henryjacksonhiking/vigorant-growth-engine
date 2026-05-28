@@ -69,7 +69,7 @@ function Card({ tag, kind, title, body, chips, cta, delay }: any) {
           ))}
         </ul>
         <a
-          href="#audit"
+          href="/free-audit"
           className="mt-auto pt-6 inline-flex items-center gap-1.5 text-brand-purple font-semibold group/cta min-h-[44px]"
           aria-label={`${cta} — request audit`}
         >
