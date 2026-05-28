@@ -26,6 +26,7 @@ const VIDEOS: VideoCard[] = [
       "Stronger online visibility",
       "Dental-focused marketing support",
     ],
+    thumb: "/videos/thumb-hosseini-six-years.jpg",
     src: "/videos/hosseini-six-years.mp4",
   },
   {
@@ -40,6 +41,7 @@ const VIDEOS: VideoCard[] = [
       "Collaborative project execution",
       "Trusted digital growth partner",
     ],
+    thumb: "/videos/thumb-enlighten-ai-trust.jpg",
     src: "/videos/enlighten-ai-trust.mp4",
   },
   {
@@ -54,6 +56,7 @@ const VIDEOS: VideoCard[] = [
       "Responsive team communication",
       "Built for dental practice growth",
     ],
+    thumb: "/videos/thumb-why-practices-choose.jpg",
     src: "/videos/why-practices-choose.mp4",
   },
 ];
@@ -96,22 +99,28 @@ export default function VideoTestimonials() {
               <button
                 onClick={() => setOpen(i)}
                 aria-label={`Play video testimonial: ${v.practice}`}
-                className="group relative block w-full aspect-video overflow-hidden"
-                style={{ background: "linear-gradient(135deg, hsl(248 49% 15%), hsl(252 44% 33%) 60%, hsl(247 93% 64%))" }}
+                className="group relative block w-full aspect-video overflow-hidden bg-brand-deep"
               >
-                <div className="absolute inset-0 grid-overlay opacity-30" aria-hidden />
-                <div className="absolute top-3 left-3 font-mono-ui text-[11px] text-white/85 max-w-[70%]">
+                <img
+                  src={v.thumb}
+                  alt={`${v.doctor} — ${v.practice}`}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/85 via-brand-deep/20 to-brand-deep/30" aria-hidden />
+                <div className="absolute top-3 left-3 right-3 font-mono-ui text-[11px] text-white/95 drop-shadow">
                   {v.doctor} · {v.practice}
                 </div>
-                <div className="absolute bottom-3 left-3 font-bold text-white text-[14px] bg-black/30 backdrop-blur-sm rounded-full px-3 py-1">
+                <div className="absolute bottom-3 left-3 right-3 font-bold text-white text-[14px] drop-shadow-md">
                   {v.overlay}
                 </div>
                 <span aria-hidden className="absolute inset-0 flex items-center justify-center">
-                  <span className="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 pulse-dot">
+                  <span className="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 pulse-dot shadow-xl">
                     <Play size={24} className="text-brand-deep ml-1" fill="currentColor" />
                   </span>
                 </span>
               </button>
+
 
               <div className="p-5 sm:p-6 flex-1 flex flex-col">
                 <p className="text-ink-secondary text-[14px] leading-relaxed">{v.summary}</p>
