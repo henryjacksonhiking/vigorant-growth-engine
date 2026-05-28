@@ -39,7 +39,7 @@ export default function GrowthEngine() {
 
       <ol className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto list-none p-0">
         {steps.map((s, i) => (
-          <Reveal key={s.title} delay={i * 0.06} className="relative">
+          <Reveal key={s.title} delay={i * 0.06} className="relative h-full">
             <li className="list-none h-full bg-white border border-brand-purple/15 rounded-2xl p-6"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <div className="flex items-start gap-4">

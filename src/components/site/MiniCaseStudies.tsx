@@ -50,7 +50,7 @@ export default function MiniCaseStudies() {
 
       <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {studies.map((s, i) => (
-          <Reveal key={s.type} delay={i * 0.06}>
+          <Reveal key={s.type} delay={i * 0.06} className="h-full">
             <article
               className="h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}

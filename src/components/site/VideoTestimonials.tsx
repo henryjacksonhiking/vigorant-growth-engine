@@ -83,7 +83,7 @@ export default function VideoTestimonials() {
 
       <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {VIDEOS.map((v, i) => (
-          <Reveal key={v.practice} delay={i * 0.08}>
+          <Reveal key={v.practice} delay={i * 0.08} className="h-full">
             <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15 h-full flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <button

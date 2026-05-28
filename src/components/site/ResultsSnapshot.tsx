@@ -34,9 +34,9 @@ export default function ResultsSnapshot() {
 
       <div className="mt-12 grid sm:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
         {cards.map((c, i) => (
-          <Reveal key={c.title} delay={i * 0.06}>
+          <Reveal key={c.title} delay={i * 0.06} className="h-full">
             <article
-              className="h-full rounded-2xl p-7 bg-white border border-brand-purple/15 transition-transform duration-300 hover:-translate-y-1"
+              className="h-full rounded-2xl p-7 bg-white border border-brand-purple/15 transition-transform duration-300 hover:-translate-y-1 flex flex-col"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div className="flex items-baseline justify-between gap-3 flex-wrap">
@@ -54,7 +54,7 @@ export default function ResultsSnapshot() {
               </ul>
               <a
                 href="#"
-                className="mt-6 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[14px] hover:gap-2.5 transition-all"
+                className="mt-auto pt-6 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[14px] hover:gap-2.5 transition-all"
               >
                 View Full Case Study <ArrowRight aria-hidden size={16} />
               </a>
