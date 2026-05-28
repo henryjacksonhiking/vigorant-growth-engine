@@ -319,6 +319,84 @@
   .grid .rounded-xl > p {
     flex: 1 1 auto;
   }
+
+  /* ============================================================
+     Global card hover & entrance effects
+     Applies homepage-style lift / shadow / border-glow to every
+     card-shaped element across all pages and child pages.
+     ============================================================ */
+  main .rounded-2xl,
+  main .rounded-xl,
+  main article.rounded-2xl,
+  main article.rounded-xl,
+  main .grid > article,
+  main .grid > div > article {
+    transition:
+      transform 380ms var(--ease-expo),
+      box-shadow 380ms var(--ease-expo),
+      border-color 380ms var(--ease-expo),
+      background-color 380ms var(--ease-expo);
+    will-change: transform;
+  }
+
+  /* Lift + glow on hover for bordered/elevated cards */
+  main .rounded-2xl:hover,
+  main .rounded-xl:hover,
+  main article.rounded-2xl:hover,
+  main article.rounded-xl:hover,
+  main .grid > article:hover,
+  main .grid > div > article:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 18px 48px hsl(248 49% 15% / 0.14),
+      0 0 0 1px hsl(247 93% 64% / 0.18);
+    border-color: hsl(247 93% 64% / 0.35);
+  }
+
+  /* Don't lift small interactive chips, buttons, inputs, pills, dialog chrome */
+  main button.rounded-2xl:hover,
+  main button.rounded-xl:hover,
+  main a.rounded-full:hover,
+  main .rounded-full:hover,
+  main input.rounded-2xl:hover,
+  main input.rounded-xl:hover,
+  main textarea.rounded-2xl:hover,
+  main textarea.rounded-xl:hover,
+  main label.rounded-2xl:hover,
+  main label.rounded-xl:hover,
+  main [role="tab"].rounded-2xl:hover,
+  main [role="tab"].rounded-xl:hover,
+  main [role="dialog"].rounded-2xl:hover,
+  main [role="dialog"].rounded-xl:hover {
+    transform: none;
+    box-shadow: inherit;
+    border-color: inherit;
+  }
+
+  /* Image zoom inside cards on hover */
+  main .rounded-2xl img,
+  main .rounded-xl img,
+  main article img {
+    transition: transform 600ms var(--ease-expo);
+  }
+  main .rounded-2xl:hover img,
+  main .rounded-xl:hover img,
+  main article:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Slight icon kick on hover for accent icons inside cards */
+  main .rounded-2xl:hover svg.text-brand-purple,
+  main .rounded-xl:hover svg.text-brand-purple,
+  main article:hover svg.text-brand-purple {
+    transform: translateY(-1px) scale(1.06);
+    transition: transform 280ms var(--ease-spring);
+  }
+}
+
+@keyframes card-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Animations */
