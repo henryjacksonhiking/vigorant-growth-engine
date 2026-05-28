@@ -108,7 +108,7 @@ export default function Nav() {
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-1 flex-nowrap" aria-label="Primary">
+        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-1 flex-nowrap ml-6 mr-auto" aria-label="Primary">
           {links.map((item) => {
             if (!item.children?.length) {
               const active = isActive(item.href);
@@ -184,10 +184,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="#login" className="hidden xl:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1 whitespace-nowrap">Sign in</a>
-          <a href="#audit"
+          <Link to="/free-audit"
             className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px] whitespace-nowrap">
             Free Growth Audit <span aria-hidden className="ml-1">→</span>
-          </a>
+          </Link>
           <button
             onClick={() => setOpen(!open)}
             className="xl:hidden p-2 text-brand-deep min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -285,10 +285,10 @@ export default function Nav() {
               </div>
             );
           })}
-          <a href="#audit" onClick={() => setOpen(false)}
+          <Link to="/free-audit" onClick={() => setOpen(false)}
             className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
             Free Growth Audit <span aria-hidden className="ml-1">→</span>
-          </a>
+          </Link>
         </nav>
       </div>
     </motion.header>
