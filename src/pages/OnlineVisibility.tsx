@@ -64,7 +64,7 @@ export default function OnlineVisibility() {
         <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
           {GAPS.map((g, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.05}>
+              <Reveal delay={i * 0.05} className="h-full">
                 <article className="bg-white border border-brand-purple/12 rounded-2xl p-6 h-full hover:border-brand-purple/30 hover:shadow-lg transition-all">
                   <div className="w-11 h-11 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple mb-4">
                     <g.Icon aria-hidden size={20} />
@@ -83,7 +83,7 @@ export default function OnlineVisibility() {
         <ol className="mt-12 max-w-[960px] mx-auto flex flex-col gap-4 list-none p-0">
           {PILLARS.map((p, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.06}>
+              <Reveal delay={i * 0.06} className="h-full">
                 <div className="bg-white rounded-2xl border border-brand-purple/12 p-6 sm:p-7 flex flex-col sm:flex-row gap-5 hover:shadow-md transition">
                   <div className="font-mono-ui text-[28px] font-bold gradient-text shrink-0 sm:w-16">{p.n}</div>
                   <div className="flex-1">
@@ -106,7 +106,7 @@ export default function OnlineVisibility() {
             { v: <Counter to={47} suffix="%" />, l: "AI citation lift" },
             { v: <Counter to={62} />, l: "Google reviews / qtr avg" },
           ].map((m, i) => (
-            <Reveal key={i} delay={i * 0.05}>
+            <Reveal key={i} delay={i * 0.05} className="h-full">
               <div className="bg-white border border-brand-purple/12 rounded-2xl p-5 sm:p-6 text-center h-full">
                 <div className="font-display text-[28px] sm:text-[34px] font-bold gradient-text">{m.v}</div>
                 <div className="mt-2 font-mono-ui text-[11px] uppercase tracking-wider text-text-muted">{m.l}</div>

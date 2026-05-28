@@ -152,7 +152,7 @@ export default function HowItWorks() {
                 { h: "The tactic-vendor model", items: ["Sells deliverables, not outcomes", "Black-box reporting", "Disconnected channels", "Credit-claiming over patients won"] },
                 { h: "The Vigorant growth system", items: ["Sells booked patients", "Live dashboards, monthly calls", "One integrated engine", "Scoreboard ties spend to revenue"] },
               ].map((b, i) => (
-                <Reveal key={b.h} delay={i * 0.06}>
+                <Reveal key={b.h} delay={i * 0.06} className="h-full">
                   <div className="rounded-2xl bg-white/5 border border-white/15 p-7 backdrop-blur h-full">
                     <h3 className="font-bold text-xl">{b.h}</h3>
                     <ul className="mt-4 space-y-3">
@@ -183,7 +183,7 @@ export default function HowItWorks() {
             </Reveal>
             <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
               {PHASES.map((p, i) => (
-                <Reveal key={p.n} delay={i * 0.05}>
+                <Reveal key={p.n} delay={i * 0.05} className="h-full">
                   <li className="rounded-2xl bg-white border border-brand-purple/12 p-6 h-full">
                     <div className="flex items-center gap-3">
                       <span className="font-mono-ui text-sm text-brand-purple">{p.n}</span>
@@ -256,7 +256,7 @@ export default function HowItWorks() {
                 { icon: Calendar, h: "Booked patients" },
                 { icon: ShieldCheck, h: "Reputation health" },
               ].map((m, i) => (
-                <Reveal key={m.h} delay={i * 0.05}>
+                <Reveal key={m.h} delay={i * 0.05} className="h-full">
                   <div className="rounded-2xl bg-white border border-brand-purple/12 p-6 text-center">
                     <m.icon aria-hidden className="mx-auto text-brand-purple" size={28} />
                     <p className="mt-3 font-bold text-brand-deep">{m.h}</p>
@@ -278,7 +278,7 @@ export default function HowItWorks() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {FIRST_90.map((p, i) => (
-                <Reveal key={p.h} delay={i * 0.06}>
+                <Reveal key={p.h} delay={i * 0.06} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full">
                     <span className="font-mono-ui text-sm text-brand-purple">{p.d}</span>
                     <h3 className="font-bold text-brand-deep text-xl mt-2">{p.h}</h3>
@@ -301,7 +301,7 @@ export default function HowItWorks() {
             </Reveal>
             <ul className="mt-10 space-y-3">
               {ANTI.map((a, i) => (
-                <Reveal key={a} delay={i * 0.04}>
+                <Reveal key={a} delay={i * 0.04} className="h-full">
                   <li className="flex gap-3 rounded-xl bg-white border border-brand-purple/12 p-5">
                     <X size={20} className="text-rose-500 flex-shrink-0 mt-0.5" aria-hidden />
                     <span className="text-text-secondary">{a}</span>
@@ -321,7 +321,7 @@ export default function HowItWorks() {
                 { n: 4.9, suf: "★", h: "Avg practice satisfaction", d: 1 },
                 { n: 312, suf: "%", h: "Avg patient growth in 12 months" },
               ].map((m, i) => (
-                <Reveal key={m.h} delay={i * 0.05}>
+                <Reveal key={m.h} delay={i * 0.05} className="h-full">
                   <div className="rounded-2xl bg-white/5 border border-white/15 p-7 text-center backdrop-blur">
                     <div className="text-5xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
                       <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
@@ -345,7 +345,7 @@ export default function HowItWorks() {
             </Reveal>
             <dl className="mt-10 space-y-3">
               {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03}>
+                <Reveal key={f.q} delay={i * 0.03} className="h-full">
                   <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
                     <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
                       <span>{f.q}</span>

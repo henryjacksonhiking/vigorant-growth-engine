@@ -229,19 +229,19 @@ function Empathy() {
         style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 70%)", filter: "blur(80px)" }} />
       <div className="container relative text-center">
         <Reveal><ChipLabel dark>You Are Not Alone</ChipLabel></Reveal>
-        <Reveal delay={0.05}>
+        <Reveal delay={0.05} className="h-full">
           <h2 id="mnp-empathy" className="font-extrabold text-white mt-4 max-w-[720px] mx-auto leading-[1.1] tracking-tight"
             style={{ fontSize: "clamp(28px, 5.2vw, 50px)", letterSpacing: "-0.03em" }}>
             Many Good Practices Are <span className="gradient-text">Invisible Online.</span>
           </h2>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="h-full">
           <p className="mt-6 text-white/65 max-w-[640px] mx-auto text-[15px] sm:text-[17px] leading-[1.78]">
             You may be doing everything right clinically. Your patients may love your team. Your care may be better than the practice down the street. But if your competitors appear more often in Google, Maps, reviews, paid results, and AI-driven answers — and if their websites make booking easier — they can win the new patient before your practice is even considered.
           </p>
         </Reveal>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} className="h-full">
           <div className="mt-6 max-w-[640px] mx-auto rounded-xl px-5 py-4 text-left"
             style={{ background: "hsl(0 0% 100% / 0.05)", border: "1px solid hsl(0 0% 100% / 0.09)" }}>
             <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-lavender/70 mb-1.5">Research Context</div>
@@ -259,7 +259,7 @@ function Empathy() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div className="mt-8 max-w-[760px] mx-auto rounded-2xl px-7 py-6 text-left"
             style={{ background: "hsl(0 0% 100% / 0.05)", border: "1px solid hsl(248 100% 75% / 0.18)" }}>
             <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-lavender">Q&amp;A · AIO/GEO Ready</div>
@@ -272,7 +272,7 @@ function Empathy() {
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-[860px] mx-auto">
           {cards.map((c, i) => (
-            <Reveal key={i} delay={0.1 + i * 0.06}>
+            <Reveal key={i} delay={0.1 + i * 0.06} className="h-full">
               <article className="text-left rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
                 <div aria-hidden className="w-10 h-10 rounded-[10px] flex items-center justify-center"
@@ -306,20 +306,20 @@ function RealProblem() {
       <div className="container">
         <div className="text-center max-w-[680px] mx-auto">
           <Reveal><ChipLabel>The Core Diagnosis</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-real" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               The Real Problem Is Usually Not Your Care — <span className="gradient-text">It Is the Patient Acquisition System</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-5 max-w-[600px] mx-auto text-ink-secondary text-[16px] sm:text-[17px] leading-[1.78]">
               A practice can rank, advertise, and post on social media and still lose patients if the system is fragmented. Visibility, trust, relevance, conversion, tracking, and follow-up must work together — or each element underperforms in isolation.
             </p>
           </Reveal>
         </div>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} className="h-full">
           <div
             id="diagnostic-funnel"
             role="img"
@@ -352,7 +352,7 @@ function RealProblem() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div className="mt-5 max-w-[640px] mx-auto rounded-xl px-5 py-3.5 text-center"
             style={{ background: "hsl(247 93% 64% / 0.06)", border: "1px solid hsl(247 93% 64% / 0.15)" }}>
             <p className="text-ink-secondary text-[14px] font-medium">
@@ -377,7 +377,7 @@ const GAPS = [
 function GapCard({ g, i }: { g: typeof GAPS[number]; i: number }) {
   const ref = useTilt<HTMLElement>();
   return (
-    <Reveal delay={i * 0.05}>
+    <Reveal delay={i * 0.05} className="h-full">
       <article
         ref={ref}
         data-analytics-event="diagnostic_card_click"
@@ -425,13 +425,13 @@ function DiagnosticGrid() {
       <div className="container">
         <div className="text-center max-w-[640px] mx-auto">
           <Reveal><ChipLabel>Where Patients Are Being Lost</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-gaps" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               Where Online New Patients <span className="gradient-text">Are Being Lost</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-4 max-w-[520px] mx-auto text-ink-secondary text-[15px] sm:text-[16px] leading-[1.7]">
               Six of the most common points where online new patient flow breaks down — each with a measurable impact on booked appointments.
             </p>
@@ -462,20 +462,20 @@ function Differentiation() {
       <div className="container relative">
         <div className="text-center max-w-[680px] mx-auto">
           <Reveal><ChipLabel dark>Our Differentiation</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-diff" className="font-extrabold text-white mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               What Makes Vigorant <span className="gradient-text">Different</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-5 max-w-[600px] mx-auto text-white/65 text-[15px] sm:text-[17px] leading-[1.78]">
               Not isolated SEO. Not ads alone. Not a pretty website by itself. Vigorant builds a patient acquisition system that connects visibility, conversion, paid campaigns, SEO, AIO/GEO, reputation, tracking, and optimization.
             </p>
           </Reveal>
         </div>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} className="h-full">
           <div className="mt-10 max-w-[720px] mx-auto rounded-2xl px-7 py-6"
             style={{ background: "hsl(0 0% 100% / 0.05)", border: "1px solid hsl(248 100% 75% / 0.18)" }}>
             <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-lavender">Definition · AIO/GEO Ready</div>
@@ -485,7 +485,7 @@ function Differentiation() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div data-analytics-event="comparison_table_view"
             className="mt-10 max-w-[880px] mx-auto rounded-[18px] overflow-hidden"
             style={{ background: "hsl(0 0% 100% / 0.04)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
@@ -506,7 +506,7 @@ function Differentiation() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.25}>
+        <Reveal delay={0.25} className="h-full">
           <div className="mt-10 text-center">
             <Link to="/how-it-works" className="inline-flex items-center gap-1.5 text-white/70 text-[15px] font-semibold hover:text-white transition-colors">
               See how our growth system works →
@@ -532,13 +532,13 @@ function System() {
       <div className="container">
         <div className="text-center max-w-[640px] mx-auto">
           <Reveal><ChipLabel>The 5-Step System</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-system" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               The Vigorant Patient <span className="gradient-text">Acquisition System</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-4 max-w-[540px] mx-auto text-ink-secondary text-[15px] sm:text-[16px] leading-[1.7]">
               A branded 5-step process that diagnoses the gap, builds visibility, converts demand, tracks what matters, and optimizes every month.
             </p>
@@ -548,7 +548,7 @@ function System() {
         <ol className="mt-12 grid grid-cols-1 md:grid-cols-5 gap-5 list-none p-0 max-w-[1100px] mx-auto">
           {STEPS.map((s, i) => (
             <li key={s.n}>
-              <Reveal delay={i * 0.06}>
+              <Reveal delay={i * 0.06} className="h-full">
                 <article data-analytics-event="system_step_view" data-step={i + 1}
                   className="h-full rounded-2xl p-5 bg-white transition-all duration-300 hover:-translate-y-1"
                   style={{ border: "1px solid hsl(247 93% 64% / 0.12)", boxShadow: "0 8px 24px -16px hsl(248 49% 15% / 0.2)" }}>
@@ -588,7 +588,7 @@ const SPECIALTIES = [
 function SpecialtyCard({ s, i }: { s: typeof SPECIALTIES[number]; i: number }) {
   const ref = useTilt<HTMLElement>();
   return (
-    <Reveal delay={i * 0.06}>
+    <Reveal delay={i * 0.06} className="h-full">
       <article ref={ref}
         data-analytics-event="specialty_card_click"
         data-specialty={s.key}
@@ -621,13 +621,13 @@ function Specialties() {
       <div className="container">
         <div className="text-center max-w-[600px] mx-auto">
           <Reveal><ChipLabel>By Practice Type</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-spec" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               Solutions by <span className="gradient-text">Practice Type</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-4 max-w-[500px] mx-auto text-ink-secondary text-[15px] sm:text-[16px] leading-[1.7]">
               New patient acquisition looks different for each specialty. Select yours to see how Vigorant addresses your specific patient-flow challenges.
             </p>
@@ -662,20 +662,20 @@ function SpendChecklist() {
       <div className="container">
         <div className="text-center max-w-[700px] mx-auto">
           <Reveal><ChipLabel>If Marketing Isn't Working</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-spend" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 46px)", letterSpacing: "-0.03em" }}>
               If You Are Already Spending on Marketing <span className="gradient-text">But Not Seeing Results</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-5 max-w-[600px] mx-auto text-ink-secondary text-[16px] sm:text-[17px] leading-[1.78]">
               Spending on marketing that doesn't translate into new patients is a different problem — and a frustrating one. The issue is usually not the budget. It's the system.
             </p>
           </Reveal>
         </div>
 
-        <Reveal delay={0.15}>
+        <Reveal delay={0.15} className="h-full">
           <div className="mt-11 max-w-[820px] mx-auto rounded-[18px] p-7 sm:p-9"
             style={{ background: "hsl(0 0% 100% / 0.90)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.12)" }}>
             <div className="flex items-center gap-2.5">
@@ -693,7 +693,7 @@ function SpendChecklist() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div className="mt-8 text-center">
             <p className="text-ink-secondary text-[15px] mb-3.5">Find out where your marketing spend is leaking.</p>
             <Link to="/free-audit" className="btn-primary-grad inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]">
@@ -722,13 +722,13 @@ function Proof() {
       <div className="container relative">
         <div className="text-center max-w-[560px] mx-auto">
           <Reveal><ChipLabel dark>Show the Math, Not Just the Marketing</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-proof" className="font-extrabold text-white mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               Real Practices. <span className="gradient-text">Real New Patients.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-4 max-w-[520px] mx-auto text-white/60 text-[15px] sm:text-[16px] leading-[1.7]">
               Three practices that turned a broken patient acquisition system into measurable new patient growth.
             </p>
@@ -737,7 +737,7 @@ function Proof() {
 
         <div className="mt-11 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[960px] mx-auto">
           {PROOF.map((p, i) => (
-            <Reveal key={p.key} delay={i * 0.06}>
+            <Reveal key={p.key} delay={i * 0.06} className="h-full">
               <article data-analytics-event="proof_card_click" data-specialty={p.key}
                 className="h-full rounded-[18px] p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
@@ -762,7 +762,7 @@ function Proof() {
           ))}
         </div>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} className="h-full">
           <div className="mt-10 text-center">
             <Link to="/results" className="text-white/60 hover:text-white text-[14px] font-semibold transition-colors">View all case studies →</Link>
           </div>
@@ -788,13 +788,13 @@ function AuditOffer() {
       <div className="container">
         <div className="text-center max-w-[580px] mx-auto">
           <Reveal><ChipLabel>The First Step</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-audit" className="font-extrabold text-brand-deep mt-4 leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
               What Your Free <span className="gradient-text">Growth Audit Includes</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <p className="mt-4 max-w-[520px] mx-auto text-ink-secondary text-[15px] sm:text-[16px] leading-[1.7]">
               Frame this as a diagnostic, not a sales call. You get clear findings whether or not we work together.
             </p>
@@ -819,7 +819,7 @@ function AuditOffer() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className="h-full">
             <div className="rounded-[20px] p-8 bg-white"
               style={{ border: "1px solid hsl(247 93% 64% / 0.15)", boxShadow: "8px 8px 28px hsl(248 49% 15% / 0.08), -4px -4px 14px hsl(0 0% 100% / 0.9)" }}>
               <h3 className="font-extrabold text-brand-deep text-[20px]">Request Your Free Audit</h3>
@@ -851,7 +851,7 @@ function FAQSection() {
       <div className="container">
         <div className="text-center">
           <Reveal><ChipLabel>Common Questions</ChipLabel></Reveal>
-          <Reveal delay={0.05}>
+          <Reveal delay={0.05} className="h-full">
             <h2 id="mnp-faq" className="font-extrabold text-brand-deep mt-4 max-w-[680px] mx-auto leading-[1.1] tracking-tight"
               style={{ fontSize: "clamp(26px, 4.6vw, 42px)", letterSpacing: "-0.03em" }}>
               Frequently Asked Questions About Getting More New Patients Online
@@ -865,7 +865,7 @@ function FAQSection() {
             const btnId = `mnp-faq-btn-${i}`;
             const panelId = `mnp-faq-panel-${i}`;
             return (
-              <Reveal key={f.q} delay={i * 0.03}>
+              <Reveal key={f.q} delay={i * 0.03} className="h-full">
                 <div className="rounded-2xl bg-white" style={{ border: "1px solid hsl(247 93% 64% / 0.12)" }}>
                   <h3 className="m-0">
                     <button id={btnId} type="button" aria-expanded={isOpen} aria-controls={panelId}

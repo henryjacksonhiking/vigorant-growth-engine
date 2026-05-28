@@ -86,7 +86,7 @@ export default function MarketingRoi() {
         <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-[1100px] mx-auto list-none p-0">
           {BLIND_SPOTS.map((b, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.04}>
+              <Reveal delay={i * 0.04} className="h-full">
                 <article className="bg-white border border-brand-purple/12 rounded-2xl p-5 h-full hover:border-brand-purple/30 hover:shadow-lg transition-all">
                   <div className="w-10 h-10 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple mb-3">
                     <b.Icon aria-hidden size={18} />
@@ -105,7 +105,7 @@ export default function MarketingRoi() {
         <ol className="mt-12 max-w-[960px] mx-auto flex flex-col gap-4 list-none p-0">
           {FIX_STEPS.map((p, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.06}>
+              <Reveal delay={i * 0.06} className="h-full">
                 <div className="bg-white/5 border border-white/12 backdrop-blur rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row gap-5">
                   <div className="font-mono-ui text-[28px] font-bold gradient-text shrink-0 sm:w-16">{p.n}</div>
                   <div className="flex-1">

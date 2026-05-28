@@ -257,7 +257,7 @@ function ProblemReframe() {
         </Reveal>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {cards.map((c, i) => (
-            <Reveal key={c.t} delay={0.1 + i * 0.06}>
+            <Reveal key={c.t} delay={0.1 + i * 0.06} className="h-full">
               <div className="text-left rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
                 <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
@@ -359,7 +359,7 @@ function GrowthEngine() {
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.n} delay={i * 0.06}>
+            <Reveal key={p.n} delay={i * 0.06} className="h-full">
               <div className="text-center rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 100% 98%)", border: "1px solid hsl(247 93% 64% / 0.1)" }}>
                 <div className="font-mono-ui font-bold text-[28px] gradient-text">{p.n}</div>
@@ -395,7 +395,7 @@ function Definitions() {
         </Reveal>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {defs.map((d, i) => (
-            <Reveal key={i} delay={i * 0.08}>
+            <Reveal key={i} delay={i * 0.08} className="h-full">
               <div className="bg-white p-6 sm:p-7 h-full"
                 style={{ borderLeft: "3px solid hsl(247 93% 64%)", borderRadius: "0 14px 14px 0", boxShadow: "0 4px 20px hsl(247 93% 64% / 0.06)" }}>
                 <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">{d.tag}</div>
@@ -579,7 +579,7 @@ function Proof() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {PROOF.map((p, i) => (
-            <Reveal key={p.tag} delay={i * 0.07}>
+            <Reveal key={p.tag} delay={i * 0.07} className="h-full">
               <div className="h-full rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
                 <div className="font-mono-ui text-[11px] uppercase tracking-[0.08em] text-white/40">{p.tag}</div>
@@ -688,7 +688,7 @@ function FAQSection() {
             const btnId = `${baseId}-q-${i}`;
             const panelId = `${baseId}-p-${i}`;
             return (
-              <Reveal key={f.q} delay={i * 0.03}>
+              <Reveal key={f.q} delay={i * 0.03} className="h-full">
                 <div className="bg-white rounded-xl overflow-hidden transition-all"
                   style={{
                     border: `1px solid hsl(247 93% 64% / ${isOpen ? "0.25" : "0.1"})`,

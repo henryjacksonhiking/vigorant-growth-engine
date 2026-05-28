@@ -223,7 +223,7 @@ export default function About() {
             </Reveal>
             <div className="grid sm:grid-cols-2 gap-5 mt-12">
               {VALUES.map((v, i) => (
-                <Reveal key={v.h} delay={i * 0.05}>
+                <Reveal key={v.h} delay={i * 0.05} className="h-full">
                   <TiltCard className="h-full rounded-2xl bg-white border border-brand-purple/12 p-7 hover:border-brand-purple/30 transition-colors">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
                       <v.icon aria-hidden size={22} className="text-white" />
@@ -255,7 +255,7 @@ export default function About() {
                 { icon: Activity, label: "Chiropractic", body: "Local pain relief, wellness care, auto injury, sports.", href: "/solutions/chiropractic" },
                 { icon: Stethoscope, label: "Medical", body: "Private practice, specialty groups, multi-provider.", href: "/solutions/medical" },
               ].map((s, i) => (
-                <Reveal key={s.label} delay={i * 0.06}>
+                <Reveal key={s.label} delay={i * 0.06} className="h-full">
                   <TiltCard className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur p-7 h-full">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 mb-5">
                       <s.icon aria-hidden size={22} />
@@ -289,7 +289,7 @@ export default function About() {
                 { n: "04", h: "Trust", b: "Reputation, reviews, content authority" },
                 { n: "05", h: "Measurement", b: "Booked-patient analytics" },
               ].map((s, i) => (
-                <Reveal key={s.n} delay={i * 0.05}>
+                <Reveal key={s.n} delay={i * 0.05} className="h-full">
                   <li className="rounded-2xl bg-white border border-brand-purple/12 p-6 h-full">
                     <span className="font-mono-ui text-sm text-brand-purple">{s.n}</span>
                     <h3 className="font-bold text-brand-deep mt-2">{s.h}</h3>
@@ -312,7 +312,7 @@ export default function About() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
               {TEAM.map((t, i) => (
-                <Reveal key={t.name} delay={i * 0.05}>
+                <Reveal key={t.name} delay={i * 0.05} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full">
                     <div className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-lg" style={{ background: "var(--gradient-brand)" }}>
                       {t.initials}
@@ -343,7 +343,7 @@ export default function About() {
                 { n: 87, suf: "%", h: "Avg lead-to-booking lift" },
                 { n: 24, suf: "mo", h: "Avg client retention" },
               ].map((m, i) => (
-                <Reveal key={m.h} delay={i * 0.05}>
+                <Reveal key={m.h} delay={i * 0.05} className="h-full">
                   <div className="rounded-2xl bg-white border border-brand-purple/12 p-6 text-center">
                     <div className="text-4xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
                       <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
@@ -407,7 +407,7 @@ export default function About() {
             </Reveal>
             <dl className="mt-10 space-y-3">
               {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03}>
+                <Reveal key={f.q} delay={i * 0.03} className="h-full">
                   <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
                     <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
                       <span>{f.q}</span>

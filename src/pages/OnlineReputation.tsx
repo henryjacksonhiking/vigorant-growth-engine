@@ -60,7 +60,7 @@ export default function OnlineReputation() {
         <ul className="mt-12 max-w-[860px] mx-auto flex flex-col gap-4 list-none p-0">
           {GAPS.map((g, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.05}>
+              <Reveal delay={i * 0.05} className="h-full">
                 <article className="bg-white rounded-2xl border border-brand-purple/12 p-6 flex gap-5 hover:shadow-md transition">
                   <div className="w-11 h-11 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple shrink-0">
                     <g.Icon aria-hidden size={20} />
@@ -81,7 +81,7 @@ export default function OnlineReputation() {
         <ol className="mt-12 max-w-[960px] mx-auto flex flex-col gap-4 list-none p-0">
           {METHOD.map((p, i) => (
             <li key={i}>
-              <Reveal delay={i * 0.06}>
+              <Reveal delay={i * 0.06} className="h-full">
                 <div className="bg-white/5 border border-white/12 backdrop-blur rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row gap-5">
                   <div className="font-mono-ui text-[28px] font-bold gradient-text shrink-0 sm:w-16">{p.n}</div>
                   <div className="flex-1">

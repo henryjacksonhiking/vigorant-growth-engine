@@ -217,7 +217,7 @@ export default function SolutionsDental() {
                 { h: "The Problem: Good Dentistry Does Not Automatically Create Online Demand", p: "Many dental offices are clinically strong but digitally underpowered. They may have loyal patients, strong chairside care, and a capable team, yet still struggle to attract new patients online because their website, search visibility, reviews, ads, and follow-up systems are not working together.", quote: "The best clinical care in your market does not always win online. The practice with the clearest visibility, strongest trust signals, and easiest booking path often gets the patient first." },
                 { h: "The Goal: More Qualified Patients, Better Case Mix, and Clearer ROI", p: "Success in dental marketing means qualified appointments, implant and cosmetic case growth, consistent ortho and oral surgery demand, measurable attribution from first click to booked visit, and a growth system that does not depend on any single channel." },
               ].map((b, i) => (
-                <Reveal key={i} delay={i * 0.08}>
+                <Reveal key={i} delay={i * 0.08} className="h-full">
                   <div className="bg-white/5 border border-white/10 rounded-[14px] p-6 sm:p-7">
                     <h3 className="font-bold text-white text-[17px] leading-snug">{b.h}</h3>
                     <p className="mt-2 text-white/70 text-[15px] leading-[1.75]">{b.p}</p>
@@ -260,7 +260,7 @@ export default function SolutionsDental() {
             </Reveal>
             <ol className="list-none p-0 m-0 max-w-5xl mx-auto flex flex-col gap-4">
               {PILLARS.map((p, i) => (
-                <Reveal key={p.tag} delay={i * 0.06}>
+                <Reveal key={p.tag} delay={i * 0.06} className="h-full">
                   <li className="bg-white/90 backdrop-blur border border-white rounded-[20px] overflow-hidden hover:border-brand-purple/40 hover:-translate-y-1 transition-all duration-300" style={{ boxShadow: "0 8px 28px hsl(248 49% 15% / 0.06)" }}>
                     <div className="grid md:grid-cols-[1fr_240px]">
                       <div className="p-7 sm:p-8">
@@ -311,7 +311,7 @@ export default function SolutionsDental() {
             </Reveal>
             <ul className="list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {SPECIALTIES.map((s, i) => (
-                <Reveal key={s.tag} delay={i * 0.06}>
+                <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li data-specialty={s.tag}>
                     <article className="h-full bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
@@ -360,7 +360,7 @@ export default function SolutionsDental() {
             </Reveal>
             <ul className="list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
               {SERVICES.map((s, i) => (
-                <Reveal key={s.name} delay={i * 0.04}>
+                <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
                     <article className="h-full bg-white/6 border border-white/10 rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
@@ -399,7 +399,7 @@ export default function SolutionsDental() {
             </Reveal>
             <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto">
               {BLOCKERS.map((b, i) => (
-                <Reveal key={b.chip} delay={i * 0.07}>
+                <Reveal key={b.chip} delay={i * 0.07} className="h-full">
                   <li>
                     <article className="h-full bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
@@ -580,7 +580,7 @@ export default function SolutionsDental() {
                 { who: "Cosmetic Dental Practice · Austin, TX", n: "+18", l: "cosmetic consults / month", problem: "Traffic existed but no cosmetic-specific conversion path.", chips: ["Cosmetic Landing Page", "Paid Ads", "Video"], when: "within 45 days", quote: "The procedure-specific landing page changed everything for our cosmetic inquiries." },
                 { who: "Multi-Location Dental Group · Denver, CO", n: "↓41%", l: "cost per new patient", problem: "Multi-location ads producing inconsistent results across markets.", chips: ["Location SEO", "Ads", "Attribution"], when: "within 90 days", quote: "Now each location has its own measurement — we can see exactly where to invest more." },
               ].map((p, i) => (
-                <Reveal key={p.who} delay={i * 0.08}>
+                <Reveal key={p.who} delay={i * 0.08} className="h-full">
                   <article className="bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
                     <div className="font-mono-ui text-[11px] text-ink-muted">{p.who}</div>
                     <div className="font-extrabold text-[38px] mt-2 leading-none"><GradientText>{p.n}</GradientText></div>

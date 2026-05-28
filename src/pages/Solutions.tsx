@@ -439,7 +439,7 @@ function WhyConverts() {
           {blocks.map((b, i) => {
             const Icon = b.icon;
             return (
-              <Reveal key={b.tag} delay={0.05 * i}>
+              <Reveal key={b.tag} delay={0.05 * i} className="h-full">
                 <article className="rounded-2xl border border-brand-purple/10 bg-surface-secondary p-7 transition-all hover:-translate-y-1 hover:border-brand-purple/25 tilt-spotlight">
                   <span className="font-mono-ui text-[11px] uppercase px-2.5 py-1 rounded-full text-brand-purple" style={{ background: "rgba(100,79,249,0.07)" }}>
                     {b.tag}
@@ -483,7 +483,7 @@ function Definitions() {
         </Reveal>
         <div className="mt-10 max-w-[1020px] mx-auto grid md:grid-cols-3 gap-5">
           {defs.map((d, i) => (
-            <Reveal key={d.title} delay={0.05 * i}>
+            <Reveal key={d.title} delay={0.05 * i} className="h-full">
               <div className="bg-background border-l-[3px] border-brand-purple rounded-r-[14px] p-6 shadow-sm h-full" style={{ boxShadow: "0 4px 20px rgba(100,79,249,0.05)" }}>
                 <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple mb-2">Definition · {d.title}</div>
                 <p className="text-brand-deep italic" style={{ fontSize: 15, lineHeight: 1.85 }}>
@@ -529,7 +529,7 @@ function GrowthEngine() {
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
-              <Reveal key={s.n} delay={0.05 * i}>
+              <Reveal key={s.n} delay={0.05 * i} className="h-full">
                 <div className="rounded-2xl p-6 h-full transition-all hover:-translate-y-1 tilt-spotlight" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
                   <div className="font-mono-ui font-bold gradient-text" style={{ fontSize: 32 }}>{s.n}</div>
                   <div className="mt-2 w-11 h-11 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
@@ -586,7 +586,7 @@ function Capabilities() {
           {caps.map((c, i) => {
             const Icon = c.icon;
             return (
-              <Reveal key={c.tag} delay={0.04 * i}>
+              <Reveal key={c.tag} delay={0.04 * i} className="h-full">
                 <li>
                   <article className="rounded-2xl p-6 h-full border border-white/80 transition-all hover:-translate-y-1 hover:border-brand-purple/30 tilt-spotlight" style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(16px)", boxShadow: "0 4px 18px rgba(27,19,56,0.04)" }}>
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
@@ -701,7 +701,7 @@ function Proof() {
 
         <div className="mt-12 grid md:grid-cols-3 gap-5 max-w-[960px] mx-auto">
           {cards.map((c, i) => (
-            <Reveal key={c.tag} delay={0.05 * i}>
+            <Reveal key={c.tag} delay={0.05 * i} className="h-full">
               <article className="rounded-[18px] p-7 h-full tilt-spotlight transition-all hover:-translate-y-1" style={{ background: "#221a45", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="flex items-center justify-between font-mono-ui text-[11px]" style={{ color: "rgba(255,255,255,0.35)" }}>
                   <span>{c.tag}</span><span style={{ color: "rgba(255,255,255,0.28)" }}>{c.loc}</span>
@@ -744,7 +744,7 @@ function FaqBlock() {
             const btnId = `${baseId}-q-${i}`;
             const panelId = `${baseId}-p-${i}`;
             return (
-              <Reveal key={f.q} delay={i * 0.03}>
+              <Reveal key={f.q} delay={i * 0.03} className="h-full">
                 <div className={`bg-background rounded-xl border transition-all ${isOpen ? "border-brand-purple/25 shadow-[0_8px_24px_rgba(100,79,249,0.07)]" : "border-brand-purple/10"}`}>
                   <h3 className="m-0">
                     <button

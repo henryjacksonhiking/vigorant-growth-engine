@@ -217,7 +217,7 @@ export default function HighValuePatients() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl mx-auto">
               {SPECS.map((s, i) => (
-                <Reveal key={s.tag} delay={i * 0.07}>
+                <Reveal key={s.tag} delay={i * 0.07} className="h-full">
                   <article className="h-full bg-white/95 border border-white/70 rounded-[20px] p-7 hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                     <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
                     <div className="mt-3 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><s.icon size={20} className="text-white" /></div>
@@ -243,7 +243,7 @@ export default function HighValuePatients() {
             </Reveal>
             <ol className="list-none p-0 m-0 max-w-5xl mx-auto flex flex-col gap-4 mt-12">
               {STEPS.map((s, i) => (
-                <Reveal key={s.n} delay={i * 0.05}>
+                <Reveal key={s.n} delay={i * 0.05} className="h-full">
                   <li className="bg-white/6 border border-white/10 rounded-[18px] overflow-hidden hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
                     <div className="grid md:grid-cols-[1fr_240px]">
                       <div className="p-7">
@@ -278,7 +278,7 @@ export default function HighValuePatients() {
             </Reveal>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-12 max-w-5xl mx-auto">
               {STACK.map((c, i) => (
-                <Reveal key={c.h} delay={i * 0.03}>
+                <Reveal key={c.h} delay={i * 0.03} className="h-full">
                   <div className="bg-surface-secondary border border-brand-purple/10 rounded-[12px] p-4 text-center hover:border-brand-purple/25 hover:-translate-y-1 transition-all h-full">
                     <div className="w-9 h-9 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><c.icon size={16} className="text-white" /></div>
                     <h3 className="font-bold text-brand-deep text-[12px] mt-2">{c.h}</h3>

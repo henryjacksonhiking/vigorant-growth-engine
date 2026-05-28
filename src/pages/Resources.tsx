@@ -181,7 +181,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
               {ALBUMS.map((a, i) => (
-                <Reveal key={a.h} delay={i * 0.05}>
+                <Reveal key={a.h} delay={i * 0.05} className="h-full">
                   <Link to={a.href} className="block h-full">
                     <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full hover:border-brand-purple/30 transition-colors">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
@@ -211,7 +211,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {FEATURED.map((f, i) => (
-                <Reveal key={f.h} delay={i * 0.05}>
+                <Reveal key={f.h} delay={i * 0.05} className="h-full">
                   <Link to={f.href} className="block h-full">
                     <article className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full hover:border-brand-purple/30 transition-colors">
                       <span className="font-mono-ui text-xs uppercase tracking-wider text-brand-purple">{f.tag}</span>
@@ -259,7 +259,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {BY_PRACTICE.map((p, i) => (
-                <Reveal key={p.h} delay={i * 0.05}>
+                <Reveal key={p.h} delay={i * 0.05} className="h-full">
                   <Link to={p.href} className="block h-full">
                     <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full hover:border-brand-purple/30 transition-colors flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-brand)" }}>
@@ -289,7 +289,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
               {AI_KNOWLEDGE.map((a, i) => (
-                <Reveal key={a.h} delay={i * 0.04}>
+                <Reveal key={a.h} delay={i * 0.04} className="h-full">
                   <div className="rounded-2xl bg-white border border-brand-purple/12 p-6 h-full hover:border-brand-purple/30 transition-colors">
                     <Brain aria-hidden size={22} className="text-brand-purple" />
                     <h3 className="mt-3 font-bold text-brand-deep">{a.h}</h3>
@@ -312,7 +312,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
               {LATEST.map((r, i) => (
-                <Reveal key={r.h} delay={i * 0.04}>
+                <Reveal key={r.h} delay={i * 0.04} className="h-full">
                   <a href={r.href} className="block h-full">
                     <article className="rounded-2xl bg-white border border-brand-purple/12 p-6 h-full hover:border-brand-purple/30 transition-colors">
                       <span className="font-mono-ui text-xs uppercase tracking-wider text-brand-purple">{r.type}</span>
@@ -336,7 +336,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {EBOOKS.map((e, i) => (
-                <Reveal key={e.h} delay={i * 0.05}>
+                <Reveal key={e.h} delay={i * 0.05} className="h-full">
                   <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full">
                     <Download aria-hidden size={26} className="text-brand-purple" />
                     <h3 className="font-bold text-brand-deep text-lg mt-4">{e.h}</h3>
@@ -362,7 +362,7 @@ export default function Resources() {
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12">
               {VIDEOS.map((v, i) => (
-                <Reveal key={v.h} delay={i * 0.05}>
+                <Reveal key={v.h} delay={i * 0.05} className="h-full">
                   <a href={v.href} className="block h-full">
                     <article className="rounded-2xl bg-white border border-brand-purple/12 overflow-hidden h-full hover:border-brand-purple/30 transition-colors">
                       <div className="aspect-video flex items-center justify-center" style={{ background: "var(--gradient-dark)" }}>
@@ -390,7 +390,7 @@ export default function Resources() {
             </Reveal>
             <dl className="mt-10 space-y-3">
               {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03}>
+                <Reveal key={f.q} delay={i * 0.03} className="h-full">
                   <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
                     <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
                       <span>{f.q}</span>
