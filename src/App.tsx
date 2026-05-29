@@ -49,6 +49,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <DarkSectionTagger />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/for-practices" element={<ForPractices />} />
