@@ -10,6 +10,13 @@ import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
+function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
+  return (
+    <span className="block overflow-hidden">
+      <motion.span className="block" initial={{ y: "108%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay, ease }}>{children}</motion.span>
+    </span>
+  );
+}
 function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
