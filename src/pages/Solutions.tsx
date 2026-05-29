@@ -210,7 +210,7 @@ function OneSystem() {
             <span className="block text-white">One Healthcare Growth System.</span>
             <span className="block gradient-text">Three Specialty-Specific Paths.</span>
           </h2>
-          <p className="mt-6 max-w-[620px] mx-auto" style={{ fontSize: 17, lineHeight: 1.78, color: "rgba(255,255,255,0.62)" }}>
+          <p className="mt-6 max-w-[620px] mx-auto" style={{ fontSize: 17, lineHeight: 1.78, color: "rgba(255,255,255,0.88)" }}>
             A dentist needs implant, cosmetic, hygiene, and family-patient demand. A chiropractor needs local trust, fast appointment conversion, and recurring care awareness. A medical practice may need elective, cash-pay, referral, or multi-provider growth. The marketing engine must match the business model — or it will underperform regardless of budget.
           </p>
         </Reveal>
@@ -227,11 +227,11 @@ function OneSystem() {
               ))}
               {rows.map((r, idx) => (
                 <div key={r.label} className="contents">
-                  <div className={`px-5 py-3 font-mono-ui text-[11px] uppercase tracking-[0.07em] ${idx === rows.length - 1 ? "" : "border-b"} md:border-r`} style={{ color: "rgba(255,255,255,0.35)", borderColor: "rgba(255,255,255,0.04)" }}>
+                  <div className={`px-5 py-3 font-mono-ui text-[11px] uppercase tracking-[0.07em] ${idx === rows.length - 1 ? "" : "border-b"} md:border-r`} style={{ color: "rgba(255,255,255,0.75)", borderColor: "rgba(255,255,255,0.04)" }}>
                     {r.label}
                   </div>
                   {[r.d, r.c, r.m].map((cell, i) => (
-                    <div key={i} className={`px-5 py-3 text-[13px] ${idx === rows.length - 1 ? "" : "border-b"}`} style={{ color: "rgba(255,255,255,0.65)", borderColor: "rgba(255,255,255,0.04)" }}>
+                    <div key={i} className={`px-5 py-3 text-[13px] ${idx === rows.length - 1 ? "" : "border-b"}`} style={{ color: "rgba(255,255,255,0.9)", borderColor: "rgba(255,255,255,0.04)" }}>
                       {cell}
                     </div>
                   ))}
@@ -520,7 +520,7 @@ function GrowthEngine() {
             <span className="block text-white">The Vigorant Growth Engine</span>
             <span className="block gradient-text">for Healthcare Practices</span>
           </h2>
-          <p className="mt-5 mx-auto max-w-[600px]" style={{ fontSize: 17, lineHeight: 1.78, color: "rgba(255,255,255,0.62)" }}>
+          <p className="mt-5 mx-auto max-w-[600px]" style={{ fontSize: 17, lineHeight: 1.78, color: "rgba(255,255,255,0.88)" }}>
             Vigorant doesn't treat SEO, paid ads, websites, reputation, and reporting as separate activities. We connect them into one growth engine so your practice can see where demand is coming from, where patients are dropping off, and what to improve next — all within a specialty-specific framework.
           </p>
         </Reveal>
@@ -536,7 +536,7 @@ function GrowthEngine() {
                     <Icon aria-hidden size={20} className="text-white" />
                   </div>
                   <h3 className="text-white font-bold mt-3" style={{ fontSize: 15 }}>{s.h}</h3>
-                  <p className="mt-1.5" style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.58)" }}>{s.b}</p>
+                  <p className="mt-1.5" style={{ fontSize: 13, lineHeight: 1.65, color: "rgba(255,255,255,0.85)" }}>{s.b}</p>
                 </div>
               </Reveal>
             );
@@ -694,7 +694,7 @@ function Proof() {
             <span className="block text-white">Results From Practices</span>
             <span className="block gradient-text">Like Yours</span>
           </h2>
-          <p className="mt-4 max-w-[540px] mx-auto" style={{ fontSize: 17, color: "rgba(255,255,255,0.58)" }}>
+          <p className="mt-4 max-w-[540px] mx-auto" style={{ fontSize: 17, color: "rgba(255,255,255,0.85)" }}>
             Real numbers from real practices — organized by specialty so you can see what's possible for your specific market.
           </p>
         </Reveal>
@@ -703,17 +703,17 @@ function Proof() {
           {cards.map((c, i) => (
             <Reveal key={c.tag} delay={0.05 * i} className="h-full">
               <article className="rounded-[18px] p-7 h-full tilt-spotlight transition-all hover:-translate-y-1" style={{ background: "#221a45", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="flex items-center justify-between font-mono-ui text-[11px]" style={{ color: "rgba(255,255,255,0.35)" }}>
-                  <span>{c.tag}</span><span style={{ color: "rgba(255,255,255,0.28)" }}>{c.loc}</span>
+                <div className="flex items-center justify-between font-mono-ui text-[11px]" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  <span>{c.tag}</span><span style={{ color: "rgba(255,255,255,0.7)" }}>{c.loc}</span>
                 </div>
                 <div className="mt-4 font-display font-bold gradient-text leading-none" style={{ fontSize: "clamp(52px, 7vw, 68px)" }}>
                   {c.prefix}<Counter to={c.num} />{c.suffix ?? ""}
                 </div>
-                <div className="font-mono-ui mt-1" style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>{c.label}</div>
+                <div className="font-mono-ui mt-1" style={{ fontSize: 13, color: "rgba(255,255,255,0.8)" }}>{c.label}</div>
                 <span className="inline-block mt-4 font-mono-ui text-[11px] px-2.5 py-1 rounded-full" style={{ background: "rgba(100,79,249,0.2)", border: "1px solid rgba(100,79,249,0.3)", color: "#c8c1ff" }}>
                   {c.time}
                 </span>
-                <p className="mt-5 italic border-l-2 pl-3" style={{ fontSize: 14, color: "rgba(255,255,255,0.62)", borderColor: "rgba(143,125,255,0.3)" }}>
+                <p className="mt-5 italic border-l-2 pl-3" style={{ fontSize: 14, color: "rgba(255,255,255,0.88)", borderColor: "rgba(143,125,255,0.3)" }}>
                   {c.quote}
                 </p>
               </article>
@@ -780,7 +780,7 @@ function FinalCta() {
         <h2 id="final-h2" className="font-display font-bold text-white mt-5 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 52px)" }}>
           Find the Right Growth Path for Your Practice
         </h2>
-        <p className="mt-6 max-w-[500px] mx-auto" style={{ fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.68)" }}>
+        <p className="mt-6 max-w-[500px] mx-auto" style={{ fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,0.9)" }}>
           Choose your specialty and get a clear view of where your practice is losing visibility, leads, and conversions — and what to do next.
         </p>
         <ul className="mt-7 inline-block text-left mx-auto">
@@ -808,12 +808,12 @@ function FinalCta() {
             Request Your Free Growth Audit <ArrowRight aria-hidden size={18} className="ml-2" />
           </a>
         </div>
-        <p className="mt-4" style={{ fontSize: 14, color: "rgba(255,255,255,0.42)" }}>
+        <p className="mt-4" style={{ fontSize: 14, color: "rgba(255,255,255,0.75)" }}>
           No commitment. No hard sell. Just clarity on what your practice needs to grow.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           {["HIPAA Compliant", "Response Within 24 Hours", "No Long-Term Contracts"].map((c) => (
-            <span key={c} className="font-mono-ui rounded-full px-3 py-1" style={{ fontSize: 11, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }}>
+            <span key={c} className="font-mono-ui rounded-full px-3 py-1" style={{ fontSize: 11, background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.85)" }}>
               {c}
             </span>
           ))}

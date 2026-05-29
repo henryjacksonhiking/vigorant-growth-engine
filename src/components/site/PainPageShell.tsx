@@ -150,7 +150,7 @@ export function SectionHeader({ label, title, sub, dark = false, gradientWord }:
       <h2 className={`font-extrabold mt-4 leading-[1.1] tracking-tight ${dark ? "text-white" : "text-brand-deep"}`} style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
         {title}
       </h2>
-      {sub && <p className={`mt-5 text-[16px] sm:text-[17px] leading-[1.75] max-w-[640px] mx-auto ${dark ? "text-white/65" : "text-text-secondary"}`}>{sub}</p>}
+      {sub && <p className={`mt-5 text-[16px] sm:text-[17px] leading-[1.75] max-w-[640px] mx-auto ${dark ? "text-white/90" : "text-text-secondary"}`}>{sub}</p>}
     </Reveal>
   );
 }
@@ -185,7 +185,7 @@ export function FinalCTA({ headline, sub, ctaLabel, ctaHref }: { headline: strin
         <h2 className="font-extrabold text-white leading-[1.1] tracking-tight" style={{ fontSize: "clamp(30px, 5vw, 52px)", letterSpacing: "-0.03em" }}>
           {headline}
         </h2>
-        <p className="mt-5 text-white/70 text-[17px] leading-[1.75] max-w-[600px] mx-auto">{sub}</p>
+        <p className="mt-5 text-white/90 text-[17px] leading-[1.75] max-w-[600px] mx-auto">{sub}</p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center flex-wrap">
           <Link to={ctaHref} className="bg-white text-brand-deep inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px] hover:bg-white/90 transition">
             {ctaLabel} <ArrowRight aria-hidden size={18} />

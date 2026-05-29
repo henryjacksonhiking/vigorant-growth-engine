@@ -411,7 +411,7 @@ export default function SolutionsMedical() {
             <Reveal className="text-center max-w-2xl mx-auto">
               <ChipLabel dark>Privacy-Conscious Marketing</ChipLabel>
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 40px)", letterSpacing: "-0.03em" }}>Medical Marketing With<br /><GradientTextLight>Compliance in Mind</GradientTextLight></h2>
-              <p className="mt-5 text-white/65 text-[16px] leading-[1.78]">Medical practices must be aware that digital tracking, paid advertising, and website analytics tools may carry privacy obligations under HIPAA. Vigorant uses a privacy-conscious approach to marketing setup, tracking, and campaign management — and recommends that practices work with their legal and compliance teams regarding tracking technology choices.</p>
+              <p className="mt-5 text-white/90 text-[16px] leading-[1.78]">Medical practices must be aware that digital tracking, paid advertising, and website analytics tools may carry privacy obligations under HIPAA. Vigorant uses a privacy-conscious approach to marketing setup, tracking, and campaign management — and recommends that practices work with their legal and compliance teams regarding tracking technology choices.</p>
             </Reveal>
             <Reveal delay={0.08} className="mt-9 max-w-3xl mx-auto">
               <div className="bg-white/5 border border-white/10 rounded-[14px] p-6">
@@ -424,7 +424,7 @@ export default function SolutionsMedical() {
                 <ExternalLink size={14} className="text-brand-bright flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-lavender/60 mb-1">HHS Official Guidance</div>
-                  <p className="text-[13px] text-white/65 leading-[1.65] m-0">The HHS has published guidance on how the HIPAA Privacy Rule may apply to the use of online tracking technologies by HIPAA-covered entities and business associates. <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/hipaa-online-tracking/index.html" target="_blank" rel="noopener noreferrer nofollow" aria-label="HHS guidance on online tracking technologies for HIPAA-covered entities, opens in new tab" className="text-brand-bright font-semibold underline">HHS guidance on online tracking technologies for HIPAA-covered entities</a>.</p>
+                  <p className="text-[13px] text-white/90 leading-[1.65] m-0">The HHS has published guidance on how the HIPAA Privacy Rule may apply to the use of online tracking technologies by HIPAA-covered entities and business associates. <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/hipaa-online-tracking/index.html" target="_blank" rel="noopener noreferrer nofollow" aria-label="HHS guidance on online tracking technologies for HIPAA-covered entities, opens in new tab" className="text-brand-bright font-semibold underline">HHS guidance on online tracking technologies for HIPAA-covered entities</a>.</p>
                 </div>
               </div>
             </Reveal>
@@ -524,8 +524,8 @@ export default function SolutionsMedical() {
           <div className="container relative z-10 text-center max-w-2xl">
             <ChipLabel dark>Get a Clear Roadmap to More Qualified Patients</ChipLabel>
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}>Get a Free Medical Practice Growth Audit.</h2>
-            <p className="mt-5 text-white/65 text-[16px] max-w-xl mx-auto leading-[1.72]">See where your medical practice or clinic is losing visibility, qualified leads, and appointment opportunities — and get a clear, prioritized roadmap for what to fix first.</p>
-            <ul className="list-none p-0 mt-6 inline-flex flex-col gap-1 text-left text-white/82 text-[15px]">
+            <p className="mt-5 text-white/90 text-[16px] max-w-xl mx-auto leading-[1.72]">See where your medical practice or clinic is losing visibility, qualified leads, and appointment opportunities — and get a clear, prioritized roadmap for what to fix first.</p>
+            <ul className="list-none p-0 mt-6 inline-flex flex-col gap-1 text-left text-white/95 text-[15px]">
               {["Google and AI search visibility review", "Website and landing page conversion assessment", "Paid ads and campaign opportunity check", "Competitor gap analysis by service line", "Reputation and trust signal review", "Prioritized medical growth roadmap — no obligation"].map(b => <li key={b} className="flex gap-2"><span className="text-brand-bright">✦</span>{b}</li>)}
             </ul>
             <div className="mt-7 font-mono-ui text-[12px] text-brand-lavender">8 audit slots per month · 3 remaining</div>
