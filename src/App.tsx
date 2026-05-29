@@ -31,6 +31,10 @@ import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
 import About from "./pages/About.tsx";
 import FreeAudit from "./pages/FreeAudit.tsx";
+import CaseStudies from "./pages/CaseStudies.tsx";
+import CaseStudyDetail from "./pages/CaseStudyDetail.tsx";
+import Privacy from "./pages/Privacy.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -70,6 +74,10 @@ const App = () => (
             <Route path="/resources" element={<Resources />} />
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

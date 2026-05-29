@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const bullets = [
-  "Free — no cost, no obligation",
+  "Free Growth Audit — no cost, no obligation",
   "Delivered by a real healthcare marketing strategist",
   "Includes local SEO analysis, AI visibility scan, and ad account review",
 ];
@@ -50,12 +51,12 @@ export default function FinalCTA() {
           We accept 8 new audit requests per month. 3 spots remaining.
         </div>
 
-        <a
-          href="#"
+        <Link
+          to="/free-audit"
           className="mt-8 inline-flex items-center bg-white text-brand-deep font-bold text-[16px] sm:text-[17px] px-8 sm:px-10 py-4 rounded-full transition-all duration-300 hover:bg-[hsl(248_100%_75%)] hover:text-white hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(248_100%_75%/0.45)] min-h-[52px]"
         >
           Request Your Free Growth Audit <span aria-hidden className="ml-1">→</span>
-        </a>
+        </Link>
 
         <p className="mt-5 text-white/80 text-[14px]">
           Prefer to talk first? Call us at{" "}

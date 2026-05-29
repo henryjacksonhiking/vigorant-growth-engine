@@ -1,32 +1,35 @@
 import logoWhite from "@/assets/vigorant-logo-horizontal-flat-white.png";
 import { Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cols = [
   {
     title: "Solutions",
     links: [
-      { label: "Dental Marketing", href: "#" },
-      { label: "Medical Marketing", href: "#" },
-      { label: "Chiropractic Marketing", href: "#" },
-      { label: "AI Visibility (AIO/GEO)", href: "#" },
+      { label: "Dental Marketing", href: "/solutions/dental" },
+      { label: "Medical Marketing", href: "/solutions/medical" },
+      { label: "Chiropractic Marketing", href: "/solutions/chiropractic" },
+      { label: "AI Visibility (AEO/GEO)", href: "/services/seo/aeo" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Paid Ads", href: "#" },
-      { label: "Website Design", href: "#" },
-      { label: "Reputation Management", href: "#" },
-      { label: "Marketing Automation", href: "#" },
+      { label: "SEO", href: "/services/seo" },
+      { label: "Paid Ads", href: "/services/paid-ads" },
+      { label: "Website Design & CRO", href: "/services/website-design" },
+      { label: "Reputation & Social", href: "/services/reputation" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Case Studies", href: "#case-studies" },
-      { label: "Blog", href: "#" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "About", href: "/about" },
+      { label: "Resources", href: "/resources" },
       { label: "Free Growth Audit", href: "/free-audit" },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", href: "mailto:info@vigorant.com" },
     ],
   },
 ];
@@ -87,13 +90,22 @@ export default function Footer() {
             <nav key={c.title} aria-label={c.title}>
               <h3 className="font-bold text-white/65 text-xs uppercase tracking-[0.08em] mb-4">{c.title}</h3>
               <ul className="space-y-2.5 list-none p-0">
-                {c.links.map((l) => (
-                  <li key={l.label}>
-                    <a href={l.href} className="text-white/85 hover:text-white text-sm transition-colors inline-block py-1">
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
+                {c.links.map((l) => {
+                  const isExternal = l.href.startsWith("mailto:") || l.href.startsWith("http") || l.href.startsWith("tel:");
+                  return (
+                    <li key={l.label}>
+                      {isExternal ? (
+                        <a href={l.href} className="text-white/85 hover:text-white text-sm transition-colors inline-block py-1">
+                          {l.label}
+                        </a>
+                      ) : (
+                        <Link to={l.href} className="text-white/85 hover:text-white text-sm transition-colors inline-block py-1">
+                          {l.label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           ))}
@@ -106,9 +118,8 @@ export default function Footer() {
         <div className="border-t border-white/15 mt-8 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-white/70 text-[13px]">
           <div>© 2026 Vigorant Inc. All rights reserved.</div>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-white py-1">Privacy Policy</a>
-            <a href="#" className="hover:text-white py-1">Terms of Service</a>
-            <a href="#contact" className="hover:text-white py-1">Contact</a>
+            <Link to="/privacy" className="hover:text-white py-1">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white py-1">Terms of Service</Link>
           </div>
         </div>
       </div>

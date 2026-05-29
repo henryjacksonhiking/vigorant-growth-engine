@@ -1,35 +1,77 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { Stethoscope, HeartPulse, Activity, Building2, Scissors, ArrowRight } from "lucide-react";
+import { Stethoscope, Activity, Building2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+/** Inline tooth icon — used for Dental Marketing. */
+function ToothIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d="M12 3c-2.6 0-4 1-5.5 1S3 5 3 8c0 2 .8 3.2 1.4 5 .4 1.2.5 2.5.8 4 .4 2 .7 4 1.9 4 1.5 0 1.6-3 2.4-5 .4-1 .8-1.5 1.5-1.5h1c.7 0 1.1.5 1.5 1.5.8 2 .9 5 2.4 5 1.2 0 1.5-2 1.9-4 .3-1.5.4-2.8.8-4 .6-1.8 1.4-3 1.4-5 0-3-2-3-3.5-3S14.6 3 12 3Z" />
+    </svg>
+  );
+}
+
+/** Inline scalpel icon — used for Oral Surgery. */
+function ScalpelIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      className={className}
+    >
+      <path d="M14.5 3 21 9.5l-7 1.5-6 6-3-3 6-6 1.5-7Z" />
+      <path d="m8 17-5 5" />
+    </svg>
+  );
+}
 
 const industries = [
   {
-    icon: Stethoscope,
+    Icon: ToothIcon,
     title: "Dental Marketing",
-    href: "/dental-marketing",
+    href: "/solutions/dental",
     body: "From general dentistry to implant specialists — SEO, ads, and conversion built for dental growth.",
   },
   {
-    icon: HeartPulse,
+    Icon: Stethoscope,
     title: "Medical Practice Marketing",
-    href: "/medical-marketing",
+    href: "/solutions/medical",
     body: "Patient acquisition strategies for primary care, specialists, and wellness centers.",
   },
   {
-    icon: Activity,
+    Icon: Activity,
     title: "Chiropractic Marketing",
-    href: "/chiropractic-marketing",
+    href: "/solutions/chiropractic",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
   },
   {
-    icon: Scissors,
+    Icon: ScalpelIcon,
     title: "Oral Surgery & Specialists",
-    href: "/oral-surgery-marketing",
+    href: "/solutions/dental",
     body: "Targeted marketing for oral surgeons, periodontists, endodontists, and specialty dental practices.",
   },
   {
-    icon: Building2,
+    Icon: Building2,
     title: "Multi-Location Healthcare",
-    href: "/multi-location",
+    href: "/for-practices/scale-your-practice",
     body: "Centralized marketing intelligence for practices with 3 or more locations.",
   },
 ];
@@ -48,24 +90,24 @@ export default function Industries() {
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
         {industries.map((it, i) => (
           <Reveal key={it.title} delay={i * 0.06} className="h-full">
-            <a
-              href={it.href}
+            <Link
+              to={it.href}
               className="group h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div
                 aria-hidden
-                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                className="w-12 h-12 rounded-xl flex items-center justify-center text-white"
                 style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
               >
-                <it.icon size={20} className="text-white" />
+                <it.Icon size={20} className="text-white" />
               </div>
               <h3 className="mt-5 font-extrabold text-brand-deep text-[17px] leading-tight">{it.title}</h3>
               <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed flex-1">{it.body}</p>
               <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
                 Learn More <ArrowRight aria-hidden size={16} />
               </span>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>

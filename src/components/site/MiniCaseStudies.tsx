@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Study {
   type: string;
@@ -8,6 +9,7 @@ interface Study {
   strategy: string;
   results: string[];
   initial: string;
+  slug: string;
 }
 
 const studies: Study[] = [
@@ -15,6 +17,7 @@ const studies: Study[] = [
     type: "Dental Implant Specialist — California",
     tag: "Dental SEO + Paid Ads",
     initial: "DI",
+    slug: "dental-implant-specialist-california",
     problem: "The practice was spending $8,000/month on Google Ads with a $187 cost-per-lead and inconsistent implant case volume.",
     strategy: "We rebuilt their campaign structure, rewrote landing pages for conversion, and launched a local SEO push targeting 'dental implants [city]' keywords.",
     results: ["Cost-per-lead dropped from $187 → $71", "+43% increase in implant consultations", "Ranked top 3 for primary implant keyword in 60 days"],
@@ -23,6 +26,7 @@ const studies: Study[] = [
     type: "6-Location DSO — Texas",
     tag: "Multi-Location SEO + Google Ads",
     initial: "DG",
+    slug: "6-location-dso-texas",
     problem: "The group had no centralized marketing strategy. Each location ran independently with no shared analytics or brand consistency.",
     strategy: "We implemented a unified dashboard, consolidated ad accounts, and deployed a location-specific local SEO strategy for all 6 offices.",
     results: ["2.8x ROAS across all locations", "+89 new patients per month across the group", "61% reduction in average cost-per-lead"],
@@ -31,6 +35,7 @@ const studies: Study[] = [
     type: "Sports Chiropractic Practice — Florida",
     tag: "AI Visibility + Local SEO",
     initial: "SC",
+    slug: "sports-chiropractic-florida",
     problem: "The practice relied entirely on word-of-mouth. They had zero Google Maps presence and were invisible in local search.",
     strategy: "We built out their Google Business Profile, launched an AIO content strategy, and optimized their website for local intent keywords.",
     results: ["Ranked #1 for primary chiropractic keyword in 45 days", "+44% increase in organic phone calls", "Now appearing in Google AI Overviews for key queries"],
@@ -95,18 +100,18 @@ export default function MiniCaseStudies() {
                 </div>
               </dl>
 
-              <a href="#" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] hover:gap-2.5 transition-all min-h-[44px]">
+              <Link to={`/case-studies/${s.slug}`} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] hover:gap-2.5 transition-all min-h-[44px]">
                 Read Full Case Study <ArrowRight aria-hidden size={16} />
-              </a>
+              </Link>
             </article>
           </Reveal>
         ))}
       </div>
 
       <Reveal className="text-center mt-10">
-        <a href="/case-studies" className="inline-flex items-center gap-2 font-semibold text-brand-deep hover:text-brand-purple transition-colors min-h-[44px]">
+        <Link to="/case-studies" className="inline-flex items-center gap-2 font-semibold text-brand-deep hover:text-brand-purple transition-colors min-h-[44px]">
           View All Case Studies <ArrowRight aria-hidden size={18} />
-        </a>
+        </Link>
       </Reveal>
     </Section>
   );
