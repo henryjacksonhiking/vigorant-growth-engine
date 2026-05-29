@@ -76,7 +76,7 @@ export default function Testimonials() {
 
       <div className="ui-card-grid mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {filtered.map((t, i) => (
-          <Reveal key={t.practice} delay={i * 0.05} className="h-full">
+          <ScrollTiltedItem key={t.practice} side={i % 2 === 0 ? "L" : "R"} className="h-full">
             <article
               className="ui-card relative"
               style={{ boxShadow: "var(--shadow-card)" }}
