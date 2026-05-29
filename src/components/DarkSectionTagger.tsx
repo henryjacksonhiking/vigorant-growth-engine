@@ -22,9 +22,11 @@ export default function DarkSectionTagger() {
       const m = bg.match(/rgba?\(([^)]+)\)/);
       let darkBg = false;
       if (m) {
-        const [r, g, b, a = "1"] = m[1].split(",").map((s) => parseFloat(s));
+        const parts = m[1].split(",").map((s) => parseFloat(s));
+        const [r, g, b] = parts;
+        const a = parts[3] ?? 1;
         const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-        if (parseFloat(a) > 0.5 && luminance < 0.25) darkBg = true;
+        if (a > 0.5 && luminance < 0.25) darkBg = true;
       }
       // Detect dark gradients (common pattern in this site)
       if (!darkBg && /linear-gradient|radial-gradient/.test(bgImg)) {
