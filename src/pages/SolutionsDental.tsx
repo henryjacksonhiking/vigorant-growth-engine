@@ -397,23 +397,23 @@ export default function SolutionsDental() {
                 The issue is rarely care quality. It is almost always the disconnected digital system: visibility, conversion, trust, and attribution not working together.
               </p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto">
+            <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto items-stretch">
               {BLOCKERS.map((b, i) => (
                 <Reveal key={b.chip} delay={i * 0.07} className="h-full">
-                  <li>
-                    <article className="h-full bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
-                      <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
-                      <div className="p-6">
+                  <li className="h-full">
+                    <article className="h-full flex flex-col bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                      <div className="h-1 flex-shrink-0" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
+                      <div className="p-6 flex flex-col flex-1">
                         <div className="flex items-start justify-between gap-4">
                           <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-rose-700 bg-rose-500/8 border border-rose-500/20 px-2.5 py-1 rounded-full">{b.chip}</span>
-                          <div className="w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center">
+                          <div className="w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center flex-shrink-0">
                             <b.icon size={20} className="text-brand-purple" />
                           </div>
                         </div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{b.h3}</h3>
+                        <h3 className="font-bold text-brand-deep text-[16px] mt-3 min-h-[3em] leading-[1.35]">{b.h3}</h3>
                         <p className="mt-3"><span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-amber-600">Symptom: </span><span className="text-[13px] text-ink-secondary">{b.symptom}</span></p>
                         <p className="mt-2"><span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-emerald-600">Vigorant Fix: </span><span className="text-[13px] text-brand-deep">{b.fix}</span></p>
-                        <Link to={b.link.to} className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">
+                        <Link to={b.link.to} className="mt-auto pt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">
                           {b.link.label} <ArrowRight size={12} />
                         </Link>
                       </div>
@@ -434,10 +434,10 @@ export default function SolutionsDental() {
                 How Vigorant Measures<br /><GradientText>Dental Marketing Performance</GradientText>
               </h2>
             </Reveal>
-            <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto mt-10">
-              <Reveal>
-                <div className="bg-white border border-brand-purple/15 rounded-[18px] p-7">
-                  <h3 className="font-bold text-brand-deep text-[17px]">From Rankings to Revenue Signals</h3>
+            <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto mt-10 items-stretch">
+              <Reveal className="h-full">
+                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-[18px] p-7">
+                  <h3 className="font-bold text-brand-deep text-[17px] min-h-[1.6em] leading-[1.3]">From Rankings to Revenue Signals</h3>
                   <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">A dentist's marketing ROI is not measured in keyword positions or traffic sessions. It is measured in the chain: visibility → traffic → qualified calls/forms → booked appointments → treatment opportunities → production.</p>
                   <div className="flex flex-wrap items-center gap-1 mt-4">
                     {["Visibility", "Traffic", "Qualified Leads", "Booked Appointments", "Production"].map((c, i, arr) => (
@@ -447,14 +447,14 @@ export default function SolutionsDental() {
                       </span>
                     ))}
                   </div>
-                  <Link to="/for-practices/marketing-roi" className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">
+                  <Link to="/for-practices/marketing-roi" className="mt-auto pt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">
                     Fix poor dental marketing ROI <ArrowRight size={13} />
                   </Link>
                 </div>
               </Reveal>
-              <Reveal delay={0.08}>
-                <div className="bg-white border border-brand-purple/15 rounded-[18px] p-7">
-                  <h3 className="font-bold text-brand-deep text-[17px]">What We Track</h3>
+              <Reveal delay={0.08} className="h-full">
+                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-[18px] p-7">
+                  <h3 className="font-bold text-brand-deep text-[17px] min-h-[1.6em] leading-[1.3]">What We Track</h3>
                   <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">Every Vigorant dental engagement includes attribution-connected reporting — not just clicks and impressions.</p>
                   <ul className="mt-3 list-none p-0 m-0 space-y-2">
                     {[
@@ -466,12 +466,12 @@ export default function SolutionsDental() {
                       "Review velocity and reputation signals",
                     ].map(t => (
                       <li key={t} className="flex items-start gap-2 text-[13px] text-brand-deep font-medium">
-                        <span className="flex-shrink-0 w-4.5 h-4.5 rounded-full bg-brand-purple/10 flex items-center justify-center mt-0.5"><Check size={11} className="text-brand-purple" /></span>
-                        {t}
+                        <span className="flex-shrink-0 w-4 h-4 rounded-full bg-brand-purple/10 flex items-center justify-center mt-0.5"><Check size={11} className="text-brand-purple" /></span>
+                        <span className="flex-1">{t}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link to="/how-it-works" className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">
+                  <Link to="/how-it-works" className="mt-auto pt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">
                     How Vigorant tracks and reports <ArrowRight size={13} />
                   </Link>
                 </div>
