@@ -1,4 +1,4 @@
-import Seo from "@/components/site/Seo";
+import { Helmet } from "react-helmet-async";
 import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
@@ -7,11 +7,11 @@ import Section, { Reveal } from "@/components/site/Section";
 export default function Privacy() {
   return (
     <>
-      <Seo
-        title="Privacy Policy | Vigorant"
-        description="How Vigorant collects, uses, and protects information from healthcare practices and website visitors."
-        canonical="https://vigorant.com/privacy"
-      />
+      <Helmet>
+        <title>Privacy Policy | Vigorant</title>
+        <meta name="description" content="How Vigorant collects, uses, and protects information from healthcare practices and website visitors." />
+        <link rel="canonical" href="https://vigorant.com/privacy" />
+      </Helmet>
       <GlobalFx />
       <Nav />
       <main id="main" className="pt-28">

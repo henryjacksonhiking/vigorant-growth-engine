@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import Seo from "@/components/site/Seo";
+import { Helmet } from "react-helmet-async";
 import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
@@ -16,11 +16,11 @@ export default function CaseStudyDetail() {
 
   return (
     <>
-      <Seo
-        title={`${study.client} — Case Study | Vigorant`}
-        description={study.challenge.slice(0, 155)}
-        canonical={`https://vigorant.com/case-studies/${study.slug}`}
-      />
+      <Helmet>
+        <title>{`${study.client} — Case Study | Vigorant`}</title>
+        <meta name="description" content={study.challenge.slice(0, 155)} />
+        <link rel="canonical" href={`https://vigorant.com/case-studies/${study.slug}`} />
+      </Helmet>
       <a href="#main" className="skip-link">Skip to main content</a>
       <GlobalFx />
       <Nav />

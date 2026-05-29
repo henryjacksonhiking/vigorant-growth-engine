@@ -1,4 +1,4 @@
-import Seo from "@/components/site/Seo";
+import { Helmet } from "react-helmet-async";
 import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
@@ -11,11 +11,11 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 export default function CaseStudies() {
   return (
     <>
-      <Seo
-        title="Healthcare Marketing Case Studies | Vigorant"
-        description="Real results from real dental, medical, and chiropractic practices. Cost-per-lead, ROAS, and ranking outcomes from Vigorant clients."
-        canonical="https://vigorant.com/case-studies"
-      />
+      <Helmet>
+        <title>Healthcare Marketing Case Studies | Vigorant</title>
+        <meta name="description" content="Real results from real dental, medical, and chiropractic practices. Cost-per-lead, ROAS, and ranking outcomes from Vigorant clients." />
+        <link rel="canonical" href="https://vigorant.com/case-studies" />
+      </Helmet>
       <a href="#main" className="skip-link">Skip to main content</a>
       <GlobalFx />
       <Nav />
