@@ -251,7 +251,7 @@
     min-height: calc(1.28em * 2);
   }
   .ui-card-text {
-    @apply mt-2 text-[14px] leading-[1.7] text-text-secondary;
+    @apply mt-2 text-[14px] leading-[1.7] text-ink-secondary;
     flex: 1 1 auto;
   }
   .ui-card-text-dark {
