@@ -132,38 +132,52 @@ export default function Testimonials() {
         <h3 className="text-center font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple">
           Practices That Trust Vigorant
         </h3>
-        <ul className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 list-none p-0">
-          {[
-            { src: "/clients/noble-dental-care.png", name: "Noble Dental Care" },
-            { src: "/clients/top-pinole-dental.png", name: "Top Pinole Dental" },
-            { src: "/clients/top-concord-dental.png", name: "Top Concord Dental" },
-            { src: "/clients/silicon-valley-smile-solutions.png", name: "Silicon Valley Smile Solutions" },
-            { src: "/clients/lafayette-dental-group.png", name: "Lafayette Dental Group" },
-            { src: "/clients/one-dental-studio-city.png", name: "One Dental Studio City" },
-            { src: "/clients/one-dental-sf.png", name: "One Dental SF" },
-            { src: "/clients/one-dental-livermore.png", name: "One Dental Livermore" },
-            { src: "/clients/studio-city-dental-group.png", name: "Studio City Dental Group" },
-            { src: "/clients/sf-aesthetic-dentistry.png", name: "San Francisco Aesthetic Dentistry" },
-            { src: "/clients/round-hill-dental.png", name: "Round Hill Dental" },
-            { src: "/clients/redwood-dental.png", name: "Redwood Dental" },
-            { src: "/clients/creative-dentistry-santa-rosa.png", name: "Creative Dentistry of Santa Rosa" },
-            { src: "/clients/albany-pinole-oral-surgery.png", name: "Albany-Pinole Oral & Maxillofacial Surgery" },
-          ].map((logo) => (
-            <li
-              key={logo.name}
-              className="group h-24 sm:h-28 rounded-xl bg-white border border-brand-purple/15 flex items-center justify-center p-4 transition-all duration-300 hover:border-brand-purple/40 hover:-translate-y-0.5"
-              style={{ boxShadow: "var(--shadow-card)" }}
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                loading="lazy"
-                className="max-h-full max-w-full object-contain transition-all duration-300 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
-              />
-            </li>
-          ))}
-        </ul>
+        <div
+          className="mt-8 relative overflow-hidden group/marquee"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          }}
+        >
+          <ul className="flex gap-4 sm:gap-6 w-max list-none p-0 py-2 animate-logo-marquee group-hover/marquee:[animation-play-state:paused]">
+            {(() => {
+              const logos = [
+                { src: "/clients/noble-dental-care.png", name: "Noble Dental Care" },
+                { src: "/clients/top-pinole-dental.png", name: "Top Pinole Dental" },
+                { src: "/clients/top-concord-dental.png", name: "Top Concord Dental" },
+                { src: "/clients/silicon-valley-smile-solutions.png", name: "Silicon Valley Smile Solutions" },
+                { src: "/clients/lafayette-dental-group.png", name: "Lafayette Dental Group" },
+                { src: "/clients/one-dental-studio-city.png", name: "One Dental Studio City" },
+                { src: "/clients/one-dental-sf.png", name: "One Dental SF" },
+                { src: "/clients/one-dental-livermore.png", name: "One Dental Livermore" },
+                { src: "/clients/studio-city-dental-group.png", name: "Studio City Dental Group" },
+                { src: "/clients/sf-aesthetic-dentistry.png", name: "San Francisco Aesthetic Dentistry" },
+                { src: "/clients/round-hill-dental.png", name: "Round Hill Dental" },
+                { src: "/clients/redwood-dental.png", name: "Redwood Dental" },
+                { src: "/clients/creative-dentistry-santa-rosa.png", name: "Creative Dentistry of Santa Rosa" },
+                { src: "/clients/albany-pinole-oral-surgery.png", name: "Albany-Pinole Oral & Maxillofacial Surgery" },
+              ];
+              return [...logos, ...logos].map((logo, i) => (
+                <li
+                  key={`${logo.name}-${i}`}
+                  className="shrink-0 w-[44vw] sm:w-[30vw] md:w-[22vw] lg:w-[calc((min(1200px,92vw)-4.5rem)/4)] max-w-[280px] h-28 sm:h-32 rounded-xl bg-white border border-brand-purple/15 flex items-center justify-center p-5"
+                  style={{ boxShadow: "var(--shadow-card)" }}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    loading="lazy"
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </li>
+              ));
+            })()}
+          </ul>
+        </div>
       </Reveal>
+
 
     </Section>
   );
