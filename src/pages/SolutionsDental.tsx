@@ -397,23 +397,23 @@ export default function SolutionsDental() {
                 The issue is rarely care quality. It is almost always the disconnected digital system: visibility, conversion, trust, and attribution not working together.
               </p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto">
+            <ul className="list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto items-stretch">
               {BLOCKERS.map((b, i) => (
                 <Reveal key={b.chip} delay={i * 0.07} className="h-full">
-                  <li>
-                    <article className="h-full bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
-                      <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
-                      <div className="p-6">
+                  <li className="h-full">
+                    <article className="h-full flex flex-col bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                      <div className="h-1 flex-shrink-0" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
+                      <div className="p-6 flex flex-col flex-1">
                         <div className="flex items-start justify-between gap-4">
                           <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-rose-700 bg-rose-500/8 border border-rose-500/20 px-2.5 py-1 rounded-full">{b.chip}</span>
-                          <div className="w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center">
+                          <div className="w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center flex-shrink-0">
                             <b.icon size={20} className="text-brand-purple" />
                           </div>
                         </div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{b.h3}</h3>
+                        <h3 className="font-bold text-brand-deep text-[16px] mt-3 min-h-[3em] leading-[1.35]">{b.h3}</h3>
                         <p className="mt-3"><span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-amber-600">Symptom: </span><span className="text-[13px] text-ink-secondary">{b.symptom}</span></p>
                         <p className="mt-2"><span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-emerald-600">Vigorant Fix: </span><span className="text-[13px] text-brand-deep">{b.fix}</span></p>
-                        <Link to={b.link.to} className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">
+                        <Link to={b.link.to} className="mt-auto pt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">
                           {b.link.label} <ArrowRight size={12} />
                         </Link>
                       </div>
