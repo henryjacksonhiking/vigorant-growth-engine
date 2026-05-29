@@ -156,8 +156,8 @@ function DashboardCard() {
               <span className="w-1.5 h-1.5 rounded-full bg-brand-bright pulse-dot" />
               Client Testimonials · Watch Now
             </span>
-            <span className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/95 flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110 pulse-dot">
-              <Play size={32} className="text-brand-deep ml-1" fill="currentColor" />
+            <span className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/95 flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110 pulse-dot">
+              <Play size={18} className="text-brand-deep ml-0.5" fill="currentColor" />
             </span>
             <span aria-hidden className="absolute bottom-4 left-4 right-4 text-white font-bold text-[15px] sm:text-[16px] leading-snug drop-shadow-md">
               Trusted by healthcare leaders across the U.S.
