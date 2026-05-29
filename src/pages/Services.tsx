@@ -171,23 +171,23 @@ export default function Services() {
                 Four engines that power patient acquisition.
               </h2>
             </Reveal>
-            <div className="grid md:grid-cols-2 gap-5 mt-12">
+            <div className="ui-card-grid grid md:grid-cols-2 gap-5 mt-12">
               {PRIMARY.map((s, i) => (
                 <Reveal key={s.h} delay={i * 0.05} className="h-full">
-                  <TiltCard className="rounded-2xl bg-white border border-brand-purple/12 p-7 h-full hover:border-brand-purple/30 transition-colors">
+                  <TiltCard className="ui-card hover:border-brand-purple/30 transition-colors">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
                       <s.icon aria-hidden size={22} className="text-white" />
                     </div>
-                    <h3 className="font-bold text-brand-deep text-xl">{s.h}</h3>
-                    <p className="mt-2 text-text-secondary">{s.b}</p>
-                    <ul className="mt-4 space-y-2">
+                    <h3 className="ui-card-heading text-xl">{s.h}</h3>
+                    <p className="ui-card-text">{s.b}</p>
+                    <ul className="ui-list">
                       {s.bullets.map(b => (
-                        <li key={b} className="flex gap-2 text-sm text-text-secondary">
-                          <Check size={16} className="text-brand-purple flex-shrink-0 mt-0.5" aria-hidden /> {b}
+                        <li key={b} className="ui-list-item text-sm text-text-secondary">
+                          <Check size={16} className="ui-list-icon text-brand-purple" aria-hidden /> {b}
                         </li>
                       ))}
                     </ul>
-                    <Link to={s.href} className="mt-5 inline-flex items-center text-brand-purple font-semibold hover:text-brand-deep">
+                    <Link to={s.href} className="ui-card-cta text-brand-purple hover:text-brand-deep">
                       Explore {s.h.toLowerCase()} <ArrowRight size={16} className="ml-1.5" aria-hidden />
                     </Link>
                   </TiltCard>
@@ -232,10 +232,10 @@ export default function Services() {
                 Nine more capabilities. All connected.
               </h2>
             </Reveal>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+            <div className="ui-card-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
               {SUPPORTING.map((s, i) => (
                 <Reveal key={s.h} delay={i * 0.03} className="h-full">
-                  <a href={s.href} className="rounded-xl bg-white border border-brand-purple/12 p-5 flex items-center gap-4 hover:border-brand-purple/30 hover:-translate-y-0.5 transition-all">
+                  <a href={s.href} className="ui-card-compact flex-row items-center gap-4 hover:border-brand-purple/30 hover:-translate-y-0.5 transition-all">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/10 flex items-center justify-center flex-shrink-0">
                       <s.icon aria-hidden size={18} className="text-brand-purple" />
                     </div>
@@ -279,14 +279,14 @@ export default function Services() {
                 Services that move the only metrics that matter.
               </h2>
             </Reveal>
-            <div className="grid sm:grid-cols-3 gap-5 mt-12">
+            <div className="ui-card-grid grid sm:grid-cols-3 gap-5 mt-12">
               {[
                 { n: 312, suf: "%", h: "Avg new patient growth in 12 months" },
                 { n: 4.2, suf: "x", h: "Avg paid ROAS lift", d: 1 },
                 { n: 68, suf: "%", h: "Avg website conversion lift" },
               ].map((m, i) => (
                 <Reveal key={m.h} delay={i * 0.05} className="h-full">
-                  <div className="rounded-2xl bg-white/5 border border-white/15 p-7 text-center backdrop-blur">
+                  <div className="ui-card-dark text-center backdrop-blur">
                     <div className="text-5xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
                       <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
                     </div>
