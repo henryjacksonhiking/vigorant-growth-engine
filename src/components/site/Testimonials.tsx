@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Star } from "lucide-react";
+import { ScrollTiltedItem } from "@/components/ui/scroll-tilted-grid";
 
 type Cat = "Dental" | "Medical" | "Chiropractic";
 
