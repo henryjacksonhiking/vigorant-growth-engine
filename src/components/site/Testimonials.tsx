@@ -73,11 +73,11 @@ export default function Testimonials() {
         })}
       </div>
 
-      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="ui-card-grid mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {filtered.map((t, i) => (
           <Reveal key={t.practice} delay={i * 0.05} className="h-full">
             <article
-              className="relative h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col"
+              className="ui-card relative"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <header className="flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function Testimonials() {
                   {t.doctor.replace("Dr. ", "").charAt(0)}
                 </div>
                 <div className="min-w-0">
-                  <div className="font-bold text-brand-deep text-[15px] leading-tight truncate">{t.practice}</div>
+                  <div className="ui-card-heading text-[15px] truncate min-h-0">{t.practice}</div>
                   <div className="text-[12px] text-ink-secondary mt-0.5 truncate">
                     {t.doctor} · {t.specialty} · {t.city}
                   </div>
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="mt-4 italic text-ink-secondary leading-relaxed text-[14px]">
+              <p className="ui-card-text italic text-[14px]">
                 “{t.problem}”
               </p>
 
@@ -115,11 +115,11 @@ export default function Testimonials() {
                 “{t.emotion}”
               </p>
 
-              <div className="mt-5 flex items-center justify-between gap-2 flex-wrap">
-                <span className="inline-flex font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
+              <div className="mt-auto pt-5 flex items-center justify-between gap-2 flex-wrap">
+                <span className="inline-flex min-h-[28px] items-center font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
                   {t.category}
                 </span>
-                <span className="inline-flex items-center gap-1 font-mono-ui text-[10px] uppercase tracking-[0.08em] text-brand-purple bg-brand-purple/12 border border-brand-purple/25 px-2 py-1 rounded-full">
+                <span className="inline-flex min-h-[28px] items-center gap-1 font-mono-ui text-[10px] uppercase tracking-[0.08em] text-brand-purple bg-brand-purple/12 border border-brand-purple/25 px-2 py-1 rounded-full">
                   <span aria-hidden>✓</span> Verified Client
                 </span>
               </div>
