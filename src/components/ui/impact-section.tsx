@@ -9,10 +9,10 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 type CardPalette = { bg: string; text: string; subtle: string };
 
 const PALETTES: CardPalette[] = [
-  { bg: "bg-[#CCFF00]", text: "text-[#111111]", subtle: "text-[#111111]/70" },
-  { bg: "bg-[#B8E8FF]", text: "text-[#111111]", subtle: "text-[#111111]/70" },
-  { bg: "bg-[#1a1530]", text: "text-white", subtle: "text-white/75" },
-  { bg: "bg-[#FF5CBA]", text: "text-[#111111]", subtle: "text-[#111111]/75" },
+  { bg: "bg-brand-deep", text: "text-white", subtle: "text-white/80" },
+  { bg: "bg-brand-purple", text: "text-white", subtle: "text-white/85" },
+  { bg: "bg-[#1a1530]", text: "text-white", subtle: "text-white/80" },
+  { bg: "bg-[#2a1f5c]", text: "text-white", subtle: "text-white/85" },
 ];
 
 const IMAGES = [
