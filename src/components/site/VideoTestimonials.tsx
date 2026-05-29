@@ -45,11 +45,11 @@ const VIDEOS: VideoCard[] = [
     src: "/videos/enlighten-ai-trust.mp4",
   },
   {
-    doctor: "Dental Practice",
-    practice: "Testimonial",
+    doctor: "Sarah B.",
+    practice: "Dental Implant Solution",
     overlay: "Why Practices Choose Vigorant",
     summary:
-      "A dental practice team member explains why Vigorant stands out through responsive support, clear strategy, and a better understanding of what dental practices need to grow.",
+      "Sarah B. from Dental Implant Solution shares why Vigorant stands out through responsive support, clear strategy, and a deeper understanding of what dental practices need to grow.",
     watchTime: "1:05 min",
     metrics: [
       "Clear marketing direction",

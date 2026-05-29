@@ -41,14 +41,14 @@ export default function Testimonials() {
         <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px]">
           Real results from real healthcare practices across the country.
         </p>
-        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 text-[14px]" aria-label="Aggregate rating 4.9 out of 5 based on 87 reviews">
+        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-2 text-[14px]" aria-label="Aggregate rating 4.9 out of 5 based on real verified client experiences">
           <span aria-hidden className="flex items-center gap-0.5">
             {Array.from({ length: 5 }).map((_, k) => (
               <Star key={k} size={16} className="text-brand-purple fill-brand-purple" />
             ))}
           </span>
           <span className="font-bold text-brand-deep">4.9 out of 5</span>
-          <span className="text-ink-secondary">· Based on 87 client reviews</span>
+          <span className="text-ink-secondary">· Verified client experiences</span>
         </div>
       </Reveal>
 
@@ -169,7 +169,7 @@ export default function Testimonials() {
                     src={logo.src}
                     alt={logo.name}
                     loading="lazy"
-                    className="max-h-full max-w-full object-contain"
+                    className="block h-12 sm:h-14 w-auto max-w-[80%] object-contain"
                   />
                 </li>
               ));
