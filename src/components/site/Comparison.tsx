@@ -1,5 +1,6 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { Check, Minus } from "lucide-react";
+import { motion } from "framer-motion";
+import { Check, X } from "lucide-react";
 
 const rows = [
   { label: "Search Visibility", traditional: "Google only", vigorant: "Google + AI engines (ChatGPT, Gemini, Perplexity)" },
@@ -23,50 +24,65 @@ export default function Comparison() {
         </p>
       </Reveal>
 
-      <Reveal className="mt-12 max-w-5xl mx-auto">
-        {/* Mobile: stacked cards */}
-        <div className="md:hidden space-y-4">
-          {rows.map((r) => (
-            <div key={r.label} className="bg-white rounded-2xl border border-brand-purple/15 p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-              <div className="font-bold text-brand-deep text-[15px]">{r.label}</div>
-              <div className="mt-3 flex items-start gap-2">
-                <Minus aria-hidden size={16} className="text-ink-secondary/60 mt-1 flex-shrink-0" />
-                <div className="text-[13px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] block mb-0.5 text-ink-secondary/70">Traditional</span>{r.traditional}</div>
-              </div>
-              <div className="mt-3 flex items-start gap-2">
-                <Check aria-hidden size={16} className="text-brand-purple mt-1 flex-shrink-0" />
-                <div className="text-[13px] text-brand-deep"><span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] block mb-0.5 text-brand-purple">Vigorant</span>{r.vigorant}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="mt-14 max-w-5xl mx-auto">
+        <div className="relative flex flex-col gap-5">
+          {/* center spine */}
+          <div aria-hidden className="absolute left-1/2 top-0 bottom-0 w-px bg-brand-purple/15 hidden md:block -translate-x-1/2 z-0" />
 
-        {/* Desktop: table */}
-        <div className="hidden md:block bg-white rounded-2xl border border-brand-purple/15 overflow-hidden" style={{ boxShadow: "var(--shadow-card)" }}>
-          <table className="w-full text-left">
-            <thead>
-              <tr className="border-b border-brand-purple/15">
-                <th scope="col" className="p-5 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-ink-secondary w-1/4"></th>
-                <th scope="col" className="p-5 font-bold text-brand-deep text-[15px]">Traditional Agency</th>
-                <th scope="col" className="p-5 font-bold text-brand-deep text-[15px] bg-brand-purple/8 border-l-2 border-brand-purple">Vigorant</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => (
-                <tr key={r.label} className={i < rows.length - 1 ? "border-b border-brand-purple/10" : ""}>
-                  <th scope="row" className="p-5 font-semibold text-brand-deep text-[14px] align-top">{r.label}</th>
-                  <td className="p-5 text-ink-secondary text-[14px] align-top">
-                    <span className="inline-flex items-start gap-2"><Minus aria-hidden size={16} className="text-ink-secondary/60 mt-1 flex-shrink-0" />{r.traditional}</span>
-                  </td>
-                  <td className="p-5 text-brand-deep text-[14px] align-top bg-brand-purple/5 border-l-2 border-brand-purple">
-                    <span className="inline-flex items-start gap-2"><Check aria-hidden size={16} className="text-brand-purple mt-1 flex-shrink-0" />{r.vigorant}</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {rows.map((r, i) => {
+            const isLast = i === rows.length - 1;
+            return (
+              <motion.div
+                key={r.label}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                className="group relative z-10 grid md:grid-cols-2 gap-3 md:gap-12 items-center"
+              >
+                {/* Traditional */}
+                <div className="bg-white p-5 md:p-6 rounded-2xl border border-brand-purple/10 transition-all duration-300 md:group-hover:-translate-x-2 md:text-right"
+                  style={{ boxShadow: "var(--shadow-card)" }}>
+                  <div className="flex md:flex-row-reverse items-start md:items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-ink-secondary/10 flex items-center justify-center shrink-0">
+                      <X aria-hidden size={14} className="text-ink-secondary/70" />
+                    </div>
+                    <div>
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] text-ink-secondary/70 block mb-0.5">Traditional Agency</span>
+                      <p className="text-ink-secondary text-[14px]">{r.traditional}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* VS badge */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-deep text-white items-center justify-center text-[10px] font-extrabold border-4 border-surface-secondary hidden md:flex shadow-md z-20 tracking-wider">
+                  VS
+                </div>
+
+                {/* Vigorant */}
+                <div className={`p-5 md:p-6 rounded-2xl border-2 transition-all duration-300 md:group-hover:translate-x-2 md:group-hover:shadow-[0_20px_40px_-15px_hsl(var(--brand-purple)/0.25)] relative overflow-hidden
+                  ${isLast
+                    ? "bg-brand-deep border-brand-purple text-white"
+                    : "bg-white border-transparent ring-1 ring-brand-purple/10"}`}
+                  style={!isLast ? { boxShadow: "var(--shadow-card)" } : undefined}>
+                  {isLast && (
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full md:group-hover:translate-x-full transition-transform duration-[1100ms]" />
+                  )}
+                  <div className="flex items-center gap-3 relative">
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${isLast ? "bg-brand-purple" : "bg-brand-purple/10"}`}>
+                      <Check aria-hidden size={14} className={isLast ? "text-white" : "text-brand-purple"} strokeWidth={3} />
+                    </div>
+                    <div>
+                      <span className={`font-mono-ui text-[10px] uppercase tracking-[0.14em] block mb-0.5 ${isLast ? "text-white/60" : "text-brand-purple"}`}>{r.label}</span>
+                      <p className={`text-[14px] font-semibold ${isLast ? "text-white" : "text-brand-deep"}`}>{r.vigorant}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-      </Reveal>
+      </div>
     </Section>
   );
 }
