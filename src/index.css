@@ -447,114 +447,104 @@
    scope will have its low-contrast text, labels, icons, and
    metadata promoted to readable colors automatically.
    ============================================================ */
-section[style*="gradient-dark"],
-section[style*="248 49% 15%"],
-section[style*="250 45% 19%"],
-section[style*="248 49% 12%"],
-section.text-white,
-.bg-brand-deep,
-[data-theme="dark"] {
-  /* baseline body text on dark */
+
+/* Define the dark scope once via :where() so specificity stays low
+   but selectors are compact. Matches any section using the dark
+   gradient token, dark inline backgrounds (hex or hsl), the
+   `text-white` scope, .bg-brand-deep, or [data-theme="dark"]. */
+:where(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) {
   color: hsl(0 0% 100% / 0.92);
 }
 
-/* Low-contrast text utilities → readable on dark */
-section[style*="gradient-dark"] .text-ink-muted,
-section[style*="248 49% 15%"] .text-ink-muted,
-section[style*="250 45% 19%"] .text-ink-muted,
-section.text-white .text-ink-muted,
-section[style*="gradient-dark"] .text-muted-foreground,
-section[style*="248 49% 15%"] .text-muted-foreground,
-section[style*="250 45% 19%"] .text-muted-foreground,
-section.text-white .text-muted-foreground,
-section[style*="gradient-dark"] .text-ink-secondary,
-section[style*="248 49% 15%"] .text-ink-secondary,
-section[style*="250 45% 19%"] .text-ink-secondary,
-section.text-white .text-ink-secondary,
-section[style*="gradient-dark"] .text-foreground,
-section[style*="248 49% 15%"] .text-foreground,
-section[style*="250 45% 19%"] .text-foreground,
-section.text-white .text-foreground {
-  color: hsl(247 100% 92% / 0.85) !important;
+/* Scope all overrides under .dark-scope via a duplicate :is() so we
+   can write the selectors once. */
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) :is(.text-ink-muted, .text-muted-foreground, .text-ink-secondary, .text-foreground) {
+  color: hsl(247 100% 92% / 0.88) !important;
 }
 
-/* Dark headings on dark → white */
-section[style*="gradient-dark"] .text-brand-deep,
-section[style*="248 49% 15%"] .text-brand-deep,
-section[style*="250 45% 19%"] .text-brand-deep,
-section.text-white .text-brand-deep {
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) .text-brand-deep {
   color: #ffffff !important;
 }
 
-/* Eyebrow / mono-ui section labels on dark → soft lavender, visible */
-section[style*="gradient-dark"] .font-mono-ui,
-section[style*="248 49% 15%"] .font-mono-ui,
-section[style*="250 45% 19%"] .font-mono-ui,
-section.text-white .font-mono-ui,
-section[style*="gradient-dark"] .section-label,
-section[style*="248 49% 15%"] .section-label,
-section[style*="250 45% 19%"] .section-label,
-section.text-white .section-label {
-  color: hsl(247 100% 88%) !important;
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) :is(.font-mono-ui, .section-label) {
+  color: hsl(247 100% 90%) !important;
   opacity: 1 !important;
 }
 
-/* Brand-purple text (used on light) gets brightened on dark */
-section[style*="gradient-dark"] .text-brand-purple,
-section[style*="248 49% 15%"] .text-brand-purple,
-section[style*="250 45% 19%"] .text-brand-purple,
-section.text-white .text-brand-purple {
-  color: hsl(248 100% 82%) !important;
-}
-
-/* Brand-purple icons inside dark cards → bright lavender for visibility */
-section[style*="gradient-dark"] svg.text-brand-purple,
-section[style*="248 49% 15%"] svg.text-brand-purple,
-section[style*="250 45% 19%"] svg.text-brand-purple,
-section.text-white svg.text-brand-purple {
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) .text-brand-purple {
   color: hsl(248 100% 85%) !important;
 }
 
-/* Generic low-opacity white text floor on dark — keep readable */
-section[style*="gradient-dark"] [class*="text-white/5"],
-section[style*="gradient-dark"] [class*="text-white/6"],
-section[style*="248 49% 15%"] [class*="text-white/5"],
-section[style*="248 49% 15%"] [class*="text-white/6"],
-section[style*="250 45% 19%"] [class*="text-white/5"],
-section[style*="250 45% 19%"] [class*="text-white/6"],
-section.text-white [class*="text-white/5"],
-section.text-white [class*="text-white/6"] {
-  color: hsl(0 0% 100% / 0.85) !important;
-}
-
-/* Brand-lavender low-opacity → floor at 0.9 for readability */
-section[style*="gradient-dark"] [class*="text-brand-lavender/6"],
-section[style*="gradient-dark"] [class*="text-brand-lavender/7"],
-section[style*="gradient-dark"] [class*="text-brand-lavender/8"],
-section[style*="248 49% 15%"] [class*="text-brand-lavender/6"],
-section[style*="248 49% 15%"] [class*="text-brand-lavender/7"],
-section[style*="248 49% 15%"] [class*="text-brand-lavender/8"],
-section[style*="250 45% 19%"] [class*="text-brand-lavender/6"],
-section[style*="250 45% 19%"] [class*="text-brand-lavender/7"],
-section[style*="250 45% 19%"] [class*="text-brand-lavender/8"],
-section.text-white [class*="text-brand-lavender/6"],
-section.text-white [class*="text-brand-lavender/7"],
-section.text-white [class*="text-brand-lavender/8"] {
-  color: hsl(247 100% 90%) !important;
-}
-
-/* Icon containers using brand-purple-tinted bg on dark → boost icon color */
-section[style*="gradient-dark"] svg,
-section[style*="248 49% 15%"] svg,
-section[style*="250 45% 19%"] svg,
-section.text-white svg {
-  /* don't override explicit white/colored icons set inline; only fix near-black currentColor */
-}
-section[style*="gradient-dark"] svg:not([class*="text-"]),
-section[style*="248 49% 15%"] svg:not([class*="text-"]),
-section[style*="250 45% 19%"] svg:not([class*="text-"]),
-section.text-white svg:not([class*="text-"]) {
-  color: hsl(247 100% 90%);
+/* Low-opacity lavender/white floors on dark for readability */
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="248 49% 12%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) :is(
+  [class*="text-white/5"],
+  [class*="text-white/6"],
+  [class*="text-brand-lavender/5"],
+  [class*="text-brand-lavender/6"],
+  [class*="text-brand-lavender/7"],
+  [class*="text-brand-lavender/8"]
+) {
+  color: hsl(247 100% 90% / 0.92) !important;
 }
 
 @keyframes card-rise {
