@@ -29,28 +29,28 @@ export default function CaseStudies() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="ui-card-grid mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {CASE_STUDIES.map((s, i) => (
               <Reveal key={s.slug} delay={i * 0.06} className="h-full">
                 <Link
                   to={`/case-studies/${s.slug}`}
-                  className="group h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
+                  className="ui-card group transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
-                  <div className="inline-flex font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 self-start px-2 py-0.5 rounded-full">
+                  <div className="inline-flex min-h-[24px] items-center font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 self-start px-2 py-0.5 rounded-full">
                     {s.tag}
                   </div>
-                  <h3 className="mt-3 font-extrabold text-brand-deep text-[18px] leading-tight">{s.client}</h3>
-                  <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed flex-1">{s.challenge}</p>
-                  <ul className="mt-4 space-y-1.5">
+                  <h3 className="ui-card-heading mt-3 text-[18px]">{s.client}</h3>
+                  <p className="ui-card-text text-[14px]">{s.challenge}</p>
+                  <ul className="ui-list">
                     {s.results.slice(0, 2).map((r) => (
-                      <li key={r} className="flex items-start gap-2 text-[13px] text-brand-deep">
-                        <span aria-hidden className="text-brand-purple mt-0.5">▲</span>
+                      <li key={r} className="ui-list-item text-[13px] text-brand-deep">
+                        <span aria-hidden className="ui-list-icon text-brand-purple">▲</span>
                         <span className="font-semibold">{r}</span>
                       </li>
                     ))}
                   </ul>
-                  <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
+                  <span className="ui-card-cta text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
                     Read Full Case Study <ArrowRight aria-hidden size={16} />
                   </span>
                 </Link>
