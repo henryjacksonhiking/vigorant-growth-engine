@@ -301,32 +301,8 @@
     height: 100%;
   }
 
-  /* Mobile: center-align hero/section content for visual consistency */
+  /* Mobile: preserve explicit layout alignment instead of force-centering entire sections */
   @media (max-width: 640px) {
-    main section .container > div,
-    main section .container > .max-w-2xl,
-    main section .container > .max-w-3xl {
-      text-align: center;
-    }
-    main section .container nav[aria-label="Breadcrumb"] {
-      text-align: center;
-    }
-    main section .container h1,
-    main section .container h2,
-    main section .container > div > h1,
-    main section .container > div > h2,
-    main section .container > div > p,
-    main section .container > div > .section-label {
-      text-align: center;
-    }
-    /* Center flex button rows and inline groups on mobile */
-    main section .container .flex:not(.items-stretch):not(.justify-between):not(.justify-start):not(.justify-end) {
-      justify-content: center;
-    }
-    main section .container .inline-flex {
-      margin-left: auto;
-      margin-right: auto;
-    }
     /* Keep dashboard/card internals left-aligned */
     main section .container .float-card,
     main section .container .float-card *,
