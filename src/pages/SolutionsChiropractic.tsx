@@ -138,14 +138,14 @@ export default function SolutionsChiropractic() {
             <Reveal className="text-center max-w-3xl mx-auto">
               <ChipLabel dark>Why This Is Different</ChipLabel>
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>Why Chiropractic Practices Need<br /><GradientTextLight>a Different Marketing Strategy.</GradientTextLight></h2>
-              <p className="mt-5 text-white/65 text-[16px] leading-[1.78] max-w-2xl mx-auto">Chiropractic is proximity-sensitive and intent-specific. Patients usually search for care near their home, workplace, school, or accident route — and they search with specific pain or condition intent. Generic healthcare marketing campaigns miss the local, recurring, and condition-specific factors that drive chiropractic appointments.</p>
+              <p className="mt-5 text-white/90 text-[16px] leading-[1.78] max-w-2xl mx-auto">Chiropractic is proximity-sensitive and intent-specific. Patients usually search for care near their home, workplace, school, or accident route — and they search with specific pain or condition intent. Generic healthcare marketing campaigns miss the local, recurring, and condition-specific factors that drive chiropractic appointments.</p>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-7">
               <div className="bg-white/5 border border-white/10 rounded-[12px] p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-bright flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-lavender/60 mb-1">NCCIH — National Institutes of Health</div>
-                  <p className="text-[13px] text-white/65 leading-[1.65] m-0">NCCIH reports that chiropractic care is used by U.S. adults primarily for pain management, confirming consistent national and local demand for chiropractic services. <a href="https://www.nccih.nih.gov/health/chiropractic-in-depth" target="_blank" rel="noopener noreferrer nofollow" className="text-brand-bright font-semibold underline">NCCIH: Chiropractic In Depth</a>.</p>
+                  <p className="text-[13px] text-white/90 leading-[1.65] m-0">NCCIH reports that chiropractic care is used by U.S. adults primarily for pain management, confirming consistent national and local demand for chiropractic services. <a href="https://www.nccih.nih.gov/health/chiropractic-in-depth" target="_blank" rel="noopener noreferrer nofollow" className="text-brand-bright font-semibold underline">NCCIH: Chiropractic In Depth</a>.</p>
                 </div>
               </div>
             </Reveal>
@@ -159,7 +159,7 @@ export default function SolutionsChiropractic() {
                   <div className="bg-white/5 border border-white/10 rounded-[14px] p-5 h-full">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center"><c.i size={18} className="text-brand-bright" /></div>
                     <h3 className="font-bold text-white text-[14px] mt-3">{c.h}</h3>
-                    <p className="text-white/60 text-[13px] mt-1.5 leading-[1.6]">{c.p}</p>
+                    <p className="text-white/95 text-[13px] mt-1.5 leading-[1.6]">{c.p}</p>
                   </div>
                 </Reveal>
               ))}
@@ -329,7 +329,7 @@ export default function SolutionsChiropractic() {
           <div className="container relative z-10 text-center max-w-2xl">
             <ChipLabel dark>Build Predictable Local Patient Flow</ChipLabel>
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}>Get Your Free Chiropractic Growth Audit.</h2>
-            <p className="mt-5 text-white/65 text-[16px] max-w-xl mx-auto leading-[1.72]">See where your chiropractic practice is losing local visibility, leads, and appointments — and the priority fixes for your market.</p>
+            <p className="mt-5 text-white/90 text-[16px] max-w-xl mx-auto leading-[1.72]">See where your chiropractic practice is losing local visibility, leads, and appointments — and the priority fixes for your market.</p>
             <div className="mt-7"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender transition-all">{AUDIT} <ArrowRight size={16} /></Link></div>
             <div className="mt-5 font-mono-ui text-[12px] text-brand-lavender">8 audit slots per month · 3 remaining</div>
           </div>

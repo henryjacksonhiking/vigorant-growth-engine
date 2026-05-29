@@ -220,7 +220,7 @@ export default function SolutionsDental() {
                 <Reveal key={i} delay={i * 0.08} className="h-full">
                   <div className="bg-white/5 border border-white/10 rounded-[14px] p-6 sm:p-7">
                     <h3 className="font-bold text-white text-[17px] leading-snug">{b.h}</h3>
-                    <p className="mt-2 text-white/70 text-[15px] leading-[1.75]">{b.p}</p>
+                    <p className="mt-2 text-white/90 text-[15px] leading-[1.75]">{b.p}</p>
                     {b.quote && <p className="mt-3 font-mono-ui text-[12px] text-brand-lavender/70 italic m-0">{b.quote}</p>}
                   </div>
                 </Reveal>
@@ -354,7 +354,7 @@ export default function SolutionsDental() {
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
                 Dental Marketing Services<br /><GradientTextLight>Connected Into One Growth System</GradientTextLight>
               </h2>
-              <p className="mt-4 text-white/60 text-[15px] max-w-md mx-auto leading-[1.78]">
+              <p className="mt-4 text-white/95 text-[15px] max-w-md mx-auto leading-[1.78]">
                 Each service is a distinct capability. The growth comes from connecting them. Every card links to a dedicated dental-specific service page.
               </p>
             </Reveal>
@@ -377,7 +377,7 @@ export default function SolutionsDental() {
               ))}
             </ul>
             <div className="text-center mt-10">
-              <p className="font-mono-ui text-[12px] text-white/45 mb-3">All services connect into one patient acquisition system.</p>
+              <p className="font-mono-ui text-[12px] text-white/75 mb-3">All services connect into one patient acquisition system.</p>
               <Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[14px] px-7 py-3 rounded-full hover:bg-brand-lavender transition-colors">
                 {AUDIT_CTA} <ArrowRight size={15} />
               </Link>
@@ -505,7 +505,7 @@ export default function SolutionsDental() {
                 <h2 className="font-extrabold text-white mt-3 leading-tight" style={{ fontSize: "clamp(22px, 3vw, 36px)" }}>
                   See Where Your Dental Practice Is Losing Visibility, Leads, and Appointments.
                 </h2>
-                <p className="mt-3 text-white/60 text-[15px] leading-[1.7] max-w-sm">
+                <p className="mt-3 text-white/95 text-[15px] leading-[1.7] max-w-sm">
                   Get a free dental growth audit and see which growth opportunities should be prioritized first.
                 </p>
                 <div className="mt-5">
@@ -633,7 +633,7 @@ export default function SolutionsDental() {
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 52px)" }}>
               Get Your Free Dental Growth Audit.
             </h2>
-            <p className="mt-5 text-white/65 text-[16px] sm:text-[17px] max-w-xl mx-auto leading-[1.72]">
+            <p className="mt-5 text-white/90 text-[16px] sm:text-[17px] max-w-xl mx-auto leading-[1.72]">
               See where your dental practice is losing visibility, leads, appointments, and high-value treatment opportunities — and which growth opportunities should be prioritized first.
             </p>
             <ul className="mt-7 list-none p-0 m-0 space-y-2 inline-block text-left">
@@ -644,7 +644,7 @@ export default function SolutionsDental() {
                 "Competitor gap analysis by treatment type",
                 "Prioritized dental growth roadmap — no obligation",
               ].map(b => (
-                <li key={b} className="text-white/82 text-[15px] flex items-start gap-2.5">
+                <li key={b} className="text-white/95 text-[15px] flex items-start gap-2.5">
                   <span className="text-brand-bright">✦</span>{b}
                 </li>
               ))}
@@ -656,11 +656,11 @@ export default function SolutionsDental() {
               <Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender hover:scale-[1.02] transition-all" style={{ boxShadow: "0 20px 60px hsl(0 0% 0% / 0.3)" }}>
                 {AUDIT_CTA} <ArrowRight size={16} />
               </Link>
-              <Link to="/results" className="text-white/60 hover:text-white/90 font-semibold text-[14px] inline-flex items-center gap-1.5">
+              <Link to="/results" className="text-white/95 hover:text-white/90 font-semibold text-[14px] inline-flex items-center gap-1.5">
                 View Dental Marketing Case Studies <ArrowRight size={14} />
               </Link>
             </div>
-            <div className="mt-6 flex flex-wrap gap-3 justify-center font-mono-ui text-[11px] text-white/45">
+            <div className="mt-6 flex flex-wrap gap-3 justify-center font-mono-ui text-[11px] text-white/75">
               <span>HIPAA Aware</span><span>·</span><span>Response Within 24 Hours</span><span>·</span><span>No Long-Term Contracts</span>
             </div>
           </div>
