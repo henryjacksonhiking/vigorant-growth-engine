@@ -37,10 +37,10 @@ export default function GrowthEngine() {
         </p>
       </Reveal>
 
-      <ol className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto list-none p-0">
+      <ol className="ui-card-grid mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto list-none p-0">
         {steps.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.06} className="relative h-full">
-            <li className="list-none h-full bg-white border border-brand-purple/15 rounded-2xl p-6"
+            <li className="ui-card list-none"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <div className="flex items-start gap-4">
                 <div
@@ -50,12 +50,12 @@ export default function GrowthEngine() {
                 >
                   <s.icon size={20} className="text-white" />
                 </div>
-                <div>
+                 <div className="ui-card-body">
                   <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">
                     Stage {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-extrabold text-brand-deep text-[17px] leading-tight">{s.title}</h3>
-                  <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">{s.body}</p>
+                   <h3 className="ui-card-heading text-[17px]">{s.title}</h3>
+                   <p className="ui-card-text">{s.body}</p>
                 </div>
               </div>
             </li>
@@ -67,10 +67,10 @@ export default function GrowthEngine() {
         <div className="grid md:grid-cols-2 gap-5">
           <div className="rounded-2xl border border-brand-purple/15 bg-brand-purple/5 p-6 sm:p-7">
             <h3 className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-ink-secondary">Before Vigorant</h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="ui-list">
               {before.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-[14px] text-ink-secondary">
-                  <X aria-hidden size={16} className="mt-1 text-ink-secondary/70 flex-shrink-0" />
+                <li key={b} className="ui-list-item text-[14px] text-ink-secondary">
+                  <X aria-hidden size={16} className="ui-list-icon text-ink-secondary/70" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -81,10 +81,10 @@ export default function GrowthEngine() {
             style={{ background: "linear-gradient(135deg, hsl(247 93% 64% / 0.10), hsl(248 100% 75% / 0.08))", boxShadow: "var(--shadow-card)" }}
           >
             <h3 className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple">With Vigorant</h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="ui-list">
               {after.map((a) => (
-                <li key={a} className="flex items-start gap-3 text-[14px] text-brand-deep">
-                  <Check aria-hidden size={16} className="mt-1 text-brand-purple flex-shrink-0" />
+                <li key={a} className="ui-list-item text-[14px] text-brand-deep">
+                  <Check aria-hidden size={16} className="ui-list-icon text-brand-purple" />
                   <span className="font-semibold">{a}</span>
                 </li>
               ))}
