@@ -27,7 +27,11 @@ export default function Comparison() {
       <div className="mt-14 max-w-5xl mx-auto">
         <div className="relative flex flex-col gap-5">
           {/* center spine */}
-          <div aria-hidden className="absolute left-1/2 top-0 bottom-0 w-px bg-brand-purple/15 hidden md:block -translate-x-1/2 z-0" />
+          <div
+            aria-hidden
+            className="absolute top-0 bottom-0 w-px hidden md:block z-0"
+            style={{ left: "50%", transform: "translateX(-50%)", background: "hsl(var(--brand-purple) / 0.15)" }}
+          />
 
           {rows.map((r, i) => {
             const isLast = i === rows.length - 1;
@@ -38,43 +42,92 @@ export default function Comparison() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative z-10 grid md:grid-cols-2 gap-3 md:gap-12 items-center"
+                className="group relative z-10 flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-0"
               >
                 {/* Traditional */}
-                <div className="bg-white p-5 md:p-6 rounded-2xl border border-brand-purple/10 transition-all duration-300 md:group-hover:-translate-x-2 md:text-right"
-                  style={{ boxShadow: "var(--shadow-card)" }}>
-                  <div className="flex md:flex-row-reverse items-start md:items-center gap-3">
-                    <div className="w-7 h-7 rounded-full bg-ink-secondary/10 flex items-center justify-center shrink-0">
+                <div
+                  className="flex-1 rounded-2xl p-5 md:p-6 transition-transform duration-300 md:group-hover:-translate-x-2 md:text-right md:mr-8"
+                  style={{
+                    background: "hsl(0 0% 100%)",
+                    border: "1px solid hsl(var(--brand-purple) / 0.10)",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                >
+                  <div className="flex md:flex-row-reverse items-center gap-3">
+                    <span
+                      className="w-7 h-7 rounded-full inline-flex items-center justify-center shrink-0"
+                      style={{ background: "hsl(var(--text-secondary) / 0.10)" }}
+                    >
                       <X aria-hidden size={14} className="text-ink-secondary/70" />
-                    </div>
+                    </span>
                     <div>
-                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] text-ink-secondary/70 block mb-0.5">Traditional Agency</span>
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] text-ink-secondary/70 block mb-0.5">
+                        Traditional Agency
+                      </span>
                       <p className="text-ink-secondary text-[14px]">{r.traditional}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* VS badge */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-deep text-white items-center justify-center text-[10px] font-extrabold border-4 border-surface-secondary hidden md:flex shadow-md z-20 tracking-wider">
+                <div
+                  className="absolute top-1/2 hidden md:flex items-center justify-center text-[10px] font-extrabold tracking-wider z-20 shadow-md"
+                  style={{
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: 40,
+                    height: 40,
+                    borderRadius: "9999px",
+                    background: "hsl(var(--brand-deep))",
+                    color: "white",
+                    border: "4px solid hsl(var(--surface-secondary))",
+                  }}
+                >
                   VS
                 </div>
 
                 {/* Vigorant */}
-                <div className={`p-5 md:p-6 rounded-2xl border-2 transition-all duration-300 md:group-hover:translate-x-2 md:group-hover:shadow-[0_20px_40px_-15px_hsl(var(--brand-purple)/0.25)] relative overflow-hidden
-                  ${isLast
-                    ? "bg-brand-deep border-brand-purple text-white"
-                    : "bg-white border-transparent ring-1 ring-brand-purple/10"}`}
-                  style={!isLast ? { boxShadow: "var(--shadow-card)" } : undefined}>
-                  {isLast && (
-                    <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full md:group-hover:translate-x-full transition-transform duration-[1100ms]" />
-                  )}
+                <div
+                  className="flex-1 rounded-2xl p-5 md:p-6 transition-all duration-300 md:group-hover:translate-x-2 md:ml-8 relative overflow-hidden"
+                  style={
+                    isLast
+                      ? {
+                          background: "hsl(var(--brand-deep))",
+                          border: "2px solid hsl(var(--brand-purple))",
+                          boxShadow: "0 20px 40px -15px hsl(var(--brand-purple) / 0.35)",
+                        }
+                      : {
+                          background: "hsl(0 0% 100%)",
+                          border: "2px solid transparent",
+                          boxShadow: "var(--shadow-card), 0 0 0 1px hsl(var(--brand-purple) / 0.10) inset",
+                        }
+                  }
+                >
                   <div className="flex items-center gap-3 relative">
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${isLast ? "bg-brand-purple" : "bg-brand-purple/10"}`}>
-                      <Check aria-hidden size={14} className={isLast ? "text-white" : "text-brand-purple"} strokeWidth={3} />
-                    </div>
+                    <span
+                      className="w-7 h-7 rounded-full inline-flex items-center justify-center shrink-0"
+                      style={{ background: isLast ? "hsl(var(--brand-purple))" : "hsl(var(--brand-purple) / 0.12)" }}
+                    >
+                      <Check
+                        aria-hidden
+                        size={14}
+                        strokeWidth={3}
+                        className={isLast ? "text-white" : "text-brand-purple"}
+                      />
+                    </span>
                     <div>
-                      <span className={`font-mono-ui text-[10px] uppercase tracking-[0.14em] block mb-0.5 ${isLast ? "text-white/60" : "text-brand-purple"}`}>{r.label}</span>
-                      <p className={`text-[14px] font-semibold ${isLast ? "text-white" : "text-brand-deep"}`}>{r.vigorant}</p>
+                      <span
+                        className="font-mono-ui text-[10px] uppercase tracking-[0.14em] block mb-0.5"
+                        style={{ color: isLast ? "hsl(0 0% 100% / 0.65)" : "hsl(var(--brand-purple))" }}
+                      >
+                        {r.label}
+                      </span>
+                      <p
+                        className="text-[14px] font-semibold"
+                        style={{ color: isLast ? "hsl(0 0% 100%)" : "hsl(var(--brand-deep))" }}
+                      >
+                        {r.vigorant}
+                      </p>
                     </div>
                   </div>
                 </div>
