@@ -1,12 +1,12 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface Study {
   type: string;
   tag: string;
-  problem: string;
-  strategy: string;
+  summary: string;
+  headline: { metric: string; label: string };
   results: string[];
   initial: string;
   slug: string;
@@ -14,31 +14,34 @@ interface Study {
 
 const studies: Study[] = [
   {
-    type: "Dental Implant Specialist — California",
+    type: "Dental Implant Specialist",
     tag: "Dental SEO + Paid Ads",
     initial: "DI",
     slug: "dental-implant-specialist-california",
-    problem: "The practice was spending $8,000/month on Google Ads with a $187 cost-per-lead and inconsistent implant case volume.",
-    strategy: "We rebuilt their campaign structure, rewrote landing pages for conversion, and launched a local SEO push targeting 'dental implants [city]' keywords.",
-    results: ["Cost-per-lead dropped from $187 → $71", "+43% increase in implant consultations", "Ranked top 3 for primary implant keyword in 60 days"],
+    summary:
+      "Rebuilt campaign structure and launched a local SEO push targeting high-intent implant keywords.",
+    headline: { metric: "$71", label: "Cost-per-lead (from $187)" },
+    results: ["+43% implant consultations", "Top 3 ranking in 60 days"],
   },
   {
     type: "6-Location DSO — Texas",
-    tag: "Multi-Location SEO + Google Ads",
+    tag: "Multi-Location SEO",
     initial: "DG",
     slug: "6-location-dso-texas",
-    problem: "The group had no centralized marketing strategy. Each location ran independently with no shared analytics or brand consistency.",
-    strategy: "We implemented a unified dashboard, consolidated ad accounts, and deployed a location-specific local SEO strategy for all 6 offices.",
-    results: ["2.8x ROAS across all locations", "+89 new patients per month across the group", "61% reduction in average cost-per-lead"],
+    summary:
+      "Unified dashboard, consolidated ad accounts, and deployed location-specific SEO across all 6 offices.",
+    headline: { metric: "2.8x", label: "ROAS across all locations" },
+    results: ["+89 new patients/month", "61% lower cost-per-lead"],
   },
   {
-    type: "Sports Chiropractic Practice — Florida",
+    type: "Sports Chiropractic — Florida",
     tag: "AI Visibility + Local SEO",
     initial: "SC",
     slug: "sports-chiropractic-florida",
-    problem: "The practice relied entirely on word-of-mouth. They had zero Google Maps presence and were invisible in local search.",
-    strategy: "We built out their Google Business Profile, launched an AIO content strategy, and optimized their website for local intent keywords.",
-    results: ["Ranked #1 for primary chiropractic keyword in 45 days", "+44% increase in organic phone calls", "Now appearing in Google AI Overviews for key queries"],
+    summary:
+      "Built out Google Business Profile and launched an AIO content strategy for local intent keywords.",
+    headline: { metric: "#1", label: "Ranked in 45 days" },
+    results: ["+44% organic phone calls", "Featured in AI Overviews"],
   },
 ];
 
@@ -48,68 +51,82 @@ export default function MiniCaseStudies() {
       <Reveal className="text-center max-w-3xl mx-auto">
         <SectionLabel>Case Studies</SectionLabel>
         <H2>Real Results From Real Practices</H2>
-        <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] italic">
-          Every result below is from a real Vigorant client. Real metrics. Real growth.
+        <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px]">
+          Every result below is from a real Vigorant client.
         </p>
       </Reveal>
 
-      <div className="ui-card-grid mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {studies.map((s, i) => (
           <Reveal key={s.type} delay={i * 0.06} className="h-full">
             <article
-              className="ui-card"
+              className="group relative h-full flex flex-col rounded-2xl bg-white border border-brand-purple/10 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
+              {/* Header */}
               <header className="flex items-center gap-3">
                 <div
                   aria-hidden
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0"
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0"
                   style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
                 >
                   {s.initial}
                 </div>
                 <div className="min-w-0">
-                  <div className="ui-card-heading text-[14px]">{s.type}</div>
-                  <div className="mt-1 inline-flex min-h-[24px] font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2 py-0.5 rounded-full">
+                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">
                     {s.tag}
                   </div>
+                  <h3 className="mt-0.5 font-bold text-brand-deep text-[15px] leading-snug truncate">
+                    {s.type}
+                  </h3>
                 </div>
               </header>
 
-              <dl className="mt-5 space-y-4 flex-1">
-                <div>
-                  <dt className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-ink-secondary">Problem</dt>
-                  <dd className="mt-1 text-[14px] text-ink-secondary leading-relaxed">{s.problem}</dd>
+              {/* Headline metric */}
+              <div className="mt-6 rounded-xl bg-brand-purple/5 border border-brand-purple/10 px-5 py-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display font-bold text-brand-deep text-[40px] leading-none tracking-tight">
+                    {s.headline.metric}
+                  </span>
+                  <TrendingUp size={18} className="text-brand-purple" aria-hidden />
                 </div>
-                <div>
-                  <dt className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-ink-secondary">Strategy</dt>
-                  <dd className="mt-1 text-[14px] text-ink-secondary leading-relaxed">{s.strategy}</dd>
+                <div className="mt-2 text-[13px] text-ink-secondary font-medium">
+                  {s.headline.label}
                 </div>
-                <div>
-                  <dt className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">Results</dt>
-                  <dd>
-                    <ul className="ui-list mt-2">
-                      {s.results.map((r) => (
-                        <li key={r} className="ui-list-item text-[13px] text-brand-deep">
-                          <span aria-hidden className="ui-list-icon text-brand-purple">▲</span>
-                          <span className="font-semibold">{r}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </dd>
-                </div>
-              </dl>
+              </div>
 
-              <Link to={`/case-studies/${s.slug}`} className="ui-card-cta text-brand-purple text-[14px] hover:gap-2.5 transition-all min-h-[44px]">
-                Read Full Case Study <ArrowRight aria-hidden size={16} />
+              {/* Summary */}
+              <p className="mt-5 text-[14px] leading-relaxed text-ink-secondary">
+                {s.summary}
+              </p>
+
+              {/* Secondary results */}
+              <ul className="mt-5 space-y-2 flex-1">
+                {s.results.map((r) => (
+                  <li key={r} className="flex items-start gap-2 text-[13px] text-brand-deep">
+                    <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0" />
+                    <span>{r}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA */}
+              <Link
+                to={`/case-studies/${s.slug}`}
+                className="mt-6 pt-5 border-t border-brand-purple/10 inline-flex items-center gap-1.5 text-brand-purple text-[14px] font-semibold group-hover:gap-2.5 transition-all"
+              >
+                Read full case study <ArrowRight aria-hidden size={15} />
               </Link>
             </article>
           </Reveal>
         ))}
       </div>
 
-      <Reveal className="text-center mt-10">
-        <Link to="/case-studies" className="inline-flex items-center gap-2 font-semibold text-brand-deep hover:text-brand-purple transition-colors min-h-[44px]">
+      <Reveal className="text-center mt-12">
+        <Link
+          to="/case-studies"
+          className="inline-flex items-center gap-2 font-semibold text-brand-deep hover:text-brand-purple transition-colors min-h-[44px]"
+        >
           View All Case Studies <ArrowRight aria-hidden size={18} />
         </Link>
       </Reveal>
