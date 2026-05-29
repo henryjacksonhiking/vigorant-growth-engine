@@ -10,6 +10,13 @@ import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
+function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
+  return (
+    <span className="block overflow-hidden">
+      <motion.span className="block" initial={{ y: "108%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay, ease }}>{children}</motion.span>
+    </span>
+  );
+}
 function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
@@ -131,44 +138,49 @@ export default function Results() {
       <Nav />
       <main id="main" className="overflow-x-hidden">
         {/* HERO */}
-        <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 bg-background">
-          <div className="absolute inset-0 -z-10 opacity-60" aria-hidden>
-            <div className="absolute top-20 -right-20 w-96 h-96 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-purple) / 0.14)" }} />
-            <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl" style={{ background: "hsl(var(--brand-bright) / 0.12)" }} />
-          </div>
+        <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 bg-background overflow-hidden">
+          <div aria-hidden className="absolute inset-0 z-0 grid-overlay" />
+          <div aria-hidden className="absolute -top-16 -right-16 w-[420px] sm:w-[520px] h-[420px] sm:h-[520px] rounded-full pointer-events-none orb-a"
+            style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.20), transparent 70%)", filter: "blur(80px)" }} />
+          <div aria-hidden className="absolute -bottom-16 -left-10 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full pointer-events-none orb-b"
+            style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.14), transparent 70%)", filter: "blur(60px)" }} />
           <div className="container relative z-10">
             <nav aria-label="Breadcrumb" className="text-sm text-text-muted mb-6">
               <Link to="/" className="hover:text-brand-purple">Home</Link>
               <span className="mx-2" aria-hidden>/</span>
               <span aria-current="page" className="text-text-secondary">Results</span>
             </nav>
-            <Reveal>
-              <span className="section-label inline-block px-3 py-1 rounded-full bg-brand-purple/8 border border-brand-purple/20">Proof, not promises</span>
-              <h1 className="font-display font-bold text-brand-deep leading-[1.05] mt-4"
-                style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.03em" }}>
-                Real practices.{" "}
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>Real numbers.</span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg text-text-secondary">
-                Booked patients, ROAS lift, conversion gains, AI search visibility — the measurable outcomes behind
-                every Vigorant engagement.
-              </p>
-              <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-5">
-                {[
-                  { n: 312, suf: "%", h: "Avg patient growth" },
-                  { n: 4.2, suf: "x", h: "Avg paid ROAS", d: 1 },
-                  { n: 68, suf: "%", h: "Avg CRO lift" },
-                  { n: 92, suf: "%", h: "Client retention" },
-                ].map(m => (
-                  <div key={m.h} className="rounded-2xl bg-white border border-black/[0.08] p-5" style={{ boxShadow: "var(--shadow-card)" }}>
-                    <div className="text-3xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
-                      <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
-                    </div>
-                    <p className="mt-1 text-text-secondary text-sm">{m.h}</p>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
+              className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-4 py-1.5">
+              <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" />
+              Proof, not promises
+            </motion.div>
+            <h1 className="font-display font-bold text-brand-deep leading-[1.05] mt-5"
+              style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.03em" }}>
+              <Line delay={0.4}>Real practices.</Line>
+              <Line delay={0.55}><span className="gradient-text">Real numbers.</span></Line>
+            </h1>
+            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.0 }}
+              className="mt-6 max-w-2xl text-lg text-text-secondary leading-[1.7]">
+              Booked patients, ROAS lift, conversion gains, AI search visibility — the measurable outcomes behind
+              every Vigorant engagement.
+            </motion.p>
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.15 }}
+              className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                { n: 312, suf: "%", h: "Avg patient growth" },
+                { n: 4.2, suf: "x", h: "Avg paid ROAS", d: 1 },
+                { n: 68, suf: "%", h: "Avg CRO lift" },
+                { n: 92, suf: "%", h: "Client retention" },
+              ].map(m => (
+                <div key={m.h} className="rounded-2xl bg-white border border-black/[0.08] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30 hover:shadow-lg" style={{ boxShadow: "var(--shadow-card)" }}>
+                  <div className="text-3xl font-extrabold bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-text)" }}>
+                    <Counter to={m.n} decimals={m.d ?? 0} suffix={m.suf} />
                   </div>
-                ))}
-              </div>
-            </Reveal>
+                  <p className="mt-1 text-text-secondary text-sm">{m.h}</p>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
