@@ -19,6 +19,13 @@ import SolutionsMedical from "./pages/SolutionsMedical.tsx";
 import ScaleYourPractice from "./pages/ScaleYourPractice.tsx";
 import HighValuePatients from "./pages/HighValuePatients.tsx";
 import Services from "./pages/Services.tsx";
+import ServicesSeo from "./pages/ServicesSeo.tsx";
+import ServicesSeoTraditional from "./pages/ServicesSeoTraditional.tsx";
+import ServicesSeoAeo from "./pages/ServicesSeoAeo.tsx";
+import ServicesSeoGeo from "./pages/ServicesSeoGeo.tsx";
+import ServicesPaidAds from "./pages/ServicesPaidAds.tsx";
+import ServicesWebsiteDesign from "./pages/ServicesWebsiteDesign.tsx";
+import ServicesReputation from "./pages/ServicesReputation.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
@@ -51,6 +58,13 @@ const App = () => (
             <Route path="/for-practices/scale-your-practice" element={<ScaleYourPractice />} />
             <Route path="/for-practices/high-value-patients" element={<HighValuePatients />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/seo" element={<ServicesSeo />} />
+            <Route path="/services/seo/search-engine-optimization" element={<ServicesSeoTraditional />} />
+            <Route path="/services/seo/aeo" element={<ServicesSeoAeo />} />
+            <Route path="/services/seo/geo" element={<ServicesSeoGeo />} />
+            <Route path="/services/paid-ads" element={<ServicesPaidAds />} />
+            <Route path="/services/website-design" element={<ServicesWebsiteDesign />} />
+            <Route path="/services/reputation" element={<ServicesReputation />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/results" element={<Results />} />
             <Route path="/resources" element={<Resources />} />
