@@ -1,49 +1,13 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { Check, X } from "lucide-react";
-import {
-  HoverSlider,
-  HoverSliderImage,
-  HoverSliderImageWrap,
-  TextStaggerHover,
-} from "@/components/ui/animated-slideshow";
+import { Eye, Target, MousePointerClick, Workflow, BarChart3, Repeat, ChevronRight, Check, X } from "lucide-react";
 
 const steps = [
-  {
-    title: "Visibility",
-    body: "We make your practice discoverable on Google, Maps, and AI search engines.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop",
-  },
-  {
-    title: "Acquisition",
-    body: "We run targeted paid campaigns that attract high-intent patients at the lowest possible cost.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2400&auto=format&fit=crop",
-  },
-  {
-    title: "Conversion",
-    body: "We optimize your website and patient journey to turn visitors into booked appointments.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2400&auto=format&fit=crop",
-  },
-  {
-    title: "Automation",
-    body: "We automate follow-up, reminders, and reputation requests to reduce front-desk burden.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2400&auto=format&fit=crop",
-  },
-  {
-    title: "Analytics",
-    body: "We give you a live dashboard so you always know exactly where your patients are coming from.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2400&auto=format&fit=crop",
-  },
-  {
-    title: "Optimization",
-    body: "We continuously refine every channel based on real data — not guesses.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=2400&auto=format&fit=crop",
-  },
+  { icon: Eye, title: "Visibility", body: "We make your practice discoverable on Google, Maps, and AI search engines." },
+  { icon: Target, title: "Acquisition", body: "We run targeted paid campaigns that attract high-intent patients at the lowest possible cost." },
+  { icon: MousePointerClick, title: "Conversion", body: "We optimize your website and patient journey to turn visitors into booked appointments." },
+  { icon: Workflow, title: "Automation", body: "We automate follow-up, reminders, and reputation requests to reduce front-desk burden." },
+  { icon: BarChart3, title: "Analytics", body: "We give you a live dashboard so you always know exactly where your patients are coming from." },
+  { icon: Repeat, title: "Optimization", body: "We continuously refine every channel based on real data — not guesses." },
 ];
 
 const before = [
@@ -73,43 +37,31 @@ export default function GrowthEngine() {
         </p>
       </Reveal>
 
-      <Reveal className="mt-12 max-w-6xl mx-auto">
-        <HoverSlider className="rounded-3xl border border-brand-purple/15 bg-surface-secondary p-6 sm:p-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="flex flex-col gap-3">
-              {steps.map((s, i) => (
-                <div key={s.title} className="group">
-                  <div className="flex items-baseline gap-3">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple/70 w-8 shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <TextStaggerHover
-                      text={s.title}
-                      index={i}
-                      className="font-extrabold text-brand-deep leading-[1.05] tracking-tight text-[28px] sm:text-[36px] lg:text-[44px]"
-                    />
-                  </div>
-                  <p className="mt-1 ml-11 text-ink-secondary text-[14px] sm:text-[15px] max-w-md">
-                    {s.body}
-                  </p>
+      <ol className="ui-card-grid mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto list-none p-0">
+        {steps.map((s, i) => (
+          <Reveal key={s.title} delay={i * 0.06} className="relative h-full">
+            <li className="ui-card list-none"
+              style={{ boxShadow: "var(--shadow-card)" }}>
+              <div className="flex items-start gap-4">
+                <div
+                  aria-hidden
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
+                >
+                  <s.icon size={20} className="text-white" />
                 </div>
-              ))}
-            </div>
-
-            <HoverSliderImageWrap className="aspect-[4/5] w-full overflow-hidden rounded-2xl bg-brand-deep/5 shadow-[var(--shadow-card)]">
-              {steps.map((s, i) => (
-                <HoverSliderImage
-                  key={s.title}
-                  index={i}
-                  imageUrl={s.imageUrl}
-                  alt={s.title}
-                  className="rounded-2xl"
-                />
-              ))}
-            </HoverSliderImageWrap>
-          </div>
-        </HoverSlider>
-      </Reveal>
+                 <div className="ui-card-body">
+                  <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">
+                    Stage {String(i + 1).padStart(2, "0")}
+                  </span>
+                   <h3 className="ui-card-heading text-[17px]">{s.title}</h3>
+                   <p className="ui-card-text">{s.body}</p>
+                </div>
+              </div>
+            </li>
+          </Reveal>
+        ))}
+      </ol>
 
       <Reveal className="mt-14 max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-5">
