@@ -1,32 +1,35 @@
 import logoWhite from "@/assets/vigorant-logo-horizontal-flat-white.png";
 import { Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const cols = [
   {
     title: "Solutions",
     links: [
-      { label: "Dental Marketing", href: "#" },
-      { label: "Medical Marketing", href: "#" },
-      { label: "Chiropractic Marketing", href: "#" },
-      { label: "AI Visibility (AIO/GEO)", href: "#" },
+      { label: "Dental Marketing", href: "/solutions/dental" },
+      { label: "Medical Marketing", href: "/solutions/medical" },
+      { label: "Chiropractic Marketing", href: "/solutions/chiropractic" },
+      { label: "AI Visibility (AEO/GEO)", href: "/services/seo/aeo" },
     ],
   },
   {
     title: "Services",
     links: [
-      { label: "Paid Ads", href: "#" },
-      { label: "Website Design", href: "#" },
-      { label: "Reputation Management", href: "#" },
-      { label: "Marketing Automation", href: "#" },
+      { label: "SEO", href: "/services/seo" },
+      { label: "Paid Ads", href: "/services/paid-ads" },
+      { label: "Website Design & CRO", href: "/services/website-design" },
+      { label: "Reputation & Social", href: "/services/reputation" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Case Studies", href: "#case-studies" },
-      { label: "Blog", href: "#" },
+      { label: "How It Works", href: "/how-it-works" },
+      { label: "Case Studies", href: "/results" },
+      { label: "About", href: "/about" },
+      { label: "Resources", href: "/resources" },
       { label: "Free Growth Audit", href: "/free-audit" },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", href: "mailto:info@vigorant.com" },
     ],
   },
 ];
