@@ -31,6 +31,7 @@ export function Line({ children, delay }: { children: ReactNode; delay: number }
 
 export type HeroProps = {
   breadcrumbLabel: string;
+  breadcrumbTrail?: { label: string; href: string }[];
   chip: string;
   titleLines: { text: string; gradient?: boolean }[];
   subhead: string;
@@ -40,7 +41,8 @@ export type HeroProps = {
   proofStrip?: string;
 };
 
-export function PainHero({ breadcrumbLabel, chip, titleLines, subhead, paragraph, primaryCTA, secondaryCTA, proofStrip }: HeroProps) {
+export function PainHero({ breadcrumbLabel, breadcrumbTrail, chip, titleLines, subhead, paragraph, primaryCTA, secondaryCTA, proofStrip }: HeroProps) {
+  const trail = breadcrumbTrail ?? [{ label: "Home", href: "/" }, { label: "For Practices", href: "/for-practices" }];
   return (
     <section className="relative overflow-hidden pt-28 pb-20 sm:pt-32 sm:pb-24" style={{ minHeight: "88vh" }}>
       <div aria-hidden className="absolute inset-0 z-0 grid-overlay" />
@@ -51,11 +53,13 @@ export function PainHero({ breadcrumbLabel, chip, titleLines, subhead, paragraph
 
       <div className="container relative z-10 text-center max-w-[840px]">
         <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-text-muted flex items-center justify-center gap-2 list-none p-0">
-            <li><Link to="/" className="hover:text-brand-purple">Home</Link></li>
-            <li aria-hidden className="text-brand-purple/40">/</li>
-            <li><Link to="/for-practices" className="hover:text-brand-purple">For Practices</Link></li>
-            <li aria-hidden className="text-brand-purple/40">/</li>
+          <ol className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-text-muted flex items-center justify-center gap-2 flex-wrap list-none p-0">
+            {trail.map((c, i) => (
+              <span key={c.href} className="contents">
+                <li><Link to={c.href} className="hover:text-brand-purple">{c.label}</Link></li>
+                <li aria-hidden className="text-brand-purple/40">/</li>
+              </span>
+            ))}
             <li aria-current="page" className="text-brand-deep">{breadcrumbLabel}</li>
           </ol>
         </nav>
