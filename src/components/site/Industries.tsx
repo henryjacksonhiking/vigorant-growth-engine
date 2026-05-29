@@ -87,12 +87,12 @@ export default function Industries() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+      <div className="ui-card-grid mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
         {industries.map((it, i) => (
           <Reveal key={it.title} delay={i * 0.06} className="h-full">
             <Link
               to={it.href}
-              className="group h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
+              className="ui-card group transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/40"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div
@@ -102,9 +102,9 @@ export default function Industries() {
               >
                 <it.Icon size={20} className="text-white" />
               </div>
-              <h3 className="mt-5 font-extrabold text-brand-deep text-[17px] leading-tight">{it.title}</h3>
-              <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed flex-1">{it.body}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
+              <h3 className="ui-card-heading mt-5 text-[17px]">{it.title}</h3>
+              <p className="ui-card-text">{it.body}</p>
+              <span className="ui-card-cta text-brand-purple text-[14px] group-hover:gap-2.5 transition-all">
                 Learn More <ArrowRight aria-hidden size={16} />
               </span>
             </Link>
