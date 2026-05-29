@@ -53,11 +53,13 @@ export function PainHero({ breadcrumbLabel, breadcrumbTrail, chip, titleLines, s
 
       <div className="container relative z-10 text-center max-w-[840px]">
         <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-text-muted flex items-center justify-center gap-2 list-none p-0">
-            <li><Link to="/" className="hover:text-brand-purple">Home</Link></li>
-            <li aria-hidden className="text-brand-purple/40">/</li>
-            <li><Link to="/for-practices" className="hover:text-brand-purple">For Practices</Link></li>
-            <li aria-hidden className="text-brand-purple/40">/</li>
+          <ol className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-text-muted flex items-center justify-center gap-2 flex-wrap list-none p-0">
+            {trail.map((c, i) => (
+              <span key={c.href} className="contents">
+                <li><Link to={c.href} className="hover:text-brand-purple">{c.label}</Link></li>
+                <li aria-hidden className="text-brand-purple/40">/</li>
+              </span>
+            ))}
             <li aria-current="page" className="text-brand-deep">{breadcrumbLabel}</li>
           </ol>
         </nav>
