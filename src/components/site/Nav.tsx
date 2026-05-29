@@ -12,13 +12,27 @@ type NavItem = {
 };
 
 const links: NavItem[] = [
-  { label: "Services", href: "/services", route: true },
+  {
+    label: "Services",
+    href: "/services",
+    route: true,
+    children: [
+      { label: "SEO Overview", href: "/services/seo" },
+      { label: "Traditional SEO & Maps", href: "/services/seo/search-engine-optimization" },
+      { label: "Answer Engine Optimization (AEO)", href: "/services/seo/aeo" },
+      { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
+      { label: "Paid Ads (Google & Meta)", href: "/services/paid-ads" },
+      { label: "Website Design & CRO", href: "/services/website-design" },
+      { label: "Reputation & Social", href: "/services/reputation" },
+    ],
+  },
   {
     label: "Solutions",
     href: "/solutions",
     route: true,
     children: [
       { label: "Dental", href: "/solutions/dental" },
+      { label: "Medical", href: "/solutions/medical" },
       { label: "Chiropractic", href: "/solutions/chiropractic" },
     ],
   },
