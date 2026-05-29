@@ -8,12 +8,8 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 
 type CardPalette = { bg: string; text: string; subtle: string };
 
-const PALETTES: CardPalette[] = [
-  { bg: "bg-brand-deep", text: "text-white", subtle: "text-white/80" },
-  { bg: "bg-brand-purple", text: "text-white", subtle: "text-white/85" },
-  { bg: "bg-[#1a1530]", text: "text-white", subtle: "text-white/80" },
-  { bg: "bg-[#2a1f5c]", text: "text-white", subtle: "text-white/85" },
-];
+const UNIFIED: CardPalette = { bg: "bg-brand-deep", text: "text-white", subtle: "text-white/80" };
+const PALETTES: CardPalette[] = [UNIFIED, UNIFIED, UNIFIED, UNIFIED];
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
