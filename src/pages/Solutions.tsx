@@ -215,31 +215,48 @@ function OneSystem() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12 max-w-[960px] mx-auto overflow-hidden rounded-[18px]" >
-          <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
-            <div className="grid grid-cols-1 md:grid-cols-[180px_1fr_1fr_1fr]">
-              <div className="hidden md:block" />
-              {[{ icon: Smile, label: "Dental" }, { icon: Activity, label: "Chiropractic" }, { icon: Stethoscope, label: "Medical" }].map(({ icon: Icon, label }) => (
-                <div key={label} className="px-5 py-4 flex items-center gap-2 border-b" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-                  <Icon aria-hidden size={22} className="text-brand-bright" />
-                  <span className="text-white font-bold text-[15px]">{label}</span>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
+          {[
+            { icon: Smile, label: "Dental", accent: "from-brand-purple to-brand-bright", key: "d" as const },
+            { icon: Activity, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
+            { icon: Stethoscope, label: "Medical", accent: "from-brand-purple to-brand-lavender", key: "m" as const },
+          ].map(({ icon: Icon, label, accent, key }, colIdx) => (
+            <Reveal key={label} delay={0.1 + colIdx * 0.1}>
+              <article
+                className="group relative h-full rounded-2xl p-6 sm:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.10)",
+                  boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
+                }}
+              >
+                <div aria-hidden className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${accent} opacity-80`} />
+                <div aria-hidden className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.25), transparent 70%)", filter: "blur(40px)" }} />
+
+                <div className="relative flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/8 border border-white/12 text-brand-bright transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                    <Icon aria-hidden size={22} />
+                  </span>
+                  <h3 className="text-white font-bold text-[18px] tracking-tight">{label}</h3>
                 </div>
-              ))}
-              {rows.map((r, idx) => (
-                <div key={r.label} className="contents">
-                  <div className={`px-5 py-3 font-mono-ui text-[11px] uppercase tracking-[0.07em] ${idx === rows.length - 1 ? "" : "border-b"} md:border-r`} style={{ color: "rgba(255,255,255,0.75)", borderColor: "rgba(255,255,255,0.04)" }}>
-                    {r.label}
-                  </div>
-                  {[r.d, r.c, r.m].map((cell, i) => (
-                    <div key={i} className={`px-5 py-3 text-[13px] ${idx === rows.length - 1 ? "" : "border-b"}`} style={{ color: "rgba(255,255,255,0.9)", borderColor: "rgba(255,255,255,0.04)" }}>
-                      {cell}
-                    </div>
+
+                <ul className="relative mt-6 flex flex-col gap-4 list-none p-0">
+                  {rows.map((r) => (
+                    <li key={r.label} className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0">
+                      <div className="font-mono-ui text-[10.5px] uppercase tracking-[0.10em] text-brand-bright/85">
+                        {r.label}
+                      </div>
+                      <div className="mt-1.5 text-[13.5px] leading-[1.6]" style={{ color: "rgba(255,255,255,0.92)" }}>
+                        {r[key]}
+                      </div>
+                    </li>
                   ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
+                </ul>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
