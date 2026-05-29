@@ -202,20 +202,20 @@ export default function SolutionsChiropractic() {
               <ChipLabel>By Patient Type</ChipLabel>
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>Chiropractic Marketing <GradientText>by Patient Type</GradientText></h2>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {SEGMENTS.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li>
-                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-[18px] p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
-                      <div className="p-6">
-                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
+                      <div className="p-6 ui-card-body">
+                        <span className="inline-flex min-h-[28px] items-center self-start font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
                         <div className="mt-3 w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center"><s.icon size={20} className="text-brand-purple" /></div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{s.h3}</h3>
+                        <h3 className="ui-card-heading mt-3 text-[16px]">{s.h3}</h3>
                         <p className="mt-2 text-[13px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-ink-muted">Intent: </span>{s.intent}</p>
-                        <div className="flex flex-wrap gap-1.5 mt-2">{s.channels.map(c => <span key={c} className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>)}</div>
+                        <div className="ui-pill-row mt-2">{s.channels.map(c => <span key={c} className="inline-flex min-h-[24px] items-center font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>)}</div>
                         <p className="mt-3 text-[12px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-emerald-600">Conversion: </span>{s.conv}</p>
-                        <Link to={s.link.to} className="mt-3 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">{s.link.label} <ArrowRight size={12} /></Link>
+                        <Link to={s.link.to} className="ui-card-cta text-brand-purple text-[12px]">{s.link.label} <ArrowRight size={12} /></Link>
                       </div>
                     </article>
                   </li>
@@ -233,15 +233,15 @@ export default function SolutionsChiropractic() {
               <ChipLabel dark>The Vigorant Chiropractic Growth Engine</ChipLabel>
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(28px, 5vw, 46px)", letterSpacing: "-0.03em" }}>The Vigorant <GradientTextLight>Chiropractic Growth Engine</GradientTextLight></h2>
             </Reveal>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
+            <div className="ui-card-grid grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {ENGINE.map((s, i) => (
                 <Reveal key={s.n} delay={i * 0.05} className="h-full">
-                  <div className="bg-white/6 border border-white/10 rounded-[16px] p-6 text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all h-full">
+                  <div className="ui-card-dark rounded-[16px] text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
                     <div className="font-mono-ui font-bold text-[28px]"><GradientTextLight>{s.n}</GradientTextLight></div>
                     <div className="w-11 h-11 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={20} className="text-white" /></div>
-                    <h3 className="font-bold text-white text-[14px] mt-3">{s.h}</h3>
-                    <p className="mt-2 text-white/60 text-[12px] leading-[1.65]">{s.body}</p>
-                    <Link to={s.link.to} className="mt-2.5 inline-flex items-center gap-1 text-brand-bright font-semibold text-[11px]">{s.link.label} <ArrowRight size={11} /></Link>
+                    <h3 className="ui-card-heading-dark mt-3 text-[14px]">{s.h}</h3>
+                    <p className="ui-card-text-dark text-[12px]">{s.body}</p>
+                    <Link to={s.link.to} className="ui-card-cta text-brand-bright text-[11px]">{s.link.label} <ArrowRight size={11} /></Link>
                   </div>
                 </Reveal>
               ))}
@@ -256,15 +256,15 @@ export default function SolutionsChiropractic() {
               <ChipLabel>Chiropractic Marketing Services</ChipLabel>
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>Chiropractic Marketing Services<br /><GradientText>Connected Into One Growth System</GradientText></h2>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
-                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={18} className="text-white" /></div>
-                      <h3 className="font-bold text-brand-deep text-[13px] mt-2.5">{s.name}</h3>
-                      <p className="mt-1.5 text-ink-secondary text-[12px] leading-[1.6]">{s.body}</p>
-                      <Link to={s.href} className="mt-2.5 inline-flex items-center gap-1 text-brand-purple font-semibold text-[11px]">Explore <ArrowRight size={11} /></Link>
+                      <h3 className="ui-card-heading mt-2.5 text-[13px]">{s.name}</h3>
+                      <p className="ui-card-text text-[12px]">{s.body}</p>
+                      <Link to={s.href} className="ui-card-cta text-brand-purple text-[11px]">Explore <ArrowRight size={11} /></Link>
                     </article>
                   </li>
                 </Reveal>
