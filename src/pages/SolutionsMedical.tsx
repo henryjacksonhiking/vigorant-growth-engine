@@ -217,16 +217,16 @@ export default function SolutionsMedical() {
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>Medical Practices and Clinics<br /><GradientText>Vigorant Helps Grow</GradientText></h2>
               <p className="mt-5 text-ink-secondary text-[16px] max-w-lg mx-auto">The medical marketing strategy, channel mix, and conversion approach vary significantly by clinic type. Select the model that best reflects your practice.</p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-12 max-w-6xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mt-12 max-w-6xl mx-auto">
               {AUDIENCES.map((a, i) => (
                 <Reveal key={a.tag} delay={i * 0.04} className="h-full">
                   <li className="h-full">
-                    <article className="h-full flex flex-col bg-white/90 border border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card bg-white/90 border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><a.icon size={16} className="text-white" /></div>
                       <div className="font-mono-ui text-[10px] uppercase text-brand-purple mt-2.5">{a.tag}</div>
-                      <h3 className="font-bold text-brand-deep text-[13px] mt-1">{a.h}</h3>
-                      <p className="text-ink-muted text-[11px] mt-1.5 leading-[1.55] flex-1">{a.p}</p>
-                      <Link to={a.link.to} className="mt-2.5 inline-flex items-center justify-center gap-1 text-brand-purple font-semibold text-[11px]">{a.link.label} <ArrowRight size={11} /></Link>
+                      <h3 className="ui-card-heading mt-1 text-[13px]">{a.h}</h3>
+                      <p className="ui-card-text text-[11px]">{a.p}</p>
+                      <Link to={a.link.to} className="ui-card-cta justify-center text-brand-purple text-[11px]">{a.link.label} <ArrowRight size={11} /></Link>
                     </article>
                   </li>
                 </Reveal>
@@ -283,15 +283,15 @@ export default function SolutionsMedical() {
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(28px, 5vw, 46px)", letterSpacing: "-0.03em" }}>Medical Marketing Services<br /><GradientTextLight>Connected Into One Growth System</GradientTextLight></h2>
               <p className="mt-5 text-white/62 text-[16px] max-w-lg mx-auto">Nine specialty-specific services, each with a dedicated page. Connected into one patient acquisition system.</p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li className="h-full">
-                    <article className="h-full flex flex-col bg-white/6 border border-white/10 rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card-dark rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={18} className="text-white" /></div>
-                      <h3 className="font-bold text-white text-[13px] mt-2.5">{s.name}</h3>
-                      <p className="mt-1.5 text-white/58 text-[12px] leading-[1.6] flex-1">{s.body}</p>
-                      <Link to={s.href} className="mt-2.5 inline-flex items-center justify-center gap-1 text-brand-bright font-semibold text-[11px]">Explore <ArrowRight size={11} /></Link>
+                      <h3 className="ui-card-heading-dark mt-2.5 text-[13px]">{s.name}</h3>
+                      <p className="ui-card-text-dark text-[12px]">{s.body}</p>
+                      <Link to={s.href} className="ui-card-cta justify-center text-brand-bright text-[11px]">Explore <ArrowRight size={11} /></Link>
                     </article>
                   </li>
                 </Reveal>
