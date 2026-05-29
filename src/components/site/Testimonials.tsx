@@ -125,7 +125,7 @@ export default function Testimonials() {
                 </span>
               </div>
             </article>
-          </Reveal>
+          </ScrollTiltedItem>
         ))}
       </div>
 
