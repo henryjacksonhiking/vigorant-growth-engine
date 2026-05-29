@@ -142,7 +142,12 @@ export default function Nav() {
             const isOpen = activeDropdown === item.label;
 
             return (
-              <div key={item.label} className="relative shrink-0">
+              <div
+                key={item.label}
+                className="relative shrink-0"
+                onMouseEnter={() => setActiveDropdown(item.label)}
+                onMouseLeave={() => setActiveDropdown((prev) => (prev === item.label ? null : prev))}
+              >
                 <div
                   className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors text-sm font-medium whitespace-nowrap ${
                     pActive
@@ -171,7 +176,7 @@ export default function Nav() {
                   </button>
                 </div>
                 {isOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-60 glass-strong rounded-xl shadow-lg border border-brand-purple/10 p-1.5 z-50">
+                  <div className="absolute top-full left-0 mt-2 min-w-[16rem] max-w-[22rem] glass-strong rounded-xl shadow-lg border border-brand-purple/10 p-1.5 z-50">
                     {item.children.map((child) => {
                       const cActive = isActive(child.href);
                       return (
