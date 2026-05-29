@@ -16,8 +16,8 @@ export default function Hero() {
       <div aria-hidden className="absolute bottom-16 right-10 sm:right-48 w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full pointer-events-none orb-b"
         style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.14), transparent 70%)", filter: "blur(60px)" }} />
 
-      <div className="container relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        <div className="lg:col-span-7 order-2 lg:order-1">
+      <div className="container relative z-10 flex flex-col items-center gap-12 lg:gap-16">
+        <div className="w-full max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
             className="inline-flex items-center gap-2.5 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3.5 py-1.5"
@@ -38,14 +38,14 @@ export default function Hero() {
 
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.05 }}
-            className="mt-6 sm:mt-7 text-base sm:text-[18px] text-ink-secondary max-w-[560px] leading-[1.7]"
+            className="mt-6 sm:mt-7 text-base sm:text-[18px] text-ink-secondary max-w-[640px] mx-auto leading-[1.7]"
           >
             Vigorant helps dental, medical, and chiropractic practices dominate local search, run profitable paid ads, and convert more website visitors into booked appointments — powered by AI and built specifically for healthcare.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4"
           >
             <a
               href="/free-audit"
@@ -68,22 +68,9 @@ export default function Hero() {
             No long-term contracts. No setup fees. Results-first approach.
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.35 }}
-            className="mt-5 text-[12px] sm:text-[13px] text-ink-secondary font-mono-ui"
-            aria-label="Vigorant services"
-          >
-            SEO <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
-            AI Visibility <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
-            Paid Ads <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
-            Website Design <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
-            Automation <span aria-hidden className="text-brand-purple/50 mx-1.5">•</span>
-            Analytics
-          </motion.p>
-
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}
-            className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono-ui text-[12px] text-ink-secondary list-none p-0"
+            className="mt-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 font-mono-ui text-[12px] text-ink-secondary list-none p-0"
             aria-label="Trust signals"
           >
             <li><span aria-hidden>★★★★★</span> 4.9 on Google</li>
@@ -98,10 +85,10 @@ export default function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.7 }}
-          className="lg:col-span-5 order-1 lg:order-2 relative"
+          className="w-full max-w-5xl mx-auto relative"
         >
           <LotusOrbit
-            className="absolute inset-0 -z-10 m-auto w-[120%] h-[120%] -top-8 sm:-top-12 pointer-events-none opacity-90"
+            className="absolute inset-0 -z-10 m-auto w-[110%] h-[110%] -top-8 sm:-top-12 pointer-events-none opacity-90"
           />
           <DashboardCard />
         </motion.div>
@@ -169,8 +156,8 @@ function DashboardCard() {
               <span className="w-1.5 h-1.5 rounded-full bg-brand-bright pulse-dot" />
               Client Testimonials · Watch Now
             </span>
-            <span className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/95 flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110 pulse-dot">
-              <Play size={32} className="text-brand-deep ml-1" fill="currentColor" />
+            <span className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/95 flex items-center justify-center shadow-xl transition-transform duration-300 group-hover:scale-110 pulse-dot">
+              <Play size={18} className="text-brand-deep ml-0.5" fill="currentColor" />
             </span>
             <span aria-hidden className="absolute bottom-4 left-4 right-4 text-white font-bold text-[15px] sm:text-[16px] leading-snug drop-shadow-md">
               Trusted by healthcare leaders across the U.S.
