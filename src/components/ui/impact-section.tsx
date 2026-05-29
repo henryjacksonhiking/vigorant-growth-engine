@@ -112,19 +112,19 @@ export default function ImpactSection() {
                         className="absolute inset-0 h-full w-full object-cover"
                         loading="lazy"
                       />
-                      <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/55 backdrop-blur px-4 py-3 text-white">
+                      <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/60 backdrop-blur px-5 pt-5 pb-4 text-white">
                         <div className="font-extrabold text-[28px] leading-none">{card.metric}</div>
-                        <div className="mt-1 text-[12px] opacity-90 line-clamp-2">{card.label}</div>
+                        <div className="mt-2 text-[12px] opacity-90 line-clamp-2">{card.label}</div>
                       </div>
                     </div>
                   </motion.div>
                 ) : (
-                  <div className="h-full w-full p-5 flex flex-col justify-between">
+                  <div className="h-full w-full pt-7 px-5 pb-6 flex flex-col justify-between">
                     <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] opacity-80 [writing-mode:vertical-rl] md:[writing-mode:vertical-rl] rotate-180 self-end">
                       {card.tag}
                     </span>
                     <div>
-                      <div className="font-extrabold text-[34px] leading-none">{card.metric}</div>
+                      <div className="font-extrabold text-[34px] leading-[1.1]">{card.metric}</div>
                       <div className={`mt-2 text-[13px] font-medium ${card.palette.subtle} line-clamp-2`}>
                         {card.label}
                       </div>
