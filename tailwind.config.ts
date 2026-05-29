@@ -39,6 +39,11 @@ export default {
           secondary: "hsl(var(--text-secondary))",
           muted: "hsl(var(--text-muted))",
         },
+        text: {
+          primary: "hsl(var(--text-primary))",
+          secondary: "hsl(var(--text-secondary))",
+          muted: "hsl(var(--text-muted))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

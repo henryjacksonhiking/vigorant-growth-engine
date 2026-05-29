@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Search, MapPin, Sparkles, Brain, BarChart2, Globe, Phone, ArrowRight } from "lucide-react";
 import {
   PainPageLayout, PainHero, DarkSection, OffWhiteSection, WhiteSection,
-  SectionHeader, Reveal, FAQAccordion, FinalCTA,
+  SectionHeader, Reveal, FAQAccordion, FinalCTA, CardGrid,
 } from "@/components/site/PainPageShell";
 
 const FAQS = [
@@ -53,43 +53,43 @@ export default function ServicesSeo() {
 
       <OffWhiteSection>
         <SectionHeader label="The Three Pillars" title={<>SEO, AEO, and <span className="gradient-text">GEO — explained.</span></>} />
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
+        <CardGrid className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
           {PILLARS.map((p, i) => (
             <li key={i}>
               <Reveal delay={i * 0.06} className="h-full">
                 <Link to={p.href} className="block h-full">
-                  <article className="bg-white border border-brand-purple/12 rounded-2xl p-7 h-full hover:border-brand-purple/30 hover:shadow-lg transition-all">
+                  <article className="ui-card hover:border-brand-purple/30 hover:shadow-lg transition-all">
                     <div className="w-12 h-12 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple mb-5">
                       <p.Icon aria-hidden size={22} />
                     </div>
-                    <h3 className="font-bold text-brand-deep text-[19px] mb-2.5">{p.h}</h3>
-                    <p className="text-text-secondary text-[15px] leading-[1.7]">{p.b}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-brand-purple text-[13px] font-semibold">Learn more <ArrowRight aria-hidden size={14} /></span>
+                    <h3 className="ui-card-heading text-[19px]">{p.h}</h3>
+                    <p className="ui-card-text text-[15px]">{p.b}</p>
+                    <span className="ui-card-cta text-brand-purple text-[13px]">Learn more <ArrowRight aria-hidden size={14} /></span>
                   </article>
                 </Link>
               </Reveal>
             </li>
           ))}
-        </ul>
+        </CardGrid>
       </OffWhiteSection>
 
       <WhiteSection>
         <SectionHeader label="What's Inside Every Engagement" title={<>The Vigorant <span className="gradient-text">SEO system.</span></>} />
-        <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[1000px] mx-auto list-none p-0">
+        <CardGrid className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[1000px] mx-auto list-none p-0">
           {SYSTEM.map((s, i) => (
             <li key={i}>
               <Reveal delay={i * 0.05} className="h-full">
-                <article className="bg-white rounded-2xl border border-brand-purple/12 p-6 h-full hover:shadow-md transition">
+                <article className="ui-card hover:shadow-md transition">
                   <div className="w-11 h-11 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple mb-4">
                     <s.Icon aria-hidden size={20} />
                   </div>
-                  <h3 className="font-bold text-brand-deep text-[17px] mb-2">{s.h}</h3>
-                  <p className="text-text-secondary text-[15px] leading-[1.7]">{s.b}</p>
+                  <h3 className="ui-card-heading text-[17px]">{s.h}</h3>
+                  <p className="ui-card-text text-[15px]">{s.b}</p>
                 </article>
               </Reveal>
             </li>
           ))}
-        </ul>
+        </CardGrid>
       </WhiteSection>
 
       <OffWhiteSection>

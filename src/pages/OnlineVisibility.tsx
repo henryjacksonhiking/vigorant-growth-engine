@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Search, MapPin, Eye, Globe, FileText, Star, ShieldCheck, BarChart2, AlertTriangle, Check, EyeOff } from "lucide-react";
 import {
   PainPageLayout, PainHero, DarkSection, OffWhiteSection, WhiteSection,
-  SectionHeader, Reveal, FAQAccordion, FinalCTA, Counter,
+  SectionHeader, Reveal, FAQAccordion, FinalCTA, Counter, CardGrid,
 } from "@/components/site/PainPageShell";
 
 const FAQS = [
@@ -61,21 +61,21 @@ export default function OnlineVisibility() {
 
       <WhiteSection>
         <SectionHeader label="Why Your Practice May Not Show Up" title={<>Seven reasons strong practices stay <span className="gradient-text">invisible online.</span></>} />
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
+        <CardGrid className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
           {GAPS.map((g, i) => (
             <li key={i}>
               <Reveal delay={i * 0.05} className="h-full">
-                <article className="bg-white border border-brand-purple/12 rounded-2xl p-6 h-full hover:border-brand-purple/30 hover:shadow-lg transition-all">
+                <article className="ui-card hover:border-brand-purple/30 hover:shadow-lg transition-all">
                   <div className="w-11 h-11 rounded-xl bg-brand-purple/8 border border-brand-purple/15 flex items-center justify-center text-brand-purple mb-4">
                     <g.Icon aria-hidden size={20} />
                   </div>
-                  <h3 className="font-bold text-brand-deep text-[17px] mb-2">{g.h}</h3>
-                  <p className="text-text-secondary text-[15px] leading-[1.7]">{g.b}</p>
+                  <h3 className="ui-card-heading text-[17px]">{g.h}</h3>
+                  <p className="ui-card-text text-[15px]">{g.b}</p>
                 </article>
               </Reveal>
             </li>
           ))}
-        </ul>
+        </CardGrid>
       </WhiteSection>
 
       <OffWhiteSection id="visibility-system">

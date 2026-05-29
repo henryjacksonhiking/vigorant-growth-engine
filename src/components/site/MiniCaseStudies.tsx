@@ -53,11 +53,11 @@ export default function MiniCaseStudies() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="ui-card-grid mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {studies.map((s, i) => (
           <Reveal key={s.type} delay={i * 0.06} className="h-full">
             <article
-              className="h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex flex-col"
+              className="ui-card"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <header className="flex items-center gap-3">
@@ -69,8 +69,8 @@ export default function MiniCaseStudies() {
                   {s.initial}
                 </div>
                 <div className="min-w-0">
-                  <div className="font-bold text-brand-deep text-[14px] leading-tight">{s.type}</div>
-                  <div className="mt-1 inline-flex font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2 py-0.5 rounded-full">
+                  <div className="ui-card-heading text-[14px]">{s.type}</div>
+                  <div className="mt-1 inline-flex min-h-[24px] font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2 py-0.5 rounded-full">
                     {s.tag}
                   </div>
                 </div>
@@ -88,10 +88,10 @@ export default function MiniCaseStudies() {
                 <div>
                   <dt className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">Results</dt>
                   <dd>
-                    <ul className="mt-2 space-y-1.5">
+                    <ul className="ui-list mt-2">
                       {s.results.map((r) => (
-                        <li key={r} className="flex items-start gap-2 text-[13px] text-brand-deep">
-                          <span aria-hidden className="text-brand-purple mt-0.5">▲</span>
+                        <li key={r} className="ui-list-item text-[13px] text-brand-deep">
+                          <span aria-hidden className="ui-list-icon text-brand-purple">▲</span>
                           <span className="font-semibold">{r}</span>
                         </li>
                       ))}
@@ -100,7 +100,7 @@ export default function MiniCaseStudies() {
                 </div>
               </dl>
 
-              <Link to={`/case-studies/${s.slug}`} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-purple text-[14px] hover:gap-2.5 transition-all min-h-[44px]">
+              <Link to={`/case-studies/${s.slug}`} className="ui-card-cta text-brand-purple text-[14px] hover:gap-2.5 transition-all min-h-[44px]">
                 Read Full Case Study <ArrowRight aria-hidden size={16} />
               </Link>
             </article>

@@ -54,13 +54,13 @@ export default function CaseStudyDetail() {
               </article>
               <article>
                 <h2 className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple">Results</h2>
-                <ul className="mt-4 space-y-3 list-none p-0">
+                <ul className="ui-list mt-4">
                   {study.results.map((r) => (
                     <li
                       key={r}
-                      className="flex items-start gap-3 rounded-xl border border-brand-purple/15 bg-brand-purple/5 px-4 py-3 text-brand-deep font-semibold text-[15px]"
+                      className="ui-list-item rounded-xl border border-brand-purple/15 bg-brand-purple/5 px-4 py-3 text-brand-deep font-semibold text-[15px]"
                     >
-                      <Check size={18} className="text-brand-purple mt-0.5 shrink-0" />
+                      <Check size={18} className="ui-list-icon text-brand-purple" />
                       <span>{r}</span>
                     </li>
                   ))}

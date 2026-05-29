@@ -1,7 +1,7 @@
 import { Megaphone, Target, BarChart2, Phone, DollarSign, ShieldCheck, Layout, Search } from "lucide-react";
 import {
   PainPageLayout, PainHero, DarkSection, OffWhiteSection, WhiteSection,
-  SectionHeader, Reveal, FAQAccordion, FinalCTA,
+  SectionHeader, Reveal, FAQAccordion, FinalCTA, CardGrid,
 } from "@/components/site/PainPageShell";
 
 const FAQS = [
@@ -54,21 +54,21 @@ export default function ServicesPaidAds() {
 
       <DarkSection>
         <SectionHeader dark label="Why Ads Fail in Healthcare" title={<><span className="text-white">Six leaks that quietly burn </span><span className="gradient-text">your ad budget.</span></>} />
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
+        <CardGrid className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1100px] mx-auto list-none p-0">
           {WHY_FAIL.map((l, i) => (
             <li key={i}>
               <Reveal delay={i * 0.05} className="h-full">
-                <article className="bg-white/5 backdrop-blur border border-white/15 rounded-2xl p-6 h-full">
+                <article className="ui-card-dark backdrop-blur">
                   <div className="w-11 h-11 rounded-xl bg-brand-purple/15 border border-brand-purple/25 flex items-center justify-center text-brand-bright mb-4">
                     <l.Icon aria-hidden size={20} />
                   </div>
-                  <h3 className="font-bold text-white text-[17px] mb-2">{l.h}</h3>
-                  <p className="text-white/70 text-[15px] leading-[1.7]">{l.b}</p>
+                  <h3 className="ui-card-heading-dark text-[17px]">{l.h}</h3>
+                  <p className="ui-card-text-dark text-[15px]">{l.b}</p>
                 </article>
               </Reveal>
             </li>
           ))}
-        </ul>
+        </CardGrid>
       </DarkSection>
 
       <OffWhiteSection>

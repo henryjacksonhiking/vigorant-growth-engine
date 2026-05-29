@@ -23,11 +23,11 @@ export default function WhatWeDo() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+      <div className="ui-card-grid mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
         {tiles.map((t, i) => (
           <Reveal key={t.title} delay={i * 0.04} className="h-full">
             <article
-              className="h-full bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-7 flex gap-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-purple/40"
+              className="ui-card gap-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-purple/40 sm:flex-row"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div
@@ -37,9 +37,9 @@ export default function WhatWeDo() {
               >
                 <t.icon size={20} className="text-white" />
               </div>
-              <div>
-                <h3 className="font-extrabold text-brand-deep text-[17px] leading-tight">{t.title}</h3>
-                <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed">{t.body}</p>
+              <div className="ui-card-body">
+                <h3 className="ui-card-heading text-[17px]">{t.title}</h3>
+                <p className="ui-card-text">{t.body}</p>
               </div>
             </article>
           </Reveal>

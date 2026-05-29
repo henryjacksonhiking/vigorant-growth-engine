@@ -130,6 +130,19 @@ export function WhiteSection({ children, id }: { children: ReactNode; id?: strin
   return <section id={id} className="bg-background py-20 sm:py-24"><div className="container">{children}</div></section>;
 }
 
+export function CardGrid({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <div className={`ui-card-grid ${className}`}>{children}</div>;
+}
+
+export function ListItemRow({ icon, children, dark = false }: { icon: ReactNode; children: ReactNode; dark?: boolean }) {
+  return (
+    <li className={`ui-list-item ${dark ? "text-white/80" : "text-brand-deep"}`}>
+      <span aria-hidden className={`ui-list-icon-circle ${dark ? "bg-white/10 text-brand-bright" : "text-brand-purple"}`}>{icon}</span>
+      <span>{children}</span>
+    </li>
+  );
+}
+
 export function SectionHeader({ label, title, sub, dark = false, gradientWord }: { label: string; title: ReactNode; sub?: string; dark?: boolean; gradientWord?: string }) {
   return (
     <Reveal className="max-w-[760px] mx-auto text-center">

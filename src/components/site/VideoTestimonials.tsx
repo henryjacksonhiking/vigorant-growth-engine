@@ -91,10 +91,10 @@ export default function VideoTestimonials() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="ui-card-grid mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {VIDEOS.map((v, i) => (
           <Reveal key={v.overlay} delay={i * 0.08} className="h-full">
-            <article className="bg-white rounded-2xl overflow-hidden border border-brand-purple/15 h-full flex flex-col"
+            <article className="ui-card overflow-hidden p-0"
               style={{ boxShadow: "var(--shadow-card)" }}>
               <button
                 onClick={() => setOpen(i)}
@@ -123,14 +123,14 @@ export default function VideoTestimonials() {
 
 
               <div className="p-5 sm:p-6 flex-1 flex flex-col">
-                <p className="text-ink-secondary text-[14px] leading-relaxed">{v.summary}</p>
+                <p className="ui-card-text mt-0 text-[14px]">{v.summary}</p>
                 <p className="mt-2 font-mono-ui text-[11px] text-ink-secondary/80">
                   <span aria-hidden>▶</span> {v.watchTime}
                 </p>
-                <ul className="mt-4 space-y-2">
+                <ul className="ui-list">
                   {v.metrics.map((m) => (
-                    <li key={m} className="flex items-start gap-2 text-[13px] text-brand-deep">
-                      <span className="text-brand-purple mt-0.5" aria-hidden>▲</span>
+                    <li key={m} className="ui-list-item text-[13px] text-brand-deep">
+                      <span className="ui-list-icon text-brand-purple" aria-hidden>▲</span>
                       <span>{m}</span>
                     </li>
                   ))}

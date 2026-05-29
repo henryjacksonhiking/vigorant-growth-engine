@@ -309,31 +309,31 @@ export default function SolutionsDental() {
                 The right marketing mix changes depending on your dental specialty, patient type, and growth goal. Select yours below.
               </p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {SPECIALTIES.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li data-specialty={s.tag}>
-                    <article className="h-full bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
+                    <article className="ui-card bg-white/95 backdrop-blur border-brand-purple/10 rounded-[18px] p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
-                      <div className="p-6">
-                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
+                      <div className="p-6 ui-card-body">
+                        <span className="inline-flex min-h-[28px] items-center self-start font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
                         <div className="mt-3 w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center">
                           <s.icon size={20} className="text-brand-purple" />
                         </div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{s.h3}</h3>
+                        <h3 className="ui-card-heading mt-3 text-[16px]">{s.h3}</h3>
                         <div className="mt-3">
                           <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-ink-muted">Growth Objective:</div>
                           <p className="mt-1 text-[13px] text-ink-secondary leading-relaxed">{s.goal}</p>
                         </div>
                         <div className="mt-3">
                           <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple">Top Channels:</div>
-                          <div className="flex flex-wrap gap-1.5 mt-1.5">
+                          <div className="ui-pill-row mt-1.5">
                             {s.channels.map(c => (
-                              <span key={c} className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>
+                              <span key={c} className="inline-flex min-h-[24px] items-center font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>
                             ))}
                           </div>
                         </div>
-                        <Link to={s.link.to} className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[12px]">
+                        <Link to={s.link.to} className="ui-card-cta text-brand-purple text-[12px]">
                           {s.link.label} <ArrowRight size={12} />
                         </Link>
                       </div>
@@ -358,17 +358,17 @@ export default function SolutionsDental() {
                 Each service is a distinct capability. The growth comes from connecting them. Every card links to a dedicated dental-specific service page.
               </p>
             </Reveal>
-            <ul className="list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-12 max-w-5xl mx-auto">
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
-                    <article className="h-full bg-white/6 border border-white/10 rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card-dark rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
                         <s.icon size={18} className="text-white" />
                       </div>
-                      <h3 className="font-bold text-white text-[14px] mt-2.5">{s.name}</h3>
-                      <p className="mt-1.5 text-white/60 text-[12px] leading-[1.6]">{s.body}</p>
-                      <Link to={s.href} className="mt-2.5 inline-flex items-center gap-1 text-brand-bright font-semibold text-[11px]">
+                      <h3 className="ui-card-heading-dark mt-2.5 text-[14px]">{s.name}</h3>
+                      <p className="ui-card-text-dark text-[12px]">{s.body}</p>
+                      <Link to={s.href} className="ui-card-cta justify-center text-brand-bright text-[11px]">
                         Explore <ArrowRight size={11} />
                       </Link>
                     </article>
