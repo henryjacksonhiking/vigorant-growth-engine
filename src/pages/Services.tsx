@@ -260,10 +260,10 @@ export default function Services() {
             <div className="mt-10 rounded-2xl bg-white border border-brand-purple/12 overflow-hidden">
               {MATRIX.map((m, i) => (
                 <Link key={m.challenge} to={m.href}
-                  className={`flex items-center justify-between gap-4 p-5 hover:bg-brand-purple/5 transition-colors ${i > 0 ? "border-t border-brand-purple/10" : ""}`}>
-                  <span className="text-text-primary font-medium">{m.challenge}</span>
-                  <span className="hidden sm:inline text-brand-purple font-semibold">{m.service}</span>
-                  <ArrowRight size={18} className="text-brand-purple flex-shrink-0" aria-hidden />
+                  className={`grid grid-cols-[1fr] sm:grid-cols-[1fr_1fr_auto] items-center gap-4 p-5 hover:bg-brand-purple/5 transition-colors ${i > 0 ? "border-t border-brand-purple/10" : ""}`}>
+                  <span className="text-text-primary font-medium text-left">{m.challenge}</span>
+                  <span className="hidden sm:inline text-brand-purple font-semibold text-left">{m.service}</span>
+                  <ArrowRight size={18} className="text-brand-purple flex-shrink-0 justify-self-end" aria-hidden />
                 </Link>
               ))}
             </div>
