@@ -442,103 +442,41 @@
 
 /* ============================================================
    GLOBAL DARK-SECTION CONTRAST OVERRIDES
-   Any <section> with the gradient-dark token, an inline
-   dark-purple gradient/hsl background, or a parent .text-white
-   scope will have its low-contrast text, labels, icons, and
-   metadata promoted to readable colors automatically.
+   <DarkSectionTagger> runtime adds data-dark="true" to any
+   section/footer/header/aside whose effective background is dark.
+   These rules then promote low-contrast text, eyebrows, labels,
+   metadata, and icons to readable colors automatically.
    ============================================================ */
-
-/* Define the dark scope once via :where() so specificity stays low
-   but selectors are compact. Matches any section using the dark
-   gradient token, dark inline backgrounds (hex or hsl), the
-   `text-white` scope, .bg-brand-deep, or [data-theme="dark"]. */
-:where(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) {
+:where([data-dark="true"]) {
   color: hsl(0 0% 100% / 0.92);
 }
 
-/* Scope all overrides under .dark-scope via a duplicate :is() so we
-   can write the selectors once. */
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) :is(.text-ink-muted, .text-muted-foreground, .text-ink-secondary, .text-foreground) {
+[data-dark="true"] :is(.text-ink-muted, .text-muted-foreground, .text-ink-secondary, .text-foreground) {
   color: hsl(247 100% 92% / 0.88) !important;
 }
 
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) .text-brand-deep {
+[data-dark="true"] .text-brand-deep {
   color: #ffffff !important;
 }
 
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) :is(.font-mono-ui, .section-label) {
+[data-dark="true"] :is(.font-mono-ui, .section-label) {
   color: hsl(247 100% 90%) !important;
   opacity: 1 !important;
 }
 
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) .text-brand-purple {
+[data-dark="true"] .text-brand-purple {
   color: hsl(248 100% 85%) !important;
 }
 
-/* Low-opacity lavender/white floors on dark for readability */
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="248 49% 12%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) :is(
+[data-dark="true"] .text-brand-bright {
+  color: hsl(247 100% 90%) !important;
+}
+
+/* Low-opacity utility floors so eyebrow chips / metadata stay legible */
+[data-dark="true"] :is(
   [class*="text-white/5"],
   [class*="text-white/6"],
+  [class*="text-white/7"],
   [class*="text-brand-lavender/5"],
   [class*="text-brand-lavender/6"],
   [class*="text-brand-lavender/7"],
@@ -553,20 +491,12 @@
   opacity: 1 !important;
 }
 
-/* brand-bright (no opacity) → ensure bright lavender on dark */
-:is(
-  section[style*="gradient-dark"],
-  section[style*="248 49% 15%"],
-  section[style*="250 45% 19%"],
-  section[style*="250 45% 19%"],
-  section[style*="#1b1338"],
-  section[style*="#221a45"],
-  section.text-white,
-  .bg-brand-deep,
-  [data-theme="dark"]
-) .text-brand-bright {
-  color: hsl(247 100% 90%) !important;
+/* Icons without an explicit text color → soft lavender on dark */
+[data-dark="true"] svg:not([class*="text-"]):not([fill]) {
+  color: hsl(247 100% 90%);
 }
+
+
 
 @keyframes card-rise {
   from { opacity: 0; transform: translateY(14px); }
