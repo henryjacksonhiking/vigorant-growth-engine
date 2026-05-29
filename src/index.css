@@ -214,6 +214,76 @@
   .tilt-spotlight:hover::before { opacity: 1; }
   .tilt-spotlight > * { position: relative; z-index: 1; }
 
+  .ui-card-grid {
+    @apply items-stretch;
+    grid-auto-rows: 1fr;
+  }
+  .ui-card-shell {
+    @apply h-full flex flex-col;
+  }
+  .ui-card {
+    @apply h-full flex flex-col rounded-2xl border p-6 sm:p-7;
+    border-color: hsl(var(--brand-purple) / 0.12);
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-card);
+  }
+  .ui-card-compact {
+    @apply h-full flex flex-col rounded-xl border p-5;
+    border-color: hsl(var(--brand-purple) / 0.12);
+    background: hsl(var(--background));
+    box-shadow: var(--shadow-card);
+  }
+  .ui-card-dark {
+    @apply h-full flex flex-col rounded-2xl border p-6 sm:p-7;
+    border-color: hsl(var(--brand-lavender) / 0.2);
+    background: hsl(0 0% 100% / 0.05);
+    box-shadow: var(--shadow-card);
+  }
+  .ui-card-body {
+    @apply flex flex-1 flex-col;
+  }
+  .ui-card-heading {
+    @apply text-brand-deep font-bold leading-[1.28];
+    min-height: calc(1.28em * 2);
+  }
+  .ui-card-heading-dark {
+    @apply text-white font-bold leading-[1.28];
+    min-height: calc(1.28em * 2);
+  }
+  .ui-card-text {
+    @apply mt-2 text-[14px] leading-[1.7] text-text-secondary;
+    flex: 1 1 auto;
+  }
+  .ui-card-text-dark {
+    @apply mt-2 text-[14px] leading-[1.7] text-white/70;
+    flex: 1 1 auto;
+  }
+  .ui-card-cta {
+    @apply mt-auto pt-5 inline-flex items-center gap-1.5 font-semibold;
+  }
+  .ui-pill-row {
+    @apply flex flex-wrap gap-2;
+    align-content: flex-start;
+  }
+  .ui-pill {
+    @apply inline-flex min-h-[32px] items-center rounded-full px-3 py-1 text-[10px] uppercase;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.12em;
+  }
+  .ui-list {
+    @apply mt-4 flex flex-col gap-2.5 list-none p-0;
+  }
+  .ui-list-item {
+    @apply flex items-start gap-3 text-[14px] leading-[1.6];
+  }
+  .ui-list-icon {
+    @apply mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center;
+  }
+  .ui-list-icon-circle {
+    @apply mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full;
+    background: hsl(var(--brand-purple) / 0.1);
+  }
+
   /* Equal-height cards: make Reveal/motion grid wrappers fill the grid cell so child .h-full works */
   .grid > div:has(> article),
   .grid > div:has(> .h-full),
