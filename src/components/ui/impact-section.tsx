@@ -8,12 +8,8 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 
 type CardPalette = { bg: string; text: string; subtle: string };
 
-const PALETTES: CardPalette[] = [
-  { bg: "bg-brand-deep", text: "text-white", subtle: "text-white/80" },
-  { bg: "bg-brand-purple", text: "text-white", subtle: "text-white/85" },
-  { bg: "bg-[#1a1530]", text: "text-white", subtle: "text-white/80" },
-  { bg: "bg-[#2a1f5c]", text: "text-white", subtle: "text-white/85" },
-];
+const UNIFIED: CardPalette = { bg: "bg-brand-deep", text: "text-white", subtle: "text-white/80" };
+const PALETTES: CardPalette[] = [UNIFIED, UNIFIED, UNIFIED, UNIFIED];
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
@@ -116,19 +112,19 @@ export default function ImpactSection() {
                         className="absolute inset-0 h-full w-full object-cover"
                         loading="lazy"
                       />
-                      <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/55 backdrop-blur px-4 py-3 text-white">
+                      <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/60 backdrop-blur px-5 pt-5 pb-4 text-white">
                         <div className="font-extrabold text-[28px] leading-none">{card.metric}</div>
-                        <div className="mt-1 text-[12px] opacity-90 line-clamp-2">{card.label}</div>
+                        <div className="mt-2 text-[12px] opacity-90 line-clamp-2">{card.label}</div>
                       </div>
                     </div>
                   </motion.div>
                 ) : (
-                  <div className="h-full w-full p-5 flex flex-col justify-between">
+                  <div className="h-full w-full pt-7 px-5 pb-6 flex flex-col justify-between">
                     <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] opacity-80 [writing-mode:vertical-rl] md:[writing-mode:vertical-rl] rotate-180 self-end">
                       {card.tag}
                     </span>
                     <div>
-                      <div className="font-extrabold text-[34px] leading-none">{card.metric}</div>
+                      <div className="font-extrabold text-[34px] leading-[1.1]">{card.metric}</div>
                       <div className={`mt-2 text-[13px] font-medium ${card.palette.subtle} line-clamp-2`}>
                         {card.label}
                       </div>
