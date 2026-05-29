@@ -542,9 +542,30 @@
   [class*="text-brand-lavender/5"],
   [class*="text-brand-lavender/6"],
   [class*="text-brand-lavender/7"],
-  [class*="text-brand-lavender/8"]
+  [class*="text-brand-lavender/8"],
+  [class*="text-brand-bright/5"],
+  [class*="text-brand-bright/6"],
+  [class*="text-brand-bright/7"],
+  [class*="text-brand-bright/8"],
+  [class*="text-brand-bright/9"]
 ) {
-  color: hsl(247 100% 90% / 0.92) !important;
+  color: hsl(247 100% 92%) !important;
+  opacity: 1 !important;
+}
+
+/* brand-bright (no opacity) → ensure bright lavender on dark */
+:is(
+  section[style*="gradient-dark"],
+  section[style*="248 49% 15%"],
+  section[style*="250 45% 19%"],
+  section[style*="250 45% 19%"],
+  section[style*="#1b1338"],
+  section[style*="#221a45"],
+  section.text-white,
+  .bg-brand-deep,
+  [data-theme="dark"]
+) .text-brand-bright {
+  color: hsl(247 100% 90%) !important;
 }
 
 @keyframes card-rise {
