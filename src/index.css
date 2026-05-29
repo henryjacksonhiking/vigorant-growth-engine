@@ -255,7 +255,7 @@
     flex: 1 1 auto;
   }
   .ui-card-text-dark {
-    @apply mt-2 text-[14px] leading-[1.7] text-white/70;
+    @apply mt-2 text-[14px] leading-[1.7] text-white/90;
     flex: 1 1 auto;
   }
   .ui-card-cta {
