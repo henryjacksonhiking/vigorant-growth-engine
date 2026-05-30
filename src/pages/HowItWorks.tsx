@@ -194,29 +194,46 @@ export default function HowItWorks() {
                 Diagnose. Build. Launch. Compound.
               </h2>
             </Reveal>
-            <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-              {PHASES.map((p, i) => (
-                <Reveal key={p.n} delay={i * 0.05} className="h-full">
-                  <li className="rounded-2xl bg-white border border-brand-purple/12 p-6 h-full">
-                    <div className="flex items-center gap-3">
-                      <span className="font-mono-ui text-sm text-brand-purple">{p.n}</span>
-                      <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: "var(--gradient-brand)" }}>
-                        <p.icon aria-hidden size={18} className="text-white" />
+            <div className="relative mt-14 max-w-4xl mx-auto">
+              <div aria-hidden className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-brand-purple/20" />
+              <ol className="relative list-none p-0 m-0 space-y-12 md:space-y-16">
+                {PHASES.map((p, i) => {
+                  const right = i % 2 === 1;
+                  return (
+                    <li key={p.n} className="relative">
+                      <div className="grid md:grid-cols-2 md:gap-12 items-center">
+                        {right && <div className="hidden md:block" />}
+                        <Reveal delay={i * 0.05} className={right ? "md:order-2" : ""}>
+                          <div className={`ml-16 md:ml-0 rounded-2xl bg-white border border-brand-purple/12 p-6 sm:p-7 ${right ? "md:mr-10" : "md:ml-10"}`} style={{ boxShadow: "var(--shadow-card)" }}>
+                            <div className="flex items-center gap-3">
+                              <span className="font-mono-ui text-xs text-brand-purple bg-brand-purple/10 rounded-full px-2.5 py-1">Phase {p.n}</span>
+                            </div>
+                            <h3 className="font-bold text-brand-deep text-xl sm:text-2xl mt-3">{p.h}</h3>
+                            <p className="mt-2 text-text-secondary text-sm">{p.b}</p>
+                            <ul className="mt-4 space-y-1.5">
+                              {p.deliverables.map(d => (
+                                <li key={d} className="flex gap-2 text-xs text-text-muted">
+                                  <Check size={14} className="text-brand-purple flex-shrink-0 mt-0.5" aria-hidden /> {d}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </Reveal>
+                        {!right && <div className="hidden md:block" />}
                       </div>
-                    </div>
-                    <h3 className="font-bold text-brand-deep text-xl mt-4">{p.h}</h3>
-                    <p className="mt-2 text-text-secondary text-sm">{p.b}</p>
-                    <ul className="mt-4 space-y-1.5">
-                      {p.deliverables.map(d => (
-                        <li key={d} className="flex gap-2 text-xs text-text-muted">
-                          <Check size={14} className="text-brand-purple flex-shrink-0 mt-0.5" aria-hidden /> {d}
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                </Reveal>
-              ))}
-            </ol>
+                      <div aria-hidden className="absolute top-6 md:top-1/2 left-6 md:left-1/2 -translate-x-1/2 md:-translate-y-1/2">
+                        <div className="relative">
+                          <div className="absolute inset-[-8px] rounded-full border border-dashed border-brand-purple/40 spin-slow" />
+                          <div className="relative w-12 h-12 rounded-full flex items-center justify-center text-white" style={{ background: "var(--gradient-brand)", boxShadow: "0 6px 20px hsl(247 93% 64% / 0.45), 0 0 0 4px hsl(0 0% 100%)" }}>
+                            <p.icon aria-hidden size={20} />
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
           </div>
         </section>
 
