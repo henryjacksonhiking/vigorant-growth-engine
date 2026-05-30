@@ -184,35 +184,28 @@ export default function Services() {
                 Four engines that power patient acquisition.
               </h2>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-              {PRIMARY.map((s, i) => {
-                const featured = i === 0;
-                return (
-                  <Reveal key={s.h} delay={i * 0.05} className={`h-full ${featured ? "lg:col-span-2 lg:row-span-2" : ""}`}>
-                    <TiltCard className={`group relative h-full overflow-hidden rounded-2xl bg-white border border-brand-purple/12 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-purple/30 ${featured ? "p-8 sm:p-10" : "p-6 sm:p-7"} flex flex-col`}>
-                      {featured && (
-                        <div aria-hidden className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-50 blur-3xl"
-                          style={{ background: "radial-gradient(circle, hsl(248 100% 75% / 0.45), transparent 70%)" }} />
-                      )}
-                      <div className={`relative w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${featured ? "w-16 h-16" : ""}`} style={{ background: "var(--gradient-brand)", boxShadow: featured ? "0 10px 30px hsl(247 93% 64% / 0.4)" : "none" }}>
-                        <s.icon aria-hidden size={featured ? 28 : 22} className="text-white" />
-                      </div>
-                      <h3 className={`font-bold text-brand-deep leading-tight ${featured ? "text-2xl sm:text-3xl" : "text-xl"}`}>{s.h}</h3>
-                      <p className="mt-2 text-text-secondary text-sm leading-relaxed">{s.b}</p>
-                      <ul className="mt-4 space-y-2">
-                        {s.bullets.map(b => (
-                          <li key={b} className="flex items-start gap-2 text-sm text-text-secondary">
-                            <Check size={16} className="text-brand-purple flex-shrink-0 mt-0.5" aria-hidden /> {b}
-                          </li>
-                        ))}
-                      </ul>
-                      <Link to={s.href} className="mt-auto pt-5 inline-flex items-center gap-1.5 font-semibold text-brand-purple hover:gap-3 transition-all">
-                        Explore {s.h.toLowerCase()} <ArrowRight size={16} aria-hidden />
-                      </Link>
-                    </TiltCard>
-                  </Reveal>
-                );
-              })}
+            <div className="ui-card-grid grid md:grid-cols-2 gap-5 mt-12">
+              {PRIMARY.map((s, i) => (
+                <Reveal key={s.h} delay={i * 0.05} className="h-full">
+                  <TiltCard className="ui-card hover:border-brand-purple/30 transition-colors">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
+                      <s.icon aria-hidden size={22} className="text-white" />
+                    </div>
+                    <h3 className="ui-card-heading text-xl">{s.h}</h3>
+                    <p className="ui-card-text">{s.b}</p>
+                    <ul className="ui-list">
+                      {s.bullets.map(b => (
+                        <li key={b} className="ui-list-item text-sm text-text-secondary">
+                          <Check size={16} className="ui-list-icon text-brand-purple" aria-hidden /> {b}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link to={s.href} className="ui-card-cta text-brand-purple hover:text-brand-deep">
+                      Explore {s.h.toLowerCase()} <ArrowRight size={16} className="ml-1.5" aria-hidden />
+                    </Link>
+                  </TiltCard>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
