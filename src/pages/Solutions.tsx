@@ -791,13 +791,13 @@ function FinalCta() {
           We accept 8 new audit requests per month · 3 spots remaining
         </p>
         <div className="mt-6">
-          <a
-            href="#audit"
+          <Link
+            to="/free-audit"
             className="inline-flex items-center justify-center rounded-full font-bold transition-all hover:scale-[1.02]"
             style={{ background: "white", color: "#1b1338", padding: "18px 44px", fontSize: 17, boxShadow: "0 4px 24px rgba(0,0,0,0.2)" }}
           >
             Request Your Free Growth Audit <ArrowRight aria-hidden size={18} className="ml-2" />
-          </a>
+          </Link>
         </div>
         <p className="mt-4" style={{ fontSize: 14, color: "rgba(255,255,255,0.75)" }}>
           No commitment. No hard sell. Just clarity on what your practice needs to grow.
@@ -829,9 +829,9 @@ function MobileStickyCta() {
   if (dismissed || !show) return null;
   return (
     <div className="md:hidden fixed bottom-0 inset-x-0 z-[200] flex items-center gap-3" style={{ background: "#1b1338", borderTop: "1px solid rgba(100,79,249,0.2)", padding: "12px 20px calc(12px + env(safe-area-inset-bottom)) 20px" }}>
-      <a href="#audit" className="flex-1 btn-primary-grad font-bold rounded-full text-center py-3 text-[14px]">
+      <Link to="/free-audit" className="flex-1 btn-primary-grad font-bold rounded-full text-center py-3 text-[14px]">
         Get Free Audit
-      </a>
+      </Link>
       <button
         aria-label="Dismiss"
         onClick={() => { sessionStorage.setItem("solutions-sticky-dismissed", "1"); setDismissed(true); }}
