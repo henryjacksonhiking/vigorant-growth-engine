@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Smile, Activity, Stethoscope, Check, Search, Route, DollarSign,
+  ArrowRight, Smile, Bone, Stethoscope, Check, Search, Route, DollarSign,
   MousePointerClick, MapPin, Brain, Users, Star, BarChart2, Sparkles,
   Megaphone, Layout, Plus, X,
 } from "lucide-react";
@@ -135,14 +135,7 @@ function Hero() {
         </nav>
 
         <div className="max-w-[820px] mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6, ease }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/8 border border-brand-purple/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" aria-hidden />
-              <span className="font-mono-ui text-[11px] uppercase tracking-[0.1em] text-brand-purple">Solutions by Specialty</span>
-            </span>
-          </motion.div>
-
-          <h1 id="solutions-h1" className="font-display font-bold mt-6 leading-[1.05]" style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.02em" }}>
+          <h1 id="solutions-h1" className="font-display font-bold mt-2 leading-[1.05]" style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.02em" }}>
             {["Healthcare Marketing Solutions", "Built for Your Specialty."].map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <motion.span
@@ -166,24 +159,12 @@ function Hero() {
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 0.7, ease }}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
-            <a href="#audit" className="btn-primary-grad font-bold rounded-full" style={{ padding: "14px 30px", fontSize: 16 }}>
+            <Link to="/free-audit" className="btn-primary-grad font-bold rounded-full" style={{ padding: "14px 30px", fontSize: 16 }}>
               Get a Free Practice Growth Audit
-            </a>
+            </Link>
             <a href="#specialty-cards" className="btn-secondary-outline font-semibold rounded-full" style={{ padding: "14px 26px", fontSize: 16 }}>
               Choose Your Specialty ↓
             </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.38, duration: 0.7, ease }}
-            className="mt-10 mx-auto max-w-[720px] rounded-full border border-brand-purple/12 bg-surface-secondary px-7 py-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-mono-ui text-[12px] text-brand-purple"
-          >
-            {["Dental", "Chiropractic", "Medical", "SEO + AIO/GEO", "Paid Ads", "Websites", "Built for Patient Acquisition"].map((s, i, a) => (
-              <span key={s} className="flex items-center gap-3">
-                <span>{s}</span>
-                {i < a.length - 1 && <span aria-hidden className="text-brand-lavender">·</span>}
-              </span>
-            ))}
           </motion.div>
         </div>
       </div>
@@ -218,7 +199,7 @@ function OneSystem() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
           {[
             { icon: Smile, label: "Dental", accent: "from-brand-purple to-brand-bright", key: "d" as const },
-            { icon: Activity, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
+            { icon: Bone, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
             { icon: Stethoscope, label: "Medical", accent: "from-brand-purple to-brand-lavender", key: "m" as const },
           ].map(({ icon: Icon, label, accent, key }, colIdx) => (
             <Reveal key={label} delay={0.1 + colIdx * 0.1}>
