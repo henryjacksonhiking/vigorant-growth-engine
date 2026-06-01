@@ -407,7 +407,7 @@ function SpecialtyCards() {
 /* ---------- Why Specialty Converts ---------- */
 function WhyConverts() {
   const blocks = [
-    { icon: Search, tag: "Search Intent", h3: "Aligned Search Targeting", body: "Patients searching for 'dental implants near me' have different intent from those searching 'chiropractor for back pain.' Specialty-specific keyword strategy reaches each patient at the right moment with the right message — reducing wasted spend and improving lead quality." },
+    { icon: Search, tag: "Search Intent", h3: "Aligned Search Targeting", body: "Patients searching for 'dental implants near me' have different intent from those searching 'chiropractor for back pain'. Specialty-specific keyword strategy reaches each patient at the right moment with the right message — reducing wasted spend and improving lead quality." },
     { icon: Route, tag: "Decision Journey", h3: "Mapped Patient Decision Paths", body: "A cosmetic dental patient researches for weeks before booking. A chiropractic patient in pain wants to book within hours. A medical specialist referral requires trust and authority content. Each journey needs a different content architecture, ad sequence, and conversion path." },
     { icon: DollarSign, tag: "High-Value Services", h3: "Treatment-Specific Demand Generation", body: "Implant campaigns perform differently from hygiene recall campaigns. Wellness chiro campaigns look nothing like PI injury campaigns. We build specialty-specific ad creative, landing pages, and SEO content for the services that actually drive your revenue." },
     { icon: MousePointerClick, tag: "Conversion Flow", h3: "Optimized Conversion Architecture", body: "The right conversion path for a dental implant inquiry — multi-step form with consultation framing — is completely wrong for a chiro walk-in booking. Specialty-specific CRO means the path from first visit to booked appointment matches how your patients actually decide." },
@@ -447,7 +447,7 @@ function WhyConverts() {
         </div>
 
         <Reveal delay={0.2} className="text-center mt-10">
-          <Link to="/#process" className="inline-flex items-center text-brand-purple font-semibold text-[15px] hover:underline">
+          <Link to="/how-it-works" className="inline-flex items-center text-brand-purple font-semibold text-[15px] hover:underline">
             See How Vigorant Builds Your Growth System <ArrowRight aria-hidden size={15} className="ml-1.5" />
           </Link>
         </Reveal>
