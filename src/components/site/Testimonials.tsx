@@ -163,14 +163,15 @@ export default function Testimonials() {
               return [...logos, ...logos].map((logo, i) => (
                 <li
                   key={`${logo.name}-${i}`}
-                  className="shrink-0 w-[44vw] sm:w-[30vw] md:w-[22vw] lg:w-[calc((min(1200px,92vw)-4.5rem)/4)] max-w-[280px] h-32 sm:h-36 rounded-xl bg-white border border-brand-purple/15 flex items-center justify-center px-6 py-5"
+                  className="shrink-0 w-[44vw] sm:w-[30vw] md:w-[22vw] lg:w-[calc((min(1200px,92vw)-4.5rem)/4)] max-w-[280px] h-32 sm:h-36 rounded-xl bg-white border border-brand-purple/15 flex items-center justify-center px-4 py-3"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
                   <img
                     src={logo.src}
                     alt={logo.name}
                     loading="lazy"
-                    className="block h-16 sm:h-20 w-auto max-w-full object-contain"
+                    className="block h-full w-full object-contain"
+                    style={{ transform: "scale(1)" }}
                   />
                 </li>
               ));
