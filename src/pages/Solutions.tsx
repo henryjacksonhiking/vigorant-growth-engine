@@ -319,10 +319,7 @@ function SpecialtyCardBlock({ card, delay }: { card: SpecialtyCard; delay: numbe
         style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(20px) saturate(150%)", boxShadow: "0 8px 36px rgba(27,19,56,0.07)" }}
       >
         <div className="p-9 sm:p-10 flex flex-col">
-          <div className="flex items-center justify-between gap-4">
-            <span className="font-mono-ui text-[11px] uppercase px-3.5 py-1 rounded-full text-brand-purple border border-brand-purple/15 bg-brand-purple/8">
-              {card.tag}
-            </span>
+          <div className="flex items-center">
             <span className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
               <Icon aria-hidden size={24} className="text-white" />
             </span>
@@ -381,8 +378,7 @@ function SpecialtyCards() {
     <section id="specialty-cards" className="py-24 bg-surface-secondary" aria-labelledby="specialty-cards-h2">
       <div className="container">
         <Reveal className="text-center max-w-[620px] mx-auto">
-          <ChipLabel>Choose Your Specialty</ChipLabel>
-          <h2 id="specialty-cards-h2" className="font-extrabold mt-4" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+          <h2 id="specialty-cards-h2" className="font-extrabold mt-2" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
             <span className="block text-brand-deep">Choose the Type of Practice</span>
             <span className="block gradient-text">You Want to Grow</span>
           </h2>
@@ -399,12 +395,9 @@ function SpecialtyCards() {
 
         <Reveal delay={0.2} className="text-center mt-12">
           <p className="text-text-secondary text-[15px]">Not sure which specialty path is right for you?</p>
-          <a href="#audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
+          <Link to="/free-audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
             Not Sure? Start with the Free Audit <ArrowRight aria-hidden size={16} className="ml-2" />
-          </a>
-          <p className="mt-3 font-mono-ui text-[11px] text-text-muted">
-            For dental, chiropractic, and medical practices ready to improve patient acquisition.
-          </p>
+          </Link>
         </Reveal>
       </div>
     </section>
