@@ -72,12 +72,15 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const desktopNavRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
 
   const isActive = (href: string) => pathname === href;
+  const isChildActive = (child: NavChild) =>
+    pathname === child.href || child.children?.some((g) => pathname === g.href);
   const isParentActive = (item: NavItem) =>
-    item.children?.some((c) => pathname === c.href) || pathname === item.href;
+    item.children?.some((c) => isChildActive(c)) || pathname === item.href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -89,6 +92,7 @@ export default function Nav() {
     const onClick = (e: MouseEvent) => {
       if (desktopNavRef.current && !desktopNavRef.current.contains(e.target as Node)) {
         setActiveDropdown(null);
+        setActiveSubmenu(null);
       }
     };
     document.addEventListener("mousedown", onClick);
@@ -97,11 +101,17 @@ export default function Nav() {
 
   useEffect(() => {
     setActiveDropdown(null);
+    setActiveSubmenu(null);
     setOpen(false);
   }, [pathname]);
 
   const toggleDropdown = (label: string) => {
     setActiveDropdown((prev) => (prev === label ? null : label));
+    setActiveSubmenu(null);
+  };
+
+  const toggleSubmenu = (label: string) => {
+    setActiveSubmenu((prev) => (prev === label ? null : label));
   };
 
   const baseDesktopLink = (active: boolean, parentActive: boolean) =>
