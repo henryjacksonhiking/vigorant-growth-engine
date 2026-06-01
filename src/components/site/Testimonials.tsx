@@ -171,7 +171,7 @@ export default function Testimonials() {
                     alt={logo.name}
                     loading="lazy"
                     className="block h-full w-full object-contain"
-                    style={{ transform: logo.name === "Top Pinole Dental" ? "scale(0.75)" : "scale(1)" }}
+                    style={{ transform: logo.name === "Top Pinole Dental" ? "scale(0.56)" : "scale(1)" }}
                   />
                 </li>
               ));
