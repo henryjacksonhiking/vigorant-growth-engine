@@ -18,7 +18,7 @@ const cols = [
       { label: "SEO", href: "/services/seo" },
       { label: "Paid Ads", href: "/services/paid-ads" },
       { label: "Website Design & CRO", href: "/services/website-design" },
-      { label: "Reputation & Social", href: "/services/reputation" },
+      { label: "Reputation & Social Media", href: "/services/reputation" },
     ],
   },
   {

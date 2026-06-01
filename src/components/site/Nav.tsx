@@ -23,7 +23,7 @@ const links: NavItem[] = [
       { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
       { label: "Paid Ads (Google & Meta)", href: "/services/paid-ads" },
       { label: "Website Design & CRO", href: "/services/website-design" },
-      { label: "Reputation & Social", href: "/services/reputation" },
+      { label: "Reputation & Social Media", href: "/services/reputation" },
     ],
   },
   {

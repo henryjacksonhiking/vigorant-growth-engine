@@ -32,35 +32,35 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 const BASE = "https://vigorant.com";
 
 const PRIMARY = [
-  { icon: Search, h: "SEO & AI Search", b: "Rank in Google and answer engines (AEO, GEO, GBP). Win the new front door of patient research.", href: "/services/seo", bullets: ["Technical + content SEO", "AEO / GEO optimization", "Google Business Profile"] },
-  { icon: Megaphone, h: "Paid Advertising", b: "Conversion-tracked Google, Meta, YouTube, and retargeting campaigns engineered for booked patients.", href: "/services/paid-ads", bullets: ["Google Ads (Search, PMax)", "Meta + YouTube", "Conversion tracking"] },
-  { icon: Layout, h: "Website Design & CRO", b: "Fast, accessible, conversion-engineered websites that turn intent into booked visits.", href: "/services/website-design", bullets: ["WCAG-compliant builds", "Landing pages", "A/B testing + CRO"] },
-  { icon: Star, h: "Reputation & Social", b: "Build the trust layer: reviews, social presence, and review-response workflows that compound.", href: "/services/reputation", bullets: ["Review generation", "Reputation monitoring", "Social management"] },
+  { icon: Search, h: "SEO & AI Search", cta: "Explore SEO & AI Search", b: "Rank in Google and answer engines (AEO, GEO, GBP). Win the new front door of patient research.", href: "/services/seo", bullets: ["Technical + content SEO", "AEO / GEO optimization", "Google Business Profile"] },
+  { icon: Megaphone, h: "Paid Advertising", cta: "Explore Paid Advertising", b: "Conversion-tracked Google, Meta, YouTube, and retargeting campaigns engineered for booked patients.", href: "/services/paid-ads", bullets: ["Google Ads (Search, PMax)", "Meta + YouTube", "Conversion tracking"] },
+  { icon: Layout, h: "Website Design & CRO", cta: "Explore Website Design & CRO", b: "Fast, accessible, conversion-engineered websites that turn intent into booked visits.", href: "/services/website-design", bullets: ["WCAG-compliant builds", "Landing pages", "A/B testing + CRO"] },
+  { icon: Star, h: "Reputation & Social Media", cta: "Explore Reputation & Social Media", b: "Build the trust layer: reviews, social presence, and review-response workflows that compound.", href: "/services/reputation", bullets: ["Review generation", "Reputation monitoring", "Social management"] },
 ];
 
 const SUPPORTING = [
-  { icon: Brain, h: "Marketing Strategy", href: "#" },
-  { icon: Palette, h: "Branding & Rebranding", href: "#" },
-  { icon: Sparkles, h: "Social Media Marketing", href: "#" },
-  { icon: Video, h: "Video Marketing", href: "#" },
-  { icon: Layout, h: "Landing Pages", href: "#" },
-  { icon: Mail, h: "Email Marketing", href: "#" },
-  { icon: PenSquare, h: "Content Marketing", href: "#" },
-  { icon: BarChart2, h: "Analytics & Reporting", href: "#" },
-  { icon: MapPin, h: "Local Listings & GBP", href: "#" },
+  { icon: Brain, h: "Marketing Strategy", href: "/for-practices/marketing-roi" },
+  { icon: Palette, h: "Branding & Rebranding", href: "/services/website-design" },
+  { icon: Sparkles, h: "Social Media Marketing", href: "/services/reputation" },
+  { icon: Video, h: "Video Marketing", href: "/services/reputation" },
+  { icon: Layout, h: "Landing Pages", href: "/services/website-design" },
+  { icon: Mail, h: "Email Marketing", href: "/for-practices/lead-conversion" },
+  { icon: PenSquare, h: "Content Marketing", href: "/services/seo" },
+  { icon: BarChart2, h: "Analytics & Reporting", href: "/for-practices/marketing-roi" },
+  { icon: MapPin, h: "Local Listings & GBP", href: "/services/seo" },
 ];
 
 const MATRIX = [
-  { challenge: "Practice not visible online", service: "SEO + AEO + GBP", href: "/services/seo" },
-  { challenge: "Spending money on ads, no results", service: "Paid Ads + CRO", href: "/services/paid-ads" },
-  { challenge: "Traffic but no bookings", service: "Website Design + CRO", href: "/services/website-design" },
-  { challenge: "Reputation hurting conversions", service: "Reputation Management", href: "/services/reputation" },
-  { challenge: "No clarity on what is working", service: "Analytics & Reporting", href: "#" },
+  { challenge: "Practice not visible online", service: "SEO + AEO + GBP", href: "/for-practices/online-visibility" },
+  { challenge: "Spending money on ads, no results", service: "Paid Ads + CRO", href: "/for-practices/marketing-roi" },
+  { challenge: "Traffic but no bookings", service: "Website Design + CRO", href: "/for-practices/lead-conversion" },
+  { challenge: "Reputation hurting conversions", service: "Reputation Management", href: "/for-practices/online-reputation" },
+  { challenge: "No clarity on what is working", service: "Analytics & Reporting", href: "/for-practices/marketing-roi" },
   { challenge: "Stagnant new patient growth", service: "Full Growth Engine", href: "/for-practices/more-new-patients" },
 ];
 
 const FAQS = [
-  { q: "What services does Vigorant offer to healthcare practices?", a: "Vigorant offers four primary growth services — SEO and AI search, paid advertising, website design and conversion optimization, and reputation and social management — plus nine supporting services. All services are designed to plug into one integrated growth engine." },
+  { q: "What services does Vigorant offer to healthcare practices?", a: "Vigorant offers four primary growth services — SEO and AI search, paid advertising, website design and conversion optimization, and reputation and social media — plus nine supporting services. All services are designed to plug into one integrated growth engine." },
   { q: "Do we have to buy every service?", a: "No. Most practices begin with one or two services that match their biggest gap and add others as growth compounds. Engagement scope is shaped by the audit findings, not a fixed package." },
   { q: "How is Vigorant different from a typical full-service agency?", a: "Most agencies sell services as separate line items. Vigorant builds an integrated growth engine where every channel reinforces the others — visibility feeds traffic, traffic feeds conversion, conversion feeds reputation, and reputation feeds visibility again." },
   { q: "What is AEO and GEO?", a: "AEO (Answer Engine Optimization) makes a practice the answer that AI engines like ChatGPT, Perplexity, and Google AI Overviews surface. GEO (Generative Engine Optimization) goes further — structuring entities, schema, and authoritative content so generative engines cite and recommend the practice." },
@@ -131,12 +131,7 @@ export default function Services() {
               <span className="mx-2" aria-hidden>/</span>
               <span aria-current="page" className="text-text-secondary">Services</span>
             </nav>
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-              className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-4 py-1.5">
-              <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" />
-              Capability hub
-            </motion.div>
-            <h1 className="font-display font-bold text-brand-deep leading-[1.05] mt-5"
+            <h1 className="font-display font-bold text-brand-deep leading-[1.05] mt-2"
               style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.03em" }}>
               <Line delay={0.4}>Every service your practice needs,</Line>
               <Line delay={0.55}><span className="gradient-text">built as one engine.</span></Line>
@@ -151,9 +146,9 @@ export default function Services() {
               <a href="#core-services" className="btn-primary-grad font-semibold px-6 py-3 rounded-full inline-flex items-center transition-transform hover:-translate-y-0.5">
                 See core services <ArrowRight aria-hidden className="ml-2" size={18} />
               </a>
-              <a href="#audit" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
-                Get a free audit
-              </a>
+              <Link to="/free-audit" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
+                Get a Free Audit
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -201,7 +196,7 @@ export default function Services() {
                       ))}
                     </ul>
                     <Link to={s.href} className="ui-card-cta text-brand-purple hover:text-brand-deep">
-                      Explore {s.h.toLowerCase()} <ArrowRight size={16} className="ml-1.5" aria-hidden />
+                      {s.cta} <ArrowRight size={16} className="ml-1.5" aria-hidden />
                     </Link>
                   </TiltCard>
                 </Reveal>
@@ -248,13 +243,13 @@ export default function Services() {
             <div className="ui-card-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
               {SUPPORTING.map((s, i) => (
                 <Reveal key={s.h} delay={i * 0.03} className="h-full">
-                  <a href={s.href} className="ui-card-compact flex-row items-center gap-4 hover:border-brand-purple/30 hover:-translate-y-0.5 transition-all">
+                  <Link to={s.href} className="ui-card-compact flex-row items-center gap-4 hover:border-brand-purple/30 hover:-translate-y-0.5 transition-all">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/10 flex items-center justify-center flex-shrink-0">
                       <s.icon aria-hidden size={18} className="text-brand-purple" />
                     </div>
                     <span className="font-semibold text-brand-deep">{s.h}</span>
                     <ChevronRight size={16} className="ml-auto text-text-muted" aria-hidden />
-                  </a>
+                  </Link>
                 </Reveal>
               ))}
             </div>
@@ -348,9 +343,9 @@ export default function Services() {
                 We will audit your visibility, conversion, paid efficiency, and reputation — and tell you exactly where
                 investment will create the largest patient flow.
               </p>
-              <a href="#book" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
-                Book your free audit <ArrowRight size={18} className="ml-2" aria-hidden />
-              </a>
+              <Link to="/free-audit" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+                Book Your Free Audit <ArrowRight size={18} className="ml-2" aria-hidden />
+              </Link>
             </Reveal>
           </div>
         </section>
