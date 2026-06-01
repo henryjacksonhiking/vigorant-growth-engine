@@ -145,8 +145,6 @@ export default function Nav() {
               <div
                 key={item.label}
                 className="relative shrink-0"
-                onMouseEnter={() => setActiveDropdown(item.label)}
-                onMouseLeave={() => setActiveDropdown((prev) => (prev === item.label ? null : prev))}
               >
                 <div
                   className={`flex items-center gap-1 rounded-lg px-3 py-2 transition-colors text-sm font-medium whitespace-nowrap ${
