@@ -27,7 +27,6 @@ const Index = () => (
       <Hero />
       <Marquee />
       <MicroProofBar />
-      <WhatWeDo />
       <Comparison />
       <Industries />
       <MiniCaseStudies />
