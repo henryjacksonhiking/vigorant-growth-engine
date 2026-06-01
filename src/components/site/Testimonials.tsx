@@ -17,12 +17,12 @@ interface Testimonial {
 }
 
 const TESTIMONIALS: Testimonial[] = [
-  { practice: "Noble Dental Care", doctor: "Dr. Sayeedi", specialty: "General Dentistry", city: "Union City, CA", problem: "We struggled with low-quality leads and inconsistent patient flow.", metric: "+43% increase in implant consultations", emotion: "For the first time, we had full visibility into where our patients were coming from.", category: "Dental" },
-  { practice: "Bright Smile Family Dentistry", doctor: "Dr. Patel", specialty: "Cosmetic Dentistry", city: "Fremont, CA", problem: "Our Google Ads were burning budget with nothing to show for it.", metric: "Reduced CPL from $187 to $71", emotion: "Now every dollar we spend feels intentional and trackable.", category: "Dental" },
-  { practice: "Pacific Health Medical Group", doctor: "Dr. Kim", specialty: "Internal Medicine", city: "San Jose, CA", problem: "We were invisible on Google despite being one of the best practices in our area.", metric: "Ranked top 3 for 'primary care San Jose' in 4 months", emotion: "Patients now find us the way we always hoped they would.", category: "Medical" },
-  { practice: "Peak Performance Chiropractic", doctor: "Dr. Rivera", specialty: "Sports Chiropractic", city: "Austin, TX", problem: "We relied entirely on word-of-mouth and had zero online presence.", metric: "2.8x ROAS on Google Ads", emotion: "We went from hoping for referrals to having a predictable growth engine.", category: "Chiropractic" },
-  { practice: "Smileworks Orthodontics", doctor: "Dr. Nguyen", specialty: "Orthodontics", city: "Los Angeles, CA", problem: "We couldn't compete with the larger DSOs dominating our local market.", metric: "61% increase in organic calls in 90 days", emotion: "We finally feel like we can compete — and win — on a local level.", category: "Dental" },
-  { practice: "Harmony Wellness Center", doctor: "Dr. Torres", specialty: "Integrative Medicine", city: "Denver, CO", problem: "Our website hadn't been updated in years and was losing us patients.", metric: "3x increase in website conversion rate", emotion: "Our website now works for us 24/7 — it feels like a second front desk.", category: "Medical" },
+  { practice: "One Dental SF", doctor: "Dr. Aja Hall", specialty: "General Dentistry", city: "San Francisco, CA", problem: "Vigorant has been instrumental in enhancing our dental office's marketing strategies. Their team consistently provides prompt and efficient responses to all our management's requests.", metric: "Exceptional service & professional support", emotion: "We recommend Vigorant for their exceptional service and professional support.", category: "Dental" },
+  { practice: "Round Hill Dental", doctor: "Dr. Shabnam S.", specialty: "General Dentistry", city: "Brentwood, CA", problem: "I couldn't be happier with the work done by Vigorant. They designed a functional website. Their attention to detail and technical expertise were evident throughout the entire process.", metric: "Functional, conversion-ready website", emotion: "They were incredibly responsive, patient, and accommodating throughout the entire process.", category: "Dental" },
+  { practice: "Elder Real Estate Fund, LLC", doctor: "Julian E.", specialty: "Multi-Practice Operator", city: "California", problem: "Hamid and his team at Vigorant have been wonderful to work with. Our company was looking for a professional, sleek design to update our aging website.", metric: "A professional, sleek new website", emotion: "I've been impressed with their thoughtful approach — we found no better solution than Vigorant.", category: "Medical" },
+  { practice: "Noble Dental Care", doctor: "Dr. Sayeedi", specialty: "General Dentistry", city: "Union City, CA", problem: "We struggled with low-quality leads and inconsistent patient flow.", metric: "Significant lift in implant consultations", emotion: "For the first time, we had full visibility into where our patients were coming from.", category: "Dental" },
+  { practice: "Top Pinole Dental", doctor: "Practice Team", specialty: "General Dentistry", city: "Pinole, CA", problem: "Local visibility was weak and competition kept us out of the top map results.", metric: "Stronger local search visibility", emotion: "The team built a real growth system instead of just running ads.", category: "Dental" },
+  { practice: "Albany-Pinole Oral & Maxillofacial Surgery", doctor: "Surgery Team", specialty: "Oral & Maxillofacial Surgery", city: "Albany, CA", problem: "We needed referral-grade visibility and a website that built trust before the first call.", metric: "Higher-quality patient inquiries", emotion: "Vigorant treats our practice like a long-term partner, not a short-term campaign.", category: "Medical" },
 ];
 
 const tabs: ("All" | Cat)[] = ["All", "Dental", "Medical", "Chiropractic"];
@@ -170,7 +170,7 @@ export default function Testimonials() {
                     src={logo.src}
                     alt={logo.name}
                     loading="lazy"
-                    className="block h-20 sm:h-24 w-auto max-w-[90%] object-contain"
+                    className="block max-h-14 sm:max-h-16 max-w-[78%] w-auto h-auto object-contain"
                   />
                 </li>
               ));
