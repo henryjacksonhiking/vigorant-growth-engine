@@ -59,7 +59,7 @@ const industries = [
     fallback: "CH",
     href: "/solutions/chiropractic",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
-    image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=800&q=80",
   },
   {
     Icon: ScalpelIcon,
