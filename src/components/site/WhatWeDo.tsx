@@ -57,7 +57,7 @@ export default function WhatWeDo() {
                 onClick={() => setActive(i)}
                 aria-label={t.title}
                 aria-pressed={isActive}
-                className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none"
+                className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none flex flex-col items-center gap-1.5"
                 style={{ left: `${x}%`, top: `${y}%` }}
               >
                 <span
@@ -76,6 +76,13 @@ export default function WhatWeDo() {
                   }}
                 >
                   <Icon size={isActive ? 30 : 26} className="text-white" />
+                </span>
+                <span
+                  className={`text-[10px] lg:text-[11px] font-mono-ui uppercase tracking-[0.06em] text-center max-w-[100px] lg:max-w-[120px] leading-tight transition-colors duration-300 ${
+                    isActive ? "text-brand-purple font-bold" : "text-ink-secondary group-hover:text-brand-purple"
+                  }`}
+                >
+                  {t.title}
                 </span>
               </button>
             );
