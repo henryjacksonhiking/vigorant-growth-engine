@@ -64,8 +64,6 @@ const links: NavItem[] = [
   },
   { label: "How It Works", href: "/how-it-works", route: true },
   { label: "Results", href: "/results", route: true },
-  { label: "Resources", href: "/resources", route: true },
-  { label: "About", href: "/about", route: true },
 ];
 
 export default function Nav() {
@@ -143,7 +141,7 @@ export default function Nav() {
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-1 flex-nowrap ml-6 mr-auto" aria-label="Primary">
+        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-2 flex-nowrap ml-6 mr-auto" aria-label="Primary">
           {links.map((item) => {
             if (!item.children?.length) {
               const active = isActive(item.href);
