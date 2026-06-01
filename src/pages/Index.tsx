@@ -4,7 +4,7 @@ import Nav from "@/components/site/Nav";
 import Hero from "@/components/site/Hero";
 import Marquee from "@/components/site/Marquee";
 import MicroProofBar from "@/components/site/MicroProofBar";
-import WhatWeDo from "@/components/site/WhatWeDo";
+
 import Comparison from "@/components/site/Comparison";
 import Industries from "@/components/site/Industries";
 import MiniCaseStudies from "@/components/site/MiniCaseStudies";
