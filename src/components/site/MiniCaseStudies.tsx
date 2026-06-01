@@ -60,14 +60,20 @@ export default function MiniCaseStudies() {
         {studies.map((s, i) => (
           <Reveal key={s.type} delay={i * 0.06} className="h-full">
             <article
-              className="group relative h-full flex flex-col rounded-2xl bg-white border border-brand-purple/10 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-brand-purple/30"
+              className="group relative h-full flex flex-col rounded-2xl bg-white border border-brand-purple/10 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/30 hover:shadow-[0_18px_50px_-12px_hsl(247_93%_64%/0.25)] overflow-hidden"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
+              {/* Top accent on hover */}
+              <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-brand-purple via-brand-purple/70 to-brand-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              />
+
               {/* Header */}
               <header className="flex items-center gap-3">
                 <div
                   aria-hidden
-                  className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0"
+                  className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
                   style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
                 >
                   {s.initial}
@@ -83,7 +89,7 @@ export default function MiniCaseStudies() {
               </header>
 
               {/* Headline metric */}
-              <div className="mt-6 rounded-xl bg-brand-purple/5 border border-brand-purple/10 px-5 py-4">
+              <div className="mt-6 rounded-xl bg-brand-purple/5 border border-brand-purple/10 px-5 py-4 transition-colors duration-300 group-hover:bg-brand-purple/8">
                 <div className="flex items-baseline gap-2">
                   <span className="font-display font-bold text-brand-deep text-[40px] leading-none tracking-tight">
                     {s.headline.metric}
@@ -95,13 +101,13 @@ export default function MiniCaseStudies() {
                 </div>
               </div>
 
-              {/* Summary */}
-              <p className="mt-5 text-[14px] leading-relaxed text-ink-secondary">
+              {/* Summary — fixed min height keeps results + CTA aligned across cards */}
+              <p className="mt-5 text-[14px] leading-relaxed text-ink-secondary min-h-[84px]">
                 {s.summary}
               </p>
 
               {/* Secondary results */}
-              <ul className="mt-5 space-y-2 flex-1">
+              <ul className="mt-4 space-y-2 flex-1">
                 {s.results.map((r) => (
                   <li key={r} className="flex items-start gap-2 text-[13px] text-brand-deep">
                     <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0" />
@@ -115,7 +121,7 @@ export default function MiniCaseStudies() {
                 to={`/case-studies/${s.slug}`}
                 className="mt-6 pt-5 border-t border-brand-purple/10 inline-flex items-center gap-1.5 text-brand-purple text-[14px] font-semibold group-hover:gap-2.5 transition-all"
               >
-                Read full case study <ArrowRight aria-hidden size={15} />
+                Read full case study <ArrowRight aria-hidden size={15} className="transition-transform group-hover:translate-x-0.5" />
               </Link>
             </article>
           </Reveal>
