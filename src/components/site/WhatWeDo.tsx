@@ -15,7 +15,16 @@ const tiles = [
 
 export default function WhatWeDo() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const ActiveIcon = tiles[active].icon;
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setActive((p) => (p + 1) % tiles.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, [paused]);
 
   return (
     <Section id="what-we-do" bg="white">
