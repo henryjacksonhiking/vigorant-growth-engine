@@ -101,34 +101,43 @@ export default function WhatWeDo() {
           <div
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-center px-8 py-10 flex flex-col items-center justify-center"
+            className="absolute left-1/2 top-1/2 rounded-full bg-white text-center flex items-center justify-center overflow-hidden"
             style={{
               width: "44%",
               aspectRatio: "1 / 1",
               boxShadow: "var(--shadow-glass)",
               border: "1px solid hsl(247 93% 64% / 0.18)",
+              transform: "translate3d(-50%, -50%, 0)",
+              willChange: "contents",
+              backfaceVisibility: "hidden",
             }}
           >
             <div
-              aria-hidden
-              className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
-              style={{ background: "linear-gradient(135deg, hsl(247 93% 64% / 0.12), hsl(248 100% 75% / 0.18))" }}
+              key={active}
+              className="absolute inset-0 flex flex-col items-center justify-center px-8 py-10 animate-fade-in"
             >
-              <ActiveIcon size={22} className="text-brand-purple" />
+              <div
+                aria-hidden
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+                style={{ background: "linear-gradient(135deg, hsl(247 93% 64% / 0.12), hsl(248 100% 75% / 0.18))" }}
+              >
+                <ActiveIcon size={22} className="text-brand-purple" />
+              </div>
+              <h3 className="font-extrabold text-brand-deep text-[17px] lg:text-[19px] leading-tight">
+                {tiles[active].title}
+              </h3>
+              <p className="mt-2 text-ink-secondary text-[13px] lg:text-[14px] leading-relaxed line-clamp-4">
+                {tiles[active].body}
+              </p>
+              <a
+                href="#process"
+                className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-sm"
+              >
+                Know more <ArrowRight aria-hidden size={14} />
+              </a>
             </div>
-            <h3 className="font-extrabold text-brand-deep text-[17px] lg:text-[19px] leading-tight">
-              {tiles[active].title}
-            </h3>
-            <p className="mt-2 text-ink-secondary text-[13px] lg:text-[14px] leading-relaxed line-clamp-5">
-              {tiles[active].body}
-            </p>
-            <a
-              href="#process"
-              className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-sm"
-            >
-              Know more <ArrowRight aria-hidden size={14} />
-            </a>
           </div>
+
         </div>
       </div>
 
