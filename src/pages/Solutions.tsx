@@ -552,12 +552,12 @@ function GrowthEngine() {
 /* ---------- Capabilities ---------- */
 function Capabilities() {
   const caps = [
-    { icon: Search, tag: "SEO", h: "SEO & Local Search", b: "Google, Maps, and entity-level local optimization so your practice appears where patients are searching in your market.", link: "Healthcare SEO", href: "/for-practices" },
-    { icon: Sparkles, tag: "AIO/GEO", h: "AI Engine Optimization", b: "AEO and GEO structuring that makes your practice discoverable and citable by ChatGPT, Gemini, Perplexity, and Google AI Overviews.", link: "AI search optimization", href: "/for-practices#online-visibility" },
-    { icon: Megaphone, tag: "Paid Ads", h: "Paid Advertising", b: "Specialty-targeted Google and Meta campaigns with HIPAA-aware tracking, call attribution, and ROI measurement built in.", link: "Healthcare paid ads", href: "/for-practices" },
-    { icon: Layout, tag: "Website", h: "Website Design & CRO", b: "Conversion-first websites and landing pages built for the way each specialty's patients discover, evaluate, and book care.", link: "Website design & CRO", href: "/for-practices" },
-    { icon: Star, tag: "Reputation", h: "Reputation & Social Proof", b: "Review velocity strategy, response management, and social content that builds the trust patients need before booking — and that AI engines use as credibility signals.", link: "Reputation management", href: "/for-practices#online-reputation" },
-    { icon: BarChart2, tag: "Analytics", h: "Analytics & ROI Tracking", b: "Attribution, performance dashboards, and patient acquisition cost tracking so every marketing decision is grounded in real practice economics.", link: "See how it works", href: "/#process" },
+    { icon: Search, tag: "SEO", h: "SEO & Local Search", b: "Google, Maps, and entity-level local optimization so your practice appears where patients are searching in your market.", link: "Healthcare SEO", href: "/services/seo" },
+    { icon: Sparkles, tag: "AIO/GEO", h: "AI Engine Optimization", b: "AEO and GEO structuring that makes your practice discoverable and citable by ChatGPT, Gemini, Perplexity, and Google AI Overviews.", link: "AI search optimization", href: "/services/seo/aeo" },
+    { icon: Megaphone, tag: "Paid Ads", h: "Paid Advertising", b: "Specialty-targeted Google and Meta campaigns with HIPAA-aware tracking, call attribution, and ROI measurement built in.", link: "Healthcare paid ads", href: "/services/paid-ads" },
+    { icon: Layout, tag: "Website", h: "Website Design & CRO", b: "Conversion-first websites and landing pages built for the way each specialty's patients discover, evaluate, and book care.", link: "Website design & CRO", href: "/services/website-design" },
+    { icon: Star, tag: "Reputation", h: "Reputation & Social Proof", b: "Review velocity strategy, response management, and social content that builds the trust patients need before booking — and that AI engines use as credibility signals.", link: "Reputation management", href: "/services/reputation" },
+    { icon: BarChart2, tag: "Analytics", h: "Analytics & ROI Tracking", b: "Attribution, performance dashboards, and patient acquisition cost tracking so every marketing decision is grounded in real practice economics.", link: "See how it works", href: "/how-it-works" },
   ];
   return (
     <section className="py-[88px] bg-surface-secondary" aria-labelledby="caps-h2">
@@ -583,8 +583,8 @@ function Capabilities() {
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
                       <Icon aria-hidden size={20} className="text-white" />
                     </div>
-                    <span className="font-mono-ui text-[10px] uppercase mt-3 inline-block text-brand-purple">{c.tag}</span>
-                    <h3 className="font-bold text-brand-deep mt-1" style={{ fontSize: 15 }}>{c.h}</h3>
+                    <h3 className="font-bold text-brand-deep mt-3" style={{ fontSize: 15 }}>{c.h}</h3>
+                    
                     <p className="text-text-secondary mt-2" style={{ fontSize: 13, lineHeight: 1.6 }}>{c.b}</p>
                     <Link to={c.href} className="inline-flex items-center mt-3 text-brand-purple font-semibold text-[13px] group">
                       {c.link} <ArrowRight aria-hidden size={13} className="ml-1 transition-transform group-hover:translate-x-0.5" />
@@ -603,12 +603,12 @@ function Capabilities() {
 /* ---------- Decision Guide ---------- */
 function DecisionGuide() {
   const rows = [
-    { s: "New practice, launching online presence", p: "Dental / Chiro / Medical + Visibility first", w: "Choose specialty", href: "#specialty-cards" },
-    { s: "Established practice, slow new patient growth", p: "More New Patients + SEO + Paid Ads", w: "More new patients", href: "/for-practices#more-new-patients" },
-    { s: "Good traffic but appointments not converting", p: "Lead Conversion + Website CRO", w: "Lead conversion", href: "/for-practices#lead-conversion" },
-    { s: "Multi-location or group practice", p: "Scale Your Practice + All specialties", w: "Scale your practice", href: "/for-practices#scale" },
-    { s: "Busy but not profitable — wrong patient mix", p: "High-Value Patients + Specialty targeting", w: "High-value patients", href: "/for-practices#high-value-patients" },
-    { s: "Paying for marketing with no clear ROI", p: "Fix Poor Marketing ROI + Attribution setup", w: "Marketing ROI", href: "/for-practices#marketing-roi" },
+    { s: "New practice, launching online presence", p: "Start with a specialty and build visibility first", w: "Choose your specialty", href: "#specialty-cards" },
+    { s: "Established practice, slow new patient growth", p: "More New Patients + SEO + Paid Ads", w: "More new patients", href: "/for-practices/more-new-patients" },
+    { s: "Good traffic but appointments not converting", p: "Lead Conversion + Website CRO", w: "Lead conversion", href: "/for-practices/lead-conversion" },
+    { s: "Multi-location or group practice", p: "Scale Your Practice + All specialties", w: "Scale your practice", href: "/for-practices/scale-your-practice" },
+    { s: "Busy but not profitable — wrong patient mix", p: "High-Value Patients + Specialty targeting", w: "High-value patients", href: "/for-practices/high-value-patients" },
+    { s: "Paying for marketing with no clear ROI", p: "Fix Poor Marketing ROI + Attribution setup", w: "Marketing ROI", href: "/for-practices/marketing-roi" },
   ];
   return (
     <section className="py-[88px] bg-background" aria-labelledby="decision-h2">
@@ -659,9 +659,9 @@ function DecisionGuide() {
           <p className="text-text-secondary text-[15px] max-w-[520px] mx-auto">
             Still not sure? Let us review your practice and recommend the right path.
           </p>
-          <a href="#audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
+          <Link to="/free-audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
             Get a Free Practice Growth Audit <ArrowRight aria-hidden size={16} className="ml-2" />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>
