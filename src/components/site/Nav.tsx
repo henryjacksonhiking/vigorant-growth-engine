@@ -197,20 +197,74 @@ export default function Nav() {
                 {isOpen && (
                   <div className="absolute top-full left-0 mt-2 min-w-[16rem] max-w-[22rem] glass-strong rounded-xl shadow-lg border border-brand-purple/10 p-1.5 z-50">
                     {item.children.map((child) => {
-                      const cActive = isActive(child.href);
+                      const cActive = isChildActive(child);
+                      const hasGrand = !!child.children?.length;
+                      const subOpen = activeSubmenu === child.label;
+                      const baseChildCls = `block text-sm px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
+                        cActive
+                          ? "text-brand-purple bg-brand-purple/10 font-medium"
+                          : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+                      }`;
+
+                      if (!hasGrand) {
+                        return (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            className={baseChildCls}
+                            aria-current={isActive(child.href) ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      }
+
                       return (
-                        <Link
-                          key={child.href}
-                          to={child.href}
-                          className={`block text-sm px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
-                            cActive
-                              ? "text-brand-purple bg-brand-purple/10 font-medium"
-                              : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
-                          }`}
-                          aria-current={cActive ? "page" : undefined}
-                        >
-                          {child.label}
-                        </Link>
+                        <div key={child.href}>
+                          <div className={`flex items-center gap-1 rounded-lg ${cActive ? "bg-brand-purple/10" : "hover:bg-brand-purple/8"}`}>
+                            <Link
+                              to={child.href}
+                              className={`flex-1 text-sm px-3 py-2 rounded-lg whitespace-nowrap ${
+                                cActive ? "text-brand-purple font-medium" : "text-ink-secondary hover:text-brand-deep"
+                              }`}
+                              aria-current={isActive(child.href) ? "page" : undefined}
+                            >
+                              {child.label}
+                            </Link>
+                            <button
+                              onClick={() => toggleSubmenu(child.label)}
+                              className="px-2 py-2 text-current"
+                              aria-expanded={subOpen}
+                              aria-label={`Toggle ${child.label} submenu`}
+                            >
+                              <ChevronDown
+                                size={12}
+                                className={`transition-transform duration-200 ${subOpen ? "rotate-180" : ""}`}
+                              />
+                            </button>
+                          </div>
+                          {subOpen && (
+                            <div className="pl-3 mt-0.5 flex flex-col gap-0.5 border-l border-brand-purple/15 ml-3">
+                              {child.children!.map((g) => {
+                                const gActive = isActive(g.href);
+                                return (
+                                  <Link
+                                    key={g.href}
+                                    to={g.href}
+                                    className={`block text-sm px-3 py-1.5 rounded-lg whitespace-nowrap ${
+                                      gActive
+                                        ? "text-brand-purple bg-brand-purple/10 font-medium"
+                                        : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+                                    }`}
+                                    aria-current={gActive ? "page" : undefined}
+                                  >
+                                    {g.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
