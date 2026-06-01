@@ -59,7 +59,7 @@ const industries = [
     fallback: "CH",
     href: "/solutions/chiropractic",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
-    image: "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=800&q=80",
   },
   {
     Icon: ScalpelIcon,
@@ -100,12 +100,14 @@ export default function Industries() {
                 <Link to={it.href} className="block h-full w-full" aria-label={it.title}>
                   <StoryImage src={it.image} alt={it.title} />
                   <StoryOverlay />
-                  <StoryAuthor>
-                    <StoryAuthorImage fallback={it.fallback} name={it.title} />
-                    <StoryAuthorName>{it.tag}</StoryAuthorName>
-                  </StoryAuthor>
-                  <StoryTitle>{it.title}</StoryTitle>
-                  <StoryDescription>{it.body}</StoryDescription>
+                  <div className="absolute inset-x-4 bottom-4 z-10 min-h-[88px] flex flex-col justify-end">
+                    <h3 className="font-bold text-white text-[17px] leading-tight drop-shadow line-clamp-2 min-h-[44px]">
+                      {it.title}
+                    </h3>
+                    <p className="mt-2 text-[12px] leading-snug text-white/90 line-clamp-2 min-h-[32px]">
+                      {it.body}
+                    </p>
+                  </div>
                 </Link>
               </Story>
             ))}
