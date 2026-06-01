@@ -99,6 +99,8 @@ export default function WhatWeDo() {
 
           {/* Center card */}
           <div
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-center px-8 py-10 flex flex-col items-center justify-center"
             style={{
               width: "44%",
@@ -127,23 +129,6 @@ export default function WhatWeDo() {
               Know more <ArrowRight aria-hidden size={14} />
             </a>
           </div>
-        </div>
-
-        {/* Labels grid below for clarity */}
-        <div className="mt-8 grid grid-cols-4 gap-3 max-w-4xl mx-auto">
-          {tiles.map((t, i) => (
-            <button
-              key={t.title}
-              onClick={() => setActive(i)}
-              className={`text-left text-[12px] font-mono-ui uppercase tracking-[0.08em] px-3 py-2 rounded-lg transition-colors ${
-                active === i
-                  ? "bg-brand-purple/10 text-brand-purple"
-                  : "text-ink-secondary hover:text-brand-purple hover:bg-brand-purple/5"
-              }`}
-            >
-              {t.title}
-            </button>
-          ))}
         </div>
       </div>
 
