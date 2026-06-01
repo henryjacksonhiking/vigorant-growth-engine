@@ -4,11 +4,17 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
+type NavChild = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
 type NavItem = {
   label: string;
   href: string;
   route?: boolean;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 };
 
 const links: NavItem[] = [
@@ -17,10 +23,15 @@ const links: NavItem[] = [
     href: "/services",
     route: true,
     children: [
-      { label: "SEO Overview", href: "/services/seo" },
-      { label: "Traditional SEO & Maps", href: "/services/seo/search-engine-optimization" },
-      { label: "Answer Engine Optimization (AEO)", href: "/services/seo/aeo" },
-      { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
+      {
+        label: "SEO Overview",
+        href: "/services/seo",
+        children: [
+          { label: "Traditional SEO & Maps", href: "/services/seo/search-engine-optimization" },
+          { label: "Answer Engine Optimization (AEO)", href: "/services/seo/aeo" },
+          { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
+        ],
+      },
       { label: "Paid Ads (Google & Meta)", href: "/services/paid-ads" },
       { label: "Website Design & CRO", href: "/services/website-design" },
       { label: "Reputation & Social Media", href: "/services/reputation" },
