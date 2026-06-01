@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Search, Sparkles, MousePointerClick, Layout, Workflow, BarChart3, Star, Building2, ArrowRight } from "lucide-react";
 
