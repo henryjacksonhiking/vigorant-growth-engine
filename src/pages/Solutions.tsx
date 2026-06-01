@@ -271,7 +271,7 @@ const SPECIALTIES: SpecialtyCard[] = [
     services: ["Local SEO", "Google Ads", "AIO/GEO", "Website CRO", "Review Engine", "Dental Paid Ads"],
   },
   {
-    tag: "Chiropractic", icon: Activity,
+    tag: "Chiropractic", icon: Bone,
     h3: "Chiropractic Marketing",
     body: "For chiropractic practices that need predictable local demand, stronger Google Maps visibility, better patient education, and campaigns that convert nearby searchers into booked visits — whether for pain relief, wellness care, or sports treatment.",
     links: [
