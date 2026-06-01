@@ -87,8 +87,8 @@ export default function WhatWeDo() {
                   <Icon size={isActive ? 30 : 26} className="text-white" />
                 </span>
                 <span
-                  className={`text-[10px] lg:text-[11px] font-mono-ui uppercase tracking-[0.06em] text-center max-w-[100px] lg:max-w-[120px] leading-tight transition-colors duration-300 ${
-                    isActive ? "text-brand-purple font-bold" : "text-ink-secondary group-hover:text-brand-purple"
+                  className={`text-[10px] lg:text-[11px] font-mono-ui uppercase tracking-[0.06em] text-center max-w-[100px] lg:max-w-[120px] leading-tight transition-colors duration-300 font-bold ${
+                    isActive ? "text-brand-purple" : "text-ink-secondary group-hover:text-brand-purple"
                   }`}
                 >
                   {t.title}
