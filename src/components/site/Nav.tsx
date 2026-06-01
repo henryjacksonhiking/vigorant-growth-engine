@@ -352,24 +352,89 @@ export default function Nav() {
                 {isOpen && (
                   <div className="pl-4 flex flex-col gap-0.5 mt-0.5">
                     {item.children.map((child) => {
-                      const cActive = isActive(child.href);
+                      const cActive = isChildActive(child);
+                      const hasGrand = !!child.children?.length;
+                      const subOpen = activeSubmenu === child.label;
+                      const baseChildCls = `text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
+                        cActive
+                          ? "text-brand-purple bg-brand-purple/10"
+                          : "text-ink-secondary hover:bg-brand-purple/8"
+                      }`;
+
+                      if (!hasGrand) {
+                        return (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setActiveSubmenu(null);
+                              setOpen(false);
+                            }}
+                            className={baseChildCls}
+                            aria-current={isActive(child.href) ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      }
+
                       return (
-                        <Link
-                          key={child.href}
-                          to={child.href}
-                          onClick={() => {
-                            setActiveDropdown(null);
-                            setOpen(false);
-                          }}
-                          className={`text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
-                            cActive
-                              ? "text-brand-purple bg-brand-purple/10"
-                              : "text-ink-secondary hover:bg-brand-purple/8"
-                          }`}
-                          aria-current={cActive ? "page" : undefined}
-                        >
-                          {child.label}
-                        </Link>
+                        <div key={child.href}>
+                          <div className={`flex items-center rounded-lg ${cActive ? "bg-brand-purple/10" : ""}`}>
+                            <Link
+                              to={child.href}
+                              onClick={() => {
+                                setActiveDropdown(null);
+                                setActiveSubmenu(null);
+                                setOpen(false);
+                              }}
+                              className={`flex-1 text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
+                                cActive ? "text-brand-purple" : "text-ink-secondary"
+                              }`}
+                              aria-current={isActive(child.href) ? "page" : undefined}
+                            >
+                              {child.label}
+                            </Link>
+                            <button
+                              onClick={() => toggleSubmenu(child.label)}
+                              className="px-3 py-2 text-current"
+                              aria-expanded={subOpen}
+                              aria-label={`Toggle ${child.label} submenu`}
+                            >
+                              <ChevronDown
+                                size={14}
+                                className={`transition-transform duration-200 ${subOpen ? "rotate-180" : ""}`}
+                              />
+                            </button>
+                          </div>
+                          {subOpen && (
+                            <div className="pl-4 ml-3 mt-0.5 flex flex-col gap-0.5 border-l border-brand-purple/15">
+                              {child.children!.map((g) => {
+                                const gActive = isActive(g.href);
+                                return (
+                                  <Link
+                                    key={g.href}
+                                    to={g.href}
+                                    onClick={() => {
+                                      setActiveDropdown(null);
+                                      setActiveSubmenu(null);
+                                      setOpen(false);
+                                    }}
+                                    className={`text-sm py-2 px-3 rounded-lg min-h-[36px] flex items-center ${
+                                      gActive
+                                        ? "text-brand-purple bg-brand-purple/10 font-medium"
+                                        : "text-ink-secondary hover:bg-brand-purple/8"
+                                    }`}
+                                    aria-current={gActive ? "page" : undefined}
+                                  >
+                                    {g.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
