@@ -4,11 +4,17 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
+type NavChild = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
 type NavItem = {
   label: string;
   href: string;
   route?: boolean;
-  children?: { label: string; href: string }[];
+  children?: NavChild[];
 };
 
 const links: NavItem[] = [
@@ -17,10 +23,15 @@ const links: NavItem[] = [
     href: "/services",
     route: true,
     children: [
-      { label: "SEO Overview", href: "/services/seo" },
-      { label: "Traditional SEO & Maps", href: "/services/seo/search-engine-optimization" },
-      { label: "Answer Engine Optimization (AEO)", href: "/services/seo/aeo" },
-      { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
+      {
+        label: "SEO Overview",
+        href: "/services/seo",
+        children: [
+          { label: "Traditional SEO & Maps", href: "/services/seo/search-engine-optimization" },
+          { label: "Answer Engine Optimization (AEO)", href: "/services/seo/aeo" },
+          { label: "Generative Engine Optimization (GEO)", href: "/services/seo/geo" },
+        ],
+      },
       { label: "Paid Ads (Google & Meta)", href: "/services/paid-ads" },
       { label: "Website Design & CRO", href: "/services/website-design" },
       { label: "Reputation & Social Media", href: "/services/reputation" },
@@ -61,12 +72,15 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const desktopNavRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
 
   const isActive = (href: string) => pathname === href;
+  const isChildActive = (child: NavChild) =>
+    pathname === child.href || child.children?.some((g) => pathname === g.href);
   const isParentActive = (item: NavItem) =>
-    item.children?.some((c) => pathname === c.href) || pathname === item.href;
+    item.children?.some((c) => isChildActive(c)) || pathname === item.href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -78,6 +92,7 @@ export default function Nav() {
     const onClick = (e: MouseEvent) => {
       if (desktopNavRef.current && !desktopNavRef.current.contains(e.target as Node)) {
         setActiveDropdown(null);
+        setActiveSubmenu(null);
       }
     };
     document.addEventListener("mousedown", onClick);
@@ -86,11 +101,17 @@ export default function Nav() {
 
   useEffect(() => {
     setActiveDropdown(null);
+    setActiveSubmenu(null);
     setOpen(false);
   }, [pathname]);
 
   const toggleDropdown = (label: string) => {
     setActiveDropdown((prev) => (prev === label ? null : label));
+    setActiveSubmenu(null);
+  };
+
+  const toggleSubmenu = (label: string) => {
+    setActiveSubmenu((prev) => (prev === label ? null : label));
   };
 
   const baseDesktopLink = (active: boolean, parentActive: boolean) =>
@@ -176,20 +197,74 @@ export default function Nav() {
                 {isOpen && (
                   <div className="absolute top-full left-0 mt-2 min-w-[16rem] max-w-[22rem] glass-strong rounded-xl shadow-lg border border-brand-purple/10 p-1.5 z-50">
                     {item.children.map((child) => {
-                      const cActive = isActive(child.href);
+                      const cActive = isChildActive(child);
+                      const hasGrand = !!child.children?.length;
+                      const subOpen = activeSubmenu === child.label;
+                      const baseChildCls = `block text-sm px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
+                        cActive
+                          ? "text-brand-purple bg-brand-purple/10 font-medium"
+                          : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+                      }`;
+
+                      if (!hasGrand) {
+                        return (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            className={baseChildCls}
+                            aria-current={isActive(child.href) ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      }
+
                       return (
-                        <Link
-                          key={child.href}
-                          to={child.href}
-                          className={`block text-sm px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
-                            cActive
-                              ? "text-brand-purple bg-brand-purple/10 font-medium"
-                              : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
-                          }`}
-                          aria-current={cActive ? "page" : undefined}
-                        >
-                          {child.label}
-                        </Link>
+                        <div key={child.href}>
+                          <div className={`flex items-center gap-1 rounded-lg ${cActive ? "bg-brand-purple/10" : "hover:bg-brand-purple/8"}`}>
+                            <Link
+                              to={child.href}
+                              className={`flex-1 text-sm px-3 py-2 rounded-lg whitespace-nowrap ${
+                                cActive ? "text-brand-purple font-medium" : "text-ink-secondary hover:text-brand-deep"
+                              }`}
+                              aria-current={isActive(child.href) ? "page" : undefined}
+                            >
+                              {child.label}
+                            </Link>
+                            <button
+                              onClick={() => toggleSubmenu(child.label)}
+                              className="px-2 py-2 text-current"
+                              aria-expanded={subOpen}
+                              aria-label={`Toggle ${child.label} submenu`}
+                            >
+                              <ChevronDown
+                                size={12}
+                                className={`transition-transform duration-200 ${subOpen ? "rotate-180" : ""}`}
+                              />
+                            </button>
+                          </div>
+                          {subOpen && (
+                            <div className="pl-3 mt-0.5 flex flex-col gap-0.5 border-l border-brand-purple/15 ml-3">
+                              {child.children!.map((g) => {
+                                const gActive = isActive(g.href);
+                                return (
+                                  <Link
+                                    key={g.href}
+                                    to={g.href}
+                                    className={`block text-sm px-3 py-1.5 rounded-lg whitespace-nowrap ${
+                                      gActive
+                                        ? "text-brand-purple bg-brand-purple/10 font-medium"
+                                        : "text-ink-secondary hover:text-brand-deep hover:bg-brand-purple/8"
+                                    }`}
+                                    aria-current={gActive ? "page" : undefined}
+                                  >
+                                    {g.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
@@ -277,24 +352,89 @@ export default function Nav() {
                 {isOpen && (
                   <div className="pl-4 flex flex-col gap-0.5 mt-0.5">
                     {item.children.map((child) => {
-                      const cActive = isActive(child.href);
+                      const cActive = isChildActive(child);
+                      const hasGrand = !!child.children?.length;
+                      const subOpen = activeSubmenu === child.label;
+                      const baseChildCls = `text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
+                        cActive
+                          ? "text-brand-purple bg-brand-purple/10"
+                          : "text-ink-secondary hover:bg-brand-purple/8"
+                      }`;
+
+                      if (!hasGrand) {
+                        return (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setActiveSubmenu(null);
+                              setOpen(false);
+                            }}
+                            className={baseChildCls}
+                            aria-current={isActive(child.href) ? "page" : undefined}
+                          >
+                            {child.label}
+                          </Link>
+                        );
+                      }
+
                       return (
-                        <Link
-                          key={child.href}
-                          to={child.href}
-                          onClick={() => {
-                            setActiveDropdown(null);
-                            setOpen(false);
-                          }}
-                          className={`text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
-                            cActive
-                              ? "text-brand-purple bg-brand-purple/10"
-                              : "text-ink-secondary hover:bg-brand-purple/8"
-                          }`}
-                          aria-current={cActive ? "page" : undefined}
-                        >
-                          {child.label}
-                        </Link>
+                        <div key={child.href}>
+                          <div className={`flex items-center rounded-lg ${cActive ? "bg-brand-purple/10" : ""}`}>
+                            <Link
+                              to={child.href}
+                              onClick={() => {
+                                setActiveDropdown(null);
+                                setActiveSubmenu(null);
+                                setOpen(false);
+                              }}
+                              className={`flex-1 text-sm font-medium py-2.5 px-3 rounded-lg min-h-[40px] flex items-center ${
+                                cActive ? "text-brand-purple" : "text-ink-secondary"
+                              }`}
+                              aria-current={isActive(child.href) ? "page" : undefined}
+                            >
+                              {child.label}
+                            </Link>
+                            <button
+                              onClick={() => toggleSubmenu(child.label)}
+                              className="px-3 py-2 text-current"
+                              aria-expanded={subOpen}
+                              aria-label={`Toggle ${child.label} submenu`}
+                            >
+                              <ChevronDown
+                                size={14}
+                                className={`transition-transform duration-200 ${subOpen ? "rotate-180" : ""}`}
+                              />
+                            </button>
+                          </div>
+                          {subOpen && (
+                            <div className="pl-4 ml-3 mt-0.5 flex flex-col gap-0.5 border-l border-brand-purple/15">
+                              {child.children!.map((g) => {
+                                const gActive = isActive(g.href);
+                                return (
+                                  <Link
+                                    key={g.href}
+                                    to={g.href}
+                                    onClick={() => {
+                                      setActiveDropdown(null);
+                                      setActiveSubmenu(null);
+                                      setOpen(false);
+                                    }}
+                                    className={`text-sm py-2 px-3 rounded-lg min-h-[36px] flex items-center ${
+                                      gActive
+                                        ? "text-brand-purple bg-brand-purple/10 font-medium"
+                                        : "text-ink-secondary hover:bg-brand-purple/8"
+                                    }`}
+                                    aria-current={gActive ? "page" : undefined}
+                                  >
+                                    {g.label}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       );
                     })}
                   </div>
