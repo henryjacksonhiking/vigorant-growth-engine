@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Smile, Activity, Stethoscope, Check, Search, Route, DollarSign,
+  ArrowRight, Smile, Bone, Stethoscope, Check, Search, Route, DollarSign,
   MousePointerClick, MapPin, Brain, Users, Star, BarChart2, Sparkles,
   Megaphone, Layout, Plus, X,
 } from "lucide-react";
@@ -135,14 +135,7 @@ function Hero() {
         </nav>
 
         <div className="max-w-[820px] mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6, ease }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-purple/8 border border-brand-purple/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" aria-hidden />
-              <span className="font-mono-ui text-[11px] uppercase tracking-[0.1em] text-brand-purple">Solutions by Specialty</span>
-            </span>
-          </motion.div>
-
-          <h1 id="solutions-h1" className="font-display font-bold mt-6 leading-[1.05]" style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.02em" }}>
+          <h1 id="solutions-h1" className="font-display font-bold mt-2 leading-[1.05]" style={{ fontSize: "clamp(36px, 6.5vw, 72px)", letterSpacing: "-0.02em" }}>
             {["Healthcare Marketing Solutions", "Built for Your Specialty."].map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <motion.span
@@ -166,24 +159,12 @@ function Hero() {
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2, duration: 0.7, ease }}
             className="mt-8 flex flex-wrap items-center justify-center gap-4"
           >
-            <a href="#audit" className="btn-primary-grad font-bold rounded-full" style={{ padding: "14px 30px", fontSize: 16 }}>
+            <Link to="/free-audit" className="btn-primary-grad font-bold rounded-full" style={{ padding: "14px 30px", fontSize: 16 }}>
               Get a Free Practice Growth Audit
-            </a>
+            </Link>
             <a href="#specialty-cards" className="btn-secondary-outline font-semibold rounded-full" style={{ padding: "14px 26px", fontSize: 16 }}>
               Choose Your Specialty ↓
             </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.38, duration: 0.7, ease }}
-            className="mt-10 mx-auto max-w-[720px] rounded-full border border-brand-purple/12 bg-surface-secondary px-7 py-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-mono-ui text-[12px] text-brand-purple"
-          >
-            {["Dental", "Chiropractic", "Medical", "SEO + AIO/GEO", "Paid Ads", "Websites", "Built for Patient Acquisition"].map((s, i, a) => (
-              <span key={s} className="flex items-center gap-3">
-                <span>{s}</span>
-                {i < a.length - 1 && <span aria-hidden className="text-brand-lavender">·</span>}
-              </span>
-            ))}
           </motion.div>
         </div>
       </div>
@@ -218,7 +199,7 @@ function OneSystem() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
           {[
             { icon: Smile, label: "Dental", accent: "from-brand-purple to-brand-bright", key: "d" as const },
-            { icon: Activity, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
+            { icon: Bone, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
             { icon: Stethoscope, label: "Medical", accent: "from-brand-purple to-brand-lavender", key: "m" as const },
           ].map(({ icon: Icon, label, accent, key }, colIdx) => (
             <Reveal key={label} delay={0.1 + colIdx * 0.1}>
@@ -276,32 +257,32 @@ const SPECIALTIES: SpecialtyCard[] = [
     h3: "Dental Practice Marketing",
     body: "For dental practices that need more new patients, stronger local visibility, better implant and cosmetic case flow, and a website that turns search traffic into booked appointments. We align every channel around the services that drive your highest production.",
     links: [
-      { label: "getting more new patients", href: "/for-practices#more-new-patients" },
-      { label: "dental SEO strategy", href: "/for-practices" },
-      { label: "attract high-value patients", href: "/for-practices#high-value-patients" },
+      { label: "Getting More New Patients", href: "/for-practices/more-new-patients" },
+      { label: "Dental SEO Strategy", href: "/services/seo" },
+      { label: "Attract High-Value Patients", href: "/for-practices/high-value-patients" },
     ],
     cta: { label: "Explore Dental Practice Marketing", href: "/solutions/dental" },
     address: [
       "New patient volume and local search visibility",
-      "High-value treatment demand (implants, cosmetic, Invisalign)",
+      "Demand generation across the treatments that drive your highest production",
       "Website conversion and appointment booking flow",
       "Review growth and Google Maps ranking",
     ],
     services: ["Local SEO", "Google Ads", "AIO/GEO", "Website CRO", "Review Engine", "Dental Paid Ads"],
   },
   {
-    tag: "Chiropractic", icon: Activity,
+    tag: "Chiropractic", icon: Bone,
     h3: "Chiropractic Marketing",
     body: "For chiropractic practices that need predictable local demand, stronger Google Maps visibility, better patient education, and campaigns that convert nearby searchers into booked visits — whether for pain relief, wellness care, or sports treatment.",
     links: [
-      { label: "predictable patient flow", href: "/for-practices#predictable-flow" },
-      { label: "online reputation", href: "/for-practices#online-reputation" },
-      { label: "local SEO services", href: "/for-practices" },
+      { label: "Predictable Patient Flow", href: "/for-practices/predictable-patient-flow" },
+      { label: "Online Reputation", href: "/for-practices/online-reputation" },
+      { label: "Local SEO Services", href: "/services/seo" },
     ],
     cta: { label: "Explore Chiropractic Marketing", href: "/solutions/chiropractic" },
     address: [
       "Local search visibility and Google Maps dominance",
-      "Patient education and trust-building content",
+      "Demand generation across the care types your patients search for most",
       "Booking conversion and appointment show rate",
       "Review velocity and reputation management",
     ],
@@ -312,14 +293,14 @@ const SPECIALTIES: SpecialtyCard[] = [
     h3: "Medical Practice Marketing",
     body: "For medical and specialty practices that need better patient acquisition, higher-value service demand, stronger trust signals, and measurable marketing ROI — whether you run a single-provider clinic or a growing multi-location group.",
     links: [
-      { label: "scale your practice", href: "/for-practices#scale" },
-      { label: "AI visibility", href: "/for-practices#online-visibility" },
-      { label: "website design & CRO", href: "/for-practices" },
+      { label: "Scale Your Practice", href: "/for-practices/scale-your-practice" },
+      { label: "Online Visibility", href: "/for-practices/online-visibility" },
+      { label: "Website Design & CRO", href: "/services/website-design" },
     ],
     cta: { label: "Explore Medical Practice Marketing", href: "/solutions/medical" },
     address: [
       "Elective and cash-pay patient acquisition",
-      "Multi-provider and multi-location visibility",
+      "Demand generation across the service lines that matter most to your practice",
       "Trust signals and authority content strategy",
       "Marketing attribution and ROI accountability",
     ],
@@ -338,10 +319,7 @@ function SpecialtyCardBlock({ card, delay }: { card: SpecialtyCard; delay: numbe
         style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(20px) saturate(150%)", boxShadow: "0 8px 36px rgba(27,19,56,0.07)" }}
       >
         <div className="p-9 sm:p-10 flex flex-col">
-          <div className="flex items-center justify-between gap-4">
-            <span className="font-mono-ui text-[11px] uppercase px-3.5 py-1 rounded-full text-brand-purple border border-brand-purple/15 bg-brand-purple/8">
-              {card.tag}
-            </span>
+          <div className="flex items-center">
             <span className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
               <Icon aria-hidden size={24} className="text-white" />
             </span>
@@ -400,8 +378,7 @@ function SpecialtyCards() {
     <section id="specialty-cards" className="py-24 bg-surface-secondary" aria-labelledby="specialty-cards-h2">
       <div className="container">
         <Reveal className="text-center max-w-[620px] mx-auto">
-          <ChipLabel>Choose Your Specialty</ChipLabel>
-          <h2 id="specialty-cards-h2" className="font-extrabold mt-4" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+          <h2 id="specialty-cards-h2" className="font-extrabold mt-2" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
             <span className="block text-brand-deep">Choose the Type of Practice</span>
             <span className="block gradient-text">You Want to Grow</span>
           </h2>
@@ -418,12 +395,9 @@ function SpecialtyCards() {
 
         <Reveal delay={0.2} className="text-center mt-12">
           <p className="text-text-secondary text-[15px]">Not sure which specialty path is right for you?</p>
-          <a href="#audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
+          <Link to="/free-audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
             Not Sure? Start with the Free Audit <ArrowRight aria-hidden size={16} className="ml-2" />
-          </a>
-          <p className="mt-3 font-mono-ui text-[11px] text-text-muted">
-            For dental, chiropractic, and medical practices ready to improve patient acquisition.
-          </p>
+          </Link>
         </Reveal>
       </div>
     </section>
@@ -433,7 +407,7 @@ function SpecialtyCards() {
 /* ---------- Why Specialty Converts ---------- */
 function WhyConverts() {
   const blocks = [
-    { icon: Search, tag: "Search Intent", h3: "Aligned Search Targeting", body: "Patients searching for 'dental implants near me' have different intent from those searching 'chiropractor for back pain.' Specialty-specific keyword strategy reaches each patient at the right moment with the right message — reducing wasted spend and improving lead quality." },
+    { icon: Search, tag: "Search Intent", h3: "Aligned Search Targeting", body: "Patients searching for 'dental implants near me' have different intent from those searching 'chiropractor for back pain'. Specialty-specific keyword strategy reaches each patient at the right moment with the right message — reducing wasted spend and improving lead quality." },
     { icon: Route, tag: "Decision Journey", h3: "Mapped Patient Decision Paths", body: "A cosmetic dental patient researches for weeks before booking. A chiropractic patient in pain wants to book within hours. A medical specialist referral requires trust and authority content. Each journey needs a different content architecture, ad sequence, and conversion path." },
     { icon: DollarSign, tag: "High-Value Services", h3: "Treatment-Specific Demand Generation", body: "Implant campaigns perform differently from hygiene recall campaigns. Wellness chiro campaigns look nothing like PI injury campaigns. We build specialty-specific ad creative, landing pages, and SEO content for the services that actually drive your revenue." },
     { icon: MousePointerClick, tag: "Conversion Flow", h3: "Optimized Conversion Architecture", body: "The right conversion path for a dental implant inquiry — multi-step form with consultation framing — is completely wrong for a chiro walk-in booking. Specialty-specific CRO means the path from first visit to booked appointment matches how your patients actually decide." },
@@ -473,7 +447,7 @@ function WhyConverts() {
         </div>
 
         <Reveal delay={0.2} className="text-center mt-10">
-          <Link to="/#process" className="inline-flex items-center text-brand-purple font-semibold text-[15px] hover:underline">
+          <Link to="/how-it-works" className="inline-flex items-center text-brand-purple font-semibold text-[15px] hover:underline">
             See How Vigorant Builds Your Growth System <ArrowRight aria-hidden size={15} className="ml-1.5" />
           </Link>
         </Reveal>
@@ -578,12 +552,12 @@ function GrowthEngine() {
 /* ---------- Capabilities ---------- */
 function Capabilities() {
   const caps = [
-    { icon: Search, tag: "SEO", h: "SEO & Local Search", b: "Google, Maps, and entity-level local optimization so your practice appears where patients are searching in your market.", link: "Healthcare SEO", href: "/for-practices" },
-    { icon: Sparkles, tag: "AIO/GEO", h: "AI Engine Optimization", b: "AEO and GEO structuring that makes your practice discoverable and citable by ChatGPT, Gemini, Perplexity, and Google AI Overviews.", link: "AI search optimization", href: "/for-practices#online-visibility" },
-    { icon: Megaphone, tag: "Paid Ads", h: "Paid Advertising", b: "Specialty-targeted Google and Meta campaigns with HIPAA-aware tracking, call attribution, and ROI measurement built in.", link: "Healthcare paid ads", href: "/for-practices" },
-    { icon: Layout, tag: "Website", h: "Website Design & CRO", b: "Conversion-first websites and landing pages built for the way each specialty's patients discover, evaluate, and book care.", link: "Website design & CRO", href: "/for-practices" },
-    { icon: Star, tag: "Reputation", h: "Reputation & Social Proof", b: "Review velocity strategy, response management, and social content that builds the trust patients need before booking — and that AI engines use as credibility signals.", link: "Reputation management", href: "/for-practices#online-reputation" },
-    { icon: BarChart2, tag: "Analytics", h: "Analytics & ROI Tracking", b: "Attribution, performance dashboards, and patient acquisition cost tracking so every marketing decision is grounded in real practice economics.", link: "See how it works", href: "/#process" },
+    { icon: Search, tag: "SEO", h: "SEO & Local Search", b: "Google, Maps, and entity-level local optimization so your practice appears where patients are searching in your market.", link: "Healthcare SEO", href: "/services/seo" },
+    { icon: Sparkles, tag: "AIO/GEO", h: "AI Engine Optimization", b: "AEO and GEO structuring that makes your practice discoverable and citable by ChatGPT, Gemini, Perplexity, and Google AI Overviews.", link: "AI search optimization", href: "/services/seo/aeo" },
+    { icon: Megaphone, tag: "Paid Ads", h: "Paid Advertising", b: "Specialty-targeted Google and Meta campaigns with HIPAA-aware tracking, call attribution, and ROI measurement built in.", link: "Healthcare paid ads", href: "/services/paid-ads" },
+    { icon: Layout, tag: "Website", h: "Website Design & CRO", b: "Conversion-first websites and landing pages built for the way each specialty's patients discover, evaluate, and book care.", link: "Website design & CRO", href: "/services/website-design" },
+    { icon: Star, tag: "Reputation", h: "Reputation & Social Proof", b: "Review velocity strategy, response management, and social content that builds the trust patients need before booking — and that AI engines use as credibility signals.", link: "Reputation management", href: "/services/reputation" },
+    { icon: BarChart2, tag: "Analytics", h: "Analytics & ROI Tracking", b: "Attribution, performance dashboards, and patient acquisition cost tracking so every marketing decision is grounded in real practice economics.", link: "See how it works", href: "/how-it-works" },
   ];
   return (
     <section className="py-[88px] bg-surface-secondary" aria-labelledby="caps-h2">
@@ -609,8 +583,8 @@ function Capabilities() {
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
                       <Icon aria-hidden size={20} className="text-white" />
                     </div>
-                    <span className="font-mono-ui text-[10px] uppercase mt-3 inline-block text-brand-purple">{c.tag}</span>
-                    <h3 className="font-bold text-brand-deep mt-1" style={{ fontSize: 15 }}>{c.h}</h3>
+                    <h3 className="font-bold text-brand-deep mt-3" style={{ fontSize: 15 }}>{c.h}</h3>
+                    
                     <p className="text-text-secondary mt-2" style={{ fontSize: 13, lineHeight: 1.6 }}>{c.b}</p>
                     <Link to={c.href} className="inline-flex items-center mt-3 text-brand-purple font-semibold text-[13px] group">
                       {c.link} <ArrowRight aria-hidden size={13} className="ml-1 transition-transform group-hover:translate-x-0.5" />
@@ -629,12 +603,12 @@ function Capabilities() {
 /* ---------- Decision Guide ---------- */
 function DecisionGuide() {
   const rows = [
-    { s: "New practice, launching online presence", p: "Dental / Chiro / Medical + Visibility first", w: "Choose specialty", href: "#specialty-cards" },
-    { s: "Established practice, slow new patient growth", p: "More New Patients + SEO + Paid Ads", w: "More new patients", href: "/for-practices#more-new-patients" },
-    { s: "Good traffic but appointments not converting", p: "Lead Conversion + Website CRO", w: "Lead conversion", href: "/for-practices#lead-conversion" },
-    { s: "Multi-location or group practice", p: "Scale Your Practice + All specialties", w: "Scale your practice", href: "/for-practices#scale" },
-    { s: "Busy but not profitable — wrong patient mix", p: "High-Value Patients + Specialty targeting", w: "High-value patients", href: "/for-practices#high-value-patients" },
-    { s: "Paying for marketing with no clear ROI", p: "Fix Poor Marketing ROI + Attribution setup", w: "Marketing ROI", href: "/for-practices#marketing-roi" },
+    { s: "New practice, launching online presence", p: "Start with a specialty and build visibility first", w: "Choose your specialty", href: "#specialty-cards" },
+    { s: "Established practice, slow new patient growth", p: "More New Patients + SEO + Paid Ads", w: "More new patients", href: "/for-practices/more-new-patients" },
+    { s: "Good traffic but appointments not converting", p: "Lead Conversion + Website CRO", w: "Lead conversion", href: "/for-practices/lead-conversion" },
+    { s: "Multi-location or group practice", p: "Scale Your Practice + All specialties", w: "Scale your practice", href: "/for-practices/scale-your-practice" },
+    { s: "Busy but not profitable — wrong patient mix", p: "High-Value Patients + Specialty targeting", w: "High-value patients", href: "/for-practices/high-value-patients" },
+    { s: "Paying for marketing with no clear ROI", p: "Fix Poor Marketing ROI + Attribution setup", w: "Marketing ROI", href: "/for-practices/marketing-roi" },
   ];
   return (
     <section className="py-[88px] bg-background" aria-labelledby="decision-h2">
@@ -685,9 +659,9 @@ function DecisionGuide() {
           <p className="text-text-secondary text-[15px] max-w-[520px] mx-auto">
             Still not sure? Let us review your practice and recommend the right path.
           </p>
-          <a href="#audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
+          <Link to="/free-audit" className="inline-flex items-center mt-4 btn-primary-grad font-bold rounded-full px-7 py-3.5 text-[15px]">
             Get a Free Practice Growth Audit <ArrowRight aria-hidden size={16} className="ml-2" />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>
@@ -817,13 +791,13 @@ function FinalCta() {
           We accept 8 new audit requests per month · 3 spots remaining
         </p>
         <div className="mt-6">
-          <a
-            href="#audit"
+          <Link
+            to="/free-audit"
             className="inline-flex items-center justify-center rounded-full font-bold transition-all hover:scale-[1.02]"
             style={{ background: "white", color: "#1b1338", padding: "18px 44px", fontSize: 17, boxShadow: "0 4px 24px rgba(0,0,0,0.2)" }}
           >
             Request Your Free Growth Audit <ArrowRight aria-hidden size={18} className="ml-2" />
-          </a>
+          </Link>
         </div>
         <p className="mt-4" style={{ fontSize: 14, color: "rgba(255,255,255,0.75)" }}>
           No commitment. No hard sell. Just clarity on what your practice needs to grow.
@@ -855,9 +829,9 @@ function MobileStickyCta() {
   if (dismissed || !show) return null;
   return (
     <div className="md:hidden fixed bottom-0 inset-x-0 z-[200] flex items-center gap-3" style={{ background: "#1b1338", borderTop: "1px solid rgba(100,79,249,0.2)", padding: "12px 20px calc(12px + env(safe-area-inset-bottom)) 20px" }}>
-      <a href="#audit" className="flex-1 btn-primary-grad font-bold rounded-full text-center py-3 text-[14px]">
+      <Link to="/free-audit" className="flex-1 btn-primary-grad font-bold rounded-full text-center py-3 text-[14px]">
         Get Free Audit
-      </a>
+      </Link>
       <button
         aria-label="Dismiss"
         onClick={() => { sessionStorage.setItem("solutions-sticky-dismissed", "1"); setDismissed(true); }}
