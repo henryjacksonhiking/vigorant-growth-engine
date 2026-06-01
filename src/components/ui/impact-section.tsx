@@ -82,22 +82,24 @@ export default function ImpactSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.15 }}
-                    className="h-full w-full grid grid-cols-1 md:grid-cols-2"
+                    className="h-full w-full flex items-center justify-center"
                   >
-                    <div className="p-7 md:p-9 flex flex-col justify-between min-w-0">
-                      <div>
-                        <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] opacity-80">
-                          {card.tag}
-                        </span>
-                        <h3 className="mt-3 font-extrabold leading-[1.1] text-[24px] md:text-[30px]">
-                          {card.client}
-                        </h3>
-                        <p className={`mt-4 text-[14px] leading-relaxed ${card.palette.subtle}`}>
-                          {card.challenge.length > 180
-                            ? card.challenge.slice(0, 180) + "…"
-                            : card.challenge}
-                        </p>
+                    <div className="p-7 md:p-10 flex flex-col items-center justify-center text-center max-w-xl mx-auto">
+                      <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] opacity-80">
+                        {card.tag}
+                      </span>
+                      <h3 className="mt-3 font-extrabold leading-[1.1] text-[24px] md:text-[30px]">
+                        {card.client}
+                      </h3>
+                      <div className="mt-5 inline-flex flex-col items-center">
+                        <span className="font-extrabold text-[44px] md:text-[56px] leading-none">{card.metric}</span>
+                        <span className={`mt-2 text-[13px] ${card.palette.subtle}`}>{card.label}</span>
                       </div>
+                      <p className={`mt-5 text-[14px] leading-relaxed ${card.palette.subtle}`}>
+                        {card.challenge.length > 200
+                          ? card.challenge.slice(0, 200) + "…"
+                          : card.challenge}
+                      </p>
                       <Link
                         to={`/case-studies/${card.slug}`}
                         className="mt-6 inline-flex items-center gap-2 font-bold text-[14px] hover:gap-3 transition-all"
@@ -105,29 +107,15 @@ export default function ImpactSection() {
                         Read case study <ArrowRight size={16} aria-hidden />
                       </Link>
                     </div>
-                    <div className="relative h-full min-h-[200px]">
-                      <img
-                        src={card.image}
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/60 backdrop-blur px-5 pt-5 pb-4 text-white">
-                        <div className="font-extrabold text-[28px] leading-none">{card.metric}</div>
-                        <div className="mt-2 text-[12px] opacity-90 line-clamp-2">{card.label}</div>
-                      </div>
-                    </div>
                   </motion.div>
                 ) : (
-                  <div className="h-full w-full pt-7 px-5 pb-6 flex flex-col justify-between">
-                    <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] opacity-80 [writing-mode:vertical-rl] md:[writing-mode:vertical-rl] rotate-180 self-end">
+                  <div className="h-full w-full pt-7 px-5 pb-6 flex flex-col items-center justify-center text-center relative">
+                    <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] opacity-80 [writing-mode:vertical-rl] rotate-180 absolute top-5 right-3">
                       {card.tag}
                     </span>
-                    <div>
-                      <div className="font-extrabold text-[34px] leading-[1.1]">{card.metric}</div>
-                      <div className={`mt-2 text-[13px] font-medium ${card.palette.subtle} line-clamp-2`}>
-                        {card.label}
-                      </div>
+                    <div className="font-extrabold text-[40px] leading-[1.05]">{card.metric}</div>
+                    <div className={`mt-3 text-[13px] font-medium ${card.palette.subtle} line-clamp-3 max-w-[180px]`}>
+                      {card.label}
                     </div>
                   </div>
                 )}
