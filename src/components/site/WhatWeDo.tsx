@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Search, Sparkles, MousePointerClick, Layout, Workflow, BarChart3, Star, Building2, ArrowRight } from "lucide-react";
 
@@ -13,6 +14,9 @@ const tiles = [
 ];
 
 export default function WhatWeDo() {
+  const [active, setActive] = useState(0);
+  const ActiveIcon = tiles[active].icon;
+
   return (
     <Section id="what-we-do" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
@@ -23,11 +27,116 @@ export default function WhatWeDo() {
         </p>
       </Reveal>
 
-      <div className="ui-card-grid mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+      {/* Desktop / tablet: circular orbit */}
+      <div className="hidden md:block mt-16">
+        <div
+          className="relative mx-auto"
+          style={{ width: "min(720px, 92vw)", aspectRatio: "1 / 1" }}
+        >
+          {/* Decorative orbit rings */}
+          <div aria-hidden className="absolute inset-0 rounded-full border border-brand-purple/15" />
+          <div aria-hidden className="absolute inset-[6%] rounded-full border border-dashed border-brand-purple/20" />
+          <div aria-hidden className="absolute inset-[12%] rounded-full border border-brand-purple/10" />
+          <div
+            aria-hidden
+            className="absolute inset-[18%] rounded-full"
+            style={{ background: "radial-gradient(circle at 50% 50%, hsl(247 93% 64% / 0.06), transparent 70%)" }}
+          />
+
+          {/* Orbit nodes */}
+          {tiles.map((t, i) => {
+            const angle = (i / tiles.length) * 2 * Math.PI - Math.PI / 2;
+            const r = 47; // % from center
+            const x = 50 + r * Math.cos(angle);
+            const y = 50 + r * Math.sin(angle);
+            const isActive = active === i;
+            const Icon = t.icon;
+            return (
+              <button
+                key={t.title}
+                onClick={() => setActive(i)}
+                aria-label={t.title}
+                aria-pressed={isActive}
+                className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none"
+                style={{ left: `${x}%`, top: `${y}%` }}
+              >
+                <span
+                  className={`flex items-center justify-center rounded-full transition-all duration-300 ${
+                    isActive
+                      ? "w-20 h-20 lg:w-24 lg:h-24 scale-110 shadow-[var(--shadow-glow)]"
+                      : "w-16 h-16 lg:w-20 lg:h-20 hover:scale-105"
+                  }`}
+                  style={{
+                    background: isActive
+                      ? "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))"
+                      : "linear-gradient(135deg, hsl(247 93% 64% / 0.92), hsl(248 49% 22%))",
+                    boxShadow: isActive
+                      ? "0 12px 40px hsl(247 93% 64% / 0.45), 0 0 0 6px hsl(247 93% 64% / 0.12)"
+                      : "0 8px 24px hsl(248 49% 15% / 0.18)",
+                  }}
+                >
+                  <Icon size={isActive ? 30 : 26} className="text-white" />
+                </span>
+              </button>
+            );
+          })}
+
+          {/* Center card */}
+          <div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-center px-8 py-10 flex flex-col items-center justify-center"
+            style={{
+              width: "44%",
+              aspectRatio: "1 / 1",
+              boxShadow: "var(--shadow-glass)",
+              border: "1px solid hsl(247 93% 64% / 0.18)",
+            }}
+          >
+            <div
+              aria-hidden
+              className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+              style={{ background: "linear-gradient(135deg, hsl(247 93% 64% / 0.12), hsl(248 100% 75% / 0.18))" }}
+            >
+              <ActiveIcon size={22} className="text-brand-purple" />
+            </div>
+            <h3 className="font-extrabold text-brand-deep text-[17px] lg:text-[19px] leading-tight">
+              {tiles[active].title}
+            </h3>
+            <p className="mt-2 text-ink-secondary text-[13px] lg:text-[14px] leading-relaxed line-clamp-5">
+              {tiles[active].body}
+            </p>
+            <a
+              href="#process"
+              className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-sm"
+            >
+              Know more <ArrowRight aria-hidden size={14} />
+            </a>
+          </div>
+        </div>
+
+        {/* Labels grid below for clarity */}
+        <div className="mt-8 grid grid-cols-4 gap-3 max-w-4xl mx-auto">
+          {tiles.map((t, i) => (
+            <button
+              key={t.title}
+              onClick={() => setActive(i)}
+              className={`text-left text-[12px] font-mono-ui uppercase tracking-[0.08em] px-3 py-2 rounded-lg transition-colors ${
+                active === i
+                  ? "bg-brand-purple/10 text-brand-purple"
+                  : "text-ink-secondary hover:text-brand-purple hover:bg-brand-purple/5"
+              }`}
+            >
+              {t.title}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile: stacked cards */}
+      <div className="md:hidden mt-10 grid grid-cols-1 gap-4">
         {tiles.map((t, i) => (
-          <Reveal key={t.title} delay={i * 0.04} className="h-full">
+          <Reveal key={t.title} delay={i * 0.03}>
             <article
-              className="ui-card gap-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-purple/40 sm:flex-row"
+              className="ui-card gap-4 flex flex-row"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div
@@ -38,7 +147,7 @@ export default function WhatWeDo() {
                 <t.icon size={20} className="text-white" />
               </div>
               <div className="ui-card-body">
-                <h3 className="ui-card-heading text-[17px]">{t.title}</h3>
+                <h3 className="ui-card-heading text-[16px]">{t.title}</h3>
                 <p className="ui-card-text">{t.body}</p>
               </div>
             </article>
