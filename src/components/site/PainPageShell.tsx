@@ -103,8 +103,8 @@ export function PainHero({ breadcrumbLabel, breadcrumbTrail, chip, titleLines, s
 
         {proofStrip && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}
-            className="mt-10 inline-block bg-surface-secondary border border-brand-purple/12 rounded-full px-7 py-3 max-w-[700px]">
-            <p className="font-mono-ui text-[12px] text-brand-purple">{proofStrip}</p>
+            className="mt-10 block sm:inline-block bg-surface-secondary border border-brand-purple/12 rounded-2xl sm:rounded-full px-5 sm:px-7 py-3 max-w-[700px] mx-auto text-center">
+            <p className="font-mono-ui text-[12px] text-brand-purple break-words">{proofStrip}</p>
           </motion.div>
         )}
       </div>
