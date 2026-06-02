@@ -91,12 +91,12 @@ export default function Testimonials() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="ui-card-heading text-[15px] truncate min-h-0">{t.practice}</div>
-                  <div className="text-[12px] text-ink-secondary mt-0.5 leading-relaxed break-words">
-                    <span className="block sm:inline">{t.doctor}</span>
-                    <span className="hidden sm:inline"> · </span>
-                    <span className="block sm:inline">{t.specialty}</span>
-                    <span className="hidden sm:inline"> · </span>
-                    <span className="block sm:inline">{t.city}</span>
+                  <div className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[12px] leading-relaxed text-ink-secondary">
+                    <span className="whitespace-nowrap">{t.doctor}</span>
+                    <span aria-hidden className="text-brand-purple/35">•</span>
+                    <span className="whitespace-nowrap">{t.specialty}</span>
+                    <span aria-hidden className="text-brand-purple/35">•</span>
+                    <span className="whitespace-nowrap">{t.city}</span>
                   </div>
                 </div>
               </header>
