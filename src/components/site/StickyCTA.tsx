@@ -23,7 +23,7 @@ export default function StickyCTA() {
   useEffect(() => {
     const applyInset = () => {
       if (window.matchMedia("(max-width: 639px)").matches) {
-        document.body.style.paddingBottom = show ? "88px" : "";
+        document.body.style.paddingBottom = "";
       } else {
         document.body.style.paddingBottom = "";
       }
@@ -52,29 +52,7 @@ export default function StickyCTA() {
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"
       }`}
     >
-      {/* Mobile: two-button bar */}
-      <div className="sm:hidden grid grid-cols-[minmax(0,1fr)_auto_32px] items-stretch gap-2 rounded-2xl bg-white/94 backdrop-blur border border-brand-purple/15 px-2 py-2 shadow-[0_10px_24px_hsl(248_49%_15%/0.12)]">
-        <a
-          href="/free-audit"
-          className="inline-flex items-center justify-center font-bold text-[13px] text-white rounded-full px-3 min-h-[40px] text-center whitespace-nowrap"
-          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
-        >
-          Free Audit
-        </a>
-        <a
-          href={`tel:${PHONE}`}
-          className="inline-flex items-center justify-center gap-1.5 font-bold text-[12px] text-brand-deep border-2 border-brand-purple/35 rounded-full px-3 min-h-[40px] whitespace-nowrap"
-        >
-          <Phone aria-hidden size={14} /> Call
-        </a>
-        <button
-          onClick={dismiss}
-          aria-label="Dismiss"
-          className="text-ink-secondary min-w-[32px] min-h-[32px] inline-flex items-center justify-center self-center"
-        >
-          <X aria-hidden size={15} />
-        </button>
-      </div>
+      <div className="sm:hidden hidden" aria-hidden />
 
       {/* Desktop: pill */}
       <div
