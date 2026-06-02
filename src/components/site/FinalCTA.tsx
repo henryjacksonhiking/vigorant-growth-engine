@@ -53,7 +53,8 @@ export default function FinalCTA() {
 
         <Link
           to="/free-audit"
-          className="mt-8 inline-flex items-center bg-white text-brand-deep font-bold text-[16px] sm:text-[17px] px-8 sm:px-10 py-4 rounded-full transition-all duration-300 hover:bg-[hsl(248_100%_75%)] hover:text-white hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(248_100%_75%/0.45)] min-h-[52px]"
+          style={{ color: "hsl(var(--brand-deep))" }}
+          className="mt-8 inline-flex items-center bg-white font-bold text-[16px] sm:text-[17px] px-8 sm:px-10 py-4 rounded-full transition-all duration-300 hover:!text-white hover:bg-[hsl(248_100%_75%)] hover:scale-[1.02] hover:shadow-[0_8px_32px_hsl(248_100%_75%/0.45)] min-h-[52px]"
         >
           Request Your Free Growth Audit <span aria-hidden className="ml-1">→</span>
         </Link>
