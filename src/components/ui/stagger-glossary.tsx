@@ -67,6 +67,7 @@ export const StaggerGlossary: React.FC<{ items: Omit<GlossaryItem, "tempId">[] }
   items,
 }) => {
   const [cardSize, setCardSize] = useState(340);
+  const [isMobile, setIsMobile] = useState(false);
   const [list, setList] = useState<GlossaryItem[]>(
     items.map((it, i) => ({ ...it, tempId: i }))
   );
@@ -92,12 +93,33 @@ export const StaggerGlossary: React.FC<{ items: Omit<GlossaryItem, "tempId">[] }
   useEffect(() => {
     const update = () => {
       const sm = window.matchMedia("(min-width: 640px)").matches;
+      setIsMobile(!sm);
       setCardSize(sm ? 340 : 270);
     };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
+
+  if (isMobile) {
+    return (
+      <div className="grid grid-cols-1 gap-4">
+        {items.map((item, index) => (
+          <article
+            key={item.term}
+            className="rounded-2xl border bg-background p-5"
+            style={{ borderColor: "hsl(var(--brand-purple) / 0.12)", boxShadow: "var(--shadow-card)" }}
+          >
+            <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">
+              Term {index + 1}
+            </div>
+            <h3 className="mt-2 text-[17px] font-extrabold leading-snug text-brand-deep break-words">{item.term}</h3>
+            <p className="mt-3 text-[14px] leading-relaxed text-ink-secondary break-words">{item.body}</p>
+          </article>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div

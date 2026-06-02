@@ -44,7 +44,7 @@ export default function Comparison() {
                 className="group relative z-10 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-0"
               >
                 {/* Mobile row label */}
-                <div className="md:hidden text-center pt-1">
+                <div className="md:hidden text-center pt-1 px-3">
                   <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] text-brand-purple">
                     {r.label}
                   </span>
@@ -52,7 +52,7 @@ export default function Comparison() {
 
                 {/* Traditional */}
                 <div
-                  className="flex-1 rounded-2xl p-4 md:p-6 transition-transform duration-300 md:group-hover:-translate-x-2 md:text-right md:mr-8"
+                  className="flex-1 rounded-2xl p-4 md:p-6 transition-transform duration-300 md:group-hover:-translate-x-2 md:text-right md:mr-8 w-full"
                   style={{
                     background: "hsl(0 0% 100%)",
                     border: "1px solid hsl(var(--brand-purple) / 0.10)",
@@ -70,7 +70,7 @@ export default function Comparison() {
                       <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] text-ink-secondary/70 block mb-0.5">
                         Traditional Agency
                       </span>
-                      <p className="text-ink-secondary text-[14px] break-words">{r.traditional}</p>
+                      <p className="text-ink-secondary text-[14px] break-words leading-relaxed">{r.traditional}</p>
                     </div>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Comparison() {
 
                 {/* Vigorant */}
                 <div
-                  className="flex-1 rounded-2xl p-4 md:p-6 transition-all duration-300 md:group-hover:translate-x-2 md:ml-8 relative overflow-hidden"
+                  className="flex-1 rounded-2xl p-4 md:p-6 transition-all duration-300 md:group-hover:translate-x-2 md:ml-8 relative overflow-hidden w-full"
                   style={{
                     background: "hsl(0 0% 100%)",
                     border: "2px solid transparent",
@@ -132,7 +132,7 @@ export default function Comparison() {
                       <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] mb-0.5 text-brand-purple block md:hidden">
                         Vigorant
                       </span>
-                      <p className="text-[14px] font-semibold text-brand-deep break-words">
+                      <p className="text-[14px] font-semibold text-brand-deep break-words leading-relaxed">
                         {r.vigorant}
                       </p>
                     </div>
