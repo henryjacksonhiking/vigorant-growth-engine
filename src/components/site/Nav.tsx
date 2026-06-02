@@ -141,7 +141,7 @@ export default function Nav() {
           <img src={logoHorizontal} alt="Vigorant" className="h-7 sm:h-8 md:h-9 w-auto" />
         </a>
 
-        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-2 flex-nowrap ml-10 mr-auto" aria-label="Primary">
+        <nav ref={desktopNavRef} className="hidden xl:flex items-center gap-2 flex-nowrap mx-auto" aria-label="Primary">
           {links.map((item) => {
             if (!item.children?.length) {
               const active = isActive(item.href);

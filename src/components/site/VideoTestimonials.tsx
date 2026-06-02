@@ -115,8 +115,8 @@ export default function VideoTestimonials() {
                   {v.overlay}
                 </div>
                 <span aria-hidden className="absolute inset-0 flex items-center justify-center">
-                  <span className="w-16 h-16 rounded-full bg-white/95 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 pulse-dot shadow-xl">
-                    <Play size={24} className="text-brand-deep ml-1" fill="currentColor" />
+                  <span className="w-11 h-11 rounded-full bg-white/55 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:bg-white/85 group-hover:scale-110 shadow-md">
+                    <Play size={16} className="text-brand-deep ml-0.5" fill="currentColor" />
                   </span>
                 </span>
               </button>
