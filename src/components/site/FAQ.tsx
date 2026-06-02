@@ -42,11 +42,11 @@ export default function FAQ() {
                   <button
                     id={btnId}
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-start justify-between gap-4 sm:gap-6 text-left px-5 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
+                    className="w-full flex items-start justify-between gap-3 sm:gap-6 text-left px-4 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                   >
-                    <span className="text-[16px] sm:text-[17px] font-semibold text-brand-deep">{f.q}</span>
+                    <span className="text-[15px] sm:text-[17px] font-semibold text-brand-deep min-w-0 flex-1 break-words pr-1">{f.q}</span>
                     <Plus
                       aria-hidden
                       size={20}
