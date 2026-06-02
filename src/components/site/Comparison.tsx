@@ -89,43 +89,24 @@ export default function Comparison() {
                 {/* Vigorant */}
                 <div
                   className="flex-1 rounded-2xl p-5 md:p-6 transition-all duration-300 md:group-hover:translate-x-2 md:ml-8 relative overflow-hidden"
-                  style={
-                    isLast
-                      ? {
-                          background: "hsl(var(--brand-deep))",
-                          border: "2px solid hsl(var(--brand-purple))",
-                          boxShadow: "0 20px 40px -15px hsl(var(--brand-purple) / 0.35)",
-                        }
-                      : {
-                          background: "hsl(0 0% 100%)",
-                          border: "2px solid transparent",
-                          boxShadow: "var(--shadow-card), 0 0 0 1px hsl(var(--brand-purple) / 0.10) inset",
-                        }
-                  }
+                  style={{
+                    background: "hsl(0 0% 100%)",
+                    border: "2px solid transparent",
+                    boxShadow: "var(--shadow-card), 0 0 0 1px hsl(var(--brand-purple) / 0.10) inset",
+                  }}
                 >
                   <div className="flex items-center gap-3 relative">
                     <span
                       className="w-7 h-7 rounded-full inline-flex items-center justify-center shrink-0"
-                      style={{ background: isLast ? "hsl(var(--brand-purple))" : "hsl(var(--brand-purple) / 0.12)" }}
+                      style={{ background: "hsl(var(--brand-purple) / 0.12)" }}
                     >
-                      <Check
-                        aria-hidden
-                        size={14}
-                        strokeWidth={3}
-                        className={isLast ? "text-white" : "text-brand-purple"}
-                      />
+                      <Check aria-hidden size={14} strokeWidth={3} className="text-brand-purple" />
                     </span>
                     <div>
-                      <span
-                        className="font-mono-ui text-[10px] uppercase tracking-[0.14em] block mb-0.5"
-                        style={{ color: isLast ? "hsl(0 0% 100% / 0.65)" : "hsl(var(--brand-purple))" }}
-                      >
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.14em] block mb-0.5 text-brand-purple">
                         {r.label}
                       </span>
-                      <p
-                        className="text-[14px] font-semibold"
-                        style={{ color: isLast ? "hsl(0 0% 100%)" : "hsl(var(--brand-deep))" }}
-                      >
+                      <p className="text-[14px] font-semibold text-brand-deep">
                         {r.vigorant}
                       </p>
                     </div>
