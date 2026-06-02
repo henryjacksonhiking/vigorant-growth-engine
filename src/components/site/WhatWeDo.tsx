@@ -146,7 +146,7 @@ export default function WhatWeDo() {
         {tiles.map((t, i) => (
           <Reveal key={t.title} delay={i * 0.03}>
             <article
-              className="ui-card gap-4 flex flex-row"
+              className="ui-card gap-4 flex flex-row overflow-hidden"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <div
@@ -156,9 +156,9 @@ export default function WhatWeDo() {
               >
                 <t.icon size={20} className="text-white" />
               </div>
-              <div className="ui-card-body">
-                <h3 className="ui-card-heading text-[16px]">{t.title}</h3>
-                <p className="ui-card-text">{t.body}</p>
+              <div className="ui-card-body min-w-0 flex-1">
+                <h3 className="ui-card-heading text-[16px] break-words">{t.title}</h3>
+                <p className="ui-card-text break-words">{t.body}</p>
               </div>
             </article>
           </Reveal>
