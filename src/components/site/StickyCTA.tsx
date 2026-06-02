@@ -22,7 +22,7 @@ export default function StickyCTA() {
   useEffect(() => {
     const applyInset = () => {
       if (window.matchMedia("(max-width: 639px)").matches) {
-        document.body.style.paddingBottom = show ? "88px" : "";
+        document.body.style.paddingBottom = show ? "108px" : "";
       } else {
         document.body.style.paddingBottom = "";
       }
@@ -47,31 +47,31 @@ export default function StickyCTA() {
       role="region"
       aria-label="Get your free Vigorant growth audit"
       aria-hidden={!show}
-      className={`fixed z-[90] left-0 right-0 bottom-0 sm:left-auto sm:right-6 sm:bottom-6 transition-all duration-500 ${
+      className={`fixed z-[90] left-3 right-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 transition-all duration-500 ${
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       {/* Mobile: two-button bar */}
-      <div className="sm:hidden grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_40px] items-stretch gap-2 px-3 py-2.5 bg-white border-t border-brand-purple/15 shadow-[0_-8px_24px_hsl(248_49%_15%/0.10)]">
+      <div className="sm:hidden grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_36px] items-stretch gap-2 rounded-2xl bg-white/96 backdrop-blur border border-brand-purple/15 px-2.5 py-2.5 shadow-[0_10px_28px_hsl(248_49%_15%/0.14)]">
         <a
           href="/free-audit"
-          className="inline-flex items-center justify-center font-bold text-[13px] text-white rounded-full px-3 min-h-[46px] text-center whitespace-nowrap"
+          className="inline-flex items-center justify-center font-bold text-[13px] text-white rounded-full px-3 min-h-[44px] text-center whitespace-nowrap"
           style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
         >
           Free Audit
         </a>
         <a
           href={`tel:${PHONE}`}
-          className="inline-flex items-center justify-center gap-1.5 font-bold text-[13px] text-brand-deep border-2 border-brand-purple/40 rounded-full px-3 min-h-[46px] whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-1.5 font-bold text-[13px] text-brand-deep border-2 border-brand-purple/40 rounded-full px-3 min-h-[44px] whitespace-nowrap"
         >
           <Phone aria-hidden size={15} /> Call Us
         </a>
         <button
           onClick={dismiss}
           aria-label="Dismiss"
-          className="text-ink-secondary p-1.5 min-w-[40px] min-h-[40px] inline-flex items-center justify-center"
+          className="text-ink-secondary min-w-[36px] min-h-[36px] inline-flex items-center justify-center self-center"
         >
-          <X aria-hidden size={18} />
+          <X aria-hidden size={16} />
         </button>
       </div>
 
