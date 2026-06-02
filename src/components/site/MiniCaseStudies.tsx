@@ -60,7 +60,7 @@ export default function MiniCaseStudies() {
         {studies.map((s, i) => (
           <Reveal key={s.type} delay={i * 0.06} className="h-full">
             <article
-              className="group relative h-full flex flex-col rounded-2xl bg-white border border-brand-purple/10 p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/30 hover:shadow-[0_18px_50px_-12px_hsl(247_93%_64%/0.25)] overflow-hidden"
+              className="group relative h-full flex flex-col rounded-2xl bg-white border border-brand-purple/10 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-purple/30 hover:shadow-[0_18px_50px_-12px_hsl(247_93%_64%/0.25)] overflow-hidden"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               {/* Top accent on hover */}
@@ -70,7 +70,7 @@ export default function MiniCaseStudies() {
               />
 
               {/* Header */}
-              <header className="flex items-center gap-3">
+              <header className="flex items-center gap-3 min-w-0">
                 <div
                   aria-hidden
                   className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
@@ -78,11 +78,11 @@ export default function MiniCaseStudies() {
                 >
                   {s.initial}
                 </div>
-                <div className="min-w-0">
-                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">
+                <div className="min-w-0 flex-1">
+                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple truncate">
                     {s.tag}
                   </div>
-                  <h3 className="mt-0.5 font-bold text-brand-deep text-[15px] leading-snug truncate">
+                  <h3 className="mt-0.5 font-bold text-brand-deep text-[15px] leading-snug break-words">
                     {s.type}
                   </h3>
                 </div>
