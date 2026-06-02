@@ -70,16 +70,16 @@ export default function Hero() {
 
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}
-            className="mt-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 font-mono-ui text-[12px] text-ink-secondary list-none p-0"
+            className="mt-7 grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-x-5 gap-y-2 font-mono-ui text-[12px] text-ink-secondary list-none p-0 max-w-[320px] sm:max-w-none mx-auto"
             aria-label="Trust signals"
           >
-            <li><span aria-hidden>★★★★★</span> 4.9 on Google</li>
+            <li className="text-center sm:text-left"><span aria-hidden>★★★★★</span> 4.9 on Google</li>
             <li aria-hidden><Sep /></li>
-            <li>120+ Practices</li>
+            <li className="text-center sm:text-left">120+ Practices</li>
             <li aria-hidden><Sep /></li>
-            <li>No long-term contracts</li>
+            <li className="text-center sm:text-left">No long-term contracts</li>
             <li aria-hidden><Sep /></li>
-            <li>HIPAA Compliant</li>
+            <li className="text-center sm:text-left">HIPAA Compliant</li>
           </motion.ul>
         </div>
 
