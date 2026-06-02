@@ -78,7 +78,7 @@ export default function FreeAudit() {
         <link rel="canonical" href="https://vigorant.com/free-audit" />
       </Helmet>
       <Nav /><GlobalFx />
-      <main className="text-left">
+      <main className="text-center sm:text-left">
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">
           <HeroOrbs />
           <div aria-hidden className="absolute inset-0 bg-grid pointer-events-none" />
