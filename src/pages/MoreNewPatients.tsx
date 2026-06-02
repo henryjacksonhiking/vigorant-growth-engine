@@ -489,16 +489,18 @@ function Differentiation() {
           <div data-analytics-event="comparison_table_view"
             className="mt-10 max-w-[880px] mx-auto rounded-[18px] overflow-hidden"
             style={{ background: "hsl(0 0% 100% / 0.04)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
-            <div className="grid grid-cols-2 text-[14px] font-semibold" style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
+            <div className="hidden sm:grid grid-cols-2 text-[14px] font-semibold" style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
               <div className="px-5 sm:px-6 py-4 text-white/40" style={{ background: "hsl(0 0% 100% / 0.02)" }}>Traditional Marketing Vendor</div>
               <div className="px-5 sm:px-6 py-4 text-brand-bright" style={{ background: "hsl(247 93% 64% / 0.12)", borderLeft: "1px solid hsl(247 93% 64% / 0.2)" }}>Vigorant Growth System</div>
             </div>
             {COMP_ROWS.map(([left, right], i) => (
-              <div key={i} className="grid grid-cols-2 text-[13.5px]" style={{ borderBottom: i < COMP_ROWS.length - 1 ? "1px solid hsl(0 0% 100% / 0.04)" : "none" }}>
-                <div className="px-5 sm:px-6 py-3.5 text-white/60">
+              <div key={i} className="grid grid-cols-1 sm:grid-cols-2 text-[13.5px]" style={{ borderBottom: i < COMP_ROWS.length - 1 ? "1px solid hsl(0 0% 100% / 0.04)" : "none" }}>
+                <div className="px-5 sm:px-6 py-3.5 text-white/60 border-b sm:border-b-0 border-white/5">
+                  <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-white/40 block sm:hidden mb-1">Traditional</span>
                   <span aria-hidden className="mr-1.5" style={{ color: "hsl(0 100% 70% / 0.65)" }}>✗</span>{left}
                 </div>
-                <div className="px-5 sm:px-6 py-3.5 text-white/85" style={{ borderLeft: "1px solid hsl(0 0% 100% / 0.04)" }}>
+                <div className="px-5 sm:px-6 py-3.5 text-white/85 sm:border-l border-white/5">
+                  <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-bright block sm:hidden mb-1">Vigorant</span>
                   <span aria-hidden className="mr-1.5 text-brand-bright">✓</span>{right}
                 </div>
               </div>
