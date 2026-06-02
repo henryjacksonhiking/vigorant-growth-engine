@@ -335,6 +335,22 @@
     main .btn-secondary-outline {
       white-space: nowrap;
     }
+    /* Mobile safety: prevent any text/word from forcing horizontal scroll */
+    main section .container p,
+    main section .container h1,
+    main section .container h2,
+    main section .container h3,
+    main section .container h4,
+    main section .container li,
+    main section .container span:not([class*="truncate"]) {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    /* Ensure all interactive elements are tappable */
+    main section .container a,
+    main section .container button {
+      max-width: 100%;
+    }
   }
 
   /* Equal-size cards across desktop & mobile: enforce uniform card
