@@ -1,4 +1,5 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
+import { StaggerGlossary } from "@/components/ui/stagger-glossary";
 
 const defs = [
   { term: "What is AIO (AI Overview Optimization)?", body: "AI Overview Optimization is the practice of structuring website content so it appears in Google's AI-generated answer panels — the summaries that appear above traditional search results. For healthcare practices, appearing in AI Overviews significantly increases brand visibility and patient trust before they even click a link." },
@@ -19,23 +20,9 @@ export default function AIDefinitions() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
-        {defs.map((d, i) => (
-          <Reveal
-            key={d.term}
-            delay={i * 0.05}
-            className={i === defs.length - 1 ? "md:col-span-2 md:max-w-xl md:mx-auto" : ""}
-          >
-            <article
-              className="h-full bg-white border border-brand-purple/15 border-l-4 border-l-brand-purple rounded-2xl p-6 sm:p-7"
-              style={{ boxShadow: "var(--shadow-card)" }}
-            >
-              <h3 className="font-extrabold text-brand-deep text-[17px] sm:text-[18px] leading-snug">{d.term}</h3>
-              <p className="mt-3 text-ink-secondary text-[14px] sm:text-[15px] leading-relaxed">{d.body}</p>
-            </article>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal className="mt-10">
+        <StaggerGlossary items={defs} />
+      </Reveal>
 
       <Reveal className="text-center mt-12 max-w-2xl mx-auto">
         <p className="font-display font-bold text-brand-deep text-[20px] sm:text-[24px] leading-snug">
@@ -48,3 +35,4 @@ export default function AIDefinitions() {
     </Section>
   );
 }
+
