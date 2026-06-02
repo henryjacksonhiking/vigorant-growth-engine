@@ -310,20 +310,6 @@
     main .btn-secondary-outline {
       white-space: nowrap;
     }
-    /* Scope left alignment to explicit card/list content instead of every section child */
-    main section .container .ui-card,
-    main section .container .ui-card *,
-    main section .container .ui-card-compact,
-    main section .container .ui-card-compact *,
-    main section .container .ui-card-dark,
-    main section .container .ui-card-dark *,
-    main section .container .float-card,
-    main section .container .float-card *,
-    main section .container .ui-list,
-    main section .container .ui-list *,
-    main section .container blockquote {
-      text-align: left;
-    }
     /* Mobile safety: prevent any text/word from forcing horizontal scroll */
     main section .container p,
     main section .container h1,
