@@ -324,13 +324,6 @@
     main section .container blockquote {
       text-align: left;
     }
-    main section .container .ui-card .flex,
-    main section .container .ui-card-compact .flex,
-    main section .container .ui-card-dark .flex,
-    main section .container .float-card .flex,
-    main section .container .ui-list .flex {
-      justify-content: flex-start;
-    }
     /* Mobile safety: prevent any text/word from forcing horizontal scroll */
     main section .container p,
     main section .container h1,
