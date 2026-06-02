@@ -74,7 +74,7 @@ export default function SolutionsChiropractic() {
       </Helmet>
 
       <Nav /><GlobalFx />
-      <main className="text-left">
+      <main className="text-center sm:text-left">
         {/* HERO */}
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">
           <HeroOrbs />

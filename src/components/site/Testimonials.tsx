@@ -78,18 +78,18 @@ export default function Testimonials() {
         {filtered.map((t, i) => (
           <ScrollTiltedItem key={t.practice} side={i % 2 === 0 ? "L" : "R"} className="h-full">
             <article
-              className="ui-card relative"
+              className="ui-card relative overflow-hidden"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <header className="flex items-center gap-3">
+              <header className="flex items-center gap-3 min-w-0">
                 <div
                   aria-hidden
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0"
                   style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
                 >
                   {t.doctor.replace("Dr. ", "").charAt(0)}
                 </div>
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <div className="ui-card-heading text-[15px] truncate min-h-0">{t.practice}</div>
                   <div className="text-[12px] text-ink-secondary mt-0.5 truncate">
                     {t.doctor} · {t.specialty} · {t.city}

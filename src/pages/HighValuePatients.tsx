@@ -66,7 +66,7 @@ export default function HighValuePatients() {
       </Helmet>
 
       <Nav /><GlobalFx />
-      <main className="text-left">
+      <main className="text-center sm:text-left">
         {/* HERO */}
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">
           <HeroOrbs />
@@ -176,7 +176,7 @@ export default function HighValuePatients() {
             </Reveal>
             <Reveal delay={0.08} className="max-w-3xl mx-auto mt-10">
               <div className="border border-brand-purple/12 rounded-[16px] overflow-hidden bg-white">
-                <div className="grid grid-cols-2 border-b border-brand-purple/10">
+                <div className="hidden sm:grid grid-cols-2 border-b border-brand-purple/10">
                   <div className="bg-amber-50/60 px-5 py-3 font-semibold text-amber-700 text-[13px]">More Patients (Volume Approach)</div>
                   <div className="bg-brand-purple/8 px-5 py-3 font-semibold text-brand-purple text-[13px]">Better Patient Mix (Production Approach)</div>
                 </div>
@@ -187,9 +187,15 @@ export default function HighValuePatients() {
                   ["Measure success by lead volume", "Measure by consult quality, treatment acceptance, and production"],
                   ["Same workflow for all leads", "High-value patient follow-up designed for longer consideration cycles"],
                 ].map(([l, r], i, a) => (
-                  <div key={i} className={`grid grid-cols-2 ${i < a.length - 1 ? "border-b border-brand-purple/8" : ""} ${i % 2 ? "bg-brand-purple/3" : ""}`}>
-                    <div className="px-5 py-3 text-[13px] text-ink-secondary"><span className="text-amber-600 mr-1">·</span>{l}</div>
-                    <div className="px-5 py-3 text-[13px] text-brand-deep"><span className="text-emerald-600 mr-1">✓</span>{r}</div>
+                  <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${i < a.length - 1 ? "border-b border-brand-purple/8" : ""} ${i % 2 ? "sm:bg-brand-purple/3" : ""}`}>
+                    <div className="px-5 py-3 text-[13px] text-ink-secondary bg-amber-50/40 sm:bg-transparent border-b border-brand-purple/8 sm:border-0">
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-amber-700 block sm:hidden mb-1">Volume</span>
+                      <span className="text-amber-600 mr-1">·</span>{l}
+                    </div>
+                    <div className="px-5 py-3 text-[13px] text-brand-deep">
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple block sm:hidden mb-1">Production</span>
+                      <span className="text-emerald-600 mr-1">✓</span>{r}
+                    </div>
                   </div>
                 ))}
               </div>

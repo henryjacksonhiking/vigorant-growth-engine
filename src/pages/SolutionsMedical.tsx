@@ -108,7 +108,7 @@ export default function SolutionsMedical() {
       </Helmet>
 
       <Nav /><GlobalFx />
-      <main className="text-left">
+      <main className="text-center sm:text-left">
         {/* HERO */}
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">
           <HeroOrbs />
@@ -457,14 +457,20 @@ export default function SolutionsMedical() {
             </div>
             <Reveal delay={0.12} className="max-w-4xl mx-auto mt-8">
               <div className="border border-brand-purple/12 rounded-[12px] overflow-hidden">
-                <div className="grid grid-cols-2">
+                <div className="hidden sm:grid grid-cols-2">
                   <div className="bg-amber-500/[0.06] text-amber-600 font-bold text-[13px] px-5 py-3">Generic Agency Approach</div>
                   <div className="bg-brand-purple/8 text-brand-purple font-bold text-[13px] px-5 py-3">Vigorant Medical System</div>
                 </div>
                 {COMPARE.map((row, i) => (
-                  <div key={i} className={`grid grid-cols-2 ${i < COMPARE.length - 1 ? "border-b border-brand-purple/8" : ""}`}>
-                    <div className="px-5 py-3 text-ink-secondary text-[13px] flex gap-2"><span className="text-amber-600">·</span>{row[0]}</div>
-                    <div className="px-5 py-3 text-brand-deep text-[13px] flex gap-2"><span className="text-emerald-600">✓</span>{row[1]}</div>
+                  <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 ${i < COMPARE.length - 1 ? "border-b border-brand-purple/8" : ""}`}>
+                    <div className="px-5 py-3 text-ink-secondary text-[13px] flex gap-2 bg-amber-500/[0.04] sm:bg-transparent border-b border-brand-purple/8 sm:border-0">
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-amber-700 block sm:hidden mr-1">Agency:</span>
+                      <span className="text-amber-600">·</span>{row[0]}
+                    </div>
+                    <div className="px-5 py-3 text-brand-deep text-[13px] flex gap-2">
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple block sm:hidden mr-1">Vigorant:</span>
+                      <span className="text-emerald-600">✓</span>{row[1]}
+                    </div>
                   </div>
                 ))}
               </div>

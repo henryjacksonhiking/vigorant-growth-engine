@@ -34,7 +34,7 @@ export default function FinalCTA() {
           Our free Practice Growth Audit identifies your biggest visibility gaps, conversion leaks, and growth opportunities — specific to your specialty, your market, and your goals. No pitch. No pressure. Just clarity.
         </p>
 
-        <ul className="mt-8 inline-block text-left list-none p-0">
+        <ul className="mt-8 inline-flex flex-col items-start text-left list-none p-0 max-w-sm mx-auto">
           {bullets.map((b, i) => (
             <motion.li
               key={b}
