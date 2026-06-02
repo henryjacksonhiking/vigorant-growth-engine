@@ -62,7 +62,7 @@ export default function FAQ() {
                   hidden={!isOpen}
                   className="overflow-hidden"
                 >
-                  <p className="px-5 sm:px-6 pb-6 text-ink-secondary leading-[1.8]">{f.a}</p>
+                  <p className="px-4 sm:px-6 pb-6 text-ink-secondary leading-[1.8] break-words">{f.a}</p>
                 </div>
               </div>
             </Reveal>
