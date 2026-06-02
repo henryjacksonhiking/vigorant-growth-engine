@@ -12,7 +12,8 @@ export default function StickyCTA() {
     const onScroll = () => {
       const h = document.documentElement;
       const pct = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
-      setShow(pct > 0.3);
+      const mobile = window.matchMedia("(max-width: 639px)").matches;
+      setShow(pct > (mobile ? 0.55 : 0.3));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -22,7 +23,7 @@ export default function StickyCTA() {
   useEffect(() => {
     const applyInset = () => {
       if (window.matchMedia("(max-width: 639px)").matches) {
-        document.body.style.paddingBottom = show ? "108px" : "";
+        document.body.style.paddingBottom = show ? "88px" : "";
       } else {
         document.body.style.paddingBottom = "";
       }
@@ -52,26 +53,26 @@ export default function StickyCTA() {
       }`}
     >
       {/* Mobile: two-button bar */}
-      <div className="sm:hidden grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_36px] items-stretch gap-2 rounded-2xl bg-white/96 backdrop-blur border border-brand-purple/15 px-2.5 py-2.5 shadow-[0_10px_28px_hsl(248_49%_15%/0.14)]">
+      <div className="sm:hidden grid grid-cols-[minmax(0,1fr)_auto_32px] items-stretch gap-2 rounded-2xl bg-white/94 backdrop-blur border border-brand-purple/15 px-2 py-2 shadow-[0_10px_24px_hsl(248_49%_15%/0.12)]">
         <a
           href="/free-audit"
-          className="inline-flex items-center justify-center font-bold text-[13px] text-white rounded-full px-3 min-h-[44px] text-center whitespace-nowrap"
+          className="inline-flex items-center justify-center font-bold text-[13px] text-white rounded-full px-3 min-h-[40px] text-center whitespace-nowrap"
           style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
         >
           Free Audit
         </a>
         <a
           href={`tel:${PHONE}`}
-          className="inline-flex items-center justify-center gap-1.5 font-bold text-[13px] text-brand-deep border-2 border-brand-purple/40 rounded-full px-3 min-h-[44px] whitespace-nowrap"
+          className="inline-flex items-center justify-center gap-1.5 font-bold text-[12px] text-brand-deep border-2 border-brand-purple/35 rounded-full px-3 min-h-[40px] whitespace-nowrap"
         >
-          <Phone aria-hidden size={15} /> Call Us
+          <Phone aria-hidden size={14} /> Call
         </a>
         <button
           onClick={dismiss}
           aria-label="Dismiss"
-          className="text-ink-secondary min-w-[36px] min-h-[36px] inline-flex items-center justify-center self-center"
+          className="text-ink-secondary min-w-[32px] min-h-[32px] inline-flex items-center justify-center self-center"
         >
-          <X aria-hidden size={16} />
+          <X aria-hidden size={15} />
         </button>
       </div>
 
