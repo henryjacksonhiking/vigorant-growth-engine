@@ -12,12 +12,31 @@ export default function StickyCTA() {
     const onScroll = () => {
       const h = document.documentElement;
       const pct = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
-      setShow(pct > 0.3);
+      const mobile = window.matchMedia("(max-width: 639px)").matches;
+      setShow(pct > (mobile ? 0.55 : 0.3));
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const applyInset = () => {
+      if (window.matchMedia("(max-width: 639px)").matches) {
+        document.body.style.paddingBottom = "";
+      } else {
+        document.body.style.paddingBottom = "";
+      }
+    };
+
+    applyInset();
+    window.addEventListener("resize", applyInset);
+
+    return () => {
+      window.removeEventListener("resize", applyInset);
+      document.body.style.paddingBottom = "";
+    };
+  }, [show]);
 
   const dismiss = () => {
     sessionStorage.setItem(STORAGE_KEY, "1");
@@ -29,33 +48,11 @@ export default function StickyCTA() {
       role="region"
       aria-label="Get your free Vigorant growth audit"
       aria-hidden={!show}
-      className={`fixed z-[90] left-0 right-0 bottom-0 sm:left-auto sm:right-6 sm:bottom-6 transition-all duration-500 ${
+      className={`fixed z-[90] left-3 right-3 bottom-3 sm:left-auto sm:right-6 sm:bottom-6 transition-all duration-500 ${
         show ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"
       }`}
     >
-      {/* Mobile: two-button bar */}
-      <div className="sm:hidden flex items-stretch gap-2 p-3 bg-white border-t border-brand-purple/15 shadow-[0_-8px_24px_hsl(248_49%_15%/0.10)]">
-        <a
-          href="/free-audit"
-          className="flex-1 inline-flex items-center justify-center font-bold text-[14px] text-white rounded-full px-4 min-h-[48px]"
-          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}
-        >
-          Free Audit
-        </a>
-        <a
-          href={`tel:${PHONE}`}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 font-bold text-[14px] text-brand-deep border-2 border-brand-purple/40 rounded-full px-4 min-h-[48px]"
-        >
-          <Phone aria-hidden size={16} /> Call Us
-        </a>
-        <button
-          onClick={dismiss}
-          aria-label="Dismiss"
-          className="text-ink-secondary p-2 min-w-[44px] min-h-[44px] inline-flex items-center justify-center"
-        >
-          <X aria-hidden size={18} />
-        </button>
-      </div>
+      <div className="sm:hidden hidden" aria-hidden />
 
       {/* Desktop: pill */}
       <div

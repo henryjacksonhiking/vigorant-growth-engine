@@ -96,7 +96,7 @@ export default function Industries() {
         <Stories>
           <StoriesContent>
             {industries.map((it) => (
-              <Story key={it.title} className="aspect-[3/4] w-[240px] sm:w-[260px]">
+              <Story key={it.title} className="aspect-[3/4] w-[78vw] max-w-[240px] sm:w-[260px]">
                 <Link to={it.href} className="block h-full w-full" aria-label={it.title}>
                   <StoryImage src={it.image} alt={it.title} />
                   <StoryOverlay />
@@ -115,8 +115,8 @@ export default function Industries() {
         </Stories>
       </Reveal>
 
-      <Reveal className="mt-12 max-w-3xl mx-auto text-center">
-        <p className="text-ink-secondary text-[15px] sm:text-[16px] leading-[1.8]">
+      <Reveal className="mt-12 max-w-3xl mx-auto text-center px-1 sm:px-0">
+        <p className="text-ink-secondary text-[15px] sm:text-[16px] leading-[1.8] break-words text-balance">
           Vigorant is a specialized healthcare marketing agency serving dental practices, medical clinics,
           chiropractic offices, and multi-location healthcare groups across the United States. Whether you
           are an independent dentist looking for dental SEO, a medical practice investing in local search

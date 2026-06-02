@@ -70,7 +70,7 @@ export default function MiniCaseStudies() {
               />
 
               {/* Header */}
-              <header className="flex items-center gap-3 min-w-0">
+              <header className="flex items-start gap-3 min-w-0">
                 <div
                   aria-hidden
                   className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-[13px] flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
@@ -90,13 +90,13 @@ export default function MiniCaseStudies() {
 
               {/* Headline metric */}
               <div className="mt-6 rounded-xl bg-brand-purple/5 border border-brand-purple/10 px-5 py-4 transition-colors duration-300 group-hover:bg-brand-purple/8">
-                <div className="flex items-baseline gap-2">
+                <div className="flex items-baseline justify-between gap-2 min-w-0">
                   <span className="font-display font-bold text-brand-deep text-[40px] leading-none tracking-tight">
                     {s.headline.metric}
                   </span>
                   <TrendingUp size={18} className="text-brand-purple" aria-hidden />
                 </div>
-                <div className="mt-2 text-[13px] text-ink-secondary font-medium">
+                <div className="mt-2 text-[13px] text-ink-secondary font-medium break-words">
                   {s.headline.label}
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function MiniCaseStudies() {
               </p>
 
               {/* Secondary results */}
-              <ul className="mt-4 space-y-2 flex-1">
+              <ul className="mt-4 space-y-2 flex-1 min-w-0">
                 {s.results.map((r) => (
                   <li key={r} className="flex items-start gap-2 text-[13px] text-brand-deep">
                     <span aria-hidden className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0" />

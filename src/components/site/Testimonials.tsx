@@ -91,8 +91,10 @@ export default function Testimonials() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="ui-card-heading text-[15px] truncate min-h-0">{t.practice}</div>
-                  <div className="text-[12px] text-ink-secondary mt-0.5 truncate">
-                    {t.doctor} · {t.specialty} · {t.city}
+                  <div className="mt-0.5 text-[11px] leading-relaxed text-ink-secondary">
+                    <div className="font-medium text-brand-purple/85">{t.doctor}</div>
+                    <div className="break-words">{t.specialty}</div>
+                    <div className="break-words">{t.city}</div>
                   </div>
                 </div>
               </header>

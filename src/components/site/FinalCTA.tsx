@@ -66,9 +66,9 @@ export default function FinalCTA() {
           <a href="mailto:info@vigorant.com" className="font-semibold text-white underline-offset-2 hover:underline">info@vigorant.com</a>
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 max-w-md mx-auto">
           {["HIPAA Compliant", "Live in 48 Hours", "No Long-Term Contracts"].map((t) => (
-            <span key={t} className="font-mono-ui text-[11px] text-white/70 bg-white/10 border border-white/20 rounded-full px-4 py-1.5">{t}</span>
+            <span key={t} className="font-mono-ui text-[11px] text-white/70 bg-white/10 border border-white/20 rounded-full px-3 sm:px-4 py-1.5 text-center break-words max-w-full">{t}</span>
           ))}
         </div>
       </div>

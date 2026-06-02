@@ -303,31 +303,6 @@
 
   /* Mobile: preserve explicit layout alignment instead of force-centering entire sections */
   @media (max-width: 640px) {
-    /* Keep dashboard/card internals left-aligned */
-    main section .container .float-card,
-    main section .container .float-card *,
-    main section .container article,
-    main section .container article *,
-    main section .container ul,
-    main section .container ul *,
-    main section .container ol,
-    main section .container ol *,
-    main section .container li,
-    main section .container li *,
-    main section .container dl,
-    main section .container dl *,
-    main section .container details,
-    main section .container details *,
-    main section .container blockquote {
-      text-align: left;
-    }
-    main section .container article .flex,
-    main section .container .float-card .flex,
-    main section .container li .flex,
-    main section .container ul .flex,
-    main section .container ol .flex {
-      justify-content: flex-start;
-    }
     /* Keep button label text on a single line on mobile */
     main a[class*="btn-"],
     main button,
@@ -350,6 +325,9 @@
     main section .container a,
     main section .container button {
       max-width: 100%;
+    }
+    main section .container > * {
+      min-width: 0;
     }
   }
 

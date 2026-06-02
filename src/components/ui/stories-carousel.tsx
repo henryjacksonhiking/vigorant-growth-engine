@@ -27,7 +27,7 @@ export const Stories = ({ className, opts, ...props }: StoriesProps) => (
 export type StoriesContentProps = ComponentProps<typeof CarouselContent>;
 
 export const StoriesContent = ({ className, ...props }: StoriesContentProps) => (
-  <CarouselContent className={cn("-ml-3", className)} {...props} />
+  <CarouselContent className={cn("-ml-3 pr-3 sm:pr-0", className)} {...props} />
 );
 
 export type StoryProps = HTMLAttributes<HTMLDivElement>;
