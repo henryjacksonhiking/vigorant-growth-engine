@@ -23,6 +23,7 @@ const links: NavItem[] = [
     href: "/services",
     route: true,
     children: [
+      { label: "Marketing Strategy", href: "/services/marketing-strategy" },
       {
         label: "SEO Overview",
         href: "/services/seo",
