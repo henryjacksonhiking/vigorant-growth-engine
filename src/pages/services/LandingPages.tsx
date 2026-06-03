@@ -5,14 +5,14 @@ import StickyCTA from "@/components/site/StickyCTA";
 import { servicePages } from "@/data/servicePages";
 import { VigorantServicePage } from "@/components/VigorantServiceTemplates";
 
-export default function MarketingStrategy() {
+export default function LandingPages() {
   return (
     <>
       <a href="#main" className="skip-link">Skip to main content</a>
       <GlobalFx />
       <Nav />
       <div id="main">
-        <VigorantServicePage page={servicePages.marketingStrategy} />
+        <VigorantServicePage page={servicePages.landingPages} />
       </div>
       <StickyCTA />
       <Footer />
