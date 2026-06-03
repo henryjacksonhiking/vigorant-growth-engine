@@ -61,7 +61,7 @@ export function PrimaryCTA({ to, children, className = "" }: { to: string; child
   return (
     <Link
       to={to}
-      className={`inline-flex items-center justify-center gap-2 font-bold text-[15px] sm:text-[16px] text-white px-7 sm:px-8 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] ${className}`}
+      className={`inline-flex max-w-full items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] text-white px-5 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] whitespace-normal sm:whitespace-nowrap text-center leading-snug ${className}`}
       style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))", boxShadow: "0 12px 32px hsl(247 93% 64% / 0.35)" }}
     >
       {children}
@@ -70,7 +70,7 @@ export function PrimaryCTA({ to, children, className = "" }: { to: string; child
 }
 
 export function SecondaryCTA({ to, onClick, children }: { to?: string; onClick?: () => void; children: ReactNode }) {
-  const cls = "inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-6 py-3.5 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-brand-purple/5 transition-all";
+  const cls = "inline-flex max-w-full items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 sm:px-6 py-3 sm:py-3.5 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-brand-purple/5 transition-all whitespace-normal sm:whitespace-nowrap text-center leading-snug";
   if (to) return <Link to={to} className={cls}>{children}</Link>;
   return <button onClick={onClick} className={cls}>{children}</button>;
 }

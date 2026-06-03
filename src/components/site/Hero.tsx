@@ -49,7 +49,7 @@ export default function Hero() {
           >
             <a
               href="/free-audit"
-              className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px]"
+              className="btn-primary-grad inline-flex items-center justify-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 rounded-full font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px]"
             >
               Request Your Free Growth Audit <ArrowRight aria-hidden size={18} />
             </a>
