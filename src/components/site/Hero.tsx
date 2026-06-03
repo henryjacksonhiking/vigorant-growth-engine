@@ -70,16 +70,16 @@ export default function Hero() {
 
           <motion.ul
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}
-            className="mt-7 grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-x-5 gap-y-2 font-mono-ui text-[12px] text-ink-secondary list-none p-0 max-w-[320px] sm:max-w-none mx-auto"
+            className="mt-7 flex flex-wrap justify-center items-center gap-x-4 sm:gap-x-5 gap-y-2 font-mono-ui text-[11px] sm:text-[12px] text-ink-secondary list-none p-0 mx-auto"
             aria-label="Trust signals"
           >
-            <li className="text-center sm:text-left"><span aria-hidden>★★★★★</span> 4.9 on Google</li>
+            <li><span aria-hidden>★★★★★</span> 4.9 on Google</li>
             <li aria-hidden><Sep /></li>
-            <li className="text-center sm:text-left">120+ Practices</li>
+            <li>120+ Practices</li>
             <li aria-hidden><Sep /></li>
-            <li className="text-center sm:text-left">No long-term contracts</li>
+            <li>No long-term contracts</li>
             <li aria-hidden><Sep /></li>
-            <li className="text-center sm:text-left">HIPAA Compliant</li>
+            <li>HIPAA Compliant</li>
           </motion.ul>
         </div>
 
@@ -97,7 +97,7 @@ export default function Hero() {
   );
 }
 
-function Sep() { return <span className="hidden sm:inline w-px h-3 bg-brand-purple/30" />; }
+function Sep() { return <span className="inline-block w-px h-3 bg-brand-purple/30" />; }
 
 function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
   return (

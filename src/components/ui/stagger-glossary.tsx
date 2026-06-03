@@ -127,8 +127,7 @@ export const StaggerGlossary: React.FC<{ items: Omit<GlossaryItem, "tempId">[] }
       style={{ height: cardSize + 140 }}
     >
       {list.map((it, index) => {
-        const position =
-          list.length % 2 ? index - (list.length + 1) / 2 : index - list.length / 2;
+        const position = index - Math.floor(list.length / 2);
         return (
           <GlossaryCard
             key={it.tempId}
