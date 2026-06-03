@@ -30,19 +30,19 @@ export default function FAQ() {
         </p>
       </Reveal>
 
-      <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3" role="list">
+      <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3 px-1 sm:px-0" role="list">
         {FAQS.map((f, i) => {
           const isOpen = open === i;
           const btnId = `${baseId}-q-${i}`;
           const panelId = `${baseId}-p-${i}`;
           return (
             <Reveal key={f.q} delay={i * 0.04}>
-              <div className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden" role="listitem">
+              <div className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden min-w-0" role="listitem">
                 <h3 className="m-0">
                   <button
                     id={btnId}
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-start justify-between gap-3 sm:gap-6 text-left px-4 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
+                    className="w-full min-w-0 flex items-start justify-between gap-3 sm:gap-6 text-left px-4 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                   >

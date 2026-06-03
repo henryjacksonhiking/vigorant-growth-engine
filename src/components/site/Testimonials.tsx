@@ -33,6 +33,7 @@ export default function Testimonials() {
     () => (active === "All" ? TESTIMONIALS : TESTIMONIALS.filter((t) => t.category === active)),
     [active]
   );
+  const isClientStoriesCard = (t: Testimonial) => t.practice === "Noble Dental Care" || t.practice === "Top Pinole Dental";
 
   return (
     <Section id="testimonials" bg="white">
@@ -76,9 +77,15 @@ export default function Testimonials() {
 
       <div className="ui-card-grid mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
         {filtered.map((t, i) => (
-          <ScrollTiltedItem key={t.practice} side={i % 2 === 0 ? "L" : "R"} className="h-full">
+          <ScrollTiltedItem
+            key={t.practice}
+            side={i % 2 === 0 ? "L" : "R"}
+            className="h-full min-w-0"
+            maxTilt={isClientStoriesCard(t) ? 0 : 28}
+            maxBlur={isClientStoriesCard(t) ? 0 : 6}
+          >
             <article
-              className="ui-card relative overflow-hidden"
+              className="ui-card relative overflow-hidden min-w-0"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
               <header className="flex items-center gap-3 min-w-0">
@@ -109,7 +116,7 @@ export default function Testimonials() {
                 “{t.problem}”
               </p>
 
-              <span className="mt-5 self-start inline-flex items-center text-white font-bold text-[13px] px-3.5 py-1.5 rounded-full"
+              <span className="mt-5 self-start inline-flex max-w-full items-center text-white font-bold text-[13px] px-3.5 py-1.5 rounded-full break-words"
                 style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
                 {t.metric}
               </span>
@@ -122,7 +129,7 @@ export default function Testimonials() {
                 <span className="inline-flex min-h-[28px] items-center font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
                   {t.category}
                 </span>
-                <span className="inline-flex min-h-[28px] items-center gap-1 font-mono-ui text-[10px] uppercase tracking-[0.08em] text-brand-purple bg-brand-purple/12 border border-brand-purple/25 px-2 py-1 rounded-full">
+                <span className="inline-flex min-h-[28px] max-w-full items-center gap-1 font-mono-ui text-[10px] uppercase tracking-[0.08em] text-brand-purple bg-brand-purple/12 border border-brand-purple/25 px-2 py-1 rounded-full break-words">
                   <span aria-hidden>✓</span> Verified Client
                 </span>
               </div>
