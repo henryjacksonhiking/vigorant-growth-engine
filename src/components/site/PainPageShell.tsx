@@ -158,18 +158,18 @@ export function SectionHeader({ label, title, sub, dark = false, gradientWord }:
 export function FAQAccordion({ faqs }: { faqs: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="max-w-[760px] mx-auto mt-10 flex flex-col gap-2.5">
+    <div className="max-w-[760px] mx-auto mt-10 flex flex-col gap-2.5 px-1 sm:px-0">
       {faqs.map((f, i) => (
         <Reveal key={i} delay={i * 0.04}>
-          <div className={`bg-white rounded-xl border transition-all ${open === i ? "border-brand-purple/25 shadow-md" : "border-brand-purple/10"}`}>
+          <div className={`bg-white rounded-xl border transition-all min-w-0 ${open === i ? "border-brand-purple/25 shadow-md" : "border-brand-purple/10"}`}>
             <button onClick={() => setOpen(open === i ? null : i)}
-              className="w-full flex items-center justify-between gap-4 text-left p-5 sm:p-6"
+              className="w-full min-w-0 flex items-start justify-between gap-4 text-left p-5 sm:p-6"
               aria-expanded={open === i}>
-              <span className="font-semibold text-[15px] sm:text-[17px] text-brand-deep">{f.q}</span>
+              <span className="min-w-0 flex-1 break-words font-semibold text-[15px] sm:text-[17px] text-brand-deep">{f.q}</span>
               <Plus aria-hidden size={18} className={`text-brand-purple shrink-0 transition-transform ${open === i ? "rotate-45" : ""}`} />
             </button>
             {open === i && (
-              <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-[15px] text-text-secondary leading-[1.82]">{f.a}</div>
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-[15px] text-text-secondary leading-[1.82] break-words">{f.a}</div>
             )}
           </div>
         </Reveal>
@@ -187,10 +187,10 @@ export function FinalCTA({ headline, sub, ctaLabel, ctaHref }: { headline: strin
         </h2>
         <p className="mt-5 text-white/90 text-[17px] leading-[1.75] max-w-[600px] mx-auto">{sub}</p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center flex-wrap">
-          <Link to={ctaHref} className="bg-white text-brand-deep inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px] hover:bg-white/90 transition">
+          <Link to={ctaHref} className="bg-white text-brand-deep inline-flex max-w-full items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px] hover:bg-white/90 transition whitespace-normal sm:whitespace-nowrap text-center leading-snug">
             {ctaLabel} <ArrowRight aria-hidden size={18} />
           </Link>
-          <Link to="/how-it-works" className="border border-white/25 text-white inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold min-h-[48px] hover:bg-white/5 transition">
+          <Link to="/how-it-works" className="border border-white/25 text-white inline-flex max-w-full items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-[14px] sm:text-[15px] min-h-[46px] sm:min-h-[48px] hover:bg-white/5 transition whitespace-normal sm:whitespace-nowrap text-center leading-snug">
             See How It Works
           </Link>
         </div>
