@@ -116,7 +116,7 @@ export default function Testimonials() {
                 “{t.problem}”
               </p>
 
-              <span className="mt-5 self-start inline-flex max-w-full items-center text-white font-bold text-[13px] px-3.5 py-1.5 rounded-full break-words"
+              <span className="mt-5 self-start inline-flex max-w-full items-center text-white font-bold text-[11px] sm:text-[13px] px-3 sm:px-3.5 py-1.5 rounded-full whitespace-nowrap overflow-hidden text-ellipsis"
                 style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
                 {t.metric}
               </span>
