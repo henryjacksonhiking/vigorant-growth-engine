@@ -8,7 +8,7 @@ import {
   useReducedMotion,
   cubicBezier,
 } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 const easeIntoFocus = cubicBezier(0.22, 1, 0.36, 1);
 const easeOutOfFocus = cubicBezier(0, 0, 0.58, 1);
@@ -47,7 +47,18 @@ export function ScrollTiltedItem({
   });
 
   const reduce = useReducedMotion();
+  const [disableMobileMotion, setDisableMobileMotion] = useState(false);
   const sign = side === "L" ? -1 : 1;
+
+  useEffect(() => {
+    const syncMobileMotion = () => {
+      setDisableMobileMotion(window.matchMedia("(max-width: 767px)").matches);
+    };
+
+    syncMobileMotion();
+    window.addEventListener("resize", syncMobileMotion);
+    return () => window.removeEventListener("resize", syncMobileMotion);
+  }, []);
 
   const blur = useTransform(p, [0, 0.5, 1], [maxBlur, 0, maxBlur], { ease: focusEase });
   const ty = useTransform(p, [0, 0.5, 1], ["20%", "0%", "-20%"], { ease: focusEase });
@@ -57,7 +68,7 @@ export function ScrollTiltedItem({
   const opacity = useTransform(p, [0, 0.25, 0.75, 1], [0.2, 1, 1, 0.2], { ease: focusEase });
   const filter = useMotionTemplate`blur(${blur}px)`;
 
-  if (reduce) {
+  if (reduce || disableMobileMotion) {
     return (
       <div ref={ref} className={className}>
         {children}
