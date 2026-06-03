@@ -36,6 +36,10 @@ const links: NavItem[] = [
       { label: "Paid Ads (Google & Meta)", href: "/services/paid-ads" },
       { label: "Website Design & CRO", href: "/services/website-design" },
       { label: "Reputation & Social Media", href: "/services/reputation" },
+      { label: "Branding & Rebranding", href: "/services/branding-rebranding" },
+      { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { label: "Landing Pages", href: "/services/landing-pages" },
+      { label: "Video Marketing", href: "/services/video-marketing" },
     ],
   },
   {
