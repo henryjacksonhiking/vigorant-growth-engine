@@ -89,14 +89,19 @@ export default function Nav() {
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (desktopNavRef.current && !desktopNavRef.current.contains(e.target as Node)) {
+      // Only manage desktop dropdown outside-clicks; mobile menu manages itself.
+      if (open) return;
+      const target = e.target as Node;
+      const mobileNav = document.getElementById("mobile-nav");
+      if (mobileNav && mobileNav.contains(target)) return;
+      if (desktopNavRef.current && !desktopNavRef.current.contains(target)) {
         setActiveDropdown(null);
         setActiveSubmenu(null);
       }
     };
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     setActiveDropdown(null);
