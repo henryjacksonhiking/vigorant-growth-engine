@@ -173,7 +173,9 @@
     transition: all 280ms var(--ease-expo);
     box-shadow: 0 4px 24px hsl(143 125 255 / 0.35);
     box-shadow: 0 4px 24px hsl(248 100% 75% / 0.35);
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
   }
   .btn-primary-grad:hover {
     transform: translateY(-2px) scale(1.02);
@@ -182,8 +184,10 @@
   @media (max-width: 640px) {
     .btn-primary-grad {
       font-size: 14px;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
     }
   }
   .btn-secondary-outline {
@@ -226,6 +230,7 @@
     border-color: hsl(var(--brand-purple) / 0.12);
     background: hsl(var(--background));
     box-shadow: var(--shadow-card);
+    min-width: 0;
   }
   .ui-card-compact {
     @apply h-full flex flex-col rounded-xl border p-5;
@@ -303,13 +308,6 @@
 
   /* Mobile: preserve explicit layout alignment instead of force-centering entire sections */
   @media (max-width: 640px) {
-    /* Keep button label text on a single line on mobile */
-    main a[class*="btn-"],
-    main button,
-    main .btn-primary-grad,
-    main .btn-secondary-outline {
-      white-space: nowrap;
-    }
     /* Mobile safety: prevent any text/word from forcing horizontal scroll */
     main section .container p,
     main section .container h1,
@@ -325,6 +323,22 @@
     main section .container a,
     main section .container button {
       max-width: 100%;
+    }
+    main section .container > * {
+      min-width: 0;
+    }
+    main .ui-card-grid,
+    main .grid {
+      overflow-x: clip;
+    }
+    main .ui-card,
+    main article,
+    main [role="listitem"],
+    main [role="region"] {
+      min-width: 0;
+    }
+    main .float-card {
+      animation: none;
     }
     main section .container > * {
       min-width: 0;
@@ -451,6 +465,14 @@
 
 [data-dark="true"] .text-brand-deep {
   color: #ffffff !important;
+}
+
+[data-dark="true"] :is(.bg-white, [class*="bg-white "], [class^="bg-white"]):is(.text-brand-deep, .text-foreground, .text-primary) {
+  color: hsl(var(--brand-deep)) !important;
+}
+
+[data-dark="true"] :is(.bg-white, [class*="bg-white "], [class^="bg-white"]) :is(.text-brand-deep, .text-foreground, .text-primary) {
+  color: hsl(var(--brand-deep)) !important;
 }
 
 [data-dark="true"] :is(.font-mono-ui, .section-label) {
