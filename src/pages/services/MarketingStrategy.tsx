@@ -509,7 +509,7 @@ export default function MarketingStrategy() {
                             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300"
                             style={{
                               background: open ? "hsl(247 93% 64%)" : "hsl(250 100% 98%)",
-                              color: open ? "#fff" : "hsl(247 93% 64%)",
+                              color: open ? "hsl(0 0% 100%)" : "hsl(247 93% 64%)",
                               transform: open ? "rotate(45deg)" : "rotate(0deg)",
                             }}
                           >
