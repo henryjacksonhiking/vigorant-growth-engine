@@ -189,11 +189,7 @@ export default function MarketingStrategy() {
 
       <Nav />
 
-      <main
-        id="main"
-        // @ts-expect-error microdata attributes
-        itemScope itemType="https://schema.org/Service"
-      >
+      <main id="main" itemScope itemType="https://schema.org/Service">
         <meta itemProp="name" content="Healthcare Marketing Strategy Services" />
         <meta itemProp="provider" content="Vigorant" />
         <meta itemProp="areaServed" content="United States" />
