@@ -314,7 +314,7 @@ export default function MarketingStrategy() {
                   <Reveal key={p.num} delay={i * 0.08}>
                     <article className="grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14 items-start rounded-3xl p-7 sm:p-10" style={{ background: "linear-gradient(135deg, hsl(250 100% 98%), hsl(0 0% 100%))", border: "1px solid hsl(247 93% 64% / 0.18)" }}>
                       {/* Visual */}
-                      <div className="relative aspect-[5/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(250 100% 98%), #fff)", border: "1px solid hsl(247 93% 64% / 0.18)" }}>
+                      <div className="relative aspect-[5/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(250 100% 98%), hsl(0 0% 100%))", border: "1px solid hsl(247 93% 64% / 0.18)" }}>
                         <span
                           aria-hidden
                           className="absolute inset-0 flex items-center justify-center font-display font-extrabold select-none"
