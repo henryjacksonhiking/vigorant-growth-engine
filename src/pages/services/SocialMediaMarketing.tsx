@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus, Check, X } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -37,87 +37,130 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
   );
 }
 
-const WORKFLOW = [
+const PROOF_TAGS = [
+  "Content strategy",
+  "Brand consistency",
+  "Patient engagement",
+  "Reputation support",
+];
+
+const BAND = [
+  { k: "STRATEGY", v: "Specialty-fit content plans" },
+  { k: "CADENCE", v: "Monthly content calendars" },
+  { k: "REACH", v: "Trust + engagement signals" },
+  { k: "REPORTING", v: "Transparent performance" },
+];
+
+const COMPARE = [
   {
-    n: "01",
-    h: "Strategy before content",
-    p: "Goals, audience segments, content pillars, platform priorities, and messaging themes are defined before any content is published.",
+    label: "Approach",
+    generic: "Generic templates posted across all clients",
+    vigorant: "Specialty-fit strategy mapped to patient decision moments",
   },
   {
-    n: "02",
-    h: "Content that builds trust",
-    p: "Educational, promotional, and reputation-support content — delivered consistently across Facebook, Instagram, Google Business Profile, LinkedIn, YouTube, and TikTok.",
+    label: "Content",
+    generic: "Stock images and recycled captions",
+    vigorant: "Educational, reputation-support, and brand-awareness content built for healthcare",
   },
   {
-    n: "03",
-    h: "Measurement and accountability",
-    p: "Engagement, reach, audience growth, and business impact tracked and reported to make the channel measurable and growth-oriented.",
+    label: "Engagement",
+    generic: "Post and forget",
+    vigorant: "Active monitoring with reputation-aware response support",
+  },
+  {
+    label: "Reporting",
+    generic: "Vanity follower counts",
+    vigorant: "Trust, recall, and acquisition-support metrics tied to growth",
+  },
+  {
+    label: "AI visibility",
+    generic: "Ignored",
+    vigorant: "Brand and entity consistency strengthened for AI discovery",
   },
 ];
 
-const STEPS = [
+const TABS = [
   {
-    id: "step-1",
-    nav: "Strategy",
-    kicker: "Phase 01",
-    h: "Social Media Strategy Development",
-    lead: "We define goals, audience segments, content pillars, messaging themes, platform priorities, and growth objectives before a single post is created. Strategy first ensures every piece of content contributes to patient acquisition.",
-    out: "A documented social media strategy defining audience, platform mix, content pillars, messaging tone, and growth KPIs.",
+    id: "t2a",
+    label: "Strategy & Planning",
+    h: "Social Media Audit & Content Strategy",
+    body: "We audit the current social footprint across every relevant platform, map it to your specialty and patient profile, and build a content strategy that ties social signals to broader patient acquisition — not a stand-alone posting calendar.",
+    bullets: [
+      "Platform-by-platform audit with specialty benchmarking",
+      "Audience definition tied to actual service-line economics",
+      "Content pillars covering education, trust, and brand awareness",
+      "Cadence and channel mix calibrated to capacity and goals",
+    ],
+    metrics: [
+      { l: "Audit scope", v: 92 },
+      { l: "Strategy depth", v: 88 },
+      { l: "Specialty fit", v: 95 },
+    ],
   },
   {
-    id: "step-2",
-    nav: "Content",
-    kicker: "Phase 02",
-    h: "Content Planning & Creation",
-    lead: "We develop a monthly content calendar combining educational content, promotional posts, trust-building patient stories, and engagement-focused formats — all maintaining consistent brand voice, visual identity, and positioning across every platform.",
-    out: "Monthly content calendar, graphic design assets, educational content, and reputation-support posts ready for publishing.",
+    id: "t2b",
+    label: "Content & Production",
+    h: "Monthly Calendar & Graphic Design Support",
+    body: "A live monthly content calendar with educational posts, reputation-support content, and brand-awareness campaigns — produced with graphic design support tuned to healthcare standards and your visual identity.",
+    bullets: [
+      "Monthly content calendar planned across all active channels",
+      "Educational content built for patient decision moments",
+      "Reputation-support posts that reinforce review and trust signals",
+      "Brand-awareness campaigns aligned with the practice identity",
+    ],
+    metrics: [
+      { l: "Content quality", v: 94 },
+      { l: "Brand consistency", v: 96 },
+      { l: "Production cadence", v: 90 },
+    ],
   },
   {
-    id: "step-3",
-    nav: "Engagement",
-    kicker: "Phase 03",
-    h: "Community Engagement & Brand Consistency",
-    lead: "We monitor patient interaction, reviews, comments, and shares while ensuring messaging, tone, visual identity, and positioning remain consistent across Facebook, Instagram, LinkedIn, Google Business Profile, YouTube, and TikTok where appropriate.",
-    out: "Consistent brand presence across all active platforms with engagement monitoring and community response support.",
-  },
-  {
-    id: "step-4",
-    nav: "Reporting",
-    kicker: "Phase 04",
-    h: "Performance Monitoring & Reporting",
-    lead: "We track engagement rates, reach, audience growth, reputation signals, and business impact — connecting social media activity to practice-level outcomes and identifying optimization opportunities month over month.",
-    out: "Performance reports linking social engagement to visibility, reputation, and patient acquisition support metrics.",
+    id: "t2c",
+    label: "Engagement & Reporting",
+    h: "Community Engagement & Performance Reporting",
+    body: "Active monitoring of comments, DMs, and brand mentions — paired with transparent reporting that ties social performance to trust, recall, and downstream patient acquisition support.",
+    bullets: [
+      "Community engagement monitoring and reputation management support",
+      "Mention, comment, and DM workflow with response guidance",
+      "Monthly performance reports with trust and acquisition-support metrics",
+      "Quarterly reviews mapping social signals to growth KPIs",
+    ],
+    metrics: [
+      { l: "Engagement lift", v: 87 },
+      { l: "Response speed", v: 91 },
+      { l: "Reporting clarity", v: 93 },
+    ],
   },
 ];
 
-const HANDOFF = [
+const OBJECTIONS = [
   {
-    a: "Strategy + content",
-    b: "Social media audit, content strategy, monthly content calendar, and graphic design support.",
+    h: "Inconsistent posting",
+    p: "Gaps in cadence quietly erode credibility. A managed calendar removes the start-stop pattern patients notice before you do.",
   },
   {
-    a: "Trust + engagement",
-    b: "Educational content creation, reputation-support content, brand-awareness campaigns, and community engagement monitoring.",
+    h: "Off-brand content",
+    p: "Templated, generic posts dilute the brand. Every asset should reinforce the same voice, identity, and clinical standard.",
   },
   {
-    a: "Measurement",
-    b: "Reach, engagement, and audience growth tracking with performance reporting tied to practice goals.",
+    h: "Low engagement",
+    p: "Comments and DMs left unanswered signal a practice that isn't paying attention. Active monitoring turns engagement into trust.",
+  },
+  {
+    h: "No measurable outcome",
+    p: "Follower counts don't grow a practice. Reporting should tie back to trust, recall, and acquisition support — not vanity metrics.",
+  },
+  {
+    h: "AI search invisibility",
+    p: "AI-powered platforms evaluate brand consistency, content authority, and entity recognition. A well-managed social presence strengthens AI visibility signals.",
   },
 ];
 
-const RIVER = [
-  {
-    h: "Why Social Media Matters",
-    p: "Patients increasingly research providers online before deciding who to contact. A practice's social presence influences trust, perceived expertise, brand recognition, and conversion rates — often before the first appointment.",
-  },
-  {
-    h: "Why Practices Underperform",
-    p: "Most practices post inconsistently, without a defined audience, content strategy, or conversion purpose. Random posting creates noise without building the trust signals that move patients to action.",
-  },
-  {
-    h: "Social Media in the AI Search Era",
-    p: "AI-powered discovery platforms evaluate brand consistency, content authority, engagement signals, reputation indicators, and entity recognition. A well-managed social presence contributes directly to broader digital authority and AI visibility.",
-  },
+const RELATED = [
+  { to: "/services/reputation", label: "Reputation", sub: "Pair social engagement with active review and reputation management." },
+  { to: "/services/branding-rebranding", label: "Branding", sub: "Anchor every post in a consistent brand voice and identity." },
+  { to: "/services/marketing-strategy", label: "Marketing Strategy", sub: "Wire social signals into a measurable patient growth plan." },
+  { to: "/services/seo", label: "SEO & AI Optimization", sub: "Reinforce entity recognition across search and AI discovery." },
 ];
 
 const FAQS = [
@@ -127,15 +170,15 @@ const FAQS = [
   },
   {
     q: "Which social media platform is best for healthcare practices?",
-    a: "Platform selection depends on your specialty and target audience. Most healthcare practices benefit from Facebook, Instagram, and Google Business Profile content. LinkedIn supports referral relationships, while YouTube and TikTok are effective for educational content where appropriate.",
+    a: "Platform selection depends on your specialty and target audience. Most healthcare practices benefit from a presence on Facebook, Instagram, and Google Business Profile. LinkedIn supports referral relationships, while YouTube and TikTok are effective for educational content where appropriate.",
   },
   {
     q: "Can social media generate new patients?",
-    a: "While social media is primarily a trust-building channel, it directly supports patient acquisition when integrated with SEO, paid advertising, and reputation management as part of a broader growth strategy.",
+    a: "While social media is primarily a trust-building and brand-awareness channel, it directly supports patient acquisition when integrated with broader marketing strategies including SEO, paid advertising, and reputation management.",
   },
   {
     q: "Does social media help SEO and AI visibility?",
-    a: "Yes. Consistent content, engagement, and brand signals contribute to broader digital authority. AI-powered platforms increasingly evaluate social presence as part of entity recognition, trust signals, and reputation assessment.",
+    a: "Yes. Consistent content, engagement signals, and brand consistency across platforms contribute to broader digital authority. AI-powered search platforms increasingly evaluate social presence as part of entity recognition, trust signals, and reputation assessment.",
   },
 ];
 
@@ -162,17 +205,31 @@ const JSONLD = {
       ],
     },
     {
+      "@type": "WebSite",
+      "@id": "https://vigorant.com/#website",
+      url: "https://vigorant.com",
+      name: "Vigorant",
+      publisher: { "@id": "https://vigorant.com/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${CANONICAL}#webpage`,
+      url: CANONICAL,
+      name: "Healthcare Social Media Marketing Services | Grow Trust & Patient Engagement | Vigorant",
+      description:
+        "Healthcare social media marketing services for dental, medical, and chiropractic practices, including strategy, content planning, brand consistency, community engagement, and performance reporting.",
+      isPartOf: { "@id": "https://vigorant.com/#website" },
+      about: { "@id": `${CANONICAL}#service` },
+      breadcrumb: { "@id": `${CANONICAL}#breadcrumb` },
+      inLanguage: "en-US",
+    },
+    {
       "@type": "BreadcrumbList",
       "@id": `${CANONICAL}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://vigorant.com/" },
         { "@type": "ListItem", position: 2, name: "Services", item: "https://vigorant.com/services" },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Healthcare Social Media Marketing Services",
-          item: CANONICAL,
-        },
+        { "@type": "ListItem", position: 3, name: "Healthcare Social Media Marketing Services", item: CANONICAL },
       ],
     },
     {
@@ -181,13 +238,24 @@ const JSONLD = {
       name: "Healthcare Social Media Marketing Services",
       provider: { "@id": "https://vigorant.com/#organization" },
       description:
-        "Strategic social media marketing for dental, medical, and chiropractic practices. Includes social media audit, content strategy, monthly content calendar, graphic design support, educational content creation, reputation-support content, brand-awareness campaigns, engagement monitoring, and performance reporting.",
+        "Healthcare social media marketing services for dental, medical, and chiropractic practices. Includes social media audit, content strategy, monthly content calendar, graphic design support, educational content creation, reputation-support content, brand-awareness campaigns, engagement monitoring, and performance reporting.",
       areaServed: "United States",
       serviceType: "Healthcare Social Media Marketing",
       audience: {
         "@type": "Audience",
         audienceType:
           "Dental Practices, Medical Clinics, Chiropractic Offices, Specialty Healthcare Providers, Multi-location Practices",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Social Media Marketing Deliverables",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Audit & Content Strategy" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Monthly Content Calendar & Graphic Design Support" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Educational Content & Reputation-Support Campaigns" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Community Engagement Monitoring" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Performance Reporting" } },
+        ],
       },
     },
     {
@@ -204,7 +272,9 @@ const JSONLD = {
 
 export default function SocialMediaMarketing() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tab = TABS[activeTab];
 
   return (
     <div className="min-h-screen bg-background">
@@ -216,10 +286,10 @@ export default function SocialMediaMarketing() {
         />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Healthcare Social Media Marketing Services | Vigorant" />
+        <meta property="og:title" content="Healthcare Social Media Marketing Services | Grow Trust & Patient Engagement | Vigorant" />
         <meta
           property="og:description"
-          content="Build trust, increase patient engagement, strengthen reputation, and support patient acquisition with strategic healthcare social media marketing from Vigorant."
+          content="Healthcare social media marketing for dental, medical, and chiropractic practices. Build trust, increase patient engagement, strengthen reputation, and support patient acquisition with Vigorant."
         />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -238,73 +308,54 @@ export default function SocialMediaMarketing() {
         <meta itemProp="provider" content="Vigorant" />
         <meta itemProp="areaServed" content="United States" />
 
-        {/* HERO — dark, with workflow mini */}
-        <section
-          aria-labelledby="hero-h1"
-          className="relative overflow-hidden"
-          style={{ background: "var(--gradient-dark)" }}
-          data-dark="true"
-        >
-          <div aria-hidden className="absolute inset-0 grid-overlay opacity-30" />
+        {/* HERO + STICKY AUDIT RAIL */}
+        <section aria-labelledby="hero-h1" className="relative overflow-hidden bg-background">
           <div
             aria-hidden
-            className="pointer-events-none absolute -top-32 -right-24 w-[560px] h-[560px] rounded-full orb-a"
+            className="pointer-events-none absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full"
             style={{
-              background: "radial-gradient(circle, hsl(247 93% 64% / 0.35), transparent 65%)",
-              filter: "blur(70px)",
+              background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 65%)",
+              filter: "blur(60px)",
             }}
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-24 -left-24 w-[460px] h-[460px] rounded-full orb-b"
+            className="pointer-events-none absolute -top-24 right-0 w-[560px] h-[560px] rounded-full"
             style={{
-              background: "radial-gradient(circle, hsl(248 100% 75% / 0.30), transparent 65%)",
+              background: "radial-gradient(circle, hsl(248 100% 75% / 0.18), transparent 65%)",
               filter: "blur(70px)",
             }}
           />
 
           <div className="container relative pt-10 sm:pt-14 pb-20 sm:pb-28">
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center flex-wrap gap-1.5 font-mono-ui text-[11px] text-brand-lavender/80 list-none p-0 m-0">
-                <li>
-                  <Link to="/" className="hover:text-white transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li className="text-brand-lavender/50">/</li>
-                <li>
-                  <Link to="/services" className="hover:text-white transition-colors">
-                    Services
-                  </Link>
-                </li>
-                <li className="text-brand-lavender/50">/</li>
-                <li aria-current="page" className="text-white">
-                  Social Media Marketing for Healthcare Practices
-                </li>
+              <ol className="flex items-center flex-wrap gap-1.5 font-mono-ui text-[11px] text-ink-muted list-none p-0 m-0">
+                <li><Link to="/" className="hover:text-brand-purple transition-colors">Home</Link></li>
+                <li className="text-ink-muted/50">/</li>
+                <li><Link to="/services" className="hover:text-brand-purple transition-colors">Services</Link></li>
+                <li className="text-ink-muted/50">/</li>
+                <li aria-current="page" className="text-brand-deep">Healthcare Social Media Marketing</li>
               </ol>
             </nav>
 
-            <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-14 items-start">
+            <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-14 items-start">
               <Reveal>
-                <Eyebrow light>Social Media Marketing</Eyebrow>
+                <Eyebrow>Social Media Marketing</Eyebrow>
                 <h1
                   id="hero-h1"
-                  className="font-display text-white mt-4 leading-[1.05] tracking-tight"
+                  className="font-display text-brand-deep mt-4 leading-[1.05] tracking-tight"
                   style={{ fontSize: "clamp(34px, 6vw, 64px)", letterSpacing: "-0.03em" }}
                 >
-                  Social Media Marketing for{" "}
+                  Grow Trust &{" "}
                   <span
                     className="bg-clip-text text-transparent"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(135deg, hsl(248 100% 75%), hsl(247 100% 88%))",
-                    }}
+                    style={{ backgroundImage: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}
                   >
-                    Healthcare Practices
+                    Patient Engagement
                   </span>
                 </h1>
-                <p className="mt-6 text-[16.5px] sm:text-[18px] leading-[1.65] text-white/75 max-w-2xl">
-                  Build trust. Stay visible. Turn attention into patients. Social media is no longer just a branding channel. For modern healthcare practices, it plays a critical role in building trust, strengthening reputation, increasing visibility, and influencing patient decisions long before the first appointment. Vigorant helps dental, medical, and chiropractic practices create strategic social media programs designed to support patient acquisition and long-term growth.
+                <p className="mt-6 text-[16.5px] sm:text-[18px] leading-[1.65] text-ink-muted max-w-2xl">
+                  Patients vet practices on social media long before they pick up the phone. We run healthcare-grade social programs that build trust, support reputation, and make every other acquisition channel work harder.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -316,180 +367,120 @@ export default function SocialMediaMarketing() {
                       boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
                     }}
                   >
-                    Book a Social Media Strategy Consultation <ArrowRight className="w-4 h-4" />
+                    Request a Social Audit <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-white px-5 py-3 rounded-full border-[1.5px] border-white/25 hover:border-white/60 hover:bg-white/5 transition-all"
+                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
                   >
-                    Request a Social Media Audit
+                    Book a Strategy Call
                   </Link>
                 </div>
+
+                <ul className="mt-8 flex flex-wrap gap-2 list-none p-0">
+                  {PROOF_TAGS.map((t) => (
+                    <li
+                      key={t}
+                      className="font-mono-ui text-[11.5px] tracking-[0.06em] text-brand-deep/75 px-3 py-1.5 rounded-full bg-white/75 border border-brand-purple/20"
+                      style={{ boxShadow: "0 10px 28px hsl(247 93% 64% / 0.07)" }}
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
 
-              {/* WORKFLOW MINI — row-based, not card-grid */}
+              {/* STICKY AUDIT RAIL */}
               <Reveal delay={0.1}>
                 <aside
-                  className="relative rounded-3xl p-6 sm:p-7 overflow-hidden"
+                  className="relative rounded-3xl p-6 sm:p-7 lg:sticky lg:top-28"
                   style={{
-                    background: "hsl(0 0% 100% / 0.04)",
-                    border: "1px solid hsl(247 100% 88% / 0.18)",
-                    backdropFilter: "blur(20px)",
+                    background: "hsl(0 0% 100% / 0.92)",
+                    border: "1px solid hsl(247 93% 64% / 0.18)",
+                    boxShadow: "0 28px 90px hsl(247 93% 64% / 0.14)",
                   }}
                 >
-                  <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] text-brand-lavender/85">
-                    How it works
-                  </span>
-                  <div className="mt-5 divide-y divide-white/10">
-                    {WORKFLOW.map((w) => (
-                      <div key={w.n} className="grid grid-cols-[44px_1fr] gap-4 py-5 first:pt-0 last:pb-0">
-                        <span className="font-mono-ui text-[12px] uppercase tracking-[0.14em] text-brand-bright pt-0.5">
-                          {w.n}
-                        </span>
-                        <div>
-                          <h4
-                            className="text-white font-extrabold text-[15.5px] leading-snug"
-                            style={{ letterSpacing: "-0.01em" }}
-                          >
-                            {w.h}
-                          </h4>
-                          <p className="mt-1.5 text-[13.5px] leading-[1.6] text-white/70">{w.p}</p>
-                        </div>
-                      </div>
-                    ))}
+                  {/* Score panel */}
+                  <div
+                    className="rounded-2xl p-5"
+                    style={{ background: "var(--gradient-dark)" }}
+                  >
+                    <span className="font-mono-ui text-[10.5px] tracking-[0.14em] uppercase text-white/55">
+                      Social Health Score
+                    </span>
+                    <div className="mt-2 flex items-end gap-3">
+                      <strong
+                        className="font-display text-white leading-none"
+                        style={{ fontSize: "3.5rem", letterSpacing: "-0.06em", fontWeight: 700 }}
+                      >
+                        62
+                      </strong>
+                      <span className="font-mono-ui text-[11px] text-brand-lavender pb-2">/ 100 industry avg</span>
+                    </div>
+                    <p className="mt-3 text-[12.5px] leading-[1.55] text-white/65">
+                      Most practices score between 40 and 70. We benchmark yours across cadence, consistency, engagement, and brand integrity.
+                    </p>
                   </div>
+
+                  {/* Audit micro fields */}
+                  <ul className="mt-5 list-none p-0 border-t border-brand-purple/20">
+                    {[
+                      { l: "CADENCE", v: "Inconsistent" },
+                      { l: "BRAND VOICE", v: "Drifting" },
+                      { l: "ENGAGEMENT", v: "Low response" },
+                      { l: "REPORTING", v: "Vanity metrics" },
+                    ].map((m) => (
+                      <li
+                        key={m.l}
+                        className="grid grid-cols-[1fr_auto] gap-3 py-3 border-b border-brand-purple/15 items-center"
+                      >
+                        <span className="font-mono-ui text-[11px] tracking-[0.1em] text-brand-deep/45">{m.l}</span>
+                        <strong className="text-[13px] font-bold text-brand-deep">{m.v}</strong>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to="/free-audit"
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 font-bold text-[14px] text-white px-5 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                    style={{
+                      background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%), hsl(248 49% 15%))",
+                      boxShadow: "0 12px 32px hsl(247 93% 64% / 0.35)",
+                    }}
+                  >
+                    Get my full audit <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </aside>
               </Reveal>
             </div>
           </div>
         </section>
 
-        {/* TIMELINE — sticky process nav + scroll steps */}
-        <section
-          aria-labelledby="process-h2"
-          className="py-20 sm:py-28"
-        >
+        {/* 4-CELL BAND (not cards — single bordered strip) */}
+        <section aria-label="At a glance" className="pb-20 sm:pb-24">
           <div className="container">
             <Reveal>
-              <div className="max-w-3xl">
-                <Eyebrow>Process map</Eyebrow>
-                <h2
-                  id="process-h2"
-                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
-                >
-                  Our Social Media Marketing Framework
-                </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
-                  A four-phase system that turns a posting schedule into a measurable trust-building growth channel.
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="mt-12 grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
-              {/* Process nav */}
-              <nav
-                aria-label="Process navigation"
-                className="hidden lg:block lg:sticky lg:top-28"
+              <div
+                className="grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-2xl"
+                style={{
+                  background: "hsl(247 93% 64% / 0.18)",
+                  border: "1px solid hsl(247 93% 64% / 0.18)",
+                }}
               >
-                <ol className="list-none p-0 m-0 border-l border-brand-purple/15">
-                  {STEPS.map((s, i) => {
-                    const active = i === activeStep;
-                    return (
-                      <li key={s.id}>
-                        <a
-                          href={`#${s.id}`}
-                          onClick={() => setActiveStep(i)}
-                          className={`block pl-5 -ml-px py-3 border-l-2 transition-all ${
-                            active
-                              ? "border-brand-purple text-brand-purple"
-                              : "border-transparent text-brand-deep/45 hover:text-brand-deep"
-                          }`}
-                        >
-                          <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] block">
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <span className="font-black text-[14.5px]" style={{ letterSpacing: "-0.01em" }}>
-                            {s.nav}
-                          </span>
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </nav>
-
-              {/* Steps */}
-              <div className="space-y-16 sm:space-y-24">
-                {STEPS.map((s, i) => (
-                  <motion.article
-                    key={s.id}
-                    id={s.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30% 0px -40% 0px" }}
-                    onViewportEnter={() => setActiveStep(i)}
-                    transition={{ duration: 0.7, ease }}
-                    className="relative scroll-mt-32"
-                  >
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
-                      {s.kicker}
-                    </span>
-                    <h3
-                      className="font-display text-brand-deep mt-3 leading-[1.1] tracking-tight"
-                      style={{ fontSize: "clamp(24px, 3.6vw, 36px)", letterSpacing: "-0.03em" }}
-                    >
-                      {s.h}
-                    </h3>
-                    <p className="mt-4 text-[16px] leading-[1.7] text-ink-muted max-w-2xl">{s.lead}</p>
-
-                    {/* Output panel — ledger row, not a card */}
-                    <div className="mt-7 grid grid-cols-[100px_1fr] gap-5 sm:gap-7 border-t border-brand-purple/15 pt-5">
-                      <strong className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple not-italic">
-                        Output
-                      </strong>
-                      <p className="text-[14.5px] leading-[1.65] text-brand-deep font-medium">{s.out}</p>
-                    </div>
-                  </motion.article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* HANDOFF TABLE — what is included */}
-        <section
-          aria-labelledby="handoff-h2"
-          className="bg-surface-secondary py-20 sm:py-28 border-y border-brand-purple/10"
-        >
-          <div className="container">
-            <Reveal>
-              <div className="max-w-3xl">
-                <Eyebrow>What's included</Eyebrow>
-                <h2
-                  id="handoff-h2"
-                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
-                >
-                  What Is Included in Our Social Media Marketing Services?
-                </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
-                  Social media work should create a complete trust and growth system, not just a posting schedule.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="mt-12 border-t border-brand-purple/20">
-                {HANDOFF.map((row, i) => (
+                {BAND.map((b) => (
                   <div
-                    key={i}
-                    className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-4 md:gap-10 py-7 border-b border-brand-purple/15 items-start"
+                    key={b.k}
+                    className="bg-background p-5 sm:p-6 transition-colors hover:bg-surface-secondary"
                   >
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
-                      {row.a}
+                    <span className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-brand-deep/45">
+                      {b.k}
                     </span>
-                    <p className="text-[15.5px] leading-[1.7] text-brand-deep font-medium">{row.b}</p>
+                    <strong
+                      className="block font-display text-brand-deep text-[17px] sm:text-[19px] leading-[1.25] mt-2"
+                      style={{ letterSpacing: "-0.02em" }}
+                    >
+                      {b.v}
+                    </strong>
                   </div>
                 ))}
               </div>
@@ -497,9 +488,178 @@ export default function SocialMediaMarketing() {
           </div>
         </section>
 
-        {/* DARK RIVER — 3 column dark section as ledger rows */}
+        {/* COMPARE — row-based, not cards */}
         <section
-          aria-labelledby="river-h2"
+          aria-labelledby="compare-h2"
+          className="py-20 sm:py-28 bg-surface-secondary border-y border-brand-purple/10"
+        >
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>Generic vs. Vigorant</Eyebrow>
+                <h2
+                  id="compare-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  What healthcare-grade social actually looks like.
+                </h2>
+              </div>
+            </Reveal>
+
+            <div
+              className="mt-12 overflow-hidden rounded-3xl"
+              style={{
+                background: "hsl(0 0% 100% / 0.9)",
+                border: "1px solid hsl(247 93% 64% / 0.18)",
+                boxShadow: "0 18px 50px hsl(247 93% 64% / 0.08)",
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[180px_1fr_1fr] font-mono-ui text-[11px] tracking-[0.12em] uppercase text-brand-purple border-b border-brand-purple/15">
+                <div className="px-5 sm:px-7 py-4 bg-surface-secondary">Dimension</div>
+                <div className="px-5 sm:px-7 py-4 border-t md:border-t-0 md:border-l border-brand-purple/15">Generic agency</div>
+                <div className="px-5 sm:px-7 py-4 border-t md:border-t-0 md:border-l border-brand-purple/15 text-brand-deep">Vigorant</div>
+              </div>
+              {COMPARE.map((row) => (
+                <div
+                  key={row.label}
+                  className="grid grid-cols-1 md:grid-cols-[180px_1fr_1fr] border-b border-brand-purple/15 last:border-b-0"
+                >
+                  <div className="px-5 sm:px-7 py-5 bg-surface-secondary font-mono-ui text-[12px] tracking-[0.08em] uppercase text-brand-deep/65 flex items-center">
+                    {row.label}
+                  </div>
+                  <div className="px-5 sm:px-7 py-5 border-t md:border-t-0 md:border-l border-brand-purple/15 flex items-start gap-3 text-[14.5px] leading-[1.65] text-ink-muted">
+                    <X className="w-4 h-4 mt-1 shrink-0 text-brand-deep/40" />
+                    <span>{row.generic}</span>
+                  </div>
+                  <div className="px-5 sm:px-7 py-5 border-t md:border-t-0 md:border-l border-brand-purple/15 flex items-start gap-3 text-[14.5px] leading-[1.65] text-brand-deep">
+                    <Check className="w-4 h-4 mt-1 shrink-0 text-brand-purple" />
+                    <span>{row.vigorant}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TABS — buttons column + content panel (no card grid) */}
+        <section aria-labelledby="tabs-h2" className="py-20 sm:py-28">
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>What we run for you</Eyebrow>
+                <h2
+                  id="tabs-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  Three workstreams, one social engine.
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 grid lg:grid-cols-[260px_1fr] gap-px lg:gap-0 rounded-3xl overflow-hidden"
+              style={{
+                background: "hsl(247 93% 64% / 0.18)",
+                border: "1px solid hsl(247 93% 64% / 0.18)",
+              }}
+            >
+              {/* Tab buttons */}
+              <div className="flex flex-col bg-background">
+                {TABS.map((t, i) => {
+                  const active = i === activeTab;
+                  return (
+                    <button
+                      key={t.id}
+                      onClick={() => setActiveTab(i)}
+                      aria-pressed={active}
+                      className={`text-left px-5 sm:px-7 py-5 border-b border-brand-purple/15 last:border-b-0 transition-colors font-extrabold ${
+                        active ? "text-brand-purple bg-surface-secondary" : "text-brand-deep/55 hover:text-brand-purple"
+                      }`}
+                      style={{ letterSpacing: "-0.01em" }}
+                    >
+                      <span className="font-mono-ui text-[10.5px] tracking-[0.14em] uppercase block mb-1 opacity-80">
+                        Tab {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[15px]">{t.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Active panel */}
+              <motion.div
+                key={tab.id}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, ease }}
+                className="bg-background p-7 sm:p-10"
+              >
+                <Eyebrow>{tab.label}</Eyebrow>
+                <h3
+                  className="font-display text-brand-deep mt-4 leading-[1.15] tracking-tight"
+                  style={{ fontSize: "clamp(22px, 3.2vw, 32px)", letterSpacing: "-0.03em" }}
+                >
+                  {tab.h}
+                </h3>
+                <p className="mt-4 text-[15.5px] leading-[1.7] text-ink-muted max-w-2xl">{tab.body}</p>
+
+                <ul className="mt-6 list-none p-0 grid sm:grid-cols-2 gap-x-8 gap-y-2">
+                  {tab.bullets.map((bl, j) => (
+                    <li key={j} className="flex items-start gap-3 py-2 text-[14.5px] leading-[1.6] text-brand-deep">
+                      <span
+                        aria-hidden
+                        className="mt-2 w-1.5 h-1.5 rounded-full shrink-0"
+                        style={{ background: "hsl(247 93% 64%)" }}
+                      />
+                      {j === 0 && tab.id === "t2c" ? (
+                        <span>
+                          Community engagement monitoring and{" "}
+                          <Link to="/services/reputation" className="text-brand-purple font-semibold underline underline-offset-4">
+                            reputation management
+                          </Link>{" "}
+                          support
+                        </span>
+                      ) : (
+                        bl
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Metric lanes (rows, not cards) */}
+                <div className="mt-8 border-t border-brand-purple/15 pt-6 flex flex-col gap-4">
+                  {tab.metrics.map((m) => (
+                    <div key={m.l} className="grid grid-cols-[140px_1fr_44px] items-center gap-4">
+                      <span className="font-mono-ui text-[11px] tracking-[0.1em] uppercase text-brand-deep/55">
+                        {m.l}
+                      </span>
+                      <div
+                        className="h-2 rounded-full overflow-hidden"
+                        style={{ background: "hsl(250 100% 98%)" }}
+                      >
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${m.v}%` }}
+                          transition={{ duration: 0.9, ease }}
+                          className="h-full rounded-full"
+                          style={{
+                            background: "linear-gradient(90deg, hsl(248 100% 75%), hsl(247 93% 64%))",
+                          }}
+                        />
+                      </div>
+                      <strong className="font-display text-brand-deep text-[16px] text-right">{m.v}</strong>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* OBJECTION STACK — dark */}
+        <section
+          aria-labelledby="obj-h2"
           className="relative overflow-hidden py-20 sm:py-28"
           style={{ background: "var(--gradient-dark)" }}
           data-dark="true"
@@ -507,7 +667,7 @@ export default function SocialMediaMarketing() {
           <div aria-hidden className="absolute inset-0 grid-overlay opacity-25" />
           <div aria-hidden className="absolute inset-0 flex items-center justify-center">
             <div
-              className="w-[640px] h-[640px] rounded-full orb-c"
+              className="w-[640px] h-[640px] rounded-full"
               style={{
                 background: "radial-gradient(circle, hsl(247 93% 64% / 0.22), transparent 65%)",
                 filter: "blur(80px)",
@@ -516,44 +676,75 @@ export default function SocialMediaMarketing() {
           </div>
 
           <div className="container relative">
-            <Reveal>
-              <div className="max-w-3xl">
-                <Eyebrow light>Growth context</Eyebrow>
+            <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
+              <Reveal>
+                <Eyebrow light>What social media needs to solve</Eyebrow>
                 <h2
-                  id="river-h2"
+                  id="obj-h2"
                   className="font-display text-white mt-4 leading-[1.1] tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                  style={{ fontSize: "clamp(26px, 4.2vw, 42px)", letterSpacing: "-0.03em" }}
                 >
-                  Social Media and Patient Acquisition
+                  The five quiet problems killing most practice social accounts.
                 </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-white/70">
-                  Social media performs best when it is treated as a strategic growth channel — not a posting obligation. Every platform, post, and interaction should contribute to the trust signals that move patients from awareness to appointment.
+                <p className="mt-5 text-[16px] leading-[1.7] text-white/75">
+                  These are the patterns we see most often when we audit a practice's existing social presence — and the ones a healthcare-grade program is specifically built to fix.
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            <div className="mt-12 border-t border-white/10">
-              {RIVER.map((r, i) => (
-                <Reveal key={r.h} delay={i * 0.05}>
-                  <div className="grid grid-cols-1 md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 py-8 border-b border-white/10 items-start">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/70">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3
-                      className="text-white font-extrabold text-[18px] sm:text-[20px] leading-snug"
-                      style={{ letterSpacing: "-0.01em" }}
-                    >
-                      {r.h}
-                    </h3>
-                    <p className="text-[14.5px] leading-[1.7] text-white/70">{r.p}</p>
-                  </div>
-                </Reveal>
+              <Reveal delay={0.1}>
+                <div className="border-t border-white/14">
+                  {OBJECTIONS.map((o, i) => (
+                    <div key={o.h} className="grid grid-cols-[44px_1fr] gap-4 py-6 border-b border-white/14 items-start">
+                      <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/80 pt-1">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="font-extrabold text-white text-[17px] sm:text-[19px]" style={{ letterSpacing: "-0.01em" }}>
+                          {o.h}
+                        </h3>
+                        <p className="mt-2 text-[14.5px] leading-[1.7] text-white/70">{o.p}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* RELATED */}
+        <section
+          aria-label="Related services"
+          className="border-t border-brand-purple/10 bg-surface-secondary py-14"
+        >
+          <div className="container">
+            <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
+              Related services
+            </span>
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-px bg-brand-purple/15 border border-brand-purple/15 rounded-2xl overflow-hidden">
+              {RELATED.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
+                >
+                  <span
+                    className="font-extrabold text-brand-deep text-[15.5px] flex items-center gap-2"
+                    style={{ letterSpacing: "-0.01em" }}
+                  >
+                    {l.label}
+                    <ArrowRight className="w-4 h-4 text-brand-purple transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="font-mono-ui text-[11.5px] text-ink-muted/75 leading-[1.55]">
+                    {l.sub}
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ SPLIT */}
+        {/* FAQ */}
         <section aria-labelledby="faq-h2" className="py-20 sm:py-28">
           <div className="container">
             <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
@@ -567,7 +758,7 @@ export default function SocialMediaMarketing() {
                   Frequently Asked Questions
                 </h2>
                 <p className="mt-5 text-[15.5px] leading-[1.7] text-ink-muted">
-                  Key questions healthcare practices ask before starting a social media marketing program.
+                  What practices ask before committing to a healthcare social media program.
                 </p>
               </Reveal>
 
@@ -614,37 +805,6 @@ export default function SocialMediaMarketing() {
           </div>
         </section>
 
-        {/* RELATED LINK STRIP */}
-        <section aria-label="Related services" className="border-t border-brand-purple/10 bg-surface-secondary py-14">
-          <div className="container">
-            <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
-              Continue exploring
-            </span>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-purple/10 border border-brand-purple/10 rounded-2xl overflow-hidden">
-              {[
-                { to: "/services/reputation", label: "Reputation & Reviews", sub: "Turn patient feedback into a measurable trust engine." },
-                { to: "/services/branding-rebranding", label: "Branding & Rebranding", sub: "Unified positioning that strengthens every channel." },
-                { to: "/services/marketing-strategy", label: "Marketing Strategy", sub: "Align social with SEO, ads, and conversion goals." },
-              ].map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
-                >
-                  <span
-                    className="font-extrabold text-brand-deep text-[16px] flex items-center gap-2"
-                    style={{ letterSpacing: "-0.01em" }}
-                  >
-                    {l.label}
-                    <ArrowRight className="w-4 h-4 text-brand-purple transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <span className="text-[13.5px] text-ink-muted leading-[1.55]">{l.sub}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FINAL CTA */}
         <section
           aria-labelledby="cta-h2"
@@ -664,16 +824,16 @@ export default function SocialMediaMarketing() {
           </div>
           <div className="container relative max-w-3xl text-center">
             <Reveal>
-              <Eyebrow light>Ready to improve social visibility?</Eyebrow>
+              <Eyebrow light>Ready to run social like a growth channel?</Eyebrow>
               <h2
                 id="cta-h2"
                 className="font-display text-white mt-4 leading-[1.1] tracking-tight"
                 style={{ fontSize: "clamp(30px, 5vw, 52px)", letterSpacing: "-0.03em" }}
               >
-                Turn social media into a trust-building growth channel.
+                Build a social presence patients actually trust.
               </h2>
               <p className="mt-5 text-[16.5px] leading-[1.7] text-white/75">
-                Start with a social media audit to identify content gaps, consistency issues, and missed opportunities to strengthen patient confidence and support long-term acquisition.
+                Start with a social audit. We'll benchmark cadence, brand integrity, engagement, and AI visibility — then map the fastest path to a healthcare-grade program.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
@@ -684,7 +844,7 @@ export default function SocialMediaMarketing() {
                     boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
                   }}
                 >
-                  Book a Social Media Strategy Consultation <ArrowRight className="w-4 h-4" />
+                  Request a Social Audit <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </Reveal>
@@ -703,7 +863,7 @@ export default function SocialMediaMarketing() {
             >
               CDC Health Communication Resources
             </a>{" "}
-            — referenced in healthcare content strategy and patient communication planning.
+            — referenced in healthcare social media content strategy and patient communication planning.
           </p>
         </div>
       </main>
