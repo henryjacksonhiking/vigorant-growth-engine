@@ -39,6 +39,7 @@ const links: NavItem[] = [
       { label: "Branding & Rebranding", href: "/services/branding-rebranding" },
       { label: "Social Media Marketing", href: "/services/social-media-marketing" },
       { label: "Landing Pages", href: "/services/landing-pages" },
+      { label: "Video Marketing", href: "/services/video-marketing" },
     ],
   },
   {
