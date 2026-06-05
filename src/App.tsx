@@ -31,6 +31,7 @@ import ServicesReputation from "./pages/ServicesReputation.tsx";
 import ServicesMarketingStrategy from "./pages/services/MarketingStrategy.tsx";
 import ServicesBrandingRebranding from "./pages/services/BrandingRebranding.tsx";
 import ServicesSocialMediaMarketing from "./pages/services/SocialMediaMarketing.tsx";
+import ServicesLandingPages from "./pages/services/LandingPages.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
