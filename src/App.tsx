@@ -29,6 +29,7 @@ import ServicesPaidAds from "./pages/ServicesPaidAds.tsx";
 import ServicesWebsiteDesign from "./pages/ServicesWebsiteDesign.tsx";
 import ServicesReputation from "./pages/ServicesReputation.tsx";
 import ServicesMarketingStrategy from "./pages/services/MarketingStrategy.tsx";
+import ServicesBrandingRebranding from "./pages/services/BrandingRebranding.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
@@ -75,6 +76,7 @@ const App = () => (
             <Route path="/services/website-design" element={<ServicesWebsiteDesign />} />
             <Route path="/services/reputation" element={<ServicesReputation />} />
             <Route path="/services/marketing-strategy" element={<ServicesMarketingStrategy />} />
+            <Route path="/services/branding-rebranding" element={<ServicesBrandingRebranding />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/results" element={<Results />} />
             <Route path="/resources" element={<Resources />} />
