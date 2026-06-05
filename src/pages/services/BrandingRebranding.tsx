@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowRight, Plus, Check } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -37,97 +37,139 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
   );
 }
 
-const BAND = [
-  { k: "Audience", v: "Dental, medical, chiropractic, specialty, and multi-location practices" },
-  { k: "Outcome", v: "Stronger trust, differentiation, and a brand that supports patient acquisition" },
-  { k: "Core channels", v: "Website, SEO, advertising, reputation, social media, and patient communications" },
-  { k: "AI signal", v: "Entity consistency and authority recognition across traditional and AI-powered search" },
+const PROOF_TAGS = [
+  "Brand positioning",
+  "Messaging framework",
+  "Visual identity",
+  "Reputation alignment",
 ];
 
-const COMPARE = [
-  {
-    a: "The practice looks like every other option in the market. Patients have no clear reason to choose you.",
-    b: "Clear positioning and consistent messaging give patients a compelling reason to choose and trust your practice.",
-  },
-  {
-    a: "Inconsistent visuals, messaging, and tone erode patient confidence before the first appointment.",
-    b: "Brand voice, visuals, and identity stay consistent across website, SEO, advertising, and patient communications.",
-  },
-  {
-    a: "Weak brand signals reduce the effectiveness of every marketing investment — SEO, ads, and reputation tools all underperform.",
-    b: "A unified brand amplifies marketing ROI. Every channel reinforces the same trust signals and patient story.",
-  },
+const HERO_METRICS = [
+  { n: "01", p: "Audit the brand against patient perception, market position, competitive set, and digital expression." },
+  { n: "02", p: "Define positioning, voice, and identity that match how patients actually decide on a practice." },
+  { n: "03", p: "Roll the brand across website, reputation, content, and paid media so every touchpoint reinforces trust." },
 ];
 
-type TabContent = {
-  num: string;
-  label: string;
-  h3: string;
-  body: React.ReactNode;
-  lanes?: { label: string; pct: number }[];
-  bullets?: React.ReactNode[];
-};
+const FIT_ROWS = [
+  { n: "01", h: "New or relaunching practices", p: "Establish a brand that signals trust and clinical confidence from day one — before patient acquisition spend ramps up." },
+  { n: "02", h: "Multi-location and growing groups", p: "Unify the brand across locations so every market presents the same standard, voice, and patient experience." },
+  { n: "03", h: "Practices that have outgrown their original brand", p: "When the visual identity, messaging, or website no longer reflects the quality of the clinical work — the brand becomes a ceiling on growth." },
+  { n: "04", h: "Practices losing ground to better-branded competitors", p: "Rebrand to compete on perception as deliberately as you compete on outcomes." },
+];
 
-const TABS: TabContent[] = [
+const PHASES = [
   {
-    num: "01",
-    label: "Brand Discovery & Research",
-    h3: "Understand where the practice stands and where it needs to go.",
-    body: "We conduct market analysis, competitive benchmarking, patient perception review, and positioning assessment to identify gaps and opportunities before any brand decisions are made.",
-    lanes: [
-      { label: "Market clarity", pct: 86 },
-      { label: "Competitive gap", pct: 72 },
-      { label: "Patient perception", pct: 55 },
+    n: "01",
+    nav: "Discovery",
+    h: "Brand Audit & Competitive Analysis",
+    paras: [
+      "We start with a structured audit of the current brand — how the practice is described, presented, reviewed, and remembered. Patient perception, competitor positioning, market context, and digital expression all feed the brief.",
+      "The output is a clear picture of where the brand is strong, where it leaks trust, and where competitors are winning the perception battle before the first appointment is ever booked.",
     ],
   },
   {
-    num: "02",
-    label: "Positioning & Messaging",
-    h3: "Define what makes the practice worth choosing.",
-    body: "We develop the unique value proposition, market differentiation, and messaging framework that gives patients a clear, compelling reason to trust and select your practice.",
-    bullets: [
-      "Unique value proposition and differentiation strategy",
-      "Messaging framework and brand voice guidelines",
-      "Communication consistency across patient touchpoints",
+    n: "02",
+    nav: "Positioning",
+    h: "Positioning Strategy & Messaging Framework",
+    paras: [
+      "Positioning answers a simple question that most practices never fully resolve: why should a specific patient choose you over the alternative? We define the audience, the differentiator, and the proof — then translate it into messaging that holds up across channels.",
+      "The messaging framework gives the practice a single, consistent narrative that the website, ads, reviews, content, and team conversations can all reinforce.",
     ],
   },
   {
-    num: "03",
-    label: "Visual Identity & Digital Alignment",
-    h3: "Make the brand visible, consistent, and conversion-ready.",
-    body: (
-      <>
-        We translate positioning and messaging into visual identity recommendations and ensure the brand is applied consistently across website,{" "}
-        <Link to="/services/seo" className="text-brand-purple font-semibold underline-offset-4 hover:underline">
-          SEO and AI optimization
-        </Link>
-        , advertising,{" "}
-        <Link to="/services/reputation" className="text-brand-purple font-semibold underline-offset-4 hover:underline">
-          reputation management
-        </Link>
-        , and patient communications.
-      </>
-    ),
-    bullets: [
-      "Color, typography, imagery, and design system recommendations",
-      "Website and digital experience alignment",
-      "Brand launch and rollout strategy",
+    n: "03",
+    nav: "Voice & Identity",
+    h: "Brand Voice & Visual Identity Recommendations",
+    paras: [
+      "Brand voice defines how the practice sounds — to patients, in reviews responses, in ad copy, on hold messages, in every email. Visual identity recommendations cover logo direction, type, color, photography, and the design principles that bind every asset together.",
+      "The goal is not aesthetic decoration. The goal is recognition — a brand that patients can identify in two seconds across any surface.",
+    ],
+  },
+  {
+    n: "04",
+    nav: "Alignment",
+    h: "Website, Reputation & Digital Alignment",
+    paras: [
+      "Brand only works when it is consistent. We map the new positioning, voice, and identity to the website, landing pages, reputation profiles, content templates, and paid media — so every patient touchpoint reinforces the same story.",
+      "Reputation, Google Business Profile, healthcare directories, and AI-source citations all get aligned with the rebrand — not treated as separate workstreams.",
+    ],
+  },
+  {
+    n: "05",
+    nav: "Rollout",
+    h: "Growth-Oriented Brand Roadmap",
+    paras: [
+      "A rollout plan with phased priorities, dependencies, and KPI thresholds — built so the brand work compounds into measurable growth instead of sitting as a deck on a shared drive.",
+      "Quarterly reviews track brand health, reputation signals, and downstream patient acquisition impact against the original brief.",
     ],
   },
 ];
 
-const OBJECTIONS = [
-  { h: "Low patient trust", p: "Patients need consistent credibility signals — across website, reviews, social, and advertising — before they contact a practice." },
-  { h: "Outdated identity", p: "A visual identity or messaging that no longer reflects the practice creates doubt and weakens every marketing channel it touches." },
-  { h: "Inconsistent positioning", p: "When the brand message changes across channels, patients lose confidence. Consistency is the brand's most powerful trust signal." },
-  { h: "Invisible to AI search", p: "AI-powered discovery platforms evaluate entity consistency, authority, and reputation signals. Strong branding directly improves AI visibility." },
+const BLUEPRINT = [
+  {
+    area: "Discovery",
+    label: "01",
+    inputs: "Patient reviews, competitor brands, current website, paid media, internal interviews, market signals.",
+    outputs: "Brand audit, competitive benchmark, perception gap map, prioritized brand risks.",
+  },
+  {
+    area: "Positioning",
+    label: "02",
+    inputs: "Target audience profile, service-line economics, differentiators, leadership goals.",
+    outputs: "Positioning statement, messaging framework, audience hierarchy, proof architecture.",
+  },
+  {
+    area: "Voice & Identity",
+    label: "03",
+    inputs: "Positioning, brand archetype, existing assets, market norms, accessibility standards.",
+    outputs: "Brand voice guidelines, visual identity direction, asset principles, do/don't reference.",
+  },
+  {
+    area: "Alignment",
+    label: "04",
+    inputs: "Website pages, reputation profiles, ads, content templates, intake & follow-up touchpoints.",
+    outputs: "Alignment plan across web, reputation, paid, content, and patient-experience surfaces.",
+  },
+  {
+    area: "Rollout",
+    label: "05",
+    inputs: "All prior outputs, capacity constraints, leadership priorities, quarterly milestones.",
+    outputs: "Brand roadmap, rollout sequence, KPI framework, review cadence.",
+  },
+];
+
+const ADAPTER = [
+  "Specialty positioning and target patient profile",
+  "Service-line hierarchy and offer architecture",
+  "Voice calibrated to clinical trust and approachability",
+  "Local market and competitor differentiation",
+  "Entity-based brand signals and conversational search visibility",
+];
+
+const RELATED = [
+  { to: "/services/marketing-strategy", label: "Marketing Strategy", sub: "Plug the brand into a measurable 12-month patient growth plan." },
+  { to: "/services/website-design", label: "Website Design & CRO", sub: "Express the rebrand in a website built to convert." },
+  { to: "/services/reputation", label: "Reputation", sub: "Align reviews, profiles, and responses with the new brand voice." },
+  { to: "/services/seo", label: "SEO & AI Optimization", sub: "Reinforce the brand as an entity across search and AI sources." },
 ];
 
 const FAQS = [
-  { q: "What is healthcare branding?", a: "Healthcare branding is the strategic process of shaping how patients perceive and experience your practice — encompassing positioning, messaging, visual identity, patient experience, online reputation, and communication consistency." },
-  { q: "How long does a healthcare rebranding project take?", a: "Most healthcare rebranding projects range from several weeks to several months depending on scope, number of locations, and the complexity of visual and messaging changes required." },
-  { q: "Can branding improve patient acquisition?", a: "Yes. A strong healthcare brand builds trust before the first appointment, improves conversion rates across digital channels, and increases the effectiveness of SEO, paid advertising, and reputation management." },
-  { q: "Does branding affect SEO and AI visibility?", a: "Yes. Consistent branding strengthens authority signals, trust indicators, and entity recognition — all of which influence how traditional search engines and AI-powered discovery platforms evaluate and surface your practice." },
+  {
+    q: "What is healthcare branding?",
+    a: "Healthcare branding is the strategic process of shaping how patients perceive and experience your practice — encompassing positioning, messaging, visual identity, patient experience, online reputation, website presentation, and communication consistency.",
+  },
+  {
+    q: "How long does a rebranding project take?",
+    a: "Most healthcare rebranding projects range from several weeks to several months depending on scope, number of locations, and the complexity of the visual and messaging changes required.",
+  },
+  {
+    q: "Can branding improve patient acquisition?",
+    a: "Yes. A strong healthcare brand builds trust before the first appointment, improves conversion rates across digital channels, and increases the overall effectiveness of SEO, paid advertising, and reputation management.",
+  },
+  {
+    q: "Does branding affect SEO and AI visibility?",
+    a: "Yes. Consistent branding strengthens authority signals, trust indicators, and entity recognition — all of which influence how both traditional search engines and AI-powered discovery platforms evaluate and surface your practice.",
+  },
 ];
 
 const JSONLD = {
@@ -139,20 +181,42 @@ const JSONLD = {
       name: "Vigorant",
       url: "https://vigorant.com",
       logo: "https://vigorant.com/logo.png",
-      description: "Healthcare-exclusive growth marketing agency providing AI-driven patient acquisition for dental, medical, and chiropractic practices.",
+      description:
+        "Healthcare-exclusive growth marketing agency providing AI-driven patient acquisition for dental, medical, and chiropractic practices.",
       areaServed: "United States",
+      knowsAbout: [
+        "Healthcare Branding",
+        "Healthcare Rebranding",
+        "Medical Branding",
+        "Dental Branding",
+        "Chiropractic Branding",
+        "Brand Strategy",
+        "Healthcare Marketing",
+        "AI Brand Visibility",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vigorant.com/#website",
+      url: "https://vigorant.com",
+      name: "Vigorant",
+      publisher: { "@id": "https://vigorant.com/#organization" },
     },
     {
       "@type": "WebPage",
-      "@id": CANONICAL + "#webpage",
+      "@id": `${CANONICAL}#webpage`,
       url: CANONICAL,
-      name: "Healthcare Branding & Rebranding Services | Vigorant",
+      name: "Healthcare Branding & Rebranding Services | Build a Practice Patients Remember | Vigorant",
       description:
-        "Healthcare branding and rebranding services for dental, medical, and chiropractic practices. Brand discovery, positioning, messaging, visual identity, digital alignment, and rollout.",
+        "Healthcare branding and rebranding services for dental, medical, and chiropractic practices, including brand strategy, messaging, visual identity recommendations, digital alignment, and rollout planning.",
+      isPartOf: { "@id": "https://vigorant.com/#website" },
+      about: { "@id": `${CANONICAL}#service` },
+      breadcrumb: { "@id": `${CANONICAL}#breadcrumb` },
+      inLanguage: "en-US",
     },
     {
       "@type": "BreadcrumbList",
-      "@id": CANONICAL + "#breadcrumb",
+      "@id": `${CANONICAL}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://vigorant.com/" },
         { "@type": "ListItem", position: 2, name: "Services", item: "https://vigorant.com/services" },
@@ -161,28 +225,32 @@ const JSONLD = {
     },
     {
       "@type": "Service",
-      "@id": CANONICAL + "#service",
+      "@id": `${CANONICAL}#service`,
       name: "Healthcare Branding & Rebranding Services",
       provider: { "@id": "https://vigorant.com/#organization" },
       description:
-        "Healthcare branding and rebranding services including brand audit, competitive analysis, positioning strategy, messaging framework, brand voice guidelines, visual identity recommendations, website alignment, reputation review, and a growth-oriented brand roadmap.",
+        "Healthcare branding and rebranding services for dental, medical, and chiropractic practices. Includes brand audit, competitive analysis, positioning strategy, messaging framework, brand voice guidelines, visual identity recommendations, website alignment recommendations, reputation review, and a growth-oriented brand roadmap.",
       areaServed: "United States",
       serviceType: "Healthcare Brand Strategy",
+      audience: {
+        "@type": "Audience",
+        audienceType: "Dental Practices, Medical Clinics, Chiropractic Offices, Multi-location Healthcare Groups",
+      },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Branding & Rebranding Deliverables",
+        name: "Branding & Rebranding Service Deliverables",
         itemListElement: [
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand Audit & Competitive Analysis" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Positioning Strategy & Messaging Framework" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Brand Voice Guidelines" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Visual Identity Recommendations" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website & Digital Experience Alignment" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Growth-Oriented Brand Roadmap" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Alignment & Growth-Oriented Brand Roadmap" } },
         ],
       },
     },
     {
       "@type": "FAQPage",
-      "@id": CANONICAL + "#faq",
+      "@id": `${CANONICAL}#faq`,
       mainEntity: FAQS.map((f) => ({
         "@type": "Question",
         name: f.q,
@@ -193,9 +261,8 @@ const JSONLD = {
 };
 
 export default function BrandingRebranding() {
-  const [activeTab, setActiveTab] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const tab = TABS[activeTab];
+  const [activePhase, setActivePhase] = useState(0);
 
   return (
     <div className="min-h-screen bg-background">
@@ -207,10 +274,10 @@ export default function BrandingRebranding() {
         />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Healthcare Branding & Rebranding Services | Vigorant" />
+        <meta property="og:title" content="Healthcare Branding & Rebranding Services | Build a Practice Patients Remember | Vigorant" />
         <meta
           property="og:description"
-          content="Build trust, differentiate from competitors, and create a stronger patient acquisition engine with healthcare branding from Vigorant."
+          content="Transform how patients perceive your practice with healthcare branding and rebranding services. Build trust, differentiate from competitors, and create a stronger patient acquisition engine with Vigorant."
         />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -229,93 +296,195 @@ export default function BrandingRebranding() {
         <meta itemProp="provider" content="Vigorant" />
         <meta itemProp="areaServed" content="United States" />
 
-        {/* HERO — split with sticky audit rail */}
+        {/* HERO */}
         <section aria-labelledby="hero-h1" className="relative overflow-hidden bg-background">
-          <div aria-hidden className="pointer-events-none absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full opacity-90"
-            style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.18), transparent 70%)", filter: "blur(80px)" }} />
-          <div aria-hidden className="pointer-events-none absolute -bottom-12 -left-16 w-[360px] h-[360px] rounded-full opacity-80"
-            style={{ background: "radial-gradient(circle, hsl(252 100% 80% / 0.14), transparent 70%)", filter: "blur(70px)" }} />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full"
+            style={{
+              background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 65%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 right-0 w-[560px] h-[560px] rounded-full"
+            style={{
+              background: "radial-gradient(circle, hsl(248 100% 75% / 0.18), transparent 65%)",
+              filter: "blur(70px)",
+            }}
+          />
 
-          <div className="container relative pt-10 sm:pt-14 pb-16 sm:pb-24">
+          <div className="container relative pt-10 sm:pt-14 pb-20 sm:pb-28">
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center flex-wrap gap-1.5 font-mono-ui text-[11px] text-ink-muted list-none p-0 m-0">
                 <li><Link to="/" className="hover:text-brand-purple transition-colors">Home</Link></li>
-                <li className="text-brand-lavender/70">/</li>
+                <li className="text-ink-muted/50">/</li>
                 <li><Link to="/services" className="hover:text-brand-purple transition-colors">Services</Link></li>
-                <li className="text-brand-lavender/70">/</li>
-                <li aria-current="page" className="text-brand-deep">Healthcare Branding &amp; Rebranding Services</li>
+                <li className="text-ink-muted/50">/</li>
+                <li aria-current="page" className="text-brand-deep">Healthcare Branding & Rebranding</li>
               </ol>
             </nav>
 
-            <div className="grid lg:grid-cols-[1fr_400px] gap-10 lg:gap-14 items-start">
+            <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-14 items-start">
               <Reveal>
-                <Eyebrow>Branding &amp; Rebranding</Eyebrow>
+                <Eyebrow>Branding & Rebranding</Eyebrow>
                 <h1
                   id="hero-h1"
                   className="font-display text-brand-deep mt-4 leading-[1.05] tracking-tight"
                   style={{ fontSize: "clamp(34px, 6vw, 64px)", letterSpacing: "-0.03em" }}
                 >
-                  Healthcare Branding &amp;{" "}
+                  Build a Practice{" "}
                   <span
                     className="bg-clip-text text-transparent"
-                    style={{ backgroundImage: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))" }}
+                    style={{ backgroundImage: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}
                   >
-                    Rebranding
-                  </span>{" "}
-                  Services
+                    Patients Remember
+                  </span>
                 </h1>
-                <p className="mt-6 text-[17px] sm:text-[19px] leading-[1.6] text-ink-muted max-w-2xl">
-                  Build a brand patients trust, remember, and choose. Your brand is more than a logo — it is the perception patients form before they call, book, or visit your practice. Vigorant helps dental, medical, and chiropractic practices develop powerful brands that strengthen credibility, improve patient acquisition, and support long-term growth.
+                <p className="mt-6 text-[16.5px] sm:text-[18px] leading-[1.65] text-ink-muted max-w-2xl">
+                  Patients choose practices they recognize and trust. We build healthcare brands that signal clinical confidence, differentiate against competitors, and make every downstream marketing dollar work harder.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/free-audit"
                     className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
-                    style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))", boxShadow: "0 12px 32px hsl(247 93% 64% / 0.35)" }}
+                    style={{
+                      background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                      boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
+                    }}
                   >
-                    Schedule a Brand Strategy Consultation <ArrowRight className="w-4 h-4" />
+                    Request a Brand Audit <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-brand-purple/5 transition-all"
+                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
                   >
-                    Request a Brand Assessment
+                    Book a Brand Strategy Call
                   </Link>
                 </div>
+
+                <ul className="mt-8 flex flex-wrap gap-2 list-none p-0">
+                  {PROOF_TAGS.map((t) => (
+                    <li
+                      key={t}
+                      className="font-mono-ui text-[11.5px] tracking-[0.06em] text-brand-deep/75 px-3 py-1.5 rounded-full bg-white/75 border border-brand-purple/20"
+                      style={{ boxShadow: "0 10px 28px hsl(247 93% 64% / 0.07)" }}
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
 
-              {/* Audit Rail (sticky on desktop) */}
+              {/* Brand panel */}
               <Reveal delay={0.1}>
                 <aside
-                  className="relative lg:sticky lg:top-24 rounded-3xl p-7 sm:p-8 overflow-hidden"
-                  style={{ background: "var(--gradient-dark)", border: "1px solid hsl(247 93% 64% / 0.25)" }}
-                  data-dark="true"
+                  className="relative rounded-3xl p-6 sm:p-7 overflow-hidden"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, hsl(0 0% 100% / 0.86), hsl(250 100% 98% / 0.78))",
+                    border: "1px solid hsl(247 93% 64% / 0.18)",
+                    boxShadow: "0 28px 90px hsl(247 93% 64% / 0.16)",
+                  }}
                 >
                   <div aria-hidden className="absolute inset-0 grid-overlay opacity-30" />
-                  <div className="relative">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/85">
-                      Brand positioning
-                    </span>
-                    <p
-                      className="mt-3 font-extrabold text-white leading-[1.18] tracking-tight"
-                      style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.1rem)" }}
-                    >
-                      Trust before the first appointment.
-                    </p>
-                    <p className="mt-4 text-[14.5px] leading-[1.65] text-white/75">
-                      A practice brand performs best when positioning, messaging, visual identity, and digital presence are unified around a single, patient-focused story.
-                    </p>
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute -top-20 -right-10 w-72 h-72 rounded-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle, hsl(248 100% 75% / 0.40), transparent 65%)",
+                      filter: "blur(50px)",
+                    }}
+                    animate={{ y: [0, 10, 0], x: [0, -8, 0] }}
+                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                  />
 
-                    <div className="mt-7 space-y-4 border-t border-white/10 pt-5">
+                  <div className="relative">
+                    <div className="flex items-center justify-between font-mono-ui text-[11px] tracking-[0.12em] text-brand-purple">
+                      <span>BRAND SYSTEM</span>
+                      <span className="px-2 py-1 rounded-full bg-surface-secondary border border-brand-purple/20">
+                        v2026
+                      </span>
+                    </div>
+
+                    <h3
+                      className="font-display text-brand-deep mt-4 leading-[1.15]"
+                      style={{ fontSize: "clamp(20px, 2.4vw, 26px)", letterSpacing: "-0.025em" }}
+                    >
+                      Positioning · Voice · Identity
+                    </h3>
+
+                    {/* Identity sample */}
+                    <div
+                      className="mt-5 rounded-2xl p-5 flex items-center gap-4"
+                      style={{
+                        background: "linear-gradient(135deg, hsl(248 49% 15%), hsl(250 45% 19%))",
+                        border: "1px solid hsl(0 0% 100% / 0.12)",
+                      }}
+                    >
+                      <div
+                        className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center font-display text-white text-[24px]"
+                        style={{
+                          background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                          boxShadow: "0 10px 30px hsl(247 93% 64% / 0.45)",
+                        }}
+                      >
+                        V
+                      </div>
+                      <div className="min-w-0">
+                        <span className="block font-mono-ui text-[10.5px] tracking-[0.12em] text-brand-lavender/80">
+                          PRACTICE MARK
+                        </span>
+                        <strong className="block font-display text-white text-[20px] leading-tight mt-0.5">
+                          Vigorant Dental Co.
+                        </strong>
+                        <span className="block font-mono-ui text-[11px] text-white/55 mt-1">
+                          Trusted care. Modern delivery.
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Mini metrics */}
+                    <div className="mt-5 grid grid-cols-3 gap-3">
                       {[
-                        ["Primary lever", "Patient trust and credibility signals"],
-                        ["Typical gap", "Inconsistent messaging, outdated visual identity, or a brand that no longer reflects the practice's direction."],
-                        ["Activation path", "Brand audit → positioning → messaging → visual identity → digital alignment → rollout"],
-                      ].map(([k, v]) => (
-                        <div key={k} className="grid grid-cols-[110px_1fr] gap-3">
-                          <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.12em] text-brand-lavender/70 pt-0.5">{k}</span>
-                          <strong className="text-[13.5px] text-white/90 font-semibold leading-[1.55]">{v}</strong>
+                        { l: "TRUST", v: "+46%", s: "perception" },
+                        { l: "RECALL", v: "3.2×", s: "vs. control" },
+                        { l: "CVR", v: "+28%", s: "site avg" },
+                      ].map((m) => (
+                        <div
+                          key={m.l}
+                          className="rounded-xl p-3"
+                          style={{
+                            background: "hsl(0 0% 100% / 0.9)",
+                            border: "1px solid hsl(247 93% 64% / 0.18)",
+                            boxShadow: "0 16px 42px hsl(247 93% 64% / 0.10)",
+                          }}
+                        >
+                          <span className="block font-mono-ui text-[10.5px] tracking-[0.1em] text-brand-purple">
+                            {m.l}
+                          </span>
+                          <strong className="block font-display text-brand-deep text-[22px] leading-none mt-1">
+                            {m.v}
+                          </strong>
+                          <small className="block text-[10.5px] text-brand-deep/45 mt-1">{m.s}</small>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* HERO mini ledger */}
+                    <div className="mt-5 divide-y divide-brand-purple/15 border-t border-brand-purple/15">
+                      {HERO_METRICS.map((m) => (
+                        <div key={m.n} className="grid grid-cols-[36px_1fr] gap-3 py-3">
+                          <strong
+                            className="font-display text-[18px] leading-none not-italic"
+                            style={{ color: "hsl(247 93% 64%)" }}
+                          >
+                            {m.n}
+                          </strong>
+                          <p className="text-[12.5px] leading-[1.55] text-brand-deep/75">{m.p}</p>
                         </div>
                       ))}
                     </div>
@@ -326,15 +495,80 @@ export default function BrandingRebranding() {
           </div>
         </section>
 
-        {/* BAND — 4 cell strip */}
-        <section aria-label="At a glance" className="border-y border-brand-purple/10 bg-surface-secondary">
+        {/* THESIS */}
+        <section
+          aria-labelledby="thesis-h2"
+          className="py-20 sm:py-28 bg-surface-secondary border-y border-brand-purple/10"
+        >
           <div className="container">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-brand-purple/10">
-              {BAND.map((b, i) => (
-                <Reveal key={b.k} delay={i * 0.05}>
-                  <div className="py-7 sm:py-8 px-5 sm:px-6">
-                    <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] text-brand-purple">{b.k}</span>
-                    <p className="mt-2.5 text-[14px] leading-[1.55] text-brand-deep font-medium">{b.v}</p>
+            <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+              <Reveal>
+                <blockquote
+                  className="relative pl-10 font-display text-brand-deep text-[22px] sm:text-[26px] leading-[1.35]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  <span
+                    aria-hidden
+                    className="absolute left-0 -top-3 font-display"
+                    style={{ color: "hsl(248 100% 75%)", fontSize: "5rem", lineHeight: 0.55 }}
+                  >
+                    "
+                  </span>
+                  A brand decides whether a patient trusts your practice before they ever meet you.
+                </blockquote>
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <div className="border-l-[3px] border-brand-purple pl-6">
+                  <Eyebrow>Why brand matters</Eyebrow>
+                  <h2
+                    id="thesis-h2"
+                    className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                    style={{ fontSize: "clamp(26px, 4.2vw, 42px)", letterSpacing: "-0.03em" }}
+                  >
+                    Brand is the multiplier on every other marketing investment.
+                  </h2>
+                  <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
+                    A strong healthcare brand builds trust before the first appointment, lifts conversion across every digital channel, and increases the effectiveness of SEO, paid advertising, and reputation work. A weak brand quietly taxes every other line item.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* FIT — numbered editorial rows */}
+        <section aria-labelledby="fit-h2" className="py-20 sm:py-28">
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>Who it's for</Eyebrow>
+                <h2
+                  id="fit-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  Built for healthcare practices ready to compete on perception, not just on clinical work.
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 border-t border-brand-purple/20">
+              {FIT_ROWS.map((r, i) => (
+                <Reveal key={r.h} delay={i * 0.05}>
+                  <div className="grid grid-cols-[64px_1fr] md:grid-cols-[80px_320px_1fr] gap-4 md:gap-10 py-8 border-b border-brand-purple/20 items-start transition-transform hover:translate-x-2">
+                    <span className="font-mono-ui font-black text-brand-purple text-[22px] leading-none rounded-lg bg-surface-secondary px-3 py-2 inline-flex items-center justify-center">
+                      {r.n}
+                    </span>
+                    <h3
+                      className="font-extrabold text-brand-deep text-[18px] sm:text-[20px] leading-snug"
+                      style={{ letterSpacing: "-0.01em" }}
+                    >
+                      {r.h}
+                    </h3>
+                    <p className="text-[14.5px] leading-[1.7] text-ink-muted col-span-2 md:col-span-1">
+                      {r.p}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -342,184 +576,283 @@ export default function BrandingRebranding() {
           </div>
         </section>
 
-        {/* WHY IT MATTERS — split + compare ledger */}
-        <section aria-labelledby="why-h2" className="py-20 sm:py-28">
+        {/* PHASES — sticky sidebar */}
+        <section
+          aria-labelledby="phases-h2"
+          className="py-20 sm:py-28 bg-surface-secondary border-y border-brand-purple/10"
+        >
           <div className="container">
-            <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
-              <Reveal>
-                <Eyebrow>Why it matters</Eyebrow>
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>The 5-phase framework</Eyebrow>
                 <h2
-                  id="why-h2"
+                  id="phases-h2"
                   className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
                   style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
                 >
-                  Why Branding Matters More Than Ever
+                  How a Vigorant brand engagement actually runs.
                 </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
-                  Patients often compare multiple providers before making a decision. When services, pricing, and locations appear similar, branding becomes the deciding factor. A strong healthcare brand increases patient trust, improves conversion rates, differentiates from competitors, and strengthens marketing performance across all channels.
-                </p>
-              </Reveal>
+              </div>
+            </Reveal>
 
-              <Reveal delay={0.1}>
-                <div className="border-t border-brand-purple/15">
-                  <div className="grid grid-cols-2 gap-6 py-4 border-b border-brand-purple/15">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-ink-muted">Without strong branding</span>
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">With Vigorant branding</span>
-                  </div>
-                  {COMPARE.map((row, i) => (
-                    <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-6 py-6 border-b border-brand-purple/10">
-                      <p className="text-[14.5px] leading-[1.65] text-ink-muted">{row.a}</p>
-                      <p className="text-[14.5px] leading-[1.65] text-brand-deep font-medium flex gap-2">
-                        <Check className="w-4 h-4 mt-1 shrink-0 text-brand-purple" />
-                        <span>{row.b}</span>
+            <div className="mt-12 grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
+              <nav aria-label="Phase index" className="hidden lg:block lg:sticky lg:top-28">
+                <ol className="list-none p-0 m-0 border-t border-brand-purple/20">
+                  {PHASES.map((e, i) => {
+                    const active = activePhase === i;
+                    return (
+                      <li key={e.n} className="border-b border-brand-purple/20">
+                        <a
+                          href={`#phase-${e.n}`}
+                          onClick={() => setActivePhase(i)}
+                          className={`block py-4 transition-all font-black ${
+                            active ? "text-brand-purple pl-5" : "text-brand-deep/55 hover:text-brand-purple"
+                          }`}
+                          style={{ letterSpacing: "-0.01em" }}
+                        >
+                          <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] block mb-1 opacity-80">
+                            {e.n}
+                          </span>
+                          {e.nav}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </nav>
+
+              <div>
+                {PHASES.map((e, i) => (
+                  <motion.article
+                    key={e.n}
+                    id={`phase-${e.n}`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-30% 0px -40% 0px" }}
+                    onViewportEnter={() => setActivePhase(i)}
+                    transition={{ duration: 0.7, ease }}
+                    className="py-10 sm:py-14 border-b border-brand-purple/20 first:pt-0 scroll-mt-32"
+                  >
+                    <span
+                      className={`section-label inline-block px-3 py-1 rounded-full transition-all ${
+                        activePhase === i
+                          ? "text-white border border-transparent"
+                          : "bg-brand-purple/8 border border-brand-purple/20 text-brand-purple"
+                      }`}
+                      style={
+                        activePhase === i
+                          ? {
+                              background:
+                                "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                              boxShadow: "0 10px 30px hsl(247 93% 64% / 0.28)",
+                            }
+                          : undefined
+                      }
+                    >
+                      Phase {e.n}
+                    </span>
+                    <h3
+                      className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                      style={{ fontSize: "clamp(24px, 3.6vw, 36px)", letterSpacing: "-0.03em" }}
+                    >
+                      {e.h}
+                    </h3>
+                    {e.paras.map((p, j) => (
+                      <p key={j} className="mt-4 text-[16px] leading-[1.75] text-ink-muted max-w-2xl">
+                        {p}
                       </p>
-                    </div>
-                  ))}
-                </div>
-              </Reveal>
+                    ))}
+                  </motion.article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* TABS — Branding system */}
-        <section aria-labelledby="system-h2" className="bg-surface-secondary py-20 sm:py-28">
+        {/* BLUEPRINT — row-based, not cards */}
+        <section aria-labelledby="blueprint-h2" className="py-20 sm:py-28">
           <div className="container">
             <Reveal>
               <div className="max-w-3xl">
-                <Eyebrow>Branding system</Eyebrow>
+                <Eyebrow>Inputs & outputs</Eyebrow>
                 <h2
-                  id="system-h2"
+                  id="blueprint-h2"
                   className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
                   style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
                 >
-                  Branding Is More Than a Logo
+                  The branding blueprint.
                 </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
-                  Many practices treat branding as a visual exercise. Vigorant treats it as a strategic growth foundation. Every brand element should strengthen patient trust, support SEO and AI visibility, reinforce reputation, and improve conversion across every patient touchpoint.
+                <p className="mt-5 text-[16px] leading-[1.7] text-ink-muted">
+                  Every phase has defined inputs and defined deliverables — no mystery, no scope drift, no "design decks" without a strategy underneath.
                 </p>
               </div>
             </Reveal>
 
-            <div className="mt-10 grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-10 items-start">
-              {/* Tab list */}
-              <div className="lg:border-t border-brand-purple/20" role="tablist" aria-label="Branding system phases">
-                {TABS.map((t, i) => {
-                  const active = i === activeTab;
-                  return (
-                    <button
-                      key={t.num}
-                      role="tab"
-                      aria-selected={active}
-                      onClick={() => setActiveTab(i)}
-                      className={`w-full flex items-center justify-between gap-4 py-5 text-left border-b border-brand-purple/15 transition-colors ${
-                        active ? "text-brand-purple" : "text-brand-deep/55 hover:text-brand-deep"
-                      }`}
+            <div className="mt-12 flex flex-col gap-4">
+              {BLUEPRINT.map((b, i) => (
+                <Reveal key={b.area} delay={i * 0.04}>
+                  <div
+                    className="grid grid-cols-1 md:grid-cols-[200px_1fr_1fr] rounded-2xl overflow-hidden transition-all hover:-translate-y-1"
+                    style={{
+                      background: "hsl(0 0% 100% / 0.72)",
+                      border: "1px solid hsl(247 93% 64% / 0.18)",
+                      boxShadow: "0 18px 50px hsl(247 93% 64% / 0.08)",
+                    }}
+                  >
+                    <div
+                      className="p-6 sm:p-7 flex flex-col gap-3 justify-center"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, hsl(248 49% 15%), hsl(250 45% 19%))",
+                      }}
                     >
-                      <span className="flex items-center gap-3">
-                        <span className="font-mono-ui text-[11px] tracking-[0.14em]">{t.num}</span>
-                        <span className="font-extrabold text-[14.5px] leading-snug" style={{ letterSpacing: "-0.01em" }}>
-                          {t.label}
-                        </span>
+                      <span
+                        className="self-start font-mono-ui font-black text-white text-[11px] tracking-[0.14em] px-2.5 py-1 rounded-full"
+                        style={{
+                          background: "hsl(0 0% 100% / 0.12)",
+                          border: "1px solid hsl(0 0% 100% / 0.18)",
+                        }}
+                      >
+                        {b.label}
                       </span>
-                      <ArrowRight className={`w-4 h-4 shrink-0 transition-transform ${active ? "translate-x-0" : "-translate-x-1 opacity-50"}`} />
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Panel */}
-              <Reveal key={activeTab} delay={0}>
-                <article className="rounded-3xl bg-background border border-brand-purple/15 p-7 sm:p-10 shadow-sm">
-                  <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
-                    Phase {tab.num}
-                  </span>
-                  <h3 className="mt-3 font-extrabold text-brand-deep text-[22px] sm:text-[26px] leading-[1.25]" style={{ letterSpacing: "-0.02em" }}>
-                    {tab.h3}
-                  </h3>
-                  <p className="mt-4 text-[15.5px] leading-[1.7] text-ink-muted">{tab.body}</p>
-
-                  {tab.lanes && (
-                    <div className="mt-7 space-y-4">
-                      {tab.lanes.map((l) => (
-                        <div key={l.label}>
-                          <div className="flex items-center justify-between mb-1.5">
-                            <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-deep/70">{l.label}</span>
-                            <span className="font-mono-ui text-[11px] text-brand-purple">{l.pct}%</span>
-                          </div>
-                          <div className="h-2 rounded-full overflow-hidden" style={{ background: "hsl(250 100% 96%)" }}>
-                            <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: `${l.pct}%` }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 1.4, ease }}
-                              className="h-full"
-                              style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(252 100% 75%))" }}
-                            />
-                          </div>
-                        </div>
-                      ))}
+                      <strong
+                        className="font-display text-white text-[22px] leading-[1.15]"
+                        style={{ letterSpacing: "-0.025em" }}
+                      >
+                        {b.area}
+                      </strong>
                     </div>
-                  )}
 
-                  {tab.bullets && (
-                    <ul className="mt-6 space-y-3 list-none p-0">
-                      {tab.bullets.map((b, i) => (
-                        <li key={i} className="flex gap-3 text-[14.5px] text-brand-deep leading-[1.6]">
-                          <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(247 93% 64%)" }} />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
-              </Reveal>
+                    <div className="p-6 sm:p-7 border-t md:border-t-0 md:border-l border-brand-purple/15 bg-white">
+                      <small className="font-mono-ui text-[11px] tracking-[0.1em] text-brand-purple block">
+                        INPUTS
+                      </small>
+                      <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-muted">{b.inputs}</p>
+                    </div>
+
+                    <div
+                      className="p-6 sm:p-7 border-t md:border-t-0 md:border-l border-brand-purple/15"
+                      style={{
+                        background: "linear-gradient(135deg, #ffffff, hsl(250 100% 98%))",
+                      }}
+                    >
+                      <small className="font-mono-ui text-[11px] tracking-[0.1em] text-brand-purple block">
+                        OUTPUTS
+                      </small>
+                      <p className="mt-2 text-[14.5px] leading-[1.65] text-brand-deep">{b.outputs}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* DARK OBJECTION STACK */}
+        {/* ADAPTER DARK */}
         <section
-          aria-labelledby="objection-h2"
+          aria-labelledby="adapter-h2"
           className="relative overflow-hidden py-20 sm:py-28"
           style={{ background: "var(--gradient-dark)" }}
           data-dark="true"
         >
           <div aria-hidden className="absolute inset-0 grid-overlay opacity-25" />
           <div aria-hidden className="absolute inset-0 flex items-center justify-center">
-            <div className="w-[640px] h-[640px] rounded-full"
-              style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.22), transparent 65%)", filter: "blur(80px)" }} />
+            <div
+              className="w-[640px] h-[640px] rounded-full"
+              style={{
+                background: "radial-gradient(circle, hsl(247 93% 64% / 0.22), transparent 65%)",
+                filter: "blur(80px)",
+              }}
+            />
           </div>
 
           <div className="container relative">
-            <Reveal>
-              <div className="max-w-3xl">
-                <Eyebrow light>Brand clarity</Eyebrow>
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+              <Reveal>
+                <Eyebrow light>Brand adapter</Eyebrow>
                 <h2
-                  id="objection-h2"
+                  id="adapter-h2"
                   className="font-display text-white mt-4 leading-[1.1] tracking-tight"
-                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                  style={{ fontSize: "clamp(26px, 4.2vw, 42px)", letterSpacing: "-0.03em" }}
                 >
-                  What Branding Needs to Solve
+                  The same framework, tuned to your specialty and market.
                 </h2>
-                <p className="mt-5 text-[16.5px] leading-[1.7] text-white/70">
-                  Strategic healthcare branding should not just look better. It should remove patient hesitation and build the trust that turns a search result into a booked appointment.
+                <p className="mt-5 text-[16px] leading-[1.7] text-white/75">
+                  Dental, medical, and chiropractic brands share the same physics — recognition, trust, and consistency. The expression adapts to the specifics of your specialty, patient profile, and local market.
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
 
-            <div className="mt-12 border-t border-white/10">
-              {OBJECTIONS.map((o, i) => (
-                <Reveal key={o.h} delay={i * 0.05}>
-                  <div className="grid grid-cols-1 md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-8 py-7 border-b border-white/10 items-start">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/70">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="text-white font-extrabold text-[18px] sm:text-[20px] leading-snug" style={{ letterSpacing: "-0.01em" }}>
-                      {o.h}
-                    </h3>
-                    <p className="text-[14.5px] leading-[1.7] text-white/65">{o.p}</p>
-                  </div>
-                </Reveal>
+              <Reveal delay={0.1}>
+                <div
+                  className="rounded-3xl p-8 sm:p-10"
+                  style={{
+                    background: "hsl(0 0% 100% / 0.05)",
+                    border: "1px solid hsl(0 0% 100% / 0.12)",
+                  }}
+                >
+                  <h3 className="font-extrabold text-white text-[18px] sm:text-[20px]">
+                    What the brand customizes
+                  </h3>
+                  <ul className="mt-6 list-none p-0 border-t border-white/14">
+                    {ADAPTER.map((t, i) => (
+                      <li
+                        key={i}
+                        className="grid grid-cols-[44px_1fr] gap-4 py-4 border-b border-white/14 items-start"
+                      >
+                        <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/80 pt-0.5">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-[14.5px] leading-[1.65] text-white/80">
+                          {i === ADAPTER.length - 1 ? (
+                            <>
+                              Entity-based brand signals and{" "}
+                              <Link
+                                to="/services/seo"
+                                className="text-brand-lavender font-semibold underline underline-offset-4"
+                              >
+                                conversational search visibility
+                              </Link>
+                            </>
+                          ) : (
+                            t
+                          )}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* RELATED */}
+        <section
+          aria-label="Related services"
+          className="border-t border-brand-purple/10 bg-surface-secondary py-14"
+        >
+          <div className="container">
+            <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
+              Related services
+            </span>
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-px bg-brand-purple/15 border border-brand-purple/15 rounded-2xl overflow-hidden">
+              {RELATED.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
+                >
+                  <span
+                    className="font-extrabold text-brand-deep text-[15.5px] flex items-center gap-2"
+                    style={{ letterSpacing: "-0.01em" }}
+                  >
+                    {l.label}
+                    <ArrowRight className="w-4 h-4 text-brand-purple transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="font-mono-ui text-[11.5px] text-ink-muted/75 leading-[1.55]">
+                    {l.sub}
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -539,7 +872,7 @@ export default function BrandingRebranding() {
                   Frequently Asked Questions
                 </h2>
                 <p className="mt-5 text-[15.5px] leading-[1.7] text-ink-muted">
-                  Honest answers about brand strategy, timelines, and how branding influences patient acquisition and AI visibility.
+                  Common questions practices ask before committing to a branding or rebranding engagement.
                 </p>
               </Reveal>
 
@@ -554,7 +887,10 @@ export default function BrandingRebranding() {
                           aria-expanded={open}
                           className="w-full flex items-center justify-between gap-6 py-5 text-left"
                         >
-                          <span className="font-extrabold text-brand-deep text-[16px] sm:text-[17.5px] leading-snug" style={{ letterSpacing: "-0.01em" }}>
+                          <span
+                            className="font-extrabold text-brand-deep text-[16px] sm:text-[17.5px] leading-snug"
+                            style={{ letterSpacing: "-0.01em" }}
+                          >
                             {f.q}
                           </span>
                           <span
@@ -583,32 +919,6 @@ export default function BrandingRebranding() {
           </div>
         </section>
 
-        {/* RELATED LINK STRIP */}
-        <section aria-label="Related services" className="border-t border-brand-purple/10 bg-surface-secondary py-14">
-          <div className="container">
-            <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">Continue exploring</span>
-            <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-purple/10 border border-brand-purple/10 rounded-2xl overflow-hidden">
-              {[
-                { to: "/services/marketing-strategy", label: "Marketing Strategy", sub: "Frameworks that align channels to growth goals." },
-                { to: "/services/website-design", label: "Website Design & CRO", sub: "Convert brand trust into booked appointments." },
-                { to: "/services/seo", label: "SEO & AI Optimization", sub: "Earn visibility across traditional and AI search." },
-              ].map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
-                >
-                  <span className="font-extrabold text-brand-deep text-[16px] flex items-center gap-2" style={{ letterSpacing: "-0.01em" }}>
-                    {l.label}
-                    <ArrowRight className="w-4 h-4 text-brand-purple transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <span className="text-[13.5px] text-ink-muted leading-[1.55]">{l.sub}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FINAL CTA */}
         <section
           aria-labelledby="cta-h2"
@@ -618,29 +928,37 @@ export default function BrandingRebranding() {
         >
           <div aria-hidden className="absolute inset-0 grid-overlay opacity-25" />
           <div aria-hidden className="absolute inset-0 flex items-center justify-center">
-            <div className="w-[640px] h-[640px] rounded-full"
-              style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.25), transparent 65%)", filter: "blur(80px)" }} />
+            <div
+              className="w-[640px] h-[640px] rounded-full"
+              style={{
+                background: "radial-gradient(circle, hsl(247 93% 64% / 0.25), transparent 65%)",
+                filter: "blur(80px)",
+              }}
+            />
           </div>
           <div className="container relative max-w-3xl text-center">
             <Reveal>
-              <Eyebrow light>Ready to reposition?</Eyebrow>
+              <Eyebrow light>Ready to be the brand patients remember?</Eyebrow>
               <h2
                 id="cta-h2"
                 className="font-display text-white mt-4 leading-[1.1] tracking-tight"
                 style={{ fontSize: "clamp(30px, 5vw, 52px)", letterSpacing: "-0.03em" }}
               >
-                Build a brand patients remember before they book.
+                Build a brand that earns trust before the first appointment.
               </h2>
               <p className="mt-5 text-[16.5px] leading-[1.7] text-white/75">
-                Start with a brand assessment to identify where your practice is losing trust, clarity, or differentiation across the patient journey.
+                Start with a brand audit. We'll map perception gaps, competitor positioning, and the highest-leverage moves to unlock growth across every channel you already run.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/free-audit"
                   className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
-                  style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))", boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)" }}
+                  style={{
+                    background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                    boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
+                  }}
                 >
-                  Book a Brand Strategy Consultation <ArrowRight className="w-4 h-4" />
+                  Request a Brand Audit <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </Reveal>
@@ -652,13 +970,14 @@ export default function BrandingRebranding() {
           <p className="font-mono-ui text-[11.5px] text-ink-muted/70">
             External reference:{" "}
             <a
-              href="https://www.nih.gov"
+              href="https://www.ama-assn.org/"
               rel="noopener noreferrer"
               target="_blank"
               className="text-brand-purple underline underline-offset-4"
             >
-              National Institutes of Health — Health Communication Resources
-            </a>
+              American Medical Association — Practice Management Resources
+            </a>{" "}
+            — referenced in healthcare brand standards and patient-trust communication.
           </p>
         </div>
       </main>
