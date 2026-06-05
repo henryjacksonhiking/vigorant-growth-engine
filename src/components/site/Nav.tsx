@@ -38,6 +38,7 @@ const links: NavItem[] = [
       { label: "Reputation & Social Media", href: "/services/reputation" },
       { label: "Branding & Rebranding", href: "/services/branding-rebranding" },
       { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { label: "Landing Pages", href: "/services/landing-pages" },
     ],
   },
   {
