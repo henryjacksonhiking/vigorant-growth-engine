@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Search, Map, BarChart3, Plus } from "lucide-react";
 import { useState } from "react";
+import { ArrowRight, Plus } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -17,112 +17,162 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.8, delay, ease }}
       className={className}
-    >{children}</motion.div>
+    >
+      {children}
+    </motion.div>
   );
 }
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return <span className={light ? "section-label-light" : "section-label inline-block px-3 py-1 rounded-full bg-brand-purple/8 border border-brand-purple/20"}>{children}</span>;
+  return (
+    <span
+      className={
+        light
+          ? "section-label inline-block px-3 py-1 rounded-full bg-white/10 border border-white/20 text-brand-lavender"
+          : "section-label inline-block px-3 py-1 rounded-full bg-brand-purple/8 border border-brand-purple/20"
+      }
+    >
+      {children}
+    </span>
+  );
 }
 
-const FAQS = [
-  {
-    q: "What is the difference between marketing strategy and marketing execution?",
-    a: "Strategy defines where and how to grow — it sets goals, identifies target patients, allocates budget, and prioritizes channels. Execution implements the tactics required to achieve those goals. Without a strategy, execution becomes fragmented and produces inconsistent results.",
-  },
-  {
-    q: "How often should a healthcare marketing strategy be reviewed?",
-    a: "Most practices should review strategy quarterly to assess performance against KPIs, and conduct a comprehensive annual evaluation to reset goals, reallocate budget, and update competitive positioning.",
-  },
-  {
-    q: "Does the strategy include AI optimization?",
-    a: "Yes. We incorporate AEO, GEO, structured content, schema markup planning, entity-based SEO, and conversational search visibility to ensure your practice is discoverable across both traditional and AI-powered search platforms.",
-  },
-  {
-    q: "Can you create a strategy for a new practice?",
-    a: "Absolutely. Strategic planning is particularly valuable during launch and expansion phases, when establishing correct positioning and channel priorities from the outset prevents costly course corrections later.",
-  },
+const PROOF_TAGS = [
+  "Patient acquisition planning",
+  "AI visibility roadmap",
+  "12-month growth plan",
+  "KPI framework",
+];
+
+const HERO_METRICS = [
+  { n: "01", p: "Audit growth assumptions, market position, competitive set, and demand signals before any tactic is selected." },
+  { n: "02", p: "Prioritize the few channels that match your specialty, geography, and patient lifetime value — and budget accordingly." },
+  { n: "03", p: "Tie every initiative to an outcome metric: new patient calls, booked consults, revenue per channel." },
+];
+
+const FIT_ROWS = [
+  { n: "01", h: "Practices scaling to multiple locations", p: "When ad spend, SEO, and reputation efforts have to align across markets — strategy prevents fragmented, contradictory campaigns." },
+  { n: "02", h: "New or relaunching practices", p: "Establish positioning, channel priorities, and patient acquisition systems from the outset to avoid costly course corrections later." },
+  { n: "03", h: "Practices stuck on a growth plateau", p: "Diagnose the bottleneck — visibility, conversion, retention, or capacity — and rebuild the plan around the real constraint." },
+  { n: "04", h: "Specialty practices with high-value cases", p: "Higher LTV demands a more deliberate plan: targeted demand, qualified lead capture, and consult-stage conversion." },
 ];
 
 const PHASES = [
   {
-    num: "01",
-    icon: Search,
-    h3: "Market & Competitive Analysis",
-    body: "We assess local competition, market opportunities, patient demand patterns, and positioning gaps to identify exactly where your practice can win.",
-    bullets: [
-      "Local market analysis and competitor benchmarking",
-      "Patient demand and search behavior assessment",
-      "Unique value proposition and differentiation strategy",
+    n: "01",
+    nav: "Discovery",
+    h: "Growth Assessment & Market Analysis",
+    paras: [
+      "We start with the data that actually moves a practice forward — current performance, competitive positioning, patient demographics, and the demand patterns specific to your specialty and geography.",
+      "The output is a clear picture of where growth is leaking, which markets are addressable, and which assumptions in the existing plan no longer hold up.",
     ],
   },
   {
-    num: "02",
-    icon: Map,
-    h3: "Patient Journey Mapping & Digital Visibility",
-    body: (
-      <>
-        We map how prospective patients discover, evaluate, and choose providers — then build a visibility plan across{" "}
-        <Link to="/services/seo" className="text-brand-purple font-semibold underline-offset-4 hover:underline">
-          AI Engine Optimization (AEO) and Generative Engine Optimization (GEO)
-        </Link>
-        , paid advertising, local search, and reputation management.
-      </>
-    ),
-    bullets: [
-      "Patient journey mapping from search to booked appointment",
-      "SEO, AEO, GEO, and local search visibility planning",
-      "Paid advertising and reputation management roadmap",
+    n: "02",
+    nav: "Acquisition",
+    h: "Patient Acquisition Planning",
+    paras: [
+      "Channel selection is built around patient intent and lifetime value — not vendor preference. We map the journey from first impression to booked appointment and assign budget against the steps that actually predict revenue.",
+      "Every channel — SEO, paid ads, reputation, referrals, content — has a defined role, a measurable outcome, and a stop-loss threshold.",
     ],
   },
   {
-    num: "03",
-    icon: BarChart3,
-    h3: "Conversion Optimization & Growth Measurement",
-    body: "We identify where prospective patients drop off — website, phone, booking flow — and define the KPI framework that connects marketing activity to actual practice revenue.",
-    bullets: [
-      "Website and lead conversion optimization recommendations",
-      "Phone call and appointment request improvement strategy",
-      "KPI framework tied to patient acquisition and revenue",
+    n: "03",
+    nav: "Visibility",
+    h: "SEO & AI Visibility Roadmap",
+    paras: [
+      "The roadmap covers traditional SEO, local search, and the AI-driven discovery layer — AEO, GEO, structured content, schema, and conversational search visibility — so the practice shows up regardless of how patients ask the question.",
+      "Topical authority, entity coverage, and citation strategy are sequenced against demand, not against a generic content checklist.",
+    ],
+  },
+  {
+    n: "04",
+    nav: "Conversion",
+    h: "Paid Ads, Website & Reputation Strategy",
+    paras: [
+      "Paid media plans are built with clear creative, audience, and offer hypotheses — and a testing budget that protects the core spend. Website and landing page recommendations focus on the points of friction that actually drop conversion rate.",
+      "Reputation strategy turns the patient experience into a compounding acquisition asset across Google, Yelp, healthcare directories, and AI sources.",
+    ],
+  },
+  {
+    n: "05",
+    nav: "Roadmap",
+    h: "KPI Framework & 12-Month Growth Roadmap",
+    paras: [
+      "A 12-month roadmap with quarterly milestones, KPI thresholds, and decision points — so leadership can read the plan in five minutes and the operating team can execute it weekly.",
+      "Quarterly reviews recalibrate budget allocation, channel mix, and creative direction against actual results — not against the original assumptions.",
     ],
   },
 ];
 
-const LEDGER = [
-  ["Growth goals", "Define where the practice needs to grow — new patients, specific services, geographic expansion — and translate those into measurable targets."],
-  ["Target patient profile", "Identify the ideal patient demographics, concerns, decision triggers, and search behaviors the strategy must address."],
-  ["Channel priorities", "Determine which channels — SEO, paid search, reputation, social, referral — deliver the highest return for this specific practice."],
-  ["Measurement", "Establish KPIs tied directly to patient acquisition and revenue, not vanity metrics like impressions or followers."],
+const BLUEPRINT = [
+  {
+    area: "Discovery",
+    label: "01",
+    inputs: "Practice goals, financial benchmarks, capacity, competitor data, market demand signals, current channel performance.",
+    outputs: "Growth assessment, competitive benchmark, opportunity map, prioritized constraints.",
+  },
+  {
+    area: "Acquisition",
+    label: "02",
+    inputs: "Patient demographics, LTV by service line, channel cost data, historical campaign performance.",
+    outputs: "Channel mix recommendation, budget allocation, audience strategy, acquisition funnel.",
+  },
+  {
+    area: "Visibility",
+    label: "03",
+    inputs: "Keyword universe, intent clusters, current rankings, AI search behavior, schema audit, citation profile.",
+    outputs: "SEO roadmap, AEO/GEO plan, content priorities, structured data plan.",
+  },
+  {
+    area: "Conversion",
+    label: "04",
+    inputs: "Ad account audits, website analytics, landing page heuristics, review profile, intake friction points.",
+    outputs: "Paid media plan, website CRO priorities, landing page brief, reputation strategy.",
+  },
+  {
+    area: "Roadmap",
+    label: "05",
+    inputs: "All prior outputs, capacity & finance constraints, leadership priorities, quarterly milestones.",
+    outputs: "12-month roadmap, KPI framework, quarterly review cadence, decision-point thresholds.",
+  },
 ];
 
-const INCLUDED = [
-  "Growth assessment and current-state review",
-  "Market analysis and competitor benchmarking",
-  "Patient acquisition and targeting plan",
-  "SEO and AI optimization roadmap",
-  "Paid advertising roadmap",
-  "Website conversion optimization recommendations",
-  "Reputation strategy",
-  "KPI and measurement framework",
-  "12-month growth roadmap",
-];
-
-const AI_PANEL = [
-  "AI Engine Optimization (AEO)",
-  "Generative Engine Optimization (GEO)",
-  "Structured content development",
-  "Schema markup planning",
-  "Entity-based SEO",
-  "Conversational search visibility",
+const ADAPTER = [
+  "Specialty positioning and target patient profile",
+  "Service-line prioritization and offer architecture",
+  "Channel mix calibrated to patient LTV and capacity",
+  "Local market and competitor differentiation",
+  "Entity-based SEO and conversational search visibility",
 ];
 
 const RELATED = [
-  { label: "Dental Marketing Strategy", sub: "Tailor the strategy for dental patient acquisition.", href: "/solutions/dental" },
-  { label: "Medical Marketing Strategy", sub: "Build a growth roadmap for medical clinics.", href: "/solutions/medical" },
-  { label: "SEO & AI Optimization", sub: "Execute the visibility layer of your strategy.", href: "/services/seo" },
+  { to: "/solutions/dental", label: "Dental Marketing Strategy", sub: "Strategy tailored to general, cosmetic, and specialty dental practices." },
+  { to: "/solutions/medical", label: "Medical Marketing Strategy", sub: "Growth planning for primary care, specialty, and multi-location clinics." },
+  { to: "/solutions/chiropractic", label: "Chiropractic Marketing Strategy", sub: "Patient acquisition systems for chiropractic and wellness practices." },
+  { to: "/services/seo", label: "SEO & AI Optimization", sub: "Execute the visibility roadmap across traditional and AI search." },
 ];
 
-const SCHEMA_GRAPH = {
+const FAQS = [
+  {
+    q: "What is the difference between marketing strategy and marketing execution?",
+    a: "Strategy defines where and how to grow — it sets goals, identifies target patients, prioritizes channels, and allocates budget. Execution implements the specific tactics required to achieve those goals. Without a clear strategy, execution becomes fragmented and produces inconsistent results.",
+  },
+  {
+    q: "How often should a healthcare marketing strategy be reviewed?",
+    a: "Most healthcare practices should review their marketing strategy quarterly to assess performance against KPIs, and conduct a comprehensive annual evaluation to reset goals, reallocate budget, and update competitive positioning.",
+  },
+  {
+    q: "Does the marketing strategy include AI optimization?",
+    a: "Yes. Vigorant's marketing strategy incorporates AI Engine Optimization (AEO), Generative Engine Optimization (GEO), structured content development, schema markup planning, entity-based SEO, and conversational search visibility to ensure practices are discoverable across both traditional and AI-powered search platforms.",
+  },
+  {
+    q: "Can you create a marketing strategy for a new healthcare practice?",
+    a: "Absolutely. Strategic planning is particularly valuable during launch and expansion phases, when establishing correct positioning, channel priorities, and patient acquisition systems from the outset prevents costly course corrections later.",
+  },
+];
+
+const JSONLD = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -131,17 +181,38 @@ const SCHEMA_GRAPH = {
       name: "Vigorant",
       url: "https://vigorant.com",
       logo: "https://vigorant.com/logo.png",
-      description: "Healthcare-exclusive growth marketing agency providing AI-driven patient acquisition for dental, medical, and chiropractic practices.",
+      description:
+        "Healthcare-exclusive growth marketing agency providing AI-driven patient acquisition for dental, medical, and chiropractic practices.",
       areaServed: "United States",
-      knowsAbout: ["Healthcare Marketing Strategy", "Patient Acquisition", "SEO for Healthcare", "AI Engine Optimization", "Generative Engine Optimization", "Dental Marketing", "Medical Marketing", "Chiropractic Marketing"],
+      knowsAbout: [
+        "Healthcare Marketing Strategy",
+        "Patient Acquisition Strategy",
+        "AI Engine Optimization",
+        "Generative Engine Optimization",
+        "Healthcare SEO",
+        "Dental Marketing Strategy",
+        "Medical Marketing Strategy",
+        "Chiropractic Marketing Strategy",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vigorant.com/#website",
+      url: "https://vigorant.com",
+      name: "Vigorant",
+      publisher: { "@id": "https://vigorant.com/#organization" },
     },
     {
       "@type": "WebPage",
       "@id": `${CANONICAL}#webpage`,
       url: CANONICAL,
-      name: "Healthcare Marketing Strategy Services | Vigorant",
-      description: "AI-driven healthcare marketing strategy services for dental, medical, and chiropractic practices.",
+      name: "Healthcare Marketing Strategy Services | AI-Driven Growth Plans | Vigorant",
+      description:
+        "AI-driven marketing strategy services for dental, medical, and chiropractic practices, including market analysis, patient acquisition planning, SEO roadmap, AI visibility strategy, and 12-month growth planning.",
+      isPartOf: { "@id": "https://vigorant.com/#website" },
+      about: { "@id": `${CANONICAL}#service` },
       breadcrumb: { "@id": `${CANONICAL}#breadcrumb` },
+      inLanguage: "en-US",
     },
     {
       "@type": "BreadcrumbList",
@@ -149,7 +220,7 @@ const SCHEMA_GRAPH = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://vigorant.com/" },
         { "@type": "ListItem", position: 2, name: "Services", item: "https://vigorant.com/services" },
-        { "@type": "ListItem", position: 3, name: "Marketing Strategy", item: CANONICAL },
+        { "@type": "ListItem", position: 3, name: "Healthcare Marketing Strategy Services", item: CANONICAL },
       ],
     },
     {
@@ -157,266 +228,281 @@ const SCHEMA_GRAPH = {
       "@id": `${CANONICAL}#service`,
       name: "Healthcare Marketing Strategy Services",
       provider: { "@id": "https://vigorant.com/#organization" },
-      description: "A structured healthcare marketing strategy service for dental, medical, and chiropractic practices including market analysis, patient journey mapping, SEO/AEO/GEO, conversion optimization, and a 12-month growth plan.",
+      description:
+        "AI-driven marketing strategy services for dental, medical, and chiropractic practices. Includes growth assessment, market and competitor analysis, patient acquisition planning, SEO roadmap, paid advertising roadmap, website optimization recommendations, reputation strategy, KPI framework, and 12-month growth roadmap.",
       areaServed: "United States",
       serviceType: "Healthcare Marketing Strategy",
+      audience: {
+        "@type": "Audience",
+        audienceType:
+          "Dental Practices, Medical Clinics, Chiropractic Offices, Multi-location Healthcare Organizations, New Healthcare Practices",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Marketing Strategy Service Deliverables",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Growth Assessment & Market Analysis" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Competitor Benchmarking & Patient Acquisition Planning" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO & AI Visibility Roadmap" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paid Advertising & Website Optimization Roadmap" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "KPI Framework & 12-Month Growth Roadmap" } },
+        ],
+      },
     },
     {
       "@type": "FAQPage",
-      mainEntity: FAQS.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      "@id": `${CANONICAL}#faq`,
+      mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
 
 export default function MarketingStrategy() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activePhase, setActivePhase] = useState(0);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background">
       <Helmet>
         <title>Healthcare Marketing Strategy Services | AI-Driven Growth Plans | Vigorant</title>
-        <meta name="description" content="Build a smarter healthcare marketing strategy with Vigorant. AI-driven planning, patient acquisition systems, SEO, paid ads, conversion optimization, and measurable growth for dental, medical, and chiropractic practices." />
+        <meta
+          name="description"
+          content="Build a smarter healthcare marketing strategy with Vigorant. AI-driven planning, patient acquisition systems, SEO, paid ads, conversion optimization, and measurable growth for dental, medical, and chiropractic practices."
+        />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Healthcare Marketing Strategy Services | AI-Driven Growth Plans | Vigorant" />
-        <meta property="og:description" content="Build a smarter healthcare marketing strategy with Vigorant. AI-driven planning, patient acquisition systems, SEO, paid ads, and measurable growth." />
+        <meta
+          property="og:description"
+          content="Build a smarter healthcare marketing strategy with Vigorant. AI-driven planning, patient acquisition systems, SEO, paid ads, conversion optimization, and measurable growth for dental, medical, and chiropractic practices."
+        />
         <meta property="og:url" content={CANONICAL} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Healthcare Marketing Strategy Services | Vigorant" />
-        <meta name="twitter:description" content="AI-driven marketing strategy for dental, medical, and chiropractic practices." />
-        <script type="application/ld+json">{JSON.stringify(SCHEMA_GRAPH)}</script>
+        <script type="application/ld+json">{JSON.stringify(JSONLD)}</script>
       </Helmet>
 
       <Nav />
 
-      <main id="main" itemScope itemType="https://schema.org/Service">
+      <main
+        id="main"
+        itemScope
+        itemType="https://schema.org/Service"
+        className="pt-24"
+      >
         <meta itemProp="name" content="Healthcare Marketing Strategy Services" />
         <meta itemProp="provider" content="Vigorant" />
         <meta itemProp="areaServed" content="United States" />
 
-        {/* ============== HERO ============== */}
-        <section aria-labelledby="hero-h1" className="relative pt-28 sm:pt-32 pb-16 sm:pb-24 overflow-hidden">
-          <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none" aria-hidden />
-          <div className="container relative">
-            {/* Breadcrumb */}
+        {/* HERO */}
+        <section aria-labelledby="hero-h1" className="relative overflow-hidden bg-background">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-32 -left-24 w-[520px] h-[520px] rounded-full"
+            style={{
+              background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 65%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 right-0 w-[560px] h-[560px] rounded-full"
+            style={{
+              background: "radial-gradient(circle, hsl(248 100% 75% / 0.18), transparent 65%)",
+              filter: "blur(70px)",
+            }}
+          />
+
+          <div className="container relative pt-10 sm:pt-14 pb-20 sm:pb-28">
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex flex-wrap items-center gap-1.5 text-[12px] font-mono-ui uppercase tracking-wider text-ink-secondary">
+              <ol className="flex items-center flex-wrap gap-1.5 font-mono-ui text-[11px] text-ink-muted list-none p-0 m-0">
                 <li><Link to="/" className="hover:text-brand-purple transition-colors">Home</Link></li>
-                <li aria-hidden>/</li>
+                <li className="text-ink-muted/50">/</li>
                 <li><Link to="/services" className="hover:text-brand-purple transition-colors">Services</Link></li>
-                <li aria-hidden>/</li>
-                <li aria-current="page" className="text-brand-purple">Marketing Strategy</li>
+                <li className="text-ink-muted/50">/</li>
+                <li aria-current="page" className="text-brand-deep">Healthcare Marketing Strategy</li>
               </ol>
             </nav>
 
-            <div className="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-14 items-start">
+            <div className="grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-14 items-start">
               <Reveal>
                 <Eyebrow>Marketing Strategy</Eyebrow>
                 <h1
                   id="hero-h1"
-                  className="font-display font-bold text-brand-deep mt-5"
-                  style={{ fontSize: "clamp(36px, 6vw, 64px)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
+                  className="font-display text-brand-deep mt-4 leading-[1.05] tracking-tight"
+                  style={{ fontSize: "clamp(34px, 6vw, 64px)", letterSpacing: "-0.03em" }}
                 >
-                  Marketing Strategy Services for Sustainable Healthcare Growth
+                  AI-Driven Growth Plans for{" "}
+                  <span
+                    className="bg-clip-text text-transparent"
+                    style={{ backgroundImage: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}
+                  >
+                    Healthcare Practices
+                  </span>
                 </h1>
-                <p className="mt-6 text-[17px] sm:text-[18px] leading-[1.7] text-ink-secondary max-w-[60ch]">
-                  Most healthcare practices do not have a marketing problem — they have a <strong className="text-brand-deep">strategy problem</strong>. Vigorant helps dental, medical, and chiropractic practices build data-driven marketing strategies that attract the right patients, improve conversion rates, and create predictable growth.
+                <p className="mt-6 text-[16.5px] sm:text-[18px] leading-[1.65] text-ink-muted max-w-2xl">
+                  Most healthcare marketing fails not from a lack of effort, but from a lack of strategy. We build the plan that decides what to do, what to stop, and what to measure — across SEO, paid media, reputation, and the AI visibility layer.
                 </p>
+
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link to="/free-audit" className="btn-primary-grad inline-flex items-center gap-2 rounded-full px-6 py-3 font-extrabold">
-                    Book a Growth Consultation <ArrowRight className="h-4 w-4" />
+                  <Link
+                    to="/free-audit"
+                    className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                    style={{
+                      background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                      boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
+                    }}
+                  >
+                    Request a Strategy Audit <ArrowRight className="w-4 h-4" />
                   </Link>
-                  <Link to="/free-audit" className="btn-secondary-outline inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold bg-background">
-                    Request a Strategy Assessment
+                  <Link
+                    to="/free-audit"
+                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
+                  >
+                    Book a Growth Strategy Call
                   </Link>
                 </div>
-              </Reveal>
 
-              {/* Proof aside */}
-              <Reveal delay={0.1}>
-                <aside
-                  aria-label="At a glance"
-                  className="rounded-3xl bg-background p-7 sm:p-8"
-                  style={{ border: "1px solid hsl(247 93% 64% / 0.18)", boxShadow: "0 6px 18px hsl(248 49% 15% / 0.10)" }}
-                >
-                  <p className="section-label">At a glance</p>
-                  <dl className="mt-5 space-y-5">
-                    {[
-                      ["Primary outcome", "A structured growth roadmap that aligns every marketing channel around predictable patient acquisition and revenue growth."],
-                      ["Best for", "Practices investing in websites, SEO, advertising, or social without a unified plan that ties everything together."],
-                      ["Core deliverables", "Market analysis, competitive benchmarking, patient acquisition plan, SEO roadmap, 12-month growth roadmap."],
-                    ].map(([k, v]) => (
-                      <div key={k} className="grid grid-cols-[110px_1fr] sm:grid-cols-[130px_1fr] gap-3 pb-5 last:pb-0 border-b last:border-0" style={{ borderColor: "hsl(247 93% 64% / 0.14)" }}>
-                        <dt className="font-mono-ui text-[10px] uppercase tracking-wider text-brand-purple pt-0.5">{k}</dt>
-                        <dd className="text-[14px] leading-[1.6] text-ink-secondary">{v}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </aside>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ============== DEFINITION ============== */}
-        <section aria-labelledby="definition-h2" className="bg-surface-secondary py-20 sm:py-28">
-          <div className="container">
-            <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16">
-              <Reveal>
-                <Eyebrow>Definition</Eyebrow>
-                <h2
-                  id="definition-h2"
-                  className="font-display font-bold text-brand-deep mt-4"
-                  style={{ fontSize: "clamp(28px, 4.4vw, 48px)", lineHeight: 1.08, letterSpacing: "-0.025em" }}
-                >
-                  What Is a Healthcare Marketing Strategy?
-                </h2>
-                <p className="mt-6 text-[16px] sm:text-[17px] leading-[1.75] text-ink-secondary">
-                  A healthcare marketing strategy is a structured roadmap that defines growth goals, target patient profiles, competitive positioning, channel priorities, budget allocation, and measurement frameworks. Rather than chasing trends, we create systems that generate measurable outcomes.
-                </p>
-              </Reveal>
-
-              <Reveal delay={0.1}>
-                <dl className="divide-y" style={{ borderTop: "1px solid hsl(247 93% 64% / 0.18)", borderBottom: "1px solid hsl(247 93% 64% / 0.18)" }}>
-                  {LEDGER.map(([k, v]) => (
-                    <div key={k} className="grid sm:grid-cols-[180px_1fr] gap-2 sm:gap-6 py-5" style={{ borderColor: "hsl(247 93% 64% / 0.18)" }}>
-                      <dt className="font-mono-ui text-[11px] uppercase tracking-wider text-brand-purple pt-1">{k}</dt>
-                      <dd className="text-[15px] leading-[1.7] text-brand-deep">{v}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ============== FRAMEWORK / PHASES ============== */}
-        <section aria-labelledby="framework-h2" className="py-20 sm:py-28">
-          <div className="container">
-            <Reveal className="max-w-3xl">
-              <Eyebrow>Framework</Eyebrow>
-              <h2
-                id="framework-h2"
-                className="font-display font-bold text-brand-deep mt-4"
-                style={{ fontSize: "clamp(28px, 4.4vw, 48px)", lineHeight: 1.08, letterSpacing: "-0.025em" }}
-              >
-                Our Marketing Strategy Framework
-              </h2>
-              <p className="mt-5 text-[16px] sm:text-[17px] leading-[1.7] text-ink-secondary">
-                A structured approach to align every marketing channel around sustainable patient acquisition and revenue growth.
-              </p>
-            </Reveal>
-
-            <div className="mt-14 space-y-10 sm:space-y-14">
-              {PHASES.map((p, i) => {
-                const Icon = p.icon;
-                return (
-                  <Reveal key={p.num} delay={i * 0.08}>
-                    <article className="grid lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14 items-start rounded-3xl p-7 sm:p-10" style={{ background: "linear-gradient(135deg, hsl(250 100% 98%), hsl(0 0% 100%))", border: "1px solid hsl(247 93% 64% / 0.18)" }}>
-                      {/* Visual */}
-                      <div className="relative aspect-[5/4] rounded-2xl overflow-hidden flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(250 100% 98%), hsl(0 0% 100%))", border: "1px solid hsl(247 93% 64% / 0.18)" }}>
-                        <span
-                          aria-hidden
-                          className="absolute inset-0 flex items-center justify-center font-display font-extrabold select-none"
-                          style={{
-                            fontSize: "clamp(120px, 22vw, 260px)",
-                            color: "transparent",
-                            WebkitTextStroke: "1px hsl(247 93% 64% / 0.22)",
-                            letterSpacing: "-0.04em",
-                            lineHeight: 1,
-                          }}
-                        >
-                          {p.num}
-                        </span>
-                        <div
-                          className="relative flex h-20 w-20 items-center justify-center rounded-3xl text-white"
-                          style={{
-                            background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
-                            boxShadow: "0 22px 60px hsl(247 93% 64% / 0.32)",
-                          }}
-                        >
-                          <Icon className="h-9 w-9" />
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div>
-                        <span className="font-mono-ui text-[12px] tracking-[0.2em] text-brand-purple">{p.num}</span>
-                        <h3 className="mt-2 text-brand-deep font-extrabold" style={{ fontSize: "clamp(22px, 2.6vw, 30px)", lineHeight: 1.2 }}>
-                          {p.h3}
-                        </h3>
-                        <p className="mt-4 text-[16px] leading-[1.75] text-ink-secondary">{p.body}</p>
-                        <ul className="mt-5 space-y-3">
-                          {p.bullets.map((b) => (
-                            <li key={b} className="flex items-start gap-3 text-[15px] leading-[1.6] text-brand-deep">
-                              <span aria-hidden className="mt-2 inline-block h-1.5 w-1.5 rounded-full shrink-0" style={{ background: "hsl(247 93% 64%)" }} />
-                              <span>{b}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </article>
-                  </Reveal>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ============== INCLUDED + AI PANEL ============== */}
-        <section aria-labelledby="included-h2" className="bg-surface-secondary py-20 sm:py-28">
-          <div className="container">
-            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-start">
-              <Reveal>
-                <Eyebrow>Included</Eyebrow>
-                <h2
-                  id="included-h2"
-                  className="font-display font-bold text-brand-deep mt-4"
-                  style={{ fontSize: "clamp(28px, 4.4vw, 44px)", lineHeight: 1.08, letterSpacing: "-0.025em" }}
-                >
-                  What Is Included in Our Marketing Strategy Service?
-                </h2>
-                <p className="mt-5 text-[16px] sm:text-[17px] leading-[1.7] text-ink-secondary">
-                  Each strategy engagement produces a complete growth plan — aligned across channels, grounded in data, and built to drive measurable patient acquisition.
-                </p>
-                <ul className="mt-8 grid sm:grid-cols-2 gap-3.5">
-                  {INCLUDED.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[15px] leading-[1.55] text-brand-deep">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: "hsl(247 93% 64% / 0.12)", color: "hsl(247 93% 64%)" }}>
-                        <Check className="h-3 w-3" strokeWidth={3} />
-                      </span>
-                      {item}
+                <ul className="mt-8 flex flex-wrap gap-2 list-none p-0">
+                  {PROOF_TAGS.map((t) => (
+                    <li
+                      key={t}
+                      className="font-mono-ui text-[11.5px] tracking-[0.06em] text-brand-deep/75 px-3 py-1.5 rounded-full bg-white/75 border border-brand-purple/20"
+                      style={{ boxShadow: "0 10px 28px hsl(247 93% 64% / 0.07)" }}
+                    >
+                      {t}
                     </li>
                   ))}
                 </ul>
               </Reveal>
 
+              {/* Strategy dashboard panel — editorial, no card grid */}
               <Reveal delay={0.1}>
                 <aside
-                  className="rounded-3xl p-7 sm:p-9 text-white relative overflow-hidden"
+                  className="relative rounded-3xl p-6 sm:p-7 overflow-hidden"
                   style={{
-                    background: "linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(250 45% 19%) 100%)",
-                    border: "1px solid hsl(0 0% 100% / 0.10)",
+                    background:
+                      "linear-gradient(135deg, hsl(0 0% 100% / 0.86), hsl(250 100% 98% / 0.78))",
+                    border: "1px solid hsl(247 93% 64% / 0.18)",
+                    boxShadow: "0 28px 90px hsl(247 93% 64% / 0.16)",
                   }}
-                  aria-label="AI-Powered Strategy"
                 >
-                  <div className="absolute inset-0 pointer-events-none" aria-hidden style={{ background: "radial-gradient(ellipse at 20% 100%, hsl(247 93% 64% / 0.28), transparent 65%)" }} />
+                  <div aria-hidden className="absolute inset-0 grid-overlay opacity-30" />
+                  <motion.div
+                    aria-hidden
+                    className="pointer-events-none absolute -top-20 -right-10 w-72 h-72 rounded-full"
+                    style={{
+                      background:
+                        "radial-gradient(circle, hsl(248 100% 75% / 0.40), transparent 65%)",
+                      filter: "blur(50px)",
+                    }}
+                    animate={{ y: [0, 10, 0], x: [0, -8, 0] }}
+                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                  />
+
                   <div className="relative">
-                    <span className="section-label-light">AI-Powered Strategy</span>
-                    <h3 className="mt-4 font-display font-bold text-white" style={{ fontSize: "clamp(22px, 2.4vw, 28px)", lineHeight: 1.2 }}>
-                      Built for AI-driven search
+                    <div className="flex items-center justify-between font-mono-ui text-[11px] tracking-[0.12em] text-brand-purple">
+                      <span>STRATEGY OS</span>
+                      <span className="px-2 py-1 rounded-full bg-surface-secondary border border-brand-purple/20">
+                        v2026
+                      </span>
+                    </div>
+
+                    <h3
+                      className="font-display text-brand-deep mt-4 leading-[1.15]"
+                      style={{ fontSize: "clamp(20px, 2.4vw, 26px)", letterSpacing: "-0.025em" }}
+                    >
+                      12-Month Patient Growth Plan
                     </h3>
-                    <p className="mt-3 text-[14px] leading-[1.65] text-white/70">
-                      Every strategy includes a visibility layer engineered for both traditional search and conversational AI platforms.
-                    </p>
-                    <ul className="mt-6 space-y-3">
-                      {AI_PANEL.map((item) => (
-                        <li key={item} className="flex items-start gap-3 text-[15px] leading-[1.5] text-white/90">
-                          <span aria-hidden className="mt-2 inline-block h-1.5 w-1.5 rounded-full shrink-0" style={{ background: "hsl(248 100% 75%)" }} />
-                          {item}
-                        </li>
+
+                    {/* Progress bar */}
+                    <div className="mt-5 h-2 rounded-full overflow-hidden" style={{ background: "hsl(250 100% 98%)" }}>
+                      <motion.span
+                        className="block h-full rounded-full"
+                        style={{
+                          background:
+                            "linear-gradient(90deg, hsl(248 100% 75%), hsl(247 93% 64%))",
+                        }}
+                        animate={{ width: ["20%", "92%", "60%"] }}
+                        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                    </div>
+
+                    {/* Mini metrics */}
+                    <div className="mt-5 grid grid-cols-3 gap-3">
+                      {[
+                        { l: "PIPELINE", v: "+38%", s: "Q-on-Q" },
+                        { l: "CAC", v: "−21%", s: "blended" },
+                        { l: "AI VIS.", v: "4.6×", s: "AEO/GEO" },
+                      ].map((m) => (
+                        <div
+                          key={m.l}
+                          className="rounded-xl p-3"
+                          style={{
+                            background: "hsl(0 0% 100% / 0.9)",
+                            border: "1px solid hsl(247 93% 64% / 0.18)",
+                            boxShadow: "0 16px 42px hsl(247 93% 64% / 0.10)",
+                          }}
+                        >
+                          <span className="block font-mono-ui text-[10.5px] tracking-[0.1em] text-brand-purple">
+                            {m.l}
+                          </span>
+                          <strong className="block font-display text-brand-deep text-[22px] leading-none mt-1">
+                            {m.v}
+                          </strong>
+                          <small className="block text-[10.5px] text-brand-deep/45 mt-1">{m.s}</small>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
+
+                    {/* Flow strip */}
+                    <div
+                      className="mt-5 rounded-xl p-3 flex items-center gap-2 flex-wrap"
+                      style={{
+                        background: "hsl(0 0% 100%)",
+                        border: "1px solid hsl(247 93% 64% / 0.18)",
+                        boxShadow: "0 16px 44px hsl(247 93% 64% / 0.11)",
+                      }}
+                    >
+                      {["Discover", "Plan", "Execute", "Measure"].map((s, i, arr) => (
+                        <span key={s} className="flex items-center gap-2">
+                          <span
+                            className="px-2.5 py-1 rounded-full font-mono-ui text-[10.5px] tracking-[0.08em]"
+                            style={{ background: "hsl(250 100% 98%)", color: "hsl(247 93% 64%)" }}
+                          >
+                            {s}
+                          </span>
+                          {i < arr.length - 1 && (
+                            <span
+                              aria-hidden
+                              className="block w-6 h-[2px] rounded-full"
+                              style={{
+                                background:
+                                  "linear-gradient(90deg, hsl(248 100% 75%), hsl(247 93% 64%))",
+                              }}
+                            />
+                          )}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* HERO mini ledger */}
+                    <div className="mt-5 divide-y divide-brand-purple/15 border-t border-brand-purple/15">
+                      {HERO_METRICS.map((m) => (
+                        <div key={m.n} className="grid grid-cols-[36px_1fr] gap-3 py-3">
+                          <strong
+                            className="font-display text-[18px] leading-none not-italic"
+                            style={{ color: "hsl(247 93% 64%)" }}
+                          >
+                            {m.n}
+                          </strong>
+                          <p className="text-[12.5px] leading-[1.55] text-brand-deep/75">{m.p}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </aside>
               </Reveal>
@@ -424,139 +510,498 @@ export default function MarketingStrategy() {
           </div>
         </section>
 
-        {/* ============== RELATED LINK STRIP ============== */}
-        <section aria-labelledby="related-h2" className="py-20 sm:py-24">
+        {/* THESIS */}
+        <section
+          aria-labelledby="thesis-h2"
+          className="py-20 sm:py-28 bg-surface-secondary border-y border-brand-purple/10"
+        >
           <div className="container">
-            <Reveal>
-              <Eyebrow>Related services</Eyebrow>
-              <h2
-                id="related-h2"
-                className="font-display font-bold text-brand-deep mt-4"
-                style={{ fontSize: "clamp(26px, 3.4vw, 40px)", lineHeight: 1.1, letterSpacing: "-0.025em" }}
-              >
-                Related Strategy and Growth Pages
-              </h2>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div
-                className="mt-10 grid md:grid-cols-3 rounded-3xl overflow-hidden"
-                style={{ background: "hsl(247 93% 64% / 0.18)", border: "1px solid hsl(247 93% 64% / 0.18)", gap: "1px" }}
-              >
-                {RELATED.map((l) => (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    className="group bg-background p-7 sm:p-8 transition-colors duration-300 hover:bg-surface-secondary"
+            <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
+              <Reveal>
+                <blockquote
+                  className="relative pl-10 font-display text-brand-deep text-[22px] sm:text-[26px] leading-[1.35]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
+                  <span
+                    aria-hidden
+                    className="absolute left-0 -top-3 font-display"
+                    style={{ color: "hsl(248 100% 75%)", fontSize: "5rem", lineHeight: 0.55 }}
                   >
-                    <span className="font-mono-ui text-[11px] uppercase tracking-wider text-brand-purple">Related</span>
-                    <h3 className="mt-3 text-brand-deep font-extrabold text-[20px] leading-[1.25] group-hover:text-brand-purple transition-colors">
-                      {l.label}
-                    </h3>
-                    <p className="mt-3 text-[14px] leading-[1.6] text-ink-secondary">{l.sub}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-purple">
-                      Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                ))}
-              </div>
+                    "
+                  </span>
+                  Without a clear strategy, execution becomes fragmented — and inconsistent results follow.
+                </blockquote>
+              </Reveal>
 
-              {/* Authority cite */}
-              <p className="mt-10 pt-6 text-[12px] font-mono-ui text-ink-muted/70" style={{ borderTop: "1px solid hsl(247 93% 64% / 0.12)" }}>
-                External reference:{" "}
-                <a href="https://www.cdc.gov/healthcommunication/" rel="noopener noreferrer" target="_blank" className="text-brand-purple underline">
-                  CDC Health Communication Resources
-                </a>{" "}
-                — referenced in strategic communication planning for healthcare practices.
-              </p>
-            </Reveal>
+              <Reveal delay={0.1}>
+                <div className="border-l-[3px] border-brand-purple pl-6">
+                  <Eyebrow>Why strategy matters</Eyebrow>
+                  <h2
+                    id="thesis-h2"
+                    className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                    style={{ fontSize: "clamp(26px, 4.2vw, 42px)", letterSpacing: "-0.03em" }}
+                  >
+                    Strategy is what decides where to spend, what to ignore, and how to measure.
+                  </h2>
+                  <p className="mt-5 text-[16.5px] leading-[1.7] text-ink-muted">
+                    Most practices have plenty of tactics — a vendor for ads, a contractor for SEO, a tool for reviews. What's missing is the single plan that aligns them around the same patient, the same economics, and the same outcomes. That plan is the work.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </section>
 
-        {/* ============== FAQ ============== */}
-        <section aria-labelledby="faq-h2" className="bg-surface-secondary py-20 sm:py-28">
+        {/* MARKET FIT — numbered row layout, not cards */}
+        <section aria-labelledby="fit-h2" className="py-20 sm:py-28">
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>Who it's for</Eyebrow>
+                <h2
+                  id="fit-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  Built for healthcare practices where the plan has to hold up under pressure.
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 border-t border-brand-purple/20">
+              {FIT_ROWS.map((r, i) => (
+                <Reveal key={r.h} delay={i * 0.05}>
+                  <div
+                    className="grid grid-cols-[64px_1fr] md:grid-cols-[80px_320px_1fr] gap-4 md:gap-10 py-8 border-b border-brand-purple/20 items-start transition-transform hover:translate-x-2"
+                  >
+                    <span
+                      className="font-mono-ui font-black text-brand-purple text-[22px] leading-none rounded-lg bg-surface-secondary px-3 py-2 inline-flex items-center justify-center"
+                    >
+                      {r.n}
+                    </span>
+                    <h3
+                      className="font-extrabold text-brand-deep text-[18px] sm:text-[20px] leading-snug"
+                      style={{ letterSpacing: "-0.01em" }}
+                    >
+                      {r.h}
+                    </h3>
+                    <p className="text-[14.5px] leading-[1.7] text-ink-muted col-span-2 md:col-span-1">
+                      {r.p}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PHASES — sticky sidebar long-form */}
+        <section
+          aria-labelledby="phases-h2"
+          className="py-20 sm:py-28 bg-surface-secondary border-y border-brand-purple/10"
+        >
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>The 5-phase framework</Eyebrow>
+                <h2
+                  id="phases-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  How a Vigorant marketing strategy is built.
+                </h2>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
+              <nav aria-label="Phase index" className="hidden lg:block lg:sticky lg:top-28">
+                <ol className="list-none p-0 m-0 border-t border-brand-purple/20">
+                  {PHASES.map((e, i) => {
+                    const active = activePhase === i;
+                    return (
+                      <li key={e.n} className="border-b border-brand-purple/20">
+                        <a
+                          href={`#phase-${e.n}`}
+                          onClick={() => setActivePhase(i)}
+                          className={`block py-4 transition-all font-black ${
+                            active ? "text-brand-purple pl-5" : "text-brand-deep/55 hover:text-brand-purple"
+                          }`}
+                          style={{ letterSpacing: "-0.01em" }}
+                        >
+                          <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] block mb-1 opacity-80">
+                            {e.n}
+                          </span>
+                          {e.nav}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </nav>
+
+              <div>
+                {PHASES.map((e, i) => (
+                  <motion.article
+                    key={e.n}
+                    id={`phase-${e.n}`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-30% 0px -40% 0px" }}
+                    onViewportEnter={() => setActivePhase(i)}
+                    transition={{ duration: 0.7, ease }}
+                    className="py-10 sm:py-14 border-b border-brand-purple/20 first:pt-0 scroll-mt-32"
+                  >
+                    <span
+                      className={`section-label inline-block px-3 py-1 rounded-full transition-all ${
+                        activePhase === i
+                          ? "text-white border border-transparent"
+                          : "bg-brand-purple/8 border border-brand-purple/20 text-brand-purple"
+                      }`}
+                      style={
+                        activePhase === i
+                          ? {
+                              background:
+                                "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                              boxShadow: "0 10px 30px hsl(247 93% 64% / 0.28)",
+                            }
+                          : undefined
+                      }
+                    >
+                      Phase {e.n}
+                    </span>
+                    <h3
+                      className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                      style={{ fontSize: "clamp(24px, 3.6vw, 36px)", letterSpacing: "-0.03em" }}
+                    >
+                      {e.h}
+                    </h3>
+                    {e.paras.map((p, j) => (
+                      <p key={j} className="mt-4 text-[16px] leading-[1.75] text-ink-muted max-w-2xl">
+                        {p}
+                      </p>
+                    ))}
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BLUEPRINT TABLE — row-based, not cards */}
+        <section aria-labelledby="blueprint-h2" className="py-20 sm:py-28">
+          <div className="container">
+            <Reveal>
+              <div className="max-w-3xl">
+                <Eyebrow>Inputs & outputs</Eyebrow>
+                <h2
+                  id="blueprint-h2"
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 46px)", letterSpacing: "-0.03em" }}
+                >
+                  The marketing strategy blueprint.
+                </h2>
+                <p className="mt-5 text-[16px] leading-[1.7] text-ink-muted">
+                  Each phase has defined inputs and defined deliverables. No mystery, no scope drift.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 flex flex-col gap-4">
+              {BLUEPRINT.map((b, i) => (
+                <Reveal key={b.area} delay={i * 0.04}>
+                  <div
+                    className="grid grid-cols-1 md:grid-cols-[200px_1fr_1fr] rounded-2xl overflow-hidden transition-all hover:-translate-y-1"
+                    style={{
+                      background: "hsl(0 0% 100% / 0.72)",
+                      border: "1px solid hsl(247 93% 64% / 0.18)",
+                      boxShadow: "0 18px 50px hsl(247 93% 64% / 0.08)",
+                    }}
+                  >
+                    {/* Area cell — dark */}
+                    <div
+                      className="p-6 sm:p-7 flex flex-col gap-3 justify-center"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, hsl(248 49% 15%), hsl(250 45% 19%))",
+                      }}
+                    >
+                      <span
+                        className="self-start font-mono-ui font-black text-white text-[11px] tracking-[0.14em] px-2.5 py-1 rounded-full"
+                        style={{
+                          background: "hsl(0 0% 100% / 0.12)",
+                          border: "1px solid hsl(0 0% 100% / 0.18)",
+                        }}
+                      >
+                        {b.label}
+                      </span>
+                      <strong
+                        className="font-display text-white text-[22px] leading-[1.15]"
+                        style={{ letterSpacing: "-0.025em" }}
+                      >
+                        {b.area}
+                      </strong>
+                    </div>
+
+                    {/* Inputs cell */}
+                    <div className="p-6 sm:p-7 border-t md:border-t-0 md:border-l border-brand-purple/15 bg-white">
+                      <small className="font-mono-ui text-[11px] tracking-[0.1em] text-brand-purple block">
+                        INPUTS
+                      </small>
+                      <p className="mt-2 text-[14.5px] leading-[1.65] text-ink-muted">{b.inputs}</p>
+                    </div>
+
+                    {/* Outputs cell */}
+                    <div
+                      className="p-6 sm:p-7 border-t md:border-t-0 md:border-l border-brand-purple/15"
+                      style={{
+                        background: "linear-gradient(135deg, #ffffff, hsl(250 100% 98%))",
+                      }}
+                    >
+                      <small className="font-mono-ui text-[11px] tracking-[0.1em] text-brand-purple block">
+                        OUTPUTS
+                      </small>
+                      <p className="mt-2 text-[14.5px] leading-[1.65] text-brand-deep">{b.outputs}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ADAPTER DARK — strategy adapts to specialty */}
+        <section
+          aria-labelledby="adapter-h2"
+          className="relative overflow-hidden py-20 sm:py-28"
+          style={{ background: "var(--gradient-dark)" }}
+          data-dark="true"
+        >
+          <div aria-hidden className="absolute inset-0 grid-overlay opacity-25" />
+          <div aria-hidden className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="w-[640px] h-[640px] rounded-full"
+              style={{
+                background: "radial-gradient(circle, hsl(247 93% 64% / 0.22), transparent 65%)",
+                filter: "blur(80px)",
+              }}
+            />
+          </div>
+
+          <div className="container relative">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+              <Reveal>
+                <Eyebrow light>Strategy adapter</Eyebrow>
+                <h2
+                  id="adapter-h2"
+                  className="font-display text-white mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(26px, 4.2vw, 42px)", letterSpacing: "-0.03em" }}
+                >
+                  The same framework, adapted to your specialty.
+                </h2>
+                <p className="mt-5 text-[16px] leading-[1.7] text-white/75">
+                  Dental, medical, and chiropractic practices share the same growth physics — visibility, conversion, retention. The strategy adapts to the specifics of your specialty, market, and patient economics.
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <div
+                  className="rounded-3xl p-8 sm:p-10"
+                  style={{
+                    background: "hsl(0 0% 100% / 0.05)",
+                    border: "1px solid hsl(0 0% 100% / 0.12)",
+                  }}
+                >
+                  <h3 className="font-extrabold text-white text-[18px] sm:text-[20px]">
+                    What the strategy customizes
+                  </h3>
+                  <ul className="mt-6 list-none p-0 border-t border-white/14">
+                    {ADAPTER.map((t, i) => (
+                      <li
+                        key={i}
+                        className="grid grid-cols-[44px_1fr] gap-4 py-4 border-b border-white/14 items-start"
+                      >
+                        <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-lavender/80 pt-0.5">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-[14.5px] leading-[1.65] text-white/80">
+                          {i === ADAPTER.length - 1 ? (
+                            <>
+                              Entity-based SEO and{" "}
+                              <Link
+                                to="/services/seo"
+                                className="text-brand-lavender font-semibold underline underline-offset-4"
+                              >
+                                conversational search visibility
+                              </Link>
+                            </>
+                          ) : (
+                            t
+                          )}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* RELATED */}
+        <section
+          aria-label="Related services"
+          className="border-t border-brand-purple/10 bg-surface-secondary py-14"
+        >
+          <div className="container">
+            <span className="font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple">
+              Related services
+            </span>
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-4 gap-px bg-brand-purple/15 border border-brand-purple/15 rounded-2xl overflow-hidden">
+              {RELATED.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
+                >
+                  <span
+                    className="font-extrabold text-brand-deep text-[15.5px] flex items-center gap-2"
+                    style={{ letterSpacing: "-0.01em" }}
+                  >
+                    {l.label}
+                    <ArrowRight className="w-4 h-4 text-brand-purple transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="font-mono-ui text-[11.5px] text-ink-muted/75 leading-[1.55]">
+                    {l.sub}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section aria-labelledby="faq-h2" className="py-20 sm:py-28">
           <div className="container">
             <div className="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
               <Reveal>
                 <Eyebrow>FAQ</Eyebrow>
                 <h2
                   id="faq-h2"
-                  className="font-display font-bold text-brand-deep mt-4"
-                  style={{ fontSize: "clamp(28px, 4.4vw, 44px)", lineHeight: 1.08, letterSpacing: "-0.025em" }}
+                  className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
+                  style={{ fontSize: "clamp(28px, 4.5vw, 44px)", letterSpacing: "-0.03em" }}
                 >
                   Frequently Asked Questions
                 </h2>
-                <p className="mt-5 text-[15px] leading-[1.7] text-ink-secondary">
-                  Key questions healthcare practices ask before starting a marketing strategy engagement.
+                <p className="mt-5 text-[15.5px] leading-[1.7] text-ink-muted">
+                  Common questions practices ask before committing to a marketing strategy engagement.
                 </p>
               </Reveal>
 
               <Reveal delay={0.1}>
-                <ul className="divide-y" style={{ borderTop: "1px solid hsl(247 93% 64% / 0.18)", borderBottom: "1px solid hsl(247 93% 64% / 0.18)" }}>
+                <div className="border-t border-brand-purple/20">
                   {FAQS.map((f, i) => {
                     const open = openFaq === i;
                     return (
-                      <li key={f.q} style={{ borderColor: "hsl(247 93% 64% / 0.18)" }}>
+                      <div key={i} className="border-b border-brand-purple/15">
                         <button
-                          type="button"
-                          aria-expanded={open}
                           onClick={() => setOpenFaq(open ? null : i)}
-                          className="w-full flex items-center justify-between gap-4 py-6 text-left"
+                          aria-expanded={open}
+                          className="w-full flex items-center justify-between gap-6 py-5 text-left"
                         >
-                          <span className="font-extrabold text-brand-deep text-[16px] sm:text-[18px] leading-[1.4]">{f.q}</span>
+                          <span
+                            className="font-extrabold text-brand-deep text-[16px] sm:text-[17.5px] leading-snug"
+                            style={{ letterSpacing: "-0.01em" }}
+                          >
+                            {f.q}
+                          </span>
                           <span
                             aria-hidden
-                            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300"
-                            style={{
-                              background: open ? "hsl(247 93% 64%)" : "hsl(250 100% 98%)",
-                              color: open ? "hsl(0 0% 100%)" : "hsl(247 93% 64%)",
-                              transform: open ? "rotate(45deg)" : "rotate(0deg)",
-                            }}
+                            className={`shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full transition-all ${
+                              open ? "bg-brand-purple text-white rotate-45" : "bg-surface-secondary text-brand-purple"
+                            }`}
                           >
-                            <Plus className="h-4 w-4" />
+                            <Plus className="w-4 h-4" />
                           </span>
                         </button>
-                        <div
-                          className="grid transition-all duration-300 ease-out"
-                          style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+                        <motion.div
+                          initial={false}
+                          animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+                          transition={{ duration: 0.35, ease }}
+                          className="overflow-hidden"
                         >
-                          <div className="overflow-hidden">
-                            <p className="pb-6 pr-12 text-[15px] leading-[1.7] text-ink-secondary">{f.a}</p>
-                          </div>
-                        </div>
-                      </li>
+                          <p className="pb-5 pr-12 text-[14.5px] leading-[1.7] text-ink-muted">{f.a}</p>
+                        </motion.div>
+                      </div>
                     );
                   })}
-                </ul>
+                </div>
               </Reveal>
             </div>
           </div>
         </section>
 
-        {/* ============== FINAL CTA ============== */}
-        <section aria-labelledby="cta-h2" className="relative py-24 sm:py-32 overflow-hidden text-white" style={{ background: "var(--gradient-dark)" }}>
-          <div className="absolute inset-0 pointer-events-none" aria-hidden style={{ background: "radial-gradient(circle at 50% 100%, hsl(247 93% 64% / 0.28), transparent 70%)" }} />
-          <div className="container relative text-center">
+        {/* FINAL CTA */}
+        <section
+          aria-labelledby="cta-h2"
+          className="relative overflow-hidden py-20 sm:py-28"
+          style={{ background: "var(--gradient-dark)" }}
+          data-dark="true"
+        >
+          <div aria-hidden className="absolute inset-0 grid-overlay opacity-25" />
+          <div aria-hidden className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="w-[640px] h-[640px] rounded-full"
+              style={{
+                background: "radial-gradient(circle, hsl(247 93% 64% / 0.25), transparent 65%)",
+                filter: "blur(80px)",
+              }}
+            />
+          </div>
+          <div className="container relative max-w-3xl text-center">
             <Reveal>
-              <span className="section-label-light">Ready to grow strategically?</span>
+              <Eyebrow light>Ready for a real plan?</Eyebrow>
               <h2
                 id="cta-h2"
-                className="font-display font-bold text-white mt-6 max-w-4xl mx-auto"
-                style={{ fontSize: "clamp(32px, 5vw, 56px)", lineHeight: 1.08, letterSpacing: "-0.025em" }}
+                className="font-display text-white mt-4 leading-[1.1] tracking-tight"
+                style={{ fontSize: "clamp(30px, 5vw, 52px)", letterSpacing: "-0.03em" }}
               >
-                Stop guessing. Build a strategy that fills your schedule.
+                Stop running tactics. Start running a strategy.
               </h2>
-              <p className="mt-6 text-[16px] sm:text-[18px] leading-[1.7] text-white/75 max-w-2xl mx-auto">
-                Start with a strategy assessment to identify where your practice is losing patients, wasting budget, or missing growth opportunities across digital channels.
+              <p className="mt-5 text-[16.5px] leading-[1.7] text-white/75">
+                We'll audit current performance, identify the real growth constraint, and outline the 12-month plan to fix it — across SEO, paid, reputation, and AI visibility.
               </p>
-              <div className="mt-9 flex flex-wrap justify-center gap-3">
-                <Link to="/free-audit" className="btn-primary-grad inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-extrabold">
-                  Book a Growth Consultation <ArrowRight className="h-4 w-4" />
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link
+                  to="/free-audit"
+                  className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                  style={{
+                    background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
+                    boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
+                  }}
+                >
+                  Request a Strategy Audit <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </Reveal>
           </div>
         </section>
+
+        {/* Authority reference */}
+        <div className="border-t border-brand-purple/10 py-5 px-6 text-center">
+          <p className="font-mono-ui text-[11.5px] text-ink-muted/70">
+            External reference:{" "}
+            <a
+              href="https://www.cdc.gov/healthcommunication/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="text-brand-purple underline underline-offset-4"
+            >
+              CDC Health Communication Resources
+            </a>{" "}
+            — referenced in healthcare marketing strategy and patient communication planning.
+          </p>
+        </div>
       </main>
 
       <Footer />
