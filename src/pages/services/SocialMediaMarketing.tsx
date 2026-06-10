@@ -297,6 +297,7 @@ export default function SocialMediaMarketing() {
         <script type="application/ld+json">{JSON.stringify(JSONLD)}</script>
       </Helmet>
 
+      <GlobalFx />
       <Nav />
 
       <main
