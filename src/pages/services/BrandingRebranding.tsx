@@ -285,6 +285,7 @@ export default function BrandingRebranding() {
         <script type="application/ld+json">{JSON.stringify(JSONLD)}</script>
       </Helmet>
 
+      <GlobalFx />
       <Nav />
 
       <main
