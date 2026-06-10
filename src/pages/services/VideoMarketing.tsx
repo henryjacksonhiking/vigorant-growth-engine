@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight, Play, Plus } from "lucide-react";
 import Nav from "@/components/site/Nav";
+import GlobalFx from "@/components/site/GlobalFx";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -252,6 +253,7 @@ export default function VideoMarketing() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
+      <GlobalFx />
       <Nav />
 
       <main id="main" itemScope itemType="https://schema.org/Service">

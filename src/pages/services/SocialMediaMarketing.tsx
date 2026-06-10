@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ArrowRight, Plus, Check, X } from "lucide-react";
 import Nav from "@/components/site/Nav";
+import GlobalFx from "@/components/site/GlobalFx";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -296,6 +297,7 @@ export default function SocialMediaMarketing() {
         <script type="application/ld+json">{JSON.stringify(JSONLD)}</script>
       </Helmet>
 
+      <GlobalFx />
       <Nav />
 
       <main
