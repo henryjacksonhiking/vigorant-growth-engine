@@ -221,6 +221,7 @@ export default function LandingPages() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
+      <GlobalFx />
       <Nav />
 
       <main id="main" itemScope itemType="https://schema.org/Service">
