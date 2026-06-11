@@ -375,6 +375,52 @@
   }
 
   /* ============================================================
+     Horizontal slot alignment across cards in the same grid row.
+     Reserves equal vertical space for headings & lead paragraphs
+     so siblings line up regardless of content length.
+     ============================================================ */
+  .grid > article h3,
+  .grid > article h4,
+  .grid > div > article h3,
+  .grid > div > article h4,
+  .grid > .rounded-2xl h3,
+  .grid > .rounded-2xl h4,
+  .grid > .rounded-xl h3,
+  .grid > .rounded-xl h4,
+  .grid > div > .rounded-2xl h3,
+  .grid > div > .rounded-2xl h4,
+  .grid > div > .rounded-xl h3,
+  .grid > div > .rounded-xl h4,
+  .grid > li h3,
+  .grid > li h4,
+  .grid > div > li h3,
+  .grid > div > li h4 {
+    min-height: calc(1.2em * 2);
+  }
+  /* Italic sub-headline (e.g. "Why isn't our marketing…") often 2 lines */
+  .grid > article p.italic,
+  .grid > div > article p.italic,
+  .grid > .rounded-2xl p.italic,
+  .grid > div > .rounded-2xl p.italic,
+  .grid > .rounded-xl p.italic,
+  .grid > div > .rounded-xl p.italic,
+  .grid > li p.italic,
+  .grid > div > li p.italic {
+    min-height: calc(1.5em * 2);
+  }
+  /* Push trailing CTA link to the bottom edge so CTAs align across cards */
+  .grid > article > a:last-child,
+  .grid > div > article > a:last-child,
+  .grid > .rounded-2xl > a:last-child,
+  .grid > div > .rounded-2xl > a:last-child,
+  .grid > .rounded-xl > a:last-child,
+  .grid > div > .rounded-xl > a:last-child,
+  .grid > li > a:last-child,
+  .grid > div > li > a:last-child {
+    margin-top: auto;
+  }
+
+  /* ============================================================
      Global card hover & entrance effects
      Applies homepage-style lift / shadow / border-glow to every
      card-shaped element across all pages and child pages.
