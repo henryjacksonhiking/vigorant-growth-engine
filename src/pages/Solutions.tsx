@@ -308,77 +308,22 @@ const SPECIALTIES: SpecialtyCard[] = [
   },
 ];
 
-function SpecialtyCardBlock({ card, delay }: { card: SpecialtyCard; delay: number }) {
-  const tilt = useTilt(4);
-  const Icon = card.icon;
-  return (
-    <Reveal delay={delay}>
-      <article
-        ref={tilt as any}
-        className="grid md:grid-cols-[1.4fr_1fr] overflow-hidden rounded-[22px] border border-white/80 tilt-spotlight transition-all duration-[400ms]"
-        style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(20px) saturate(150%)", boxShadow: "0 8px 36px rgba(27,19,56,0.07)" }}
-      >
-        <div className="p-9 sm:p-10 flex flex-col">
-          <div className="flex items-center">
-            <span className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-              <Icon aria-hidden size={24} className="text-white" />
-            </span>
-          </div>
-          <h3 className="font-bold text-brand-deep mt-4" style={{ fontSize: 22, letterSpacing: "-0.025em" }}>
-            {card.h3}
-          </h3>
-          <p className="text-text-secondary mt-2.5 max-w-[420px]" style={{ fontSize: 15, lineHeight: 1.7 }}>
-            {card.body}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-            {card.links.map(l => (
-              <Link key={l.label} to={l.href} className="text-brand-purple font-medium text-[13px] hover:underline">
-                → {l.label}
-              </Link>
-            ))}
-          </div>
-          <div className="mt-6">
-            <Link
-              to={card.cta.href}
-              aria-label={`${card.cta.label.toLowerCase()} solutions`}
-              className="inline-flex items-center btn-primary-grad font-bold rounded-full px-6 py-3 text-[14px]"
-            >
-              {card.cta.label} <ArrowRight aria-hidden size={16} className="ml-1.5" />
-            </Link>
-          </div>
-        </div>
-
-        <div className="p-9 sm:p-7 flex flex-col gap-4" style={{ background: "rgba(100,79,249,0.04)", borderLeft: "1px solid rgba(100,79,249,0.1)" }}>
-          <div className="font-mono-ui uppercase text-[11px] tracking-[0.08em] text-text-muted mb-1">
-            What We Address
-          </div>
-          {card.address.map((row) => (
-            <div key={row} className="flex items-start gap-3">
-              <span className="w-[18px] h-[18px] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(100,79,249,0.1)" }}>
-                <Check aria-hidden size={11} className="text-brand-purple" />
-              </span>
-              <span className="text-[13px] font-medium text-brand-deep">{row}</span>
-            </div>
-          ))}
-          <div className="mt-auto pt-4 border-t flex flex-wrap gap-1.5" style={{ borderColor: "rgba(100,79,249,0.1)" }}>
-            {card.services.map(s => (
-              <span key={s} className="font-mono-ui text-[10px] px-2.5 py-1 rounded-full text-brand-purple border border-brand-purple/12" style={{ background: "rgba(100,79,249,0.07)" }}>
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-      </article>
-    </Reveal>
-  );
-}
-
 function SpecialtyCards() {
+  const [active, setActive] = useState(0);
+  const card = SPECIALTIES[active];
+  const Icon = card.icon;
+
   return (
-    <section id="specialty-cards" className="py-24 bg-surface-secondary" aria-labelledby="specialty-cards-h2">
-      <div className="container">
+    <section id="specialty-cards" className="relative py-24 bg-surface-secondary overflow-hidden" aria-labelledby="specialty-cards-h2">
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute" style={{ top: "10%", left: "-10%", width: 480, height: 480, borderRadius: "50%", background: "radial-gradient(circle, hsl(247 93% 64% / 0.10), transparent 70%)", filter: "blur(90px)" }} />
+        <div className="absolute" style={{ bottom: "-10%", right: "-10%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle, hsl(248 100% 75% / 0.10), transparent 70%)", filter: "blur(100px)" }} />
+      </div>
+
+      <div className="container relative z-10">
         <Reveal className="text-center max-w-[620px] mx-auto">
-          <h2 id="specialty-cards-h2" className="font-extrabold mt-2" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+          <ChipLabel>Specialty Pathways</ChipLabel>
+          <h2 id="specialty-cards-h2" className="font-extrabold mt-4" style={{ fontSize: "clamp(28px,5vw,46px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
             <span className="block text-brand-deep">Choose the Type of Practice</span>
             <span className="block gradient-text">You Want to Grow</span>
           </h2>
@@ -387,11 +332,162 @@ function SpecialtyCards() {
           </p>
         </Reveal>
 
-        <div className="mt-13 max-w-[960px] mx-auto flex flex-col gap-6 mt-12">
-          {SPECIALTIES.map((c, i) => (
-            <SpecialtyCardBlock key={c.tag} card={c} delay={0.1 + i * 0.1} />
-          ))}
-        </div>
+        {/* Specialty selector rail */}
+        <Reveal delay={0.1} className="mt-12 max-w-[1080px] mx-auto">
+          <div role="tablist" aria-label="Practice specialties" className="grid grid-cols-3 gap-3 sm:gap-4">
+            {SPECIALTIES.map((s, i) => {
+              const Si = s.icon;
+              const isActive = i === active;
+              return (
+                <button
+                  key={s.tag}
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`specialty-panel-${i}`}
+                  id={`specialty-tab-${i}`}
+                  onClick={() => setActive(i)}
+                  className={`group relative text-left rounded-[18px] p-4 sm:p-5 transition-all duration-300 overflow-hidden ${isActive ? "-translate-y-1" : "hover:-translate-y-0.5"}`}
+                  style={{
+                    background: isActive ? "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" : "rgba(255,255,255,0.85)",
+                    border: isActive ? "1px solid transparent" : "1px solid rgba(100,79,249,0.12)",
+                    boxShadow: isActive ? "0 18px 40px rgba(100,79,249,0.28)" : "0 4px 14px rgba(27,19,56,0.04)",
+                  }}
+                >
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105"
+                      style={{
+                        background: isActive ? "rgba(255,255,255,0.18)" : "rgba(100,79,249,0.08)",
+                        border: isActive ? "1px solid rgba(255,255,255,0.3)" : "1px solid rgba(100,79,249,0.15)",
+                      }}
+                    >
+                      <Si aria-hidden size={18} className={isActive ? "text-white" : "text-brand-purple"} />
+                    </span>
+                    <div className="min-w-0">
+                      <div className={`font-mono-ui text-[10px] uppercase tracking-[0.12em] ${isActive ? "text-white/80" : "text-brand-purple/80"}`}>
+                        0{i + 1} · Pathway
+                      </div>
+                      <div className={`font-bold text-[14px] sm:text-[15px] tracking-tight truncate ${isActive ? "text-white" : "text-brand-deep"}`}>
+                        {s.tag}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        {/* Active specialty panel */}
+        <motion.article
+          key={card.tag}
+          id={`specialty-panel-${active}`}
+          role="tabpanel"
+          aria-labelledby={`specialty-tab-${active}`}
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease }}
+          className="relative mt-6 max-w-[1080px] mx-auto grid md:grid-cols-[1.35fr_1fr] overflow-hidden rounded-[24px]"
+          style={{
+            background: "rgba(255,255,255,0.92)",
+            backdropFilter: "blur(20px) saturate(150%)",
+            border: "1px solid rgba(100,79,249,0.12)",
+            boxShadow: "0 20px 60px rgba(27,19,56,0.10)",
+          }}
+        >
+          <div aria-hidden className="absolute inset-x-0 top-0 h-[3px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%), hsl(247 100% 88%))" }} />
+
+          <div className="p-8 sm:p-10 flex flex-col">
+            <div className="flex items-center gap-3">
+              <span className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))", boxShadow: "0 10px 24px rgba(100,79,249,0.28)" }}>
+                <Icon aria-hidden size={26} className="text-white" />
+              </span>
+              <div>
+                <div className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] text-brand-purple">
+                  Pathway 0{active + 1} / {SPECIALTIES.length}
+                </div>
+                <div className="font-mono-ui text-[11px] text-text-muted mt-0.5">{card.tag} Practice</div>
+              </div>
+            </div>
+
+            <h3 className="font-bold text-brand-deep mt-5" style={{ fontSize: 24, letterSpacing: "-0.025em" }}>
+              {card.h3}
+            </h3>
+            <p className="text-text-secondary mt-3" style={{ fontSize: 15, lineHeight: 1.75 }}>
+              {card.body}
+            </p>
+
+            <div className="mt-5 flex flex-col gap-2">
+              {card.links.map((l) => (
+                <Link
+                  key={l.label}
+                  to={l.href}
+                  className="group inline-flex items-center justify-between gap-3 rounded-xl border border-brand-purple/12 px-4 py-2.5 text-[13.5px] font-medium text-brand-deep hover:border-brand-purple/35 hover:bg-brand-purple/5 transition-all"
+                >
+                  <span>{l.label}</span>
+                  <ArrowRight aria-hidden size={14} className="text-brand-purple transition-transform group-hover:translate-x-1" />
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-7">
+              <Link
+                to={card.cta.href}
+                aria-label={`${card.cta.label.toLowerCase()} solutions`}
+                className="inline-flex items-center btn-primary-grad font-bold rounded-full px-6 py-3 text-[14px]"
+              >
+                {card.cta.label} <ArrowRight aria-hidden size={16} className="ml-1.5" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative p-8 sm:p-9 flex flex-col gap-4" style={{ background: "linear-gradient(160deg, rgba(100,79,249,0.06), rgba(100,79,249,0.02))", borderLeft: "1px solid rgba(100,79,249,0.1)" }}>
+            <div className="flex items-center justify-between">
+              <div className="font-mono-ui uppercase text-[11px] tracking-[0.1em] text-brand-purple">
+                What We Address
+              </div>
+              <div className="font-mono-ui text-[10px] text-text-muted">{card.address.length} focus areas</div>
+            </div>
+
+            <ul className="flex flex-col gap-3 list-none p-0">
+              {card.address.map((row, idx) => (
+                <motion.li
+                  key={row}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.05 * idx, ease }}
+                  className="flex items-start gap-3 rounded-lg p-2.5 -mx-2.5 hover:bg-white/60 transition-colors"
+                >
+                  <span className="font-mono-ui text-[10px] text-brand-purple/70 mt-1 w-5 flex-shrink-0">0{idx + 1}</span>
+                  <span className="w-[18px] h-[18px] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
+                    <Check aria-hidden size={11} className="text-white" />
+                  </span>
+                  <span className="text-[13px] font-medium text-brand-deep leading-snug">{row}</span>
+                </motion.li>
+              ))}
+            </ul>
+
+            <div className="mt-auto pt-5 border-t" style={{ borderColor: "rgba(100,79,249,0.12)" }}>
+              <div className="font-mono-ui uppercase text-[10px] tracking-[0.1em] text-text-muted mb-2.5">
+                Channel Stack
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {card.services.map((s, idx) => (
+                  <motion.span
+                    key={s}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.03 * idx }}
+                    className="font-mono-ui text-[10.5px] px-2.5 py-1 rounded-full text-brand-purple border border-brand-purple/15"
+                    style={{ background: "rgba(100,79,249,0.07)" }}
+                  >
+                    {s}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.article>
 
         <Reveal delay={0.2} className="text-center mt-12">
           <p className="text-text-secondary text-[15px]">Not sure which specialty path is right for you?</p>
