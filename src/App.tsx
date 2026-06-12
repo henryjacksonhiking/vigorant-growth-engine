@@ -33,6 +33,10 @@ import ServicesBrandingRebranding from "./pages/services/BrandingRebranding.tsx"
 import ServicesSocialMediaMarketing from "./pages/services/SocialMediaMarketing.tsx";
 import ServicesLandingPages from "./pages/services/LandingPages.tsx";
 import ServicesVideoMarketing from "./pages/services/VideoMarketing.tsx";
+import ServicesEmailMarketing from "./pages/services/EmailMarketing.tsx";
+import ServicesLocalListingsGbp from "./pages/services/LocalListingsGbp.tsx";
+import ServicesAnalyticsReporting from "./pages/services/AnalyticsReporting.tsx";
+import ServicesContentMarketing from "./pages/services/ContentMarketing.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
@@ -83,6 +87,10 @@ const App = () => (
             <Route path="/services/social-media-marketing" element={<ServicesSocialMediaMarketing />} />
             <Route path="/services/landing-pages" element={<ServicesLandingPages />} />
             <Route path="/services/video-marketing" element={<ServicesVideoMarketing />} />
+            <Route path="/services/email-marketing" element={<ServicesEmailMarketing />} />
+            <Route path="/services/local-listings-gbp" element={<ServicesLocalListingsGbp />} />
+            <Route path="/services/analytics-and-reporting" element={<ServicesAnalyticsReporting />} />
+            <Route path="/services/content-marketing" element={<ServicesContentMarketing />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/results" element={<Results />} />
             <Route path="/resources" element={<Resources />} />
