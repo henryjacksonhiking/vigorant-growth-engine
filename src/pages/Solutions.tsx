@@ -202,7 +202,7 @@ function OneSystem() {
         >
           {[
             { icon: Smile, label: "Dental", accent: "from-brand-purple to-brand-bright", key: "d" as const },
-            { icon: Bone, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
+            { icon: Activity, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
             { icon: Stethoscope, label: "Medical", accent: "from-brand-purple to-brand-lavender", key: "m" as const },
           ].map(({ icon: Icon, label, accent, key }, colIdx) => (
             <Reveal
@@ -279,7 +279,7 @@ const SPECIALTIES: SpecialtyCard[] = [
     services: ["Local SEO", "Google Ads", "AIO/GEO", "Website CRO", "Review Engine", "Dental Paid Ads"],
   },
   {
-    tag: "Chiropractic", icon: Bone,
+    tag: "Chiropractic", icon: Activity,
     h3: "Chiropractic Marketing",
     body: "For chiropractic practices that need predictable local demand, stronger Google Maps visibility, better patient education, and campaigns that convert nearby searchers into booked visits — whether for pain relief, wellness care, or sports treatment.",
     links: [
