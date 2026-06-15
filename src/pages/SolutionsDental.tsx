@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, Search, Megaphone, MousePointerClick, Star, BarChart2, Sparkles,
   Shield, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail,
-  MapPin, ChevronRight, Check, ExternalLink, AlertCircle,
+  MapPin, ChevronRight, Check, ExternalLink,
   Stethoscope, Smile, Baby, Scissors,
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
