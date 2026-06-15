@@ -268,13 +268,15 @@ export default function About() {
                 { icon: Stethoscope, label: "Medical", body: "Private practice, specialty groups, multi-provider.", href: "/solutions/medical" },
               ].map((s, i) => (
                 <Reveal key={s.label} delay={i * 0.06} className="h-full">
-                  <TiltCard className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur p-7 h-full">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 mb-5">
-                      <s.icon aria-hidden size={22} />
+                  <TiltCard className="rounded-2xl border border-white/15 bg-white/5 backdrop-blur p-7 h-full flex flex-col">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-white/10 flex-shrink-0">
+                        <s.icon aria-hidden size={22} />
+                      </div>
+                      <h3 className="font-bold text-xl leading-tight self-center">{s.label}</h3>
                     </div>
-                    <h3 className="font-bold text-xl">{s.label}</h3>
-                    <p className="mt-2 text-white/75">{s.body}</p>
-                    <Link to={s.href} className="mt-5 inline-flex items-center text-brand-lavender hover:text-white font-semibold">
+                    <p className="mt-4 text-white/75">{s.body}</p>
+                    <Link to={s.href} className="mt-auto pt-5 inline-flex items-center text-brand-lavender hover:text-white font-semibold">
                       Explore {s.label.toLowerCase()} solutions <ArrowRight size={16} className="ml-1.5" aria-hidden />
                     </Link>
                   </TiltCard>
