@@ -173,18 +173,18 @@ export default function SolutionsChiropractic() {
               <ChipLabel>The Common Growth Problem</ChipLabel>
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>You Are Nearby, <GradientText>But Not Always Visible Enough</GradientText></h2>
             </Reveal>
-            <div className="flex flex-col md:flex-row gap-3 md:gap-2 items-stretch md:items-center justify-center mt-12 max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-2 items-stretch justify-center mt-12 max-w-5xl mx-auto">
               {JOURNEY.map((n, i, a) => (
-                <div key={n.chip} className="flex flex-col md:flex-row items-center md:flex-1">
-                  <Reveal delay={i * 0.06} className="flex-1 w-full md:w-auto">
-                    <div className="bg-white/90 border border-brand-purple/12 rounded-2xl p-5 text-center hover:border-brand-purple/30 transition-all">
+                <div key={n.chip} className="flex flex-col md:flex-row items-stretch md:flex-1 md:min-w-0">
+                  <Reveal delay={i * 0.06} className="flex-1 w-full md:w-auto md:flex">
+                    <div className="flex-1 w-full bg-white/90 border border-brand-purple/12 rounded-2xl p-6 text-center hover:border-brand-purple/30 transition-all flex flex-col">
                       <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">{n.chip}</div>
-                      <div className="w-10 h-10 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><n.icon size={18} className="text-white" /></div>
-                      <div className="font-bold text-brand-deep text-[14px] mt-2">{n.l}</div>
-                      <div className="text-ink-muted text-[12px] mt-1.5 italic">{n.p}</div>
+                      <div className="w-10 h-10 mx-auto mt-3 rounded-full flex items-center justify-center shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><n.icon size={18} className="text-white" /></div>
+                      <div className="font-bold text-brand-deep text-[14px] mt-3 min-h-[2.6em] flex items-center justify-center">{n.l}</div>
+                      <div className="text-ink-muted text-[12px] mt-1.5 italic flex-1">{n.p}</div>
                     </div>
                   </Reveal>
-                  {i < a.length - 1 && <ChevronRight size={18} className="hidden md:block text-brand-lavender flex-shrink-0 mx-1" />}
+                  {i < a.length - 1 && <div className="hidden md:flex items-center px-1"><ChevronRight size={18} className="text-brand-lavender flex-shrink-0" /></div>}
                 </div>
               ))}
             </div>

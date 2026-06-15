@@ -328,21 +328,23 @@ function RealProblem() {
             className="mt-12 max-w-[860px] mx-auto rounded-2xl p-6 sm:p-8"
             style={{ background: "hsl(0 0% 100% / 0.88)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.12)" }}
           >
-            <ol className="flex flex-col md:flex-row md:flex-wrap md:justify-between items-center gap-4 md:gap-2 list-none p-0">
+            <ol className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-0 list-none p-0">
               {FUNNEL_STAGES.map((s, i) => (
-                <li key={s.label} className="flex md:flex-col items-center gap-3 md:gap-2 md:flex-1 md:min-w-0">
-                  <div className="flex flex-col items-center">
-                    <div aria-hidden className="w-14 h-14 rounded-full flex items-center justify-center"
-                      style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-                      <s.Icon size={22} className="text-white" />
-                    </div>
-                    <div className="mt-1.5 font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple text-center max-w-[110px] leading-tight">
-                      {s.label}
+                <li key={s.label} className="flex md:flex-col items-center md:items-stretch gap-3 md:gap-0 md:flex-1 md:min-w-0">
+                  <div className="flex md:flex-col items-center md:flex-1 md:min-w-0">
+                    <div className="flex flex-col items-center w-full md:px-1">
+                      <div aria-hidden className="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
+                        style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
+                        <s.Icon size={22} className="text-white" />
+                      </div>
+                      <div className="mt-2 font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple text-center leading-tight w-full break-words">
+                        {s.label}
+                      </div>
                     </div>
                   </div>
                   {i < FUNNEL_STAGES.length - 1 && (
                     <>
-                      <ChevronRight aria-hidden size={20} className="hidden md:block text-brand-lavender flex-shrink-0" />
+                      <ChevronRight aria-hidden size={18} className="hidden md:block text-brand-lavender shrink-0 mt-5 -mx-1" />
                       <ChevronDown aria-hidden size={20} className="md:hidden text-brand-lavender" />
                     </>
                   )}
@@ -497,11 +499,17 @@ function Differentiation() {
               <div key={i} className="grid grid-cols-1 sm:grid-cols-2 text-[13.5px]" style={{ borderBottom: i < COMP_ROWS.length - 1 ? "1px solid hsl(0 0% 100% / 0.04)" : "none" }}>
                 <div className="px-5 sm:px-6 py-3.5 text-white/60 border-b sm:border-b-0 border-white/5">
                   <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-white/40 block sm:hidden mb-1">Traditional</span>
-                  <span aria-hidden className="mr-1.5" style={{ color: "hsl(0 100% 70% / 0.65)" }}>✗</span>{left}
+                  <div className="flex items-start gap-2">
+                    <span aria-hidden className="shrink-0 w-4 text-center leading-[1.65]" style={{ color: "hsl(0 100% 70% / 0.65)" }}>✗</span>
+                    <span className="flex-1 min-w-0">{left}</span>
+                  </div>
                 </div>
                 <div className="px-5 sm:px-6 py-3.5 text-white/85 sm:border-l border-white/5">
                   <span className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-bright block sm:hidden mb-1">Vigorant</span>
-                  <span aria-hidden className="mr-1.5 text-brand-bright">✓</span>{right}
+                  <div className="flex items-start gap-2">
+                    <span aria-hidden className="text-brand-bright shrink-0 w-4 text-center leading-[1.65]">✓</span>
+                    <span className="flex-1 min-w-0">{right}</span>
+                  </div>
                 </div>
               </div>
             ))}
