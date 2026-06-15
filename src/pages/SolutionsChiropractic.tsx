@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Search, Megaphone, MousePointerClick, Star, BarChart2, Eye, ShieldCheck, RefreshCw, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail, AlertCircle, Check, ExternalLink, SearchX, ShieldAlert, TrendingDown, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Search, Megaphone, MousePointerClick, BarChart2, Eye, ShieldCheck, RefreshCw, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail, AlertCircle, ExternalLink, SearchX, ShieldAlert, TrendingDown, ChevronRight } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import StickyCTA from "@/components/site/StickyCTA";
