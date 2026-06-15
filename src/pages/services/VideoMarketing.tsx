@@ -421,7 +421,7 @@ export default function VideoMarketing() {
                     {HERO_METRICS.map((m) => (
                       <div
                         key={m.n}
-                        className="grid grid-cols-[54px_1fr] gap-4 items-start rounded-2xl p-4 border border-white/12 bg-white/8 hover:bg-white/12 hover:border-white/24 transition-all"
+                        className="grid grid-cols-[54px_1fr] gap-4 items-start rounded-2xl p-4 border border-white/12 bg-white/8"
                         style={{ backdropFilter: "blur(2px)" }}
                       >
                         <strong className="font-display text-[1.05rem] font-bold text-brand-lavender">{m.n}</strong>
@@ -477,7 +477,7 @@ export default function VideoMarketing() {
                   <article
                     role="listitem"
                     className={
-                      "p-8 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)] hover:border-brand-purple/30 " +
+                      "p-8 " +
                       (i < EVIDENCE.length - 1 ? "sm:border-r border-brand-purple/18" : "")
                     }
                   >
@@ -654,7 +654,7 @@ export default function VideoMarketing() {
                 <Link
                   key={r.h}
                   to={r.href}
-                  className="bg-background p-6 font-extrabold text-brand-deep transition-all hover:-translate-y-1 hover:text-brand-purple hover:bg-surface-secondary"
+                  className="bg-background p-6 font-extrabold text-brand-deep transition-colors hover:text-brand-purple"
                 >
                   {r.h}
                   <span className="block font-mono-ui text-[12px] font-medium text-ink-muted mt-1.5">

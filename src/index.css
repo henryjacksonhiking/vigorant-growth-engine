@@ -540,23 +540,23 @@
   }
 
   /* Pages that opt out of the global card lift/glow hover */
-  main .no-card-hover .rounded-2xl:hover,
-  main .no-card-hover article.rounded-2xl:hover,
-  main .no-card-hover .rounded-xl:hover,
-  main .no-card-hover article.rounded-xl:hover,
-  main .no-card-hover .grid > article:hover,
-  main .no-card-hover .grid > div > article:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: inherit;
+  .no-card-hover main .rounded-2xl:hover,
+  .no-card-hover main article.rounded-2xl:hover,
+  .no-card-hover main .rounded-xl:hover,
+  .no-card-hover main article.rounded-xl:hover,
+  .no-card-hover main .grid > article:hover,
+  .no-card-hover main .grid > div > article:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
   }
-  main .no-card-hover .rounded-2xl:hover img,
-  main .no-card-hover article:hover img {
-    transform: none;
+  .no-card-hover main .rounded-2xl:hover img,
+  .no-card-hover main article:hover img {
+    transform: none !important;
   }
-  main .no-card-hover .rounded-2xl:hover svg.text-brand-purple,
-  main .no-card-hover article:hover svg.text-brand-purple {
-    transform: none;
+  .no-card-hover main .rounded-2xl:hover svg.text-brand-purple,
+  .no-card-hover main article:hover svg.text-brand-purple {
+    transform: none !important;
   }
 
   /* Image zoom inside cards on hover */

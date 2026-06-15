@@ -471,7 +471,7 @@ export default function LandingPages() {
                         <div
                           className={
                             "rounded-2xl p-5 border bg-surface-secondary transition-all " +
-                            (active ? "border-brand-purple/32 -translate-y-1 shadow-[0_18px_46px_hsl(var(--brand-purple)/0.15)]" : "border-brand-purple/18")
+                            (active ? "border-brand-purple/18" : "border-brand-purple/18")
                           }
                         >
                           <div className="flex items-center gap-3">
@@ -508,7 +508,7 @@ export default function LandingPages() {
                 <div
                   key={row.a}
                   className={
-                    "grid sm:grid-cols-[260px_1fr] transition-colors hover:bg-brand-purple/[0.035] " +
+                    "grid sm:grid-cols-[260px_1fr] " +
                     (i < HANDOFF.length - 1 ? "border-b border-brand-purple/18" : "")
                   }
                 >
