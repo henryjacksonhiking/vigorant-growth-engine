@@ -35,13 +35,11 @@ export default function ServicesWebsiteDesign() {
       <PainHero
         breadcrumbLabel="Website Design & CRO"
         breadcrumbTrail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
-        chip="Design · Speed · Conversion · Compliance"
         titleLines={[{ text: "Websites Built to Book Patients —" }, { text: "Not Just Look Modern.", gradient: true }]}
         subhead="Your website is your most important front-desk asset."
         paragraph="Vigorant designs healthcare websites that load fast, communicate trust, rank in Google and AI search, and turn visitors into booked appointments — with HIPAA-aware tracking from day one."
         primaryCTA={{ label: "Request Your Free Website Growth Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See Website & Patient Growth Results", href: "/results" }}
-        proofStrip="Speed · Mobile · Conversion · SEO · AI-ready · WCAG · HIPAA-aware"
       />
 
       <DarkSection>
