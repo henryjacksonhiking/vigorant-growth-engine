@@ -383,7 +383,7 @@ export default function SolutionsDental() {
             </ul>
             <div className="text-center mt-10">
               <p className="font-mono-ui text-[12px] text-white/75 mb-3">All services connect into one patient acquisition system.</p>
-              <Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[14px] px-7 py-3 rounded-full hover:bg-brand-lavender transition-colors">
+              <Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[14px] px-7 py-3">
                 {AUDIT_CTA} <ArrowRight size={15} />
               </Link>
             </div>
@@ -658,7 +658,7 @@ export default function SolutionsDental() {
               <span className="font-mono-ui text-[12px] text-brand-lavender">8 audit slots per month · 3 remaining</span>
             </div>
             <div className="mt-5 flex flex-wrap gap-4 justify-center items-center">
-              <Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender hover:scale-[1.02] transition-all" style={{ boxShadow: "0 20px 60px hsl(0 0% 0% / 0.3)" }}>
+              <Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[16px] px-10 py-4" style={{ boxShadow: "0 20px 60px hsl(0 0% 0% / 0.3)" }}>
                 {AUDIT_CTA} <ArrowRight size={16} />
               </Link>
               <Link to="/results" className="text-white/95 hover:text-white/90 font-semibold text-[14px] inline-flex items-center gap-1.5">

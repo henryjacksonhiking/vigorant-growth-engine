@@ -244,7 +244,7 @@ export default function ScaleYourPractice() {
                 </Reveal>
               ))}
             </div>
-            <div className="text-center mt-12"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[14px] px-7 py-3 rounded-full hover:bg-brand-lavender">{CTA1} <ArrowRight size={15} /></Link></div>
+            <div className="text-center mt-12"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[14px] px-7 py-3">{CTA1} <ArrowRight size={15} /></Link></div>
           </div>
         </section>
 
@@ -300,7 +300,7 @@ export default function ScaleYourPractice() {
                 </ul>
                 <div className="border-t border-brand-purple/10 mt-5 pt-5 flex flex-wrap justify-between items-center gap-3">
                   <span className="font-mono-ui text-[12px] text-brand-purple">5+ checked: You are likely ready to build a growth system.</span>
-                  <Link to="/free-audit" className="inline-flex items-center gap-1.5 text-white font-bold text-[13px] px-5 py-2.5 rounded-full" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))" }}>Check Your Scale Readiness <ArrowRight size={13} /></Link>
+                  <Link to="/free-audit" className="btn-primary-grad inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-1.5 font-bold text-[13px] px-5 py-2.5">Check Your Scale Readiness <ArrowRight size={13} /></Link>
                 </div>
               </div>
             </Reveal>
@@ -334,7 +334,7 @@ export default function ScaleYourPractice() {
             <ChipLabel dark>Build the Next Stage of Your Practice</ChipLabel>
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}>Free Scale Readiness Audit.</h2>
             <p className="mt-5 text-white/65 text-[16px] max-w-xl mx-auto leading-[1.72]">Get a clear view of what's between your current ceiling and a scalable growth system — before you hire, expand, or increase spend.</p>
-            <div className="mt-7"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender">{CTA1} <ArrowRight size={16} /></Link></div>
+            <div className="mt-7"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[16px] px-10 py-4">{CTA1} <ArrowRight size={16} /></Link></div>
           </div>
         </section>
       </main>

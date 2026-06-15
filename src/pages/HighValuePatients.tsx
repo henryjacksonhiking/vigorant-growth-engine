@@ -234,7 +234,7 @@ export default function HighValuePatients() {
                     <div className="font-mono-ui text-[11px] text-ink-muted mt-3">{s.focus}</div>
                     <p className="mt-2 text-[13px] text-ink-secondary leading-relaxed">{s.body}</p>
                     <div className="flex flex-wrap gap-1.5 mt-3">{s.chips.map(c => <span key={c} className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>)}</div>
-                    <Link to={s.cta.to} className="mt-4 inline-flex items-center gap-2 font-bold text-white text-[13px] px-5 py-2.5 rounded-full" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))" }}>{s.cta.label} <ArrowRight size={13} /></Link>
+                    <Link to={s.cta.to} className="btn-primary-grad inline-flex items-center justify-center gap-2 rounded-full mt-4 inline-flex items-center gap-2 font-bold text-[13px] px-5 py-2.5">{s.cta.label} <ArrowRight size={13} /></Link>
                   </article>
                 </Reveal>
               ))}
@@ -274,7 +274,7 @@ export default function HighValuePatients() {
                 </Reveal>
               ))}
             </ol>
-            <div className="text-center mt-10"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[14px] px-7 py-3 rounded-full hover:bg-brand-lavender">See Where High-Value Patients Are Dropping Off <ArrowRight size={15} /></Link></div>
+            <div className="text-center mt-10"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[14px] px-7 py-3">See Where High-Value Patients Are Dropping Off <ArrowRight size={15} /></Link></div>
           </div>
         </section>
 
@@ -326,7 +326,7 @@ export default function HighValuePatients() {
             <ChipLabel dark>Shift From Volume to Production</ChipLabel>
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}>Request Your High-Value Patient Opportunity Analysis.</h2>
             <p className="mt-5 text-white/65 text-[16px] max-w-xl mx-auto leading-[1.72]">See where high-value patients are slipping past your practice — and which campaigns, pages, and tracking changes will shift your patient mix.</p>
-            <div className="mt-7"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender">{CTA1} <ArrowRight size={16} /></Link></div>
+            <div className="mt-7"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[16px] px-10 py-4">{CTA1} <ArrowRight size={16} /></Link></div>
           </div>
         </section>
       </main>

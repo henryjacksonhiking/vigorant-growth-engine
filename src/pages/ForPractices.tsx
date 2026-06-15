@@ -604,7 +604,7 @@ function Proof() {
         </div>
 
         <div className="text-center mt-12">
-          <a href="#audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[15px] sm:text-[16px] px-8 py-4 rounded-full transition-all duration-300 hover:bg-brand-lavender hover:scale-[1.02] hover:shadow-[0_8px_28px_hsl(248_49%_15%/0.35)] min-h-[48px]">
+          <a href="#audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[15px] sm:text-[16px] px-8 py-4">
             Get a Growth Plan Like This for Your Practice <ArrowRight size={18} aria-hidden />
           </a>
         </div>
@@ -751,7 +751,7 @@ function FinalCTA() {
         <div className="mt-5 font-mono-ui text-[12px] text-brand-lavender">
           We accept 8 new audit requests per month. 3 spots remaining this month.
         </div>
-        <a href="#" className="mt-7 inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4 rounded-full transition-all duration-300 hover:bg-brand-lavender hover:scale-[1.02] hover:shadow-[0_10px_36px_hsl(248_49%_15%/0.4)] min-h-[52px]">
+        <a href="#" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full mt-7 inline-flex items-center gap-2 font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4">
           Claim My Free Practice Growth Audit <ArrowRight size={18} aria-hidden />
         </a>
         <p className="mt-4 text-white/55 text-[14px]">No commitment. No hard sell. Just clarity on what's possible for your practice.</p>

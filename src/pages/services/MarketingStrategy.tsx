@@ -350,17 +350,13 @@ export default function MarketingStrategy() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
-                    style={{
-                      background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
-                      boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
-                    }}
+                    className="btn-primary-grad inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   >
                     Request a Strategy Audit <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
+                    className="btn-secondary-outline inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   >
                     Book a Growth Strategy Call
                   </Link>
@@ -974,11 +970,7 @@ export default function MarketingStrategy() {
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/free-audit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
-                  style={{
-                    background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
-                    boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
-                  }}
+                  className="btn-on-dark inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                 >
                   Request a Strategy Audit <ArrowRight className="w-4 h-4" />
                 </Link>

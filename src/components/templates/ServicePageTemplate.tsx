@@ -472,7 +472,7 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
               <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center flex-wrap">
                 <Link
                   to={c.finalCTA.primaryCTA.href}
-                  className="bg-white text-brand-deep inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold min-h-[48px] hover:bg-white/90 transition"
+                  className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center justify-center gap-2 px-7 py-3.5 font-bold"
                 >
                   {c.finalCTA.primaryCTA.label} <ArrowRight aria-hidden size={18} />
                 </Link>

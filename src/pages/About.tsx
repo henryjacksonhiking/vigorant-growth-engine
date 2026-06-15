@@ -159,7 +159,7 @@ export default function About() {
               <a href="#audit" className="btn-primary-grad font-semibold px-6 py-3 rounded-full inline-flex items-center transition-transform hover:-translate-y-0.5">
                 Get a free growth audit <ArrowRight aria-hidden className="ml-2" size={18} />
               </a>
-              <Link to="/how-it-works" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
+              <Link to="/how-it-works" className="btn-secondary-outline inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3">
                 See how we work
               </Link>
             </motion.div>
@@ -447,7 +447,7 @@ export default function About() {
                 A free, no-obligation review of your visibility, website, AI presence, and conversion gaps — with a
                 prioritized 90-day plan.
               </p>
-              <a href="#book" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+              <a href="#book" className="mt-8 btn-on-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold">
                 Book your free audit <ArrowRight size={18} className="ml-2" aria-hidden />
               </a>
             </Reveal>

@@ -144,7 +144,7 @@ export default function HowItWorks() {
               <a href="#phase-system" className="btn-primary-grad font-semibold px-6 py-3 rounded-full inline-flex items-center transition-transform hover:-translate-y-0.5">
                 See the system <ArrowRight aria-hidden className="ml-2" size={18} />
               </a>
-              <a href="#audit" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
+              <a href="#audit" className="btn-secondary-outline inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3">
                 Book a free audit
               </a>
             </motion.div>
@@ -380,7 +380,7 @@ export default function HowItWorks() {
               <h2 className="font-extrabold mt-3" style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
                 See exactly what your first 90 days would look like.
               </h2>
-              <a href="#book" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+              <a href="#book" className="mt-8 btn-on-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold">
                 Book your free audit <ArrowRight size={18} className="ml-2" aria-hidden />
               </a>
             </Reveal>

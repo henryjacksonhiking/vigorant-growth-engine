@@ -333,7 +333,7 @@ export default function SolutionsChiropractic() {
             <ChipLabel dark>Build Predictable Local Patient Flow</ChipLabel>
             <h2 className="font-serif font-bold text-white mt-4 leading-[1.15]" style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}>Get Your Free Chiropractic Growth Audit.</h2>
             <p className="mt-5 text-white/90 text-[16px] max-w-xl mx-auto leading-[1.72]">See where your chiropractic practice is losing local visibility, leads, and appointments — and the priority fixes for your market.</p>
-            <div className="mt-7"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender transition-all">{AUDIT} <ArrowRight size={16} /></Link></div>
+            <div className="mt-7"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[16px] px-10 py-4">{AUDIT} <ArrowRight size={16} /></Link></div>
             <div className="mt-5 font-mono-ui text-[12px] text-brand-lavender">8 audit slots per month · 3 remaining</div>
           </div>
         </section>

@@ -146,7 +146,7 @@ export default function Services() {
               <a href="#core-services" className="btn-primary-grad font-semibold px-6 py-3 rounded-full inline-flex items-center transition-transform hover:-translate-y-0.5">
                 See core services <ArrowRight aria-hidden className="ml-2" size={18} />
               </a>
-              <Link to="/free-audit" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
+              <Link to="/free-audit" className="btn-secondary-outline inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3">
                 Get a Free Audit
               </Link>
             </motion.div>
@@ -345,7 +345,7 @@ export default function Services() {
                 We will audit your visibility, conversion, paid efficiency, and reputation — and tell you exactly where
                 investment will create the largest patient flow.
               </p>
-              <Link to="/free-audit" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+              <Link to="/free-audit" className="mt-8 btn-on-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold">
                 Book Your Free Audit <ArrowRight size={18} className="ml-2" aria-hidden />
               </Link>
             </Reveal>
