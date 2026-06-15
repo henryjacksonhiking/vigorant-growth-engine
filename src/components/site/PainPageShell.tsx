@@ -32,7 +32,7 @@ export function Line({ children, delay }: { children: ReactNode; delay: number }
 export type HeroProps = {
   breadcrumbLabel: string;
   breadcrumbTrail?: { label: string; href: string }[];
-  chip: string;
+  chip?: string;
   titleLines: { text: string; gradient?: boolean }[];
   subhead: string;
   paragraph?: string;
@@ -64,11 +64,13 @@ export function PainHero({ breadcrumbLabel, breadcrumbTrail, chip, titleLines, s
           </ol>
         </nav>
 
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-          className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-4 py-1.5">
-          <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" />
-          {chip}
-        </motion.div>
+        {chip && (
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
+            className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-4 py-1.5">
+            <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" />
+            {chip}
+          </motion.div>
+        )}
 
         <h1 className="font-display font-bold text-brand-deep mt-6 leading-[1.05] tracking-tight"
           style={{ fontSize: "clamp(34px, 7vw, 68px)", letterSpacing: "-0.03em" }}>

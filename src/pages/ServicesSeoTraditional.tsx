@@ -39,7 +39,7 @@ export default function ServicesSeoTraditional() {
         paragraph="Vigorant builds the technical, local, on-page, and authority foundation that wins Google rankings, dominates the Map pack, and feeds the AI engines that decide what gets recommended next."
         primaryCTA={{ label: "Request Your Free SEO Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See SEO Case Studies", href: "/results" }}
-        proofStrip="Technical · Local · On-page · Authority · Reporting"
+        
       />
 
       <DarkSection>

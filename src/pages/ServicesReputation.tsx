@@ -5,7 +5,7 @@ import {
 } from "@/components/site/PainPageShell";
 
 const FAQS = [
-  { q: "Can you remove negative reviews?", a: "No reputable provider can guarantee review removal. Vigorant uses compliant response strategy, dispute escalation for clear policy violations, and a steady flow of authentic recent reviews to keep your overall trust signal strong." },
+  { q: "Can you remove negative reviews?", a: "Negative reviews cannot always be removed, but they can be managed strategically. Vigorant helps your practice respond professionally, escalate reviews that clearly violate platform policies, and build a steady flow of authentic, recent patient reviews that strengthen your overall online reputation." },
   { q: "Will you write fake reviews or buy reviews?", a: "Never. Both violate Google's policies and healthcare compliance norms. Vigorant uses compliant, patient-initiated review-generation workflows only." },
   { q: "How does review velocity affect ranking?", a: "Recent, authentic reviews are a strong local-pack ranking signal. Vigorant builds a steady cadence rather than spikes — which look natural to Google and trustworthy to patients." },
   { q: "How does reputation connect to AI search?", a: "Generative AI tools summarize reviews, recent sentiment, and citations when recommending providers. A weak or stale reputation reduces the chance of being recommended." },
@@ -36,13 +36,11 @@ export default function ServicesReputation() {
       <PainHero
         breadcrumbLabel="Reputation & Social"
         breadcrumbTrail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
-        chip="Reviews · Social · Local Trust"
         titleLines={[{ text: "Patients Judge You Before" }, { text: "They Ever Pick Up the Phone.", gradient: true }]}
         subhead="Reputation isn't a posting calendar. It's patient-trust infrastructure."
         paragraph="Vigorant turns reviews, responses, social proof, and local entity signals into a compliant system that lifts trust, rankings, and AI recommendation — for dental, medical, and chiropractic practices."
         primaryCTA={{ label: "Request Your Free Reputation Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See Patient Trust Results", href: "/results" }}
-        proofStrip="Reviews · Responses · Social · GBP · AI Trust Signals"
       />
 
       <DarkSection>

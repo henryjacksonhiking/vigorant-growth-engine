@@ -39,7 +39,7 @@ export default function ServicesSeoAeo() {
         paragraph="Vigorant structures your website, content, and entity signals so AI Overviews, Copilot, Perplexity, and ChatGPT search pick your practice as the concise, trustworthy answer."
         primaryCTA={{ label: "Request Your Free AI Visibility Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See AI Visibility Results", href: "/results" }}
-        proofStrip="AI Overviews · Copilot · Perplexity · ChatGPT search"
+        
       />
 
       <DarkSection>
