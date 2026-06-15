@@ -241,7 +241,7 @@ export default function VideoMarketing() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground no-card-hover">
       <Helmet>
         <title>Healthcare Video Marketing Services | Attract, Educate & Convert More Patients | Vigorant</title>
         <meta
@@ -579,7 +579,7 @@ export default function VideoMarketing() {
             <div className="mt-12 border-t border-brand-purple/18">
               {PRINCIPLES.map((p, i) => (
                 <Reveal key={p.h} delay={i * 0.05}>
-                  <article className="grid grid-cols-[64px_1fr] sm:grid-cols-[90px_1fr] gap-5 py-6 border-b border-brand-purple/18 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)] hover:border-brand-purple/30">
+                  <article className="grid grid-cols-[64px_1fr] sm:grid-cols-[90px_1fr] gap-5 py-6 border-b border-brand-purple/18">
                     <span className="font-display font-black text-brand-purple text-[1.7rem] leading-none">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -610,7 +610,7 @@ export default function VideoMarketing() {
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mt-12 items-start">
               <Reveal>
-                <div className="rounded-2xl p-8 sm:p-10 border border-white/12 bg-white/5 transition-all hover:-translate-y-1 hover:border-white/24">
+                <div className="rounded-2xl p-8 sm:p-10 border border-white/12 bg-white/5">
                   <blockquote className="font-display font-bold text-white leading-[1.45] tracking-tight" style={{ fontSize: "clamp(1.25rem, 2vw, 1.55rem)", letterSpacing: "-0.03em" }}>
                     “Patient education improves outcomes, satisfaction, and adherence — and the medium matters. Video is a uniquely effective format for explaining procedures, risks, and follow-up care.”
                   </blockquote>
