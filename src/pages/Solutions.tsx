@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Smile, Bone, Stethoscope, Check, Search, Route, DollarSign,
+  ArrowRight, Smile, Activity, Stethoscope, Check, Search, Route, DollarSign,
   MousePointerClick, MapPin, Brain, Users, Star, BarChart2, Sparkles,
   Megaphone, Layout, Plus, X,
 } from "lucide-react";
