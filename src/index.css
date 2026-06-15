@@ -539,6 +539,26 @@
     border-color: inherit;
   }
 
+  /* Pages that opt out of the global card lift/glow hover */
+  main .no-card-hover .rounded-2xl:hover,
+  main .no-card-hover article.rounded-2xl:hover,
+  main .no-card-hover .rounded-xl:hover,
+  main .no-card-hover article.rounded-xl:hover,
+  main .no-card-hover .grid > article:hover,
+  main .no-card-hover .grid > div > article:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
+  }
+  main .no-card-hover .rounded-2xl:hover img,
+  main .no-card-hover article:hover img {
+    transform: none;
+  }
+  main .no-card-hover .rounded-2xl:hover svg.text-brand-purple,
+  main .no-card-hover article:hover svg.text-brand-purple {
+    transform: none;
+  }
+
   /* Image zoom inside cards on hover */
   main .rounded-2xl img,
   main .rounded-xl img,
