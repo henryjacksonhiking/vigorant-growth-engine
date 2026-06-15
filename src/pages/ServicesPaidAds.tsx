@@ -41,13 +41,11 @@ export default function ServicesPaidAds() {
       <PainHero
         breadcrumbLabel="Paid Advertising"
         breadcrumbTrail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
-        chip="Google · Meta · YouTube · Retargeting"
         titleLines={[{ text: "Paid Ads That Produce" }, { text: "Booked Patients — Not Clicks.", gradient: true }]}
         subhead="Most practices don't have an ad problem. They have a system problem."
         paragraph="Vigorant manages paid media only after the conversion foundation is ready — then runs Google, Meta, and YouTube campaigns engineered for cost per booked appointment, not cost per click."
         primaryCTA={{ label: "Request Your Free Paid Ads Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See Patient Acquisition Results", href: "/results" }}
-        proofStrip="No obligation. We review campaigns, landing pages, tracking, and acquisition gaps."
       />
 
       <DarkSection>
