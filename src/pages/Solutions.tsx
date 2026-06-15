@@ -439,15 +439,17 @@ function WhyConverts() {
             const Icon = b.icon;
             return (
               <Reveal key={b.tag} delay={0.05 * i} className="h-full">
-                <article className="rounded-2xl border border-brand-purple/10 bg-surface-secondary p-7 transition-all hover:-translate-y-1 hover:border-brand-purple/25 tilt-spotlight">
-                  <span className="font-mono-ui text-[11px] uppercase px-2.5 py-1 rounded-full text-brand-purple" style={{ background: "rgba(100,79,249,0.07)" }}>
-                    {b.tag}
-                  </span>
-                  <div className="mt-3 w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-                    <Icon aria-hidden size={20} className="text-white" />
+                <article className="h-full rounded-2xl border border-brand-purple/10 bg-surface-secondary p-7 transition-all hover:-translate-y-1 hover:border-brand-purple/25 tilt-spotlight flex flex-col">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+                      <Icon aria-hidden size={20} className="text-white" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{b.tag}</span>
+                      <h3 className="font-bold text-brand-deep leading-[1.28]" style={{ fontSize: 17 }}>{b.h3}</h3>
+                    </div>
                   </div>
-                  <h3 className="mt-3 font-bold text-brand-deep" style={{ fontSize: 17 }}>{b.h3}</h3>
-                  <p className="mt-2 text-text-secondary" style={{ fontSize: 14, lineHeight: 1.65 }}>{b.body}</p>
+                  <p className="mt-3 text-text-secondary" style={{ fontSize: 14, lineHeight: 1.65 }}>{b.body}</p>
                 </article>
               </Reveal>
             );
