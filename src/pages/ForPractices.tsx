@@ -258,14 +258,16 @@ function ProblemReframe() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={0.1 + i * 0.06} className="h-full">
-              <div className="text-left rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1"
+              <div className="text-left rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
-                <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                  style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-                  <c.Icon size={20} className="text-white" />
+                <div className="flex items-start gap-3">
+                  <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
+                    <c.Icon size={20} className="text-white" />
+                  </div>
+                  <div className="font-bold text-[15px] text-white leading-tight self-center">{c.t}</div>
                 </div>
-                <div className="font-bold text-[15px] text-white">{c.t}</div>
-                <div className="text-[13px] text-white/55 mt-1.5 leading-[1.6]">{c.b}</div>
+                <div className="text-[13px] text-white/55 mt-3 leading-[1.6]">{c.b}</div>
               </div>
             </Reveal>
           ))}
@@ -291,13 +293,17 @@ function PainCard({ c, i }: { c: typeof PAIN_CARDS[number]; i: number }) {
           boxShadow: "0 6px 24px hsl(248 49% 15% / 0.07)",
         }}
       >
-        <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center"
-          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-          <c.Icon size={20} className="text-white" />
+        <div className="flex items-start gap-4">
+          <div aria-hidden className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+            <c.Icon size={20} className="text-white" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="font-mono-ui text-[11px] text-brand-purple uppercase tracking-[0.08em] mb-1">{c.n}</div>
+            <h3 className="font-bold text-[16px] text-brand-deep leading-snug">{c.h3}</h3>
+          </div>
         </div>
-        <div className="font-mono-ui text-[11px] text-brand-lavender mt-3 uppercase tracking-[0.08em]">{c.n}</div>
-        <h3 className="font-bold text-[16px] text-brand-deep mt-2 leading-snug">{c.h3}</h3>
-        <p className="italic text-[13px] text-ink-secondary mt-1">{c.q}</p>
+        <p className="italic text-[13px] text-ink-secondary mt-3">{c.q}</p>
         <p className="text-[13px] text-ink-secondary mt-2.5 leading-[1.65]">{c.body}</p>
         <div className="my-4 h-px bg-brand-purple/10" />
         <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-purple group-hover:text-brand-bright transition-all">

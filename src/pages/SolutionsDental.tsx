@@ -263,14 +263,16 @@ export default function SolutionsDental() {
                   <li className="bg-white/90 backdrop-blur border border-white rounded-[20px] overflow-hidden hover:border-brand-purple/40 hover:-translate-y-1 transition-all duration-300" style={{ boxShadow: "0 8px 28px hsl(248 49% 15% / 0.06)" }}>
                     <div className="grid md:grid-cols-[1fr_240px]">
                       <div className="p-7 sm:p-8">
-                        <div className="flex items-start justify-between gap-4">
-                          <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{p.tag}</span>
-                          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
                             <p.icon size={22} className="text-white" />
                           </div>
+                          <div className="min-w-0 flex-1">
+                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{p.tag}</span>
+                            <h3 className="font-bold text-brand-deep text-[19px] leading-tight" style={{ letterSpacing: "-0.02em" }}>{p.h3}</h3>
+                          </div>
                         </div>
-                        <h3 className="font-bold text-brand-deep text-[19px] mt-3 leading-tight" style={{ letterSpacing: "-0.02em" }}>{p.h3}</h3>
-                        <p className="mt-2 text-ink-secondary text-[14px] leading-[1.7] max-w-md">{p.body}</p>
+                        <p className="mt-3 text-ink-secondary text-[14px] leading-[1.7] max-w-md">{p.body}</p>
                         <Link to={p.link.to} className="mt-4 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px] hover:gap-2.5 transition-all">
                           {p.link.label} <ArrowRight size={13} />
                         </Link>
@@ -315,11 +317,15 @@ export default function SolutionsDental() {
                     <article className="ui-card bg-white/95 backdrop-blur border-brand-purple/10 rounded-[18px] p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
                       <div className="p-6 ui-card-body">
-                        <span className="inline-flex min-h-[28px] items-center self-start font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
-                        <div className="mt-3 w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center">
-                          <s.icon size={20} className="text-brand-purple" />
+                        <div className="flex items-start gap-3">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+                            <s.icon size={20} className="text-white" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{s.tag}</span>
+                            <h3 className="ui-card-heading text-[16px]">{s.h3}</h3>
+                          </div>
                         </div>
-                        <h3 className="ui-card-heading mt-3 text-[16px]">{s.h3}</h3>
                         <div className="mt-3">
                           <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-ink-muted">Growth Objective:</div>
                           <p className="mt-1 text-[13px] text-ink-secondary leading-relaxed">{s.goal}</p>

@@ -183,10 +183,12 @@ export default function Services() {
               {PRIMARY.map((s, i) => (
                 <Reveal key={s.h} delay={i * 0.05} className="h-full">
                   <TiltCard className="ui-card hover:border-brand-purple/30 transition-colors">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
-                      <s.icon aria-hidden size={22} className="text-white" />
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-brand)" }}>
+                        <s.icon aria-hidden size={22} className="text-white" />
+                      </div>
+                      <h3 className="ui-card-heading text-xl self-center">{s.h}</h3>
                     </div>
-                    <h3 className="ui-card-heading text-xl">{s.h}</h3>
                     <p className="ui-card-text">{s.b}</p>
                     <ul className="ui-list">
                       {s.bullets.map(b => (

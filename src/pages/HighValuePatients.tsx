@@ -223,12 +223,16 @@ export default function HighValuePatients() {
             <div className="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl mx-auto">
               {SPECS.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.07} className="h-full">
-                  <article className="h-full bg-white/95 border border-white/70 rounded-[20px] p-7 hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
-                    <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{s.tag}</span>
-                    <div className="mt-3 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><s.icon size={20} className="text-white" /></div>
-                    <h3 className="font-bold text-brand-deep text-[18px] mt-3">{s.h3}</h3>
-                    <div className="font-mono-ui text-[11px] text-ink-muted mt-1">{s.focus}</div>
-                    <p className="mt-3 text-[13px] text-ink-secondary leading-relaxed">{s.body}</p>
+                  <article className="h-full bg-white/95 border border-white/70 rounded-[20px] p-7 hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all flex flex-col">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><s.icon size={20} className="text-white" /></div>
+                      <div className="min-w-0 flex-1">
+                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{s.tag}</span>
+                        <h3 className="font-bold text-brand-deep text-[18px] leading-tight">{s.h3}</h3>
+                      </div>
+                    </div>
+                    <div className="font-mono-ui text-[11px] text-ink-muted mt-3">{s.focus}</div>
+                    <p className="mt-2 text-[13px] text-ink-secondary leading-relaxed">{s.body}</p>
                     <div className="flex flex-wrap gap-1.5 mt-3">{s.chips.map(c => <span key={c} className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>)}</div>
                     <Link to={s.cta.to} className="mt-4 inline-flex items-center gap-2 font-bold text-white text-[13px] px-5 py-2.5 rounded-full" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(252 100% 75%))" }}>{s.cta.label} <ArrowRight size={13} /></Link>
                   </article>
