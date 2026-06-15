@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import DarkSectionTagger from "./components/DarkSectionTagger";
 import CardGridAligner from "./components/CardGridAligner";
+import GlobalFx from "./components/site/GlobalFx";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
