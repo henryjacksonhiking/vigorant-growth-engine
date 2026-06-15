@@ -1,5 +1,4 @@
 import Seo from "@/components/site/Seo";
-import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Hero from "@/components/site/Hero";
 import Marquee from "@/components/site/Marquee";
@@ -21,7 +20,6 @@ const Index = () => (
   <>
     <Seo />
     <a href="#main" className="skip-link">Skip to main content</a>
-    <GlobalFx />
     <Nav />
     <main id="main">
       <Hero />
