@@ -560,11 +560,12 @@
   }
 
   /* ============================================================
-     Global safety: ensure visible content cards have inner padding
-     so the hover/border glow never overlaps headings, copy, or CTAs.
+     Global safety: cards without any explicit padding utility get a
+     comfortable inner pad so the hover/border glow never overlaps
+     headings, copy, or CTAs.
      ============================================================ */
-  main :is(article, aside).rounded-2xl:not(.p-0):not(.overflow-hidden),
-  main :is(article, aside).rounded-xl:not(.p-0):not(.overflow-hidden) {
+  main :is(article, aside).rounded-2xl:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]),
+  main :is(article, aside).rounded-xl:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]) {
     padding: clamp(1.25rem, 1rem + 0.6vw, 1.75rem);
   }
 
