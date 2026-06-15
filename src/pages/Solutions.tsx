@@ -595,7 +595,6 @@ function Capabilities() {
                         <Icon aria-hidden size={20} className="text-white" />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{c.tag}</span>
                         <h3 className="font-bold text-brand-deep leading-[1.28]" style={{ fontSize: 15 }}>{c.h}</h3>
                       </div>
                     </div>
@@ -617,7 +616,7 @@ function Capabilities() {
 /* ---------- Decision Guide ---------- */
 function DecisionGuide() {
   const rows = [
-    { s: "New practice, launching online presence", p: "Start with a specialty and build visibility first", w: "Choose your specialty", href: "#specialty-cards" },
+    { s: "New practice or recently launched and need to build an online presence", p: "Begin with your specialty and establish search and AI visibility first", w: "Choose your specialty", href: "#specialty-cards" },
     { s: "Established practice, slow new patient growth", p: "More New Patients + SEO + Paid Ads", w: "More new patients", href: "/for-practices/more-new-patients" },
     { s: "Good traffic but appointments not converting", p: "Lead Conversion + Website CRO", w: "Lead conversion", href: "/for-practices/lead-conversion" },
     { s: "Multi-location or group practice", p: "Scale Your Practice + All specialties", w: "Scale your practice", href: "/for-practices/scale-your-practice" },
