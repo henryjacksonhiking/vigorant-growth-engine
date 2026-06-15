@@ -503,7 +503,7 @@ export default function LandingPages() {
               </h2>
             </Reveal>
 
-            <div className="mt-12 rounded-2xl overflow-hidden border border-brand-purple/18 bg-background transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)]">
+            <div className="mt-12 rounded-2xl overflow-hidden border border-brand-purple/18 bg-background">
               {HANDOFF.map((row, i) => (
                 <div
                   key={row.a}
@@ -542,7 +542,7 @@ export default function LandingPages() {
             >
               {RIVER.map((r, i) => (
                 <Reveal key={r.h} delay={i * 0.06}>
-                  <article className="bg-white/[0.04] p-8 h-full transition-all hover:-translate-y-2 hover:bg-white/[0.075]">
+                  <article className="bg-white/[0.04] p-8 h-full">
                     <h3 className="font-bold text-white text-[1.18rem] leading-[1.25]">{r.h}</h3>
                     <p className="mt-3 text-white/70 leading-[1.7] text-[15px]">
                       {r.p}

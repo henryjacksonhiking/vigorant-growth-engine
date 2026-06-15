@@ -693,7 +693,7 @@ export default function BrandingRebranding() {
               {BLUEPRINT.map((b, i) => (
                 <Reveal key={b.area} delay={i * 0.04}>
                   <div
-                    className="grid grid-cols-1 md:grid-cols-[200px_1fr_1fr] rounded-2xl overflow-hidden transition-all hover:-translate-y-1"
+                    className="grid grid-cols-1 md:grid-cols-[200px_1fr_1fr] rounded-2xl overflow-hidden"
                     style={{
                       background: "hsl(0 0% 100% / 0.72)",
                       border: "1px solid hsl(247 93% 64% / 0.18)",
