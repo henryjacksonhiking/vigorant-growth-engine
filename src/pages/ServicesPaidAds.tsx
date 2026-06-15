@@ -68,7 +68,7 @@ export default function ServicesPaidAds() {
       </DarkSection>
 
       <OffWhiteSection>
-        <SectionHeader label="The Vigorant Paid System" title={<>Six steps from spend to <span className="gradient-text">booked patients.</span></>} />
+        <SectionHeader label="The Vigorant Paid Growth System" title={<>From ad spend to <span className="gradient-text">booked patients.</span></>} />
         <ol className="mt-12 max-w-[960px] mx-auto flex flex-col gap-4 list-none p-0">
           {SYSTEM.map((p, i) => (
             <li key={i}>
