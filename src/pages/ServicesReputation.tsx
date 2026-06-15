@@ -36,13 +36,11 @@ export default function ServicesReputation() {
       <PainHero
         breadcrumbLabel="Reputation & Social"
         breadcrumbTrail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
-        chip="Reviews · Social · Local Trust"
         titleLines={[{ text: "Patients Judge You Before" }, { text: "They Ever Pick Up the Phone.", gradient: true }]}
         subhead="Reputation isn't a posting calendar. It's patient-trust infrastructure."
         paragraph="Vigorant turns reviews, responses, social proof, and local entity signals into a compliant system that lifts trust, rankings, and AI recommendation — for dental, medical, and chiropractic practices."
         primaryCTA={{ label: "Request Your Free Reputation Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See Patient Trust Results", href: "/results" }}
-        proofStrip="Reviews · Responses · Social · GBP · AI Trust Signals"
       />
 
       <DarkSection>
