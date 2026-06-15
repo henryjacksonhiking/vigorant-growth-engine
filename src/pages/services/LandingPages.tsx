@@ -386,26 +386,10 @@ export default function LandingPages() {
                       <a
                         key={s.id}
                         href={`#${s.id}`}
-                        className={
-                          "flex items-center justify-between gap-4 py-4 px-2 border-b border-brand-purple/18 font-extrabold rounded-xl transition-all " +
-                          (active
-                            ? "text-brand-purple translate-x-2 bg-brand-purple/[0.045]"
-                            : passed
-                            ? "text-brand-deep/70 hover:text-brand-purple"
-                            : "text-brand-deep/55 hover:text-brand-purple")
-                        }
+                        className="flex items-center justify-between gap-4 py-4 px-2 border-b border-brand-purple/18 font-extrabold rounded-xl text-brand-deep/70"
                       >
                         <span className="truncate">{s.kicker.split("—")[1]?.trim() || s.kicker}</span>
-                        <span
-                          className={
-                            "min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] transition-all " +
-                            (active
-                              ? "bg-brand-purple text-white scale-105 shadow-[var(--shadow-glow)]"
-                              : passed
-                              ? "bg-surface-secondary text-brand-purple"
-                              : "bg-transparent text-ink-muted border border-brand-purple/18")
-                          }
-                        >
+                        <span className="min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] bg-transparent text-ink-muted border border-brand-purple/18">
                           0{i + 1}
                         </span>
                       </a>
