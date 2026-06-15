@@ -444,12 +444,18 @@ function Comparison() {
                   <div className="px-5 sm:px-6 py-4 text-white/75 leading-[1.65]"
                     style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.04)" }}>
                     <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-white/40 mb-1.5">{cat}</div>
-                    <span aria-hidden className="text-[hsl(0_75%_72%)] mr-2">✗</span>{left}
+                    <div className="flex items-start gap-2">
+                      <span aria-hidden className="text-[hsl(0_75%_72%)] shrink-0 w-4 text-center leading-[1.65]">✗</span>
+                      <span className="flex-1 min-w-0">{left}</span>
+                    </div>
                   </div>
                   <div className="px-5 sm:px-6 py-4 text-white leading-[1.65]"
                     style={{ borderLeft: "1px solid hsl(247 93% 64% / 0.15)", borderBottom: "1px solid hsl(0 0% 100% / 0.04)" }}>
                     <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-bright/70 mb-1.5 md:invisible">{cat}</div>
-                    <span aria-hidden className="text-brand-bright mr-2">✓</span>{right}
+                    <div className="flex items-start gap-2">
+                      <span aria-hidden className="text-brand-bright shrink-0 w-4 text-center leading-[1.65]">✓</span>
+                      <span className="flex-1 min-w-0">{right}</span>
+                    </div>
                   </div>
                 </div>
               ))}

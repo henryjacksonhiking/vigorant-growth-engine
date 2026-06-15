@@ -637,6 +637,7 @@ export default function MarketingStrategy() {
               </nav>
 
               <div>
+                <div className="flex flex-col gap-6">
                 {PHASES.map((e, i) => (
                   <motion.article
                     key={e.n}
@@ -646,7 +647,8 @@ export default function MarketingStrategy() {
                     viewport={{ once: true, margin: "-30% 0px -40% 0px" }}
                     onViewportEnter={() => setActivePhase(i)}
                     transition={{ duration: 0.7, ease }}
-                    className="py-10 sm:py-14 border-b border-brand-purple/20 first:pt-0 scroll-mt-32"
+                    className="rounded-2xl bg-white border border-brand-purple/15 p-6 sm:p-10 scroll-mt-32"
+                    style={{ boxShadow: "0 18px 48px hsl(247 93% 64% / 0.06)" }}
                   >
                     <span
                       className={`section-label inline-block px-3 py-1 rounded-full transition-all ${
@@ -667,8 +669,8 @@ export default function MarketingStrategy() {
                       Phase {e.n}
                     </span>
                     <h3
-                      className="font-display text-brand-deep mt-4 leading-[1.1] tracking-tight"
-                      style={{ fontSize: "clamp(24px, 3.6vw, 36px)", letterSpacing: "-0.03em" }}
+                      className="font-display text-brand-deep mt-5 leading-[1.15] tracking-tight"
+                      style={{ fontSize: "clamp(22px, 3.2vw, 32px)", letterSpacing: "-0.03em" }}
                     >
                       {e.h}
                     </h3>
@@ -679,6 +681,7 @@ export default function MarketingStrategy() {
                     ))}
                   </motion.article>
                 ))}
+                </div>
               </div>
             </div>
           </div>

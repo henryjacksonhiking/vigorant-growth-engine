@@ -558,6 +558,44 @@
     transform: translateY(-1px) scale(1.06);
     transition: transform 280ms var(--ease-spring);
   }
+
+  /* ============================================================
+     Global safety: cards without any explicit padding utility get a
+     comfortable inner pad so the hover/border glow never overlaps
+     headings, copy, or CTAs.
+     ============================================================ */
+  main :is(article, aside).rounded-2xl:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]),
+  main :is(article, aside).rounded-xl:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]) {
+    padding: clamp(1.25rem, 1rem + 0.6vw, 1.75rem);
+  }
+
+  /* Icon + wrapping text utility: wrapped lines stay flush with the
+     first line, never tucking under bullets/checks/icons. */
+  .icon-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+  .icon-row > :first-child {
+    flex-shrink: 0;
+    width: 1.25rem;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1.65;
+  }
+  .icon-row > :last-child {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+
+  /* Mobile: stack horizontal funnel/process bars vertically. */
+  @media (max-width: 767px) {
+    main [role="img"][aria-label*="funnel" i] ol,
+    main [role="img"][aria-label*="funnel" i] ul {
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+  }
 }
 
 /* ============================================================
