@@ -434,12 +434,7 @@ export default function LandingPages() {
                         </div>
 
                         {/* Output panel */}
-                        <div
-                          className={
-                            "rounded-2xl p-5 border bg-surface-secondary transition-all " +
-                            (active ? "border-brand-purple/18" : "border-brand-purple/18")
-                          }
-                        >
+                        <div className="rounded-2xl p-5 border border-brand-purple/18 bg-surface-secondary">
                           <div className="flex items-center gap-3">
                             <span className="w-9 h-9 rounded-full bg-brand-purple/10 text-brand-purple grid place-items-center">
                               <Icon size={16} />
