@@ -380,32 +380,14 @@ export default function LandingPages() {
               <aside className="lg:sticky lg:top-24 border-t border-brand-purple/18">
                 <nav aria-label="Process index">
                   {STEPS.map((s, i) => {
-                    const active = activeStep === s.id;
-                    const passed = i < activeIdx;
                     return (
                       <a
                         key={s.id}
                         href={`#${s.id}`}
-                        className={
-                          "flex items-center justify-between gap-4 py-4 px-2 border-b border-brand-purple/18 font-extrabold rounded-xl transition-all " +
-                          (active
-                            ? "text-brand-purple translate-x-2 bg-brand-purple/[0.045]"
-                            : passed
-                            ? "text-brand-deep/70 hover:text-brand-purple"
-                            : "text-brand-deep/55 hover:text-brand-purple")
-                        }
+                        className="flex items-center justify-between gap-4 py-4 px-2 border-b border-brand-purple/18 font-extrabold rounded-xl text-brand-deep/70"
                       >
                         <span className="truncate">{s.kicker.split("—")[1]?.trim() || s.kicker}</span>
-                        <span
-                          className={
-                            "min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] transition-all " +
-                            (active
-                              ? "bg-brand-purple text-white scale-105 shadow-[var(--shadow-glow)]"
-                              : passed
-                              ? "bg-surface-secondary text-brand-purple"
-                              : "bg-transparent text-ink-muted border border-brand-purple/18")
-                          }
-                        >
+                        <span className="min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] bg-transparent text-ink-muted border border-brand-purple/18">
                           0{i + 1}
                         </span>
                       </a>
@@ -419,18 +401,7 @@ export default function LandingPages() {
                 {/* Static track */}
                 <div aria-hidden className="absolute top-0 bottom-0 left-[18px] w-[2px] bg-brand-purple/18" />
                 {/* Dynamic fill */}
-                <div
-                  aria-hidden
-                  className="absolute top-0 left-[18px] w-[2px] bg-gradient-to-b from-brand-lavender to-brand-purple transition-all duration-300"
-                  style={{
-                    height: `${Math.max(8, ((activeIdx + 1) / STEPS.length) * 100)}%`,
-                    boxShadow: "0 0 22px hsl(var(--brand-purple) / 0.35)",
-                  }}
-                />
-
                 {STEPS.map((s, i) => {
-                  const active = activeStep === s.id;
-                  const passed = i < activeIdx;
                   const Icon = s.Icon;
                   return (
                     <article
@@ -444,14 +415,7 @@ export default function LandingPages() {
                       {/* Step dot */}
                       <span
                         aria-hidden
-                        className={
-                          "absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] transition-all " +
-                          (active
-                            ? " text-white scale-110 shadow-[var(--shadow-glow)] border-2 border-brand-purple"
-                            : passed
-                            ? "bg-surface-secondary text-brand-purple border-2 border-brand-lavender"
-                            : "bg-background text-ink-muted border-2 border-brand-purple/18")
-                        }
+                        className="absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] bg-background text-ink-muted border-2 border-brand-purple/18"
                       >
                         {String(i + 1).padStart(2, "0")}
                       </span>
@@ -468,12 +432,7 @@ export default function LandingPages() {
                         </div>
 
                         {/* Output panel */}
-                        <div
-                          className={
-                            "rounded-2xl p-5 border bg-surface-secondary transition-all " +
-                            (active ? "border-brand-purple/18" : "border-brand-purple/18")
-                          }
-                        >
+                        <div className="rounded-2xl p-5 border border-brand-purple/18 bg-surface-secondary">
                           <div className="flex items-center gap-3">
                             <span className="w-9 h-9 rounded-full bg-brand-purple/10 text-brand-purple grid place-items-center">
                               <Icon size={16} />
