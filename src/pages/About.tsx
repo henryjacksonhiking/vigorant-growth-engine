@@ -234,12 +234,14 @@ export default function About() {
             <div className="grid sm:grid-cols-2 gap-5 mt-12">
               {VALUES.map((v, i) => (
                 <Reveal key={v.h} delay={i * 0.05} className="h-full">
-                  <TiltCard className="h-full rounded-2xl bg-white border border-brand-purple/12 p-7 hover:border-brand-purple/30 transition-colors">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: "var(--gradient-brand)" }}>
-                      <v.icon aria-hidden size={22} className="text-white" />
+                  <TiltCard className="h-full rounded-2xl bg-white border border-brand-purple/12 p-7 hover:border-brand-purple/30 transition-colors flex flex-col">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-brand)" }}>
+                        <v.icon aria-hidden size={22} className="text-white" />
+                      </div>
+                      <h3 className="font-bold text-brand-deep text-xl leading-tight self-center">{v.h}</h3>
                     </div>
-                    <h3 className="font-bold text-brand-deep text-xl">{v.h}</h3>
-                    <p className="mt-2 text-text-secondary">{v.b}</p>
+                    <p className="mt-4 text-text-secondary">{v.b}</p>
                   </TiltCard>
                 </Reveal>
               ))}
