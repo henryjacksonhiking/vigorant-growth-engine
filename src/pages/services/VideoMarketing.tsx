@@ -505,25 +505,12 @@ export default function VideoMarketing() {
               <aside className="lg:sticky lg:top-24 border-t border-brand-purple/18">
                 <nav aria-label="Essay index">
                   {ESSAY.map((s) => {
-                    const active = activeEssay === s.id;
                     return (
                       <a
                         key={s.id}
                         href={`#${s.id}`}
-                        className={
-                          "block py-4 border-b border-brand-purple/18 font-bold relative transition-all " +
-                          (active
-                            ? "text-brand-purple pl-5"
-                            : "text-brand-deep/55 hover:text-brand-purple")
-                        }
+                        className="block py-4 border-b border-brand-purple/18 font-bold relative text-brand-deep/55 hover:text-brand-purple"
                       >
-                        {active && (
-                          <span
-                            aria-hidden
-                            className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-brand-purple rounded-full"
-                            style={{ width: "0.8rem" }}
-                          />
-                        )}
                         {s.eyebrow}
                       </a>
                     );
