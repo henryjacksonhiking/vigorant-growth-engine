@@ -43,8 +43,8 @@ export const ROUTE_CHECKLIST = [
   "/terms",
 ] as const;
 
-const PRIMARY_CTA_RE = /audit|book|request|get a free|growth call|strategy call|schedule/i;
-const SECONDARY_CTA_RE = /explore|see all|all services|how it works|learn more|results/i;
+const PRIMARY_CTA_RE = /audit|request|get a free|schedule/i;
+const SECONDARY_CTA_RE = /book|explore|see all|all services|how it works|learn more|results|strategy call|growth call/i;
 
 function removeInlineVisualOverrides(el: HTMLElement) {
   el.style.removeProperty("background");
@@ -70,7 +70,7 @@ function enforceRoute(pathname: string) {
   main.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>("a, button").forEach((el) => {
     const text = el.textContent ?? "";
     const href = el instanceof HTMLAnchorElement ? el.getAttribute("href") ?? "" : "";
-    if (href.includes("free-audit") || PRIMARY_CTA_RE.test(text)) {
+    if (PRIMARY_CTA_RE.test(text)) {
       el.classList.add("homepage-cta-standard", "btn-primary-grad");
       removeInlineVisualOverrides(el);
     } else if (SECONDARY_CTA_RE.test(text)) {
