@@ -258,14 +258,16 @@ function ProblemReframe() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={0.1 + i * 0.06} className="h-full">
-              <div className="text-left rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1"
+              <div className="text-left rounded-2xl p-6 h-full transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
-                <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-                  style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-                  <c.Icon size={20} className="text-white" />
+                <div className="flex items-start gap-3">
+                  <div aria-hidden className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
+                    <c.Icon size={20} className="text-white" />
+                  </div>
+                  <div className="font-bold text-[15px] text-white leading-tight self-center">{c.t}</div>
                 </div>
-                <div className="font-bold text-[15px] text-white">{c.t}</div>
-                <div className="text-[13px] text-white/55 mt-1.5 leading-[1.6]">{c.b}</div>
+                <div className="text-[13px] text-white/55 mt-3 leading-[1.6]">{c.b}</div>
               </div>
             </Reveal>
           ))}
