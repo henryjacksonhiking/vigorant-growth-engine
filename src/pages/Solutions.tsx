@@ -857,7 +857,7 @@ export default function Solutions() {
     <>
       <SolutionsSeo />
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main">
         <Hero />

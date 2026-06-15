@@ -1,6 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import FinalCTA from "@/components/site/FinalCTA";
@@ -22,7 +21,7 @@ export default function CaseStudyDetail() {
         <link rel="canonical" href={`https://vigorant.com/case-studies/${study.slug}`} />
       </Helmet>
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="pt-28">
         <Section bg="white">

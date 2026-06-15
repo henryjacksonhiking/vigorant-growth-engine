@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, ShieldCheck, ExternalLink, Minus, Building2, Sparkles, Stethoscope, Network, Heart, Clock, Users, Target, Search, Layout, Megaphone, Star, BarChart2, Lightbulb, Palette, Share2, Video, FileText, Mail, Check, Phone, RotateCcw, CalendarCheck, MousePointerClick } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
-import GlobalFx from "@/components/site/GlobalFx";
 import StickyCTA from "@/components/site/StickyCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Line, ChipLabel, Breadcrumb, PrimaryCTA, SecondaryCTA, GradientText, GradientTextLight, HeroOrbs, DarkOrb } from "@/components/site/SolutionPageAtoms";
@@ -107,7 +106,7 @@ export default function SolutionsMedical() {
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "@id": `${CANONICAL}#faq`, mainEntity: FAQS.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) })}</script>
       </Helmet>
 
-      <Nav /><GlobalFx />
+      <Nav />
       <main className="text-center sm:text-left">
         {/* HERO */}
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">

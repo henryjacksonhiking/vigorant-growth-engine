@@ -217,7 +217,7 @@ export function PainPageLayout({ seoTitle, seoDesc, canonical, faqs, children }:
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         {faqLd && <script type="application/ld+json">{JSON.stringify(faqLd)}</script>}
       </Helmet>
-      <GlobalFx />
+
       <Nav />
       <main id="main">{children}</main>
       <Footer />

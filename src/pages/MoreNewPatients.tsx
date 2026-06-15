@@ -980,7 +980,7 @@ export default function MoreNewPatients() {
     <>
       <MnpSeo />
       <a href="#mnp-main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="mnp-main">
         <Hero />

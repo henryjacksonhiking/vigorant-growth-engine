@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import Section, { Reveal } from "@/components/site/Section";
@@ -12,7 +11,7 @@ export default function Terms() {
         <meta name="description" content="Terms governing use of Vigorant's website, services, and Free Growth Audit." />
         <link rel="canonical" href="https://vigorant.com/terms" />
       </Helmet>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="pt-28">
         <Section bg="white">

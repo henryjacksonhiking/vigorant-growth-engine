@@ -134,7 +134,7 @@ export default function Results() {
     <>
       <ResultsSeo />
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="overflow-x-hidden">
         {/* HERO */}

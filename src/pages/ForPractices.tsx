@@ -793,7 +793,7 @@ export default function ForPractices() {
     <>
       <ForPracticesSeo />
       <a href="#fp-main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="fp-main">
         <Hero />
