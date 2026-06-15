@@ -256,7 +256,19 @@
     border-radius: 1rem !important;
     box-shadow: var(--shadow-card) !important;
     border-color: hsl(var(--brand-purple) / 0.14) !important;
+    background: hsl(var(--background) / 0.9) !important;
     min-width: 0;
+  }
+
+  .homepage-card-standard.text-white,
+  .homepage-card-standard:has(.text-white) {
+    background: var(--gradient-dark) !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+
+  [data-dark="true"] .homepage-card-standard {
+    background: hsl(0 0% 100% / 0.05) !important;
+    border-color: hsl(0 0% 100% / 0.16) !important;
   }
 
   .homepage-card-standard:is(article, aside, div) {
