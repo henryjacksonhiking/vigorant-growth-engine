@@ -589,14 +589,18 @@ function Capabilities() {
             return (
               <Reveal key={c.tag} delay={0.04 * i} className="h-full">
                 <li>
-                  <article className="rounded-2xl p-6 h-full border border-white/80 transition-all hover:-translate-y-1 hover:border-brand-purple/30 tilt-spotlight" style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(16px)", boxShadow: "0 4px 18px rgba(27,19,56,0.04)" }}>
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
-                      <Icon aria-hidden size={20} className="text-white" />
+                  <article className="rounded-2xl p-6 h-full border border-white/80 transition-all hover:-translate-y-1 hover:border-brand-purple/30 tilt-spotlight flex flex-col" style={{ background: "rgba(255,255,255,0.88)", backdropFilter: "blur(16px)", boxShadow: "0 4px 18px rgba(27,19,56,0.04)" }}>
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+                        <Icon aria-hidden size={20} className="text-white" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{c.tag}</span>
+                        <h3 className="font-bold text-brand-deep leading-[1.28]" style={{ fontSize: 15 }}>{c.h}</h3>
+                      </div>
                     </div>
-                    <h3 className="font-bold text-brand-deep mt-3" style={{ fontSize: 15 }}>{c.h}</h3>
-                    
-                    <p className="text-text-secondary mt-2" style={{ fontSize: 13, lineHeight: 1.6 }}>{c.b}</p>
-                    <Link to={c.href} className="inline-flex items-center mt-3 text-brand-purple font-semibold text-[13px] group">
+                    <p className="text-text-secondary mt-3" style={{ fontSize: 13, lineHeight: 1.6 }}>{c.b}</p>
+                    <Link to={c.href} className="inline-flex items-center mt-auto pt-4 text-brand-purple font-semibold text-[13px] group">
                       {c.link} <ArrowRight aria-hidden size={13} className="ml-1 transition-transform group-hover:translate-x-0.5" />
                     </Link>
                   </article>
