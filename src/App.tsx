@@ -62,6 +62,7 @@ const App = () => (
           <ScrollToTop />
           <DarkSectionTagger />
           <CardGridAligner />
+          <GlobalFx />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/for-practices" element={<ForPractices />} />
