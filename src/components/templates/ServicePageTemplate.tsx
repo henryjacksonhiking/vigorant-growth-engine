@@ -142,7 +142,7 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
                 </Link>
                 <Link
                   to={c.hero.secondaryCTA.href}
-                  className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-6 py-3.5 rounded-full font-semibold min-h-[48px] hover:bg-white/5 transition"
+                  className="btn-on-dark-outline inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold min-h-[48px]"
                 >
                   {c.hero.secondaryCTA.label}
                 </Link>
@@ -266,7 +266,7 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
               <div aria-hidden className="absolute left-5 sm:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-brand-bright/60 via-brand-purple/40 to-transparent" />
               {c.frameworkSteps.map((s, i) => (
                 <li key={s.step} className="relative pl-16 sm:pl-20 pb-10 last:pb-0">
-                  <div className="absolute left-0 top-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-display font-bold text-white text-[16px] sm:text-[18px] bg-gradient-to-br from-brand-bright to-brand-purple shadow-[0_0_24px_hsl(248_100%_75%_/_0.45)]">
+                  <div className="absolute left-0 top-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-display font-bold text-white text-[16px] sm:text-[18px] shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-brand)" }}>
                     {s.step}
                   </div>
                   <Reveal delay={i * 0.06}>
@@ -478,7 +478,7 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
                 </Link>
                 <Link
                   to={c.finalCTA.secondaryCTA.href}
-                  className="border border-white/25 text-white inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold min-h-[48px] hover:bg-white/5 transition"
+                  className="btn-on-dark-outline inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold min-h-[48px]"
                 >
                   {c.finalCTA.secondaryCTA.label}
                 </Link>

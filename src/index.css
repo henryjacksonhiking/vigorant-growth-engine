@@ -252,6 +252,18 @@
     border-radius: 999px !important;
   }
 
+  [data-dark="true"] .homepage-cta-standard.btn-primary-grad {
+    background: #ffffff !important;
+    color: hsl(var(--brand-deep)) !important;
+    box-shadow: 0 8px 24px hsl(248 49% 15% / 0.18) !important;
+  }
+
+  [data-dark="true"] .homepage-cta-standard.btn-secondary-outline {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-color: hsl(0 0% 100% / 0.28) !important;
+  }
+
   .homepage-card-standard {
     border-radius: 1rem !important;
     box-shadow: var(--shadow-card) !important;
