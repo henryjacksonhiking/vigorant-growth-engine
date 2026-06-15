@@ -247,11 +247,13 @@ export default function SolutionsMedical() {
                 <Reveal key={p.tag} delay={i * 0.05}>
                   <article className="bg-white/95 border border-brand-purple/10 rounded-[20px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1 transition-all flex flex-col md:flex-row">
                     <div className="flex-1 p-7">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><p.icon size={16} className="text-white" /></div>
-                        <span className="font-mono-ui text-[10px] uppercase text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{p.tag}</span>
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><p.icon size={20} className="text-white" /></div>
+                        <div className="min-w-0 flex-1">
+                          <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{p.tag}</span>
+                          <h3 className="font-bold text-brand-deep text-[19px] leading-tight">{p.h}</h3>
+                        </div>
                       </div>
-                      <h3 className="font-bold text-brand-deep text-[19px] mt-3.5">{p.h}</h3>
                       <p className="mt-2 text-ink-secondary text-[14px] leading-[1.7]">{p.body}</p>
                       <Link to={p.link.to} className="mt-3 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">{p.link.label} <ArrowRight size={13} /></Link>
                     </div>
