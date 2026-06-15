@@ -38,13 +38,11 @@ export default function ServicesSeo() {
       <PainHero
         breadcrumbLabel="SEO for Healthcare"
         breadcrumbTrail={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]}
-        chip="Rank · Get Found · Get Booked"
         titleLines={[{ text: "Healthcare SEO Built For" }, { text: "Patients — Not Just Rankings.", gradient: true }]}
         subhead="Rankings without patients is just expensive traffic."
         paragraph="Vigorant connects traditional SEO, local Maps visibility, and AI-search readiness into one integrated patient-acquisition system for dental, chiropractic, and medical practices."
         primaryCTA={{ label: "Request Your Free SEO & AI Visibility Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See Healthcare SEO Results", href: "/results" }}
-        proofStrip="Google · Maps · AI Overviews · ChatGPT · Gemini · Perplexity"
       />
 
       <DarkSection>
