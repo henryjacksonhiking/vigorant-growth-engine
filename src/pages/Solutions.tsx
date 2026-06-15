@@ -196,15 +196,22 @@ function OneSystem() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto">
+        <div
+          className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1100px] mx-auto"
+          style={{ gridTemplateRows: `auto repeat(${rows.length}, auto)` }}
+        >
           {[
             { icon: Smile, label: "Dental", accent: "from-brand-purple to-brand-bright", key: "d" as const },
             { icon: Bone, label: "Chiropractic", accent: "from-brand-bright to-brand-purple", key: "c" as const },
             { icon: Stethoscope, label: "Medical", accent: "from-brand-purple to-brand-lavender", key: "m" as const },
           ].map(({ icon: Icon, label, accent, key }, colIdx) => (
-            <Reveal key={label} delay={0.1 + colIdx * 0.1}>
+            <Reveal
+              key={label}
+              delay={0.1 + colIdx * 0.1}
+              className="md:row-span-full md:grid md:[grid-template-rows:subgrid]"
+            >
               <article
-                className="group relative h-full rounded-2xl p-6 sm:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                className="group relative h-full rounded-2xl p-6 sm:p-7 overflow-hidden transition-all duration-300 hover:-translate-y-1 md:grid md:[grid-template-rows:subgrid] md:row-span-full md:gap-0"
                 style={{
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.10)",
@@ -215,25 +222,26 @@ function OneSystem() {
                 <div aria-hidden className="pointer-events-none absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{ background: "radial-gradient(circle, hsl(247 93% 64% / 0.25), transparent 70%)", filter: "blur(40px)" }} />
 
-                <div className="relative flex items-center gap-3">
+                <div className="relative flex items-center gap-3 pb-4">
                   <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/8 border border-white/12 text-brand-bright transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                     <Icon aria-hidden size={22} />
                   </span>
                   <h3 className="text-white font-bold text-[18px] tracking-tight">{label}</h3>
                 </div>
 
-                <ul className="relative mt-6 flex flex-col gap-4 list-none p-0">
-                  {rows.map((r) => (
-                    <li key={r.label} className="border-t border-white/8 pt-3 first:border-t-0 first:pt-0">
-                      <div className="font-mono-ui text-[10.5px] uppercase tracking-[0.10em] text-brand-bright/85">
-                        {r.label}
-                      </div>
-                      <div className="mt-1.5 text-[13.5px] leading-[1.6]" style={{ color: "rgba(255,255,255,0.92)" }}>
-                        {r[key]}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                {rows.map((r, i) => (
+                  <div
+                    key={r.label}
+                    className={`relative py-4 ${i === 0 ? "" : "border-t border-white/10"} md:grid md:content-start`}
+                  >
+                    <div className="font-mono-ui text-[10.5px] uppercase tracking-[0.10em] text-brand-bright/85">
+                      {r.label}
+                    </div>
+                    <div className="mt-1.5 text-[13.5px] leading-[1.6]" style={{ color: "rgba(255,255,255,0.92)" }}>
+                      {r[key]}
+                    </div>
+                  </div>
+                ))}
               </article>
             </Reveal>
           ))}
