@@ -360,7 +360,7 @@ export default function LocalListingsGbp() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                    className="btn-primary-grad inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                     style={{
                       background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
                       boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
@@ -370,7 +370,7 @@ export default function LocalListingsGbp() {
                   </Link>
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
+                    className="btn-secondary-outline inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   >
                     Book a GBP Strategy Call
                   </Link>
@@ -392,7 +392,7 @@ export default function LocalListingsGbp() {
               {/* Local panel */}
               <Reveal delay={0.1}>
                 <aside
-                  className="relative rounded-3xl p-6 sm:p-7 overflow-hidden"
+                  className="relative rounded-2xl p-6 sm:p-7 overflow-hidden"
                   style={{
                     background:
                       "linear-gradient(135deg, hsl(0 0% 100% / 0.86), hsl(250 100% 98% / 0.78))",
@@ -795,7 +795,7 @@ export default function LocalListingsGbp() {
 
               <Reveal delay={0.1}>
                 <div
-                  className="rounded-3xl p-8 sm:p-10"
+                  className="rounded-2xl p-8 sm:p-10"
                   style={{
                     background: "hsl(0 0% 100% / 0.05)",
                     border: "1px solid hsl(0 0% 100% / 0.12)",
@@ -963,7 +963,7 @@ export default function LocalListingsGbp() {
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/free-audit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                  className="btn-primary-grad inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   style={{
                     background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
                     boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",

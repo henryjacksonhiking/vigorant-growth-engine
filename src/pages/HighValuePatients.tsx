@@ -96,7 +96,7 @@ export default function HighValuePatients() {
 
               {/* Schedule mix card */}
               <Reveal delay={0.2}>
-                <div className="bg-background border border-brand-purple/15 rounded-[22px] p-6" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
+                <div className="bg-background border border-brand-purple/15 rounded-2xl p-6" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><Calendar size={16} className="text-white" /></div>
@@ -150,14 +150,14 @@ export default function HighValuePatients() {
                 "Paid ads and SEO generating volume but not procedure-specific demand",
                 "Chair time consumed by low-margin visits while high-production slots go unfilled",
               ].map(b => (
-                <div key={b} className="flex items-start gap-3 bg-white/4 border border-white/8 rounded-[10px] p-3.5">
+                <div key={b} className="flex items-start gap-3 bg-white/4 border border-white/8 rounded-2xl p-3.5">
                   <Minus size={14} className="text-amber-500/80 flex-shrink-0 mt-1" />
                   <span className="text-white/72 text-[14px]">{b}</span>
                 </div>
               ))}
             </div>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/5 border border-brand-lavender/20 rounded-[16px] p-7">
+              <div className="bg-white/5 border border-brand-lavender/20 rounded-2xl p-7">
                 <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-lavender">Definition · AIO/GEO Ready</div>
                 <p className="mt-2 font-semibold text-white text-[15px]">How do healthcare practices attract high-production patients?</p>
                 <p className="mt-2 text-white/82 text-[15px] leading-[1.85] italic m-0">"Healthcare practices attract high-production patients by aligning service positioning, search visibility, paid campaigns, landing pages, reviews, financing communication, and follow-up around higher-value services such as implants, cosmetic care, elective procedures, or cash-pay treatment plans."</p>
@@ -174,7 +174,7 @@ export default function HighValuePatients() {
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 40px)", letterSpacing: "-0.03em" }}>Why More Traffic Alone <GradientText>Will Not Fix a Low-Production Schedule</GradientText></h2>
             </Reveal>
             <Reveal delay={0.08} className="max-w-3xl mx-auto mt-10">
-              <div className="border border-brand-purple/12 rounded-[16px] overflow-hidden bg-white">
+              <div className="border border-brand-purple/12 rounded-2xl overflow-hidden bg-white">
                 <div className="hidden sm:grid grid-cols-2 border-b border-brand-purple/10">
                   <div className="bg-amber-50/60 px-5 py-3 font-semibold text-amber-700 text-[13px]">More Patients (Volume Approach)</div>
                   <div className="bg-brand-purple/8 px-5 py-3 font-semibold text-brand-purple text-[13px]">Better Patient Mix (Production Approach)</div>
@@ -200,7 +200,7 @@ export default function HighValuePatients() {
               </div>
             </Reveal>
             <Reveal delay={0.12} className="max-w-3xl mx-auto mt-5">
-              <div className="bg-white/85 border border-brand-purple/10 rounded-[12px] p-4 flex gap-2.5">
+              <div className="bg-white/85 border border-brand-purple/10 rounded-2xl p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-purple flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-ink-muted mb-1">ADA Health Policy Institute</div>
@@ -223,7 +223,7 @@ export default function HighValuePatients() {
             <div className="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl mx-auto">
               {SPECS.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.07} className="h-full">
-                  <article className="h-full bg-white/95 border border-white/70 rounded-[20px] p-7 hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all flex flex-col">
+                  <article className="h-full bg-white/95 border border-white/70 rounded-2xl p-7 hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all flex flex-col">
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><s.icon size={20} className="text-white" /></div>
                       <div className="min-w-0 flex-1">
@@ -253,7 +253,7 @@ export default function HighValuePatients() {
             <ol className="list-none p-0 m-0 max-w-5xl mx-auto flex flex-col gap-4 mt-12">
               {STEPS.map((s, i) => (
                 <Reveal key={s.n} delay={i * 0.05} className="h-full">
-                  <li className="bg-white/6 border border-white/10 rounded-[18px] overflow-hidden hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
+                  <li className="bg-white/6 border border-white/10 rounded-2xl overflow-hidden hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
                     <div className="grid md:grid-cols-[1fr_240px]">
                       <div className="p-7">
                         <div className="font-mono-ui font-bold text-[24px]"><GradientTextLight>{s.n}</GradientTextLight></div>
@@ -288,7 +288,7 @@ export default function HighValuePatients() {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-12 max-w-5xl mx-auto">
               {STACK.map((c, i) => (
                 <Reveal key={c.h} delay={i * 0.03} className="h-full">
-                  <div className="bg-surface-secondary border border-brand-purple/10 rounded-[12px] p-4 text-center hover:border-brand-purple/25 hover:-translate-y-1 transition-all h-full">
+                  <div className="bg-surface-secondary border border-brand-purple/10 rounded-2xl p-4 text-center hover:border-brand-purple/25 hover:-translate-y-1 transition-all h-full">
                     <div className="w-9 h-9 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><c.icon size={16} className="text-white" /></div>
                     <h3 className="font-bold text-brand-deep text-[12px] mt-2">{c.h}</h3>
                     <p className="text-ink-muted text-[11px] mt-1 leading-[1.55]">{c.body}</p>
@@ -309,7 +309,7 @@ export default function HighValuePatients() {
             <div className="max-w-3xl mx-auto mt-10">
               <Accordion type="single" collapsible className="space-y-2">
                 {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-[12px] px-5 bg-white/90">
+                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/90">
                     <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
                     <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
                   </AccordionItem>

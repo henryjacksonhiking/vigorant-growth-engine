@@ -165,7 +165,7 @@ export default function SolutionsDental() {
                 <figure
                   role="figure"
                   aria-label="Dental growth dashboard illustrative example showing KPIs including new patients, implant consults, Maps ranking, conversion rate, AI visibility, and reviews"
-                  className="bg-background border border-brand-purple/15 rounded-[22px] p-6 sm:p-7"
+                  className="bg-background border border-brand-purple/15 rounded-2xl p-6 sm:p-7"
                   style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}
                 >
                   <div className="flex items-center justify-between">
@@ -217,7 +217,7 @@ export default function SolutionsDental() {
                 { h: "The Goal: More Qualified Patients, Better Case Mix, and Clearer ROI", p: "Success in dental marketing means qualified appointments, implant and cosmetic case growth, consistent ortho and oral surgery demand, measurable attribution from first click to booked visit, and a growth system that does not depend on any single channel." },
               ].map((b, i) => (
                 <Reveal key={i} delay={i * 0.08} className="h-full">
-                  <div className="bg-white/5 border border-white/10 rounded-[14px] p-6 sm:p-7">
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-7">
                     <h3 className="font-bold text-white text-[17px] leading-snug">{b.h}</h3>
                     <p className="mt-2 text-white/90 text-[15px] leading-[1.75]">{b.p}</p>
                     {b.quote && <p className="mt-3 font-mono-ui text-[12px] text-brand-lavender/70 italic m-0">{b.quote}</p>}
@@ -232,7 +232,7 @@ export default function SolutionsDental() {
                 "Poor Google Maps visibility for key services",
                 "Reports show clicks, not booked appointments",
               ].map(c => (
-                <span key={c} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-[10px] px-3.5 py-2.5 font-mono-ui text-[12px] text-white/75">
+                <span key={c} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-3.5 py-2.5 font-mono-ui text-[12px] text-white/75">
                   <AlertCircle size={14} className="text-amber-500/80" /> {c}
                 </span>
               ))}
@@ -260,7 +260,7 @@ export default function SolutionsDental() {
             <ol className="list-none p-0 m-0 max-w-5xl mx-auto flex flex-col gap-4">
               {PILLARS.map((p, i) => (
                 <Reveal key={p.tag} delay={i * 0.06} className="h-full">
-                  <li className="bg-white/90 backdrop-blur border border-white rounded-[20px] overflow-hidden hover:border-brand-purple/40 hover:-translate-y-1 transition-all duration-300" style={{ boxShadow: "0 8px 28px hsl(248 49% 15% / 0.06)" }}>
+                  <li className="bg-white/90 backdrop-blur border border-white rounded-2xl overflow-hidden hover:border-brand-purple/40 hover:-translate-y-1 transition-all duration-300" style={{ boxShadow: "0 8px 28px hsl(248 49% 15% / 0.06)" }}>
                     <div className="grid md:grid-cols-[1fr_240px]">
                       <div className="p-7 sm:p-8">
                         <div className="flex items-start gap-4">
@@ -314,7 +314,7 @@ export default function SolutionsDental() {
               {SPECIALTIES.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li data-specialty={s.tag}>
-                    <article className="ui-card bg-white/95 backdrop-blur border-brand-purple/10 rounded-[18px] p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
+                    <article className="ui-card bg-white/95 backdrop-blur border-brand-purple/10 rounded-2xl p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all duration-300">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
                       <div className="p-6 ui-card-body">
                         <div className="flex items-start gap-3">
@@ -367,7 +367,7 @@ export default function SolutionsDental() {
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
-                    <article className="ui-card-dark rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card-dark rounded-2xl p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}>
                         <s.icon size={18} className="text-white" />
                       </div>
@@ -406,7 +406,7 @@ export default function SolutionsDental() {
               {BLOCKERS.map((b, i) => (
                 <Reveal key={b.chip} delay={i * 0.07} className="h-full">
                   <li className="h-full">
-                    <article className="h-full flex flex-col bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                    <article className="h-full flex flex-col bg-white/95 backdrop-blur border border-brand-purple/10 rounded-2xl overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1 flex-shrink-0" style={{ background: "linear-gradient(90deg, hsl(0 65% 55% / 0.4), hsl(247 93% 64% / 0.6))" }} />
                       <div className="p-6 flex flex-col flex-1">
                         <div className="flex items-start justify-between gap-4">
@@ -441,7 +441,7 @@ export default function SolutionsDental() {
             </Reveal>
             <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto mt-10 items-stretch">
               <Reveal className="h-full">
-                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-[18px] p-7">
+                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-7">
                   <h3 className="font-bold text-brand-deep text-[17px] min-h-[1.6em] leading-[1.3]">From Rankings to Revenue Signals</h3>
                   <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">A dentist's marketing ROI is not measured in keyword positions or traffic sessions. It is measured in the chain: visibility → traffic → qualified calls/forms → booked appointments → treatment opportunities → production.</p>
                   <div className="flex flex-wrap items-center gap-1 mt-4">
@@ -458,7 +458,7 @@ export default function SolutionsDental() {
                 </div>
               </Reveal>
               <Reveal delay={0.08} className="h-full">
-                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-[18px] p-7">
+                <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-7">
                   <h3 className="font-bold text-brand-deep text-[17px] min-h-[1.6em] leading-[1.3]">What We Track</h3>
                   <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">Every Vigorant dental engagement includes attribution-connected reporting — not just clicks and impressions.</p>
                   <ul className="mt-3 list-none p-0 m-0 space-y-2">
@@ -484,7 +484,7 @@ export default function SolutionsDental() {
             </div>
 
             <Reveal delay={0.12} className="max-w-4xl mx-auto mt-8">
-              <div className="bg-brand-purple/5 border border-brand-purple/15 rounded-[14px] p-6 flex gap-4">
+              <div className="bg-brand-purple/5 border border-brand-purple/15 rounded-2xl p-6 flex gap-4">
                 <Sparkles size={20} className="text-brand-purple flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple mb-1.5">AI Visibility Answer · AIO/GEO Ready</div>
@@ -542,7 +542,7 @@ export default function SolutionsDental() {
               </p>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/85 border border-brand-purple/10 rounded-[12px] p-4 flex gap-2.5">
+              <div className="bg-white/85 border border-brand-purple/10 rounded-2xl p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-purple flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-ink-muted mb-1">ADA Health Policy Institute</div>
@@ -561,7 +561,7 @@ export default function SolutionsDental() {
                 ["3×", "Practices with SEO + Ads + CRO vs single-channel approaches"],
                 ["4.8★", "Avg. rating needed for Maps visibility advantage"],
               ].map(([n, l]) => (
-                <div key={n} className="bg-white/90 border border-brand-purple/10 rounded-[12px] px-5 py-4 text-center">
+                <div key={n} className="bg-white/90 border border-brand-purple/10 rounded-2xl px-5 py-4 text-center">
                   <div className="font-extrabold text-[22px]"><GradientText>{n}</GradientText></div>
                   <div className="font-mono-ui text-[11px] text-ink-muted mt-1">{l}</div>
                 </div>
@@ -586,7 +586,7 @@ export default function SolutionsDental() {
                 { who: "Multi-Location Dental Group · Denver, CO", n: "↓41%", l: "cost per new patient", problem: "Multi-location ads producing inconsistent results across markets.", chips: ["Location SEO", "Ads", "Attribution"], when: "within 90 days", quote: "Now each location has its own measurement — we can see exactly where to invest more." },
               ].map((p, i) => (
                 <Reveal key={p.who} delay={i * 0.08} className="h-full">
-                  <article className="bg-white/95 backdrop-blur border border-brand-purple/10 rounded-[18px] p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
+                  <article className="bg-white/95 backdrop-blur border border-brand-purple/10 rounded-2xl p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
                     <div className="font-mono-ui text-[11px] text-ink-muted">{p.who}</div>
                     <div className="font-extrabold text-[38px] mt-2 leading-none"><GradientText>{p.n}</GradientText></div>
                     <div className="text-[13px] text-ink-secondary mt-1">{p.l}</div>
@@ -620,7 +620,7 @@ export default function SolutionsDental() {
             <div className="max-w-3xl mx-auto mt-10">
               <Accordion type="single" collapsible className="space-y-2">
                 {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-[12px] px-5 bg-white/80">
+                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/80">
                     <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
                     <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
                   </AccordionItem>

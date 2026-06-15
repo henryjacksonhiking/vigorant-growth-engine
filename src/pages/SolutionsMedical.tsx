@@ -137,7 +137,7 @@ export default function SolutionsMedical() {
                 <p className="mt-4 font-mono-ui text-[12px] text-ink-muted">Healthcare-Focused · SEO + AI Search + Paid Ads + CRO · Single & Multi-Location · Transparent Reporting</p>
               </div>
               <Reveal delay={0.2}>
-                <div className="bg-background border border-brand-purple/15 rounded-[22px] p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
+                <div className="bg-background border border-brand-purple/15 rounded-2xl p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><TrendingUp size={16} className="text-white" /></div>
@@ -177,7 +177,7 @@ export default function SolutionsMedical() {
               <h2 className="font-extrabold text-white leading-[1.1] mt-4" style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>Most Medical Practices Are<br /><GradientTextLight>Clinically Strong but Digitally Under-Positioned.</GradientTextLight></h2>
             </Reveal>
             <Reveal delay={0.08} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/5 border border-white/10 rounded-[14px] p-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <h3 className="font-bold text-white text-[17px]">You may have strong clinical expertise, but still be invisible online</h3>
                 <p className="mt-2.5 text-white/68 text-[15px] leading-[1.75]">Patients now compare providers online, consult AI tools, read reviews, evaluate websites, and expect easy scheduling. Many clinics are clinically strong but digitally under-positioned — leaving patient acquisition to chance rather than system.</p>
               </div>
@@ -191,7 +191,7 @@ export default function SolutionsMedical() {
                 "Practice depends too heavily on referrals, insurance networks, or word-of-mouth alone",
               ].map((b, i) => (
                 <Reveal key={i} delay={i * 0.04}>
-                  <li className="bg-white/[0.04] border border-white/[0.07] rounded-[10px] px-4 py-2.5 flex gap-3 items-start">
+                  <li className="bg-white/[0.04] border border-white/[0.07] rounded-2xl px-4 py-2.5 flex gap-3 items-start">
                     <Minus size={14} className="text-amber-500/70 flex-shrink-0 mt-1" />
                     <span className="text-white/72 text-[14px]">{b}</span>
                   </li>
@@ -199,7 +199,7 @@ export default function SolutionsMedical() {
               ))}
             </ul>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/5 border border-brand-lavender/20 rounded-[16px] p-7">
+              <div className="bg-white/5 border border-brand-lavender/20 rounded-2xl p-7">
                 <div className="font-mono-ui text-[10px] uppercase text-brand-lavender">Definition · AIO/GEO Ready</div>
                 <h3 className="font-bold text-white text-[15px] mt-2">What is medical practice marketing?</h3>
                 <p className="mt-2 text-white/80 text-[15px] leading-[1.85] italic">"Medical practice marketing is the strategy of helping healthcare clinics attract, educate, convert, and retain patients through search visibility, AI-ready content, paid advertising, reputation signals, website conversion, and patient communication systems. Effective medical marketing connects online visibility to booked appointments, consults, and measurable patient acquisition outcomes."</p>
@@ -220,7 +220,7 @@ export default function SolutionsMedical() {
               {AUDIENCES.map((a, i) => (
                 <Reveal key={a.tag} delay={i * 0.04} className="h-full">
                   <li className="h-full">
-                    <article className="ui-card bg-white/90 border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card bg-white/90 border-brand-purple/10 rounded-2xl p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><a.icon size={16} className="text-white" /></div>
                       <div className="font-mono-ui text-[10px] uppercase text-brand-purple mt-2.5">{a.tag}</div>
                       <h3 className="ui-card-heading mt-1 text-[13px]">{a.h}</h3>
@@ -245,7 +245,7 @@ export default function SolutionsMedical() {
             <div className="mt-12 max-w-5xl mx-auto flex flex-col gap-4">
               {PILLARS.map((p, i) => (
                 <Reveal key={p.tag} delay={i * 0.05}>
-                  <article className="bg-white/95 border border-brand-purple/10 rounded-[20px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1 transition-all flex flex-col md:flex-row">
+                  <article className="bg-white/95 border border-brand-purple/10 rounded-2xl overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1 transition-all flex flex-col md:flex-row">
                     <div className="flex-1 p-7">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><p.icon size={20} className="text-white" /></div>
@@ -288,7 +288,7 @@ export default function SolutionsMedical() {
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li className="h-full">
-                    <article className="ui-card-dark rounded-[14px] p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card-dark rounded-2xl p-5 hover:border-brand-bright/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={18} className="text-white" /></div>
                       <h3 className="ui-card-heading-dark mt-2.5 text-[13px]">{s.name}</h3>
                       <p className="ui-card-text-dark text-[12px]">{s.body}</p>
@@ -341,7 +341,7 @@ export default function SolutionsMedical() {
               <p className="mt-5 text-ink-secondary text-[16px] max-w-lg mx-auto leading-[1.75]">The goal is not more traffic. The goal is better-fit patients who understand the value, trust the provider, and are ready to schedule a consult. Elective and cash-pay services require a different marketing system than insurance-based volume acquisition.</p>
             </Reveal>
             <Reveal delay={0.08} className="mt-10 max-w-4xl mx-auto">
-              <div className="bg-white/92 border border-brand-purple/12 rounded-[16px] p-6">
+              <div className="bg-white/92 border border-brand-purple/12 rounded-2xl p-6">
                 <div className="flex justify-between items-center mb-4">
                   <span className="font-mono-ui text-[11px] uppercase text-brand-purple">Elective Patient Acquisition Funnel</span>
                   <span className="font-mono-ui text-[11px] text-ink-muted">Illustrative</span>
@@ -363,7 +363,7 @@ export default function SolutionsMedical() {
               ))}
             </div>
             <Reveal delay={0.1} className="mt-7 max-w-3xl mx-auto">
-              <div className="bg-white/88 border border-brand-purple/12 rounded-[14px] p-6">
+              <div className="bg-white/88 border border-brand-purple/12 rounded-2xl p-6">
                 <h3 className="font-bold text-brand-deep text-[15px]">Recommended Conversion Assets for Elective Services</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mt-3">
                   {["Service-line landing pages", "Provider credibility blocks", "Educational FAQ sections", "Consultation-focused CTAs", "Video procedure explainers", "Review and testimonial proof", "Retargeting campaigns", "Lead nurture sequences"].map(a => (
@@ -390,7 +390,7 @@ export default function SolutionsMedical() {
                 { tag: "Multi-Location Group", h: "Scale Demand Consistently Across Markets", body: "Scale demand consistently across markets while preserving brand and reporting control across every location.", rows: ["Location-page architecture and market-level SEO", "Multi-market tracking and reporting", "Content governance and brand consistency", "Centralized paid media structure"], link: { l: "Scale Your Practice", to: "/for-practices/scale-your-practice" } },
               ].map((c, i) => (
                 <Reveal key={c.tag} delay={i * 0.06} className="h-full">
-                  <article className="h-full bg-white/90 border border-brand-purple/12 rounded-[18px] p-7 flex flex-col">
+                  <article className="h-full bg-white/90 border border-brand-purple/12 rounded-2xl p-7 flex flex-col">
                     <div className="font-mono-ui text-[10px] uppercase text-brand-purple">{c.tag}</div>
                     <h3 className="font-bold text-brand-deep text-[17px] mt-2">{c.h}</h3>
                     <p className="mt-2 text-ink-secondary text-[14px] leading-[1.7]">{c.body}</p>
@@ -415,13 +415,13 @@ export default function SolutionsMedical() {
               <p className="mt-5 text-white/90 text-[16px] leading-[1.78]">Medical practices must be aware that digital tracking, paid advertising, and website analytics tools may carry privacy obligations under HIPAA. Vigorant uses a privacy-conscious approach to marketing setup, tracking, and campaign management — and recommends that practices work with their legal and compliance teams regarding tracking technology choices.</p>
             </Reveal>
             <Reveal delay={0.08} className="mt-9 max-w-3xl mx-auto">
-              <div className="bg-white/5 border border-white/10 rounded-[14px] p-6">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <div className="font-mono-ui text-[10px] uppercase text-brand-lavender mb-2">Important Notice</div>
                 <p className="text-white/72 text-[14px] leading-[1.75] m-0">The U.S. Department of Health and Human Services has issued guidance on online tracking technologies for HIPAA-covered entities. Medical practices using pixels, analytics, and advertising platforms should review this guidance with their compliance advisors.</p>
               </div>
             </Reveal>
             <Reveal delay={0.12} className="mt-3 max-w-3xl mx-auto">
-              <div className="bg-white/5 border border-white/10 rounded-[12px] p-4 flex gap-2.5">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-bright flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-lavender/60 mb-1">HHS Official Guidance</div>
@@ -448,7 +448,7 @@ export default function SolutionsMedical() {
             <div className="grid sm:grid-cols-2 gap-4 mt-12 max-w-4xl mx-auto">
               {DIFF.map((d, i) => (
                 <Reveal key={d.h} delay={i * 0.06} className="h-full">
-                  <article className="h-full bg-white/92 border border-brand-purple/10 rounded-[16px] p-6 hover:border-brand-purple/30 hover:-translate-y-1 transition-all">
+                  <article className="h-full bg-white/92 border border-brand-purple/10 rounded-2xl p-6 hover:border-brand-purple/30 hover:-translate-y-1 transition-all">
                     <div className="w-11 h-11 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><d.icon size={20} className="text-white" /></div>
                     <h3 className="font-bold text-brand-deep text-[15px] mt-3">{d.h}</h3>
                     <p className="mt-1.5 text-ink-secondary text-[13px] leading-[1.68]">{d.p}</p>
@@ -457,7 +457,7 @@ export default function SolutionsMedical() {
               ))}
             </div>
             <Reveal delay={0.12} className="max-w-4xl mx-auto mt-8">
-              <div className="border border-brand-purple/12 rounded-[12px] overflow-hidden">
+              <div className="border border-brand-purple/12 rounded-2xl overflow-hidden">
                 <div className="hidden sm:grid grid-cols-2">
                   <div className="bg-amber-500/[0.06] text-amber-600 font-bold text-[13px] px-5 py-3">Generic Agency Approach</div>
                   <div className="bg-brand-purple/8 text-brand-purple font-bold text-[13px] px-5 py-3">Vigorant Medical System</div>
@@ -489,7 +489,7 @@ export default function SolutionsMedical() {
             <div className="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl mx-auto">
               {PROOF.map((p, i) => (
                 <Reveal key={p.who} delay={i * 0.08} className="h-full">
-                  <article className="bg-white/92 border border-brand-purple/10 rounded-[18px] p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
+                  <article className="bg-white/92 border border-brand-purple/10 rounded-2xl p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
                     <div className="font-mono-ui text-[11px] text-ink-muted">{p.who}</div>
                     <div className="font-extrabold text-[38px] mt-2 leading-none"><GradientText>{p.n}</GradientText></div>
                     <div className="text-[13px] text-ink-secondary mt-1">{p.l}</div>
@@ -515,7 +515,7 @@ export default function SolutionsMedical() {
             <div className="max-w-3xl mx-auto mt-10">
               <Accordion type="single" collapsible className="space-y-2">
                 {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-[12px] px-5 bg-white/90">
+                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/90">
                     <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
                     <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
                   </AccordionItem>

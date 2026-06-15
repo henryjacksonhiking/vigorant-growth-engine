@@ -247,6 +247,68 @@
   .tilt-spotlight:hover::before { opacity: 1; }
   .tilt-spotlight > * { position: relative; z-index: 1; }
 
+  .homepage-cta-standard {
+    @apply inline-flex max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-7 sm:py-3.5 font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px] text-center leading-snug whitespace-normal sm:whitespace-nowrap;
+    border-radius: 999px !important;
+  }
+
+  [data-dark="true"] .homepage-cta-standard.btn-primary-grad {
+    background: #ffffff !important;
+    color: hsl(var(--brand-deep)) !important;
+    box-shadow: 0 8px 24px hsl(248 49% 15% / 0.18) !important;
+  }
+
+  [data-dark="true"] .homepage-cta-standard.btn-secondary-outline {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-color: hsl(0 0% 100% / 0.28) !important;
+  }
+
+  .homepage-card-standard {
+    border-radius: 1rem !important;
+    box-shadow: var(--shadow-card) !important;
+    border-color: hsl(var(--brand-purple) / 0.14) !important;
+    background: hsl(var(--background) / 0.9) !important;
+    min-width: 0;
+  }
+
+  .homepage-card-standard.text-white,
+  .homepage-card-standard:has(.text-white) {
+    background: var(--gradient-dark) !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+
+  [data-dark="true"] .homepage-card-standard {
+    background: hsl(0 0% 100% / 0.05) !important;
+    border-color: hsl(0 0% 100% / 0.16) !important;
+  }
+
+  .homepage-card-standard:is(article, aside, div) {
+    transition:
+      transform 380ms var(--ease-expo),
+      box-shadow 380ms var(--ease-expo),
+      border-color 380ms var(--ease-expo),
+      background-color 380ms var(--ease-expo);
+  }
+
+  .homepage-card-standard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 48px hsl(248 49% 15% / 0.14), 0 0 0 1px hsl(247 93% 64% / 0.18) !important;
+    border-color: hsl(247 93% 64% / 0.35) !important;
+  }
+
+  .homepage-card-standard :is([class*="rounded-["], .rounded-3xl) {
+    border-radius: 1rem !important;
+  }
+
+  .homepage-card-standard :is(svg) {
+    transition: transform 280ms var(--ease-spring);
+  }
+
+  .homepage-card-standard:hover :is(svg.text-brand-purple, svg.text-brand-bright) {
+    transform: translateY(-1px) scale(1.06);
+  }
+
   .ui-card-grid {
     @apply items-stretch;
     grid-auto-rows: 1fr;

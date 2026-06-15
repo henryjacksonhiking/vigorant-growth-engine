@@ -104,7 +104,7 @@ export default function ScaleYourPractice() {
 
               {/* Growth Trajectory Card */}
               <Reveal delay={0.2}>
-                <div className="bg-background border border-brand-purple/15 rounded-[22px] p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
+                <div className="bg-background border border-brand-purple/15 rounded-2xl p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><TrendingUp size={16} className="text-white" /></div>
@@ -119,7 +119,7 @@ export default function ScaleYourPractice() {
                       { i: Target, l: "Stage 2: Growth Ceiling", s: "Referrals plateauing · Ad results inconsistent", chip: "WHERE YOU ARE", style: "bg-brand-purple/8 border-brand-purple/30", iconC: "text-brand-purple", primary: true },
                       { i: Rocket, l: "Stage 3: Scalable System", s: "Predictable demand · Multi-location ready", chip: "THE GOAL", style: "bg-white border-brand-purple/12", iconC: "text-brand-bright" },
                     ].map(s => (
-                      <div key={s.l} className={`flex items-center gap-3 rounded-[10px] border p-3 ${s.style}`}>
+                      <div key={s.l} className={`flex items-center gap-3 rounded-2xl border p-3 ${s.style}`}>
                         <s.i size={16} className={s.iconC} />
                         <div className="flex-1 min-w-0">
                           <div className={`text-[13px] text-brand-deep ${s.primary ? "font-bold" : "font-semibold"}`}>{s.l}</div>
@@ -145,7 +145,7 @@ export default function ScaleYourPractice() {
               <p className="mt-5 text-white/65 text-[16px] leading-[1.78] max-w-2xl mx-auto">Many successful practices do not fail because of poor care. They plateau because the owner's reputation, referrals, and existing marketing cannot support the next level of growth. Growth gets more complex when you are no longer trying to survive — you are trying to scale intelligently.</p>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/5 border border-brand-lavender/20 rounded-[16px] p-7">
+              <div className="bg-white/5 border border-brand-lavender/20 rounded-2xl p-7">
                 <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-lavender">Definition · AIO/GEO Ready</div>
                 <p className="mt-2 font-semibold text-white text-[15px]">What does scaling a healthcare practice actually mean?</p>
                 <p className="mt-2 text-white/82 text-[15px] leading-[1.85] italic m-0">"Scaling a healthcare practice means creating repeatable patient demand, consistent brand visibility, conversion systems, and measurable growth infrastructure that can support additional providers, services, or locations."</p>
@@ -159,7 +159,7 @@ export default function ScaleYourPractice() {
                 "Paid ads produce inconsistent results when the landing-page and tracking foundation is weak",
                 "Competitors — including DSOs and larger groups — seem to grow faster without proportionally better care",
               ].map(b => (
-                <div key={b} className="flex items-start gap-3 bg-white/4 border border-white/8 rounded-[10px] p-3.5">
+                <div key={b} className="flex items-start gap-3 bg-white/4 border border-white/8 rounded-2xl p-3.5">
                   <Minus size={14} className="text-amber-500/80 flex-shrink-0 mt-1" />
                   <span className="text-white/72 text-[14px]">{b}</span>
                 </div>
@@ -179,7 +179,7 @@ export default function ScaleYourPractice() {
               {CEILINGS.map((c, i) => (
                 <Reveal key={c.chip} delay={i * 0.06} className="h-full">
                   <li>
-                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-2xl overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(38 92% 50% / 0.4), hsl(247 93% 64% / 0.6))" }} />
                       <div className="p-6">
                         <div className="flex items-start gap-3">
@@ -209,7 +209,7 @@ export default function ScaleYourPractice() {
               <p className="mt-4 text-ink-secondary text-[16px] max-w-lg mx-auto leading-[1.75]">Before you invest in expansion, paid campaigns, or an associate search, the growth infrastructure must be ready to support additional demand.</p>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-8">
-              <div className="bg-white/85 border border-brand-purple/10 rounded-[12px] p-4 flex gap-2.5">
+              <div className="bg-white/85 border border-brand-purple/10 rounded-2xl p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-purple flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-ink-muted mb-1">U.S. Small Business Administration</div>
@@ -234,7 +234,7 @@ export default function ScaleYourPractice() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {FRAMEWORK.map((s, i) => (
                 <Reveal key={s.n} delay={i * 0.05} className="h-full">
-                  <div className="bg-white/6 border border-white/10 rounded-[16px] p-6 text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all h-full">
+                  <div className="bg-white/6 border border-white/10 rounded-2xl p-6 text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all h-full">
                     <div className="font-mono-ui font-bold text-[28px]"><GradientTextLight>{s.n}</GradientTextLight></div>
                     <div className="w-11 h-11 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={20} className="text-white" /></div>
                     <h3 className="font-bold text-white text-[15px] mt-3">{s.h3}</h3>
@@ -259,7 +259,7 @@ export default function ScaleYourPractice() {
               {PATHS.map((p, i) => (
                 <Reveal key={p.chip} delay={i * 0.06} className="h-full">
                   <li>
-                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[20px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                    <article className="h-full bg-white/95 border border-brand-purple/10 rounded-2xl overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
                       <div className="p-6">
                         <div className="flex items-start gap-3">
@@ -288,7 +288,7 @@ export default function ScaleYourPractice() {
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 40px)", letterSpacing: "-0.03em" }}>Signs Your Practice <GradientText>Is Ready to Scale</GradientText></h2>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-10">
-              <div className="bg-white/95 border border-brand-purple/15 rounded-[22px] p-8" style={{ boxShadow: "0 16px 60px hsl(248 49% 15% / 0.08)" }}>
+              <div className="bg-white/95 border border-brand-purple/15 rounded-2xl p-8" style={{ boxShadow: "0 16px 60px hsl(248 49% 15% / 0.08)" }}>
                 <div className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple mb-4">Scale Readiness Checklist</div>
                 <ul className="list-none p-0 m-0 space-y-1">
                   {CHECKLIST.map((c, i) => (
@@ -317,7 +317,7 @@ export default function ScaleYourPractice() {
             <div className="max-w-3xl mx-auto mt-10">
               <Accordion type="single" collapsible className="space-y-2">
                 {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-[12px] px-5 bg-white/90">
+                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/90">
                     <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
                     <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
                   </AccordionItem>
