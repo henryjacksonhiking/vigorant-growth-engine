@@ -975,22 +975,6 @@ export default function LocalListingsGbp() {
             </Reveal>
           </div>
         </section>
-
-        {/* Authority reference */}
-        <div className="border-t border-brand-purple/10 py-5 px-6 text-center">
-          <p className="font-mono-ui text-[11.5px] text-ink-muted/70">
-            External reference:{" "}
-            <a
-              href="https://support.google.com/business/answer/3038177?hl=en"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-brand-purple underline underline-offset-4"
-            >
-              Google Business Profile Guidelines
-            </a>{" "}
-            — referenced for profile quality.
-          </p>
-        </div>
       </main>
 
       <Footer />

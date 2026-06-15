@@ -831,22 +831,6 @@ export default function AnalyticsReporting() {
 
       <Footer />
 
-      {/* External reference credit */}
-      <div className="border-t border-brand-purple/10 bg-background text-center py-4">
-        <p className="font-mono-ui text-[12px] text-brand-deep/40">
-          External reference:{" "}
-          <a
-            href="https://www.cdc.gov/nchs/index.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-brand-deep/60 transition-colors"
-          >
-            CDC National Center for Health Statistics
-          </a>{" "}
-          — referenced for health data, measurement, and reporting context.
-        </p>
-      </div>
-
       {/* Page-local keyframes */}
       <style>{`
         @keyframes lpOrb { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(-30px, 28px, 0) scale(1.08); } }

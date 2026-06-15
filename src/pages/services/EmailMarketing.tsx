@@ -810,20 +810,6 @@ export default function EmailMarketing() {
             </div>
           </div>
         </section>
-
-        {/* ── FOOTER CREDIT LINE ── */}
-        <div className="border-t border-brand-purple/10 bg-background py-4 text-center font-mono-ui text-[12px] text-brand-deep/40">
-          External reference:{" "}
-          <a
-            href="https://www.cdc.gov/health-literacy/php/develop-materials/plain-language.html"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="underline hover:text-brand-purple/60 transition-colors"
-          >
-            CDC Plain Language Materials &amp; Resources
-          </a>
-          .
-        </div>
       </main>
 
       <Footer />

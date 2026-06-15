@@ -965,22 +965,6 @@ export default function BrandingRebranding() {
             </Reveal>
           </div>
         </section>
-
-        {/* Authority reference */}
-        <div className="border-t border-brand-purple/10 py-5 px-6 text-center">
-          <p className="font-mono-ui text-[11.5px] text-ink-muted/70">
-            External reference:{" "}
-            <a
-              href="https://www.ama-assn.org/"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-brand-purple underline underline-offset-4"
-            >
-              American Medical Association — Practice Management Resources
-            </a>{" "}
-            — referenced in healthcare brand standards and patient-trust communication.
-          </p>
-        </div>
       </main>
 
       <Footer />

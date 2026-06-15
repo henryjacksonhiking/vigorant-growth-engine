@@ -70,17 +70,17 @@ export default function Footer() {
             <p className="mt-4 text-white/80 text-sm leading-relaxed max-w-xs">
               The patient acquisition system built specifically for modern healthcare practices.
             </p>
-            <ul className="mt-5 grid grid-cols-3 gap-3 list-none p-0 max-w-[10rem]">
+            <ul className="mt-5 flex flex-nowrap items-center gap-2 list-none p-0 overflow-x-auto">
               {socials.map(({ Icon, label, href }) => (
-                <li key={label} className="flex justify-center">
+                <li key={label} className="flex-shrink-0">
                   <a
                     href={href}
                     aria-label={label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                    className="w-8 h-8 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                   >
-                    <Icon aria-hidden size={16} />
+                    <Icon aria-hidden size={13} />
                   </a>
                 </li>
               ))}
