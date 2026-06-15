@@ -262,9 +262,13 @@ export default function ScaleYourPractice() {
                     <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[20px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-[5px]" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
                       <div className="p-6">
-                        <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 px-2.5 py-1 rounded-full">{p.chip}</span>
-                        <div className="mt-3 w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center"><p.icon size={20} className="text-brand-purple" /></div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{p.h3}</h3>
+                        <div className="flex items-start gap-3">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><p.icon size={20} className="text-white" /></div>
+                          <div className="min-w-0 flex-1">
+                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{p.chip}</span>
+                            <h3 className="font-bold text-brand-deep text-[16px] leading-tight">{p.h3}</h3>
+                          </div>
+                        </div>
                         <p className="mt-3 text-[13px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-amber-600">Challenge: </span>{p.chal}</p>
                         <p className="mt-2 text-[13px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-brand-purple">What You Need: </span>{p.need}</p>
                       </div>
