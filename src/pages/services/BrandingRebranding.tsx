@@ -557,7 +557,7 @@ export default function BrandingRebranding() {
             <div className="mt-12 border-t border-brand-purple/20">
               {FIT_ROWS.map((r, i) => (
                 <Reveal key={r.h} delay={i * 0.05}>
-                  <div className="grid grid-cols-[64px_1fr] md:grid-cols-[80px_320px_1fr] gap-4 md:gap-10 py-8 border-b border-brand-purple/20 items-start transition-transform hover:translate-x-2">
+                  <div className="grid grid-cols-[64px_1fr] md:grid-cols-[80px_320px_1fr] gap-4 md:gap-10 py-8 border-b border-brand-purple/20 items-start">
                     <span className="font-mono-ui font-black text-brand-purple text-[22px] leading-none rounded-lg bg-surface-secondary px-3 py-2 inline-flex items-center justify-center">
                       {r.n}
                     </span>
@@ -841,7 +841,7 @@ export default function BrandingRebranding() {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 hover:bg-surface-secondary transition-colors"
+                  className="group bg-background p-6 sm:p-7 flex flex-col gap-2 transition-colors"
                 >
                   <span
                     className="font-extrabold text-brand-deep text-[15.5px] flex items-center gap-2"
