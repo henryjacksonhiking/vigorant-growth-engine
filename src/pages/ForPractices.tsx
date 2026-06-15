@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useId, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Users, Eye, TrendingDown, Filter, Star, Activity, Building2,
+  ArrowRight, Users, Eye, DollarSign as DollarSignIcon, Filter, Star, Activity, Building2,
   DollarSign, MapPin, Megaphone, MousePointerClick, ShieldCheck, BarChart2,
   EyeOff, BarChart, CalendarX, Plus, Check, Smile, Stethoscope, X
 } from "lucide-react";
@@ -103,7 +103,7 @@ function ForPracticesSeo() {
 const PAIN_CARDS = [
   { Icon: Users, n: "#1 Most Common", h3: "Getting More New Patients Online", q: "Why isn't our marketing bringing in more new faces?", body: "Your website, ads, and SEO may be getting activity, but not enough qualified patient inquiries. We help practices build visibility, landing pages, campaigns, and conversion paths that support measurable new patient growth.", cta: "Improve New Patient Flow", href: "/for-practices/more-new-patients" },
   { Icon: Eye, n: "#2 Competitive Edge", h3: "Improve Online & AI Visibility", q: "Are we even showing up where patients are searching?", body: "If patients can't find you on Google, Maps, AI Overviews, ChatGPT, Gemini, or Perplexity, you're losing demand before the first click. Vigorant structures your presence for both search engines and AI engines.", cta: "Improve Visibility", href: "/for-practices/online-visibility" },
-  { Icon: TrendingDown, n: "#3 High Cost", h3: "Fix Poor Marketing ROI", q: "Why can't we connect our ad spend to actual patients?", body: "If reports show clicks, impressions, and rankings but not actual patient growth, your marketing lacks revenue accountability. We connect campaigns to leads, bookings, and business outcomes.", cta: "Fix ROI Gaps", href: "/for-practices/marketing-roi" },
+  { Icon: DollarSignIcon, n: "#3 High Cost", h3: "Fix Poor Marketing ROI", q: "Why can't we connect our ad spend to actual patients?", body: "If reports show clicks, impressions, and rankings but not actual patient growth, your marketing lacks revenue accountability. We connect campaigns to leads, bookings, and business outcomes.", cta: "Fix ROI Gaps", href: "/for-practices/marketing-roi" },
   { Icon: Filter, n: "#4 Efficiency Gap", h3: "Improve Lead Conversion", q: "We get traffic — why aren't people booking?", body: "More traffic doesn't help if visitors don't call, forms don't convert, calls don't book, or follow-up is weak. We identify where patients drop off and improve the path from interest to appointment.", cta: "Convert More Leads", href: "/for-practices/lead-conversion" },
   { Icon: Star, n: "#5 Trust Builder", h3: "Improve Online Reputation & Reviews", q: "Do our reviews reflect how good we actually are?", body: "Reviews influence local rankings, patient trust, and AI recommendations. We help practices build a stronger review presence, respond strategically, and turn reputation into a patient acquisition asset.", cta: "Strengthen Reputation", href: "/for-practices/online-reputation" },
   { Icon: Activity, n: "#6 Stability", h3: "Predictable & Sustainable Patient Flow", q: "Why do we have great months and terrible months?", body: "If your schedule swings between busy and slow months, you need more than campaigns. You need a balanced system for acquisition, retention, reactivation, and visibility across the patient journey.", cta: "Stabilize Patient Flow", href: "/for-practices/predictable-patient-flow" },
@@ -197,17 +197,11 @@ function Hero() {
           </a>
         </motion.div>
 
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.38 }}
-          className="mt-5 font-mono-ui text-[12px] text-ink-secondary">
-          No obligation · Clear findings · Actionable recommendations for your practice.
-        </motion.p>
-
         <motion.dl initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 1.5 }}
           className="mt-10 flex flex-wrap justify-center items-center gap-6 sm:gap-10">
           {[
             { v: <Counter to={120} suffix="+" />, l: "Practices Served" },
             { v: <><Counter to={4.9} decimals={1} />★</>, l: "Average Rating" },
-            { v: <Counter to={4800} suffix="+" />, l: "Patients / Month Attributed" },
           ].map((s, i) => (
             <div key={i} className="flex flex-col items-center px-2">
               <dt className="sr-only">{s.l}</dt>
