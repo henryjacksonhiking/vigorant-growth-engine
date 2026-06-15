@@ -634,22 +634,7 @@ export default function BrandingRebranding() {
                     transition={{ duration: 0.7, ease }}
                     className="py-10 sm:py-14 border-b border-brand-purple/20 first:pt-0 scroll-mt-32"
                   >
-                    <span
-                      className={`section-label inline-block px-3 py-1 rounded-full transition-all ${
-                        activePhase === i
-                          ? "text-white border border-transparent"
-                          : "bg-brand-purple/8 border border-brand-purple/20 text-brand-purple"
-                      }`}
-                      style={
-                        activePhase === i
-                          ? {
-                              background:
-                                "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
-                              boxShadow: "0 10px 30px hsl(247 93% 64% / 0.28)",
-                            }
-                          : undefined
-                      }
-                    >
+                    <span className="section-label inline-block px-3 py-1 rounded-full bg-brand-purple/8 border border-brand-purple/20 text-brand-purple">
                       Phase {e.n}
                     </span>
                     <h3
