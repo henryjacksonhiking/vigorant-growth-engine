@@ -295,7 +295,7 @@ export default function LandingPages() {
                     {PROOF_TAGS.map((t) => (
                       <li
                         key={t}
-                        className="inline-flex items-center font-mono-ui text-[12px] tracking-[0.06em] px-3.5 py-2 rounded-full border border-brand-purple/20 bg-white/75 text-brand-deep/75 shadow-[0_10px_28px_hsl(var(--brand-purple)/0.07)]"
+                        className="inline-flex items-center font-mono-ui text-[12px] tracking-[0.06em] px-3.5 py-2 rounded-full border border-brand-purple/20 bg-white/75 text-brand-deep/75 shadow-[var(--shadow-card)]"
                       >
                         {t}
                       </li>
@@ -313,7 +313,7 @@ export default function LandingPages() {
                     </Link>
                     <Link
                       to="/services"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px] border border-brand-purple/20 text-brand-deep hover:text-brand-purple hover:bg-surface-secondary transition-colors"
+                      className="btn-secondary-outline inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px]"
                     >
                       Explore all services
                     </Link>
@@ -324,14 +324,14 @@ export default function LandingPages() {
               {/* RIGHT: workflow-mini (light, lesser-card style) */}
               <Reveal delay={0.1}>
                 <div
-                  className="relative rounded-[30px] p-2 border border-brand-purple/18 bg-white/80"
+                  className="relative rounded-2xl p-2 border border-brand-purple/18 bg-white/80"
                   style={{
                     boxShadow: "0 30px 80px hsl(var(--brand-purple) / 0.14)",
                     backdropFilter: "blur(8px)",
                     animation: "lpFloat 6s ease-in-out infinite",
                   }}
                 >
-                  <div className="rounded-[24px] border border-brand-purple/12 px-6 py-5">
+                  <div className="rounded-2xl border border-brand-purple/12 px-6 py-5">
                     <div className="flex items-center justify-between border-b border-brand-purple/15 pb-3 mb-2">
                       <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple">
                         Conversion workflow
@@ -400,7 +400,7 @@ export default function LandingPages() {
                           className={
                             "min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] transition-all " +
                             (active
-                              ? "bg-brand-purple text-white scale-105 shadow-[0_8px_18px_hsl(var(--brand-purple)/0.25)]"
+                              ? "bg-brand-purple text-white scale-105 shadow-[var(--shadow-glow)]"
                               : passed
                               ? "bg-surface-secondary text-brand-purple"
                               : "bg-transparent text-ink-muted border border-brand-purple/18")
@@ -447,7 +447,7 @@ export default function LandingPages() {
                         className={
                           "absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] transition-all " +
                           (active
-                            ? "bg-gradient-to-br from-brand-lavender to-brand-purple text-white scale-110 shadow-[0_0_0_8px_hsl(var(--brand-purple)/0.12),0_14px_32px_hsl(var(--brand-purple)/0.30)] border-2 border-brand-purple"
+                            ? " text-white scale-110 shadow-[var(--shadow-glow)] border-2 border-brand-purple"
                             : passed
                             ? "bg-surface-secondary text-brand-purple border-2 border-brand-lavender"
                             : "bg-background text-ink-muted border-2 border-brand-purple/18")
@@ -470,7 +470,7 @@ export default function LandingPages() {
                         {/* Output panel */}
                         <div
                           className={
-                            "rounded-[22px] p-5 border bg-surface-secondary transition-all " +
+                            "rounded-2xl p-5 border bg-surface-secondary transition-all " +
                             (active ? "border-brand-purple/32 -translate-y-1 shadow-[0_18px_46px_hsl(var(--brand-purple)/0.15)]" : "border-brand-purple/18")
                           }
                         >
@@ -503,7 +503,7 @@ export default function LandingPages() {
               </h2>
             </Reveal>
 
-            <div className="mt-12 rounded-[28px] overflow-hidden border border-brand-purple/18 bg-background transition-all hover:-translate-y-1 hover:shadow-[0_24px_70px_hsl(var(--brand-purple)/0.14)]">
+            <div className="mt-12 rounded-2xl overflow-hidden border border-brand-purple/18 bg-background transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)]">
               {HANDOFF.map((row, i) => (
                 <div
                   key={row.a}
@@ -537,7 +537,7 @@ export default function LandingPages() {
             </Reveal>
 
             <div
-              className="grid md:grid-cols-3 mt-12 rounded-[28px] overflow-hidden border border-white/14"
+              className="grid md:grid-cols-3 mt-12 rounded-2xl overflow-hidden border border-white/14"
               style={{ background: "hsl(0 0% 100% / 0.14)", gap: "1px" }}
             >
               {RIVER.map((r, i) => (

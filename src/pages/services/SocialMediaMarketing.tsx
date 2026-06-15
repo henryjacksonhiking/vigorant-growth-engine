@@ -362,7 +362,7 @@ export default function SocialMediaMarketing() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                    className="btn-primary-grad inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                     style={{
                       background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
                       boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",
@@ -372,7 +372,7 @@ export default function SocialMediaMarketing() {
                   </Link>
                   <Link
                     to="/free-audit"
-                    className="inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] text-brand-deep px-5 py-3 rounded-full border-[1.5px] border-brand-purple/25 hover:border-brand-purple hover:bg-surface-secondary transition-all"
+                    className="btn-secondary-outline inline-flex items-center justify-center gap-2 font-semibold text-[14px] sm:text-[15px] px-5 sm:px-6 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   >
                     Book a Strategy Call
                   </Link>
@@ -394,7 +394,7 @@ export default function SocialMediaMarketing() {
               {/* STICKY AUDIT RAIL */}
               <Reveal delay={0.1}>
                 <aside
-                  className="relative rounded-3xl p-6 sm:p-7 lg:sticky lg:top-28"
+                  className="relative rounded-2xl p-6 sm:p-7 lg:sticky lg:top-28"
                   style={{
                     background: "hsl(0 0% 100% / 0.92)",
                     border: "1px solid hsl(247 93% 64% / 0.18)",
@@ -443,7 +443,7 @@ export default function SocialMediaMarketing() {
 
                   <Link
                     to="/free-audit"
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 font-bold text-[14px] text-white px-5 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                    className="btn-primary-grad mt-5 inline-flex w-full items-center justify-center gap-2 font-bold text-[14px] px-5 py-3 rounded-full"
                     style={{
                       background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%), hsl(248 49% 15%))",
                       boxShadow: "0 12px 32px hsl(247 93% 64% / 0.35)",
@@ -509,7 +509,7 @@ export default function SocialMediaMarketing() {
             </Reveal>
 
             <div
-              className="mt-12 overflow-hidden rounded-3xl"
+              className="mt-12 overflow-hidden rounded-2xl"
               style={{
                 background: "hsl(0 0% 100% / 0.9)",
                 border: "1px solid hsl(247 93% 64% / 0.18)",
@@ -559,7 +559,7 @@ export default function SocialMediaMarketing() {
               </div>
             </Reveal>
 
-            <div className="mt-12 grid lg:grid-cols-[260px_1fr] gap-px lg:gap-0 rounded-3xl overflow-hidden"
+            <div className="mt-12 grid lg:grid-cols-[260px_1fr] gap-px lg:gap-0 rounded-2xl overflow-hidden"
               style={{
                 background: "hsl(247 93% 64% / 0.18)",
                 border: "1px solid hsl(247 93% 64% / 0.18)",
@@ -839,7 +839,7 @@ export default function SocialMediaMarketing() {
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
                   to="/free-audit"
-                  className="inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[15px] text-white px-6 py-3 rounded-full transition-all hover:-translate-y-0.5"
+                  className="btn-primary-grad inline-flex items-center justify-center gap-2 font-bold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-3.5 rounded-full min-h-[46px] sm:min-h-[48px]"
                   style={{
                     background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))",
                     boxShadow: "0 12px 32px hsl(247 93% 64% / 0.4)",

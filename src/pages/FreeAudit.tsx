@@ -65,7 +65,7 @@ export default function FreeAudit() {
   };
 
   const inputCls = (k: keyof FormState) =>
-    `w-full bg-white border rounded-[10px] px-3.5 py-2.5 text-[14px] text-brand-deep placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-purple/30 transition ${
+    `w-full bg-white border rounded-2xl px-3.5 py-2.5 text-[14px] text-brand-deep placeholder:text-ink-muted/70 focus:outline-none focus:ring-2 focus:ring-brand-purple/30 transition ${
       errors[k] ? "border-red-400" : "border-brand-purple/15 hover:border-brand-purple/30"
     }`;
 
@@ -113,7 +113,7 @@ export default function FreeAudit() {
                 </div>
               </div>
 
-              <div className="bg-white border border-brand-purple/15 rounded-[22px] p-6 sm:p-8" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
+              <div className="bg-white border border-brand-purple/15 rounded-2xl p-6 sm:p-8" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
                 {submitted ? (
                   <div className="text-center py-10">
                     <div className="w-14 h-14 mx-auto rounded-full bg-emerald-500/10 flex items-center justify-center"><Check size={28} className="text-emerald-600" /></div>

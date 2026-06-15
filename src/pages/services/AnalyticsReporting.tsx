@@ -438,7 +438,7 @@ export default function AnalyticsReporting() {
                     </Link>
                     <Link
                       to="/services"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px] border border-white/20 bg-white/10 text-white hover:bg-white/15 transition-colors"
+                      className="btn-on-dark-outline inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px]"
                     >
                       See all services
                     </Link>
@@ -449,7 +449,7 @@ export default function AnalyticsReporting() {
               {/* RIGHT: workflow-mini (dark glassmorphism card) */}
               <Reveal delay={0.1}>
                 <div
-                  className="relative rounded-[30px] p-2 border border-white/15"
+                  className="relative rounded-2xl p-2 border border-white/15"
                   style={{
                     background: "hsl(0 0% 100% / 0.05)",
                     backdropFilter: "blur(8px)",
@@ -457,7 +457,7 @@ export default function AnalyticsReporting() {
                     animation: "lpFloat 6s ease-in-out infinite",
                   }}
                 >
-                  <div className="rounded-[24px] border border-white/10 px-6 py-5">
+                  <div className="rounded-2xl border border-white/10 px-6 py-5">
                     <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-2">
                       <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-lavender">
                         Workflow at a glance
@@ -545,7 +545,7 @@ export default function AnalyticsReporting() {
                           className={
                             "min-w-[34px] h-7 px-2 rounded-full inline-grid place-items-center font-mono-ui text-[12px] transition-all " +
                             (active
-                              ? "bg-brand-purple text-white scale-105 shadow-[0_8px_18px_hsl(var(--brand-purple)/0.25)]"
+                              ? "bg-brand-purple text-white scale-105 shadow-[var(--shadow-glow)]"
                               : passed
                               ? "bg-surface-secondary text-brand-purple"
                               : "bg-transparent text-ink-muted border border-brand-purple/18")
@@ -592,7 +592,7 @@ export default function AnalyticsReporting() {
                         className={
                           "absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] transition-all " +
                           (active
-                            ? "bg-gradient-to-br from-brand-lavender to-brand-purple text-white scale-110 shadow-[0_0_0_8px_hsl(var(--brand-purple)/0.12),0_14px_32px_hsl(var(--brand-purple)/0.30)] border-2 border-brand-purple"
+                            ? " text-white scale-110 shadow-[var(--shadow-glow)] border-2 border-brand-purple"
                             : passed
                             ? "bg-surface-secondary text-brand-purple border-2 border-brand-lavender"
                             : "bg-background text-ink-muted border-2 border-brand-purple/18")
@@ -623,7 +623,7 @@ export default function AnalyticsReporting() {
                         {/* Output panel */}
                         <div
                           className={
-                            "rounded-[22px] p-5 border bg-surface-secondary transition-all " +
+                            "rounded-2xl p-5 border bg-surface-secondary transition-all " +
                             (active ? "border-brand-purple/32 -translate-y-1 shadow-[0_18px_46px_hsl(var(--brand-purple)/0.15)]" : "border-brand-purple/18")
                           }
                         >
@@ -664,7 +664,7 @@ export default function AnalyticsReporting() {
               </h2>
             </Reveal>
 
-            <div className="mt-12 rounded-[28px] overflow-hidden border border-brand-purple/18 bg-background transition-all hover:-translate-y-1 hover:shadow-[0_24px_70px_hsl(var(--brand-purple)/0.14)]">
+            <div className="mt-12 rounded-2xl overflow-hidden border border-brand-purple/18 bg-background transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)]">
               {HANDOFF.map((row, i) => (
                 <div
                   key={row.a}
@@ -709,7 +709,7 @@ export default function AnalyticsReporting() {
             </Reveal>
 
             <div
-              className="grid md:grid-cols-3 mt-12 rounded-[28px] overflow-hidden border border-white/14"
+              className="grid md:grid-cols-3 mt-12 rounded-2xl overflow-hidden border border-white/14"
               style={{ background: "hsl(0 0% 100% / 0.14)", gap: "1px" }}
             >
               {RIVER.map((r, i) => (

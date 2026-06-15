@@ -275,7 +275,7 @@ function Empathy() {
             <Reveal key={i} delay={0.1 + i * 0.06} className="h-full">
               <article className="text-left rounded-2xl p-5 h-full transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
-                <div aria-hidden className="w-10 h-10 rounded-[10px] flex items-center justify-center"
+                <div aria-hidden className="w-10 h-10 rounded-2xl flex items-center justify-center"
                   style={{ background: "hsl(247 93% 64% / 0.2)" }}>
                   <c.Icon size={18} className="text-brand-bright" />
                 </div>
@@ -325,7 +325,7 @@ function RealProblem() {
             role="img"
             aria-label="Patient acquisition funnel: Search / AI Visibility → Landing Page → Offer / Message → Call / Form → Scheduling → Follow-Up → Attribution"
             data-analytics-event="funnel_diagram_view"
-            className="mt-12 max-w-[860px] mx-auto rounded-[20px] p-6 sm:p-8"
+            className="mt-12 max-w-[860px] mx-auto rounded-2xl p-6 sm:p-8"
             style={{ background: "hsl(0 0% 100% / 0.88)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.12)" }}
           >
             <ol className="flex flex-col md:flex-row md:flex-wrap md:justify-between items-center gap-4 md:gap-2 list-none p-0">
@@ -383,7 +383,7 @@ function GapCard({ g, i }: { g: typeof GAPS[number]; i: number }) {
         data-analytics-event="diagnostic_card_click"
         data-gap-number={i + 1}
         data-gap-name={g.h3}
-        className="h-full rounded-[18px] overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_44px_-22px_hsl(248_49%_15%/0.35)]"
+        className="h-full rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_44px_-22px_hsl(248_49%_15%/0.35)]"
         style={{ background: "hsl(0 0% 100% / 0.90)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.10)" }}
       >
         <div aria-hidden className="h-1.5 w-full" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
@@ -487,7 +487,7 @@ function Differentiation() {
 
         <Reveal delay={0.2} className="h-full">
           <div data-analytics-event="comparison_table_view"
-            className="mt-10 max-w-[880px] mx-auto rounded-[18px] overflow-hidden"
+            className="mt-10 max-w-[880px] mx-auto rounded-2xl overflow-hidden"
             style={{ background: "hsl(0 0% 100% / 0.04)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
             <div className="hidden sm:grid grid-cols-2 text-[14px] font-semibold" style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.06)" }}>
               <div className="px-5 sm:px-6 py-4 text-white/40" style={{ background: "hsl(0 0% 100% / 0.02)" }}>Traditional Marketing Vendor</div>
@@ -594,7 +594,7 @@ function SpecialtyCard({ s, i }: { s: typeof SPECIALTIES[number]; i: number }) {
       <article ref={ref}
         data-analytics-event="specialty_card_click"
         data-specialty={s.key}
-        className="h-full rounded-[20px] p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_48px_-22px_hsl(248_49%_15%/0.35)]"
+        className="h-full rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_22px_48px_-22px_hsl(248_49%_15%/0.35)]"
         style={{ background: "hsl(0 0% 100% / 0.88)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.12)" }}>
         <div className="flex items-center justify-between">
           <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple px-2.5 py-1 rounded-full" style={{ background: "hsl(247 93% 64% / 0.08)" }}>{s.tag}</span>
@@ -678,7 +678,7 @@ function SpendChecklist() {
         </div>
 
         <Reveal delay={0.15} className="h-full">
-          <div className="mt-11 max-w-[820px] mx-auto rounded-[18px] p-7 sm:p-9"
+          <div className="mt-11 max-w-[820px] mx-auto rounded-2xl p-7 sm:p-9"
             style={{ background: "hsl(0 0% 100% / 0.90)", backdropFilter: "blur(16px)", border: "1px solid hsl(247 93% 64% / 0.12)" }}>
             <div className="flex items-center gap-2.5">
               <AlertTriangle aria-hidden size={22} style={{ color: "hsl(38 92% 41%)" }} />
@@ -741,7 +741,7 @@ function Proof() {
           {PROOF.map((p, i) => (
             <Reveal key={p.key} delay={i * 0.06} className="h-full">
               <article data-analytics-event="proof_card_click" data-specialty={p.key}
-                className="h-full rounded-[18px] p-7 transition-all duration-300 hover:-translate-y-1"
+                className="h-full rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "hsl(250 45% 19%)", border: "1px solid hsl(0 0% 100% / 0.07)" }}>
                 <div className="font-mono-ui text-[11px] text-white/40">{p.tag}</div>
                 <div className="mt-4 font-display font-bold gradient-text leading-none" style={{ fontSize: "clamp(48px, 6vw, 64px)" }}>
@@ -822,7 +822,7 @@ function AuditOffer() {
           </Reveal>
 
           <Reveal delay={0.1} className="h-full">
-            <div className="rounded-[20px] p-8 bg-white"
+            <div className="rounded-2xl p-8 bg-white"
               style={{ border: "1px solid hsl(247 93% 64% / 0.15)", boxShadow: "8px 8px 28px hsl(248 49% 15% / 0.08), -4px -4px 14px hsl(0 0% 100% / 0.9)" }}>
               <h3 className="font-extrabold text-brand-deep text-[20px]">Request Your Free Audit</h3>
               <p className="mt-2 text-ink-secondary text-[14px]">Identify exactly where your online patient flow is breaking down.</p>

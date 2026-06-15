@@ -316,7 +316,7 @@ export default function VideoMarketing() {
                     {PROOF_TAGS.map((t) => (
                       <li
                         key={t}
-                        className="inline-flex items-center font-mono-ui text-[12px] tracking-[0.06em] px-3.5 py-2 rounded-full border border-brand-purple/20 bg-white/75 text-brand-deep/75 shadow-[0_10px_28px_hsl(var(--brand-purple)/0.07)]"
+                        className="inline-flex items-center font-mono-ui text-[12px] tracking-[0.06em] px-3.5 py-2 rounded-full border border-brand-purple/20 bg-white/75 text-brand-deep/75 shadow-[var(--shadow-card)]"
                       >
                         {t}
                       </li>
@@ -334,7 +334,7 @@ export default function VideoMarketing() {
                     </Link>
                     <Link
                       to="/services"
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px] border border-brand-purple/20 text-brand-deep hover:text-brand-purple hover:bg-surface-secondary transition-colors"
+                      className="btn-secondary-outline inline-flex items-center gap-2 px-5 py-3 rounded-full font-bold text-[15px]"
                     >
                       Explore all services
                     </Link>
@@ -345,7 +345,7 @@ export default function VideoMarketing() {
               {/* RIGHT: CONTAINED DARK VISUAL PANEL */}
               <Reveal delay={0.1}>
                 <div
-                  className="relative rounded-[34px] p-5 border border-white/10 overflow-hidden text-white min-h-[520px] flex flex-col justify-between"
+                  className="relative rounded-2xl p-5 border border-white/10 overflow-hidden text-white min-h-[520px] flex flex-col justify-between"
                   style={{
                     background:
                       "linear-gradient(145deg, hsl(var(--brand-deep)), hsl(250 45% 19%) 58%, hsl(var(--brand-deep)))",
@@ -364,7 +364,7 @@ export default function VideoMarketing() {
 
                   {/* Video stage */}
                   <div
-                    className="relative z-10 min-h-[300px] rounded-[26px] border border-white/15 grid place-items-center overflow-hidden"
+                    className="relative z-10 min-h-[300px] rounded-2xl border border-white/15 grid place-items-center overflow-hidden"
                     style={{
                       background:
                         "linear-gradient(135deg, hsl(0 0% 100% / 0.10), hsl(0 0% 100% / 0.04))",
@@ -421,7 +421,7 @@ export default function VideoMarketing() {
                     {HERO_METRICS.map((m) => (
                       <div
                         key={m.n}
-                        className="grid grid-cols-[54px_1fr] gap-4 items-start rounded-[20px] p-4 border border-white/12 bg-white/8 hover:bg-white/12 hover:border-white/24 transition-all"
+                        className="grid grid-cols-[54px_1fr] gap-4 items-start rounded-2xl p-4 border border-white/12 bg-white/8 hover:bg-white/12 hover:border-white/24 transition-all"
                         style={{ backdropFilter: "blur(2px)" }}
                       >
                         <strong className="font-display text-[1.05rem] font-bold text-brand-lavender">{m.n}</strong>
@@ -436,7 +436,7 @@ export default function VideoMarketing() {
             {/* Hero thesis card */}
             <Reveal delay={0.2}>
               <div
-                className="mt-16 rounded-[30px] p-8 sm:p-10 border border-brand-purple/20"
+                className="mt-16 rounded-2xl p-8 sm:p-10 border border-brand-purple/20"
                 style={{
                   background: "hsl(0 0% 100% / 0.70)",
                   boxShadow: "0 18px 60px hsl(var(--brand-purple) / 0.08)",
@@ -477,7 +477,7 @@ export default function VideoMarketing() {
                   <article
                     role="listitem"
                     className={
-                      "p-8 transition-all hover:-translate-y-1 hover:shadow-[0_18px_45px_hsl(var(--brand-purple)/0.10)] hover:border-brand-purple/30 " +
+                      "p-8 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)] hover:border-brand-purple/30 " +
                       (i < EVIDENCE.length - 1 ? "sm:border-r border-brand-purple/18" : "")
                     }
                   >
@@ -579,7 +579,7 @@ export default function VideoMarketing() {
             <div className="mt-12 border-t border-brand-purple/18">
               {PRINCIPLES.map((p, i) => (
                 <Reveal key={p.h} delay={i * 0.05}>
-                  <article className="grid grid-cols-[64px_1fr] sm:grid-cols-[90px_1fr] gap-5 py-6 border-b border-brand-purple/18 transition-all hover:-translate-y-1 hover:shadow-[0_18px_45px_hsl(var(--brand-purple)/0.10)] hover:border-brand-purple/30">
+                  <article className="grid grid-cols-[64px_1fr] sm:grid-cols-[90px_1fr] gap-5 py-6 border-b border-brand-purple/18 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)] hover:border-brand-purple/30">
                     <span className="font-display font-black text-brand-purple text-[1.7rem] leading-none">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -610,7 +610,7 @@ export default function VideoMarketing() {
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mt-12 items-start">
               <Reveal>
-                <div className="rounded-[28px] p-8 sm:p-10 border border-white/12 bg-white/5 transition-all hover:-translate-y-1 hover:border-white/24">
+                <div className="rounded-2xl p-8 sm:p-10 border border-white/12 bg-white/5 transition-all hover:-translate-y-1 hover:border-white/24">
                   <blockquote className="font-display font-bold text-white leading-[1.45] tracking-tight" style={{ fontSize: "clamp(1.25rem, 2vw, 1.55rem)", letterSpacing: "-0.03em" }}>
                     “Patient education improves outcomes, satisfaction, and adherence — and the medium matters. Video is a uniquely effective format for explaining procedures, risks, and follow-up care.”
                   </blockquote>
@@ -647,7 +647,7 @@ export default function VideoMarketing() {
             </Reveal>
 
             <div
-              className="grid sm:grid-cols-2 lg:grid-cols-4 mt-12 rounded-[28px] overflow-hidden border border-brand-purple/18"
+              className="grid sm:grid-cols-2 lg:grid-cols-4 mt-12 rounded-2xl overflow-hidden border border-brand-purple/18"
               style={{ background: "hsl(var(--brand-purple) / 0.18)", gap: "1px" }}
             >
               {RELATED.map((r) => (

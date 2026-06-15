@@ -378,7 +378,7 @@ export default function MarketingStrategy() {
               {/* Strategy dashboard panel — editorial, no card grid */}
               <Reveal delay={0.1}>
                 <aside
-                  className="relative rounded-3xl p-6 sm:p-7 overflow-hidden"
+                  className="relative rounded-2xl p-6 sm:p-7 overflow-hidden"
                   style={{
                     background:
                       "linear-gradient(135deg, hsl(0 0% 100% / 0.86), hsl(250 100% 98% / 0.78))",
@@ -802,7 +802,7 @@ export default function MarketingStrategy() {
 
               <Reveal delay={0.1}>
                 <div
-                  className="rounded-3xl p-8 sm:p-10"
+                  className="rounded-2xl p-8 sm:p-10"
                   style={{
                     background: "hsl(0 0% 100% / 0.05)",
                     border: "1px solid hsl(0 0% 100% / 0.12)",

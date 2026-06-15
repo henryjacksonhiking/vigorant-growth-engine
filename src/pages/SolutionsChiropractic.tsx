@@ -100,7 +100,7 @@ export default function SolutionsChiropractic() {
                 <p className="mt-5 font-mono-ui text-[12px] text-ink-muted">No obligation. We review your website, Google visibility, competitors, and patient-conversion gaps.</p>
               </div>
               <Reveal delay={0.2}>
-                <div className="bg-background border border-brand-purple/15 rounded-[22px] p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
+                <div className="bg-background border border-brand-purple/15 rounded-2xl p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
                       <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><MapPin size={16} className="text-white" /></div>
@@ -140,7 +140,7 @@ export default function SolutionsChiropractic() {
               <p className="mt-5 text-white/90 text-[16px] leading-[1.78] max-w-2xl mx-auto">Chiropractic is proximity-sensitive and intent-specific. Patients usually search for care near their home, workplace, school, or accident route — and they search with specific pain or condition intent. Generic healthcare marketing campaigns miss the local, recurring, and condition-specific factors that drive chiropractic appointments.</p>
             </Reveal>
             <Reveal delay={0.1} className="max-w-3xl mx-auto mt-7">
-              <div className="bg-white/5 border border-white/10 rounded-[12px] p-4 flex gap-2.5">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex gap-2.5">
                 <ExternalLink size={14} className="text-brand-bright flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-lavender/60 mb-1">NCCIH — National Institutes of Health</div>
@@ -155,7 +155,7 @@ export default function SolutionsChiropractic() {
                 { i: RefreshCw, h: "Recurring Care and Retention", p: "Unlike episodic healthcare, chiropractic patients can become recurring, wellness, or care-plan patients. Systems that support retention and reactivation are as important as new patient acquisition." },
               ].map((c, i) => (
                 <Reveal key={i} delay={i * 0.06} className="h-full">
-                  <div className="bg-white/5 border border-white/10 rounded-[14px] p-5 h-full">
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-5 h-full">
                     <div className="w-10 h-10 rounded-lg bg-brand-purple/20 flex items-center justify-center"><c.i size={18} className="text-brand-bright" /></div>
                     <h3 className="font-bold text-white text-[14px] mt-3">{c.h}</h3>
                     <p className="text-white/95 text-[13px] mt-1.5 leading-[1.6]">{c.p}</p>
@@ -177,7 +177,7 @@ export default function SolutionsChiropractic() {
               {JOURNEY.map((n, i, a) => (
                 <div key={n.chip} className="flex flex-col md:flex-row items-center md:flex-1">
                   <Reveal delay={i * 0.06} className="flex-1 w-full md:w-auto">
-                    <div className="bg-white/90 border border-brand-purple/12 rounded-[16px] p-5 text-center hover:border-brand-purple/30 transition-all">
+                    <div className="bg-white/90 border border-brand-purple/12 rounded-2xl p-5 text-center hover:border-brand-purple/30 transition-all">
                       <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">{n.chip}</div>
                       <div className="w-10 h-10 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><n.icon size={18} className="text-white" /></div>
                       <div className="font-bold text-brand-deep text-[14px] mt-2">{n.l}</div>
@@ -205,7 +205,7 @@ export default function SolutionsChiropractic() {
               {SEGMENTS.map((s, i) => (
                 <Reveal key={s.tag} delay={i * 0.06} className="h-full">
                   <li>
-                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-[18px] p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
+                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-2xl p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
                       <div className="p-6 ui-card-body">
                         <div className="flex items-start gap-3">
@@ -239,7 +239,7 @@ export default function SolutionsChiropractic() {
             <div className="ui-card-grid grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
               {ENGINE.map((s, i) => (
                 <Reveal key={s.n} delay={i * 0.05} className="h-full">
-                  <div className="ui-card-dark rounded-[16px] text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
+                  <div className="ui-card-dark rounded-2xl text-center hover:border-brand-bright/30 hover:-translate-y-1 transition-all">
                     <div className="font-mono-ui font-bold text-[28px]"><GradientTextLight>{s.n}</GradientTextLight></div>
                     <div className="w-11 h-11 mx-auto mt-2 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={20} className="text-white" /></div>
                     <h3 className="ui-card-heading-dark mt-3 text-[14px]">{s.h}</h3>
@@ -263,7 +263,7 @@ export default function SolutionsChiropractic() {
               {SERVICES.map((s, i) => (
                 <Reveal key={s.name} delay={i * 0.04} className="h-full">
                   <li>
-                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-[14px] p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
+                    <article className="ui-card bg-white/95 border-brand-purple/10 rounded-2xl p-5 hover:border-brand-purple/30 hover:-translate-y-1 transition-all text-center">
                       <div className="w-10 h-10 mx-auto rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%))" }}><s.icon size={18} className="text-white" /></div>
                       <h3 className="ui-card-heading mt-2.5 text-[13px]">{s.name}</h3>
                       <p className="ui-card-text text-[12px]">{s.body}</p>
@@ -291,7 +291,7 @@ export default function SolutionsChiropractic() {
                 { who: "Family Chiropractic · Phoenix, AZ", n: "↓38%", l: "cost per new patient", problem: "Generic ads sending traffic to homepage — poor conversion.", chips: ["Dedicated Landing Pages", "Call Tracking", "GBP"], when: "within 45 days", quote: "Service-specific landing pages cut our cost per patient by nearly half." },
               ].map((p, i) => (
                 <Reveal key={p.who} delay={i * 0.08} className="h-full">
-                  <article className="bg-white/95 border border-brand-purple/10 rounded-[18px] p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
+                  <article className="bg-white/95 border border-brand-purple/10 rounded-2xl p-7 hover:border-brand-purple/30 hover:-translate-y-1.5 transition-all h-full flex flex-col">
                     <div className="font-mono-ui text-[11px] text-ink-muted">{p.who}</div>
                     <div className="font-extrabold text-[38px] mt-2 leading-none"><GradientText>{p.n}</GradientText></div>
                     <div className="text-[13px] text-ink-secondary mt-1">{p.l}</div>
@@ -316,7 +316,7 @@ export default function SolutionsChiropractic() {
             <div className="max-w-3xl mx-auto mt-10">
               <Accordion type="single" collapsible className="space-y-2">
                 {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-[12px] px-5 bg-white/90">
+                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/90">
                     <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
                     <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
                   </AccordionItem>
