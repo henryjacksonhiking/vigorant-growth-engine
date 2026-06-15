@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 /** Custom cursor + scroll progress bar + mouse glow. Disabled on touch / coarse pointers. */
 export default function GlobalFx() {
@@ -7,8 +8,10 @@ export default function GlobalFx() {
   const glowRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
   const [enabled, setEnabled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const fine = window.matchMedia("(pointer: fine)").matches;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!fine || reduced) return;
@@ -57,7 +60,7 @@ export default function GlobalFx() {
     };
   }, []);
 
-  return (
+  const fx = (
     <>
       {/* Scroll progress */}
       <div
@@ -71,15 +74,16 @@ export default function GlobalFx() {
       />
       {enabled && (
         <>
-          <div
-            ref={glowRef}
-            aria-hidden
-            className="fixed top-0 left-0 w-[560px] h-[560px] pointer-events-none z-0 hidden md:block"
-            style={{
-              background: "radial-gradient(circle, hsl(247 93% 64% / 0.08), transparent 70%)",
-              willChange: "transform",
-            }}
-          />
+          <div aria-hidden className="fixed inset-0 z-[9997] pointer-events-none overflow-visible">
+            <div
+              ref={glowRef}
+              className="fixed top-0 left-0 w-[560px] h-[560px] pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, hsl(247 93% 64% / 0.08), transparent 70%)",
+                willChange: "transform",
+              }}
+            />
+          </div>
           <div
             ref={ringRef}
             aria-hidden
@@ -104,6 +108,8 @@ export default function GlobalFx() {
       )}
     </>
   );
+
+  return mounted ? createPortal(fx, document.body) : null;
 }
 
 /** Adds 3D tilt + cursor spotlight to children via CSS variables. */
