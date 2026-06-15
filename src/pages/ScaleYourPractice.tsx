@@ -182,11 +182,13 @@ export default function ScaleYourPractice() {
                     <article className="h-full bg-white/95 border border-brand-purple/10 rounded-[18px] overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(38 92% 50% / 0.4), hsl(247 93% 64% / 0.6))" }} />
                       <div className="p-6">
-                        <div className="flex items-start justify-between gap-3">
-                          <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-amber-700 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full">{c.chip}</span>
-                          <div className="w-11 h-11 rounded-xl bg-brand-purple/8 flex items-center justify-center"><c.icon size={20} className="text-brand-purple" /></div>
+                        <div className="flex items-start gap-3">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><c.icon size={20} className="text-white" /></div>
+                          <div className="min-w-0 flex-1">
+                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-amber-700 block mb-1">{c.chip}</span>
+                            <h3 className="font-bold text-brand-deep text-[16px] leading-tight">{c.h3}</h3>
+                          </div>
                         </div>
-                        <h3 className="font-bold text-brand-deep text-[16px] mt-3">{c.h3}</h3>
                         <p className="text-[13px] text-ink-secondary mt-1.5 leading-[1.65]">{c.body}</p>
                         <p className="mt-3 text-[12px] text-ink-muted"><span className="font-mono-ui text-[10px] uppercase text-amber-600">Scale Risk: </span>{c.impact}</p>
                       </div>
