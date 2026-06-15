@@ -599,16 +599,12 @@ export default function BrandingRebranding() {
             <div className="mt-12 grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-16 items-start">
               <nav aria-label="Phase index" className="hidden lg:block lg:sticky lg:top-28">
                 <ol className="list-none p-0 m-0 border-t border-brand-purple/20">
-                  {PHASES.map((e, i) => {
-                    const active = activePhase === i;
+                  {PHASES.map((e) => {
                     return (
                       <li key={e.n} className="border-b border-brand-purple/20">
                         <a
                           href={`#phase-${e.n}`}
-                          onClick={() => setActivePhase(i)}
-                          className={`block py-4 transition-all font-black ${
-                            active ? "text-brand-purple pl-5" : "text-brand-deep/55 hover:text-brand-purple"
-                          }`}
+                          className="block py-4 font-black text-brand-deep/55 hover:text-brand-purple"
                           style={{ letterSpacing: "-0.01em" }}
                         >
                           <span className="font-mono-ui text-[10.5px] uppercase tracking-[0.14em] block mb-1 opacity-80">
