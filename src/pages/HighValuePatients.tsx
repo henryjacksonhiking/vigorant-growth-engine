@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Smile, Activity, Stethoscope, FileText, Megaphone, Search, Sparkles, Layout, Star, Video, Phone, Bell, BarChart2, Check, Minus, ExternalLink, X, CheckCircle } from "lucide-react";
+import { ArrowRight, Calendar, Smile, Bone, Stethoscope, FileText, Megaphone, Search, Sparkles, Layout, Star, Video, Phone, Bell, BarChart2, Check, Minus, ExternalLink, X, CheckCircle } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import StickyCTA from "@/components/site/StickyCTA";
@@ -25,7 +25,7 @@ const FAQS = [
 
 const SPECS = [
   { tag: "Dental", icon: Smile, h3: "Dental High-Production Patients", focus: "Implants · Cosmetic · Crowns · Aligners", body: "Implant patients, cosmetic dentistry patients, full-mouth treatment candidates, clear aligner patients, and high-value crown cases generate significantly more production per visit than routine hygiene — and they require targeted visibility, specific service pages, and trust content to convert.", chips: ["Dental Implants", "Cosmetic Dentistry", "Clear Aligners", "Crown Cases"], cta: { label: "Dental Practice Marketing", to: "/solutions/dental" } },
-  { tag: "Chiropractic", icon: Activity, h3: "Chiropractic High-Production Patients", focus: "Cash-Pay · Wellness Plans · Sports · PI", body: "Cash-pay wellness patients, recurring chiropractic care plan patients, sports performance patients, and higher-intent injury or PI patients who complete full care plans typically produce more revenue than single-visit injury visits.", chips: ["Cash-Pay Wellness", "Care Plan Patients", "Sports Performance", "Multi-Visit Plans"], cta: { label: "Chiropractic Marketing Solutions", to: "/solutions/chiropractic" } },
+  { tag: "Chiropractic", icon: Bone, h3: "Chiropractic High-Production Patients", focus: "Cash-Pay · Wellness Plans · Sports · PI", body: "Cash-pay wellness patients, recurring chiropractic care plan patients, sports performance patients, and higher-intent injury or PI patients who complete full care plans typically produce more revenue than single-visit injury visits.", chips: ["Cash-Pay Wellness", "Care Plan Patients", "Sports Performance", "Multi-Visit Plans"], cta: { label: "Chiropractic Marketing Solutions", to: "/solutions/chiropractic" } },
   { tag: "Medical & Elective", icon: Stethoscope, h3: "Medical and Elective High-Production Patients", focus: "Elective Consults · Cash-Pay · Specialty · Concierge", body: "Elective procedure patients, cash-pay and private-pay patients, specialty service seekers, and patients interested in concierge or functional medicine practices represent higher revenue per case with stronger loyalty and referral potential.", chips: ["Elective Procedures", "Cash-Pay Services", "Concierge Medicine", "Specialty Care"], cta: { label: "Medical Marketing Solutions", to: "/solutions/medical" } },
 ];
 
@@ -104,26 +104,49 @@ export default function HighValuePatients() {
                     </div>
                   </div>
                   <div className="h-px bg-brand-purple/10 my-3" />
-                  <div>
-                    <div className="font-mono-ui text-[10px] uppercase text-rose-600/70 mb-2">Current Schedule</div>
-                    {["Hygiene · $120", "Check-up · $80", "Hygiene · $120", "Crown + Hygiene", "Hygiene · $120", "Implant Consult", "Check-up · $80"].map((l, i) => (
-                      <div key={i} className="flex items-center gap-2 mb-1">
-                        <div className="flex-1 h-5 rounded bg-amber-300/30" />
-                        <span className="font-mono-ui text-[10px] text-ink-muted min-w-[110px]">{l}</span>
-                      </div>
-                    ))}
-                    <p className="font-mono-ui text-[11px] text-rose-600/70 mt-2 mb-0">Full schedule · Low production</p>
-                  </div>
-                  <div className="text-center my-3"><ArrowRight size={16} className="text-brand-purple inline-block rotate-90" /></div>
-                  <div>
-                    <div className="font-mono-ui text-[10px] uppercase text-emerald-600 mb-2">Target Mix</div>
-                    {["Implant Case · $3,200", "Crown + Hygiene", "Cosmetic Consult · $850", "Implant Case · $3,200", "Clear Aligner + Exam", "Cosmetic Case", "Implant Surgery · $4,100"].map((l, i) => (
-                      <div key={i} className="flex items-center gap-2 mb-1">
-                        <div className="flex-1 h-5 rounded" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
-                        <span className="font-mono-ui text-[10px] text-brand-deep min-w-[110px]">{l}</span>
-                      </div>
-                    ))}
-                    <p className="font-mono-ui text-[11px] text-emerald-600 mt-2 mb-0">Same hours · Higher production</p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-rose-600/80 mb-2">Current Mix</div>
+                      <ul className="list-none p-0 m-0 space-y-1.5">
+                        {[
+                          { l: "Hygiene", v: 70 },
+                          { l: "Check-ups", v: 60 },
+                          { l: "Implants", v: 10 },
+                          { l: "Cosmetic", v: 8 },
+                        ].map((r) => (
+                          <li key={r.l}>
+                            <div className="flex justify-between font-mono-ui text-[10px] text-ink-secondary mb-0.5">
+                              <span>{r.l}</span><span>{r.v}%</span>
+                            </div>
+                            <div className="h-2 rounded bg-amber-300/20 overflow-hidden">
+                              <div className="h-full rounded bg-amber-400/60" style={{ width: `${r.v}%` }} />
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="font-mono-ui text-[10px] text-rose-600/70 mt-2 mb-0">Full schedule · Low production</p>
+                    </div>
+                    <div>
+                      <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-emerald-600 mb-2">Optimized Mix</div>
+                      <ul className="list-none p-0 m-0 space-y-1.5">
+                        {[
+                          { l: "Hygiene", v: 40 },
+                          { l: "Check-ups", v: 25 },
+                          { l: "Implants", v: 50 },
+                          { l: "Cosmetic", v: 45 },
+                        ].map((r) => (
+                          <li key={r.l}>
+                            <div className="flex justify-between font-mono-ui text-[10px] text-brand-deep mb-0.5">
+                              <span>{r.l}</span><span>{r.v}%</span>
+                            </div>
+                            <div className="h-2 rounded bg-brand-purple/10 overflow-hidden">
+                              <div className="h-full rounded" style={{ width: `${r.v}%`, background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="font-mono-ui text-[10px] text-emerald-600 mt-2 mb-0">Same hours · Higher production</p>
+                    </div>
                   </div>
                   <p className="font-mono-ui text-[10px] text-ink-muted text-center mt-3 mb-0">Illustrative. Actual production depends on specialty, market, and case mix.</p>
                 </div>

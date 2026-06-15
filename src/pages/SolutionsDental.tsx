@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight, Search, Megaphone, MousePointerClick, Star, BarChart2, Home, Sparkles,
-  AlignCenter, Shield, Heart, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail,
-  MapPin, ChevronRight, Check, ExternalLink, AlertCircle,
+  ArrowRight, Search, Megaphone, MousePointerClick, Star, BarChart2, Sparkles,
+  Shield, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail,
+  MapPin, ChevronRight, Check, ExternalLink,
+  Stethoscope, Smile, Baby, Scissors,
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
@@ -31,16 +32,16 @@ const FAQS = [
 ];
 
 const SPECIALTIES = [
-  { tag: "General Dentistry", icon: Home, h3: "General Dentistry Marketing", goal: "Consistent new patient appointments, family care growth, hygiene recall, restorative production, and emergency visibility.", channels: ["Local SEO", "Google Maps", "Reputation", "Recall Email", "Paid Ads"], link: { label: "Getting More New Dental Patients", to: "/for-practices/more-new-patients" } },
+  { tag: "General Dentistry", icon: Stethoscope, h3: "General Dentistry Marketing", goal: "Consistent new patient appointments, family care growth, hygiene recall, restorative production, and emergency visibility.", channels: ["Local SEO", "Google Maps", "Reputation", "Recall Email", "Paid Ads"], link: { label: "Getting More New Dental Patients", to: "/for-practices/more-new-patients" } },
   { tag: "Cosmetic Dentistry", icon: Sparkles, h3: "Cosmetic Dentistry Marketing", goal: "High-value elective cases — veneers, smile makeovers, whitening, premium positioning, and consultation conversion.", channels: ["Paid Ads", "Landing Pages", "Video", "Before/After Proof", "Trust Content"], link: { label: "Attract High-Production Patients", to: "/for-practices/high-value-patients" } },
-  { tag: "Orthodontics", icon: AlignCenter, h3: "Orthodontic Marketing", goal: "Invisalign, braces, adult and teen aligner consults, family ortho visibility, financing messaging, and consultation conversion.", channels: ["Google Ads", "Local SEO", "Parent Education", "Social", "Landing Pages"], link: { label: "Dental Paid Ads", to: "/solutions/dental/paid-ads" } },
-  { tag: "Oral Surgery", icon: Shield, h3: "Oral Surgery Marketing", goal: "Dental implant demand, wisdom tooth extraction, referral visibility, procedure-specific landing pages, and trust-first call conversion.", channels: ["Implant Landing Pages", "Google Ads", "Video", "Doctor Authority", "AI Visibility"], link: { label: "High-Value Patient Marketing", to: "/for-practices/high-value-patients" } },
-  { tag: "Pediatric Dentistry", icon: Heart, h3: "Pediatric Dental Marketing", goal: "Parent trust, local family visibility, child-friendly brand, preventive care growth, reviews, and Maps prominence.", channels: ["Local SEO", "Google Maps", "Reviews", "Social Media", "Video"], link: { label: "Online Reputation & Reviews", to: "/for-practices/online-reputation" } },
+  { tag: "Orthodontics", icon: Smile, h3: "Orthodontic Marketing", goal: "Invisalign, braces, adult and teen aligner consults, family ortho visibility, financing messaging, and consultation conversion.", channels: ["Google Ads", "Local SEO", "Parent Education", "Social", "Landing Pages"], link: { label: "Dental Paid Ads", to: "/solutions/dental/paid-ads" } },
+  { tag: "Oral Surgery", icon: Scissors, h3: "Oral Surgery Marketing", goal: "Dental implant demand, wisdom tooth extraction, referral visibility, procedure-specific landing pages, and trust-first call conversion.", channels: ["Implant Landing Pages", "Google Ads", "Video", "Doctor Authority", "AI Visibility"], link: { label: "High-Value Patient Marketing", to: "/for-practices/high-value-patients" } },
+  { tag: "Pediatric Dentistry", icon: Baby, h3: "Pediatric Dental Marketing", goal: "Parent trust, local family visibility, child-friendly brand, preventive care growth, reviews, and Maps prominence.", channels: ["Local SEO", "Google Maps", "Reviews", "Social Media", "Video"], link: { label: "Online Reputation & Reviews", to: "/for-practices/online-reputation" } },
 ];
 
 const PILLARS = [
   { tag: "VISIBILITY", icon: Search, h3: "Dental Visibility", body: "Local SEO, Google Maps optimization, Google Business Profile management, AI search presence, review signals, and service-page architecture that ensures your dental practice appears wherever patients search for care.", link: { label: "Dental SEO & AI Search Visibility", to: "/solutions/dental/seo" }, outcomes: ["Google local pack rankings for key dental services", "AI search citation potential", "Maps actions and direction requests"] },
-  { tag: "ACQUISITION", icon: Megaphone, h3: "Dental Patient Acquisition", body: "Specialty-targeted Google and Meta campaigns, implant and cosmetic landing pages, offer-message alignment, and call tracking that turn paid and organic demand into qualified patient inquiries.", link: { label: "Dental Paid Ads Campaigns", to: "/solutions/dental/paid-ads" }, outcomes: ["Implant, cosmetic, and ortho campaign leads", "Qualified calls and form submissions", "Cost per qualified new patient inquiry"] },
+  { tag: "ACQUISITION", icon: Megaphone, h3: "Dental Patient Acquisition", body: "Specialty-targeted Google and Meta campaigns, implant and cosmetic landing pages, offer-message alignment, and call tracking that turn paid and organic demand into qualified patient inquiries.", link: { label: "Dental Paid Ads Campaigns", to: "/solutions/dental/paid-ads" }, outcomes: ["High-intent leads for priority dental services", "Qualified calls and form submissions", "Lower cost per qualified new-patient inquiry"] },
   { tag: "CONVERSION", icon: MousePointerClick, h3: "Dental Conversion Optimization", body: "Conversion-first website design, mobile performance, appointment booking flows, treatment-specific landing pages, call handling improvements, and follow-up systems that turn visitors into booked patients.", link: { label: "Dental Website Design & Development", to: "/solutions/dental/website-design" }, outcomes: ["Website conversion rate improvement", "Appointment request and call volume", "Landing page conversion by treatment"] },
   { tag: "REPUTATION", icon: Star, h3: "Dental Reputation and Trust", body: "Review generation strategy, response management, doctor credibility content, before/after case proof, patient testimonials, and social proof that builds trust before the first call.", link: { label: "Dental Social Media & Reputation", to: "/solutions/dental/social-media" }, outcomes: ["Review volume and rating trajectory", "Trust signals near conversion points", "Review velocity vs local competitors"] },
   { tag: "INTELLIGENCE", icon: BarChart2, h3: "Dental Growth Intelligence", body: "Attribution dashboards, patient source tracking, campaign performance analysis, optimization cycles, and reporting that connect marketing activity to calls, appointments, treatment opportunities, and production.", link: { label: "See how we track and optimize", to: "/how-it-works" }, outcomes: ["Source-to-appointment attribution", "Cost per booked appointment", "Monthly optimization based on patient data"] },
@@ -225,18 +226,6 @@ export default function SolutionsDental() {
                 </Reveal>
               ))}
             </div>
-            <div className="mt-10 flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
-              {[
-                "Low new-patient volume despite marketing spend",
-                "Implant and cosmetic cases inconsistent",
-                "Poor Google Maps visibility for key services",
-                "Reports show clicks, not booked appointments",
-              ].map(c => (
-                <span key={c} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-2xl px-3.5 py-2.5 font-mono-ui text-[12px] text-white/75">
-                  <AlertCircle size={14} className="text-amber-500/80" /> {c}
-                </span>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -322,7 +311,6 @@ export default function SolutionsDental() {
                             <s.icon size={20} className="text-white" />
                           </div>
                           <div className="min-w-0 flex-1">
-                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{s.tag}</span>
                             <h3 className="ui-card-heading text-[16px]">{s.h3}</h3>
                           </div>
                         </div>
@@ -444,11 +432,11 @@ export default function SolutionsDental() {
                 <div className="h-full flex flex-col bg-white border border-brand-purple/15 rounded-2xl p-7">
                   <h3 className="font-bold text-brand-deep text-[17px] min-h-[1.6em] leading-[1.3]">From Rankings to Revenue Signals</h3>
                   <p className="mt-2 text-[14px] text-ink-secondary leading-relaxed">A dentist's marketing ROI is not measured in keyword positions or traffic sessions. It is measured in the chain: visibility → traffic → qualified calls/forms → booked appointments → treatment opportunities → production.</p>
-                  <div className="flex flex-wrap items-center gap-1 mt-4">
+                  <div className="flex flex-wrap items-center gap-2 mt-4">
                     {["Visibility", "Traffic", "Qualified Leads", "Booked Appointments", "Production"].map((c, i, arr) => (
-                      <span key={c} className="flex items-center gap-1">
-                        <span className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/8 border border-brand-purple/15 rounded-full px-2.5 py-1">{c}</span>
-                        {i < arr.length - 1 && <ChevronRight size={12} className="text-brand-lavender" />}
+                      <span key={c} className="flex items-center gap-2">
+                        <span className="font-mono-ui text-[11px] text-brand-deep font-semibold">{c}</span>
+                        {i < arr.length - 1 && <ChevronRight size={14} className="text-brand-lavender" />}
                       </span>
                     ))}
                   </div>
@@ -487,9 +475,9 @@ export default function SolutionsDental() {
               <div className="bg-brand-purple/5 border border-brand-purple/15 rounded-2xl p-6 flex gap-4">
                 <Sparkles size={20} className="text-brand-purple flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple mb-1.5">AI Visibility Answer · AIO/GEO Ready</div>
-                  <p className="text-[14px] text-brand-deep leading-[1.78] italic m-0">
-                    "AI search affects dental patient acquisition because more patients are using tools like Google AI features, ChatGPT, Claude, and Perplexity to compare providers, understand procedures, and ask for local recommendations. Dental practices need structured content, local authority, reviews, clear service pages, and entity consistency to be eligible for AI-driven recommendations."
+                  <div className="font-mono-ui text-[10px] uppercase tracking-[0.1em] text-brand-purple mb-1.5">Why Modern Dental Marketing Includes AI Visibility</div>
+                  <p className="text-[14px] text-brand-deep leading-[1.78] m-0">
+                    Patients now discover dental practices across Google, Maps, reviews, websites, social platforms, and AI-powered answer engines. A modern dental marketing strategy helps your practice stay visible, credible, and easy to choose wherever patients are making decisions.
                   </p>
                   <Link to="/solutions/dental/seo" className="mt-2 inline-flex items-center gap-1.5 text-brand-purple font-medium text-[13px]">
                     Dental AI Search Visibility <ArrowRight size={13} />
@@ -576,13 +564,13 @@ export default function SolutionsDental() {
             <Reveal className="text-center max-w-2xl mx-auto">
               <ChipLabel>Dental Marketing Results</ChipLabel>
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>
-                Real Results From<br /><GradientText>Dental Practice Campaigns</GradientText>
+                Dental Marketing Results<br /><GradientText>Built Around Real Patient Outcomes</GradientText>
               </h2>
             </Reveal>
             <div className="grid md:grid-cols-3 gap-5 mt-12 max-w-5xl mx-auto">
               {[
-                { who: "General Dental Practice · Phoenix, AZ", n: "+34", l: "new patients / month", problem: "Low local visibility and no implant-specific landing pages.", chips: ["Local SEO", "Google Ads", "Landing Pages"], when: "within 60 days", quote: "We went from invisible in Maps to ranking in the top 3 for dental implants in our market." },
-                { who: "Cosmetic Dental Practice · Austin, TX", n: "+18", l: "cosmetic consults / month", problem: "Traffic existed but no cosmetic-specific conversion path.", chips: ["Cosmetic Landing Page", "Paid Ads", "Video"], when: "within 45 days", quote: "The procedure-specific landing page changed everything for our cosmetic inquiries." },
+                { who: "General Dental Practice · Phoenix, AZ", n: "+34", l: "New Patients Per Month", problem: "The practice had low Google Maps visibility and no implant-focused landing pages.", chips: ["Local SEO", "Google Ads", "Implant Landing Pages"], when: "Within 60 days", quote: "The practice moved from low local visibility to ranking in the top 3 for dental implant searches in its market." },
+                { who: "Cosmetic Dental Practice · Austin, TX", n: "+18", l: "Cosmetic Consults Per Month", problem: "Traffic existed but no cosmetic-specific conversion path.", chips: ["Cosmetic Landing Page", "Paid Ads", "Video"], when: "within 45 days", quote: "The procedure-specific landing page changed everything for our cosmetic inquiries." },
                 { who: "Multi-Location Dental Group · Denver, CO", n: "↓41%", l: "cost per new patient", problem: "Multi-location ads producing inconsistent results across markets.", chips: ["Location SEO", "Ads", "Attribution"], when: "within 90 days", quote: "Now each location has its own measurement — we can see exactly where to invest more." },
               ].map((p, i) => (
                 <Reveal key={p.who} delay={i * 0.08} className="h-full">

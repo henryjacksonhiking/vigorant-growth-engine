@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Shield, Heart, Activity, Users, Layers, Search, Megaphone, MousePointerClick, Star, BarChart2, Eye, ShieldCheck, RefreshCw, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail, AlertCircle, Check, ExternalLink, SearchX, ShieldAlert, TrendingDown, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Search, Megaphone, MousePointerClick, BarChart2, Eye, ShieldCheck, RefreshCw, Lightbulb, Palette, Layout, Share2, Video, FileText, Mail, AlertCircle, ExternalLink, SearchX, ShieldAlert, TrendingDown, ChevronRight } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import StickyCTA from "@/components/site/StickyCTA";
@@ -22,11 +22,8 @@ const FAQS = [
 ];
 
 const SEGMENTS = [
-  { tag: "Personal Injury", icon: Shield, h3: "Personal Injury Chiropractic Marketing", intent: "car accident chiropractor; personal injury chiropractor near me; whiplash treatment; neck pain after accident", channels: ["Google Ads", "Landing Pages", "Local SEO", "Reviews"], conv: "Fast availability, documentation confidence, injury-focused care proof, local trust.", link: { label: "PI Landing Pages", to: "/solutions/chiropractic/landing-pages" } },
-  { tag: "Wellness", icon: Heart, h3: "Wellness Chiropractic Marketing", intent: "wellness chiropractor; preventative chiropractic care; chiropractic maintenance; ongoing mobility", channels: ["SEO", "Email", "Social", "Video", "Patient Education"], conv: "Recurring care relationship, lifestyle benefit messaging, family trust, plan value.", link: { label: "Predictable Patient Flow", to: "/for-practices/predictable-patient-flow" } },
-  { tag: "Sports", icon: Activity, h3: "Sports Chiropractic Marketing", intent: "sports chiropractor near me; athlete chiropractic care; sports injury recovery; performance care", channels: ["Paid Ads", "Video", "Local SEO", "Social"], conv: "Performance, recovery speed, athlete-specific credibility, fast return to activity.", link: { label: "High-Value Patient Marketing", to: "/for-practices/high-value-patients" } },
-  { tag: "Family", icon: Users, h3: "Family Chiropractic Marketing", intent: "family chiropractor; chiropractor for kids; pediatric chiropractor; family wellness chiropractic", channels: ["Local SEO", "Reviews", "Social Media", "Education Content"], conv: "Comfort, trust, long-term family wellness, multi-member care plans.", link: { label: "Chiropractic Reputation", to: "/for-practices/online-reputation" } },
-  { tag: "Corrective Care", icon: Layers, h3: "Corrective Care & Decompression Marketing", intent: "spinal decompression; corrective chiropractic care; disc treatment; posture correction", channels: ["Paid Ads", "SEO Landing Pages", "Video", "Educational Content"], conv: "Condition-specific education, treatment explanation, consultation-focused CTA.", link: { label: "Chiropractic Landing Pages", to: "/solutions/chiropractic/landing-pages" } },
+  { h3: "Personal Injury Chiropractic Marketing", demand: "Car accident, whiplash, and injury-related searches.", channels: ["Google Ads", "Landing Pages", "Local SEO", "Reviews"], conv: "Build trust quickly with availability, documentation support, and injury-focused proof.", link: { label: "Explore PI Landing Pages", to: "/solutions/chiropractic/landing-pages" } },
+  { h3: "Wellness Chiropractic Marketing", demand: "Preventive care, maintenance visits, and ongoing mobility support.", channels: ["SEO", "Email", "Social", "Video", "Patient Education"], conv: "Create recurring patient relationships through education, trust, and lifestyle-focused messaging.", link: { label: "Predictable Patient Flow", to: "/for-practices/predictable-patient-flow" } },
 ];
 
 const ENGINE = [
@@ -82,9 +79,7 @@ export default function SolutionsChiropractic() {
             <div className="grid lg:grid-cols-[1.27fr_1fr] gap-12 items-center">
               <div>
                 <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Chiropractic Marketing" }]} />
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {["Local SEO", "Google Maps", "Paid Ads", "Websites", "Reviews", "AI Visibility"].map(c => <span key={c} className="font-mono-ui text-[11px] text-brand-purple bg-brand-purple/8 border border-brand-purple/15 rounded-full px-3 py-1">{c}</span>)}
-                </div>
+                <div className="mb-6" />
                 <h1 className="font-serif font-bold text-brand-deep leading-[1.05] tracking-tight" style={{ fontSize: "clamp(34px, 6vw, 60px)", letterSpacing: "-0.025em" }}>
                   <Line delay={0.1}>Chiropractic Marketing That Helps You</Line>
                   <Line delay={0.22}>Get Found, Chosen, and Booked</Line>
@@ -97,7 +92,7 @@ export default function SolutionsChiropractic() {
                   <PrimaryCTA to="/free-audit">{AUDIT} <ArrowRight size={16} /></PrimaryCTA>
                   <SecondaryCTA onClick={() => document.getElementById("chiropractic-services")?.scrollIntoView({ behavior: "smooth" })}>Explore Chiropractic Growth Services ↓</SecondaryCTA>
                 </div>
-                <p className="mt-5 font-mono-ui text-[12px] text-ink-muted">No obligation. We review your website, Google visibility, competitors, and patient-conversion gaps.</p>
+                
               </div>
               <Reveal delay={0.2}>
                 <div className="bg-background border border-brand-purple/15 rounded-2xl p-6 sm:p-7" style={{ boxShadow: "0 24px 80px hsl(248 49% 15% / 0.09)" }}>
@@ -201,24 +196,27 @@ export default function SolutionsChiropractic() {
               <ChipLabel>By Patient Type</ChipLabel>
               <h2 className="font-extrabold text-brand-deep leading-[1.1] mt-4" style={{ fontSize: "clamp(26px, 4.5vw, 42px)", letterSpacing: "-0.03em" }}>Chiropractic Marketing <GradientText>by Patient Type</GradientText></h2>
             </Reveal>
-            <ul className="ui-card-grid list-none p-0 m-0 grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 max-w-5xl mx-auto">
+            <ul className="ui-card-grid list-none p-0 m-0 grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto">
               {SEGMENTS.map((s, i) => (
-                <Reveal key={s.tag} delay={i * 0.06} className="h-full">
+                <Reveal key={s.h3} delay={i * 0.06} className="h-full">
                   <li>
                     <article className="ui-card bg-white/95 border-brand-purple/10 rounded-2xl p-0 overflow-hidden hover:border-brand-purple/35 hover:-translate-y-1.5 transition-all">
                       <div className="h-1" style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))" }} />
-                      <div className="p-6 ui-card-body">
-                        <div className="flex items-start gap-3">
-                          <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}><s.icon size={20} className="text-white" /></div>
-                          <div className="min-w-0 flex-1">
-                            <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple block mb-1">{s.tag}</span>
-                            <h3 className="ui-card-heading text-[16px]">{s.h3}</h3>
-                          </div>
+                      <div className="p-7 ui-card-body">
+                        <h3 className="ui-card-heading text-[18px]">{s.h3}</h3>
+                        <div className="mt-4">
+                          <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">Patient Demand</div>
+                          <p className="mt-1 text-[13px] text-ink-secondary leading-relaxed">{s.demand}</p>
                         </div>
-                        <p className="mt-2 text-[13px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-ink-muted">Intent: </span>{s.intent}</p>
-                        <div className="ui-pill-row mt-2">{s.channels.map(c => <span key={c} className="inline-flex min-h-[24px] items-center font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 rounded-full px-2 py-0.5">{c}</span>)}</div>
-                        <p className="mt-3 text-[12px] text-ink-secondary"><span className="font-mono-ui text-[10px] uppercase text-emerald-600">Conversion: </span>{s.conv}</p>
-                        <Link to={s.link.to} className="ui-card-cta text-brand-purple text-[12px]">{s.link.label} <ArrowRight size={12} /></Link>
+                        <div className="mt-3">
+                          <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple">Growth Channels</div>
+                          <p className="mt-1 text-[13px] text-ink-secondary leading-relaxed">{s.channels.join(" · ")}</p>
+                        </div>
+                        <div className="mt-3">
+                          <div className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-emerald-600">Conversion Focus</div>
+                          <p className="mt-1 text-[13px] text-ink-secondary leading-relaxed">{s.conv}</p>
+                        </div>
+                        <Link to={s.link.to} className="ui-card-cta text-brand-purple text-[13px] mt-4">{s.link.label} <ArrowRight size={13} /></Link>
                       </div>
                     </article>
                   </li>

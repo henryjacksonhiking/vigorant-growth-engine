@@ -981,22 +981,6 @@ export default function MarketingStrategy() {
             </Reveal>
           </div>
         </section>
-
-        {/* Authority reference */}
-        <div className="border-t border-brand-purple/10 py-5 px-6 text-center">
-          <p className="font-mono-ui text-[11.5px] text-ink-muted/70">
-            External reference:{" "}
-            <a
-              href="https://www.cdc.gov/healthcommunication/"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="text-brand-purple underline underline-offset-4"
-            >
-              CDC Health Communication Resources
-            </a>{" "}
-            — referenced in healthcare marketing strategy and patient communication planning.
-          </p>
-        </div>
       </main>
 
       <Footer />

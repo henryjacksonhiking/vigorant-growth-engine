@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, ChevronRight, ChevronDown, TrendingDown, Search, Users, Globe, Layout, MessageSquare,
   Phone, CalendarCheck, RotateCcw, BarChart2, EyeOff, MapPin, Megaphone, MousePointerClick,
-  Smile, Activity, Stethoscope, AlertTriangle, Check, Plus, X,
+  Smile, Activity, Stethoscope, AlertTriangle, Check, Plus, X, Bone,
 } from "lucide-react";
 import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
@@ -592,7 +592,7 @@ function System() {
 /* ---------- Section 7: Specialties ---------- */
 const SPECIALTIES = [
   { tag: "Dental", Icon: Smile, h3: "Dental Practice Marketing", focus: "Implants · Cosmetic · New-Patient Exams · Emergency", body: "Dental practices need new-patient exams, high-value treatment inquiries (implants, Invisalign, cosmetic dentistry), emergency care visibility, and family care acquisition — with local SEO, paid search, reviews, and conversion-focused websites.", chips: ["New-Patient Exams", "Implants & Cosmetic", "Local SEO", "Google Ads"], cta: "Explore Dental Marketing →", href: "/solutions/dental", key: "dental" },
-  { tag: "Chiropractic", Icon: Activity, h3: "Chiropractic Marketing", focus: "Local Demand · PI Care · Wellness · Reviews", body: "Chiropractic practices depend on local search dominance, high-intent symptom-based queries, strong reviews, fast booking conversion, and consistent patient flow across PI, wellness, and sports chiropractic models.", chips: ["Local SEO", "PI & Wellness", "Review Velocity", "Call Conversion"], cta: "Explore Chiropractic Marketing →", href: "/solutions/chiropractic", key: "chiropractic" },
+  { tag: "Chiropractic", Icon: Bone, h3: "Chiropractic Marketing", focus: "Local Demand · PI Care · Wellness · Reviews", body: "Chiropractic practices depend on local search dominance, high-intent symptom-based queries, strong reviews, fast booking conversion, and consistent patient flow across PI, wellness, and sports chiropractic models.", chips: ["Local SEO", "PI & Wellness", "Review Velocity", "Call Conversion"], cta: "Explore Chiropractic Marketing →", href: "/solutions/chiropractic", key: "chiropractic" },
   { tag: "Medical", Icon: Stethoscope, h3: "Medical Practice Marketing", focus: "Elective Services · Private Practice · Specialist Visibility", body: "Medical and specialty practices need visibility for elective and cash-pay services, trust signals that support high-consideration decisions, multi-provider visibility, and conversion paths built around longer patient research cycles.", chips: ["Elective Services", "Cash-Pay Growth", "Specialist SEO", "Trust Signals"], cta: "Explore Medical Marketing →", href: "/solutions/medical", key: "medical" },
 ];
 function SpecialtyCard({ s, i }: { s: typeof SPECIALTIES[number]; i: number }) {
