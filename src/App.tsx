@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import DarkSectionTagger from "./components/DarkSectionTagger";
+import CardGridAligner from "./components/CardGridAligner";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -59,6 +60,7 @@ const App = () => (
         <BrowserRouter>
           <ScrollToTop />
           <DarkSectionTagger />
+          <CardGridAligner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/for-practices" element={<ForPractices />} />

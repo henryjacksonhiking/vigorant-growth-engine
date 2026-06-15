@@ -221,50 +221,63 @@
   .ui-card-grid {
     @apply items-stretch;
     grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+  .ui-card-grid > *,
+  .ui-card-grid > div,
+  .ui-card-grid > li,
+  .ui-card-grid > div > li {
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .ui-card-shell {
-    @apply h-full flex flex-col;
+    @apply h-full w-full min-w-0 flex flex-col;
   }
   .ui-card {
-    @apply h-full flex flex-col rounded-2xl border p-6 sm:p-7;
+    @apply h-full w-full min-w-0 flex flex-col rounded-2xl border p-6 sm:p-7;
     border-color: hsl(var(--brand-purple) / 0.12);
     background: hsl(var(--background));
     box-shadow: var(--shadow-card);
-    min-width: 0;
   }
   .ui-card-compact {
-    @apply h-full flex flex-col rounded-xl border p-5;
+    @apply h-full w-full min-w-0 flex flex-col rounded-xl border p-5;
     border-color: hsl(var(--brand-purple) / 0.12);
     background: hsl(var(--background));
     box-shadow: var(--shadow-card);
   }
   .ui-card-dark {
-    @apply h-full flex flex-col rounded-2xl border p-6 sm:p-7;
+    @apply h-full w-full min-w-0 flex flex-col rounded-2xl border p-6 sm:p-7;
     border-color: hsl(var(--brand-lavender) / 0.2);
     background: hsl(0 0% 100% / 0.05);
     box-shadow: var(--shadow-card);
   }
   .ui-card-body {
-    @apply flex flex-1 flex-col;
+    @apply min-w-0 flex flex-1 flex-col;
   }
   .ui-card-heading {
     @apply text-brand-deep font-bold leading-[1.28];
-    min-height: calc(1.28em * 2);
+    min-height: calc(1.28em * var(--card-heading-lines, 2));
   }
   .ui-card-heading-dark {
     @apply text-white font-bold leading-[1.28];
-    min-height: calc(1.28em * 2);
+    min-height: calc(1.28em * var(--card-heading-lines, 2));
   }
   .ui-card-text {
     @apply mt-2 text-[14px] leading-[1.7] text-ink-secondary;
+    min-height: calc(1.7em * var(--card-text-lines, 2));
     flex: 1 1 auto;
   }
   .ui-card-text-dark {
     @apply mt-2 text-[14px] leading-[1.7] text-white/90;
+    min-height: calc(1.7em * var(--card-text-lines, 2));
     flex: 1 1 auto;
   }
   .ui-card-cta {
     @apply mt-auto pt-5 inline-flex items-center gap-1.5 font-semibold;
+    align-self: flex-start;
   }
   .ui-pill-row {
     @apply flex flex-wrap gap-2;
@@ -289,21 +302,29 @@
     background: hsl(var(--brand-purple) / 0.1);
   }
 
-  /* Equal-height cards: make Reveal/motion grid wrappers fill the grid cell so child .h-full works */
-  .grid > div:has(> article),
-  .grid > div:has(> .h-full),
-  .grid > div:has(> .rounded-2xl),
-  .grid > div:has(> .rounded-xl) {
+  /* Equal-height card groups: motion/list wrappers fill grid cells so child cards inherit the full row height. */
+  main :is(.grid, .ui-card-grid):has(:is(> article, > li, > div > article, > div > li, > div > .ui-card, > div > .rounded-2xl, > div > .rounded-xl)) {
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+  main :is(.grid, .ui-card-grid) > :is(article, li),
+  main :is(.grid, .ui-card-grid) > div:has(:is(> article, > li, > .ui-card, > .ui-card-dark, > .ui-card-compact, > .rounded-2xl, > .rounded-xl)),
+  main :is(.grid, .ui-card-grid) > div > li:has(:is(> article, > .ui-card, > .rounded-2xl, > .rounded-xl)) {
+    min-width: 0;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-  .grid > div:has(> article) > article,
-  .grid > div:has(> .h-full) > *,
-  .grid > div:has(> .rounded-2xl) > .rounded-2xl,
-  .grid > div:has(> .rounded-xl) > .rounded-xl {
-    flex: 1 1 auto;
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact),
+  main :is(.grid, .ui-card-grid) > div > :is(.rounded-2xl, .rounded-xl),
+  main :is(.grid, .ui-card-grid) > div > li > :is(article, .rounded-2xl, .rounded-xl) {
+    min-width: 0;
+    width: 100%;
     height: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Mobile: preserve explicit layout alignment instead of force-centering entire sections */
@@ -345,79 +366,33 @@
     }
   }
 
-  /* Equal-size cards across desktop & mobile: enforce uniform card
-     heights AND widths across every row of any card grid. */
-  .grid:has(> article),
-  .grid:has(> .rounded-2xl),
-  .grid:has(> .rounded-xl),
-  .grid:has(> div > article),
-  .grid:has(> div > .rounded-2xl),
-  .grid:has(> div > .rounded-xl) {
-    grid-auto-rows: 1fr;
-    align-items: stretch;
-  }
-  .grid > article,
-  .grid > .rounded-2xl,
-  .grid > .rounded-xl,
-  .grid > div,
-  .grid > div > article,
-  .grid > div > .rounded-2xl,
-  .grid > div > .rounded-xl {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .grid article > p,
-  .grid .rounded-2xl > p,
-  .grid .rounded-xl > p {
-    flex: 1 1 auto;
-  }
-
   /* ============================================================
      Horizontal slot alignment across cards in the same grid row.
-     Reserves equal vertical space for headings & lead paragraphs
-     so siblings line up regardless of content length.
+     Repeated card content is treated as stable slots: tag/icon,
+     heading, description, labels, lists/metrics, dividers, CTA.
      ============================================================ */
-  .grid > article h3,
-  .grid > article h4,
-  .grid > div > article h3,
-  .grid > div > article h4,
-  .grid > .rounded-2xl h3,
-  .grid > .rounded-2xl h4,
-  .grid > .rounded-xl h3,
-  .grid > .rounded-xl h4,
-  .grid > div > .rounded-2xl h3,
-  .grid > div > .rounded-2xl h4,
-  .grid > div > .rounded-xl h3,
-  .grid > div > .rounded-xl h4,
-  .grid > li h3,
-  .grid > li h4,
-  .grid > div > li h3,
-  .grid > div > li h4 {
-    min-height: calc(1.2em * 2);
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) > :is(div, span, h3, h4, p, ul, ol, a) { min-width: 0; }
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) :is(h3, h4),
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) :is(.ui-card-heading, .ui-card-heading-dark) {
+    min-height: calc(1.28em * var(--card-heading-lines, 2));
   }
-  /* Italic sub-headline (e.g. "Why isn't our marketing…") often 2 lines */
-  .grid > article p.italic,
-  .grid > div > article p.italic,
-  .grid > .rounded-2xl p.italic,
-  .grid > div > .rounded-2xl p.italic,
-  .grid > .rounded-xl p.italic,
-  .grid > div > .rounded-xl p.italic,
-  .grid > li p.italic,
-  .grid > div > li p.italic {
-    min-height: calc(1.5em * 2);
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) p:not(:empty) {
+    min-height: calc(1.65em * var(--card-text-lines, 2));
   }
-  /* Push trailing CTA link to the bottom edge so CTAs align across cards */
-  .grid > article > a:last-child,
-  .grid > div > article > a:last-child,
-  .grid > .rounded-2xl > a:last-child,
-  .grid > div > .rounded-2xl > a:last-child,
-  .grid > .rounded-xl > a:last-child,
-  .grid > div > .rounded-xl > a:last-child,
-  .grid > li > a:last-child,
-  .grid > div > li > a:last-child {
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) p.italic:not(:empty) {
+    min-height: calc(1.5em * var(--card-italic-lines, 2));
+  }
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) :is(.font-mono-ui, .section-label, .section-label-light):not(a) {
+    min-height: calc(1.25em * var(--card-label-lines, 1));
+  }
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) :is(.ui-pill-row, ul, ol) {
+    min-height: calc(1.55em * var(--card-list-lines, 2));
+  }
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) :is(a:last-child, .ui-card-cta),
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact) > div > :is(a:last-child, .ui-card-cta) {
     margin-top: auto;
+    padding-top: 1rem;
+    align-self: flex-start;
   }
 
   /* ============================================================
