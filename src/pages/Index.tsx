@@ -20,7 +20,6 @@ const Index = () => (
   <>
     <Seo />
     <a href="#main" className="skip-link">Skip to main content</a>
-    <GlobalFx />
     <Nav />
     <main id="main">
       <Hero />
