@@ -447,7 +447,7 @@ export default function About() {
                 A free, no-obligation review of your visibility, website, AI presence, and conversion gaps — with a
                 prioritized 90-day plan.
               </p>
-              <a href="#book" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+              <a href="#book" className="mt-8 btn-on-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold">
                 Book your free audit <ArrowRight size={18} className="ml-2" aria-hidden />
               </a>
             </Reveal>

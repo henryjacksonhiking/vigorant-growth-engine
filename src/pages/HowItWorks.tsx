@@ -380,7 +380,7 @@ export default function HowItWorks() {
               <h2 className="font-extrabold mt-3" style={{ fontSize: "clamp(28px, 5vw, 48px)", letterSpacing: "-0.03em" }}>
                 See exactly what your first 90 days would look like.
               </h2>
-              <a href="#book" className="mt-8 inline-flex items-center px-7 py-3.5 rounded-full bg-white text-brand-deep font-bold hover:bg-brand-lavender transition-colors">
+              <a href="#book" className="mt-8 btn-on-dark inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold">
                 Book your free audit <ArrowRight size={18} className="ml-2" aria-hidden />
               </a>
             </Reveal>
