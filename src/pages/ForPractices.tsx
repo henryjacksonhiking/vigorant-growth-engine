@@ -7,7 +7,7 @@ import {
   DollarSign, MapPin, Megaphone, MousePointerClick, ShieldCheck, BarChart2,
   EyeOff, BarChart, CalendarX, Plus, Check, Smile, Stethoscope, X
 } from "lucide-react";
-import GlobalFx, { Counter, useTilt } from "@/components/site/GlobalFx";
+import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 

@@ -5,7 +5,7 @@ import {
   ArrowRight, Target, Compass, Brain, Stethoscope, Activity, Smile,
   Sparkles, Check, X, Users, Award, BarChart2, ShieldCheck, Heart,
 } from "lucide-react";
-import GlobalFx, { Counter, useTilt } from "@/components/site/GlobalFx";
+import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 

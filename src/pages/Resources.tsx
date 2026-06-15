@@ -5,7 +5,7 @@ import {
   ArrowRight, BookOpen, BarChart3, Download, PlayCircle, Search, Brain,
   Smile, Activity, Stethoscope, FileText, Sparkles,
 } from "lucide-react";
-import GlobalFx, { useTilt } from "@/components/site/GlobalFx";
+import { useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 

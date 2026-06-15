@@ -5,7 +5,7 @@ import {
   ArrowRight, Smile, Activity, Stethoscope, Star, TrendingUp, Search,
   Megaphone, Layout, Quote, BarChart2,
 } from "lucide-react";
-import GlobalFx, { Counter, useTilt } from "@/components/site/GlobalFx";
+import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
