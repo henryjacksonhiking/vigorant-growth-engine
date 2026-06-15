@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight, ChevronRight, ChevronDown, TrendingDown, Search, Users, Globe, Layout, MessageSquare,
   Phone, CalendarCheck, RotateCcw, BarChart2, EyeOff, MapPin, Megaphone, MousePointerClick,
-  Smile, Activity, Stethoscope, AlertTriangle, Check, Plus, X,
+  Smile, Activity, Stethoscope, AlertTriangle, Check, Plus, X, Bone,
 } from "lucide-react";
 import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
