@@ -1,5 +1,4 @@
 import Seo from "@/components/site/Seo";
-import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Hero from "@/components/site/Hero";
 import Marquee from "@/components/site/Marquee";
