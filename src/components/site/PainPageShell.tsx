@@ -187,7 +187,7 @@ export function FinalCTA({ headline, sub, ctaLabel, ctaHref }: { headline: strin
         </h2>
         <p className="mt-5 text-white/90 text-[17px] leading-[1.75] max-w-[600px] mx-auto">{sub}</p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center flex-wrap">
-          <Link to={ctaHref} className="bg-white text-brand-deep inline-flex max-w-full items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px] hover:bg-white/90 transition whitespace-normal sm:whitespace-nowrap text-center leading-snug">
+          <Link to={ctaHref} className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex max-w-full items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 font-bold text-[14px] sm:text-[16px] sm: whitespace-normal sm:whitespace-nowrap text-center leading-snug">
             {ctaLabel} <ArrowRight aria-hidden size={18} />
           </Link>
           <Link to="/how-it-works" className="border border-white/25 text-white inline-flex max-w-full items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-semibold text-[14px] sm:text-[15px] min-h-[46px] sm:min-h-[48px] hover:bg-white/5 transition whitespace-normal sm:whitespace-nowrap text-center leading-snug">

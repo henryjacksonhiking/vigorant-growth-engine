@@ -144,7 +144,7 @@ export default function HowItWorks() {
               <a href="#phase-system" className="btn-primary-grad font-semibold px-6 py-3 rounded-full inline-flex items-center transition-transform hover:-translate-y-0.5">
                 See the system <ArrowRight aria-hidden className="ml-2" size={18} />
               </a>
-              <a href="#audit" className="px-6 py-3 rounded-full border border-brand-purple/25 text-brand-deep font-semibold hover:bg-brand-purple/5 hover:border-brand-purple transition-all">
+              <a href="#audit" className="btn-secondary-outline inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3">
                 Book a free audit
               </a>
             </motion.div>

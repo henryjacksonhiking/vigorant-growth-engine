@@ -61,7 +61,7 @@ export default function StickyCTA() {
       >
         <a
           href="/free-audit"
-          className="inline-flex flex-col items-start font-bold text-[14px] bg-white text-brand-deep px-5 py-2 rounded-full min-h-[44px] justify-center leading-tight"
+          className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex flex-col items-start font-bold text-[14px] px-5 py-2 justify-center leading-tight"
         >
           <span>Get Your Free Growth Audit — No Commitment</span>
           <span className="font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple font-normal mt-0.5">

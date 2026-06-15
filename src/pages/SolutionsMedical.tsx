@@ -299,7 +299,7 @@ export default function SolutionsMedical() {
               ))}
             </ul>
             <div className="text-center mt-10">
-              <Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[15px] px-8 py-3.5 rounded-full hover:bg-brand-lavender transition-all">Get a Free Medical Practice Growth Audit <ArrowRight size={15} /></Link>
+              <Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[15px] px-8 py-3.5">Get a Free Medical Practice Growth Audit <ArrowRight size={15} /></Link>
             </div>
           </div>
         </section>
@@ -536,7 +536,7 @@ export default function SolutionsMedical() {
               {["Google and AI search visibility review", "Website and landing page conversion assessment", "Paid ads and campaign opportunity check", "Competitor gap analysis by service line", "Reputation and trust signal review", "Prioritized medical growth roadmap — no obligation"].map(b => <li key={b} className="flex gap-2"><span className="text-brand-bright">✦</span>{b}</li>)}
             </ul>
             <div className="mt-7 font-mono-ui text-[12px] text-brand-lavender">8 audit slots per month · 3 remaining</div>
-            <div className="mt-5"><Link to="/free-audit" className="inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] px-10 py-4 rounded-full hover:bg-brand-lavender transition-all">{AUDIT} <ArrowRight size={16} /></Link></div>
+            <div className="mt-5"><Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full inline-flex items-center gap-2 font-bold text-[16px] px-10 py-4">{AUDIT} <ArrowRight size={16} /></Link></div>
             <div className="mt-4"><Link to="/results" className="text-white/55 hover:text-white font-semibold text-[14px]">View Healthcare Marketing Results &amp; Case Studies →</Link></div>
             <div className="mt-5 flex flex-wrap gap-2 justify-center font-mono-ui text-[11px] text-white/55">
               {["Privacy-Conscious Approach", "Response Within 24 Hours", "No Long-Term Contracts"].map(c => <span key={c} className="bg-white/7 rounded-full px-3 py-1">{c}</span>)}

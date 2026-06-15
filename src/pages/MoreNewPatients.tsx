@@ -926,7 +926,7 @@ function FinalCTA() {
           8 new audit requests per month · 3 spots remaining
         </div>
         <Link to="/free-audit" data-analytics-event="final_cta_click" data-cta="primary"
-          className="mt-7 inline-flex items-center gap-2 bg-white text-brand-deep font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4 rounded-full transition-all duration-300 hover:bg-brand-lavender hover:scale-[1.02] hover:shadow-[0_10px_36px_hsl(248_49%_15%/0.4)] min-h-[52px]">
+          className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full mt-7 inline-flex items-center gap-2 font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4">
           Request Your Free Growth Audit <ArrowRight size={18} aria-hidden />
         </Link>
         <div className="mt-5">
