@@ -88,7 +88,7 @@ const FAQS = [
   { q: "How does Vigorant measure success?", a: "Success is measured by booked patients, qualified leads, channel ROI, and visibility share. Every client has a live dashboard mapping marketing spend to revenue outcomes." },
   { q: "How long until we see meaningful results?", a: "Paid advertising produces measurable lift in weeks. SEO and AI visibility compound over 3-12 months. Your audit defines a realistic timeline for your specialty and market." },
   { q: "What if results are not where they should be?", a: "Monthly reviews surface underperformance immediately. Adjustments, recovery plans, and pivots are part of the engagement, not exceptions." },
-  { q: "Do you work with practices outside dental, chiropractic, and medical?", a: "No. Vigorant specializes exclusively in these three specialties. Compound expertise requires saying no to everything else." },
+  { q: "Do you work with practices outside dental, chiropractic, and medical?", a: "Our focus is healthcare. We specialize in helping dental, medical, and chiropractic practices grow through advanced digital marketing, AI-powered strategies, and patient acquisition systems. While healthcare is our primary area of expertise, our team brings experience from a variety of industries and business sectors. As a result, we occasionally consider select opportunities that align with our expertise, values, and ability to deliver meaningful results." },
   { q: "Can we talk to one of your clients?", a: "Yes. After the initial audit conversation we can connect you with current clients in your specialty for direct reference calls." },
 ];
 
