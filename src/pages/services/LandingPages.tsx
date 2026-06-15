@@ -209,7 +209,7 @@ export default function LandingPages() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground no-card-hover">
       <Helmet>
         <title>Healthcare Landing Page Design | Convert More Patients | Vigorant</title>
         <meta

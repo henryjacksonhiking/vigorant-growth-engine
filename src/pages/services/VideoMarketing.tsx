@@ -241,7 +241,7 @@ export default function VideoMarketing() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground no-card-hover">
       <Helmet>
         <title>Healthcare Video Marketing Services | Attract, Educate & Convert More Patients | Vigorant</title>
         <meta

@@ -265,7 +265,7 @@ export default function BrandingRebranding() {
   const [activePhase, setActivePhase] = useState(0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background no-card-hover">
       <Helmet>
         <title>Healthcare Branding & Rebranding Services | Build a Practice Patients Remember | Vigorant</title>
         <meta
