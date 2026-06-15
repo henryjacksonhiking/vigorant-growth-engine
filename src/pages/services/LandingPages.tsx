@@ -380,8 +380,6 @@ export default function LandingPages() {
               <aside className="lg:sticky lg:top-24 border-t border-brand-purple/18">
                 <nav aria-label="Process index">
                   {STEPS.map((s, i) => {
-                    const active = activeStep === s.id;
-                    const passed = i < activeIdx;
                     return (
                       <a
                         key={s.id}
