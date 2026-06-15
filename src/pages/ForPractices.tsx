@@ -653,9 +653,9 @@ function AuditOffer() {
             style={{ border: "1px solid hsl(247 93% 64% / 0.15)", boxShadow: "8px 8px 28px hsl(252 80% 23% / 0.08), -4px -4px 14px hsl(0 0% 100% / 0.9)" }}>
             <h3 className="font-bold text-[20px] text-brand-deep">Request Your Free Audit</h3>
             <p className="mt-2 text-[14px] text-ink-secondary">No commitment. No hard sell. Just clarity.</p>
-            <a href="#" className="btn-primary-grad mt-5 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold min-h-[52px] text-[15px]">
+            <Link to="/free-audit" className="btn-primary-grad mt-5 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full font-bold min-h-[52px] text-[15px]">
               Request Your Free Practice Growth Audit <ArrowRight size={18} aria-hidden />
-            </a>
+            </Link>
             <div className="mt-5 flex flex-wrap gap-2 justify-center">
               {["No long-term contracts", "Response within 24hrs", "HIPAA compliant"].map(t => (
                 <span key={t} className="font-mono-ui text-[11px] text-brand-purple bg-brand-purple/8 rounded-full px-3 py-1"
@@ -745,9 +745,9 @@ function FinalCTA() {
         <div className="mt-5 font-mono-ui text-[12px] text-brand-lavender">
           We accept 8 new audit requests per month. 3 spots remaining this month.
         </div>
-        <a href="#" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full mt-7 inline-flex items-center gap-2 font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4">
+        <Link to="/free-audit" className="btn-on-dark inline-flex items-center justify-center gap-2 rounded-full mt-7 font-bold text-[16px] sm:text-[17px] px-9 sm:px-11 py-4">
           Claim My Free Practice Growth Audit <ArrowRight size={18} aria-hidden />
-        </a>
+        </Link>
         <p className="mt-4 text-white/55 text-[14px]">No commitment. No hard sell. Just clarity on what's possible for your practice.</p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
           {["HIPAA Compliant", "Response Within 24 Hours", "No Long-Term Contracts"].map(t => (
