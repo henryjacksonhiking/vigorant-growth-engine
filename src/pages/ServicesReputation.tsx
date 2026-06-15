@@ -5,7 +5,7 @@ import {
 } from "@/components/site/PainPageShell";
 
 const FAQS = [
-  { q: "Can you remove negative reviews?", a: "No reputable provider can guarantee review removal. Vigorant uses compliant response strategy, dispute escalation for clear policy violations, and a steady flow of authentic recent reviews to keep your overall trust signal strong." },
+  { q: "Can you remove negative reviews?", a: "Negative reviews cannot always be removed, but they can be managed strategically. Vigorant helps your practice respond professionally, escalate reviews that clearly violate platform policies, and build a steady flow of authentic, recent patient reviews that strengthen your overall online reputation." },
   { q: "Will you write fake reviews or buy reviews?", a: "Never. Both violate Google's policies and healthcare compliance norms. Vigorant uses compliant, patient-initiated review-generation workflows only." },
   { q: "How does review velocity affect ranking?", a: "Recent, authentic reviews are a strong local-pack ranking signal. Vigorant builds a steady cadence rather than spikes — which look natural to Google and trustworthy to patients." },
   { q: "How does reputation connect to AI search?", a: "Generative AI tools summarize reviews, recent sentiment, and citations when recommending providers. A weak or stale reputation reduces the chance of being recommended." },
