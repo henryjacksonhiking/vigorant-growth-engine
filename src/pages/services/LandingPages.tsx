@@ -403,18 +403,7 @@ export default function LandingPages() {
                 {/* Static track */}
                 <div aria-hidden className="absolute top-0 bottom-0 left-[18px] w-[2px] bg-brand-purple/18" />
                 {/* Dynamic fill */}
-                <div
-                  aria-hidden
-                  className="absolute top-0 left-[18px] w-[2px] bg-gradient-to-b from-brand-lavender to-brand-purple transition-all duration-300"
-                  style={{
-                    height: `${Math.max(8, ((activeIdx + 1) / STEPS.length) * 100)}%`,
-                    boxShadow: "0 0 22px hsl(var(--brand-purple) / 0.35)",
-                  }}
-                />
-
                 {STEPS.map((s, i) => {
-                  const active = activeStep === s.id;
-                  const passed = i < activeIdx;
                   const Icon = s.Icon;
                   return (
                     <article
@@ -428,14 +417,7 @@ export default function LandingPages() {
                       {/* Step dot */}
                       <span
                         aria-hidden
-                        className={
-                          "absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] transition-all " +
-                          (active
-                            ? " text-white scale-110 shadow-[var(--shadow-glow)] border-2 border-brand-purple"
-                            : passed
-                            ? "bg-surface-secondary text-brand-purple border-2 border-brand-lavender"
-                            : "bg-background text-ink-muted border-2 border-brand-purple/18")
-                        }
+                        className="absolute -left-[3.45rem] top-1 w-[38px] h-[38px] rounded-full grid place-items-center font-mono-ui font-black z-[2] bg-background text-ink-muted border-2 border-brand-purple/18"
                       >
                         {String(i + 1).padStart(2, "0")}
                       </span>
