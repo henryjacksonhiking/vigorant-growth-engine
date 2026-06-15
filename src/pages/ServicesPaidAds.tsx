@@ -24,12 +24,10 @@ const WHY_FAIL = [
 ];
 
 const SYSTEM = [
-  { n: "01", h: "Conversion foundation audit", b: "Site speed, tracking, landing pages, call handling, and follow-up — fix the leaks first." },
-  { n: "02", h: "Server-side, HIPAA-aware tracking", b: "Reliable, policy-compliant measurement of calls, forms, bookings, and revenue events." },
-  { n: "03", h: "Service-line strategy", b: "Match channels to high-value service lines — implants, ortho, cosmetic, new-patient exam — not vanity keywords." },
-  { n: "04", h: "Build & launch", b: "Search, PMax, Meta, YouTube, and retargeting with healthcare-policy-safe creative and landing pages." },
-  { n: "05", h: "Iterate weekly", b: "Bid, audience, creative, and landing-page testing focused on cost per booked appointment." },
-  { n: "06", h: "Report on patients", b: "Calls, bookings, started treatment, and revenue by campaign — not impressions and CTR." },
+  { n: "01", h: "Fix the Conversion Foundation", b: "We review your website speed, tracking, landing pages, call handling, and follow-up process to identify what may be stopping interested patients from booking." },
+  { n: "02", h: "Build a Patient-Focused Strategy", b: "We focus campaigns around the services that matter most to your practice, such as implants, orthodontics, cosmetic dentistry, and new-patient exams. The goal is to attract qualified patients, not just more clicks." },
+  { n: "03", h: "Launch and Optimize Campaigns", b: "We build and launch campaigns across Search, Performance Max, Meta, YouTube, and retargeting with healthcare-policy-safe messaging and landing pages. Then we optimize weekly to improve cost per booked appointment." },
+  { n: "04", h: "Report on Real Practice Growth", b: "You see clear reporting on calls, forms, booked appointments, started treatments, and revenue by campaign, so you know which marketing efforts are helping your practice grow." },
 ];
 
 export default function ServicesPaidAds() {
