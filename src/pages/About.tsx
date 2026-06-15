@@ -29,7 +29,6 @@ const BASE = "https://vigorant.com";
 
 const FAQS = [
   { q: "Who founded Vigorant?", a: "Vigorant was founded by Hamid Baher, who leads the company as Founder and CEO. The agency was built around a single conviction: that healthcare practices deserve a marketing partner who treats growth as a measurable system, not a stack of disconnected tactics." },
-  { q: "Why does Vigorant focus only on healthcare practices?", a: "Healthcare practices have unique patient acquisition dynamics — local intent, regulated trust signals, specialty-specific search behavior, and high-stakes booking decisions. Focusing exclusively on dental, chiropractic, and medical practices lets Vigorant compound expertise that horizontal agencies never develop." },
   { q: "What makes Vigorant different from a typical marketing agency?", a: "Typical agencies sell tasks. Vigorant sells a growth system. Every engagement is built around a unified patient acquisition engine that connects SEO, AI search visibility, paid advertising, website conversion, and reputation into one measurable flywheel." },
   { q: "What is the Vigorant Growth Engine?", a: "The Vigorant Growth Engine is the integrated framework that ties together visibility, traffic, conversion, retention, and measurement. It is the operating system that turns marketing spend into predictable new patient flow." },
   { q: "Is Vigorant AI-forward?", a: "Yes. Vigorant builds for both classic search engines and AI-powered answer engines — Google AI Overviews, ChatGPT, Perplexity, Claude, and Gemini — so practices appear in the new generation of patient research journeys." },
@@ -62,7 +61,7 @@ const RIGHT_FIT = [
   "You want clarity in reporting and accountability in execution",
 ];
 const WRONG_FIT = [
-  "You want guaranteed page-one in 30 days",
+  "You are looking for short-term tactics without the tracking, collaboration, and long-term strategy required for sustainable growth",
   "You want the lowest-priced vendor available",
   "You expect marketing to compensate for operational gaps",
   "You are not prepared to share booking and revenue data",

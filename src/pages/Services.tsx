@@ -32,22 +32,22 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 const BASE = "https://vigorant.com";
 
 const PRIMARY = [
-  { icon: Search, h: "SEO & AI Search", cta: "Explore SEO & AI Search", b: "Rank in Google and answer engines (AEO, GEO, GBP). Win the new front door of patient research.", href: "/services/seo", bullets: ["Technical + content SEO", "AEO / GEO optimization", "Google Business Profile"] },
+  { icon: Search, h: "SEO & AI Search", cta: "Explore SEO and AI Search", b: "Rank in Google and answer engines (AEO, GEO, GBP). Win the new front door of patient research.", href: "/services/seo", bullets: ["Technical + content SEO", "AEO / GEO optimization", "Google Business Profile"] },
   { icon: Megaphone, h: "Paid Advertising", cta: "Explore Paid Advertising", b: "Conversion-tracked Google, Meta, YouTube, and retargeting campaigns engineered for booked patients.", href: "/services/paid-ads", bullets: ["Google Ads (Search, PMax)", "Meta + YouTube", "Conversion tracking"] },
-  { icon: Layout, h: "Website Design & CRO", cta: "Explore Website Design & CRO", b: "Fast, accessible, conversion-engineered websites that turn intent into booked visits.", href: "/services/website-design", bullets: ["WCAG-compliant builds", "Landing pages", "A/B testing + CRO"] },
-  { icon: Star, h: "Reputation & Social Media", cta: "Explore Reputation & Social Media", b: "Build the trust layer: reviews, social presence, and review-response workflows that compound.", href: "/services/reputation", bullets: ["Review generation", "Reputation monitoring", "Social management"] },
+  { icon: Layout, h: "Website Design & CRO", cta: "Explore Website Design and CRO", b: "Fast, accessible, conversion-engineered websites that turn intent into booked visits.", href: "/services/website-design", bullets: ["WCAG-compliant builds", "Landing pages", "A/B testing + CRO"] },
+  { icon: Star, h: "Reputation & Social Media", cta: "Explore Reputation and Social Media", b: "Build the trust layer: reviews, social presence, and review-response workflows that compound.", href: "/services/reputation", bullets: ["Review generation", "Reputation monitoring", "Social management"] },
 ];
 
 const SUPPORTING = [
-  { icon: Brain, h: "Marketing Strategy", href: "/for-practices/marketing-roi" },
-  { icon: Palette, h: "Branding & Rebranding", href: "/services/website-design" },
-  { icon: Sparkles, h: "Social Media Marketing", href: "/services/reputation" },
-  { icon: Video, h: "Video Marketing", href: "/services/reputation" },
-  { icon: Layout, h: "Landing Pages", href: "/services/website-design" },
-  { icon: Mail, h: "Email Marketing", href: "/for-practices/lead-conversion" },
-  { icon: PenSquare, h: "Content Marketing", href: "/services/seo" },
-  { icon: BarChart2, h: "Analytics & Reporting", href: "/for-practices/marketing-roi" },
-  { icon: MapPin, h: "Local Listings & GBP", href: "/services/seo" },
+  { icon: Brain, h: "Marketing Strategy", href: "/services/marketing-strategy" },
+  { icon: Palette, h: "Branding & Rebranding", href: "/services/branding-rebranding" },
+  { icon: Sparkles, h: "Social Media Marketing", href: "/services/social-media-marketing" },
+  { icon: Video, h: "Video Marketing", href: "/services/video-marketing" },
+  { icon: Layout, h: "Landing Pages", href: "/services/landing-pages" },
+  { icon: Mail, h: "Email Marketing", href: "/services/email-marketing" },
+  { icon: PenSquare, h: "Content Marketing", href: "/services/content-marketing" },
+  { icon: BarChart2, h: "Analytics & Reporting", href: "/services/analytics-and-reporting" },
+  { icon: MapPin, h: "Local Listings & GBP", href: "/services/local-listings-gbp" },
 ];
 
 const MATRIX = [

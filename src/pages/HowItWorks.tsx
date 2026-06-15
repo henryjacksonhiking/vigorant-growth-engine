@@ -45,7 +45,7 @@ const FIRST_90 = [
 ];
 
 const ANTI = [
-  "We will never guarantee #1 rankings.",
+  "We focus on sustainable visibility, qualified patient demand, and measurable practice growth—not short-term ranking promises.",
   "We will never lock you into a long contract you cannot exit.",
   "We will never hide where your spend goes.",
   "We will never charge for vanity metrics or impressions.",
@@ -266,7 +266,7 @@ export default function HowItWorks() {
               {[
                 { icon: Eye, h: "Visibility share" },
                 { icon: BarChart2, h: "Channel performance" },
-                { icon: Calendar, h: "Booked patients" },
+                { icon: Calendar, h: "Conversion efficiency" },
                 { icon: ShieldCheck, h: "Reputation health" },
               ].map((m, i) => (
                 <Reveal key={m.h} delay={i * 0.05} className="h-full">
