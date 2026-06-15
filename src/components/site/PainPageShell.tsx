@@ -32,7 +32,7 @@ export function Line({ children, delay }: { children: ReactNode; delay: number }
 export type HeroProps = {
   breadcrumbLabel: string;
   breadcrumbTrail?: { label: string; href: string }[];
-  chip: string;
+  chip?: string;
   titleLines: { text: string; gradient?: boolean }[];
   subhead: string;
   paragraph?: string;
