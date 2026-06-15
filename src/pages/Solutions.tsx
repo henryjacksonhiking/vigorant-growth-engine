@@ -7,7 +7,7 @@ import {
   MousePointerClick, MapPin, Brain, Users, Star, BarChart2, Sparkles,
   Megaphone, Layout, Plus, X,
 } from "lucide-react";
-import GlobalFx, { Counter, useTilt } from "@/components/site/GlobalFx";
+import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -857,7 +857,7 @@ export default function Solutions() {
     <>
       <SolutionsSeo />
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main">
         <Hero />

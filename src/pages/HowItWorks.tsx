@@ -5,7 +5,7 @@ import {
   ArrowRight, Search, Wrench, Rocket, TrendingUp, Brain, Check, X,
   BarChart2, Calendar, ShieldCheck, Eye,
 } from "lucide-react";
-import GlobalFx, { Counter, useTilt } from "@/components/site/GlobalFx";
+import { Counter, useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -108,7 +108,7 @@ export default function HowItWorks() {
     <>
       <HowSeo />
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="overflow-x-hidden">
         {/* HERO */}

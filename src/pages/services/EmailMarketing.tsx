@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ArrowRight, Mail, Plus } from "lucide-react";
 import Nav from "@/components/site/Nav";
-import GlobalFx from "@/components/site/GlobalFx";
 import Footer from "@/components/site/Footer";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -305,7 +304,7 @@ export default function EmailMarketing() {
       </Helmet>
 
       <a href="#main" className="sr-only focus:not-sr-only">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
 
       <main id="main" itemScope itemType="https://schema.org/Service">

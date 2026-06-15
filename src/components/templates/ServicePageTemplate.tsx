@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 import { ArrowRight, Check, ExternalLink, Quote, X as XIcon } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
-import GlobalFx from "@/components/site/GlobalFx";
 import { Reveal } from "@/components/site/PainPageShell";
 import {
   Accordion,
@@ -86,7 +85,7 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
           <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
         ))}
       </Helmet>
-      <GlobalFx />
+
       <Nav />
       <main id="main">
         {/* SECTION 1 — HERO (dark, two columns, no cards) */}

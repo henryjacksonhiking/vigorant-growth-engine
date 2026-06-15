@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
-import GlobalFx from "@/components/site/GlobalFx";
 import StickyCTA from "@/components/site/StickyCTA";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -127,7 +126,7 @@ export default function SolutionsDental() {
       </Helmet>
 
       <Nav />
-      <GlobalFx />
+
       <main className="text-center sm:text-left">
 
         {/* HERO */}

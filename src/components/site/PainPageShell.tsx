@@ -5,7 +5,7 @@ import { ReactNode, useState } from "react";
 import { ArrowRight, Check, Plus, ChevronRight } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
-import GlobalFx, { Counter } from "@/components/site/GlobalFx";
+import { Counter } from "@/components/site/GlobalFx";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -217,7 +217,7 @@ export function PainPageLayout({ seoTitle, seoDesc, canonical, faqs, children }:
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         {faqLd && <script type="application/ld+json">{JSON.stringify(faqLd)}</script>}
       </Helmet>
-      <GlobalFx />
+
       <Nav />
       <main id="main">{children}</main>
       <Footer />

@@ -5,7 +5,6 @@ import { toast } from "sonner";
 import { ArrowRight, Check, ShieldCheck, Clock, Sparkles } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
-import GlobalFx from "@/components/site/GlobalFx";
 import { ChipLabel, GradientText, HeroOrbs, Breadcrumb } from "@/components/site/SolutionPageAtoms";
 
 const schema = z.object({
@@ -77,7 +76,7 @@ export default function FreeAudit() {
         <meta name="description" content="Request your free growth audit for dental, chiropractic, medical, or multi-location healthcare practices. Get a prioritized roadmap — no obligation." />
         <link rel="canonical" href="https://vigorant.com/free-audit" />
       </Helmet>
-      <Nav /><GlobalFx />
+      <Nav />
       <main className="text-center sm:text-left">
         <section className="relative overflow-hidden bg-background pt-28 pb-20 sm:pt-32 sm:pb-24">
           <HeroOrbs />

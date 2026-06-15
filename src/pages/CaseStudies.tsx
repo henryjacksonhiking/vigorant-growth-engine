@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import GlobalFx from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import FinalCTA from "@/components/site/FinalCTA";
@@ -14,7 +13,7 @@ export default function CaseStudies() {
         <link rel="canonical" href="https://vigorant.com/case-studies" />
       </Helmet>
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="pt-28">
         <ImpactSection />

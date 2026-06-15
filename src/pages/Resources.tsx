@@ -5,7 +5,7 @@ import {
   ArrowRight, BookOpen, BarChart3, Download, PlayCircle, Search, Brain,
   Smile, Activity, Stethoscope, FileText, Sparkles,
 } from "lucide-react";
-import GlobalFx, { useTilt } from "@/components/site/GlobalFx";
+import { useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 
@@ -131,7 +131,7 @@ export default function Resources() {
     <>
       <ResourcesSeo />
       <a href="#main" className="skip-link">Skip to main content</a>
-      <GlobalFx />
+
       <Nav />
       <main id="main" className="overflow-x-hidden">
         {/* HERO */}
