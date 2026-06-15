@@ -116,9 +116,7 @@ export default function SolutionsMedical() {
             <div className="grid lg:grid-cols-[1.27fr_1fr] gap-12 items-center">
               <div>
                 <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Medical Practice Marketing" }]} />
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {["AI-Driven SEO", "Paid Ads", "Websites", "Elective & Cash-Pay", "Multi-Location"].map(c => <span key={c} className="font-mono-ui text-[11px] text-brand-purple bg-brand-purple/8 border border-brand-purple/15 rounded-full px-3 py-1">{c}</span>)}
-                </div>
+                <div className="mb-6" />
                 <h1 className="font-serif font-bold text-brand-deep leading-[1.05] tracking-tight" style={{ fontSize: "clamp(34px, 6vw, 60px)", letterSpacing: "-0.025em" }}>
                   <Line delay={0.1}>Medical Practice Marketing That</Line>
                   <Line delay={0.22}>Turns Visibility Into</Line>
@@ -316,8 +314,7 @@ export default function SolutionsMedical() {
               {AEO.map((c, i) => (
                 <Reveal key={i} delay={i * 0.06}>
                   <article className="bg-white border-l-[3px] border-brand-purple rounded-r-[14px] p-6 shadow-sm">
-                    <div className="font-mono-ui text-[10px] uppercase text-brand-purple">Q&amp;A · AIO/GEO Ready</div>
-                    <h3 className="font-bold text-brand-deep text-[15px] mt-2">{c.q}</h3>
+                    <h3 className="font-bold text-brand-deep text-[15px]">{c.q}</h3>
                     <p className="mt-2 text-brand-deep text-[14px] leading-[1.82] italic">{c.a}</p>
                     <Link to={c.link.to} className="mt-2.5 inline-flex items-center gap-1.5 text-brand-purple font-semibold text-[13px]">{c.link.label} <ArrowRight size={13} /></Link>
                   </article>
@@ -357,7 +354,8 @@ export default function SolutionsMedical() {
                 </div>
               </div>
             </Reveal>
-            <div className="flex flex-wrap gap-2 justify-center mt-7 max-w-3xl mx-auto">
+            <p className="text-center font-mono-ui text-[12px] uppercase tracking-[0.12em] text-brand-purple mt-7 mb-3">Built for high-value service lines such as:</p>
+            <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
               {["Dermatology", "Plastic Surgery", "Ophthalmology", "Fertility", "Med Spa", "Pain Management", "Concierge Medicine", "Functional Medicine"].map(c => (
                 <span key={c} className="font-mono-ui text-[10px] text-brand-purple bg-brand-purple/7 border border-brand-purple/14 rounded-full px-3 py-1">{c}</span>
               ))}
@@ -386,13 +384,12 @@ export default function SolutionsMedical() {
             </Reveal>
             <div className="grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto">
               {[
-                { tag: "Single-Location Clinic", h: "Compete Locally, Build Trust, Improve Conversion", body: "Compete locally, build trust, improve website conversion, capture nearby demand, and acquire patients efficiently before expanding.", rows: ["Local SEO and Google Business Profile", "Conversion-first website and service pages", "Reviews and reputation signals", "Focused campaigns for high-value services"], link: { l: "More New Patients", to: "/for-practices/more-new-patients" } },
-                { tag: "Multi-Location Group", h: "Scale Demand Consistently Across Markets", body: "Scale demand consistently across markets while preserving brand and reporting control across every location.", rows: ["Location-page architecture and market-level SEO", "Multi-market tracking and reporting", "Content governance and brand consistency", "Centralized paid media structure"], link: { l: "Scale Your Practice", to: "/for-practices/scale-your-practice" } },
+                { tag: "Single-Location Clinic", body: "Compete locally, build trust, improve website conversion, capture nearby demand, and acquire patients efficiently before expanding.", rows: ["Local SEO and Google Business Profile", "Conversion-first website and service pages", "Reviews and reputation signals", "Focused campaigns for high-value services"], link: { l: "More New Patients", to: "/for-practices/more-new-patients" } },
+                { tag: "Multi-Location Group", body: "Scale demand consistently across markets while preserving brand and reporting control across every location.", rows: ["Location-page architecture and market-level SEO", "Multi-market tracking and reporting", "Content governance and brand consistency", "Centralized paid media structure"], link: { l: "Scale Your Practice", to: "/for-practices/scale-your-practice" } },
               ].map((c, i) => (
                 <Reveal key={c.tag} delay={i * 0.06} className="h-full">
                   <article className="h-full bg-white/90 border border-brand-purple/12 rounded-2xl p-7 flex flex-col">
-                    <div className="font-mono-ui text-[10px] uppercase text-brand-purple">{c.tag}</div>
-                    <h3 className="font-bold text-brand-deep text-[17px] mt-2">{c.h}</h3>
+                    <h3 className="font-bold text-brand-deep text-[19px]">{c.tag}</h3>
                     <p className="mt-2 text-ink-secondary text-[14px] leading-[1.7]">{c.body}</p>
                     <ul className="list-none p-0 mt-4 flex flex-col gap-2 flex-1">
                       {c.rows.map(r => <li key={r} className="flex gap-2 items-center text-brand-deep text-[13px]"><span className="w-4 h-4 rounded-full bg-brand-purple/10 flex items-center justify-center"><Check size={10} className="text-brand-purple" /></span>{r}</li>)}
