@@ -39,7 +39,7 @@ export default function ServicesSeoGeo() {
         paragraph="Vigorant builds the entity authority, citations, and structured content that get your practice cited and recommended inside conversational AI — before your competitors realize the channel exists."
         primaryCTA={{ label: "Request Your Free AI Visibility Audit", href: "/free-audit" }}
         secondaryCTA={{ label: "See AI Visibility Results", href: "/results" }}
-        proofStrip="ChatGPT · Gemini · Claude · Perplexity · Google AI"
+        
       />
 
       <DarkSection>
