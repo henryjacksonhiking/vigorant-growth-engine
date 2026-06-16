@@ -26,6 +26,17 @@ export default function Seo() {
     image: "https://vigorant.com/logo.png",
     url: "https://vigorant.com",
     email: "info@vigorant.com",
+    telephone: "+1-833-641-2200",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+1-833-641-2200",
+        email: "info@vigorant.com",
+        contactType: "customer service",
+        areaServed: "US",
+        availableLanguage: ["English"],
+      },
+    ],
     areaServed: "United States",
     aggregateRating: {
       "@type": "AggregateRating",

@@ -1,6 +1,7 @@
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
 import { Stethoscope, Activity, Building2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import chiropracticImage from "@/assets/chiropractic-care.jpg";
 import {
   Stories,
   StoriesContent,
@@ -59,7 +60,7 @@ const industries = [
     fallback: "CH",
     href: "/solutions/chiropractic",
     body: "Local visibility and lead generation tailored to chiropractic practices.",
-    image: "https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=800&q=80",
+    image: chiropracticImage,
   },
   {
     Icon: ScalpelIcon,
