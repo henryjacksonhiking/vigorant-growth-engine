@@ -6,6 +6,7 @@ import { ArrowRight, Check, Plus, ChevronRight } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { Counter } from "@/components/site/GlobalFx";
+import SharedFAQList from "@/components/site/SharedFAQ";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
