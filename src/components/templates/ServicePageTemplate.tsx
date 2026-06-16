@@ -5,12 +5,7 @@ import { ArrowRight, Check, ExternalLink, Quote, X as XIcon } from "lucide-react
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { Reveal } from "@/components/site/PainPageShell";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import SharedFAQList from "@/components/site/SharedFAQ";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
