@@ -105,6 +105,8 @@ const App = () => (
             <Route path="/resources/blog" element={<Blog />} />
             <Route path="/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
             <Route path="/resources/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
+            <Route path="/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
+            <Route path="/resources/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/case-studies" element={<CaseStudies />} />
