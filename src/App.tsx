@@ -45,6 +45,7 @@ import Resources from "./pages/Resources.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogAIWebsiteDesign from "./pages/BlogAIWebsiteDesign.tsx";
 import BlogAIHealthcareMarketing from "./pages/BlogAIHealthcareMarketing.tsx";
+import BlogCanAIReplaceMarketing from "./pages/BlogCanAIReplaceMarketing.tsx";
 import About from "./pages/About.tsx";
 import FreeAudit from "./pages/FreeAudit.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
@@ -107,6 +108,8 @@ const App = () => (
             <Route path="/resources/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
             <Route path="/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
             <Route path="/resources/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
+            <Route path="/blog/can-ai-replace-marketing-team" element={<BlogCanAIReplaceMarketing />} />
+            <Route path="/resources/blog/can-ai-replace-marketing-team" element={<BlogCanAIReplaceMarketing />} />
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/case-studies" element={<CaseStudies />} />
