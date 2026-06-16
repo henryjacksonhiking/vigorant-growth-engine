@@ -1053,20 +1053,8 @@ export default function BlogCanAIReplaceMarketing() {
             </div>
           </Reveal>
 
-          <div className="max-w-[760px] mx-auto">
-            <Accordion type="single" collapsible className="space-y-3">
-              {FAQS.map((f, i) => (
-                <AccordionItem key={i} value={`item-${i}`} className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden px-5">
-                  <AccordionTrigger className="text-left font-bold text-brand-deep text-[15px] hover:no-underline py-5">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7] pb-5">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <SharedFAQList faqs={FAQS} />
+
         </div>
       </section>
 

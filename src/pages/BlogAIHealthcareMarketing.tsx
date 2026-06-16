@@ -985,22 +985,8 @@ export default function BlogAIHealthcareMarketing() {
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="max-w-[760px] mx-auto space-y-3">
-            {FAQS.map((f, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden px-5"
-              >
-                <AccordionTrigger className="text-left font-semibold text-brand-deep text-[16px] hover:no-underline py-5">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-ink-secondary text-[15px] leading-[1.75] pb-5">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <SharedFAQList faqs={FAQS} />
+
         </div>
       </section>
 
