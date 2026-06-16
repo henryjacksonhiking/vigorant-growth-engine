@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, CheckCircle, Target, Rocket, GitBranch, User, MapPin, MousePointerClick, BarChart2, UserPlus, Building2, DollarSign, Shield, Network, Eye, Users, RefreshCw, Search, Megaphone, Layout, Star, Lightbulb, FileText, Mail, Video, Check, ExternalLink, Minus } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 import StickyCTA from "@/components/site/StickyCTA";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Reveal, Line, ChipLabel, Breadcrumb, PrimaryCTA, SecondaryCTA, GradientText, GradientTextLight, HeroOrbs, DarkOrb } from "@/components/site/SolutionPageAtoms";

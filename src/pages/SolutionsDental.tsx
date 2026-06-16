@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 import StickyCTA from "@/components/site/StickyCTA";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
