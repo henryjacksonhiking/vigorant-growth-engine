@@ -418,19 +418,8 @@ export default function About() {
                 Questions, answered.
               </h2>
             </Reveal>
-            <dl className="mt-10 space-y-3">
-              {FAQS.map((f, i) => (
-                <Reveal key={f.q} delay={i * 0.03} className="h-full">
-                  <details className="group rounded-xl bg-white border border-brand-purple/12 p-5 open:border-brand-purple/30">
-                    <summary className="cursor-pointer flex justify-between items-start gap-4 font-semibold text-brand-deep list-none">
-                      <span>{f.q}</span>
-                      <span className="text-brand-purple transition-transform group-open:rotate-45 text-2xl leading-none flex-shrink-0">+</span>
-                    </summary>
-                    <p className="mt-3 text-text-secondary">{f.a}</p>
-                  </details>
-                </Reveal>
-              ))}
-            </dl>
+            <SharedFAQList faqs={FAQS} />
+
           </div>
         </section>
 
