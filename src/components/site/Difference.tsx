@@ -100,12 +100,16 @@ function Pillar({ icon: Icon, title, body, delay }: any) {
     <Reveal delay={delay}>
       <div ref={ref} className="tilt-spotlight bg-white rounded-2xl p-7 border border-brand-purple/12 transition-transform duration-300"
         style={{ boxShadow: "var(--shadow-card)" }}>
-        <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
-          <Icon size={20} className="text-white" />
+        <div className="flex sm:block items-start gap-3.5">
+          <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 sm:mb-4"
+            style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+            <Icon size={20} className="text-white" />
+          </div>
+          <div className="min-w-0 flex-1 text-left">
+            <h3 className="font-extrabold text-brand-deep text-lg leading-tight">{title}</h3>
+            <p className="text-ink-secondary text-[15px] mt-2 leading-relaxed">{body}</p>
+          </div>
         </div>
-        <h3 className="font-extrabold text-brand-deep text-lg">{title}</h3>
-        <p className="text-ink-secondary text-[15px] mt-2 leading-relaxed">{body}</p>
       </div>
     </Reveal>
   );
