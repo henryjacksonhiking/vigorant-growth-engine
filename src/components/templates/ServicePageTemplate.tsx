@@ -5,12 +5,7 @@ import { ArrowRight, Check, ExternalLink, Quote, X as XIcon } from "lucide-react
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { Reveal } from "@/components/site/PainPageShell";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import SharedFAQList from "@/components/site/SharedFAQ";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
@@ -433,24 +428,8 @@ export default function ServicePageTemplate({ pageContent: c }: { pageContent: S
               </h2>
             </Reveal>
 
-            <Accordion type="single" collapsible className="mt-10">
-              {c.faqs.map((f, i) => (
-                <AccordionItem
-                  key={i}
-                  value={`faq-${i}`}
-                  className="border-b border-brand-purple/15"
-                >
-                  <AccordionTrigger className="text-left py-5 hover:no-underline">
-                    <h3 className="text-[16px] sm:text-[18px] font-semibold text-brand-deep leading-snug m-0">
-                      {f.question}
-                    </h3>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-[15px] sm:text-[16px] text-text-secondary leading-[1.75] pb-6">
-                    {f.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <SharedFAQList faqs={c.faqs} />
+
           </div>
         </section>
 

@@ -1,6 +1,5 @@
-import { useId, useState } from "react";
 import Section, { Reveal, SectionLabel, H2 } from "./Section";
-import { Plus } from "lucide-react";
+import SharedFAQList from "./SharedFAQ";
 
 export const FAQS = [
   { q: "What makes healthcare SEO different from regular SEO?", a: "Healthcare SEO requires compliance awareness, local search dominance, and content strategies built around patient intent — not just keyword rankings. Vigorant specializes exclusively in healthcare, so our strategies are designed for the specific way patients search for providers." },
@@ -18,8 +17,6 @@ export const FAQS = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
-  const baseId = useId();
   return (
     <Section id="faq" bg="white">
       <Reveal className="text-center max-w-3xl mx-auto">
@@ -29,46 +26,8 @@ export default function FAQ() {
           Honest answers to the questions we hear most often.
         </p>
       </Reveal>
-
-      <div className="max-w-3xl mx-auto mt-12 sm:mt-14 space-y-3 px-1 sm:px-0" role="list">
-        {FAQS.map((f, i) => {
-          const isOpen = open === i;
-          const btnId = `${baseId}-q-${i}`;
-          const panelId = `${baseId}-p-${i}`;
-          return (
-            <Reveal key={f.q} delay={i * 0.04}>
-              <div className="bg-white rounded-xl border border-brand-purple/15 overflow-hidden min-w-0" role="listitem">
-                <h3 className="m-0">
-                  <button
-                    id={btnId}
-                    onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full min-w-0 flex items-start justify-between gap-3 sm:gap-6 text-left px-4 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors"
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                  >
-                    <span className="text-[15px] sm:text-[17px] font-semibold text-brand-deep min-w-0 flex-1 break-words pr-1">{f.q}</span>
-                    <Plus
-                      aria-hidden
-                      size={20}
-                      className="text-brand-purple flex-shrink-0 mt-1 transition-transform duration-300"
-                      style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }}
-                    />
-                  </button>
-                </h3>
-                <div
-                  id={panelId}
-                  role="region"
-                  aria-labelledby={btnId}
-                  hidden={!isOpen}
-                  className="overflow-hidden"
-                >
-                  <p className="px-4 sm:px-6 pb-6 text-ink-secondary leading-[1.8] break-words">{f.a}</p>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
-      </div>
+      <SharedFAQList faqs={FAQS} />
     </Section>
   );
 }
+

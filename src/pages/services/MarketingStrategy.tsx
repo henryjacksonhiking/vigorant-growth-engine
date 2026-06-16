@@ -898,43 +898,8 @@ export default function MarketingStrategy() {
               </Reveal>
 
               <Reveal delay={0.1}>
-                <div className="border-t border-brand-purple/20">
-                  {FAQS.map((f, i) => {
-                    const open = openFaq === i;
-                    return (
-                      <div key={i} className="border-b border-brand-purple/15">
-                        <button
-                          onClick={() => setOpenFaq(open ? null : i)}
-                          aria-expanded={open}
-                          className="w-full flex items-center justify-between gap-6 py-5 text-left"
-                        >
-                          <span
-                            className="font-extrabold text-brand-deep text-[16px] sm:text-[17.5px] leading-snug"
-                            style={{ letterSpacing: "-0.01em" }}
-                          >
-                            {f.q}
-                          </span>
-                          <span
-                            aria-hidden
-                            className={`shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full transition-all ${
-                              open ? "bg-brand-purple text-white rotate-45" : "bg-surface-secondary text-brand-purple"
-                            }`}
-                          >
-                            <Plus className="w-4 h-4" />
-                          </span>
-                        </button>
-                        <motion.div
-                          initial={false}
-                          animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-                          transition={{ duration: 0.35, ease }}
-                          className="overflow-hidden"
-                        >
-                          <p className="pb-5 pr-12 text-[14.5px] leading-[1.7] text-ink-muted">{f.a}</p>
-                        </motion.div>
-                      </div>
-                    );
-                  })}
-                </div>
+                <SharedFAQList faqs={FAQS} />
+
               </Reveal>
             </div>
           </div>

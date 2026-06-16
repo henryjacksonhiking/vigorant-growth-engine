@@ -742,32 +742,8 @@ function FaqBlock() {
             Frequently Asked Questions About Healthcare Marketing Solutions
           </h2>
         </Reveal>
-        <div className="max-w-[760px] mx-auto mt-10 flex flex-col gap-2.5">
-          {FAQS.map((f, i) => {
-            const isOpen = open === i;
-            const btnId = `${baseId}-q-${i}`;
-            const panelId = `${baseId}-p-${i}`;
-            return (
-              <Reveal key={f.q} delay={i * 0.03} className="h-full">
-                <div className={`bg-background rounded-xl border transition-all ${isOpen ? "border-brand-purple/25 shadow-[0_8px_24px_rgba(100,79,249,0.07)]" : "border-brand-purple/10"}`}>
-                  <h3 className="m-0">
-                    <button
-                      id={btnId} aria-expanded={isOpen} aria-controls={panelId}
-                      onClick={() => setOpen(isOpen ? null : i)}
-                      className="w-full flex items-start justify-between gap-4 text-left px-5 sm:px-6 py-5 hover:bg-brand-purple/5"
-                    >
-                      <span className="text-[16px] sm:text-[17px] font-semibold text-brand-deep">{f.q}</span>
-                      <Plus aria-hidden size={20} className="text-brand-purple flex-shrink-0 mt-1 transition-transform" style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }} />
-                    </button>
-                  </h3>
-                  <div id={panelId} role="region" aria-labelledby={btnId} hidden={!isOpen}>
-                    <p className="px-5 sm:px-6 pb-6 text-text-secondary" style={{ fontSize: 15, lineHeight: 1.82 }}>{f.a}</p>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+        <SharedFAQList faqs={FAQS} />
+
       </div>
     </section>
   );

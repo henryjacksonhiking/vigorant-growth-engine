@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 
 const BASE = "https://vigorant.com";
 
@@ -590,20 +591,8 @@ export default function BlogAIWebsiteDesign() {
                 Everything healthcare practice owners need to know about AI website design, compliance, SEO, and when to invest in specialist expertise.
               </p>
             </div>
-            <div className="mx-auto mt-10" style={{ maxWidth: 760 }}>
-              <Accordion type="single" collapsible className="space-y-3">
-                {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`item-${i}`} className="bg-white rounded-xl border border-[hsl(247_93%_64%/0.15)] overflow-hidden">
-                    <AccordionTrigger className="px-5 py-4 text-left font-semibold text-brand-deep hover:no-underline">
-                      {f.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="px-5 text-ink-secondary text-[15px] leading-[1.75]">
-                      {f.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+            <SharedFAQList faqs={FAQS} />
+
           </div>
         </section>
 

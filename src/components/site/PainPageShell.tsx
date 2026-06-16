@@ -6,6 +6,7 @@ import { ArrowRight, Check, Plus, ChevronRight } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { Counter } from "@/components/site/GlobalFx";
+import SharedFAQList from "@/components/site/SharedFAQ";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -158,26 +159,7 @@ export function SectionHeader({ label, title, sub, dark = false, gradientWord }:
 }
 
 export function FAQAccordion({ faqs }: { faqs: { q: string; a: string }[] }) {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <div className="max-w-[760px] mx-auto mt-10 flex flex-col gap-2.5 px-1 sm:px-0">
-      {faqs.map((f, i) => (
-        <Reveal key={i} delay={i * 0.04}>
-          <div className={`bg-white rounded-xl border transition-all min-w-0 ${open === i ? "border-brand-purple/25 shadow-md" : "border-brand-purple/10"}`}>
-            <button onClick={() => setOpen(open === i ? null : i)}
-              className="w-full min-w-0 flex items-start justify-between gap-4 text-left p-5 sm:p-6"
-              aria-expanded={open === i}>
-              <span className="min-w-0 flex-1 break-words font-semibold text-[15px] sm:text-[17px] text-brand-deep">{f.q}</span>
-              <Plus aria-hidden size={18} className={`text-brand-purple shrink-0 transition-transform ${open === i ? "rotate-45" : ""}`} />
-            </button>
-            {open === i && (
-              <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-[15px] text-text-secondary leading-[1.82] break-words">{f.a}</div>
-            )}
-          </div>
-        </Reveal>
-      ))}
-    </div>
-  );
+  return <SharedFAQList faqs={faqs} />;
 }
 
 export function FinalCTA({ headline, sub, ctaLabel, ctaHref }: { headline: string; sub: string; ctaLabel: string; ctaHref: string }) {

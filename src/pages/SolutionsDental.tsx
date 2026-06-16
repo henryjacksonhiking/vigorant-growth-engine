@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 import StickyCTA from "@/components/site/StickyCTA";
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
@@ -605,16 +606,8 @@ export default function SolutionsDental() {
                 Dental Practice Marketing, SEO, Ads, and AI Visibility — FAQ
               </h2>
             </Reveal>
-            <div className="max-w-3xl mx-auto mt-10">
-              <Accordion type="single" collapsible className="space-y-2">
-                {FAQS.map((f, i) => (
-                  <AccordionItem key={i} value={`f${i}`} className="border border-brand-purple/12 rounded-2xl px-5 bg-white/80">
-                    <AccordionTrigger className="text-brand-deep font-bold text-[15px] text-left hover:no-underline">{f.q}</AccordionTrigger>
-                    <AccordionContent className="text-ink-secondary text-[14px] leading-[1.7]">{f.a}</AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+            <SharedFAQList faqs={FAQS} />
+
           </div>
         </section>
 
