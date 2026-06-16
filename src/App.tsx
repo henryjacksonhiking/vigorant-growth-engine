@@ -108,6 +108,8 @@ const App = () => (
             <Route path="/resources/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
             <Route path="/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
             <Route path="/resources/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
+            <Route path="/blog/can-ai-replace-marketing-team" element={<BlogCanAIReplaceMarketing />} />
+            <Route path="/resources/blog/can-ai-replace-marketing-team" element={<BlogCanAIReplaceMarketing />} />
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/case-studies" element={<CaseStudies />} />
