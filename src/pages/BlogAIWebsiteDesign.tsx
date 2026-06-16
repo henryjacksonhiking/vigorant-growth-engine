@@ -172,29 +172,27 @@ export default function BlogAIWebsiteDesign() {
       <Nav />
       <main id="main" className="overflow-x-hidden bg-white">
         {/* SECTION 1 — HERO */}
-        <section className="relative overflow-hidden text-white" style={{ background: HERO_BG, minHeight: "90vh", paddingTop: "8rem", paddingBottom: "5rem" }}>
-          <div aria-hidden className="pointer-events-none absolute" style={{ top: "10%", left: "5%", width: 500, height: 500, background: "radial-gradient(circle, hsl(247 93% 64% / 0.18), transparent 70%)", filter: "blur(80px)" }} />
-          <div aria-hidden className="pointer-events-none absolute" style={{ bottom: "15%", right: "8%", width: 400, height: 400, background: "radial-gradient(circle, hsl(248 100% 75% / 0.12), transparent 70%)", filter: "blur(70px)" }} />
+        <section className="relative overflow-hidden bg-white text-brand-deep" style={{ minHeight: "90vh", paddingTop: "8rem", paddingBottom: "5rem" }}>
           <div className="relative z-10 mx-auto max-w-[820px] text-center" style={{ padding: "0 clamp(16px, 5vw, 64px)" }}>
             <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-[hsl(247_93%_64%/0.85)] mb-5">
-              <Link to="/" className="hover:text-white">Home</Link>
+              <Link to="/" className="hover:text-brand-deep">Home</Link>
               <span className="mx-2" aria-hidden>›</span>
-              <Link to="/blog" className="hover:text-white">Blog</Link>
+              <Link to="/blog" className="hover:text-brand-deep">Blog</Link>
               <span className="mx-2" aria-hidden>›</span>
-              <span aria-current="page" className="text-white/80">AI Website Design</span>
+              <span aria-current="page" className="text-ink-secondary">AI Website Design</span>
             </nav>
-            <span className="text-xs font-semibold uppercase tracking-widest text-white bg-[hsl(247_93%_64%/0.25)] px-3 py-1 rounded-full inline-block">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-purple bg-[hsl(247_93%_64%/0.1)] px-3 py-1 rounded-full inline-block">
               Healthcare Marketing
             </span>
-            <h1 className="font-bold mt-6 mx-auto" style={{ fontSize: "clamp(32px, 5.5vw, 62px)", lineHeight: 1.08, letterSpacing: "-0.03em" }}>
+            <h1 className="font-bold mt-6 mx-auto text-brand-deep" style={{ fontSize: "clamp(32px, 5.5vw, 62px)", lineHeight: 1.08, letterSpacing: "-0.03em" }}>
               Design a New Website By{" "}
               <span style={{ background: "linear-gradient(90deg, hsl(247 93% 64%), hsl(248 100% 75%))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>AI</span>:
               Advantages, Disadvantages & What Healthcare Practices Need to Know
             </h1>
-            <p className="mt-6 mx-auto text-[hsl(248_100%_95%/0.78)]" style={{ maxWidth: 640, fontSize: "clamp(15px, 1.8vw, 17px)", lineHeight: 1.7 }}>
+            <p className="mt-6 mx-auto text-ink-secondary" style={{ maxWidth: 640, fontSize: "clamp(15px, 1.8vw, 17px)", lineHeight: 1.7 }}>
               AI website builders promise speed and savings. But for dental, medical, and chiropractic practices, the real story is more complicated — and the stakes are much higher.
             </p>
-            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-white/65 flex-wrap">
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-ink-secondary flex-wrap">
               <span>Vigorant Healthcare Marketing Team</span>
               <span aria-hidden>·</span>
               <span>June 2026</span>
@@ -205,7 +203,7 @@ export default function BlogAIWebsiteDesign() {
               <Link to="/services/website-design" className="text-white font-bold px-8 py-4 rounded-full shadow-lg hover:scale-[1.03] transition-all duration-200 inline-flex items-center" style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
                 Explore Our Web Design Service <ArrowRight size={18} className="ml-2" aria-hidden />
               </Link>
-              <a href="#comparison-table" className="font-bold px-8 py-4 rounded-full border-2 border-[hsl(247_93%_64%)] text-[hsl(248_100%_88%)] hover:bg-[hsl(247_93%_64%/0.12)] transition-all duration-200">
+              <a href="#comparison-table" className="font-bold px-8 py-4 rounded-full border-2 border-[hsl(247_93%_64%)] text-brand-purple hover:bg-[hsl(247_93%_64%/0.08)] transition-all duration-200">
                 Jump to Comparison Table
               </a>
             </div>
