@@ -12,6 +12,8 @@ export default function Seo() {
     foundingDate: "2018",
     areaServed: "United States",
     knowsAbout: ["Dental SEO", "Healthcare Marketing", "AI Visibility Optimization", "Local SEO for Healthcare", "Dental Paid Ads", "Chiropractic Marketing"],
+    email: "info@vigorant.com",
+    telephone: "+1-833-641-2200",
     sameAs: [
       "https://www.linkedin.com/company/vigorant",
       "https://www.facebook.com/vigorant",
