@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoHorizontal from "@/assets/vigorant-logo-horizontal.png";
 
@@ -282,12 +282,23 @@ export default function Nav() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a href="#login" className="hidden xl:inline text-sm text-ink-secondary hover:text-brand-deep transition-colors px-2 py-1 whitespace-nowrap">Sign in</a>
-          <Link to="/free-audit"
-            className="hidden sm:inline-flex items-center btn-primary-grad font-semibold text-sm px-5 py-2.5 rounded-full min-h-[40px] whitespace-nowrap">
-            Free Growth Audit <span aria-hidden className="ml-1">→</span>
-          </Link>
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+          <div className="hidden xl:flex items-center gap-4">
+            <a
+              href="tel:+18336412200"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-deep hover:text-brand-purple transition-colors whitespace-nowrap"
+              aria-label="Call Vigorant at (833) 641-2200"
+            >
+              <Phone size={14} aria-hidden /> (833) 641-2200
+            </a>
+            <a
+              href="mailto:info@vigorant.com"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-deep hover:text-brand-purple transition-colors whitespace-nowrap"
+              aria-label="Email Vigorant at info@vigorant.com"
+            >
+              <Mail size={14} aria-hidden /> info@vigorant.com
+            </a>
+          </div>
           <button
             onClick={() => setOpen(!open)}
             className="xl:hidden p-2 text-brand-deep min-w-[44px] min-h-[44px] flex items-center justify-center"
@@ -299,6 +310,7 @@ export default function Nav() {
           </button>
         </div>
       </div>
+
 
       <div
         id="mobile-nav"
@@ -450,10 +462,22 @@ export default function Nav() {
               </div>
             );
           })}
-          <Link to="/free-audit" onClick={() => setOpen(false)}
-            className="btn-primary-grad font-semibold text-sm px-5 py-3 rounded-full text-center mt-2 min-h-[48px] flex items-center justify-center">
-            Free Growth Audit <span aria-hidden className="ml-1">→</span>
-          </Link>
+          <div className="mt-3 pt-4 border-t border-brand-purple/15 flex flex-col gap-2">
+            <a
+              href="tel:+18336412200"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center gap-2 text-base font-medium text-brand-deep min-h-[44px] px-2"
+            >
+              <Phone size={16} aria-hidden /> (833) 641-2200
+            </a>
+            <a
+              href="mailto:info@vigorant.com"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center gap-2 text-base font-medium text-brand-deep min-h-[44px] px-2 break-all"
+            >
+              <Mail size={16} aria-hidden /> info@vigorant.com
+            </a>
+          </div>
         </nav>
       </div>
     </motion.header>

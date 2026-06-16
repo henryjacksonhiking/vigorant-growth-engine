@@ -112,20 +112,20 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="ui-card-text italic text-[14px]">
+              <p className="ui-card-text italic text-[14px] mt-3">
                 “{t.problem}”
               </p>
 
-              <span className="mt-5 self-start inline-flex max-w-full items-center text-white font-bold text-[11px] sm:text-[13px] px-3 sm:px-3.5 py-1.5 rounded-full whitespace-nowrap overflow-hidden text-ellipsis"
+              <span className="mt-3 self-start inline-flex max-w-full items-center text-white font-bold text-[11px] sm:text-[13px] px-3 sm:px-3.5 py-1.5 rounded-full whitespace-nowrap overflow-hidden text-ellipsis"
                 style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
                 {t.metric}
               </span>
 
-              <p className="mt-5 italic text-brand-deep leading-relaxed text-[14px] border-t border-brand-purple/10 pt-4">
+              <p className="mt-3 italic text-brand-deep leading-relaxed text-[14px] border-t border-brand-purple/10 pt-3">
                 “{t.emotion}”
               </p>
 
-              <div className="mt-auto pt-5 flex items-center justify-between gap-2 flex-wrap">
+              <div className="mt-3 flex items-center justify-between gap-2 flex-wrap">
                 <span className="inline-flex min-h-[28px] items-center font-mono-ui text-[10px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 px-2.5 py-1 rounded-full">
                   {t.category}
                 </span>
