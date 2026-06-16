@@ -8,6 +8,7 @@ import {
 import { useTilt } from "@/components/site/GlobalFx";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 function Line({ children, delay }: { children: React.ReactNode; delay: number }) {
