@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Play, Plus } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import SharedFAQList from "@/components/site/SharedFAQ";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const CANONICAL = "https://vigorant.com/services/video-marketing";
