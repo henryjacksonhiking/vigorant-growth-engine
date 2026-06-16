@@ -688,35 +688,8 @@ function FAQSection() {
             Questions Practice Owners Ask Before Booking an Audit
           </h2>
         </Reveal>
-        <div className="max-w-3xl mx-auto mt-12 space-y-2.5" role="list">
-          {FAQS.map((f, i) => {
-            const isOpen = open === i;
-            const btnId = `${baseId}-q-${i}`;
-            const panelId = `${baseId}-p-${i}`;
-            return (
-              <Reveal key={f.q} delay={i * 0.03} className="h-full">
-                <div className="bg-white rounded-xl overflow-hidden transition-all"
-                  style={{
-                    border: `1px solid hsl(247 93% 64% / ${isOpen ? "0.25" : "0.1"})`,
-                    boxShadow: isOpen ? "0 8px 24px hsl(247 93% 64% / 0.07)" : "none",
-                  }} role="listitem">
-                  <h3 className="m-0">
-                    <button id={btnId} onClick={() => setOpen(isOpen ? null : i)}
-                      aria-expanded={isOpen} aria-controls={panelId}
-                      className="w-full flex items-start justify-between gap-5 text-left px-5 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors">
-                      <span className="text-[16px] sm:text-[17px] font-semibold text-brand-deep">{f.q}</span>
-                      <Plus aria-hidden size={20} className="text-brand-purple flex-shrink-0 mt-1 transition-transform duration-300"
-                        style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }} />
-                    </button>
-                  </h3>
-                  <div id={panelId} role="region" aria-labelledby={btnId} hidden={!isOpen}>
-                    <p className="px-5 sm:px-6 pb-6 text-[15px] text-ink-secondary leading-[1.82]">{f.a}</p>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+        <SharedFAQList faqs={FAQS} />
+
       </div>
     </section>
   );

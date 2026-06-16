@@ -869,32 +869,8 @@ function FAQSection() {
           </Reveal>
         </div>
 
-        <div className="mt-10 max-w-[760px] mx-auto flex flex-col gap-2.5">
-          {FAQS.map((f, i) => {
-            const isOpen = openIdx === i;
-            const btnId = `mnp-faq-btn-${i}`;
-            const panelId = `mnp-faq-panel-${i}`;
-            return (
-              <Reveal key={f.q} delay={i * 0.03} className="h-full">
-                <div className="rounded-2xl bg-white" style={{ border: "1px solid hsl(247 93% 64% / 0.12)" }}>
-                  <h3 className="m-0">
-                    <button id={btnId} type="button" aria-expanded={isOpen} aria-controls={panelId}
-                      onClick={() => { setOpenIdx(isOpen ? null : i); /* analytics: faq_expand */ }}
-                      data-analytics-event="faq_expand"
-                      className="w-full flex items-start justify-between gap-5 text-left px-5 sm:px-6 py-5 min-h-[56px] hover:bg-brand-purple/5 transition-colors rounded-2xl">
-                      <span className="text-[16px] sm:text-[17px] font-semibold text-brand-deep">{f.q}</span>
-                      <Plus aria-hidden size={20} className="text-brand-purple flex-shrink-0 mt-1 transition-transform duration-300"
-                        style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0)" }} />
-                    </button>
-                  </h3>
-                  <div id={panelId} role="region" aria-labelledby={btnId} hidden={!isOpen}>
-                    <p className="px-5 sm:px-6 pb-6 text-[15px] text-ink-secondary leading-[1.82]">{f.a}</p>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+        <SharedFAQList faqs={FAQS} />
+
       </div>
     </section>
   );
