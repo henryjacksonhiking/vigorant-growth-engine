@@ -270,7 +270,7 @@
   .tilt-spotlight > * { position: relative; z-index: 1; }
 
   .homepage-cta-standard {
-    @apply inline-flex max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-7 sm:py-3.5 font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px] text-center leading-snug whitespace-normal sm:whitespace-nowrap;
+    @apply inline-flex max-w-full items-center justify-center gap-2 rounded-full px-5 py-3 sm:px-7 sm:py-3.5 font-bold text-[14px] sm:text-[16px] min-h-[46px] sm:min-h-[48px] text-center leading-snug whitespace-nowrap;
     border-radius: 999px !important;
   }
 
