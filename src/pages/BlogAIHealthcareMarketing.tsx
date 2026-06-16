@@ -415,7 +415,7 @@ export default function BlogAIHealthcareMarketing() {
         </div>
 
         {/* Left panel (light) */}
-        <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-16 lg:py-0 min-h-[60vh] lg:min-h-screen">
+        <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-16 lg:py-0 min-h-[60vh] lg:min-h-[calc(100vh-5rem)]">
           <nav className="text-[11px] font-mono-ui text-[hsl(247_93%_64%/0.75)] tracking-widest uppercase mb-6">
             <Link to="/" className="hover:text-[hsl(247_93%_64%)] transition-colors">Home</Link>
             <span className="mx-2 text-ink-secondary/50">›</span>
@@ -479,7 +479,7 @@ export default function BlogAIHealthcareMarketing() {
         </div>
 
         {/* Right panel (dark image) */}
-        <div className="hidden lg:block w-1/2 relative overflow-hidden min-h-screen">
+        <div className="hidden lg:block w-1/2 relative overflow-hidden lg:min-h-[calc(100vh-5rem)]">
           <img
             src={HERO_IMG}
             alt="Healthcare professional reviewing AI-powered marketing analytics dashboard"
