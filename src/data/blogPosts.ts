@@ -24,6 +24,17 @@ export const BLOG_CATEGORIES = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "can-ai-replace-marketing-team",
+    title: "Can AI Replace Your Marketing Team? The Truth Every Business Owner Should Know",
+    excerpt: "An evidence-based answer for healthcare practice owners — what AI does well, where human expertise is irreplaceable, and the AI-augmented human-led model that actually wins in 2026.",
+    category: "AI Search",
+    tags: ["AI", "Marketing Strategy", "Healthcare"],
+    author: "Vigorant Healthcare Marketing Team",
+    date: "2026-06-15",
+    readMinutes: 11,
+    featured: true,
+  },
+  {
     slug: "ai-healthcare-marketing-results",
     title: "How Can AI Help Healthcare Business Owners Achieve Better Marketing Results",
     excerpt: "From AI-powered SEO and AEO to smarter ad campaigns, personalised patient emails, and AI-assisted website design — every way AI improves dental, medical, and chiropractic marketing.",
