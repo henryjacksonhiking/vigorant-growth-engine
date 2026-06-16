@@ -24,6 +24,17 @@ export const BLOG_CATEGORIES = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "ai-healthcare-marketing-results",
+    title: "How Can AI Help Healthcare Business Owners Achieve Better Marketing Results",
+    excerpt: "From AI-powered SEO and AEO to smarter ad campaigns, personalised patient emails, and AI-assisted website design — every way AI improves dental, medical, and chiropractic marketing.",
+    category: "AI Search",
+    tags: ["AI", "Healthcare Marketing", "AEO", "GEO", "Patient Acquisition"],
+    author: "Vigorant Healthcare Marketing Team",
+    date: "2026-06-15",
+    readMinutes: 12,
+    featured: true,
+  },
+  {
     slug: "ai-website-design-pros-cons",
     title: "Design a New Website By AI: Advantages, Disadvantages & What Healthcare Practices Need to Know",
     excerpt: "AI website builders promise speed and savings. For dental, medical, and chiropractic practices, the real story is more complicated — and the stakes are much higher.",

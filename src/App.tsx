@@ -44,6 +44,7 @@ import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogAIWebsiteDesign from "./pages/BlogAIWebsiteDesign.tsx";
+import BlogAIHealthcareMarketing from "./pages/BlogAIHealthcareMarketing.tsx";
 import About from "./pages/About.tsx";
 import FreeAudit from "./pages/FreeAudit.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
@@ -104,6 +105,8 @@ const App = () => (
             <Route path="/resources/blog" element={<Blog />} />
             <Route path="/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
             <Route path="/resources/blog/ai-website-design-pros-cons" element={<BlogAIWebsiteDesign />} />
+            <Route path="/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
+            <Route path="/resources/blog/ai-healthcare-marketing-results" element={<BlogAIHealthcareMarketing />} />
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/case-studies" element={<CaseStudies />} />
