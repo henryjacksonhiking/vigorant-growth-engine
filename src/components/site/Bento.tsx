@@ -49,13 +49,17 @@ function Cell({ className = "", icon: Icon, tag, title, body, children }: any) {
   return (
     <div ref={ref}
       className={`tilt-spotlight rounded-[20px] bg-surface-secondary border border-brand-purple/10 p-5 sm:p-7 lg:p-8 transition-all duration-300 hover:border-brand-purple/25 hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)] ${className}`}>
-      <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
-        <Icon size={20} className="text-white" />
+      <div className="flex sm:block items-start gap-3.5">
+        <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 sm:mb-4"
+          style={{ background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 49% 15%))" }}>
+          <Icon size={20} className="text-white" />
+        </div>
+        <div className="min-w-0 flex-1 text-left">
+          <span className="inline-block font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 rounded-full px-2.5 py-1">{tag}</span>
+          <h3 className="mt-2 sm:mt-3 font-extrabold text-brand-deep text-xl leading-tight">{title}</h3>
+        </div>
       </div>
-      <span className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/10 rounded-full px-2.5 py-1">{tag}</span>
-      <h3 className="mt-3 font-extrabold text-brand-deep text-xl">{title}</h3>
-      <p className="mt-2 text-ink-secondary text-[14px] leading-relaxed">{body}</p>
+      <p className="mt-3 sm:mt-2 text-ink-secondary text-[14px] leading-relaxed">{body}</p>
       {children}
     </div>
   );
