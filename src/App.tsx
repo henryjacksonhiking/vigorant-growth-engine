@@ -44,6 +44,7 @@ import Results from "./pages/Results.tsx";
 import Resources from "./pages/Resources.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogAIWebsiteDesign from "./pages/BlogAIWebsiteDesign.tsx";
+import BlogAIHealthcareMarketing from "./pages/BlogAIHealthcareMarketing.tsx";
 import About from "./pages/About.tsx";
 import FreeAudit from "./pages/FreeAudit.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
