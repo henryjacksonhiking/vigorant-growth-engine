@@ -755,35 +755,8 @@ export default function AnalyticsReporting() {
                 </Link>
               </Reveal>
 
-              <div className="border-t border-brand-purple/18">
-                {FAQS.map((f, i) => {
-                  const open = openFaq === i;
-                  return (
-                    <div key={f.q} className="border-b border-brand-purple/18">
-                      <button
-                        type="button"
-                        aria-expanded={open}
-                        onClick={() => setOpenFaq(open ? null : i)}
-                        className="w-full flex justify-between gap-4 items-start py-5 text-left font-extrabold text-brand-deep text-[16px] hover:text-brand-purple transition-colors"
-                      >
-                        <span>{f.q}</span>
-                        <span
-                          aria-hidden
-                          className={
-                            "w-7 h-7 rounded-full grid place-items-center flex-shrink-0 transition-all " +
-                            (open ? "bg-brand-purple text-white rotate-45" : "bg-background text-brand-purple")
-                          }
-                        >
-                          <Plus size={16} />
-                        </span>
-                      </button>
-                      <div className="overflow-hidden transition-all duration-500" style={{ maxHeight: open ? 400 : 0 }}>
-                        <p className="pb-5 text-ink-secondary leading-[1.75] max-w-2xl">{f.a}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+              <SharedFAQList faqs={FAQS} />
+
             </div>
           </div>
         </section>
