@@ -397,7 +397,7 @@ export default function BlogAIHealthcareMarketing() {
       <Nav />
 
       {/* SECTION 1 — SPLIT-SCREEN HERO */}
-      <section className="relative flex flex-col lg:flex-row lg:min-h-screen pt-24 lg:pt-0">
+      <section className="relative flex flex-col lg:flex-row lg:min-h-[calc(100vh-5rem)] pt-24 lg:pt-20">
         {/* Mobile image top */}
         <div className="lg:hidden relative w-full aspect-[16/9] overflow-hidden">
           <img
