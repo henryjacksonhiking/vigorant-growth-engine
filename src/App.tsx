@@ -113,6 +113,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/free-audit" element={<FreeAudit />} />
             <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/case-studies/:specialty/:slug" element={<CaseStudyDetail />} />
             <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
