@@ -22,7 +22,7 @@ export function CSHero({ study }: { study: CaseStudy }) {
         </nav>
 
         <span className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3.5 py-1.5 mb-6 sm:mb-8">
-          <span className="pulse-dot" aria-hidden /> {study.tag}
+          <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" /> {study.tag}
         </span>
 
         <h1 className="font-display font-bold text-brand-deep leading-[1.06] tracking-tight mb-6" style={{ fontSize: "clamp(32px,5.5vw,62px)", letterSpacing: "-0.03em" }}>

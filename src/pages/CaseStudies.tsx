@@ -80,7 +80,7 @@ export default function CaseStudies() {
               <span className="text-ink-secondary">Case Studies</span>
             </nav>
             <span className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3.5 py-1.5 mb-6">
-              <span className="pulse-dot" aria-hidden /> Real Results From Real Practices
+              <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-brand-purple pulse-dot" /> Real Results From Real Practices
             </span>
             <h1 className="font-display font-bold text-brand-deep leading-[1.06] tracking-tight mb-5" style={{ fontSize: "clamp(34px,5.5vw,64px)", letterSpacing: "-0.03em" }}>
               Every Number Here Is <span className="gradient-text">Real.</span>
