@@ -252,14 +252,16 @@
     border-color: hsl(0 0% 100% / 0.6);
     transform: translateY(-1px);
   }
-  /* Shared mobile rule: icon + heading sit side-by-side, text left-aligned */
+  /* Shared rule: icon + heading sit side-by-side, heading vertically centered with icon */
   .card-icon-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.875rem;
+    text-align: left;
   }
-  .card-icon-header > .card-icon-header__icon { flex-shrink: 0; }
+  .card-icon-header > .card-icon-header__icon { flex-shrink: 0; align-self: center; }
   .card-icon-header > .card-icon-header__text { min-width: 0; flex: 1; text-align: left; }
+  .card-icon-header > .card-icon-header__text > :is(h2, h3, h4) { margin: 0; }
   .tilt-spotlight {
     position: relative;
     isolation: isolate;
