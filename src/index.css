@@ -649,7 +649,58 @@
       align-items: stretch !important;
     }
   }
+
+  /* ============================================================
+     GLOBAL CARD HEADER NORMALIZATION
+     For any card-shaped element whose first child row contains an
+     icon container followed by heading/text, force icon-left +
+     text-right with the heading vertically centered against the icon.
+     ============================================================ */
+  main :is(article, aside, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl)
+    > div:first-child.flex:has(> :is(.w-9, .w-10, .w-11, .w-12, .w-14, .w-16, [class*="rounded-xl"], [class*="rounded-2xl"]):first-child + *),
+  main :is(article, aside, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl)
+    > .card-icon-header {
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 0.875rem;
+  }
+  main :is(article, aside, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl)
+    > div:first-child.flex > :is(.w-9, .w-10, .w-11, .w-12, .w-14, .w-16):first-child {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* ============================================================
+     KILL CENTERED CARD LAYOUTS
+     Cards inside grids should be left-aligned; remove text-center
+     and mx-auto on their inner content.
+     ============================================================ */
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl).text-center,
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl) .text-center:not(blockquote):not([class*="badge"]):not([class*="pill"]) {
+    text-align: left !important;
+  }
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl) :is(.mx-auto):not([class*="max-w"]) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* Icon boxes inside cards should sit on the left, not centered. */
+  main :is(.grid, .ui-card-grid) :is(article, .ui-card, .ui-card-dark, .ui-card-compact, .rounded-2xl, .rounded-xl) > :is(.w-10, .w-11, .w-12, .w-14, .w-16).mx-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ============================================================
+     MOBILE OVERFLOW SAFETY
+     Belt-and-suspenders: nothing inside main may force a horizontal scrollbar.
+     ============================================================ */
+  @media (max-width: 640px) {
+    main { overflow-x: clip; }
+    main img, main svg, main video { max-width: 100%; height: auto; }
+    main :is(.grid, .flex) { min-width: 0; }
+  }
 }
+
 
 /* ============================================================
    GLOBAL DARK-SECTION CONTRAST OVERRIDES
