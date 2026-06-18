@@ -441,10 +441,6 @@ export default function SocialMediaMarketing() {
                   <Link
                     to="/free-audit"
                     className="btn-primary-grad mt-5 inline-flex w-full items-center justify-center gap-2 font-bold text-[14px] px-5 py-3 rounded-full"
-                    style={{
-                      background: "linear-gradient(135deg, hsl(247 93% 64%), hsl(248 100% 75%), hsl(248 49% 15%))",
-                      boxShadow: "0 12px 32px hsl(247 93% 64% / 0.35)",
-                    }}
                   >
                     Get my full audit <ArrowRight className="w-4 h-4" />
                   </Link>
