@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Camera } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import SharedFAQList from "@/components/site/SharedFAQ";
 import type { NarrativeCaseStudy } from "@/data/case-study-narratives";
+import dentalHero from "@/assets/cs-dental-hero.jpg";
+import dentalStrategy from "@/assets/cs-dental-strategy.jpg";
+import dsoHero from "@/assets/cs-dso-hero.jpg";
+import dsoStrategy from "@/assets/cs-dso-strategy.jpg";
+import chiroHero from "@/assets/cs-chiro-hero.jpg";
+import chiroStrategy from "@/assets/cs-chiro-strategy.jpg";
+
+const CS_IMAGES: Record<string, { hero: string; strategy: string }> = {
+  "dental-implant-specialist-california": { hero: dentalHero, strategy: dentalStrategy },
+  "6-location-dso-texas": { hero: dsoHero, strategy: dsoStrategy },
+  "sports-chiropractic-florida": { hero: chiroHero, strategy: chiroStrategy },
+};
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -32,14 +44,20 @@ function Prose({ items }: { items: string[] }) {
   );
 }
 
-function ImageDirection({ text }: { text: string }) {
+function ContextImage({ src, caption, priority }: { src?: string; caption: string; priority?: boolean }) {
+  if (!src) return null;
   return (
-    <div className="my-10 rounded-2xl border-2 border-dashed border-brand-purple/30 bg-brand-purple/[0.04] p-6 sm:p-8">
-      <div className="flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-[0.14em] text-brand-purple mb-3">
-        <Camera size={14} aria-hidden /> Image Direction
-      </div>
-      <p className="text-ink-secondary text-[15px] leading-[1.75] italic">{text}</p>
-    </div>
+    <figure className="my-10">
+      <img
+        src={src}
+        alt={caption}
+        width={1600}
+        height={1000}
+        loading={priority ? "eager" : "lazy"}
+        className="w-full h-auto rounded-2xl border border-brand-purple/15 shadow-sm object-cover"
+      />
+      <figcaption className="mt-3 text-[13px] leading-[1.6] text-ink-secondary/80 italic">{caption}</figcaption>
+    </figure>
   );
 }
 
@@ -85,7 +103,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
             </Link>
           </div>
 
-          <ImageDirection text={data.hero_image_direction} />
+          <ContextImage src={CS_IMAGES[data.slug]?.hero} caption={data.hero_image_direction} priority />
         </div>
       </section>
 
@@ -163,7 +181,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           <div className="mt-10">
             <Prose items={data.strategy.paragraphs} />
           </div>
-          <ImageDirection text={data.strategy.image_direction} />
+          <ContextImage src={CS_IMAGES[data.slug]?.strategy} caption={data.strategy.image_direction} />
         </div>
       </section>
 
