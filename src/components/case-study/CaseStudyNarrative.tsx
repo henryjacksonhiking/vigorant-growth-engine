@@ -43,47 +43,10 @@ function ImageDirection({ text }: { text: string }) {
   );
 }
 
-function DataTable({ columns, rows }: { columns: string[]; rows: string[][] }) {
-  return (
-    <div className="mt-8 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto">
-      <table className="w-full min-w-[560px] border-collapse text-left">
-        <thead>
-          <tr>
-            {columns.map((c) => (
-              <th
-                key={c}
-                className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple border-b border-brand-purple/20 pb-3 pr-6 whitespace-nowrap"
-              >
-                {c}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={i} className="border-b border-brand-purple/10 last:border-0">
-              {r.map((cell, j) => (
-                <td
-                  key={j}
-                  className={`py-4 pr-6 text-[15px] leading-[1.6] align-top ${
-                    j === 0 ? "font-semibold text-brand-deep" : "text-ink-secondary"
-                  }`}
-                >
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
 export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy }) {
   return (
     <article>
-      {/* HERO */}
+      {/* 1 + 2. HERO INTRO, CTA, HERO IMAGE */}
       <section className="bg-white pt-28 sm:pt-32 pb-14 sm:pb-16">
         <div className="container max-w-[820px]">
           <Link
@@ -111,56 +74,79 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
             {data.h1}
           </h1>
 
-          <p className="text-ink-secondary text-[17px] sm:text-[18px] leading-[1.8] mb-8">{data.opening}</p>
+          <Prose items={data.intro} />
 
-          <Link
-            to={data.cta.href}
-            className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white"
-          >
-            {data.cta.label} <ArrowRight size={16} aria-hidden />
-          </Link>
+          <div className="mt-8">
+            <Link
+              to={data.cta.href}
+              className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white"
+            >
+              {data.cta.label} <ArrowRight size={16} aria-hidden />
+            </Link>
+          </div>
 
-          <ImageDirection text={data.image_direction_1} />
+          <ImageDirection text={data.hero_image_direction} />
         </div>
       </section>
 
-      {/* ASSUMPTION VS REALITY */}
+      {/* 3. CHALLENGE AND CONTEXT */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
-          <SectionLabel>{data.assumption.label}</SectionLabel>
-          <H2>{data.assumption.heading}</H2>
-          <Prose items={data.assumption.paragraphs} />
-        </div>
-      </section>
-
-      {/* ROOT CAUSE */}
-      <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[820px]">
-          <SectionLabel>{data.root_cause.label}</SectionLabel>
-          <H2>{data.root_cause.heading}</H2>
-          <Prose items={data.root_cause.paragraphs} />
-          {data.root_cause.bullets && (
-            <ul className="mt-6 space-y-3">
-              {data.root_cause.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-ink-secondary text-[16px] leading-[1.7]">
-                  <span aria-hidden className="mt-2 w-1.5 h-1.5 rounded-full bg-brand-purple flex-shrink-0" />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
+          <SectionLabel>The Challenge</SectionLabel>
+          <H2>{data.challenge.heading}</H2>
+          {data.challenge.subheading && (
+            <h3 className="font-display font-bold text-brand-deep text-[19px] sm:text-[21px] mb-4">
+              {data.challenge.subheading}
+            </h3>
           )}
-          {data.root_cause.table && <DataTable {...data.root_cause.table} />}
+          <Prose items={data.challenge.paragraphs} />
         </div>
       </section>
 
-      {/* REBUILD */}
+      {/* 4. BEFORE AND AFTER */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="container max-w-[900px]">
+          <SectionLabel>Before &amp; After</SectionLabel>
+          <H2>What Changed</H2>
+          <div className="mt-8 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto">
+            <table className="w-full min-w-[600px] border-collapse text-left">
+              <thead>
+                <tr>
+                  {["Metric", "Before", "After"].map((c) => (
+                    <th
+                      key={c}
+                      className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple border-b border-brand-purple/20 pb-3 pr-6 whitespace-nowrap"
+                    >
+                      {c}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {data.comparison.map((r) => (
+                  <tr key={r.metric} className="border-b border-brand-purple/10 last:border-0">
+                    <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top font-semibold text-brand-deep">
+                      {r.metric}
+                    </td>
+                    <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top text-ink-secondary">{r.before}</td>
+                    <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top text-brand-deep font-medium">
+                      {r.after}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. STRATEGY AND IMPLEMENTATION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
-          <SectionLabel>{data.rebuild.label}</SectionLabel>
-          <H2>{data.rebuild.heading}</H2>
-          {data.rebuild.intro && <Prose items={[data.rebuild.intro]} />}
+          <SectionLabel>Strategy &amp; Implementation</SectionLabel>
+          <H2>{data.strategy.heading}</H2>
           <div className="mt-8 space-y-6">
-            {data.rebuild.steps.map((s, i) => (
+            {data.strategy.steps.map((s, i) => (
               <div key={s.title} className="ui-card p-6 sm:p-7">
                 <div className="flex items-start gap-4">
                   <span className="font-mono-ui text-[12px] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
@@ -174,61 +160,45 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
               </div>
             ))}
           </div>
+          <div className="mt-10">
+            <Prose items={data.strategy.paragraphs} />
+          </div>
+          <ImageDirection text={data.strategy.image_direction} />
         </div>
       </section>
 
-      {/* TURNING POINT */}
+      {/* 6. RESULTS STAT TRAIL */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[820px]">
-          <SectionLabel>{data.turning_point.label}</SectionLabel>
-          <H2>{data.turning_point.heading}</H2>
-          <Prose items={data.turning_point.paragraphs} />
-          <ImageDirection text={data.image_direction_2} />
-        </div>
-      </section>
-
-      {/* RESULTS */}
-      <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[900px]">
+        <div className="container max-w-[1000px]">
           <SectionLabel>The Results</SectionLabel>
           <H2>What the Work Produced</H2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
-            {data.results.stats.map((s) => (
-              <div key={s.label} className="ui-card p-6">
+
+          <ol className="mt-10 relative flex flex-col md:flex-row md:items-start gap-8 md:gap-0">
+            {/* connecting trail line */}
+            <span
+              aria-hidden
+              className="absolute md:top-5 md:left-0 md:right-0 md:h-px left-5 top-0 bottom-0 w-px md:w-auto bg-brand-purple/20"
+            />
+            {data.stats.map((s) => (
+              <li key={s.label} className="relative flex-1 md:px-4 pl-14 md:pl-4 md:pt-0">
+                <span
+                  aria-hidden
+                  className="absolute left-[13px] top-2 md:static md:mb-6 md:block w-2.5 h-2.5 rounded-full bg-brand-purple ring-4 ring-white"
+                />
                 <div
                   className="font-display font-bold text-brand-deep leading-none tracking-tight"
-                  style={{ fontSize: "clamp(30px,4vw,44px)" }}
+                  style={{ fontSize: "clamp(32px,4.2vw,48px)" }}
                 >
                   {s.value}
                 </div>
-                <div className="font-mono-ui text-[11px] uppercase tracking-widest text-ink-secondary mt-3 leading-[1.5]">
+                <div className="font-mono-ui text-[11px] uppercase tracking-widest text-ink-secondary mt-3 leading-[1.6]">
                   {s.label}
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
 
-          <p className="text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8] mt-10">
-            {data.results.beyond_dashboard}
-          </p>
-
-          {data.results.quote && (
-            <figure className="mt-10 rounded-2xl border-l-4 border-brand-purple bg-white p-6 sm:p-8 shadow-sm">
-              <blockquote className="font-display font-bold text-brand-deep italic leading-[1.45] text-[19px] sm:text-[23px]">
-                “{data.results.quote.text}”
-              </blockquote>
-              <figcaption className="font-mono-ui text-[11px] uppercase tracking-widest text-ink-secondary mt-5">
-                — {data.results.quote.attribution}
-                {data.results.quote.note && (
-                  <span className="block normal-case tracking-normal italic text-ink-secondary/70 mt-2">
-                    ({data.results.quote.note})
-                  </span>
-                )}
-              </figcaption>
-            </figure>
-          )}
-
-          <div className="mt-10">
+          <div className="mt-12">
             <div className="font-mono-ui text-[11px] uppercase tracking-widest text-ink-secondary mb-4">
               Services Used
             </div>
@@ -247,45 +217,40 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
         </div>
       </section>
 
-      {/* CLOSING */}
-      <section className="bg-white py-14 sm:py-16">
+      {/* 7. QUOTE + CONCLUSION */}
+      <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
-          <SectionLabel>In Closing</SectionLabel>
-          <H2>{data.closing.heading}</H2>
-          <Prose items={data.closing.paragraphs} />
+          <figure className="rounded-2xl border-l-4 border-brand-purple bg-white p-6 sm:p-8 shadow-sm">
+            <blockquote className="font-display font-bold text-brand-deep italic leading-[1.45] text-[19px] sm:text-[23px]">
+              “{data.quote.text}”
+            </blockquote>
+            <figcaption className="font-mono-ui text-[11px] uppercase tracking-widest text-ink-secondary mt-5">
+              — {data.quote.attribution}
+              {data.quote.note && (
+                <span className="block normal-case tracking-normal italic text-ink-secondary/70 mt-2">
+                  ({data.quote.note})
+                </span>
+              )}
+            </figcaption>
+          </figure>
+
+          <div className="mt-10">
+            <Prose items={[data.conclusion]} />
+          </div>
+
+          <div className="mt-8">
+            <Link
+              to={data.final_cta.href}
+              className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white"
+            >
+              {data.final_cta.label} <ArrowRight size={16} aria-hidden />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section
-        className="py-16 sm:py-20 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, hsl(248 49% 15%) 0%, hsl(250 45% 19%) 50%, hsl(248 49% 12%) 100%)",
-        }}
-      >
-        <div aria-hidden className="orb-a absolute -top-32 -right-32 w-[420px] h-[420px] pointer-events-none" />
-        <div className="container relative z-10 max-w-[680px] text-center">
-          <h2
-            className="font-display font-bold text-white leading-[1.1] tracking-tight mb-5"
-            style={{ fontSize: "clamp(26px,4vw,44px)" }}
-          >
-            {data.final_cta.headline}
-          </h2>
-          <p className="text-[hsl(248_100%_88%)] text-[16px] sm:text-[17px] leading-[1.7] mb-9">
-            {data.final_cta.line}
-          </p>
-          <Link
-            to={data.final_cta.href}
-            className="btn-on-dark inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 rounded-full font-bold"
-          >
-            {data.final_cta.label} <ArrowRight size={16} aria-hidden />
-          </Link>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 sm:py-20" style={{ background: "hsl(248 30% 97%)" }}>
+      {/* 8. FAQ */}
+      <section className="bg-white py-16 sm:py-20">
         <div className="container">
           <div className="max-w-[580px] mx-auto text-center">
             <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">FAQ</div>
