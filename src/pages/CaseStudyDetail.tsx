@@ -4,9 +4,12 @@ import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { caseStudies, findCaseStudy } from "@/data/case-studies";
 import { buildCaseStudySchema } from "@/types/case-study";
+import { caseStudyNarratives } from "@/data/case-study-narratives";
+import CaseStudyNarrative from "@/components/case-study/CaseStudyNarrative";
 import CaseStudyTurnaround from "@/templates/CaseStudyTurnaround";
 import CaseStudyGrowth from "@/templates/CaseStudyGrowth";
 import CaseStudyDeepDive from "@/templates/CaseStudyDeepDive";
+import { CSRelated } from "@/components/case-study/CSShared";
 
 export default function CaseStudyDetail() {
   const { specialty, slug } = useParams<{ specialty?: string; slug: string }>();
@@ -15,6 +18,8 @@ export default function CaseStudyDetail() {
   if (!study) return <Navigate to="/case-studies" replace />;
   // If routed via legacy /case-studies/:slug, redirect to canonical
   if (!specialty) return <Navigate to={`/case-studies/${study.specialty}/${study.slug}`} replace />;
+
+  const narrative = caseStudyNarratives[study.slug];
 
   const Tpl =
     study.template === "turnaround" ? CaseStudyTurnaround :
@@ -37,9 +42,17 @@ export default function CaseStudyDetail() {
       <a href="#main" className="skip-link">Skip to main content</a>
       <Nav />
       <main id="main">
-        <Tpl study={study} all={caseStudies} />
+        {narrative ? (
+          <>
+            <CaseStudyNarrative data={narrative} />
+            <CSRelated study={study} all={caseStudies} />
+          </>
+        ) : (
+          <Tpl study={study} all={caseStudies} />
+        )}
       </main>
       <Footer />
     </>
   );
 }
+
