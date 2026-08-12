@@ -1,24 +1,12 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import SharedFAQList from "@/components/site/SharedFAQ";
-import type { NarrativeCaseStudy } from "@/data/case-study-narratives";
-import dentalHero from "@/assets/cs-dental-hero.jpg";
-import dentalStrategy from "@/assets/cs-dental-strategy.jpg";
-import dsoHero from "@/assets/cs-dso-hero.jpg";
-import dsoStrategy from "@/assets/cs-dso-strategy.jpg";
-import chiroHero from "@/assets/cs-chiro-hero.jpg";
-import chiroStrategy from "@/assets/cs-chiro-strategy.jpg";
+import type { CaseStudyContent } from "@/types/case-study-content";
 
-const CS_IMAGES: Record<string, { hero: string; strategy: string }> = {
-  "dental-implant-specialist-california": { hero: dentalHero, strategy: dentalStrategy },
-  "6-location-dso-texas": { hero: dsoHero, strategy: dsoStrategy },
-  "sports-chiropractic-florida": { hero: chiroHero, strategy: chiroStrategy },
-};
+/* ---------- primitives (no case-study-specific copy lives here) ---------- */
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">{children}</div>
-  );
+  return <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">{children}</div>;
 }
 
 function H2({ children }: { children: React.ReactNode }) {
@@ -44,27 +32,23 @@ function Prose({ items }: { items: string[] }) {
   );
 }
 
-function ContextImage({ src, caption, priority }: { src?: string; caption: string; priority?: boolean }) {
-  if (!src) return null;
+function ImageDirection({ text }: { text: string }) {
   return (
-    <figure className="my-10">
-      <img
-        src={src}
-        alt={caption}
-        width={1600}
-        height={1000}
-        loading={priority ? "eager" : "lazy"}
-        className="w-full h-auto rounded-2xl border border-brand-purple/15 shadow-sm object-cover"
-      />
-      <figcaption className="mt-3 text-[13px] leading-[1.6] text-ink-secondary/80 italic">{caption}</figcaption>
+    <figure className="my-10 rounded-2xl border-2 border-dashed border-brand-purple/30 bg-brand-purple/[0.03] p-6 sm:p-8">
+      <figcaption className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-2">
+        Image Direction
+      </figcaption>
+      <p className="text-[14px] sm:text-[15px] leading-[1.7] text-ink-secondary italic">{text}</p>
     </figure>
   );
 }
 
-export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy }) {
+/* ---------------------------- Template A -------------------------------- */
+
+export default function CaseStudyTemplateA({ data }: { data: CaseStudyContent }) {
   return (
     <article>
-      {/* 1 + 2. HERO INTRO, CTA, HERO IMAGE */}
+      {/* 1 + 2. HERO INTRO, CTA, HERO IMAGE DIRECTION */}
       <section className="bg-white pt-28 sm:pt-32 pb-14 sm:pb-16">
         <div className="container max-w-[820px]">
           <Link
@@ -89,21 +73,21 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
             className="font-display font-bold text-brand-deep leading-[1.08] tracking-tight mb-7"
             style={{ fontSize: "clamp(30px,5vw,56px)", letterSpacing: "-0.03em" }}
           >
-            {data.h1}
+            {data.hero.h1}
           </h1>
 
-          <Prose items={data.intro} />
+          <Prose items={data.hero.paragraphs} />
 
           <div className="mt-8">
             <Link
-              to={data.cta.href}
+              to={data.primaryCta.href}
               className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white"
             >
-              {data.cta.label} <ArrowRight size={16} aria-hidden />
+              {data.primaryCta.label} <ArrowRight size={16} aria-hidden />
             </Link>
           </div>
 
-          <ContextImage src={CS_IMAGES[data.slug]?.hero} caption={data.hero_image_direction} priority />
+          <ImageDirection text={data.heroImageDirection} />
         </div>
       </section>
 
@@ -111,10 +95,10 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
           <SectionLabel>The Challenge</SectionLabel>
-          <H2>{data.challenge.heading}</H2>
-          {data.challenge.subheading && (
+          <H2>{data.challenge.h2}</H2>
+          {data.challenge.h3 && (
             <h3 className="font-display font-bold text-brand-deep text-[19px] sm:text-[21px] mb-4">
-              {data.challenge.subheading}
+              {data.challenge.h3}
             </h3>
           )}
           <Prose items={data.challenge.paragraphs} />
@@ -141,7 +125,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
                 </tr>
               </thead>
               <tbody>
-                {data.comparison.map((r) => (
+                {data.beforeAfter.rows.map((r) => (
                   <tr key={r.metric} className="border-b border-brand-purple/10 last:border-0">
                     <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top font-semibold text-brand-deep">
                       {r.metric}
@@ -162,17 +146,17 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
           <SectionLabel>Strategy &amp; Implementation</SectionLabel>
-          <H2>{data.strategy.heading}</H2>
+          <H2>{data.strategy.h2}</H2>
           <div className="mt-8 space-y-6">
             {data.strategy.steps.map((s, i) => (
-              <div key={s.title} className="ui-card p-6 sm:p-7">
+              <div key={s.h3} className="ui-card p-6 sm:p-7">
                 <div className="flex items-start gap-4">
                   <span className="font-mono-ui text-[12px] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
                     {i + 1}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="ui-card-heading text-[18px] text-brand-deep mb-2">{s.title}</h3>
-                    <p className="text-ink-secondary text-[15px] sm:text-[16px] leading-[1.75]">{s.body}</p>
+                    <h3 className="ui-card-heading text-[18px] text-brand-deep mb-2">{s.h3}</h3>
+                    <p className="text-ink-secondary text-[15px] sm:text-[16px] leading-[1.75]">{s.description}</p>
                   </div>
                 </div>
               </div>
@@ -181,7 +165,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           <div className="mt-10">
             <Prose items={data.strategy.paragraphs} />
           </div>
-          <ContextImage src={CS_IMAGES[data.slug]?.strategy} caption={data.strategy.image_direction} />
+          <ImageDirection text={data.strategy.imageDirection} />
         </div>
       </section>
 
@@ -192,12 +176,11 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           <H2>What the Work Produced</H2>
 
           <ol className="mt-10 relative flex flex-col md:flex-row md:items-start gap-8 md:gap-0">
-            {/* connecting trail line */}
             <span
               aria-hidden
               className="absolute md:top-5 md:left-0 md:right-0 md:h-px left-5 top-0 bottom-0 w-px md:w-auto bg-brand-purple/20"
             />
-            {data.stats.map((s) => (
+            {data.statTrail.map((s) => (
               <li key={s.label} className="relative flex-1 md:px-4 pl-14 md:pl-4 md:pt-0">
                 <span
                   aria-hidden
@@ -221,7 +204,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
               Services Used
             </div>
             <div className="flex flex-wrap gap-3">
-              {data.services_used.map((svc) => (
+              {data.servicesUsed.map((svc) => (
                 <span
                   key={svc}
                   className="inline-flex items-center gap-2 font-semibold text-[13px] sm:text-[14px] text-brand-deep bg-white border border-brand-purple/20 rounded-full px-4 py-2 shadow-sm"
@@ -253,15 +236,15 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           </figure>
 
           <div className="mt-10">
-            <Prose items={[data.conclusion]} />
+            <Prose items={[data.conclusion.paragraph]} />
           </div>
 
           <div className="mt-8">
             <Link
-              to={data.final_cta.href}
+              to={data.conclusion.ctaHref}
               className="btn-primary-grad inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white"
             >
-              {data.final_cta.label} <ArrowRight size={16} aria-hidden />
+              {data.conclusion.ctaLabel} <ArrowRight size={16} aria-hidden />
             </Link>
           </div>
         </div>

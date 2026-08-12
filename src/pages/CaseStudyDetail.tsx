@@ -4,8 +4,8 @@ import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
 import { caseStudies, findCaseStudy } from "@/data/case-studies";
 import { buildCaseStudySchema } from "@/types/case-study";
-import { caseStudyNarratives } from "@/data/case-study-narratives";
-import CaseStudyNarrative from "@/components/case-study/CaseStudyNarrative";
+import { findCaseStudyContent } from "@/content/case-studies";
+import CaseStudyTemplateA from "@/components/case-study/CaseStudyTemplateA";
 import CaseStudyTurnaround from "@/templates/CaseStudyTurnaround";
 import CaseStudyGrowth from "@/templates/CaseStudyGrowth";
 import CaseStudyDeepDive from "@/templates/CaseStudyDeepDive";
@@ -19,7 +19,8 @@ export default function CaseStudyDetail() {
   // If routed via legacy /case-studies/:slug, redirect to canonical
   if (!specialty) return <Navigate to={`/case-studies/${study.specialty}/${study.slug}`} replace />;
 
-  const narrative = caseStudyNarratives[study.slug];
+  // Content-driven templates: routing is a data decision (`template: "A" | "B"`).
+  const content = findCaseStudyContent(study.slug);
 
   const Tpl =
     study.template === "turnaround" ? CaseStudyTurnaround :
@@ -42,9 +43,9 @@ export default function CaseStudyDetail() {
       <a href="#main" className="skip-link">Skip to main content</a>
       <Nav />
       <main id="main">
-        {narrative ? (
+        {content && content.template === "A" ? (
           <>
-            <CaseStudyNarrative data={narrative} />
+            <CaseStudyTemplateA data={content} />
             <CSRelated study={study} all={caseStudies} />
           </>
         ) : (
