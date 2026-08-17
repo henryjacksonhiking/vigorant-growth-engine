@@ -5,7 +5,9 @@ import Footer from "@/components/site/Footer";
 import { caseStudies, findCaseStudy } from "@/data/case-studies";
 import { buildCaseStudySchema } from "@/types/case-study";
 import { caseStudyNarratives } from "@/data/case-study-narratives";
+import { caseStudyBContent } from "@/data/case-study-b";
 import CaseStudyNarrative from "@/components/case-study/CaseStudyNarrative";
+import CaseStudyB from "@/components/case-study/CaseStudyB";
 import CaseStudyTurnaround from "@/templates/CaseStudyTurnaround";
 import CaseStudyGrowth from "@/templates/CaseStudyGrowth";
 import CaseStudyDeepDive from "@/templates/CaseStudyDeepDive";
@@ -19,7 +21,9 @@ export default function CaseStudyDetail() {
   // If routed via legacy /case-studies/:slug, redirect to canonical
   if (!specialty) return <Navigate to={`/case-studies/${study.specialty}/${study.slug}`} replace />;
 
-  const narrative = caseStudyNarratives[study.slug];
+  // Template seam: a case study's `template` field decides which component renders it.
+  const templateB = caseStudyBContent[study.slug];
+  const narrative = templateB ? undefined : caseStudyNarratives[study.slug];
 
   const Tpl =
     study.template === "turnaround" ? CaseStudyTurnaround :
@@ -42,7 +46,12 @@ export default function CaseStudyDetail() {
       <a href="#main" className="skip-link">Skip to main content</a>
       <Nav />
       <main id="main">
-        {narrative ? (
+        {templateB ? (
+          <>
+            <CaseStudyB data={templateB} />
+            <CSRelated study={study} all={caseStudies} />
+          </>
+        ) : narrative ? (
           <>
             <CaseStudyNarrative data={narrative} />
             <CSRelated study={study} all={caseStudies} />
@@ -55,4 +64,3 @@ export default function CaseStudyDetail() {
     </>
   );
 }
-

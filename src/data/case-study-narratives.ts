@@ -11,6 +11,8 @@ export interface CSComparisonRow {
 
 export interface NarrativeCaseStudy {
   slug: string;
+  /** Template seam: "A" = long-form narrative (this file). "B" lives in case-study-b.ts. */
+  template?: "A";
   specialty: string;
   tags: string[];
   /* 1. Hero introduction */
