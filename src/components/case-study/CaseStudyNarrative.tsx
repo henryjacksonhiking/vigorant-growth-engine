@@ -120,7 +120,12 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           <SectionLabel>Before &amp; After</SectionLabel>
           <H2>What Changed</H2>
           <div className="mt-8 overflow-x-auto rounded-xl border border-brand-purple/10">
-            <table className="w-full min-w-[600px] border-collapse text-left">
+            <table className="w-full min-w-[600px] border-collapse text-left table-fixed">
+              <colgroup>
+                <col className="w-1/3" />
+                <col className="w-1/3" />
+                <col className="w-1/3" />
+              </colgroup>
               <thead>
                 <tr>
                   {["Metric", "Before", "After"].map((c) => (
