@@ -119,7 +119,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
         <div className="container max-w-[900px]">
           <SectionLabel>Before &amp; After</SectionLabel>
           <H2>What Changed</H2>
-          <div className="mt-8 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto">
+          <div className="mt-8 overflow-x-auto rounded-xl border border-brand-purple/10">
             <table className="w-full min-w-[600px] border-collapse text-left">
               <thead>
                 <tr>
