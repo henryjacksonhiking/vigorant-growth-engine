@@ -74,17 +74,6 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
             <ArrowLeft size={14} aria-hidden /> All Case Studies
           </Link>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            {data.tags.map((t) => (
-              <span
-                key={t}
-                className="font-mono-ui text-[11px] uppercase tracking-[0.12em] text-brand-purple bg-brand-purple/8 border border-brand-purple/20 rounded-full px-3.5 py-1.5"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-
           <h1
             className="font-display font-bold text-brand-deep leading-[1.08] tracking-tight mb-7"
             style={{ fontSize: "clamp(30px,5vw,56px)", letterSpacing: "-0.03em" }}
@@ -93,6 +82,10 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           </h1>
 
           <Prose items={data.intro} />
+
+          {data.disclaimer && (
+            <p className="mt-6 text-[13px] leading-[1.6] text-ink-secondary/70 italic">{data.disclaimer}</p>
+          )}
 
           <div className="mt-8">
             <Link
