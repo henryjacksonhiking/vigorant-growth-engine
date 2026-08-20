@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/types/case-study";
+import convHero from "@/assets/cs-conv-hero.jpg";
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -268,7 +269,7 @@ export const caseStudies: CaseStudy[] = [
       subheadline:
         "A Houston dental practice had growing traffic but inconsistent appointment requests. Conversion optimization turned existing visitors into patient inquiries.",
       primary_metric: { value: "+34%", label: "Appointment-form completions" },
-      hero_image_src: "/placeholder.svg",
+      hero_image_src: convHero,
       hero_image_alt: "Dentist reviewing patient inquiries at a modern Houston practice front desk",
     },
     stats: [
