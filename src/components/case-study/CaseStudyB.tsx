@@ -119,7 +119,7 @@ function KpiValue({ value }: { value: string }) {
   return (
     <div
       ref={ref}
-      className="font-display font-bold text-brand-deep leading-none tracking-tight tabular-nums"
+      className="font-display font-bold text-brand-deep leading-none tracking-tight tabular-nums whitespace-nowrap"
       style={{ fontSize: "clamp(34px,4.6vw,54px)" }}
     >
       {shown}
