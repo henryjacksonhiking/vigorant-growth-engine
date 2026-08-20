@@ -131,7 +131,7 @@ export const caseStudyBContent: Record<string, CaseStudyBContent> = {
     template: "B",
     category: "dental",
     tags: ["Website Conversion Optimization", "Houston, Texas", "Family & Cosmetic Dentistry"],
-    disclaimer: "Illustrative example based on common patterns. Practice name and results are not tied to a verified client engagement.",
+    disclaimer: "Disclaimer: To protect client confidentiality and privacy, the name of the healthcare provider, practice, and any other identifying details presented in this case study have been fictionalized or anonymized. Any names, practice identifiers, or other details that could reasonably be used to identify an individual or organization have been modified for confidentiality purposes.",
     hero: {
       h1: "Getting Website Traffic but Few Appointments? How a Dental Practice Could Improve Conversions",
       paragraphs: [
@@ -287,7 +287,7 @@ export const caseStudyBContent: Record<string, CaseStudyBContent> = {
     template: "B",
     category: "dental",
     tags: ["Multi-Location DSO", "Texas", "6 Locations"],
-    disclaimer: "Practice identity anonymized per client agreement.",
+    disclaimer: "Disclaimer: To protect client confidentiality and privacy, the name of the healthcare provider, practice, and any other identifying details presented in this case study have been fictionalized or anonymized. Any names, practice identifiers, or other details that could reasonably be used to identify an individual or organization have been modified for confidentiality purposes.",
     hero: {
       h1: "2.8x ROAS Across 6 Locations — Unified, Measurable, Scalable",
       paragraphs: [
