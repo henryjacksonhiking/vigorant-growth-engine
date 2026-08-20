@@ -128,6 +128,9 @@ function KpiValue({ value }: { value: string }) {
 }
 
 export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
+  const table = data.holdingBack.comparisonTable;
+  const bullets = data.holdingBack.bullets;
+
   return (
     <article>
       {/* 1. HERO */}
@@ -154,11 +157,15 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
               </div>
               <h1
                 className="font-display font-bold text-brand-deep leading-[1.08] tracking-tight mb-5"
-                style={{ fontSize: "clamp(30px,5vw,56px)", letterSpacing: "-0.03em" }}
+                style={{ fontSize: "clamp(28px,4.4vw,48px)", letterSpacing: "-0.03em" }}
               >
                 {data.hero.h1}
               </h1>
-              <p className="text-ink-secondary text-[16px] sm:text-[18px] leading-[1.75]">{data.hero.subhead}</p>
+              {data.hero.paragraphs.map((p, i) => (
+                <p key={i} className="text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8] mb-4 last:mb-0">
+                  {p}
+                </p>
+              ))}
               <div className="mt-8 flex flex-wrap gap-3">
                 <PrimaryCta cta={data.hero.ctaPrimary} />
                 <SecondaryCta cta={data.hero.ctaSecondary} />
@@ -171,11 +178,22 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
         </div>
       </section>
 
-      {/* 2. PROBLEM STORY */}
+      {/* 2. PRACTICE BACKGROUND AND AMBITION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container max-w-[820px]">
+          <SectionLabel>Background &amp; Ambition</SectionLabel>
+          <H2>{data.practiceBackground.h2}</H2>
+          <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+            {data.practiceBackground.paragraph}
+          </p>
+        </div>
+      </section>
+
+      {/* 3. THE PROBLEM STORY */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="container max-w-[820px]">
           <SectionLabel>The Problem</SectionLabel>
-          <H2>What Was Actually Happening</H2>
+          <H2>{data.problemStory.h2}</H2>
           <div className="mt-5">
             {data.problemStory.paragraphs.map((p, i) => (
               <p key={i} className="text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8] mb-4 last:mb-0">
@@ -183,43 +201,101 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
               </p>
             ))}
           </div>
-          <ul className="mt-8 grid sm:grid-cols-2 gap-3">
-            {data.problemStory.bullets.map((b) => (
-              <li
-                key={b}
-                className="flex items-start gap-3 bg-white border border-brand-purple/15 rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] text-brand-deep font-medium"
-              >
-                <span aria-hidden className="w-2 h-2 rounded-full bg-brand-purple mt-2 flex-shrink-0" />
-                {b}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
-      {/* 3. TURNING POINT */}
+      {/* 4. WHAT WAS HOLDING THE PRACTICE BACK */}
+      <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
+        <div className="container max-w-[900px]">
+          <SectionLabel>What Was Holding Them Back</SectionLabel>
+          <H2>{data.holdingBack.h2}</H2>
+          {data.holdingBack.intro && (
+            <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+              {data.holdingBack.intro}
+            </p>
+          )}
+
+          {table && (
+            <div className="mt-8 -mx-4 sm:mx-0 px-4 sm:px-0 overflow-x-auto">
+              <table className="w-full min-w-[600px] border-collapse text-left">
+                <thead>
+                  <tr>
+                    {[table.leftHeader, table.rightHeader].map((c) => (
+                      <th
+                        key={c}
+                        className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple border-b border-brand-purple/20 pb-3 pr-6 whitespace-nowrap"
+                      >
+                        {c}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr key={r.left} className="border-b border-brand-purple/10 last:border-0">
+                      <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top font-semibold text-brand-deep w-[38%]">
+                        {r.left}
+                      </td>
+                      <td className="py-4 pr-6 text-[15px] leading-[1.6] align-top text-ink-secondary">{r.right}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {bullets && bullets.length > 0 && (
+            <ul className="mt-8 grid sm:grid-cols-2 gap-3">
+              {bullets.map((b) => (
+                <li
+                  key={b}
+                  className="flex items-start gap-3 bg-white border border-brand-purple/15 rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] text-brand-deep font-medium"
+                >
+                  <span aria-hidden className="w-2 h-2 rounded-full bg-brand-purple mt-2 flex-shrink-0" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {data.holdingBack.closingLine && (
+            <p className="mt-8 text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+              {data.holdingBack.closingLine}
+            </p>
+          )}
+        </div>
+      </section>
+
+      {/* 5. THE TURNING POINT */}
       <section className="bg-white py-14 sm:py-16">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="min-w-0">
               <SectionLabel>The Turning Point</SectionLabel>
-              <H2>{data.turningPoint.heading ?? "The Reframe That Changed Everything"}</H2>
+              <H2>{data.turningPoint.h2}</H2>
               <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
                 {data.turningPoint.paragraph}
               </p>
             </div>
-            <div className="min-w-0">
-              <Visual src={data.turningPoint.image} direction={data.turningPoint.imageDirection} />
-            </div>
+            {(data.turningPoint.image || data.turningPoint.imageDirection) && (
+              <div className="min-w-0">
+                <Visual src={data.turningPoint.image} direction={data.turningPoint.imageDirection ?? ""} />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* 4. STRATEGY */}
+      {/* 6. STRATEGY AND IMPLEMENTATION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container">
           <SectionLabel>The Strategy</SectionLabel>
-          <H2>{data.strategy.heading ?? "What We Did"}</H2>
+          <H2>{data.strategy.h2}</H2>
+          {data.strategy.intro && (
+            <p className="mt-5 max-w-[820px] text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+              {data.strategy.intro}
+            </p>
+          )}
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {data.strategy.cards.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.06}>
@@ -236,11 +312,16 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
         </div>
       </section>
 
-      {/* 5. RESULTS */}
+      {/* 7. RESULTS AND BUSINESS IMPACT */}
       <section id="results" className="bg-white py-14 sm:py-16">
         <div className="container">
           <SectionLabel>The Results</SectionLabel>
-          <H2>{data.results.heading ?? "The Business Impact"}</H2>
+          <H2>{data.results.h2}</H2>
+          {data.results.intro && (
+            <p className="mt-5 max-w-[820px] text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+              {data.results.intro}
+            </p>
+          )}
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
             {data.results.kpis.map((k, i) => (
               <Reveal key={k.label} delay={i * 0.06}>
@@ -253,6 +334,12 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
               </Reveal>
             ))}
           </div>
+
+          {data.results.impactParagraph && (
+            <p className="mt-10 max-w-[820px] text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
+              {data.results.impactParagraph}
+            </p>
+          )}
 
           {data.servicesUsed.length > 0 && (
             <div className="mt-12">
@@ -275,44 +362,46 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
         </div>
       </section>
 
-      {/* 6. QUOTE BAND */}
+      {/* 8a. QUOTE BAND (dark) */}
       <section className="py-16 sm:py-20 bg-brand-deep">
         <div className="container max-w-[900px] text-center">
           <blockquote
             className="font-display font-bold text-white leading-[1.35] tracking-tight"
             style={{ fontSize: "clamp(22px,3.4vw,38px)", letterSpacing: "-0.02em" }}
           >
-            “{data.quote.text}”
+            “{data.quoteAndTakeaway.quote.text}”
           </blockquote>
           <div className="font-mono-ui text-[11px] uppercase tracking-widest text-white/70 mt-7">
-            — {data.quote.attribution}
-            {data.quote.note && (
-              <span className="block normal-case tracking-normal italic text-white/50 mt-2">({data.quote.note})</span>
+            — {data.quoteAndTakeaway.quote.attribution}
+            {data.quoteAndTakeaway.quote.note && (
+              <span className="block normal-case tracking-normal italic text-white/50 mt-2">
+                ({data.quoteAndTakeaway.quote.note})
+              </span>
             )}
           </div>
         </div>
       </section>
 
-      {/* 7. TAKEAWAY + CTA */}
+      {/* 8b. FINAL TAKEAWAY + CTAs (light) */}
       <section className="bg-white py-14 sm:py-16">
         <div className="container max-w-[820px]">
           <SectionLabel>The Takeaway</SectionLabel>
-          <H2>{data.takeaway.heading ?? "What This Means Going Forward"}</H2>
+          <H2>{data.quoteAndTakeaway.h2}</H2>
           <div className="mt-5">
-            {data.takeaway.paragraphs.map((p, i) => (
+            {data.quoteAndTakeaway.paragraphs.map((p, i) => (
               <p key={i} className="text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8] mb-4 last:mb-0">
                 {p}
               </p>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <PrimaryCta cta={data.takeaway.ctaPrimary} />
-            <SecondaryCta cta={data.takeaway.ctaSecondary} />
+            <PrimaryCta cta={data.quoteAndTakeaway.ctaPrimary} />
+            <SecondaryCta cta={data.quoteAndTakeaway.ctaSecondary} />
           </div>
         </div>
       </section>
 
-      {/* 8. FAQ */}
+      {/* 9. FAQ */}
       <section className="py-16 sm:py-20" style={{ background: "hsl(248 30% 97%)" }}>
         <div className="container">
           <div className="max-w-[580px] mx-auto text-center">
