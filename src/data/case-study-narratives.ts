@@ -15,6 +15,8 @@ export interface NarrativeCaseStudy {
   template?: "A";
   specialty: string;
   tags: string[];
+  /** Small muted hero disclaimer line. Optional. */
+  disclaimer?: string;
   /* 1. Hero introduction */
   h1: string;
   intro: string[];
@@ -48,6 +50,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "dental-implant-specialist-california",
     specialty: "dental",
     tags: ["Dental Implants", "Southern California", "Solo Practice, 1 Location"],
+    disclaimer: "Practice identity anonymized per client agreement.",
     h1: "Not Getting Consultation Calls? How a California Implant Practice Cut Cost-Per-Lead by 62%",
     intro: [
       "A Southern California dental implant specialist had strong clinical outcomes, loyal patients, and an excellent chairside conversion rate — but almost no one was reaching the chair. Cost-per-lead for a single implant consultation had reached an unsustainable $187, and the practice's organic visibility for implant searches had stalled on page 4.",
@@ -152,6 +155,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "6-location-dso-texas",
     specialty: "dental",
     tags: ["Multi-Location DSO", "Texas", "6 Locations"],
+    disclaimer: "Practice identity anonymized per client agreement.",
     h1: "2.8x ROAS Across 6 Locations — Unified, Measurable, Scalable",
     intro: [
       "A Texas dental group had 6 locations running 6 separate, disconnected marketing efforts — three different agencies, inconsistent branding, and no unified reporting. Leadership had strong clinical teams at every location but no way to compare performance across them or identify where budget was being wasted.",
@@ -256,6 +260,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "sports-chiropractic-florida",
     specialty: "chiropractic",
     tags: ["Sports Chiropractic", "Florida", "Single Location"],
+    disclaimer: "Practice identity anonymized per client agreement.",
     h1: "#1 Local Ranking in 45 Days — And Featured in AI Overviews",
     intro: [
       "A Florida sports chiropractic practice had 4 years of strong patient outcomes in sports injury rehabilitation but ranked on page 5 for its primary service terms, with no structured content, no Schema.org markup, and no presence in AI-generated search answers.",
