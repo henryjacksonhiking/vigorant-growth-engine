@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/types/case-study";
+import convHero from "@/assets/cs-conv-hero.jpg";
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -243,6 +244,61 @@ export const caseStudies: CaseStudy[] = [
       { q: "Is it possible for every chiropractic practice to appear in AI Overviews?", a: "AI search visibility depends on content authority, Schema.org markup quality, E-E-A-T signals, and ongoing content production. There are no guaranteed outcomes." },
     ],
     related: ["dental-implant-specialist-california", "6-location-dso-texas"],
+  },
+  {
+    slug: "dental-website-conversion-houston",
+    specialty: "dental",
+    template: "growth",
+    tag: "Conversion Rate Optimization",
+    initial: "PD",
+    published: "2026-02-10",
+    meta: {
+      title: "Dental Website Conversion Optimization Case Study | Vigorant",
+      description:
+        "How a Houston family and cosmetic dental practice turned existing website traffic into more appointment requests through conversion optimization.",
+    },
+    practice: {
+      type: "Family & Cosmetic Dental Practice",
+      location: "Houston, Texas",
+      size: "Single location",
+      anonymised: false,
+      display_name: "Prentice Dental",
+    },
+    hero: {
+      headline: "Getting Website Traffic but Few Appointments?",
+      subheadline:
+        "A Houston dental practice had growing traffic but inconsistent appointment requests. Conversion optimization turned existing visitors into patient inquiries.",
+      primary_metric: { value: "+34%", label: "Appointment-form completions" },
+      hero_image_src: convHero,
+      hero_image_alt: "Dentist reviewing patient inquiries at a modern Houston practice front desk",
+    },
+    stats: [
+      { value: "+34%", label: "Appointment-form completions", source: "Illustrative 90-day period" },
+      { value: "+27%", label: "Mobile click-to-call actions", source: "Illustrative 90-day period" },
+      { value: "18%", label: "Lower service-page exit rate", source: "Illustrative 90-day period" },
+      { value: "3.1%", label: "Visitor-to-inquiry conversion rate", source: "Up from 2.2%" },
+    ],
+    services_used: ["Conversion Rate Optimization", "Dental SEO", "Website UX", "Analytics & Tracking"],
+    results_summary:
+      "Improving messaging clarity, service-page structure, appointment flows, and conversion tracking helped the practice convert more of its existing website traffic into patient inquiries.",
+    key_results: [
+      { metric: "+34%", label: "Appointment-form completions", context: "Illustrative 90-day period" },
+      { metric: "+27%", label: "Mobile click-to-call actions", context: "Illustrative 90-day period" },
+      { metric: "18%", label: "Lower service-page exit rate", context: "High-intent service pages" },
+      { metric: "2.2% → 3.1%", label: "Visitor-to-inquiry conversion", context: "Site-wide" },
+    ],
+    quote: {
+      text: "We did not need more people briefly visiting our website. We needed the right visitors to understand us, trust us, and feel comfortable taking the next step.",
+      attribution: "Dr. Lila",
+      role: "Prentice Dental, Houston",
+    },
+    faqs: [
+      { q: "Why is my dental website not converting?", a: "Unclear messaging, weak calls to action, poor mobile usability, limited trust signals, or complicated forms may prevent interested visitors from contacting the practice." },
+      { q: "What is a good dental conversion rate?", a: "Conversion rates vary by traffic source, service, location, and measurement method. Practices should compare performance against their own qualified traffic and historical results." },
+      { q: "Can SEO traffic produce more appointments?", a: "Yes. Relevant dental SEO traffic can support appointments when service pages match patient intent and provide a simple, trustworthy path to contact the practice." },
+      { q: "How can dentists improve website conversions?", a: "Dentists can improve conversions by clarifying their value, strengthening service pages, simplifying forms, improving mobile usability, and tracking calls and appointment requests." },
+    ],
+    related: ["6-location-dso-texas", "dental-implant-specialist-california"],
   },
 ];
 
