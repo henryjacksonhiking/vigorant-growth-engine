@@ -44,6 +44,8 @@ export interface CaseStudyBContent {
   /** Specialty / vertical, e.g. "dental" | "chiropractic" | "medical". */
   category: string;
   tags: string[];
+  /** Small muted hero disclaimer line. Optional. */
+  disclaimer?: string;
 
   /** 1. Hero */
   hero: {
@@ -129,6 +131,7 @@ export const caseStudyBContent: Record<string, CaseStudyBContent> = {
     template: "B",
     category: "dental",
     tags: ["Website Conversion Optimization", "Houston, Texas", "Family & Cosmetic Dentistry"],
+    disclaimer: "Illustrative example based on common patterns. Practice name and results are not tied to a verified client engagement.",
     hero: {
       h1: "Getting Website Traffic but Few Appointments? How a Dental Practice Could Improve Conversions",
       paragraphs: [
@@ -284,6 +287,7 @@ export const caseStudyBContent: Record<string, CaseStudyBContent> = {
     template: "B",
     category: "dental",
     tags: ["Multi-Location DSO", "Texas", "6 Locations"],
+    disclaimer: "Practice identity anonymized per client agreement.",
     hero: {
       h1: "2.8x ROAS Across 6 Locations — Unified, Measurable, Scalable",
       paragraphs: [
