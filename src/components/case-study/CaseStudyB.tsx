@@ -289,7 +289,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
               {data.strategy.intro}
             </p>
           )}
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {data.strategy.cards.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.06}>
                 <div className="ui-card h-full p-6">
