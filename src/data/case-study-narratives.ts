@@ -50,7 +50,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "dental-implant-specialist-california",
     specialty: "dental",
     tags: ["Dental Implants", "Southern California", "Solo Practice, 1 Location"],
-    disclaimer: "Practice identity anonymized per client agreement.",
+    disclaimer: "Disclaimer: To protect client confidentiality and privacy, the name of the healthcare provider, practice, and any other identifying details presented in this case study have been fictionalized or anonymized. Any names, practice identifiers, or other details that could reasonably be used to identify an individual or organization have been modified for confidentiality purposes.",
     h1: "Not Getting Consultation Calls? How a California Implant Practice Cut Cost-Per-Lead by 62%",
     intro: [
       "A Southern California dental implant specialist had strong clinical outcomes, loyal patients, and an excellent chairside conversion rate — but almost no one was reaching the chair. Cost-per-lead for a single implant consultation had reached an unsustainable $187, and the practice's organic visibility for implant searches had stalled on page 4.",
@@ -155,7 +155,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "6-location-dso-texas",
     specialty: "dental",
     tags: ["Multi-Location DSO", "Texas", "6 Locations"],
-    disclaimer: "Practice identity anonymized per client agreement.",
+    disclaimer: "Disclaimer: To protect client confidentiality and privacy, the name of the healthcare provider, practice, and any other identifying details presented in this case study have been fictionalized or anonymized. Any names, practice identifiers, or other details that could reasonably be used to identify an individual or organization have been modified for confidentiality purposes.",
     h1: "2.8x ROAS Across 6 Locations — Unified, Measurable, Scalable",
     intro: [
       "A Texas dental group had 6 locations running 6 separate, disconnected marketing efforts — three different agencies, inconsistent branding, and no unified reporting. Leadership had strong clinical teams at every location but no way to compare performance across them or identify where budget was being wasted.",
@@ -260,7 +260,7 @@ export const caseStudyNarratives: Record<string, NarrativeCaseStudy> = {
     slug: "sports-chiropractic-florida",
     specialty: "chiropractic",
     tags: ["Sports Chiropractic", "Florida", "Single Location"],
-    disclaimer: "Practice identity anonymized per client agreement.",
+    disclaimer: "Disclaimer: To protect client confidentiality and privacy, the name of the healthcare provider, practice, and any other identifying details presented in this case study have been fictionalized or anonymized. Any names, practice identifiers, or other details that could reasonably be used to identify an individual or organization have been modified for confidentiality purposes.",
     h1: "#1 Local Ranking in 45 Days — And Featured in AI Overviews",
     intro: [
       "A Florida sports chiropractic practice had 4 years of strong patient outcomes in sports injury rehabilitation but ranked on page 5 for its primary service terms, with no structured content, no Schema.org markup, and no presence in AI-generated search answers.",
