@@ -66,7 +66,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
     <article>
       {/* 1 + 2. HERO INTRO, CTA, HERO IMAGE */}
       <section className="bg-white pt-28 sm:pt-32 pb-14 sm:pb-16">
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <Link
             to="/case-studies"
             className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple hover:gap-3 transition-all mb-8"
@@ -98,7 +98,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 3. CHALLENGE AND CONTEXT */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Challenge</SectionLabel>
           <H2>{data.challenge.heading}</H2>
           {data.challenge.subheading && (
@@ -112,7 +112,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 4. BEFORE AND AFTER */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[900px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>Before &amp; After</SectionLabel>
           <H2>What Changed</H2>
           <div className="mt-8 overflow-x-auto rounded-xl border border-brand-purple/10">
@@ -154,7 +154,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 5. STRATEGY AND IMPLEMENTATION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>Strategy &amp; Implementation</SectionLabel>
           <H2>{data.strategy.heading}</H2>
           <div className="mt-8 space-y-6">
@@ -181,7 +181,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 6. RESULTS STAT TRAIL */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[1000px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Results</SectionLabel>
           <H2>What the Work Produced</H2>
 
@@ -231,7 +231,7 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 7. QUOTE + CONCLUSION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <figure className="rounded-2xl border-l-4 border-brand-purple bg-white p-6 sm:p-8 shadow-sm">
             <blockquote className="font-display font-bold text-brand-deep italic leading-[1.45] text-[19px] sm:text-[23px]">
               “{data.quote.text}”
@@ -262,8 +262,8 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
       </section>
 
       {/* 8. FAQ */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="container">
+      <section className="bg-white py-14 sm:py-16">
+        <div className="container max-w-[960px]">
           <div className="max-w-[580px] mx-auto text-center">
             <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">FAQ</div>
             <h2
@@ -279,8 +279,8 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
       {/* 9. DISCLAIMER */}
       {data.disclaimer && (
-        <section className="bg-white py-10 sm:py-12 border-t border-brand-purple/10">
-          <div className="container max-w-[820px]">
+        <section className="bg-white py-14 sm:py-16 border-t border-brand-purple/10">
+          <div className="container max-w-[960px]">
             <p className="text-[12px] sm:text-[13px] leading-[1.7] text-ink-secondary/60 italic text-center">
               {data.disclaimer}
             </p>

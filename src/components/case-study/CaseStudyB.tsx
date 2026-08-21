@@ -135,7 +135,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
     <article>
       {/* 1. HERO */}
       <section className="bg-white pt-28 sm:pt-32 pb-14 sm:pb-16">
-        <div className="container">
+        <div className="container max-w-[960px]">
           <Link
             to="/case-studies"
             className="inline-flex items-center gap-2 font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple hover:gap-3 transition-all mb-8"
@@ -170,7 +170,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 2. PRACTICE BACKGROUND AND AMBITION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>Background &amp; Ambition</SectionLabel>
           <H2>{data.practiceBackground.h2}</H2>
           <p className="mt-5 text-ink-secondary text-[16px] sm:text-[17px] leading-[1.8]">
@@ -181,7 +181,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 3. THE PROBLEM STORY */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Problem</SectionLabel>
           <H2>{data.problemStory.h2}</H2>
           <div className="mt-5">
@@ -196,7 +196,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 4. WHAT WAS HOLDING THE PRACTICE BACK */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container max-w-[900px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>What Was Holding Them Back</SectionLabel>
           <H2>{data.holdingBack.h2}</H2>
           {data.holdingBack.intro && (
@@ -258,7 +258,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 5. THE TURNING POINT */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container">
+        <div className="container max-w-[960px]">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="min-w-0">
               <SectionLabel>The Turning Point</SectionLabel>
@@ -278,7 +278,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 6. STRATEGY AND IMPLEMENTATION */}
       <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Strategy</SectionLabel>
           <H2>{data.strategy.h2}</H2>
           {data.strategy.intro && (
@@ -304,7 +304,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 7. RESULTS AND BUSINESS IMPACT */}
       <section id="results" className="bg-white py-14 sm:py-16">
-        <div className="container">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Results</SectionLabel>
           <H2>{data.results.h2}</H2>
           {data.results.intro && (
@@ -353,8 +353,8 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
       </section>
 
       {/* 8a. QUOTE BAND (dark) */}
-      <section className="py-16 sm:py-20 bg-brand-deep">
-        <div className="container max-w-[900px] text-center">
+      <section className="py-14 sm:py-16 bg-brand-deep">
+        <div className="container max-w-[960px] text-center">
           <blockquote
             className="font-display font-bold text-white leading-[1.35] tracking-tight"
             style={{ fontSize: "clamp(22px,3.4vw,38px)", letterSpacing: "-0.02em" }}
@@ -374,7 +374,7 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 8b. FINAL TAKEAWAY + CTAs (light) */}
       <section className="bg-white py-14 sm:py-16">
-        <div className="container max-w-[820px]">
+        <div className="container max-w-[960px]">
           <SectionLabel>The Takeaway</SectionLabel>
           <H2>{data.quoteAndTakeaway.h2}</H2>
           <div className="mt-5">
@@ -392,8 +392,8 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
       </section>
 
       {/* 9. FAQ */}
-      <section className="py-16 sm:py-20" style={{ background: "hsl(248 30% 97%)" }}>
-        <div className="container">
+      <section className="py-14 sm:py-16" style={{ background: "hsl(248 30% 97%)" }}>
+        <div className="container max-w-[960px]">
           <div className="max-w-[580px] mx-auto text-center">
             <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">FAQ</div>
             <h2
@@ -409,8 +409,8 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
 
       {/* 10. DISCLAIMER */}
       {data.disclaimer && (
-        <section className="bg-white py-10 sm:py-12 border-t border-brand-purple/10">
-          <div className="container max-w-[820px]">
+        <section className="bg-white py-14 sm:py-16 border-t border-brand-purple/10">
+          <div className="container max-w-[960px]">
             <p className="text-[12px] sm:text-[13px] leading-[1.7] text-ink-secondary/60 italic text-center">
               {data.disclaimer}
             </p>
