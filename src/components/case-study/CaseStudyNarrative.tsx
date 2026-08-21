@@ -247,6 +247,9 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           </figure>
 
           <div className="mt-10">
+            <div className="font-mono-ui text-[11px] uppercase tracking-widest text-brand-purple mb-3">
+              Key Takeaway
+            </div>
             <Prose items={[data.conclusion]} />
           </div>
 
