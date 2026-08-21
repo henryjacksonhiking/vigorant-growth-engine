@@ -83,10 +83,6 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
 
           <Prose items={data.intro} />
 
-          {data.disclaimer && (
-            <p className="mt-6 text-[13px] leading-[1.6] text-ink-secondary/70 italic">{data.disclaimer}</p>
-          )}
-
           <div className="mt-8">
             <Link
               to={data.cta.href}
@@ -280,6 +276,17 @@ export default function CaseStudyNarrative({ data }: { data: NarrativeCaseStudy 
           <SharedFAQList faqs={data.faqs} defaultOpen={null} />
         </div>
       </section>
+
+      {/* 9. DISCLAIMER */}
+      {data.disclaimer && (
+        <section className="bg-white py-10 sm:py-12 border-t border-brand-purple/10">
+          <div className="container max-w-[820px]">
+            <p className="text-[12px] sm:text-[13px] leading-[1.7] text-ink-secondary/60 italic text-center">
+              {data.disclaimer}
+            </p>
+          </div>
+        </section>
+      )}
     </article>
   );
 }

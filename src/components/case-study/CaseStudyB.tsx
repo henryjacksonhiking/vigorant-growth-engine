@@ -156,9 +156,6 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
                   {p}
                 </p>
               ))}
-              {data.disclaimer && (
-                <p className="mt-6 text-[13px] leading-[1.6] text-ink-secondary/70 italic">{data.disclaimer}</p>
-              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <PrimaryCta cta={data.hero.ctaPrimary} />
                 <SecondaryCta cta={data.hero.ctaSecondary} />
@@ -409,6 +406,17 @@ export default function CaseStudyB({ data }: { data: CaseStudyBContent }) {
           <SharedFAQList faqs={data.faqs} defaultOpen={null} />
         </div>
       </section>
+
+      {/* 10. DISCLAIMER */}
+      {data.disclaimer && (
+        <section className="bg-white py-10 sm:py-12 border-t border-brand-purple/10">
+          <div className="container max-w-[820px]">
+            <p className="text-[12px] sm:text-[13px] leading-[1.7] text-ink-secondary/60 italic text-center">
+              {data.disclaimer}
+            </p>
+          </div>
+        </section>
+      )}
     </article>
   );
 }
